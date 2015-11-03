@@ -12,6 +12,7 @@ require 'fig_newton'
 require 'pry'
 #require_relative 'test_helper'
 require 'capybara/cucumber'
+require_relative 'test_helper'
 # require 'allure-cucumber'
 
 # include AllureCucumber::DSL
@@ -34,8 +35,8 @@ After do |scenario|
     Dir::mkdir('screenshots') if not File.directory?('screenshots')
     screenshot = "./screenshots/FAILED_#{scenario.name.gsub(' ','_').gsub(/[^0-9A-Za-z_]/, '')}.png"
     @browser.screenshot.save(screenshot)
-    
-    #attachs failed test screenshot to Allure reports 
+
+    #attachs failed test screenshot to Allure reports
     # attach_file("FAILED_#{scenario.name.gsub(' ','_').gsub(/[^0-9A-Za-z_]/, '')}.png", File.open("#{screenshot}"))
   end
 end
@@ -45,4 +46,4 @@ After do
 end
 
 # Include helper methods module in each 'World' instance
-#World(HelperMethods)
+World(HelperMethods)

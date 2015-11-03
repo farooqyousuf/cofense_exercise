@@ -1,5 +1,6 @@
 Given(/^I add an item to the cart \("([^"]*)"\)$/) do |arg1|
-  pending # Write code here that turns the phrase above into concrete actions
+  pending
+  #visit "http://www.fanatics.com"
 end
 
 Given(/^I apply the Troop ID discount \("([^"]*)"\)$/) do |arg1|
