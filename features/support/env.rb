@@ -1,23 +1,48 @@
-require_relative "dependencies"
+require "rubygems"
+require "pry"
+require "yaml"
+require "rspec"
+require "cucumber"
+require "cucumber_statistics/autoload"
+require "allure-cucumber"
+require "data_magic"
+require "fig_newton"
+require "rspec/expectations"
+require 'fig_newton'
+require 'pry'
+#require_relative 'test_helper'
+require 'capybara/cucumber'
+# require 'allure-cucumber'
 
-FigNewton.load("staging.yml")
+# include AllureCucumber::DSL
 
-browser = Watir::Browser.new :firefox
-browser.driver.manage.window.maximize
-browser.driver.manage.timeouts.implicit_wait = 30
+FigNewton.load('staging.yml')
 
+Capybara.default_max_wait_time = 10
+
+# Actions performed before/after each scenario
 Before do
-  @browser = browser
-  @browser.cookies.clear
+  Capybara.default_driver = :selenium
 end
 
-at_exit do
-  browser.close
+# AllureCucumber.configure do |c|
+#    c.output_dir = "gen/allure_xml_files"
+# end
+
+After do |scenario|
+  if scenario.failed?
+    Dir::mkdir('screenshots') if not File.directory?('screenshots')
+    screenshot = "./screenshots/FAILED_#{scenario.name.gsub(' ','_').gsub(/[^0-9A-Za-z_]/, '')}.png"
+    @browser.screenshot.save(screenshot)
+    
+    #attachs failed test screenshot to Allure reports 
+    # attach_file("FAILED_#{scenario.name.gsub(' ','_').gsub(/[^0-9A-Za-z_]/, '')}.png", File.open("#{screenshot}"))
+  end
 end
 
-puts "=" * 25
-puts "Environment: Staging"
-puts "Browser: Firefox"
-puts "=" * 25
+After do
+  sign_out_of_idme
+end
 
-World(PageObject::PageFactory)
+# Include helper methods module in each 'World' instance
+#World(HelperMethods)
