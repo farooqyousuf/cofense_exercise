@@ -16,7 +16,7 @@ hlp:
   ungated_live: https://hosted-pages-staging.idmeinc.net/sam-s-club-preview-ungated-page
   gated_live: https://hosted-pages-staging.idmeinc.net/sam-s-club-live-gated-page
   document_live: https://hosted-pages-staging.idmeinc.net/sam-s-club-live-document-page
-  promocode_live: https://hosted-pages-staging.idmeinc.net/sam-s-club-live-promocode-page  
+  promocode_live: https://hosted-pages-staging.idmeinc.net/sam-s-club-live-promocode-page
   # user: farooq@id.me
   # password: idmeadmin
   partner_number: 1
@@ -53,7 +53,7 @@ wrong_unlock_code: 123456
 nonexistant_email: fake_email@id.me
 
 oauth_logout:
-  base: https://oauth-tester-staging.idmeinc.net/oauths/6/logout        
+  base: https://oauth-tester-staging.idmeinc.net/oauths/6/logout
 
 loa:
   sp1: https://sp1.idmeinc.net/
@@ -84,12 +84,15 @@ offers_cms:
   base: https://offers-cms-staging.idmeinc.net/
   user: kseniia@id.me
   password: offerscmsadmin
-  
+
 mp_admin:
   email: admin@viget.com
   password: password1234
-  
+
 authority:
   base: https://authority-staging.idmeinc.net
   user: farooq+1@id.me
   password: idmeadmin
+
+user:     tony.chung+test@id.me
+password: Password123
