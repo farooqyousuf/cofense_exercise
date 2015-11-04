@@ -17,7 +17,7 @@ require_relative 'test_helper'
 
 # include AllureCucumber::DSL
 
-FigNewton.load('staging.yml')
+FigNewton.load('production.yml')
 
 Capybara.default_max_wait_time = 10
 

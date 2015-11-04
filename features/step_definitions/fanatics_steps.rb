@@ -1,6 +1,10 @@
 
 Given(/^I add an item to the cart \("([^"]*)"\)$/) do |brand|
-  pending # Write code here that turns the phrase above into concrete actions
+  case brand
+    when "FAN" then element = "a", url = FigNewton.partners.fanatics
+    when "NFL" then element = "button", url = FigNewton.partners.nfl_shop #check if this is still valid
+  end
+
 end
 
 Given(/^I apply the Troop ID discount \("([^"]*)"\)$/) do |brand|
