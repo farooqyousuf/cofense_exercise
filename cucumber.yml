@@ -1,7 +1,7 @@
 # the '-r features' makes sure the support dir and step defs are provided for all the features in the subdirectories
 <% common = "-r features/ -f pretty -p html -p json --tags ~@wip --tags ~@ignore" %>
 
-default: <%= common %> -f rerun -o rerun.txt
+default: <%= common %> -f rerun -o output/rerun.txt
 jenkins: <%= common %> -p allure
 
 allure: --format AllureCucumber::Formatter --out output/allure
