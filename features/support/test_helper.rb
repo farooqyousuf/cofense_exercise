@@ -24,7 +24,8 @@ module HelperMethods
 
       when "FAN"
         click_link('lightboxSaleCloseLink')
-
+      when "NFL"
+        click_link('lightboxSaleCloseLinkMM')
       else fail("No Lightbox!")
     end
   end
