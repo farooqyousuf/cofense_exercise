@@ -9,6 +9,9 @@ Given(/^I add an item to the cart \("([^"]*)"\)$/) do |brand|
   Capybara.default_max_wait_time = 3 #originally Watir(sleep 2) might now need this
   fanatics_lightbox(brand)
 
+  click_link('Choose Size S')
+  find('#addToCart').click
+  Capybara.default_max_wait_time = 3
 
 end
 
