@@ -25,5 +25,7 @@ Given(/^I apply the Troop ID discount \("([^"]*)"\)$/) do |brand|
 end
 
 Given(/^I verify the Troop ID discount has been applied \("([^"]*)"\)$/) do |brand|
-  pending # Write code here that turns the phrase above into concrete actions
+  Capybara.ignore_hidden_elements = false
+  expect(find("#desktopIdStatus").text).to eq("Status Verified")
+  Capybara.ignore_hidden_elements = true
 end
