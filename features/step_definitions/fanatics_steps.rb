@@ -2,8 +2,7 @@
 Given(/^I add an item to the cart \("([^"]*)"\)$/) do |brand|
   case brand
     when "FAN" then element = "a", url = FigNewton.partners.fanatics
-    when "NFL" then element = "button", url = FigNewton.partners.nfl_shop #check if this is still valid
-  end
+    when "NFL" then element = "button", url = FigNewton.partners.nfl_shop
 
   visit url
   fanatics_lightbox(brand)
