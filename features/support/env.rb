@@ -13,6 +13,7 @@ require 'pry'
 #require_relative 'test_helper'
 require 'capybara/cucumber'
 require_relative 'test_helper'
+require_relative 'step_method_helpers'
 # require 'allure-cucumber'
 
 # include AllureCucumber::DSL
@@ -47,3 +48,4 @@ end
 
 # Include helper methods module in each 'World' instance
 World(HelperMethods)
+World(StepDefMethods)

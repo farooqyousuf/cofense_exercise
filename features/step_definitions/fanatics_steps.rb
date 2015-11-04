@@ -5,6 +5,11 @@ Given(/^I add an item to the cart \("([^"]*)"\)$/) do |brand|
     when "NFL" then element = "button", url = FigNewton.partners.nfl_shop #check if this is still valid
   end
 
+  visit url
+  Capybara.default_max_wait_time = 3 #originally Watir(sleep 2) might now need this
+  fanatics_lightbox(brand)
+
+
 end
 
 Given(/^I apply the Troop ID discount \("([^"]*)"\)$/) do |brand|
