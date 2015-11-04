@@ -14,7 +14,8 @@ rerun.txt
 questions.png
 
 output/*
-# features/support/env.rb
+features/support/env.rb
+target/*
 test_report.html
 /*.html
 /screenshots
