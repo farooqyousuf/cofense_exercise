@@ -1,8 +1,8 @@
 module HelperMethods
   def sign_in_with_idme
     if page.has_content? "Sign in"
-      fill_in "user_email", :with => FigNewton.user
-      fill_in "user_password", :with => FigNewton.password
+      fill_in "user_email", :with => FigNewton.partners.user
+      fill_in "user_password", :with => FigNewton.partners.password
       click_button "Sign in"
     end
 
@@ -18,7 +18,17 @@ module HelperMethods
     visit 'https://api.id.me/sessions/new'
     page.driver.browser.manage.delete_all_cookies
   end
-end 
+
+  def fanatics_lightbox(brand)
+    case brand
+
+      when "FAN"
+        click_link('lightboxSaleCloseLink')
+
+      else fail("No Lightbox!")
+    end
+  end
+end
 
 #extraneous code which might be useful later so will keep
 #   def test_email

@@ -48,4 +48,3 @@ end
 
 # Include helper methods module in each 'World' instance
 World(HelperMethods)
-World(StepDefMethods)

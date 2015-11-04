@@ -16,7 +16,9 @@ Given(/^I add an item to the cart \("([^"]*)"\)$/) do |brand|
 end
 
 Given(/^I apply the Troop ID discount \("([^"]*)"\)$/) do |brand|
-  pending # Write code here that turns the phrase above into concrete actions
+  click_link("militaryAndFirstResponderHeaderTitle")
+  click_link("imgMilitary")
+  sign_in_with_idme
 end
 
 Given(/^I verify the Troop ID discount has been applied \("([^"]*)"\)$/) do |brand|
