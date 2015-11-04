@@ -17,18 +17,13 @@ end
 
 Given(/^I apply the Troop ID discount \("([^"]*)"\)$/) do |brand|
   click_link("militaryAndFirstResponderHeaderTitle")
-  click_link("imgMilitary")
-  sign_in_with_idme
+  new_window = window_opened_by { click_link("imgMilitary") }
+
+  within_window new_window do
+    sign_in_with_idme
+  end
 end
 
 Given(/^I verify the Troop ID discount has been applied \("([^"]*)"\)$/) do |brand|
-  pending # Write code here that turns the phrase above into concrete actions
-end
-
-Given(/^I apply the First Responder discount \("([^"]*)"\)$/) do |brand|
-  pending # Write code here that turns the phrase above into concrete actions
-end
-
-Given(/^I verify the First Responder discount has been applied \("([^"]*)"\)$/) do |brand|
   pending # Write code here that turns the phrase above into concrete actions
 end
