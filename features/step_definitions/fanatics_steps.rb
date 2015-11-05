@@ -28,9 +28,10 @@ Given(/^I verify the Troop ID discount has been applied \("([^"]*)"\)$/) do |bra
   when "FAN"
     #need something unique to fanatics
   when "NFL"
-    expect(page).to have_content("A discount of 10% was successfully applied to your order.")
+    save_and_open_page
+    expect(page.body).to have_content("A discount of 15% and free shipping was successfully applied to your order.")
   end
-  
+
   Capybara.ignore_hidden_elements = false
   expect(find("#desktopIdStatus").text).to eq("Status Verified")
   Capybara.ignore_hidden_elements = true
