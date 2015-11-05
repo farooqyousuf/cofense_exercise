@@ -5,7 +5,8 @@ Given(/^I add an item to the cart \("([^"]*)"\)$/) do |brand|
       url = FigNewton.partners.fanatics
     when "NFL"
       url = FigNewton.partners.nfl_shop
-  end     
+  end
+
   visit url
   fanatics_lightbox(brand)
   click_link('Choose Size S')
@@ -25,12 +26,13 @@ end
 Given(/^I verify the Troop ID discount has been applied \("([^"]*)"\)$/) do |brand|
   case brand
   when "FAN"
-    Capybara.ignore_hidden_elements = false
-    expect(find("#desktopIdStatus").text).to eq("Status Verified")
-    Capybara.ignore_hidden_elements = true
+    #need something unique to fanatics
   when "NFL"
-
+    expect(page).to have_content("A discount of 10% was successfully applied to your order.")
   end
-
+  
+  Capybara.ignore_hidden_elements = false
+  expect(find("#desktopIdStatus").text).to eq("Status Verified")
+  Capybara.ignore_hidden_elements = true
 
 end
