@@ -1,5 +1,7 @@
 Given(/^MLB \- I add an item to the cart$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  visit " http://mlb.mlb.com/mlb/subscriptions/index.jsp"
+  click_link("Get MLB.TV")
+  click_on("Buy Now!")
 end
 
 Given(/^MLB \- I apply the Troop ID discount$/) do
