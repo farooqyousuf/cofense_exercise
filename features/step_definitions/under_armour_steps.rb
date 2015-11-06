@@ -30,5 +30,11 @@ Given(/^UA \- I apply the "([^"]*)" discount$/) do |type|
 end
 
 Given(/^UA \- I verify the "([^"]*)" discount has been applied$/) do |type|
- pending
+  case type
+  when "Troop ID"
+    confirmation = "Promo Code Military/First Responder 15% Off Has Been Applied."
+  end
+
+  expect(find('.ua-prompt-removable').text).to eq(confirmation)
+  find('.ua-prompt-removable').visible?
 end
