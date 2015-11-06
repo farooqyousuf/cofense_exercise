@@ -14,5 +14,5 @@ Given(/^MLB \- I apply the Troop ID discount$/) do
 end
 
 Given(/^MLB \- I verify the Troop ID discount has been applied$/) do
-  expect(find(".idme-btn-affinity").text).to eq("Receive 35% off your subscription")
+  expect(find("#success-id").text).to eq("Military discount with ID.me Status Verified; Discount Applied")
 end
