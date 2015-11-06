@@ -9,7 +9,23 @@ Given(/^UA \- I add an item to the cart$/) do
 end
 
 Given(/^UA \- I apply the "([^"]*)" discount$/) do |type|
- pending
+  case type
+  when "Troop ID"
+   button = "Troop ID"
+  when "First Responder"
+   button = "First Responders"
+  end
+
+  find("a[data-target='#military']").click
+
+  idme_window = window_opened_by do
+     find(".idme-btn-primary-lg-Troop").first(:xpath,".//..").native.send_key:return #.native drops down to access the selenium webdriver API methods
+
+  end
+
+  within_window idme_window do
+   sign_in_with_idme
+  end
 
 end
 
