@@ -5,7 +5,12 @@ Given(/^MLB \- I add an item to the cart$/) do
 end
 
 Given(/^MLB \- I apply the Troop ID discount$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  click_on("Troop ID")
+  idme_window = window_opened_by { click_on("Troop ID") }
+
+  within_window idme_window do
+    sign_in_with_idme
+  end
 end
 
 Given(/^MLB \- I verify the Troop ID discount has been applied$/) do
