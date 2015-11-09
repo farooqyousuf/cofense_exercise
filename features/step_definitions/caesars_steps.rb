@@ -4,7 +4,13 @@ Given(/^CS \- I add an item to the cart$/) do
 end
 
 Given(/^CS \- I apply the Troop ID discount$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  idme_window = window_opened_by do
+    first(".idme-btn-container a").click
+  end
+
+  within_window idme_window do
+    sign_in_with_idme
+  end
 end
 
 Given(/^CS \- I verify the discount has been applied$/) do
