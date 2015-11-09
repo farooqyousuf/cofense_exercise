@@ -1,4 +1,3 @@
-
 Given(/^I add an item to the cart \("([^"]*)"\)$/) do |brand|
   case brand
     when "FAN"
