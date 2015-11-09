@@ -5,7 +5,7 @@ end
 
 Given(/^CS \- I apply the Troop ID discount$/) do
   @idme_window = window_opened_by do
-    first(".idme-btn-container a").native.send_key:return
+    first(".idme-btn-container a").native.send_key :return
   end
 
   within_window @idme_window do
