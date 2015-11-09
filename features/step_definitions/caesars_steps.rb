@@ -1,5 +1,6 @@
 Given(/^CS \- I add an item to the cart$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  visit "https://www.totalrewards.com/reserve/"
+  click_on "btnSearch"
 end
 
 Given(/^CS \- I apply the Troop ID discount$/) do
