@@ -12,6 +12,8 @@ require "rspec/expectations"
 require "capybara/cucumber"
 require_relative 'test_helper'
 
+include AllureCucumber::DSL
+
 AllureCucumber.configure do |c|
    c.output_dir = "output/allure"
 end

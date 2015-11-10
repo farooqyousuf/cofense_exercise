@@ -1,8 +1,6 @@
 # NOTE: order matters here, hooks defined last will be ran first
 
 #Actions performed before each scenario
-include AllureCucumber::DSL
-
 After do |scenario|
   if scenario.failed?
 
