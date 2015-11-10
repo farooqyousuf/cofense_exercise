@@ -11,22 +11,21 @@ end
 Given(/^UA \- I apply the "([^"]*)" discount$/) do |type|
   case type
   when "Troop ID"
-   button = "Troop ID"
+    button = "Troop"
   when "First Responder"
-   button = "First Responders"
+    button = "Responder"
   end
 
   find("a[data-target='#military']").click
 
   idme_window = window_opened_by do
-     find(".idme-btn-primary-lg-Troop").first(:xpath,".//..").native.send_key:return #.native drops down to access the selenium webdriver API methods
-
+    find(".idme-btn-primary-lg-" + button)
+    .first(:xpath, ".//..").native.send_key :return # .native drops down to access the selenium webdriver API methods
   end
 
   within_window idme_window do
-   sign_in_with_idme
+    sign_in_with_idme
   end
-
 end
 
 Given(/^UA \- I verify the "([^"]*)" discount has been applied$/) do |type|
@@ -35,6 +34,6 @@ Given(/^UA \- I verify the "([^"]*)" discount has been applied$/) do |type|
     confirmation = "Promo Code Military/First Responder 15% Off Has Been Applied."
   end
 
-  expect(find('.ua-prompt-removable').text).to eq(confirmation)
-  find('.ua-prompt-removable').visible?
+  expect(find(".ua-prompt-removable").text).to eq(confirmation)
+  find(".ua-prompt-removable").visible?
 end
