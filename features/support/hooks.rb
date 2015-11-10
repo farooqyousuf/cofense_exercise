@@ -1,6 +1,8 @@
 # NOTE: order matters here, hooks defined last will be ran first
 
 #Actions performed before each scenario
+include AllureCucumber::DSL
+
 After do |scenario|
   if scenario.failed?
 
@@ -12,9 +14,7 @@ After do |scenario|
     # save the file locally
     page.save_screenshot("./output/#{file}")
 
-    if AllureCucumber::FeatureTracker.tracker
-      # attaches failed test screenshot to Allure reports
-      attach_file(file, File.open("./output/#{file}"))
-    end
+    # This should attach screenshots to the Allure reports, but it's not working currently...
+    attach_file(file, File.open("./output/#{file}"))
   end
 end
