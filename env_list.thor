@@ -17,4 +17,14 @@ class Set < Thor
     copy_environment("firefox_osx_production")
   end
   
+  desc "ios_local", "Use iOS locally on Production"
+  def ios_local
+    copy_environment("ios_local")
+  end
+  
+  desc "ios_saucelabs", "Use iOS on Sauce Labs on Production"
+  def ios_saucelabs
+    copy_environment("ios_saucelabs")
+  end
+  
 end
