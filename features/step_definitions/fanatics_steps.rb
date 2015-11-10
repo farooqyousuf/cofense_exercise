@@ -15,7 +15,7 @@ Given(/^I add an item to the cart \("([^"]*)"\)$/) do |brand|
   find("#addToCart").click
 end
 
-Given(/^I apply the Troop ID discount \("([^"]*)"\)$/) do
+Given(/^I apply the Troop ID discount \("([^"]*)"\)$/) do |brand|
   click_link "militaryAndFirstResponderHeaderTitle"
   new_window = window_opened_by { find(".desktopIdMeMilitaryBtn").click }
 
