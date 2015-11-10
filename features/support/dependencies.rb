@@ -11,6 +11,7 @@ require "rspec/expectations"
 require "capybara/cucumber"
 require_relative 'test_helper'
 
+include Capybara::DSL
 include AllureCucumber::DSL
 
 AllureCucumber.configure do |c|

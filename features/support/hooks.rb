@@ -9,7 +9,7 @@ After do |scenario|
     Dir.mkdir("./output/screenshots") unless Dir.exists?("./output/screenshots")
 
     # save the file locally
-    @browser.screenshot.save("./output/screenshots/#{file}")
+    page.save_screenshot("./output/screenshots/#{file}")
 
     if AllureCucumber::FeatureTracker.tracker
       # attaches failed test screenshot to Allure reports
