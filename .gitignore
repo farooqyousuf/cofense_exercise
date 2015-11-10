@@ -19,3 +19,4 @@ target/*
 test_report.html
 /*.html
 /screenshots
+manual_helper.rb
