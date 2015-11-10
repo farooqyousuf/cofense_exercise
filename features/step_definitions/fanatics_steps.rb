@@ -8,10 +8,11 @@ Given(/^I add an item to the cart \("([^"]*)"\)$/) do |brand|
   end
 
   visit url
-  fanatics_lightbox(brand)
+  if page.has_link?("lightboxSaleCloseLink") || page.has_link?("lightboxSaleCloseLinkMM")
+    fanatics_lightbox(brand)
+  end
   click_link('Choose Size S')
   find('#addToCart').click
-
 end
 
 Given(/^I apply the Troop ID discount \("([^"]*)"\)$/) do |brand|
