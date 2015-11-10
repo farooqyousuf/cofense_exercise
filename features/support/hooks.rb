@@ -3,6 +3,7 @@
 #Actions performed before each scenario
 After do |scenario|
   if scenario.failed?
+
     file = "FAILED_#{scenario.name.gsub(" ","_").gsub(/[^0-9A-Za-z_]/, "")}.png"
 
     # create directory for images
