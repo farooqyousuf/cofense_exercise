@@ -1,20 +1,21 @@
 Given(/^I add an item to the cart \("([^"]*)"\)$/) do |brand|
   case brand
-    when "FAN"
-      url = FigNewton.partners.fanatics
-    when "NFL"
-      url = FigNewton.partners.nfl_shop
+  when "FAN"
+    url = FigNewton.partners.fanatics
+  when "NFL"
+    url = FigNewton.partners.nfl_shop
   end
 
   visit url
-  fanatics_lightbox(brand)
-  click_link('Choose Size S')
-  find('#addToCart').click
-
+  if page.has_link?("lightboxSaleCloseLink") || page.has_link?("lightboxSaleCloseLinkMM")
+    fanatics_lightbox(brand)
+  end
+  click_link "Choose Size S"
+  find("#addToCart").click
 end
 
 Given(/^I apply the Troop ID discount \("([^"]*)"\)$/) do |brand|
-  click_link("militaryAndFirstResponderHeaderTitle")
+  click_link "militaryAndFirstResponderHeaderTitle"
   new_window = window_opened_by { find(".desktopIdMeMilitaryBtn").click }
 
   within_window new_window do
@@ -25,7 +26,7 @@ end
 Given(/^I verify the Troop ID discount has been applied \("([^"]*)"\)$/) do |brand|
   case brand
   when "FAN"
-    #need something unique to fanatics
+    # need something unique to fanatics
   when "NFL"
     expect(find(".ui-alert-body").text).to eql("A discount of 15% and free shipping was successfully applied to your order.")
   end
@@ -33,5 +34,4 @@ Given(/^I verify the Troop ID discount has been applied \("([^"]*)"\)$/) do |bra
   Capybara.ignore_hidden_elements = false
   expect(find("#desktopIdStatus").text).to eq("Status Verified")
   Capybara.ignore_hidden_elements = true
-
 end

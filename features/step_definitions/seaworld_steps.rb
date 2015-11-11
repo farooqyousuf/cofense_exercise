@@ -8,7 +8,7 @@ Given(/^I log in with my ID\.me military account$/) do
   end
 
   within_window idme_window do
-   sign_in_with_idme
+    sign_in_with_idme
   end
 end
 
