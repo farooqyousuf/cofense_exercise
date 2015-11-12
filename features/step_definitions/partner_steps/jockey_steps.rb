@@ -19,5 +19,5 @@ Given(/^JO \- I apply the Troop ID discount$/) do
 end
 
 Given(/^JO \- I verify the Troop ID discount has been applied$/) do
-  expect(page).to have_content("Military members receive 20% off with ID.me")
+  expect(page).to have_content("Military members receive 10% off with ID.me")
 end
