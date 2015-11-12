@@ -23,9 +23,11 @@ module HelperMethods
   def fanatics_lightbox(brand)
     case brand
     when "FAN"
-      click_link("lightboxSaleCloseLink")
+      click_link "lightboxSaleCloseLink"
     when "NFL"
-      click_link("lightboxSaleCloseLinkMM")
+      click_link "lightboxSaleCloseLinkMM"
+    when "fansedge"
+      click_link "lightboxSaleCloseLink"
     else fail("No Lightbox!")
     end
   end
