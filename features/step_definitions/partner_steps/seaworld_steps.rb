@@ -13,6 +13,6 @@ Given(/^I log in with my ID\.me military account$/) do
 end
 
 Given(/^I verify access to discounted tickets$/) do
-  expect(page).to have_content("Military Ticket Offers")
-  expect(page).to have_content("Thank you for your service. Please see all offers available for you below.")
+  page.has_text? "Military Ticket Offers"
+  page.has_text? "Thank you for your service. Please see all offers available for you below."
 end
