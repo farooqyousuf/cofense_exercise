@@ -1,6 +1,9 @@
 Given(/^FE \- I add an item to the cart$/) do
   visit FigNewton.partners.fansedge
-  click_link("Choose Size S")
+  if page.has_link?("lightboxSaleCloseLink")
+    fanatics_lightbox("fansedge")
+  end
+  click_link "Choose Size S"
   find("#addToCart").click
   first(:link, "Checkout").click
 end
