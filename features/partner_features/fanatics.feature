@@ -1,4 +1,4 @@
-@fanatics @partners
+@fanatics @partners @fan
 Feature: Test the ID.me Fanatics Partner Integration
 
   @troop_id @windows @saucegit

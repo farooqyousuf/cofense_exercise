@@ -7,6 +7,9 @@ Given(/^I add an item to the cart \("([^"]*)"\)$/) do |brand|
   end
 
   visit url
+  if brand == "FAN"
+    visit "http://www.fanatics.com/NFL_New_England_Patriots_Mens/Mens_Nike_Tom_Brady_Navy_Blue_Silver_New_England_Patriots_Game_Jersey"
+  end
   if page.has_link?("lightboxSaleCloseLink") || page.has_link?("lightboxSaleCloseLinkMM")
     fanatics_lightbox(brand)
   end
