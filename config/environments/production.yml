@@ -1,9 +1,10 @@
 sauce_labs:
   username: farooq
   access_key: a2280004-36fd-4a44-ae1a-209696270d5e
-  
+
 partners:
   user:     tony.chung+test@id.me
   password: Password123
   fanatics: http://www.fanatics.com/NFL_New_England_Patriots_Jerseys/Tom_Brady_New_England_Patriots_Nike_Game_Jersey_-_Navy_Blue_Silver
   nfl_shop: https://www.nflshop.com/catalog/product/Mens_Washington_Redskins_Ryan_Kerrigan_Nike_Burgundy_Game_Jersey
+  fansedge: http://www.fansedge.com/New_England_Patriots_Merchandise/Nike_Tom_Brady_New_England_Patriots_Navy_Blue_Silver_Game_Jersey
