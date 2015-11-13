@@ -5,7 +5,9 @@ Given(/^FE \- I add an item to the cart$/) do
   end
   click_link "Choose Size S"
   find("#addToCart").click
-  first(:link, "Checkout").click
+  within(".mbBottomButtonsContainer") do
+    click_link "checkout"
+  end
 end
 
 Given(/^FE \- I apply the Troop ID discount$/) do
