@@ -4,7 +4,11 @@ Given(/^JO \- I add an item to the cart$/) do
   first("#ProductColors a").click
   first("#ProductSizes a").click
   find("#AddToBagPD").click
-  find("#CheckOutButtonPD").click
+  if find("#TopNavCheckOutButton").visible?
+    find("#TopNavCheckOutButton").click
+  else
+    find("#CheckOutButtonPD").click
+  end
   first("a", :text => "CHECKOUT").click
 end
 
@@ -19,5 +23,5 @@ Given(/^JO \- I apply the Troop ID discount$/) do
 end
 
 Given(/^JO \- I verify the Troop ID discount has been applied$/) do
-  expect(page).to have_content("Military members receive 10% off with ID.me")
+  page.has_text? "Military members receive 10% off with ID.me"
 end
