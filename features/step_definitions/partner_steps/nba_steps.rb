@@ -18,5 +18,6 @@ Given(/^NBA \- I apply the Troop ID discount$/) do
 end
 
 Given(/^NBA \- I verify the Troop ID discount has been applied$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  page.has_text? "Status Verified"
+  page.has_text? "A discount of 15% was successfully applied to your order."
 end
