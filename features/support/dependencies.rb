@@ -9,6 +9,7 @@ require "data_magic"
 require "fig_newton"
 require "rspec/expectations"
 require "capybara/cucumber"
+require "site_prism"
 require_relative "test_helper"
 
 include AllureCucumber::DSL
