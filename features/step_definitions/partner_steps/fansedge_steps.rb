@@ -20,5 +20,5 @@ Given(/^FE \- I apply the Troop ID discount$/) do
 end
 
 Given(/^FE \- I verify the Troop ID discount has been applied$/) do
-  expect(find("#desktopIdStatus").text).to eq("Status Verified")
+  page.has_text? "Status Verified"
 end
