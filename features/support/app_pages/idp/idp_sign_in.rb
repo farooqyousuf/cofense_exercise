@@ -1,12 +1,7 @@
 class IDPSignIn < IDmeBase
-	include Capybara::DSL
-
+	
 	def initialize
 		super("https://idp-staging.idmeinc.net/sessions/new")
-	end
-
-	def visit
-		super(URL)
 	end
 
 	def sign_in(email)
