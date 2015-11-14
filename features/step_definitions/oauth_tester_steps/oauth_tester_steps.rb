@@ -1,16 +1,10 @@
 Given(/^I visit the OAuth Tester$/) do
-	@oauth = OAuthTester.new
-	@oauth.load
+	@oauth_tester = OAuthTester.new
+	@oauth_tester.visit
 end
 
 Given(/^I select the "([^"]*)" policy$/) do |policy|
-	binding.pry
-	@oauth.oauth_integration_button.click
-	@oauth.organization_dropdown.select("ID.me")
-	@oauth.consumer_dropdown.select("ID.me Staging")
-	@oauth.policy_dropdown.select("Marketplace")
-	binding.pry
-	@oauth.authenticate_button.click
+	@oauth_tester.create_test_env("ID.me", "ID.me Staging", policy) 
 end
 
 Given(/^I logout of the OAuth Tester$/) do

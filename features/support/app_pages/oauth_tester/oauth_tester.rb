@@ -1,16 +1,24 @@
-class OAuthTester < SitePrism::Page
-	set_url "https://oauth-tester-staging.idmeinc.net/"
+class OAuthTester < IDmeBase
+	def initialize
+		super("https://oauth-tester-staging.idmeinc.net/oauths/new")
+	end
 
-	#OAuth Tester Main Homepage
-	element :oauth_integration_button, "button[text='OAuth Integration']"
-	element :direct_api_button, "link[text='Direct API']"
+	def create_test_env(org, consumer, policy) 
+		select(org, :from => 'organization')
+		select(consumer, :from => 'consumer')
+		select(policy, :from => 'policy')
+		click_button("Authenticate")
+	end
 
-	#OAuth Integration
-	element :organization_dropdown, "select[name='organization']"
-	element :consumer_dropdown, "select[name='consumer']"
-	element :policy_dropdown, "select[name='policy']"
-	element :provider_dropdown, "select[name='provider']"
+	def json_verification_css
+		'div.json.verification'
+	end
 
-	element :authenticate_button, "link[name='commit']"
+	def verification_status
+		has_css?(json_verification_css, :text => "\"verified\": true")
+	end
 
+	def affiliated_as(group)
+		has_css?(json_verification_css, :text => "\"affiliation\": \"#{group}\"")
+	end
 end
