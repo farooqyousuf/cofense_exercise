@@ -15,7 +15,6 @@ Given(/^SH \- I apply the Troop ID discount$/) do
 end
 
 Given(/^SH \- I verify the Troop ID discount has been applied$/) do
-  
   page.has_text? "A discount of 10% was successfully applied to your order."
   page.has_text? "Status Verified"
 end
