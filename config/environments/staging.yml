@@ -2,3 +2,4 @@ oauth_tester:
  general_password: Password123
  weak_password: Password1
  unverified: farooq+noverifications@id.me
+ nonexistent: fake_email@id.me

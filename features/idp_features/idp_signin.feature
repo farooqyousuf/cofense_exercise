@@ -17,8 +17,8 @@ Feature: User sign in with an existing account
     * I should see the red alert box error message "The email or password you entered is incorrect. Please try again."
   
   @oauth_tester_neg
-  Scenario: Login with invalid email
-    * I login with a "invalid" email
+  Scenario: Login with nonexistent email
+    * I login as a "nonexistent email" user
     * I should see the red alert box error message "The email or password you entered is incorrect. Please try again."
 
   # TODO: add scenarios for invalid password and invalid email cases
