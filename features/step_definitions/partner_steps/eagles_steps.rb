@@ -1,5 +1,5 @@
 Given(/^SH \- I add an item to the cart$/) do
-  visit "http://store.philadelphiaeagles.com/Philadelphia_Eagles_Mens_Jerseys/Mens_Philadelphia_Eagles_Brian_Dawkins_Nike_Midnight_Green_Game_Jersey"
+  visit FigNewton.partners.eagles
   click_link "Choose Size S"
   find("#addToCart").click
 end
