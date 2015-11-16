@@ -13,12 +13,16 @@ Given(/^I should be successfully verified(?: as "(.*)")?$/) do |group|
   expect(@oauth_tester.affiliated_as(group)).to eq(true) if group
 end
 
-Given(/^I click on the not member link$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+Given(/^I click on the Join Now link$/) do
+  @idp_signin = IDPSignIn.new
+  @idp_signin.join_now
 end
 
 Given(/^I sign up as a new user$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+ @idp_sign_up = IDPSignUp.new
+ @idp_sign_up.sign_up
+ #@idp_signin_up.sign_up_button
+ binding.pry
 end
 
 Given(/^I login with a "([^"]*)" password$/) do |arg1|

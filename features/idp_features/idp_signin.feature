@@ -1,4 +1,4 @@
-@regression @idp @oauth @ios
+@regression @idp @oauth_tester @ios
 Feature: User sign in with an existing account
 
   Background:
@@ -11,7 +11,7 @@ Feature: User sign in with an existing account
     * I should be successfully verified
 
   Scenario: Login with invalid password
-    * I click on the not member link
+    * I click on the Join Now link
     * I sign up as a new user
     * I logout of the OAuth Tester
     * I visit the OAuth Tester
