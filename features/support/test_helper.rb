@@ -24,6 +24,8 @@ module HelperMethods
     case brand
     when "FAN"
       click_link "lightboxSaleCloseLink"
+    when "NBA"
+      click_link "lightboxSaleCloseLink"
     when "NFL"
       click_link "lightboxSaleCloseLinkMM"
     when "fansedge"
