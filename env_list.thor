@@ -6,7 +6,27 @@ class Set < Thor
       run("cp features/support/environments/env.rb.#{new_environment} features/support/env.rb")
     end
   end
-  
+ 
+  desc "android_saucelabs", "Use Android on Sauce Labs on Production"
+  def android_saucelabs
+    copy_environment("android_saucelabs")
+  end
+
+  desc "ie_windows", "Use Internet Explorer on Windows on Sauce Labs on Production"
+  def ie_windows
+    copy_environment("ie_windows")
+  end
+
+  desc "firefox_windows", "Use Firefox on Windows on Sauce Labs on Production"
+  def firefox_windows
+    copy_environment("firefox_windows")
+  end
+
+  desc "chrome_windows", "Use Chrome on Windows on Sauce Labs on Production"
+  def chrome_windows
+    copy_environment("chrome_windows")
+  end
+
   desc "firefox_osx_staging", "Use Firefox on OSX on Staging"
   def firefox_osx_staging
     copy_environment("firefox_osx_staging")
