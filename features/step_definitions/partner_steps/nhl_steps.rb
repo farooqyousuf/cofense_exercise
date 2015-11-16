@@ -1,5 +1,5 @@
 Given(/^NHL \- I add a item to the cart$/) do
-  visit "http://shop.nhl.com/Boston_Bruins_Jerseys/Mens_Boston_Bruins_Reebok_Black_2016_Winter_Classic_Premier_Jersey"
+  visit FigNewton.partners.nhl_shop
   click_link "Choose Size S"
   find("#addToCart").click
 end
