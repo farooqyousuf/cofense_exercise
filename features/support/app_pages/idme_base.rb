@@ -1,5 +1,6 @@
 class IDmeBase
 	include Capybara::DSL
+
 	attr_reader :url
 
 	def initialize(url)

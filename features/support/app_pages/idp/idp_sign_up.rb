@@ -4,9 +4,14 @@ class IDPSignUp < IDmeBase
    super("https://idp-staging.idmeinc.net/registrations/new")
  end
 
+ def user_email_css
+   'user_email'
+ end
+
  def unique_username
    @username = "test+"+"#{rand(6 ** 8)}"+"@id.me"
-   fill_in('user_email', :with => @username)
+   fill_in(user_email_css, :with => @username)
+   return @username
  end
 
  def pw_tos
@@ -24,4 +29,9 @@ class IDPSignUp < IDmeBase
  def sign_up_button
    click_button("Sign up")
  end
+
+ def return_username
+   return @username
+ end
+
 end

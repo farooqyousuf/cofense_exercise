@@ -1,12 +1,12 @@
 Given(/^I visit the OAuth Tester$/) do
-	@oauth_tester = OAuthTester.new
-	@oauth_tester.visit
+  @oauth_tester = OAuthTester.new
+  @oauth_tester.visit
 end
 
 Given(/^I select the "([^"]*)" policy$/) do |policy|
-	@oauth_tester.create_test_env("ID.me", "ID.me Staging", policy) 
+  @oauth_tester.create_test_env("ID.me", "ID.me Staging", policy) 
 end
 
 Given(/^I logout of the OAuth Tester$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  click_link("Logout »")
 end
