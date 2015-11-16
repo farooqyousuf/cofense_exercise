@@ -1,6 +1,6 @@
 Given(/^JO \- I add an item to the cart$/) do
   visit "http://www.jockey.com/catalog?department=men&category=t-shirts#/"
-  find("a",:text =>"Jockey® Classic Crew Neck - 6 Pack").click
+  find("a", :text => "Jockey® Classic Crew Neck - 6 Pack").click
   first("#ProductColors a").click
   first("#ProductSizes a").click
   find("#AddToBagPD").click

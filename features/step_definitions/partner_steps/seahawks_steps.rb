@@ -1,5 +1,5 @@
 Given(/^SH \- I add an item to the cart$/) do
-  visit 'http://proshop.seahawks.com/Seattle_Seahawks_Mens_Jerseys/Mens_Seattle_Seahawks_Russell_Wilson_Nike_College_Navy_Game_Jersey'
+  visit "http://proshop.seahawks.com/Seattle_Seahawks_Mens_Jerseys/Mens_Seattle_Seahawks_Russell_Wilson_Nike_College_Navy_Game_Jersey"
   click_link "Choose Size S"
   find("#addToCart").click
   find("#addToCart").click
