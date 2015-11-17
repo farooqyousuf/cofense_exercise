@@ -33,4 +33,8 @@ module HelperMethods
     else fail("No Lightbox!")
     end
   end
+
+  def red_alert_box_message
+    page.find(".alert-error").text
+  end
 end
