@@ -1,17 +1,15 @@
 Given(/^I login as a "([^"]*)" user$/) do |user_type|
  
   user = case user_type
-  		 when "Unverified" 
-		   then FigNewton.oauth_tester.unverified
-		 when "nonexistent email"
-		   then FigNewton.oauth_tester.nonexistent
-	     else fail ("User not found!")
-		 end
+         when "Unverified"              then FigNewton.oauth_tester.unverified
+		     when "nonexistent email"       then FigNewton.oauth_tester.nonexistent
+	       else fail ("User not found!")
+		     end
 
- password = FigNewton.oauth_tester.general_password
+  password = FigNewton.oauth_tester.general_password
 
- @idp_signin = IDPSignIn.new
- @idp_signin.sign_in(user, password)
+  @idp_signin = IDPSignIn.new
+  @idp_signin.sign_in(user, password)
 end
 
 Given(/^I should be successfully verified(?: as "(.*)")?$/) do |group|
@@ -20,7 +18,7 @@ Given(/^I should be successfully verified(?: as "(.*)")?$/) do |group|
 end
 
 Given(/^I login with an invalid password$/) do
-	@idp_signin.invalid_pw(@username)
+  @idp_signin.invalid_pw(@username)
 end
 
 Given(/^I create the test conditions for Login with invalid password$/) do
@@ -29,8 +27,4 @@ Given(/^I create the test conditions for Login with invalid password$/) do
   step 'I logout of the OAuth Tester'
   step 'I visit the OAuth Tester'
   step 'I select the "Marketplace" policy'
-end
-
-Given(/^I login with a "([^"]*)" email$/) do |arg1|
-  pending # Write code here that turns the phrase above into concrete actions
 end
