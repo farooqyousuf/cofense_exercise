@@ -5,7 +5,7 @@ class IDPSignUp < IDmeBase
  end
  
  def user_email_css
-   'user_email'
+   "user_email"
  end
  
  def unique_username
@@ -14,9 +14,9 @@ class IDPSignUp < IDmeBase
  end
  
  def pw_tos
-   fill_in('user_password', :with => FigNewton.oauth_tester.general_password)
-   fill_in('user_password_confirmation', :with => FigNewton.oauth_tester.general_password)
-   first('.field.checkbox').native.find_element(:id, "user_accepts_terms").click
+   fill_in("user_password", :with => FigNewton.oauth_tester.general_password)
+   fill_in("user_password_confirmation", :with => FigNewton.oauth_tester.general_password)
+   first(".field.checkbox").native.find_element(:id, "user_accepts_terms").click
  end
  
  def sign_up
