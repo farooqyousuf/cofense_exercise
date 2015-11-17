@@ -1,5 +1,9 @@
 class IDPSignUp < IDmeBase
 
+ #Readable attributes
+ #Allows the username attribute to be read/accessed outside of this class
+ attr_reader :username
+
  def initialize
    super("https://idp-staging.idmeinc.net/registrations/new")
  end
@@ -27,10 +31,6 @@ class IDPSignUp < IDmeBase
  
  def sign_up_button
    click_button("Sign up")
- end
- 
- def return_username
-   return @username
  end
  
 end

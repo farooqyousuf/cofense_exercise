@@ -6,6 +6,6 @@ end
 Given(/^I sign up as a new user$/) do
   @idp_sign_up = IDPSignUp.new
   @idp_sign_up.sign_up
-  @username = @idp_sign_up.return_username
+  @username = @idp_sign_up.username
   @idp_sign_up.sign_up_button
 end
