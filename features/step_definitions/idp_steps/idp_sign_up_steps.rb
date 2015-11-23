@@ -1,6 +1,6 @@
-Given(/^I click on the Join Now link$/) do
+Given(/^I click on the Sign Up link$/) do
   @idp_signin = IDPSignIn.new
-  @idp_signin.join_now
+  @idp_signin.sign_up
 end
 
 Given(/^I sign up as a new user$/) do

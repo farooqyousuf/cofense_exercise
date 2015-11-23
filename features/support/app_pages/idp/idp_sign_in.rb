@@ -22,7 +22,7 @@ class IDPSignIn < IDmeBase
    click_sign_in
  end
   
- def join_now
+ def sign_up
    click_link("Sign up")
    return IDPSignUp.new
  end
