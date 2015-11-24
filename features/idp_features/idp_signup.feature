@@ -11,12 +11,12 @@ Feature: User account creation
     * I sign up as a new user
     * I should be successfully verified
 
-  # Scenario: Attempt to sign up with only email
-  #   * I fill in the Sign Up textfield
-  #   * I click on Sign Up
-  #   * I should see an error on the "Password" field
-  #   * I should see an error on the "Confirm password" field
-  #   * I should see an error on the "I accept the ID.me terms of use and privacy policy" field
+  Scenario: Attempt to sign up with only email
+    * I fill in the Sign Up textfield
+    * I click on Sign Up
+    * I should see an error on the "Password" field
+    * I should see an error on the "Confirm password" field
+    * I should see an error on the "I accept the ID.me terms of use and privacy policy" field
 
   # Scenario: Attempt to sign up with email and one password field set
   #   * I fill in the Sign Up textfield

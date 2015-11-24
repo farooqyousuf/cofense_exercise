@@ -24,7 +24,7 @@ class IDPSignIn < IDmeBase
   
  def sign_up
    click_link("Sign up")
-   return IDPSignUp.new
+   # return IDPSignUp.new
  end
   
  def invalid_pw(email)
