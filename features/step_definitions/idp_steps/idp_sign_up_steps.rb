@@ -18,3 +18,7 @@ end
 Given(/^I click on Sign Up$/) do
   @idp_sign_up.sign_up_button
 end
+
+Given(/^I fill in the Password textfield$/) do
+  @idp_sign_up.fill_in_password
+end
