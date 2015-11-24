@@ -22,7 +22,7 @@ Given(/^I login with an invalid password$/) do
 end
 
 Given(/^I create the test conditions for Login with invalid password$/) do
-  step 'I click on the Join Now link'
+  step 'I click on the Sign Up link'
   step 'I sign up as a new user'
   step 'I logout of the OAuth Tester'
   step 'I visit the OAuth Tester'

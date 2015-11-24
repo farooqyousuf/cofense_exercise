@@ -5,10 +5,6 @@ Before do
   page.driver.browser.manage.window.maximize
 end
 
-After("~@oauth_tester") do
-  sign_out_of_idme
-end
-
-After("@oauth_tester", "~oauth_tester_neg") do
+After("@oauth_tester_logout") do
   click_link("Logout »")
 end

@@ -37,4 +37,9 @@ module HelperMethods
   def red_alert_box_message
     page.find(".alert-error").text
   end
+
+  def error_label_css
+    ".error"
+  end
+
 end
