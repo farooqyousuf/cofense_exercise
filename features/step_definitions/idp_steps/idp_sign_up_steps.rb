@@ -22,3 +22,7 @@ end
 Given(/^I fill in the Password textfield$/) do
   @idp_sign_up.fill_in_password
 end
+
+Given(/^I fill in the Password Confirmation textfield$/) do
+  @idp_sign_up.fill_in_password_confirmation
+end

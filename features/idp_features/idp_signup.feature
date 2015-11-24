@@ -1,4 +1,4 @@
-@regression @idp @oauth
+@regression @idp
 Feature: User account creation
 
   Background:
@@ -6,7 +6,7 @@ Feature: User account creation
     * I select the "Marketplace" policy
     * I click on the Sign Up link
   
-  @smoke  
+  @smoke @oauth_tester_logout
   Scenario: Successful sign up
     * I sign up as a new user
     * I should be successfully verified
@@ -25,9 +25,9 @@ Feature: User account creation
     * I should see an error on the "Confirm password" field
     * I should see an error on the "I accept the ID.me terms of use and privacy policy" field
 
-  # Scenario: Attempt to sign up with email, password, password confirmation
-  #   * I fill in the Sign Up textfield
-  #   * I fill in the Password textfield
-  #   * I fill in the Password Confirmation textfield
-  #   * I click on Sign Up
-  #   * I should see an error on the "I accept the ID.me terms of use and privacy policy" field
+  Scenario: Attempt to sign up with email, password, password confirmation
+    * I fill in the Sign Up textfield
+    * I fill in the Password textfield
+    * I fill in the Password Confirmation textfield
+    * I click on Sign Up
+    * I should see an error on the "I accept the ID.me terms of use and privacy policy" field
