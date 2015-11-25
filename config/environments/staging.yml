@@ -3,3 +3,6 @@ oauth_tester:
  weak_password: Password1
  unverified: farooq+noverifications@id.me
  nonexistent: fake_email@id.me
+ valid: farooq@id.me
+ valid1: farooq+1@id.me
+ valid2: farooq+2@id.me
