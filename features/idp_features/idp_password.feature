@@ -14,16 +14,16 @@ Feature: User password reset
     * I should be successfully verified
 
   Scenario: Password Reset code can be used no more than 5 times
-    * I send the forgot password code to a "valid2" email account
+    * I send the forgot password code to a "valid1" email account
     * I enter a wrong reset password code 6 times to invalidate the reset password code
     * I should see the red alert box error message "You have entered an invalid code too many times. Please request a new code and try again."  
-    * I request a new reset password code and unlock my account "valid2"
+    * I request a new reset password code and unlock my account "valid1"
     * I should see the green alert box error message "Your password has been successfully reset."
       
-  # Scenario: Entering invalid code for password reset 
-  #   * I send the forgot password code to a "valid3" email account
-  #   * I enter a wrong reset password code 1 times
-  #   * I should see the red alert box error message "The code you entered is invalid. Please make sure you enter the correct code and try again."
+  Scenario: Entering invalid code for password reset 
+    * I send the forgot password code to a "valid2" email account
+    * I enter a wrong reset password code 1 times
+    * I should see the red alert box error message "The code you entered is invalid. Please make sure you enter the correct code and try again."
   
   # Scenario: Entering non-existent account email for password reset
   #   * I send the forgot password code to a "nonexistent" email account
