@@ -25,3 +25,24 @@ Given(/^I verify I can login with the newly reset password$/) do
   step 'I login as a "valid" user'
 end
 
+Given(/^I enter a wrong reset password code (\d+) times?/) do |number|
+  @idp_pw_reset.wrong_reset_pw_code
+  (number.to_i).times do
+    @idp_pw_reset.fill_in_password
+    @idp_pw_reset.fill_in_password_confirm
+    @idp_pw_reset.click_submit
+  end
+end
+
+Given(/^I request a new reset password code and unlock my account "([^"]*)"$/) do |user_type|
+  @idp_pw_reset.resend_code_link
+  user_email = case user_type
+               when "valid"    then FigNewton.oauth_tester.valid
+               when "valid1"   then FigNewton.oauth_tester.valid1
+               when "valid2"   then FigNewton.oauth_tester.valid2
+               else  user_email = @username
+               end
+  @idp_pw_reset.fill_in_email(user_email)
+  @idp_pw_reset.continue_button
+  @idp_pw_reset.reset_password
+end
