@@ -9,7 +9,7 @@ Given(/^I send the forgot password code to a "([^"]*)" email account$/) do |type
                   when "valid"                         then FigNewton.oauth_tester.valid
                   when "valid1"                        then FigNewton.oauth_tester.valid1
                   when "valid2"                        then FigNewton.oauth_tester.valid2
-                  when "nonexistent"                   then FigNewton.nonexistent
+                  when "nonexistent"                   then FigNewton.oauth_tester.nonexistent
                   else fail("No email address found")
                   end
   @idp_pw_reset.fill_in_email(email_address)

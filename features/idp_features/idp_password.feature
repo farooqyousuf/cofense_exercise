@@ -25,9 +25,9 @@ Feature: User password reset
     * I enter a wrong reset password code 1 times
     * I should see the red alert box error message "The code you entered is invalid. Please make sure you enter the correct code and try again."
   
-  # Scenario: Entering non-existent account email for password reset
-  #   * I send the forgot password code to a "nonexistent" email account
-  #   * I should see an error on the "Could not find an account with the given email address" field
+  Scenario: Entering non-existent account email for password reset
+    * I send the forgot password code to a "nonexistent" email account
+    * I should see an error on the "Could not find an account with the given email address" field
     
     
   # TODO: add scenarios for password entropy when resetting password
