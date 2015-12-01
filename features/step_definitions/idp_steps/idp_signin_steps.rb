@@ -3,6 +3,7 @@ Given(/^I login as a "([^"]*)" user$/) do |user_type|
   user = case user_type
          when "Unverified"              then FigNewton.oauth_tester.unverified
 		     when "nonexistent email"       then FigNewton.oauth_tester.nonexistent
+         when "valid"                   then FigNewton.oauth_tester.valid
 	       else fail ("User not found!")
 		     end
 
