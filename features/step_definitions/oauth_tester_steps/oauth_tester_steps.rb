@@ -8,5 +8,5 @@ Given(/^I select the "([^"]*)" policy$/) do |policy|
 end
 
 Given(/^I logout of the OAuth Tester$/) do
-  click_link("Logout »")
+  @oauth_tester.logout
 end

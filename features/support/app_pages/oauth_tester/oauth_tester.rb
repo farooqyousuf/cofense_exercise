@@ -24,4 +24,8 @@ class OAuthTester < IDmeBase
    has_css?(json_verification_css, :text => "\"affiliation\": \"#{group}\"")
  end
 
+ def logout
+   click_link("Logout »")
+ end
+
 end
