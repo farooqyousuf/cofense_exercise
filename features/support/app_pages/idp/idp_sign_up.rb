@@ -41,4 +41,8 @@ class IDPSignUp < IDmeBase
    fill_in("user_password_confirmation", :with => FigNewton.oauth_tester.general_password)
  end
  
+ def forgot_password_link
+   click_link("Forgot your password?")
+ end
+
 end
