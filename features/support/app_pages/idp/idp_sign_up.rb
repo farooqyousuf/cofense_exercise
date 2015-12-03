@@ -18,7 +18,7 @@ class IDPSignUp < IDmeBase
  end
  
  def pw_tos
-   fill_in_password
+   fill_in_password(FigNewton.oauth_tester.general_password)
    fill_in_password_confirmation
    first(".field.checkbox").native.find_element(:id, "user_accepts_terms").click
  end
@@ -31,10 +31,6 @@ class IDPSignUp < IDmeBase
  
  def sign_up_button
    click_button("Sign up")
- end
-
- def fill_in_password
-   fill_in("user_password", :with => FigNewton.oauth_tester.general_password)
  end
 
  def fill_in_password_confirmation

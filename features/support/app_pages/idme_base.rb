@@ -17,11 +17,15 @@ attr_reader :url
    super(url)
  end
 
+def code
+  find("strong")["data-code"]
+end
+
 def fill_in_email(email)
   fill_in("user_email", :with => email)
 end
  
-def fill_in_pw(password)
+def fill_in_password(password)
   fill_in("user_password", :with => password)
 end
 

@@ -12,10 +12,6 @@ class IDPPasswordReset < IDmeBase
    click_button("Continue")
  end
 
- def code
-   find("strong")["data-code"]
- end
-
  def reset_password
    fill_in_reset_pw_code
    fill_in_password
