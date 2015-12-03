@@ -5,23 +5,27 @@ def initialize
 end
 
 def lockout_account(username)
-   fill_in_email(username)
+   fill_in_email_by_id(username)
 
    11.times do |variable|
       fill_in_password(FigNewton.oauth_tester.weak_password)
       click_sign_in
    end
  end
+ 
+ def click_continue_button
+   click_button("Continue")
+ end
 
- def unlock_link
-   click_link("here")
+ def click_submit_button
+   click_button("Submit")
  end
 
  def unlock_account(username)
-   fill_in("email", :with => username)
-   click_button("Continue")
-   fill_in("code", :with => code)
-   click_button("Submit")
+   fill_in_email_by_name(username)
+   click_continue_button
+   fill_in_code(code_css)
+   click_submit_button
  end
 
 end

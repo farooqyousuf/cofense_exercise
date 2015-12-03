@@ -13,7 +13,7 @@ class IDPSignUp < IDmeBase
  end
  
  def unique_username
-   @username = "test+"+"#{rand(6 ** 8)}"+"@id.me"
+   @username = "capybara+"+"#{rand(6 ** 8)}"+"@id.me"
    fill_in(user_email_css, :with => @username)
  end
  
@@ -29,7 +29,7 @@ class IDPSignUp < IDmeBase
    puts "username: #{@username}"
  end
  
- def sign_up_button
+ def click_sign_up_button
    click_button("Sign up")
  end
 

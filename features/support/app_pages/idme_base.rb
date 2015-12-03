@@ -17,13 +17,21 @@ attr_reader :url
    super(url)
  end
 
-def code
+def code_css
   find("strong")["data-code"]
 end
 
-def fill_in_email(email)
+ def fill_in_code(code)
+   fill_in("code", :with => code)
+ end
+
+def fill_in_email_by_id(email)
   fill_in("user_email", :with => email)
 end
+
+ def fill_in_email_by_name(email)
+   fill_in("email", :with => email)
+ end
  
 def fill_in_password(password)
   fill_in("user_password", :with => password)
@@ -33,4 +41,8 @@ def click_sign_in
   click_button("Sign in")
 end
  
+def unlock_link
+   click_link("here")
+end
+
 end

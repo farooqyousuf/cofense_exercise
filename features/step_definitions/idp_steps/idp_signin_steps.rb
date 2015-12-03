@@ -30,10 +30,3 @@ Given(/^I create the test conditions for Login with invalid password$/) do
   step 'I visit the OAuth Tester'
   step 'I select the "Marketplace" policy'
 end
-
-Given(/^I click on the Sign up link$/) do
-  @idp_signin = IDPSignIn.new
-  @idp_signin.sign_up
-end
-
-
