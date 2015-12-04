@@ -15,6 +15,6 @@ Given(/^NFLMobile \- I apply the Troop ID discount$/) do
 end
 
 Given(/^NFLMobile \- I verify the Troop ID discount has been applied$/) do
-  page.assert_text "Status Verified"
-  page.assert_text "A discount of 15% and free shipping was successfully applied to your order."
+  page.assert_text("Status Verified", :wait => 300)
+  page.assert_text("A discount of 15% and free shipping was successfully applied to your order.",:wait => 300)
 end
