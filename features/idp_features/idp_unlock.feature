@@ -32,4 +32,10 @@ Feature: User account lock and unlock
   Scenario: Unlock code can be used no more than 5 times
     * I lockout my account
     * I enter a wrong unlock code 6 times to invalidate the unlock code
-    * I should see the red alert box error message "You have entered an invalid code too many times. Please request a new code and try again."   
+    * I should see the red alert box error message "You have entered an invalid code too many times. Please request a new code and try again."
+
+  Scenario: Entering invalid code for unlock code
+    * I lockout my account
+    * I enter a wrong unlock code 1 time
+    * I should see the red alert box error message "The code you entered is invalid. Please make sure you enter the correct code and try again."
+    
