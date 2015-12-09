@@ -4,20 +4,12 @@ class IDPPasswordReset < IDmeBase
    super("https://idp-staging.idmeinc.net/passwords/new")
  end
 
- # def continue_button
- #   click_button("Continue")
- # end
-
  def reset_password
    fill_in_code(code_css)
    fill_in_password
    fill_in_password_confirm
    click_submit_button
  end
-
- # def click_submit_button
- # 	click_button("Submit")
- # end
 
  def fill_in_password
    fill_in("password", :with => FigNewton.oauth_tester.general_password) 
