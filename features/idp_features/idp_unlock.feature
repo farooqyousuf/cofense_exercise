@@ -39,3 +39,8 @@ Feature: User account lock and unlock
     * I enter a wrong unlock code 1 time
     * I should see the red alert box error message "The code you entered is invalid. Please make sure you enter the correct code and try again."
     
+  Scenario: Entering non-existent account email for unlock
+    * I lockout my account
+    * I click on the unlock account link
+    * I enter a non-existant account email to attempt to unlock my account
+    * I should see the red alert box error message "Could not find an account with the given email address"
