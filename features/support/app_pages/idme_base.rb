@@ -45,4 +45,12 @@ def unlock_link
    click_link("here")
 end
 
+ def click_continue_button
+   click_button("Continue")
+ end
+
+ def click_submit_button
+   click_button("Submit")
+ end
+
 end

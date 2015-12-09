@@ -13,7 +13,7 @@ Given(/^I send the forgot password code to a "([^"]*)" email account$/) do |type
                   else fail("No email address found")
                   end
   @idp_pw_reset.fill_in_email_by_name(email_address)
-  @idp_pw_reset.continue_button
+  @idp_pw_reset.click_continue_button
 end
 
 Given(/^I reset my password$/) do
@@ -30,7 +30,7 @@ Given(/^I enter a wrong reset password code (\d+) times?/) do |number|
   (number.to_i).times do
     @idp_pw_reset.fill_in_password
     @idp_pw_reset.fill_in_password_confirm
-    @idp_pw_reset.click_submit
+    @idp_pw_reset.click_submit_button
   end
 end
 
@@ -43,6 +43,6 @@ Given(/^I request a new reset password code and unlock my account "([^"]*)"$/) d
                else  user_email = @username
                end
   @idp_pw_reset.fill_in_email_by_name(user_email)
-  @idp_pw_reset.continue_button
+  @idp_pw_reset.click_continue_button
   @idp_pw_reset.reset_password
 end
