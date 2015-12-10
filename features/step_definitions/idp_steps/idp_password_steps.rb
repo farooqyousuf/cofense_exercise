@@ -12,8 +12,8 @@ Given(/^I send the forgot password code to a "([^"]*)" email account$/) do |type
                   when "nonexistent"                   then FigNewton.oauth_tester.nonexistent
                   else fail("No email address found")
                   end
-  @idp_pw_reset.fill_in_email(email_address)
-  @idp_pw_reset.continue_button
+  @idp_pw_reset.fill_in_email_by_name(email_address)
+  @idp_pw_reset.click_continue_button
 end
 
 Given(/^I reset my password$/) do
@@ -26,11 +26,11 @@ Given(/^I verify I can login with the newly reset password$/) do
 end
 
 Given(/^I enter a wrong reset password code (\d+) times?/) do |number|
-  @idp_pw_reset.wrong_reset_pw_code
+  @idp_pw_reset.fill_in_code(FigNewton.oauth_tester.wrong_unlock_code)
   (number.to_i).times do
     @idp_pw_reset.fill_in_password
     @idp_pw_reset.fill_in_password_confirm
-    @idp_pw_reset.click_submit
+    @idp_pw_reset.click_submit_button
   end
 end
 
@@ -42,7 +42,7 @@ Given(/^I request a new reset password code and unlock my account "([^"]*)"$/) d
                when "valid2"   then FigNewton.oauth_tester.valid2
                else  user_email = @username
                end
-  @idp_pw_reset.fill_in_email(user_email)
-  @idp_pw_reset.continue_button
+  @idp_pw_reset.fill_in_email_by_name(user_email)
+  @idp_pw_reset.click_continue_button
   @idp_pw_reset.reset_password
 end
