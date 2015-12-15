@@ -1,4 +1,4 @@
-class IDmeBase
+class IDPBase
 
 include Capybara::DSL
 
@@ -6,8 +6,8 @@ include Capybara::DSL
  #Allows the url attribute to be read/accessed outside of this class
  attr_reader :url
 
-  #Constructs IDmeBase's data structure
-  #Every IDmeBase object will contain a @url variable
+  #Constructs IDPBase's data structure
+  #Every IDPBase object will contain a @url variable
   def initialize(url)
     @url = url
   end
@@ -56,11 +56,5 @@ include Capybara::DSL
   def click_submit_button
     click_button("Submit")
   end
-
-  #############
-  #IVA Methods#
-  #############
-
-  
 
 end

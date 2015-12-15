@@ -2,10 +2,11 @@
 Feature: Government verification using .gov email
 
   Background:
-    * I visit the OAuth Tool
+    * I visit the OAuth Tester
     * I select the "Marketplace Government" policy
-    * I click on the not member link
+    * I click on the Sign Up link
     * I sign up as a new user
+    * I pry
     * I should be on the government verification screen
 
   # TODO: break this out into the initial email step, admin step, code step
