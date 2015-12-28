@@ -1,8 +1,10 @@
 require_relative "dependencies"
 
-FigNewton.load('staging.yml')
+FigNewton.load 'staging.yml'
+DataMagic.load 'data.yml'
 
 Capybara.default_driver = :selenium
+Capybara.default_selector = :css
 Capybara.default_max_wait_time = 10
 Capybara.wait_on_first_by_default = true
 
