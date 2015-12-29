@@ -1,4 +1,4 @@
-class IVABase
+class IVABase < IDmeBase
 
 include Capybara::DSL
 include DataMagic
@@ -11,30 +11,20 @@ include DataMagic
     # click the dropdown
     find("[data-option='#{container}'] #{element} > a.select2-choice").click
 
-    # wait until options are rendered
-    #page.should have_css( "#select2-drop .select2-results .select2-result-selectable")
-
     # pick an option
-    binding.pry
     find("#select2-drop .select2-results").find("div", :text => /^#{value}$/i).click
   end
 
-  # def search_option(container, element, value)
-  #   # click the dropdown
-  #   @browser.link(:css, "[data-option='#{container}'] #{element} > a.select2-choice").click
+  def search_option(container, element, value)
+    # click the dropdown
+    find("[data-option='#{container}'] #{element} > a.select2-choice").click
 
-  #   # wait until options and filter are visible
-  #   @browser.wait_until { @browser.text_field(:css, "#select2-drop .select2-search .select2-input").visible? }
+    #set the seach value
+    fill_in('s2id_autogen2_search', :with => value)
 
-  #   # set the seach value
-  #   @browser.text_field(:css, "#select2-drop .select2-search .select2-input").value = value
-
-  #   # wait until search results are visible
-  #   @browser.wait_until { @browser.li(:css, "#select2-drop .select2-results .select2-result-selectable").visible? }
-
-  #   # pick a result
-  #   @browser.ul(:css, "#select2-drop .select2-results").div(:text => /^#{value}$/i).click
-  # end
+    #pick a result
+    find('#select2-drop .select2-results').find("div", :text => /^#{value}$/i).click
+  end
 
   # def select_filter(id, value)
   #   # click the dropdown

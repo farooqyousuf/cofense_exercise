@@ -4,6 +4,7 @@ Given(/^I should be on the government verification screen$/) do
 end
 
 Given(/^I submit the government verification form$/) do
+  @admin = Admin.new
   @iva_govt.verify(true)
 end
 
