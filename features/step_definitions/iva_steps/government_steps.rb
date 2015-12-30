@@ -4,12 +4,30 @@ Given(/^I should be on the government verification screen$/) do
 end
 
 Given(/^I submit the government verification form$/) do
-  @admin = Admin.new
   @iva_govt.verify(true)
 end
 
 Given(/^I submit the government verification code$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  @admin = AdminTool.new	
+  @admin.login_in_new_window
+
+  # code = nil
+
+  # visit_page(IDmeAdminVerificationAttempts) do |page|
+  #   page.select_option("Government Email")
+  #   page.wait_for_ajax
+  #   page.open_newest
+
+  #   # get the verification code
+  #   code = page.get_code
+  # end
+
+  # on(IDmeAdmin).logout_in_new_window
+
+  # # fill in verification code
+  # on(IVAGovernmentConfirm).verify(code)
+  # # on(IVAGovernmentConfirm).wait_for_ajax
+
 end
 
 Given(/^I should see the verification success page$/) do

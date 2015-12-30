@@ -37,9 +37,9 @@ class IVAGovernment < IVABase
     fill_in("email_confirmation", :with => @email)
   end
 
-  def verification_code
-    fill_in("verification_code", :with => )
-  end
+  # def verification_code
+  #   fill_in("verification_code", :with => )
+  # end
 
   def container_attribute
     'government-email'
