@@ -7,3 +7,7 @@ oauth_tester:
  valid1: farooq+1@id.me
  valid2: farooq+2@id.me
  wrong_unlock_code: 123456
+
+authority:
+ userid: farooq@id.me
+ password: idmeadmin

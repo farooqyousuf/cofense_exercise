@@ -7,18 +7,17 @@ class AdminTool < IDmeBase
   end
 
   def login_in_new_window
-  	binding.pry
-    self.create_new_window
+  	self.create_new_window
     self.use_last_browser_created
     self.visit
-    #login
+    authority = Authority.new
+    authority.login
   end
 
   def logout_in_new_window
-    self.logout
-    self.close_last_browser_created
-    self.use_parent_window
+    click_link("Logout")
+    self.close_current_browser
+    self.use_last_browser_created
   end
-
 
 end
