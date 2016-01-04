@@ -11,7 +11,7 @@ class AdminTool < IDmeBase
     self.use_last_browser_created
     self.visit
     authority = Authority.new
-    authority.login
+    authority.auth_login
   end
 
   def logout_in_new_window
