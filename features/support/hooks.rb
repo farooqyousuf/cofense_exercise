@@ -8,3 +8,7 @@ end
 After("@oauth_tester_logout") do
   click_link("Logout »")
 end
+
+After("@delete_user") do 
+
+end

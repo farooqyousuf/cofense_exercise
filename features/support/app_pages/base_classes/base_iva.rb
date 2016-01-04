@@ -37,6 +37,9 @@ include DataMagic
   #   @browser.ul(:css, "#select2-drop .select2-results").div(:text => /^#{value}$/i).click
   # end
 
+  def click_here_to_finish
+    click_link("Click here to finish")
+  end
   
 
 end

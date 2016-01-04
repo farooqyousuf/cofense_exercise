@@ -35,7 +35,7 @@ Given(/^I should see the verification success page$/) do
 end
 
 Given(/^I complete the verification process$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  @iva_govt.click_here_to_finish
 end
 
 Given(/^I submit the empty government form$/) do

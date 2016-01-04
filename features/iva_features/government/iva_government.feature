@@ -9,11 +9,10 @@ Feature: Government verification using .gov email
     * I should be on the government verification screen
 
   # TODO: break this out into the initial email step, admin step, code step
-  @smoke
+  @smoke @delete_user
   Scenario: Successful verification with a Government email
     * I submit the government verification form
     * I submit the government verification code
-    * I should see the verification success page
     * I complete the verification process
     * I should be successfully verified
     
