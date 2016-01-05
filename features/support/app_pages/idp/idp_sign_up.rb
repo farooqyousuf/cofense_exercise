@@ -1,4 +1,4 @@
-class IDPSignUp < IDmeBase
+class IDPSignUp < IDPBase
 
  #Readable attributes
  #Allows the username attribute to be read/accessed outside of this class

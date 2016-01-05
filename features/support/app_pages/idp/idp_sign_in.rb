@@ -1,4 +1,4 @@
-class IDPSignIn < IDmeBase
+class IDPSignIn < IDPBase
 
  def initialize
    super("https://idp-staging.idmeinc.net/sessions/new")

@@ -1,4 +1,4 @@
-class OAuthTester < IDmeBase
+class OAuthTester < IDPBase
 
  def initialize
    super("https://oauth-tester-staging.idmeinc.net/oauths/new")

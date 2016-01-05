@@ -1,4 +1,4 @@
-class IDPPasswordReset < IDmeBase
+class IDPPasswordReset < IDPBase
 
  def initialize
    super("https://idp-staging.idmeinc.net/passwords/new")
