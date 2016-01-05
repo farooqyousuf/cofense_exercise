@@ -39,9 +39,11 @@ Given(/^I complete the verification process$/) do
 end
 
 Given(/^I submit the empty government form$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  @iva_govt = IVAGovernment.new
+  @iva_govt.verify(false)
 end
-
+  
 Given(/^I should see error messages on required fields for "([^"]*)"$/) do |arg1|
+  binding.pry
   pending # Write code here that turns the phrase above into concrete actions
 end
