@@ -60,4 +60,8 @@ class IVAGovernment < IDmeBase
     select_option(container_attribute, ".state-select", value)
   end
 
+  def required_fields
+    %w(first_name last_name birth_date city county email email_confirmation)
+  end
+
 end
