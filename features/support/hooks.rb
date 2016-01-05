@@ -9,10 +9,14 @@ After("@oauth_tester_logout") do
   click_link("Logout »")
 end
 
-After("@delete_user") do 
+After("@delete_user") do
   @admin_tool.login_in_new_window
   admin_users = AdminUsers.new
   admin_users.visit
   admin_users.delete_user
   @admin_tool.logout_in_new_window
+end
+
+After("@marketplace_cash_back") do
+ click_link("Sign Out")
 end
