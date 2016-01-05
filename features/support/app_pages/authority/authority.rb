@@ -2,17 +2,6 @@ class Authority
 
 include Capybara::DSL
 
-	# def login
-	#   click_link("Sign in with ID.me Authority")
-	#   	  binding.pry
-	# 	  if find(:css, "#user_email").visible? == true 
-	# 	    fill_in(:user_email, :with=> FigNewton.authority.userid) 
-	# 		fill_in(:user_password, :with=> FigNewton.authority.password)
-	# 	  end  	  	
-	#   click_button("Log in")
-	#   click_button("Approve") if find_button("Approve").visible?
-	# end
-
 	def auth_login
  	  if (page.text.include? "Sign in with ID.me Authority") || (page.text.include? "You need to sign in or sign up before continuing.")
 	    auth_click_sign_in
