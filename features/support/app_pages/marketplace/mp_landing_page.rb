@@ -11,4 +11,8 @@ class MarketplaceLandingPage < IDmeBase
     fill_in_password(password)
     click_sign_in
   end
+
+  def sign_out
+    click_link("Sign Out")
+  end
 end

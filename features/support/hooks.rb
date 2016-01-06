@@ -18,5 +18,5 @@ After("@delete_user") do
 end
 
 After("@marketplace_cash_back") do
- click_link("Sign Out")
+ @marketplace_shop.sign_out
 end
