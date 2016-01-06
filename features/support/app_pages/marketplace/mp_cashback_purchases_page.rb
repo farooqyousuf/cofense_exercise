@@ -1,4 +1,5 @@
-class CashBack_PurchasesPage < MarketplaceBase
+class CashBack_PurchasesPage < IDmeBase
+  include IDPBase
 
   def initialize
     super(FigNewton.marketplace.cashback_purchases_homepage)

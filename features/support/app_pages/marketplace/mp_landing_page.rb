@@ -1,4 +1,6 @@
-class MarketplaceLandingPage < MarketplaceBase
+class MarketplaceLandingPage < IDmeBase
+
+  include IDPBase
 
   def initialize
     super(FigNewton.marketplace.shop_homepage)

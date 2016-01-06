@@ -1,5 +1,6 @@
-class MarketplaceCashBackPage < MarketplaceBase
+class MarketplaceCashBackPage < IDmeBase
     require "rest-client"
+    include IDPBase
 
     def initialize
       super(FigNewton.mp_users.mp_homepage)
