@@ -11,12 +11,13 @@ Given(/^I should see an error on the "(.*)" field$/) do |expected_text|
   expect(all(error_label_css).map(&:text)).to include(expected_text)
 end
   
-Given(/^I should see error messages on required fields for "([^"]*)"$/) do |arg1|
+Given(/^I should see error messages on required fields for "([^"]*)"$/) do |method|
   var = case method
   		  when "Government"		then IVAGovernment
   		  else fail("Verification option not found")
   	    end
 
+    binding.pry
 	  var.required_fields.each do |field|
 	  expect(var.error_on(field)).to be_truthy
 	end
