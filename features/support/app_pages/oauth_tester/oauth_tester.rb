@@ -1,17 +1,19 @@
-class OAuthTester < IDPBase
+class OAuthTester < IDmeBase
+
+  include IDPBase
 
  def initialize
    super("https://oauth-tester-staging.idmeinc.net/oauths/new")
  end
- 
- def create_test_env(org, consumer, policy) 
+
+ def create_test_env(org, consumer, policy)
    select(org, :from => "organization")
    select(consumer, :from => "consumer")
    select(policy, :from => "policy")
    click_button("Authenticate")
    return IDPSignIn.new
  end
- 
+
  def json_verification_css
    "div.json.verification"
  end

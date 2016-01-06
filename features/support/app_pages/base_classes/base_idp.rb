@@ -1,4 +1,4 @@
-class IDPBase < IDmeBase
+module IDPBase
 
 include Capybara::DSL
 
@@ -21,7 +21,7 @@ include Capybara::DSL
   def fill_in_email_by_name(email)
     fill_in("email", :with => email)
   end
- 
+
   def fill_in_password(password)
     fill_in("user_password", :with => password)
   end
@@ -29,7 +29,7 @@ include Capybara::DSL
   def click_sign_in
     click_button("Sign in")
   end
- 
+
   def unlock_link
     click_link("here")
   end

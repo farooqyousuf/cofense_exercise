@@ -1,4 +1,6 @@
-class IDPUnlock < IDPBase
+class IDPUnlock < IDmeBase
+
+  include IDPBase
 
 def initialize
   super("https://idp-staging.idmeinc.net/unlocks/new")

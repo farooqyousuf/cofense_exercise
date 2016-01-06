@@ -1,4 +1,6 @@
-class IDPPasswordReset < IDPBase
+class IDPPasswordReset < IDmeBase
+
+  include IDPBase
 
  def initialize
    super("https://idp-staging.idmeinc.net/passwords/new")
@@ -12,7 +14,7 @@ class IDPPasswordReset < IDPBase
  end
 
  def fill_in_password
-   fill_in("password", :with => FigNewton.oauth_tester.general_password) 
+   fill_in("password", :with => FigNewton.oauth_tester.general_password)
  end
 
  def fill_in_password_confirm
