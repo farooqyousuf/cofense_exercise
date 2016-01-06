@@ -1,8 +1,10 @@
+require_relative '../base_classes/error_messages.rb'
+
 class IVAGovernment < IDmeBase
 
   include IVABase
-
   include Capybara::DSL
+  include ErrorMessages
 
   def header_css
     ".form-title"
