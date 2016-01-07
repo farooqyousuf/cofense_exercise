@@ -22,7 +22,8 @@ Given(/^I Connect My Facebook Account$/) do
   @marketplace_shop.social_network_login("facebook")
 end
 
-Given(/^I should see successful flash message with "([^"]*)"$/) do |arg1|
+Given(/^I should see successful flash message with "([^"]*)"$/) do |success_text|
+  expect(@marketplace_shop.success_flash_msg).to include(success_text)
   pending # Write code here that turns the phrase above into concrete actions
 end
 

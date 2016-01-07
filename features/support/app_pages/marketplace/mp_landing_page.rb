@@ -74,4 +74,8 @@ class MarketplaceLandingPage < IDmeBase
       #some sort of implicit wait along with the return item
     end
   end
+
+  def success_flash_msg
+    #should be the div "container" with the success flash msg 
+  end
 end
