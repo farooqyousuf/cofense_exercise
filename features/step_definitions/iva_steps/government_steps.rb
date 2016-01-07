@@ -7,10 +7,6 @@ Given(/^I submit the government verification form$/) do
   @iva_govt.verify(true)
 end
 
-Given(/^I should see the verification success page$/) do
-  pending # Write code here that turns the phrase above into concrete actions
-end
-
 Given(/^I complete the verification process$/) do
   @iva_govt.click_here_to_finish
 end

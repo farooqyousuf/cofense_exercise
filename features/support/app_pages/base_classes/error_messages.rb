@@ -1,9 +1,8 @@
 module ErrorMessages
 
   def error_on(field)
-  	#convert this to Capybara
-  	all('.error')[field.to_i]['class'] == "error"
-    #content_element.label_element(:for => field.to_s).attribute("class") == "error"
+  	value = (all('.error')[field]['class']) 
+    ["error", "select2-container government-affiliation error", "select2-offscreen error", "select2-container state-select error"].include?(value)
   end
 
 end
