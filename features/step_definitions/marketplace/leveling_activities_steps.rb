@@ -14,7 +14,7 @@ Given(/^I get the "([^"]*)" user achievements progress$/) do |user_level|
 end
 
 Given(/^I check the Connect Your Facebook activity card$/) do
-  expect(@marketplace_shop.facebook_activity_card_exists).to be(true)
+  expect(@marketplace_shop.social_network_activity_card_exists("facebook")).to be(true)
   @marketplace_shop.check_facebook_activity_card_connected
 end
 
@@ -22,18 +22,19 @@ Given(/^I Connect My Facebook Account$/) do
   @marketplace_shop.social_network_login("facebook")
 end
 
-Given(/^I should see successful flash message with "([^"]*)"$/) do |arg1|
-  pending # Write code here that turns the phrase above into concrete actions
+Given(/^I should see successful flash message with "([^"]*)"$/) do |success_text|
+  expect(@marketplace_shop.success_flash_msg(success_text)).to be(true)
 end
 
-Given(/^I get the "([^"]*)" user achievements progress after I connected My Facebook Account$/) do |arg1|
-  pending # Write code here that turns the phrase above into concrete actions
+Given(/^I get the "([^"]*)" user achievements progress after I connected My Facebook Account$/) do |user_level|
+  case user_level
+  when "vip_uid"
+    @user_achievement_progress_post = @marketplace_shop.request_vip_achievements
+  end
+
+  expect(@user_achievement_progress_post[1]["completed"]).to be(true)
 end
 
 Given(/^I check the Connect Your Facebook activity card after I connected My Facebook Account$/) do
-  pending # Write code here that turns the phrase above into concrete actions
-end
-
-Given(/^The notifications popover list should have "([^"]*)"$/) do |arg1|
-  pending # Write code here that turns the phrase above into concrete actions
+  @marketplace_shop.check_facebook_activity_card_connected
 end
