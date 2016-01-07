@@ -1,4 +1,6 @@
-class IVAGovernment < IVABase
+class IVAGovernment < IDmeBase
+
+  include IVABase
 
   include Capybara::DSL
 

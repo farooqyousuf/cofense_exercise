@@ -1,4 +1,4 @@
-class IVABase < IDmeBase
+module IVABase
 
 include Capybara::DSL
 include DataMagic
@@ -40,6 +40,6 @@ include DataMagic
   def click_here_to_finish
     click_link("Click here to finish")
   end
-  
+
 
 end

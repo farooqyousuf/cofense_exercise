@@ -1,4 +1,6 @@
-class IDPSignUp < IDPBase
+class IDPSignUp < IDmeBase
+
+  include IDPBase
 
  #Readable attributes
  #Allows the username attribute to be read/accessed outside of this class
@@ -7,28 +9,28 @@ class IDPSignUp < IDPBase
  def initialize
    super("https://idp-staging.idmeinc.net/registrations/new")
  end
- 
+
  def user_email_css
    "user_email"
  end
- 
+
  def unique_username
    @username = "capybara+"+"#{rand(6 ** 8)}"+"@id.me"
    fill_in(user_email_css, :with => @username)
  end
- 
+
  def pw_tos
    fill_in_password(FigNewton.oauth_tester.general_password)
    fill_in_password_confirmation
    first(".field.checkbox").native.find_element(:id, "user_accepts_terms").click
  end
- 
+
  def sign_up
    unique_username
    pw_tos
    puts "username: #{@username}"
  end
- 
+
  def click_sign_up_button
    click_button("Sign up")
  end
@@ -36,7 +38,7 @@ class IDPSignUp < IDPBase
  def fill_in_password_confirmation
    fill_in("user_password_confirmation", :with => FigNewton.oauth_tester.general_password)
  end
- 
+
  def forgot_password_link
    click_link("Forgot your password?")
  end
