@@ -35,14 +35,19 @@ class MarketplaceLandingPage < IDmeBase
 
   def check_facebook_activity_card_connected
     if @vip_user_acheivement_response[1]["completed"] == true
-      expect(self.facebook_activity_card.text).to eql("COMPLETED Connect your Facebook account")
+      expect(facebook_activity_card.text).to eql("COMPLETED Connect your Facebook account")
     else
-      expect(self.facebook_activity_card.text).to eql("EXTEND VIP Connect your Facebook account")
-      self.facebook_activity_card.click_link
-      #means to wait and confirm till modal is available , also need to double check that string expectation is correct
-      expect(self.facebook_connect_modal.text).to eql("Link your Facebook account to ID.me to get 10 points and extend your VIP status for 1 month. Connecting to Facebook also helps ID.me show you personalized offers.")
-      expect(self.facebook_connect_modal).to be(true) #maybe get rid off? redundent to fact there is text there in the check?
+      expect(facebook_activity_card.text).to eql("EXTEND VIP Connect your Facebook account")
+      click_link "Connect your Facebook account"
+      #INTERMITTENT FAILURE ISSUE => sometimes the modal window will not load and instead just refresh the page
+      expect(facebook_connect_modal_body).to eql("Link your Facebook account to ID.me to get 10 points and extend your VIP status for 1 month. Connecting to Facebook also helps ID.me show you personalized offers.")
+      expect(facebook_connect_modal.visible?).to be(true) #maybe get rid off? redundent to fact there is text there in the check?
     end
+  end
+
+  def facebook_connect_modal_body
+    binding.pry
+    first(".modal-block").text
   end
 
   def facebook_connect_modal
@@ -55,5 +60,18 @@ class MarketplaceLandingPage < IDmeBase
 
   def facebook_activity_card_exists
     page.has_selector?(:link, :href => "/cash-back/activities/facebook-connected")
+  end
+
+  def social_network_login(name)
+    case name
+    when "facebook"
+      facebook_connect_modal.click
+      sleep 2
+      binding.pry
+      facebook = FaceBookLoginPage.new
+      binding.pry
+      facebook.sign_in
+      #some sort of implicit wait along with the return item
+    end
   end
 end

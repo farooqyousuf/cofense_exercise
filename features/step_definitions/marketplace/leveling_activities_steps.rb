@@ -19,7 +19,7 @@ Given(/^I check the Connect Your Facebook activity card$/) do
 end
 
 Given(/^I Connect My Facebook Account$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  @marketplace_shop.social_network_login("facebook")
 end
 
 Given(/^I should see successful flash message with "([^"]*)"$/) do |arg1|
