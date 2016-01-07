@@ -18,7 +18,7 @@ Given(/^I should see error messages on required fields for "([^"]*)"$/) do |meth
   	    end
     #page = Object.const_get(var).new # converts a string text into a class name
     page = (var).new
-    binding.pry
+    #binding.pry
 	  page.required_fields.each do |field|
 	  expect(page.error_on(field)).to be_truthy
 	end

@@ -63,7 +63,8 @@ class IVAGovernment < IDmeBase
   end
 
   def required_fields
-    %w(first_name last_name birth_date city county email email_confirmation)
+    #%w(first_name last_name birth_date city county email email_confirmation)
+    %w(0 1 2 5 6 9 10)
   end
 
 end
