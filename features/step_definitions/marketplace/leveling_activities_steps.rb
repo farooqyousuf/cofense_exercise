@@ -14,7 +14,8 @@ Given(/^I get the "([^"]*)" user achievements progress$/) do |user_level|
 end
 
 Given(/^I check the Connect Your Facebook activity card$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(@marketplace_shop.facebook_activity_card_exists).to be(true)
+  @marketplace_shop.check_facebook_activity_card_connected
 end
 
 Given(/^I Connect My Facebook Account$/) do
