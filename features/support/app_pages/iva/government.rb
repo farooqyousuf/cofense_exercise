@@ -1,8 +1,10 @@
+require_relative '../base_classes/error_messages.rb'
+
 class IVAGovernment < IDmeBase
 
   include IVABase
-
   include Capybara::DSL
+  include ErrorMessages
 
   def header_css
     ".form-title"
@@ -58,6 +60,10 @@ class IVAGovernment < IDmeBase
 
   def populate_state(value)
     select_option(container_attribute, ".state-select", value)
+  end
+
+  def required_fields
+    [0, 1, 2, 3, 5, 6, 7, 9, 10]
   end
 
 end

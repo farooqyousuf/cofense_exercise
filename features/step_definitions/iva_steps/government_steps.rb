@@ -7,8 +7,17 @@ Given(/^I submit the government verification form$/) do
   @iva_govt.verify(true)
 end
 
+Given(/^I complete the verification process$/) do
+  @iva_govt.click_here_to_finish
+end
+
+Given(/^I submit the empty government form$/) do
+  @iva_govt = IVAGovernment.new
+  @iva_govt.verify(false)
+end
+
 Given(/^I submit the government verification code$/) do
-  @admin_tool = AdminTool.new	
+  @admin_tool = AdminTool.new 
   @admin_tool.login_in_new_window
 
   step 'I visit "AdminVerificationAttempts"'
@@ -28,20 +37,4 @@ Given(/^I submit the government verification code$/) do
   # fill in verification code
   @admin_verif_attempts.use_last_browser_created
   @iva_govt.fill_in_verification_code(code)
-end
-
-Given(/^I should see the verification success page$/) do
-  pending # Write code here that turns the phrase above into concrete actions
-end
-
-Given(/^I complete the verification process$/) do
-  @iva_govt.click_here_to_finish
-end
-
-Given(/^I submit the empty government form$/) do
-  pending # Write code here that turns the phrase above into concrete actions
-end
-
-Given(/^I should see error messages on required fields for "([^"]*)"$/) do |arg1|
-  pending # Write code here that turns the phrase above into concrete actions
 end
