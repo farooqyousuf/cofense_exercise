@@ -16,7 +16,7 @@ end
 #facebook
 
 Given(/^I check the Connect Your Facebook activity card$/) do
-  expect(@marketplace_shop.facebook_activity_card_exists).to be(true)
+  expect(@marketplace_shop.social_network_activity_card_exists("facebook")).to be(true)
   @marketplace_shop.check_facebook_activity_card_connected
 end
 
@@ -25,7 +25,6 @@ Given(/^I Connect My Facebook Account$/) do
 end
 
 Given(/^I should see successful flash message with "([^"]*)"$/) do |success_text|
-  expect(@marketplace_shop.success_flash_msg).to include(success_text)
   pending # Write code here that turns the phrase above into concrete actions
 end
 
@@ -44,7 +43,7 @@ end
 #twitter
 
 Given(/^I check the Connect Your Twitter Account activity card$/) do
-  expect(@marketplace_shop.twitter_activity_card_exists).to be(true)
+  expect(@marketplace_shop.social_network_activity_card_exists("twitter")).to be(true)
   @marketplace_shop.check_twitter_activity_card_connected
 end
 
