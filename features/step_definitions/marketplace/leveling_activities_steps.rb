@@ -13,6 +13,8 @@ Given(/^I get the "([^"]*)" user achievements progress$/) do |user_level|
   end
 end
 
+#facebook
+
 Given(/^I check the Connect Your Facebook activity card$/) do
   expect(@marketplace_shop.facebook_activity_card_exists).to be(true)
   @marketplace_shop.check_facebook_activity_card_connected
@@ -36,5 +38,24 @@ Given(/^I check the Connect Your Facebook activity card after I connected My Fac
 end
 
 Given(/^The notifications popover list should have "([^"]*)"$/) do |arg1|
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+#twitter
+
+Given(/^I check the Connect Your Twitter Account activity card$/) do
+  expect(@marketplace_shop.twitter_activity_card_exists).to be(true)
+  @marketplace_shop.check_twitter_activity_card_connected
+end
+
+Given(/^I Connect My Twitter Account$/) do
+  @marketplace_shop.social_network_login("twitter")
+end
+
+Given(/^I get the "([^"]*)" user achievements progress after I connected My Twitter Account$/) do |arg1|
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+Given(/^I check the Connect Your Twitter Account activity card after I connected My Twitter Account$/) do
   pending # Write code here that turns the phrase above into concrete actions
 end
