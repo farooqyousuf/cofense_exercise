@@ -71,11 +71,12 @@ class MarketplaceLandingPage < IDmeBase
       facebook = FaceBookLoginPage.new
       binding.pry
       facebook.sign_in
+      #ISSUE : current there is a issue working where the facebook setting is not setup for the endpoint
       #some sort of implicit wait along with the return item
     end
   end
 
   def success_flash_msg
-    #should be the div "container" with the success flash msg 
+    #should be the div "container" with the success flash msg
   end
 end
