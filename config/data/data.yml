@@ -7,3 +7,20 @@ government:
   state: Virginia
   affiliation: Federal
   agency: CIA
+
+military_dd214:
+  first_name: Benny
+  last_name: Washington
+  member_first_name: Joe
+  member_last_name: Smith
+  ssn: 111111111
+  ssn_confirm: 111111111
+  dob: 01/01/1943
+  birth_place: USA
+  enter_date: 01/01/2000
+  release_date: 01/01/2003
+  service_number: FSJA23
+  entry_location: Virginia
+  discharge_location: Maryland
+  last_unit_assignment: New York
+  signature: "image/jsignature;base30,6QZ12221111_2V88b5c444_5W5bifmmc_2J3367452_awZ9rb84Y269cinoib43_3FZ120Y13c786420Z6533_9xacm1Kg6_3D123100_9yahmsc_3I34331_fIZ577aa60Y7b93Zbhpje7_3JZ210Y2128cb533Z25745_gQZ20201_3N688b4_fW6adjikf94_3JZ1Y11133001"

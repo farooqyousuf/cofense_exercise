@@ -41,5 +41,12 @@ include DataMagic
     click_link("Click here to finish")
   end
 
+  def header_css
+    ".form-title"
+  end
 
+  def click_verify_button
+    click_button("Verify now")
+  end
+  
 end
