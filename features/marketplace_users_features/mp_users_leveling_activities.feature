@@ -18,9 +18,8 @@ Feature: Test the MP_users Leveling Activities (Client - Workflow/Action)
        * I should see successful flash message with "Facebook account connected"
        * I get the "vip_uid" user achievements progress after I connected My Facebook Account
        * I check the Connect Your Facebook activity card after I connected My Facebook Account
-       * The notifications popover list should have "Connected Facebook account"
 
-      @twitter_connect
+     @twitter_connect
      Scenario: Authorize a Social Media Account - Connect to Twitter
        * I get the "vip_uid" user achievements progress
        * I check the Connect Your Twitter Account activity card
@@ -28,4 +27,3 @@ Feature: Test the MP_users Leveling Activities (Client - Workflow/Action)
        * I should see successful flash message with "Twitter account connected"
        * I get the "vip_uid" user achievements progress after I connected My Twitter Account
        * I check the Connect Your Twitter Account activity card after I connected My Twitter Account
-       * The notifications popover list should have "Connected Twitter account"

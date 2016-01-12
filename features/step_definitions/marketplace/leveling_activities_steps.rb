@@ -53,9 +53,14 @@ Given(/^I Connect My Twitter Account$/) do
 end
 
 Given(/^I get the "([^"]*)" user achievements progress after I connected My Twitter Account$/) do |arg1|
-  pending # Write code here that turns the phrase above into concrete actions
+  case user_level
+  when "vip_uid"
+    @user_achievement_progress_post = @marketplace_shop.request_vip_achievements
+  end
+
+  expect(@user_achievement_progress_post[1]["completed"]).to be(true)
 end
 
 Given(/^I check the Connect Your Twitter Account activity card after I connected My Twitter Account$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  @marketplace_shop.check_twitter_activity_card_connected
 end

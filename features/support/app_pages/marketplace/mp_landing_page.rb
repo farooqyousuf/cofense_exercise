@@ -37,11 +37,17 @@ class MarketplaceLandingPage < IDmeBase
   def social_network_login(name)
     case name
     when "facebook"
-      facebook_connect_modal.click
+      social_network_connect_modal("facebook").click
       sleep 2
       facebook = FaceBookLoginPage.new
       facebook.sign_in
       #ISSUE : current there is a issue working where the facebook setting is not setup for the endpoint
+
+    when "twitter"
+      social_network_connect_modal("twitter").click
+      sleep 2
+      twitter = TwitterLoginPage.new
+      twitter.sign_in
     end
 
   end
@@ -52,7 +58,6 @@ class MarketplaceLandingPage < IDmeBase
 
   def social_network_modal_popup
     first(".modal-block").text
-    sleep 1
   end
 
   def social_network_activity_card(social_network)
@@ -69,13 +74,15 @@ class MarketplaceLandingPage < IDmeBase
 
   def check_twitter_activity_card_connected
     if @vip_user_acheivement_response[19]["completed"] == true
-      expect(social_network_activity_card("twitter").text).to eql("5 POINTS Connect your Twitter account")
-    else
-      expect(social_network_activity_card("twitter").text).to eql("5 POINTS Connect your Twitter account")
       binding.pry
+      expect(social_network_activity_card("twitter").text).to eql("COMPLETED Connect your Twitter account")
+    else
+      expect(social_network_activity_card("twitter").text).to eql("5 POINTS Connect your witter account")
       click_link "Connect your Twitter account"
       expect(social_network_modal_popup).to eql("Link your Twitter account to ID.me and get 5 points. Connecting to Twitter also helps ID.me show you personalized offers.")
+
       expect(social_network_connect_modal("twitter").visible?).to be(true)
+    end
   end
 
   def check_facebook_activity_card_connected
@@ -86,12 +93,9 @@ class MarketplaceLandingPage < IDmeBase
       binding.pry
       expect(social_network_activity_card("facebook").text).to eql("EXTEND VIP Connect your Facebook account")
       click_link "Connect your Facebook account"
-      #INTERMITTENT FAILURE ISSUE => sometimes the modal window will not load and instead just refresh the page
       expect(social_network_modal_popup.text).to eql("Link your Facebook account to ID.me to get 10 points and extend your VIP status for 1 month. Connecting to Facebook also helps ID.me show you personalized offers.")
       expect(social_network_connect_modal("facebook").visible?).to be(true)
-
     end
-
   end
 
 end
