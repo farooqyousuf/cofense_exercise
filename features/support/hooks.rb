@@ -10,6 +10,7 @@ After("@oauth_tester_logout") do
 end
 
 After("@delete_user") do
+  @admin_tool = AdminTool.new
   @admin_tool.login_in_new_window
   admin_users = AdminUsers.new
   admin_users.visit

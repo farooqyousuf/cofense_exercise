@@ -9,8 +9,8 @@ Feature: Military verification using DD214 request
     * I should be on the military verification screen
 
   @smoke @delete_user @oauth_tester_logout
+  #unique dob/ssn to pass verification
   Scenario: Successful verification as a Veteran
     * I verify using DD214 information for "Veteran"
-    * I should see the verification success page
     * I complete the verification process
     * I should be successfully verified as "Veteran"

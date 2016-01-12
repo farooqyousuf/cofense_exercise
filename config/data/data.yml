@@ -13,9 +13,9 @@ military_dd214:
   last_name: Washington
   member_first_name: Joe
   member_last_name: Smith
-  ssn: 111111111
-  ssn_confirm: 111111111
-  dob: 01/01/1943
+  ssn: 222222222
+  ssn_confirm: 222222222
+  dob: 02/02/1945
   birth_place: USA
   enter_date: 01/01/2000
   release_date: 01/01/2003
