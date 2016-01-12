@@ -14,4 +14,9 @@ Feature: Military verification using DD214 request
     * I verify using DD214 information for "Veteran"
     * I complete the verification process
     * I should be successfully verified as "Veteran"
-    
+  
+  @delete_user @oauth_tester_logout
+  Scenario: Successful verification as a Next of Kin Deceased Veteran
+    * I verify using DD214 information for "Next of kin deceased veteran"
+    * I complete the verification process
+    * I should be successfully verified as "Military Family"

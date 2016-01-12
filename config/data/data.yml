@@ -9,10 +9,10 @@ government:
   agency: CIA
 
 military_dd214:
-  first_name: Benny
-  last_name: Washington
-  member_first_name: Joe
-  member_last_name: Smith
+  first_name: Joe
+  last_name: Smith
+  member_first_name: Benny
+  member_last_name: Washington
   ssn: 222222222
   ssn_confirm: 222222222
   dob: 02/02/1945
