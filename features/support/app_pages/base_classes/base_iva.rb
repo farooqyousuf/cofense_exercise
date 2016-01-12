@@ -36,10 +36,13 @@ include DataMagic
   #   # pick an options
   #   @browser.ul(:css, "#select2-drop .select2-results").div(:text => /^#{value}$/i).click
   # end
-
-  def click_here_to_finish
-    click_link("Click here to finish")
+  
+  def header_css
+    ".form-title"
   end
 
-
+  def click_verify_button
+    click_button("Verify now")
+  end
+  
 end

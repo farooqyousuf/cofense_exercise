@@ -6,10 +6,6 @@ class IVAGovernment < IDmeBase
   include Capybara::DSL
   include ErrorMessages
 
-  def header_css
-    ".form-title"
-  end
-
   def verify(populate = true)
   	if populate
   		data = data_for(:government)
@@ -17,10 +13,6 @@ class IVAGovernment < IDmeBase
     end
 
     click_verify_button
-  end
-
-  def click_verify_button
-    click_button("Verify now")
   end
 
   def populate_fields(data)

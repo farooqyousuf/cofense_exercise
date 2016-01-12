@@ -7,10 +7,6 @@ Given(/^I submit the government verification form$/) do
   @iva_govt.verify(true)
 end
 
-Given(/^I complete the verification process$/) do
-  @iva_govt.click_here_to_finish
-end
-
 Given(/^I submit the empty government form$/) do
   @iva_govt = IVAGovernment.new
   @iva_govt.verify(false)
