@@ -14,3 +14,4 @@ Feature: Military verification using DD214 request
     * I verify using DD214 information for "Veteran"
     * I complete the verification process
     * I should be successfully verified as "Veteran"
+    

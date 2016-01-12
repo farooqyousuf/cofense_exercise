@@ -10,8 +10,6 @@ class DD214 < IDmeBase
     find("[data-option='dd214-request']").find(".verification-header").click
     populate_affiliation(affiliation)
 
-    #wait_until { fields_element.visible? }
-
     if populate
       populate_signature
       populate_branch
