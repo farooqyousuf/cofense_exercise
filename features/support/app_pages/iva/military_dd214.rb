@@ -19,12 +19,17 @@ class DD214 < IDmeBase
       populate_fields(data_for(:military_dd214))
     end
 
+    if affiliation == "Next of kin deceased veteran"
+      find("#first_name").set(data_for(:military_dd214).fetch("first_name"))
+      find("#last_name").set(data_for(:military_dd214).fetch("last_name"))
+    end
+
     click_verify_button
   end
 
   def populate_fields(data)
-  	find("#service_member_first_name").set(data.fetch("first_name"))
-  	find("#service_member_last_name").set(data.fetch("last_name"))
+  	find("#service_member_first_name").set(data.fetch("member_first_name"))
+  	find("#service_member_last_name").set(data.fetch("member_last_name"))
   	find("#social").set(data.fetch("ssn"))
   	find("#social_confirm").set(data.fetch("ssn_confirm"))
   	find("#birth_place").set(data.fetch("birth_place"))
