@@ -17,12 +17,12 @@ class DD214 < IDmeBase
       populate_component
       populate_checkboxes
       populate_fields(data_for(:military_dd214))
-    end
 
-    #first and last name for user
-    if ["Next of kin deceased veteran", "Legal guardian"].include?(affiliation)
-      find("#first_name").set(data_for(:military_dd214).fetch("first_name"))
-      find("#last_name").set(data_for(:military_dd214).fetch("last_name"))
+      #first and last name for user
+      if ["Next of kin deceased veteran", "Legal guardian"].include?(affiliation)
+        find("#first_name").set(data_for(:military_dd214).fetch("first_name"))
+        find("#last_name").set(data_for(:military_dd214).fetch("last_name"))
+      end
     end
 
     click_verify_button
@@ -80,6 +80,10 @@ class DD214 < IDmeBase
     release_checkbox
     liable_checkbox
     verify_checkbox
+  end
+
+  def required_fields
+    [0, 1, 2, 3, 4, 5, 6, 8, 10, 11, 12, 14, 15, 16, 17]
   end
 
 end

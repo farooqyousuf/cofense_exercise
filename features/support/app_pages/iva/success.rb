@@ -4,7 +4,7 @@ class IVASuccess < IDmeBase
   include Capybara::DSL
 
   def click_here_to_finish
-    click_link("Click here to finish")
+    click_link("Click here to continue")
   end
 
 end
