@@ -26,3 +26,18 @@ Feature: Military verification using DD214 request
     * I verify using DD214 information for "Legal guardian"
     * I complete the verification process
     * I should be successfully verified as "Military Family"
+
+ @oauth_tester_logout
+ Scenario: Successfully prompt for all required fields for Veteran
+    * I submit the empty DD214 form for "Veteran"
+    * I should see error messages on required fields for "DD214 Vet"
+
+ @oauth_tester_logout
+ Scenario: Successfully prompt for all required fields for Next of Kin Deceased Veteran
+    * I submit the empty DD214 form for "Next of kin deceased veteran"
+    * I should see error messages on required fields for "DD214 Non-Vet"    
+
+@oauth_tester_logout
+Scenario: Successfully prompt for all required fields for Legal Guardian
+    * I submit the empty DD214 form for "Legal guardian"
+    * I should see error messages on required fields for "DD214 Non-Vet"    
