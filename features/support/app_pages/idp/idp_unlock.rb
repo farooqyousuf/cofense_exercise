@@ -2,14 +2,13 @@ class IDPUnlock < IDmeBase
 
   include IDPBase
 
-def initialize
-  super("https://idp-staging.idmeinc.net/unlocks/new")
+def initialize     
+  super("#{FigNewton.idp.base_url}/unlocks/new")
 end
 
 def lockout_account(username)
-   fill_in_email_by_id(username)
-
    11.times do |variable|
+      fill_in_email_by_id(username)
       fill_in_password(FigNewton.oauth_tester.weak_password)
       click_sign_in
    end

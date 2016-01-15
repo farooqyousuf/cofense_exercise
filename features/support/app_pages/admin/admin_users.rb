@@ -7,7 +7,7 @@ include PageManagement
 include JavascriptAlerts
 
   def initialize
-    super("https://admin-staging.idmeinc.net/users")
+    super("#{FigNewton.admin.base_url}/users")
   end
 
   def open_newest
