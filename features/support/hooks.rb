@@ -9,7 +9,7 @@ After("@oauth_tester_logout") do
   if page.has_link?("Logout »")
     click_link("Logout »")
   else
-    visit('https://oauth-tester-staging.idmeinc.net/oauths/6/logout')
+    visit("https://oauth-tester-staging.idmeinc.net/oauths/6/logout")
   end
 end
 
