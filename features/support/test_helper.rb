@@ -46,4 +46,8 @@ module HelperMethods
     ".error"
   end
 
+  def red_error_below_field
+    page.find(".label-error").text
+  end
+
 end

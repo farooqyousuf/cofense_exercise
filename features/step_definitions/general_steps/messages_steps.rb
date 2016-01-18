@@ -25,3 +25,7 @@ Given(/^I should see error messages on required fields for "([^"]*)"$/) do |meth
 	end
 
 end
+
+Given(/^I should see the red error "(.*?)" below the textfield$/) do |expected_text|
+  (red_error_below_field.should eq(expected_text)).should == true
+end
