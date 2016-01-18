@@ -116,7 +116,26 @@ class MarketplaceLandingPage < IDmeBase
       expect(social_network_modal_popup).to eql("Link your LinkedIn account to ID.me and get 5 points. Connecting to LinkedIn also helps ID.me show you personalized offers.")
       expect(social_network_connect_modal("linkedin").visible?).to be(true)
     end
-
   end
 
+  def demographic_survey_activity_card_exists
+    page.has_selector?(:link, :href =>"/cash-back/activities/demographic-survey-completed")
+  end
+
+  def demographic_survey_activity_card
+    find(:link, :href => "/cash-back/activities/demographic-survey-completed")
+  end
+
+  def check_survey_activity_card_connected
+    if @vip_user_acheivement_response[0]["completed"] == true
+      expect(social_network_activity_card("demographic-survey-completed").text).to eql("COMPLETED Complete a survey")
+      return true
+    else
+      expect(demographic_survey_activity_card.text).to eql("5 POINTS Complete a survey")
+      page.execute_script "window.scrollBy(0,1500)"
+      click_link "Complete a survey"
+      sleep 1
+      expect(social_network_modal_popup).to eql("Complete a survey and get 5 points for 1 month. Completing this survey also helps ID.me show you personalized offers.")
+    end
+  end
 end
