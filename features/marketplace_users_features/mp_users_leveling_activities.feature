@@ -27,3 +27,12 @@ Feature: Test the MP_users Leveling Activities (Client - Workflow/Action)
        * I should see successful flash message with "Twitter account connected"
        * I get the "vip_uid" user achievements progress after I connected My Twitter Account
        * I check the Connect Your Twitter Account activity card after I connected My Twitter Account
+
+     @linkedin_connect
+     Scenario: Authorize a Social Media Account - Connect to LinkedIn
+       * I get the "vip_uid" user achievements progress
+       * I check the Connect Your LinkedIn Account activity card
+       * I Connect My LinkedIn Account
+       * I should see successful flash message with "LinkedIn account connected"
+       * I get the "vip_uid" user achievements progress after I connected My LinkedIn Account
+       * I check the Connect Your LinkedIn Account activity card after I connected My LinkedIn Account

@@ -43,12 +43,17 @@ class MarketplaceLandingPage < IDmeBase
       #ISSUE : current there is a issue working where the facebook setting is not setup for the endpoint, tested selectors in prod in meantime
 
     when "twitter"
-      social_network_activity_card("twitter").click
+      social_network_connect_modal("twitter").click
       sleep 2
       twitter = TwitterLoginPage.new
       twitter.sign_in
-    end
 
+    when "linkedin"
+      social_network_connect_modal("linkedin").click
+      sleep 2
+      linkedin = LinkedInLoginPage.new
+      linkedin.sign_in
+    end
   end
 
   def success_flash_msg(success_text)
@@ -78,6 +83,7 @@ class MarketplaceLandingPage < IDmeBase
       expect(social_network_activity_card("twitter").text).to eql("5 POINTS Connect your twitter account")
       page.execute_script "window.scrollBy(0,1000)"
       click_link "Connect your Twitter account"
+      sleep 1
       expect(social_network_modal_popup).to eql("Link your Twitter account to ID.me and get 5 points. Connecting to Twitter also helps ID.me show you personalized offers.")
 
       expect(social_network_connect_modal("twitter").visible?).to be(true)
@@ -92,9 +98,25 @@ class MarketplaceLandingPage < IDmeBase
       expect(social_network_activity_card("facebook").text).to eql("EXTEND VIP Connect your Facebook account")
       page.execute_script "window.scrollBy(0,500)"
       click_link "Connect your Facebook account"
+      sleep 1
       expect(social_network_modal_popup).to eql("Link your Facebook account to ID.me to get 10 points and extend your VIP status for 1 month. Connecting to Facebook also helps ID.me show you personalized offers.")
       expect(social_network_connect_modal("facebook").visible?).to be(true)
     end
+  end
+
+  def check_linkedin_activity_card_connected
+    if @vip_user_acheivement_response[6]["completed"] == true
+      expect(social_network_activity_card("linked-in").text).to eql("COMPLETED Connect your LinkedIn account")
+      return true
+    else
+      expect(social_network_activity_card("linked-in").text).to eql("5 POINTS Connect your LinkedIn account")
+      page.execute_script "window.scrollBy(0,1000)"
+      click_link "Connect your LinkedIn account"
+      sleep 1
+      expect(social_network_modal_popup).to eql("Link your LinkedIn account to ID.me and get 5 points. Connecting to LinkedIn also helps ID.me show you personalized offers.")
+      expect(social_network_connect_modal("linkedin").visible?).to be(true)
+    end
+
   end
 
 end
