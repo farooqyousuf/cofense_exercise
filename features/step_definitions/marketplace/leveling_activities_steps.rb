@@ -86,5 +86,5 @@ Given(/^I get the "([^"]*)" user achievements progress after I connected My Link
 end
 
 Given(/^I check the Connect Your LinkedIn Account activity card after I connected My LinkedIn Account$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  @marketplace_shop.check_linkedin_activity_card_connected
 end
