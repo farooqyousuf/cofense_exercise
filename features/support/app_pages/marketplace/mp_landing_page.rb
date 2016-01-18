@@ -30,7 +30,6 @@ class MarketplaceLandingPage < IDmeBase
   def request_vip_achievements
     $vip_user_acheivement_response_raw = RestClient.get "#{FigNewton.mp_users.mp_homepage}/user/#{FigNewton.mp_users.vip_uid}/achievements_progress", {:accept => :json}
     @vip_user_acheivement_response =  JSON.parse($vip_user_acheivement_response_raw)
-    binding.pry
     return @vip_user_acheivement_response
   end
 
@@ -74,10 +73,9 @@ class MarketplaceLandingPage < IDmeBase
 
   def check_twitter_activity_card_connected
     if @vip_user_acheivement_response[19]["completed"] == true
-      binding.pry
       expect(social_network_activity_card("twitter").text).to eql("COMPLETED Connect your Twitter account")
     else
-      expect(social_network_activity_card("twitter").text).to eql("5 POINTS Connect your witter account")
+      expect(social_network_activity_card("twitter").text).to eql("5 POINTS Connect your twitter account")
       click_link "Connect your Twitter account"
       expect(social_network_modal_popup).to eql("Link your Twitter account to ID.me and get 5 points. Connecting to Twitter also helps ID.me show you personalized offers.")
 
@@ -90,10 +88,10 @@ class MarketplaceLandingPage < IDmeBase
       expect(social_network_activity_card("facebook").text).to eql("COMPLETED Connect your Facebook account")
       return true
     else
-      binding.pry
       expect(social_network_activity_card("facebook").text).to eql("EXTEND VIP Connect your Facebook account")
+      page.execute_script "window.scrollBy(0,500)"
       click_link "Connect your Facebook account"
-      expect(social_network_modal_popup.text).to eql("Link your Facebook account to ID.me to get 10 points and extend your VIP status for 1 month. Connecting to Facebook also helps ID.me show you personalized offers.")
+      expect(social_network_modal_popup).to eql("Link your Facebook account to ID.me to get 10 points and extend your VIP status for 1 month. Connecting to Facebook also helps ID.me show you personalized offers.")
       expect(social_network_connect_modal("facebook").visible?).to be(true)
     end
   end
