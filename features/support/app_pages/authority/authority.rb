@@ -29,6 +29,7 @@ include Capybara::DSL
 	end
 
 	def auth_approve
+	  sleep 1
 	  click_button("Approve")
 	end
 

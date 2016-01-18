@@ -43,4 +43,4 @@ Feature: User account lock and unlock
     * I lockout my account
     * I click on the unlock account link
     * I enter a non-existant account email to attempt to unlock my account
-    * I should see the red alert box error message "Could not find an account with the given email address"
+    * I should see the red error "We could not find an ID.me Wallet with the email address you entered." below the textfield

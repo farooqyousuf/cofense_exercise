@@ -7,7 +7,7 @@ include Capybara::DSL
   #############
 
   def code_css
-    find("strong")["data-code"]
+    first("strong")["data-code"]
   end
 
   def fill_in_code(code)

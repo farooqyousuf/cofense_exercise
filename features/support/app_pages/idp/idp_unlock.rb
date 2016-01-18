@@ -17,6 +17,7 @@ def lockout_account(username)
  def unlock_account(username)
    fill_in_email_by_name(username)
    click_continue_button
+   sleep 1
    fill_in_code(code_css)
    click_submit_button
  end
