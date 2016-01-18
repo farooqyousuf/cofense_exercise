@@ -13,7 +13,9 @@ end
   
 Given(/^I should see error messages on required fields for "([^"]*)"$/) do |method|
   var = case method
-  		  when "Government"		then IVAGovernment
+  		  when "Government"		    then IVAGovernment
+        when "DD214 Vet"        then DD214
+        when "DD214 Non-Vet"    then DD214NonVet
   		  else fail("Verification option not found")
   	    end
 

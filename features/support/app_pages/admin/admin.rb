@@ -10,7 +10,9 @@ class AdminTool < IDmeBase
   	self.create_new_window
     self.use_last_browser_created
     self.visit
+    sleep 1
     authority = Authority.new
+    sleep 1
     authority.auth_login
   end
 
