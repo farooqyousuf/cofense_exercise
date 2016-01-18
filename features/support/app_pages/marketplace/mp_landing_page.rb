@@ -7,7 +7,7 @@ class MarketplaceLandingPage < IDmeBase
     super(FigNewton.marketplace.shop_homepage)
   end
 
-  def sign_in(user,password) #might need to move this to more general page object in itself
+  def sign_in(user,password)
     fill_in_email_by_id(user)
     fill_in_password(password)
     click_sign_in
@@ -40,10 +40,10 @@ class MarketplaceLandingPage < IDmeBase
       sleep 2
       facebook = FaceBookLoginPage.new
       facebook.sign_in
-      #ISSUE : current there is a issue working where the facebook setting is not setup for the endpoint
+      #ISSUE : current there is a issue working where the facebook setting is not setup for the endpoint, tested selectors in prod in meantime
 
     when "twitter"
-      social_network_connect_modal("twitter").click
+      social_network_activity_card("twitter").click
       sleep 2
       twitter = TwitterLoginPage.new
       twitter.sign_in
@@ -76,6 +76,7 @@ class MarketplaceLandingPage < IDmeBase
       expect(social_network_activity_card("twitter").text).to eql("COMPLETED Connect your Twitter account")
     else
       expect(social_network_activity_card("twitter").text).to eql("5 POINTS Connect your twitter account")
+      page.execute_script "window.scrollBy(0,1000)"
       click_link "Connect your Twitter account"
       expect(social_network_modal_popup).to eql("Link your Twitter account to ID.me and get 5 points. Connecting to Twitter also helps ID.me show you personalized offers.")
 
