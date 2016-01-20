@@ -36,3 +36,16 @@ Feature: Test the MP_users Leveling Activities (Client - Workflow/Action)
        * I should see successful flash message with "LinkedIn account connected"
        * I get the "vip_uid" user achievements progress after I connected My LinkedIn Account
        * I check the Connect Your LinkedIn Account activity card after I connected My LinkedIn Account
+
+     @demographic_survey   
+     Scenario: Complete A Demographic Survey
+       * I get the "vip_uid" user achievements progress
+       * I check the Complete A Survey activity card
+       * I visit "NewSurveyPage"
+       * I submit a empty Demographic Survey form
+       * I should see all correct error messages when submitting a empty form
+       * I click on the Return to the cash back program button
+       * I correctly complete a Demographic Survey
+       * I should see successful flash message with "Thank you for submitting your survey."
+       * I get the "vip_uid" user achievements progress after I Completed A Survey
+       * I check the Complete A Survey activity card after I Completed A Survey

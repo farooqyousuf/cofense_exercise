@@ -88,3 +88,43 @@ end
 Given(/^I check the Connect Your LinkedIn Account activity card after I connected My LinkedIn Account$/) do
   @marketplace_shop.check_linkedin_activity_card_connected
 end
+
+#demographic survey
+
+Given(/^I check the Complete A Survey activity card$/) do
+  expect(@marketplace_shop.demographic_survey_activity_card_exists).to be(true)
+  @marketplace_shop.check_survey_activity_card_connected
+end
+
+Given(/^I submit a empty Demographic Survey form$/) do
+  sleep 1
+  @mp_demographic_survey_page = NewSurveyPage.new
+  click_button "Submit"
+end
+
+Given(/^I should see all correct error messages when submitting a empty form$/) do
+  expect(page.has_css?(".form__error", :count => 4)).to be(true)
+end
+
+Given(/^I click on the Return to the cash back program button$/) do
+  @mp_demographic_survey_page.return_to_marketplace_link
+end
+
+Given(/^I correctly complete a Demographic Survey$/) do
+  @mp_demographic_survey_page.navigate_to_new_demographic_survey_page
+  @mp_demographic_survey_page.complete_survey
+  click_button "Submit"
+end
+
+Given(/^I get the "([^"]*)" user achievements progress after I Completed A Survey$/) do |user_level|
+  case user_level
+  when "vip_uid"
+    @user_achievement_progress_post = @marketplace_shop.request_vip_achievements
+  end
+
+  expect(@user_achievement_progress_post[0]["completed"]).to be(true)
+end
+
+Given(/^I check the Complete A Survey activity card after I Completed A Survey$/) do
+  @marketplace_shop.check_survey_activity_card_connected
+end
