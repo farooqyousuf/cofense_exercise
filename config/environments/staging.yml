@@ -36,3 +36,9 @@ social_network:
   twitter_password: Password123123
   linkedin_email: eddie.park.tester@gmail.com
   linkedin_password: Password123123
+
+admin:
+  base_url: https://admin-staging.idmeinc.net
+
+idp:
+  base_url: https://idp-staging.idmeinc.net

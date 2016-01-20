@@ -27,7 +27,7 @@ Feature: User password reset
   
   Scenario: Entering non-existent account email for password reset
     * I send the forgot password code to a "nonexistent" email account
-    * I should see an error on the "Could not find an account with the given email address" field
+    * I should see the red error "We could not find an ID.me Wallet with the email address you entered." below the textfield
     
     
   # TODO: add scenarios for password entropy when resetting password

@@ -3,7 +3,7 @@ class IDPSignIn < IDmeBase
   include IDPBase
 
  def initialize
-   super("https://idp-staging.idmeinc.net/sessions/new")
+   super("#{FigNewton.idp.base_url}/session/new")
  end
 
  def sign_in(email, password)

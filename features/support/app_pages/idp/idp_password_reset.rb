@@ -3,7 +3,7 @@ class IDPPasswordReset < IDmeBase
   include IDPBase
 
  def initialize
-   super("https://idp-staging.idmeinc.net/passwords/new")
+   super("#{FigNewton.idp.base_url}/passwords/new")
  end
 
  def reset_password
