@@ -7,10 +7,6 @@ class NewSurveyPage < IDmeBase
     super(FigNewton.marketplace.demographic_survey)
   end
 
-  def return_to_marketplace_link
-    click_link "Return to the cash back program"
-  end
-
   def navigate_to_new_demographic_survey_page
     page.execute_script "window.scrollBy(0,1300)"
     click_link "Complete a survey"
