@@ -18,7 +18,12 @@ class MarketplaceLandingPage < IDmeBase
   end
 
   def click_on_user_profile_navigation_link
-    find(".user-nav").click
+    begin
+      find(".user-nav").click
+    rescue
+      click_link "Sign In"
+      find(".user-nav").click
+    end
     sleep 1
     first(".button").click #this is for staging intro popup, might not be on prod
   end
