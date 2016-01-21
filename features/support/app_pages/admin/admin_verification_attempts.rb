@@ -13,7 +13,7 @@ include PageManagement
   end
 
   def get_code
-  	page.all(".row")[13].find(".columns.medium-6.data-container.left").text
+    find("[data-key='verification_code_generated']").text
   end
 
 end

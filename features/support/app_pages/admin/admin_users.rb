@@ -17,6 +17,7 @@ include JavascriptAlerts
   def delete_user
     open_newest
   	click_link("Delete")
+    sleep 1
   	js_accept
   end
 

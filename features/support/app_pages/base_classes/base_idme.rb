@@ -1,9 +1,11 @@
 require_relative 'page_mgmt'
+require_relative 'base_iva'
 
 class IDmeBase
 
  include Capybara::DSL
  include PageManagement
+ include IVABase
 
  #Readable attributes
  #Allows the url attribute to be read/accessed outside of this class
@@ -18,6 +20,11 @@ class IDmeBase
   #calls Capybara's visit method
   def visit
     super(url)
+  end
+
+  def fill_in_verification_code(code)
+    fill_in("verification_code", :with => code)
+    click_verify_button
   end
 
 end
