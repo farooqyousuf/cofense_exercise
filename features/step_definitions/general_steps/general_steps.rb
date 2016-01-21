@@ -25,7 +25,7 @@ Given(/^I submit the verification code for "([^"]*)"$/) do |option|
 
   # get the verification code
   code = nil
-  code = @admin_verif_attempts.get_code(option)
+  code = @admin_verif_attempts.get_code
 
   # logout and close window
   @admin_tool.logout_in_new_window

@@ -15,34 +15,23 @@ Feature: Military verification using .mil email
     * I complete the verification process
     * I should be successfully verified as "Service Member"  
 
-  # @delete_user @oauth_tester_logout
-  # Scenario: Successful verification with a military email as Veteran
-  #   * I submit the military email verification form for "Veteran"
-  #   * I submit the military email verification code
-  #   * I should see the verification success page
-  #   * I complete the verification process
-  #   * I should be successfully verified as "Veteran"
-    
-  # @delete_user @oauth_tester_logout  
-  # Scenario: Successful verification with a military email as Military Spouse
-  #   * I submit the military email verification form for "Military Spouse"
-  #   * I submit the military email verification code
-  #   * I should see the verification success page
-  #   * I complete the verification process
-  #   * I should be successfully verified as "Military Spouse"
+  @delete_user @oauth_tester_logout  
+  Scenario: Successful verification with a military email as Military Spouse
+    * I verify using military email information for "Military Spouse"
+    * I submit the verification code for "Military Email Code"
+    * I complete the verification process
+    * I should be successfully verified as "Military Spouse"
 
-  # @delete_user @oauth_tester_logout
-  # Scenario: Successful verification as Military Family
-  #   * I submit the military email verification form for "Military Family"
-  #   * I submit the military email verification code
-  #   * I should see the verification success page
-  #   * I complete the verification process
-  #   * I should be successfully verified as "Military Family"
+  @delete_user @oauth_tester_logout
+  Scenario: Successful verification as Military Family
+    * I verify using military email information for "Military Family"
+    * I submit the verification code for "Military Email Code"
+    * I complete the verification process
+    * I should be successfully verified as "Military Family"
     
-  # @delete_user @oauth_tester_logout  
-  # Scenario: Successful verification as Military Supporter
-  #   * I submit the military email verification form for "Military Supporter"
-  #   * I submit the military email verification code
-  #   * I should see the verification success page
-  #   * I complete the verification process
-  #   * I should be successfully verified as "Military Supporter"
+  @delete_user @oauth_tester_logout  
+  Scenario: Successful verification as Military Supporter
+    * I verify using military email information for "Military Supporter"
+    * I submit the verification code for "Military Email Code"
+    * I complete the verification process
+    * I should be successfully verified as "Military Supporter"
