@@ -12,7 +12,7 @@ Feature: Government verification using .gov email
   @smoke @delete_user @oauth_tester_logout
   Scenario: Successful verification with a Government email
     * I submit the government verification form
-    * I submit the government verification code
+    * I submit the verification code for "Government Email"
     * I complete the verification process
     * I should be successfully verified
     
