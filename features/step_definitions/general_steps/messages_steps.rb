@@ -13,17 +13,19 @@ end
   
 Given(/^I should see error messages on required fields for "([^"]*)"$/) do |method|
   var = case method
-  		  when "Government"		    then IVAGovernment
-        when "DD214 Vet"        then DD214
-        when "DD214 Non-Vet"    then DD214NonVet
+  		  when "Government"		          then IVAGovernment
+        when "DD214 Vet"              then DD214
+        when "DD214 Non-Vet"          then DD214NonVet
+        when "Military Email"         then MilitaryEmail
+        when "Military Email Family"  then MilitaryEmailFamily
   		  else fail("Verification option not found")
   	    end
 
     page = (var).new
+    sleep 1
 	  page.required_fields.each do |field|
 	  expect(page.error_on(field)).to be_truthy
 	end
-
 end
 
 Given(/^I should see the red error "(.*?)" below the textfield$/) do |expected_text|
