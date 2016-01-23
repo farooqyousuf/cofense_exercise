@@ -10,21 +10,22 @@ class MilitaryEmail < IDmeBase
   def verify(affiliation, populate = true)
     find("[data-option=#{container_attribute}]").find(".verification-header").click
     populate_affiliation(affiliation)
-    populate_fields
+    
+    if populate
+      populate_fields
 
-    if ["Serive Member", "Military Supporter"].include?(affiliation)
-      find(".checkbox").click
-    end
+      if ["Serive Member", "Military Supporter"].include?(affiliation)
+        find(".checkbox").click
+      end
 
-    if ["Military Family", "Military Spouse"].include?(affiliation)
-      fill_in "first_name", with: Faker::Name.first_name
-      fill_in "last_name", with: Faker::Name.last_name
+      if ["Military Family", "Military Spouse"].include?(affiliation)
+        fill_in "first_name", with: Faker::Name.first_name
+        fill_in "last_name", with: Faker::Name.last_name
+      end
     end
 
     click_verify_button
-
   end
-
 
   def populate_affiliation(value)
     select_option(container_attribute, ".military-affiliation", value)
@@ -46,6 +47,9 @@ class MilitaryEmail < IDmeBase
     'military-email'
   end
 
+  def required_fields
+    [0, 1, 2, 3, 4, 5]
+  end
 
 end
 
