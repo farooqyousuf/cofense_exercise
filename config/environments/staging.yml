@@ -20,16 +20,19 @@ mp_users:
   preferred_uid: d7e81e6cf5dc20e21025
   premium: test+premium@id.me
   premium_uid: 363e2633e104eb951023
-  vip: test+be2@id.me
+  vip: test+be3@id.me
   general_password: Password123
   vip_uid: eb1f9278afe5954d911
 
 marketplace:
   shop_homepage: https://marketplace-staging.idmeinc.net/shop
   cashback_purchases_homepage: https://marketplace-staging.idmeinc.net/cash-back/purchases
-  user_cashback_profile_url: https://marketplace-staging.idmeinc.net/cash-back
+  user_cashback_profile_url: https://marketplace-staging.idmeinc.net/undefined/undefined/undefined/cash-back
   demographic_survey: https://marketplace-staging.idmeinc.net/cash-back/survey/new
   invite_store: https://marketplace-staging.idmeinc.net/cash-back/store-suggestions/new
+  email_invitation_providers: https://marketplace-staging.idmeinc.net/invitation-providers/new
+  email_batch_invitations: https://marketplace-staging.idmeinc.net/batch-invitations/new
+  refer_friend_email: eddie.park@id.me, gabbygiffords@gmail.com, Iambatman@gmail.com, eddie.park.tester@gmail.com
 
 social_network:
   facebook_email: eddie.park.tester@gmail.com
