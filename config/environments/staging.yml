@@ -29,6 +29,8 @@ marketplace:
   cashback_purchases_homepage: https://marketplace-staging.idmeinc.net/cash-back/purchases
   user_cashback_profile_url: https://marketplace-staging.idmeinc.net/cash-back
   demographic_survey: https://marketplace-staging.idmeinc.net/cash-back/survey/new
+  invite_store: https://marketplace-staging.idmeinc.net/cash-back/store-suggestions/new
+
 social_network:
   facebook_email: eddie.park.tester@gmail.com
   facebook_password: Password123123

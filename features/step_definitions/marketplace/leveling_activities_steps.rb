@@ -13,6 +13,10 @@ Given(/^I get the "([^"]*)" user achievements progress$/) do |user_level|
   end
 end
 
+Given(/^I should see "([^"]*)" correct error messages when submitting a empty form$/) do |num_of_errors|
+  expect(page.has_css?(".form__error", :count => num_of_errors)).to be(true)
+end
+
 #facebook
 
 Given(/^I check the Connect Your Facebook activity card$/) do
@@ -92,6 +96,7 @@ end
 #demographic survey
 
 Given(/^I check the Complete A Survey activity card$/) do
+  page.execute_script "window.scrollBy(0,1500)"
   expect(@marketplace_shop.demographic_survey_activity_card_exists).to be(true)
   @marketplace_shop.check_survey_activity_card_connected
 end
@@ -102,12 +107,8 @@ Given(/^I submit a empty Demographic Survey form$/) do
   click_button "Submit"
 end
 
-Given(/^I should see all correct error messages when submitting a empty form$/) do
-  expect(page.has_css?(".form__error", :count => 4)).to be(true)
-end
-
 Given(/^I click on the Return to the cash back program button$/) do
-  @mp_demographic_survey_page.return_to_marketplace_link
+  click_link "Return to the cash back program"
 end
 
 Given(/^I correctly complete a Demographic Survey$/) do
@@ -127,4 +128,34 @@ end
 
 Given(/^I check the Complete A Survey activity card after I Completed A Survey$/) do
   @marketplace_shop.check_survey_activity_card_connected
+end
+
+# invite a store acheivement
+
+Given(/^I check the Invite A Store activity card$/) do
+  @marketplace_shop.check_invite_store_activity_card_connected
+end
+
+Given(/^I submit a empty Invite A Store form$/) do
+  @mp_invite_store_page = StoreInvitePage.new
+  click_button "Complete"
+end
+
+Given(/^I Invite A Store$/) do
+  @mp_invite_store_page.navigate_to_invite_store_page
+  @mp_invite_store_page.complete_form
+  click_button "Complete"
+end
+
+Given(/^I get the "([^"]*)" user achievements progress after I Invited A Store$/) do |user_level|
+  case user_level
+  when "vip_uid"
+    @user_achievement_progress_post = @marketplace_shop.request_vip_achievements
+  end
+
+  expect(@user_achievement_progress_post[15]["completed"]).to be(true)
+end
+
+Given(/^I check the Invite A Store activity card after I Invited A Store$/) do
+  @marketplace_shop.check_invite_store_activity_card_connected
 end

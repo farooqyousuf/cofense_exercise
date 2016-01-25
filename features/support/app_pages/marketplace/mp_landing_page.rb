@@ -143,4 +143,21 @@ class MarketplaceLandingPage < IDmeBase
       expect(social_network_modal_popup).to eql("Complete a survey and get 5 points for 1 month. Completing this survey also helps ID.me show you personalized offers.")
     end
   end
+
+  def invite_store_activity_card
+    find(:link, :href =>"/cash-back/activities/store-invite")
+  end
+
+  def check_invite_store_activity_card_connected
+    if @vip_user_acheivement_response[15]["completed"] == true
+      expect(social_network_activity_card("store-invite").text).to eql("COMPLETED Invite a store")
+      return true
+    else
+      expect(invite_store_activity_card.text).to eql("10 POINTS Invite a store")
+      page.execute_script "window.scrollBy(0,1500)"
+      click_link "Invite a store"
+      sleep 1
+      expect(social_network_modal_popup).to eql("Invite a store to ID.me and get 10 points.")
+    end
+  end
 end
