@@ -13,6 +13,10 @@ Given(/^I get the "([^"]*)" user achievements progress$/) do |user_level|
   end
 end
 
+Given(/^I should see "([^"]*)" correct error messages when submitting a empty form$/) do |num_of_errors|
+  expect(page.has_css?(".form__error", :count => num_of_errors)).to be(true)
+end
+
 #facebook
 
 Given(/^I check the Connect Your Facebook activity card$/) do
@@ -92,6 +96,7 @@ end
 #demographic survey
 
 Given(/^I check the Complete A Survey activity card$/) do
+  page.execute_script "window.scrollBy(0,1500)"
   expect(@marketplace_shop.demographic_survey_activity_card_exists).to be(true)
   @marketplace_shop.check_survey_activity_card_connected
 end
@@ -100,10 +105,6 @@ Given(/^I submit a empty Demographic Survey form$/) do
   sleep 1
   @mp_demographic_survey_page = NewSurveyPage.new
   click_button "Submit"
-end
-
-Given(/^I should see all correct error messages when submitting a empty form$/) do
-  expect(page.has_css?(".form__error", :count => 4)).to be(true)
 end
 
 Given(/^I click on the Return to the cash back program button$/) do
@@ -138,10 +139,6 @@ end
 Given(/^I submit a empty Invite A Store form$/) do
   @mp_invite_store_page = StoreInvitePage.new
   click_button "Complete"
-end
-
-Given(/^I should see all correct error messages when submitting a empty Invite a Store Form$/) do
-  expect(page.has_css?(".form__error", :count => 2)).to be(true)
 end
 
 Given(/^I Invite A Store$/) do

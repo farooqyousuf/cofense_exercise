@@ -43,7 +43,7 @@ Feature: Test the MP_users Leveling Activities (Client - Workflow/Action)
        * I check the Complete A Survey activity card
        * I visit "NewSurveyPage"
        * I submit a empty Demographic Survey form
-       * I should see all correct error messages when submitting a empty form
+       * I should see "4" correct error messages when submitting a empty form
        * I click on the Return to the cash back program button
        * I correctly complete a Demographic Survey
        * I should see successful flash message with "Thank you for submitting your survey."
@@ -56,7 +56,7 @@ Feature: Test the MP_users Leveling Activities (Client - Workflow/Action)
        * I check the Invite A Store activity card
        * I visit "StoreInvitePage"
        * I submit a empty Invite A Store form
-       * I should see all correct error messages when submitting a empty Invite a Store Form
+       * I should see "2" correct error messages when submitting a empty form
        * I click on the Return to the cash back program button
        * I Invite A Store
        * I should see successful flash message with "Stores have been invited"
