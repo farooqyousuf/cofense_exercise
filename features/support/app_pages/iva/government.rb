@@ -33,11 +33,6 @@ class IVAGovernment < IDmeBase
     fill_in("email_confirmation", :with => @email)
   end
 
-  def fill_in_verification_code(code)
-    fill_in("verification_code", :with => code)
-    click_verify_button
-  end
-
   def container_attribute
     'government-email'
   end
