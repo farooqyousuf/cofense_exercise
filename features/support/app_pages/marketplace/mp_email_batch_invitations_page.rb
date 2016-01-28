@@ -12,4 +12,8 @@ class BatchInvitationPage < IDmeBase
   def fill_in_correct_email(emails)
     fill_in("batch_invitation_emails",:with => emails)
   end
+
+  def submit_invites
+    click_button "Send Invites"
+  end 
 end

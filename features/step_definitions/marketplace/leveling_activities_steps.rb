@@ -171,14 +171,14 @@ Given(/^I check the Refer A Friend activity card$/) do
 end
 
 Given(/^I submit Batch Invitations form with no email address and I should see a error message$/) do
-  click_button "Send Invites"
+  @batch_email_invites.submit_invites
   expect(page.has_css?(".-has-error",:count => 1)).to be(true)
 end
 
 Given(/^I submit Batch Invitations form with incorrect email address and I should see the error message "([^"]*)"$/) do |error_message|
   @batch_email_invites = BatchInvitationPage.new
   @batch_email_invites.fill_in_incorrect_email
-  click_button "Send Invites"
+  @batch_email_invites.submit_invites
   sleep 1
   expect(page.has_css?(".-has-error",:count => 1)).to be(true)
   expect(page.has_text?(error_message)).to be(true)
@@ -188,7 +188,7 @@ end
 Given(/^I Send A Correct Batch Invitation of Emails$/) do
   page.driver.browser.navigate.refresh
   @batch_email_invites.fill_in_correct_email(FigNewton.marketplace.refer_friend_email)
-  click_button "Send Invites"
+  @batch_email_invites.submit_invites
   expect(page.has_text?("You successfully invited contacts.")).to be(true)
   expect(page.has_css?(".alert",:count => 1)).to be(true)
 end
