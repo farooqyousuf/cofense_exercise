@@ -14,3 +14,10 @@ Feature: Military verification using document upload
     * I approve the document in IDme admin
     * I complete the verification process
     * I should be successfully verified as "Service Member"
+
+  @oauth_tester_logout @delete_experian_user
+  Scenario: Successful verification as a Veteran
+    * I verify using military documentation for "Veteran"
+    * I approve the document in IDme admin
+    * I complete the verification process
+    * I should be successfully verified as "Veteran"
