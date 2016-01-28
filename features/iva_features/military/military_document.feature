@@ -8,7 +8,7 @@ Feature: Military verification using document upload
     * I sign up as a new user
     * I should be on the military verification screen
 
-  @smoke
+  @smoke @oauth_tester_logout @delete_experian_user
   Scenario: Successful verification as a Service Member
     * I verify using military documentation for "Service Member"
     * I approve the document in IDme admin
