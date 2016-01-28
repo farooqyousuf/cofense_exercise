@@ -1,4 +1,4 @@
-@regression @iva @military @oauth @document
+@regression @iva @military
 Feature: Military verification using document upload
 
   Background:

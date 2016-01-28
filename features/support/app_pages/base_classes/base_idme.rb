@@ -29,7 +29,7 @@ class IDmeBase
 
   def save_screenshot
     Dir.mkdir("./screenshots") unless Dir.exists?("./screenshots")
-    page.save_screenshot("#{Dir.pwd}/screenshots/screenshot2.png")
+    page.save_screenshot("#{Dir.pwd}/screenshots/screenshot.png")
   end
 
   def wait_for_ajax

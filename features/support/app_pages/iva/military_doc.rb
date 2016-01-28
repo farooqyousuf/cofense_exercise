@@ -19,7 +19,8 @@ class MilitaryDoc < IDmeBase
   end
 
   def populate_fields(data)
-  	fill_in "service_member_first_name", with: data.fetch("first_name")
+  	#fill reqd fields
+    fill_in "service_member_first_name", with: data.fetch("first_name")
 	  fill_in "service_member_last_name", with: data.fetch("last_name")
 	  2.times { fill_in "birth_date", with: data.fetch("dob") }
 	  fill_in "social", with: data.fetch("ssn")
@@ -27,9 +28,12 @@ class MilitaryDoc < IDmeBase
 	  fill_in "street", with: data.fetch("street")
 	  fill_in "city", with: data.fetch("city")
 	  2.times { fill_in "zip", with: data.fetch("zip") }
-	  populate_state("Kansas")
+    populate_state(data.fetch("state"))
+
+    #click verify
 	  click_verify_button
    
+    #attach dd214 doc
 	  populate_dd214_type("DD214 - Other")
 	  attach_dd214_file
   end
@@ -39,7 +43,7 @@ class MilitaryDoc < IDmeBase
   end
 
   def populate_affiliation(value)
-	select_option(container_attribute, ".military-affiliation", value)
+	  select_option(container_attribute, ".military-affiliation", value)
   end 
 
   def populate_state(value)
@@ -48,12 +52,11 @@ class MilitaryDoc < IDmeBase
 
   def populate_dd214_type(value)
   	wait_for_ajax
-    sleep 2
   	select_option(container_attribute, "#s2id_document_type_id", value)
   end
 
   def attach_dd214_file
-  	page.driver.browser.all(:xpath, '//input[@type="file"]')[0].send_keys("#{Dir.pwd}/screenshots/screenshot2.png")
+  	page.driver.browser.all(:xpath, '//input[@type="file"]')[0].send_keys("#{Dir.pwd}/screenshots/screenshot.png")
   end
 
 end
