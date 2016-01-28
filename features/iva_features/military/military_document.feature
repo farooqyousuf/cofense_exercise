@@ -28,3 +28,10 @@ Feature: Military verification using document upload
     * I approve the document in IDme admin
     * I complete the verification process
     * I should be successfully verified as "Retiree"
+
+@oauth_tester_logout @delete_experian_user
+  Scenario: Successful verification as a Military Spouse
+    * I verify using military documentation for "Military Spouse"
+    * I approve the document in IDme admin
+    * I complete the verification process
+    * I should be successfully verified as "Military Spouse"

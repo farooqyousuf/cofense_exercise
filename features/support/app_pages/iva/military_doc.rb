@@ -13,6 +13,18 @@ class MilitaryDoc < IDmeBase
 
   	if populate
   		populate_fields(data_for(:military_doc))
+      
+      if ["Military Family", "Military Spouse"].include?(affiliation)
+        fill_in "first_name", with: Faker::Name.first_name
+        fill_in "last_name", with: Faker::Name.last_name
+        select_option(container_attribute, "#s2id_service_subgroup_id", "Veteran")
+      end
+
+      click_verify_button
+
+      #attach dd214 doc
+      populate_dd214_type("DD214 - Other")
+      attach_dd214_file 
   	end
 
   	click_verify_button
@@ -29,13 +41,6 @@ class MilitaryDoc < IDmeBase
 	  fill_in "city", with: data.fetch("city")
 	  2.times { fill_in "zip", with: data.fetch("zip") }
     populate_state(data.fetch("state"))
-
-    #click verify
-	  click_verify_button
-   
-    #attach dd214 doc
-	  populate_dd214_type("DD214 - Other")
-	  attach_dd214_file
   end
 
   def container_attribute
