@@ -7,10 +7,6 @@ module PageManagement
     page.execute_script("window.open()")
   end
 
-  # def use_last_browser_created
-  #   page.driver.browser.window_handles.last
-  # end
-
   def find_target_window(title)
     @handle = page.driver.find_window(title)
   end

@@ -35,3 +35,16 @@ Given(/^I submit the verification code for "([^"]*)"$/) do |option|
   @IDmeBase = IDmeBase.new
   @IDmeBase.fill_in_verification_code(code)
 end
+
+Given(/^I generate a unique military doc$/) do
+  create_new_window
+  use_last_browser_created
+  visit 'https://pastie.org'
+  fill_in "paste_body", with: Faker::Lorem.paragraph(50)
+  
+  @IDmeBase = IDmeBase.new
+  @IDmeBase.save_screenshot
+  close_current_browser
+  use_last_browser_created
+end
+
