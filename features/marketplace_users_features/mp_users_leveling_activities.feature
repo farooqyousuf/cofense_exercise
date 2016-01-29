@@ -62,3 +62,17 @@ Feature: Test the MP_users Leveling Activities (Client - Workflow/Action)
        * I should see successful flash message with "Stores have been invited"
        * I get the "vip_uid" user achievements progress after I Invited A Store
        * I check the Invite A Store activity card after I Invited A Store
+
+     @refer_friends_batch_invitation
+     Scenario: Send Email Invitations - Batch Invitation
+       * I get the "vip_uid" user achievements progress
+       * I check the Refer A Friend activity card
+       * I visit "InvitationProvidersPage"
+       * I click on the Return to the cash back program button
+       * I visit "BatchInvitationPage"
+       * I submit Batch Invitations form with no email address and I should see a error message
+       * I submit Batch Invitations form with incorrect email address and I should see the error message "Invalid Emails:"
+       * I Send A Correct Batch Invitation of Emails
+       * I should see successful flash message with "You successfully invited contacts."
+       * I get the "vip_uid" user achievements progress after I submitted Batch Invitations form
+       * I check the Refer A Friend activity card after I submitted Batch Invitations form
