@@ -57,6 +57,7 @@ class MilitaryDoc < IDmeBase
 
   def populate_dd214_type(value)
   	wait_for_ajax
+    sleep 2
   	select_option(container_attribute, "#s2id_document_type_id", value)
   end
 
