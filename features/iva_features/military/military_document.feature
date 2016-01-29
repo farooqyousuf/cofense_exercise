@@ -9,6 +9,7 @@ Feature: Military verification using document upload
     * I should be on the military verification screen
 
   @smoke @oauth_tester_logout @delete_experian_user
+  #unique doc upload and user creds have to pass experian/preciseID
   Scenario: Successful verification as a Service Member
     * I verify using military documentation for "Service Member"
     * I approve the document in IDme admin
