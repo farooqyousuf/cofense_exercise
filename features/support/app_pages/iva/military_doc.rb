@@ -28,7 +28,6 @@ class MilitaryDoc < IDmeBase
   	end
 
   	click_verify_button
-    binding.pry
   end
 
   def populate_fields(data)
