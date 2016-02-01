@@ -15,3 +15,9 @@ Given(/^I approve the document in IDme admin$/) do
   
   @admin_tool.logout_in_new_window
 end
+
+Given(/^I submit the empty military document form for "([^"]*)"$/) do |group|
+  @military_doc = MilitaryDoc.new
+  @military_doc.verify(group, false)
+end
+
