@@ -58,3 +58,7 @@ Feature: Military verification using document upload
  Scenario: Successfully prompt for all required fields for Veteran
     * I submit the empty military document form for "Veteran"
     * I should see error messages on required fields for "Military Document"   
+
+Scenario: Successfully prompt for all required fields for Retiree
+    * I submit the empty military document form for "Retiree"
+    * I should see error messages on required fields for "Military Document"    
