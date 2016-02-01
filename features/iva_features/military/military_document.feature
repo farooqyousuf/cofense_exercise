@@ -70,3 +70,7 @@ Scenario: Successfully prompt for all required fields for Military Spouse
 Scenario: Successfully prompt for all required fields for Military Family
     * I submit the empty military document form for "Military Family"
     * I should see error messages on required fields for "Military Document Family"    
+
+Scenario: Successfully prompt for all required fields for Military Supporter
+    * I submit the empty military document form for "Military Supporter"
+    * I should see error messages on required fields for "Military Document"    
