@@ -18,6 +18,7 @@ Given(/^I should see error messages on required fields for "([^"]*)"$/) do |meth
         when "DD214 Non-Vet"          then DD214NonVet
         when "Military Email"         then MilitaryEmail
         when "Military Email Family"  then MilitaryEmailFamily
+        when "Military Document"      then MilitaryDoc
   		  else fail("Verification option not found")
   	    end
 

@@ -28,6 +28,7 @@ class MilitaryDoc < IDmeBase
   	end
 
   	click_verify_button
+    binding.pry
   end
 
   def populate_fields(data)
@@ -63,6 +64,10 @@ class MilitaryDoc < IDmeBase
 
   def attach_dd214_file
   	page.driver.browser.all(:xpath, '//input[@type="file"]')[0].send_keys("#{Dir.pwd}/screenshots/screenshot.png")
+  end
+
+  def required_fields
+    [0,1,2,3,4,5,6,7,9]
   end
 
 end
