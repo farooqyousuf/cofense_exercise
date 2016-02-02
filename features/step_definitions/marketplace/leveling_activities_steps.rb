@@ -171,12 +171,12 @@ Given(/^I check the Refer A Friend activity card$/) do
 end
 
 Given(/^I submit Batch Invitations form with no email address and I should see a error message$/) do
+  @batch_email_invites = BatchInvitationPage.new
   @batch_email_invites.submit_invites
   expect(page.has_css?(".-has-error",:count => 1)).to be(true)
 end
 
 Given(/^I submit Batch Invitations form with incorrect email address and I should see the error message "([^"]*)"$/) do |error_message|
-  @batch_email_invites = BatchInvitationPage.new
   @batch_email_invites.fill_in_incorrect_email
   @batch_email_invites.submit_invites
   sleep 1
@@ -204,4 +204,31 @@ end
 
 Given(/^I check the Refer A Friend activity card after I submitted Batch Invitations form$/) do
   @marketplace_shop.check_refer_friend_activity_card_connected
+end
+
+# send emails to 25 friends to invite
+Given(/^I check user activity level before referring (\d+) friends$/) do |arg1|
+  step 'I get the "vip_uid" user achievements progress'
+  @marketplace_shop.check_refer_25_friends_activity_card
+  step 'I visit "InvitationProvidersPage"'
+  step 'I click on the Return to the cash back program button'
+end
+
+Given(/^I incorrectly submit to refer (\d+) email invitations$/) do |arg1|
+  step 'I visit "BatchInvitationPage"'
+  step 'I submit Batch Invitations form with no email address and I should see a error message'
+  step 'I submit Batch Invitations form with incorrect email address and I should see the error message "Invalid Emails:"'
+end
+
+Given(/^I correctly submit to refer (\d+) email invitations$/) do |arg1|
+  page.driver.browser.navigate.refresh
+  @batch_email_invites.fill_in_correct_email(FigNewton.marketplace.refer_25_friends_email)
+  @batch_email_invites.submit_invites
+  expect(page.has_text?("You successfully invited contacts.")).to be(true)
+  expect(page.has_css?(".alert",:count => 1)).to be(true)
+end
+
+Given(/^I check user activity level after referring (\d+) friends$/) do |arg1|
+  step 'I get the "vip_uid" user achievements progress'
+  @marketplace_shop.check_refer_25_friends_activity_card
 end

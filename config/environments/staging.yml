@@ -33,6 +33,7 @@ marketplace:
   email_invitation_providers: https://marketplace-staging.idmeinc.net/invitation-providers/new
   email_batch_invitations: https://marketplace-staging.idmeinc.net/batch-invitations/new
   refer_friend_email: rich.purnell.rocketman@gmail.com, test+be2@id.me, eddie.park.tester@gmail.com
+  refer_25_friends_email: test1@id.me, test2@id.me, test3@id.me,test4@id.me,test5@id.me,test6@id.me,test7@id.me,test8@id.me,test9@id.me,tes10t@id.me,test11@id.me,test12@id.me,test13@id.me,test14@id.me,test15@id.me,test16@id.me,test17@id.me,test18@id.me,test19@id.me,test20@id.me,test21@id.me,test22@id.me,test23@id.me,test24@id.me,test25@id.me
 
 social_network:
   facebook_email: eddie.park.tester@gmail.com

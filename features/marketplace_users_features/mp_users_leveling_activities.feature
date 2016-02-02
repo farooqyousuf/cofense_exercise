@@ -74,3 +74,10 @@ Feature: Test the MP_users Leveling Activities (Client - Workflow/Action)
        * I should see successful flash message with "You successfully invited contacts."
        * I get the "vip_uid" user achievements progress after I submitted Batch Invitations form
        * I check the Refer A Friend activity card after I submitted Batch Invitations form
+
+     @refer_25_friends
+     Scenario: Send Email Invitations - refer 25 friends
+       * I check user activity level before referring 25 friends
+       * I incorrectly submit to refer 25 email invitations
+       * I correctly submit to refer 25 email invitations
+       * I check user activity level after referring 25 friends
