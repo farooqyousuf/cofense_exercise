@@ -6,5 +6,6 @@ class FaceBookLoginPage < IDmeBase
     fill_in("pass", :with => FigNewton.social_network.facebook_password)
     click_button("Log In")
     click_button("Okay")
+    click_button("Close") #not authorized
   end
 end

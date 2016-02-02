@@ -15,9 +15,7 @@ Feature: Test the MP_users Leveling Activities (Client - Workflow/Action)
        * I get the "vip_uid" user achievements progress
        * I check the Connect Your Facebook activity card
        * I Connect My Facebook Account
-       * I should see successful flash message with "Facebook account connected"
-       * I get the "vip_uid" user achievements progress after I connected My Facebook Account
-       * I check the Connect Your Facebook activity card after I connected My Facebook Account
+       * I should see successful flash message with "Third party account connection not authorized."
 
      @twitter_connect
      Scenario: Authorize a Social Media Account - Connect to Twitter

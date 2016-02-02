@@ -62,7 +62,7 @@ class MarketplaceLandingPage < IDmeBase
   end
 
   def success_flash_msg(success_text)
-    page.has_text? "success_text"
+    page.has_text? "#{success_text}"
   end
 
   def social_network_modal_popup
@@ -85,7 +85,7 @@ class MarketplaceLandingPage < IDmeBase
     if @vip_user_acheivement_response[19]["completed"] == true
       expect(social_network_activity_card("twitter").text).to eql("COMPLETED Connect your Twitter account")
     else
-      expect(social_network_activity_card("twitter").text).to eql("5 POINTS Connect your twitter account")
+      expect(social_network_activity_card("twitter").text).to eql("5 POINTS Connect your Twitter account")
       page.execute_script "window.scrollBy(0,1000)"
       click_link "Connect your Twitter account"
       sleep 1
@@ -133,7 +133,7 @@ class MarketplaceLandingPage < IDmeBase
 
   def check_survey_activity_card_connected
     if @vip_user_acheivement_response[0]["completed"] == true
-      expect(social_network_activity_card("demographic-survey-completed").text).to eql("COMPLETED Complete a survey")
+      expect(demographic_survey_activity_card.text).to eql("COMPLETED Complete a survey")
       return true
     else
       expect(demographic_survey_activity_card.text).to eql("5 POINTS Complete a survey")
@@ -150,7 +150,7 @@ class MarketplaceLandingPage < IDmeBase
 
   def check_invite_store_activity_card_connected
     if @vip_user_acheivement_response[15]["completed"] == true
-      expect(social_network_activity_card("store-invite").text).to eql("COMPLETED Invite a store")
+      expect(invite_store_activity_card.text).to eql("COMPLETED Invite a store")
       return true
     else
       expect(invite_store_activity_card.text).to eql("10 POINTS Invite a store")
