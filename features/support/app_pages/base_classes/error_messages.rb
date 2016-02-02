@@ -7,6 +7,8 @@ module ErrorMessages
      "select2-container state-select error", 
      "select2-container dd214-component error",
      "select2-container dd214-branch error",
-     "select2-container dd214-officer error"].include?(value)
+     "select2-container dd214-officer error",
+     "select2-container error",
+     "select2-container service-affiliation error"].include?(value)
   end
 end

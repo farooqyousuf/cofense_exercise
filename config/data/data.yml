@@ -24,3 +24,14 @@ military_dd214:
   discharge_location: Maryland
   last_unit_assignment: New York
   signature: "image/jsignature;base30,6QZ12221111_2V88b5c444_5W5bifmmc_2J3367452_awZ9rb84Y269cinoib43_3FZ120Y13c786420Z6533_9xacm1Kg6_3D123100_9yahmsc_3I34331_fIZ577aa60Y7b93Zbhpje7_3JZ210Y2128cb533Z25745_gQZ20201_3N688b4_fW6adjikf94_3JZ1Y11133001"
+
+military_doc:
+  first_name: Sue
+  last_name: Gentz
+  dob: 09/03/1962
+  ssn: 666360453
+  street: 406 S Market St
+  city: Emporia
+  state: Kansas
+  zip: 66801
+

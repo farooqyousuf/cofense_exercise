@@ -9,6 +9,7 @@ Feature: Military verification using .mil email
     * I should be on the military verification screen
 
   @smoke @delete_user
+  #unique last name/email to pass verification
   Scenario: Successful verification with a military email as Service Member
     * I verify using military email information for "Service Member"
     * I submit the verification code for "Military Email Code"

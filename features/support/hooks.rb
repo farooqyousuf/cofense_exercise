@@ -13,14 +13,15 @@ After("@oauth_tester_logout") do
   end
 end
 
+After("@delete_experian_user") do
+  delete_user_common
+  @admin_users.delete_experian_user
+  @admin_tool.logout_in_new_window
+end
+
 After("@delete_user") do
-  @admin_tool = AdminTool.new
-  @admin_tool.login_in_new_window
-  sleep 2
-  admin_users = AdminUsers.new
-  sleep 2
-  admin_users.visit
-  admin_users.delete_user
+  delete_user_common
+  @admin_users.delete_user
   @admin_tool.logout_in_new_window
 end
 

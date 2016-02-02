@@ -14,7 +14,7 @@ class MilitaryEmail < IDmeBase
     if populate
       populate_fields
 
-      if ["Serive Member", "Military Supporter"].include?(affiliation)
+      if ["Service Member", "Military Supporter"].include?(affiliation)
         find(".checkbox").click
       end
 

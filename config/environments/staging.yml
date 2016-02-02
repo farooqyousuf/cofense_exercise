@@ -30,6 +30,9 @@ marketplace:
   user_cashback_profile_url: https://marketplace-staging.idmeinc.net/cash-back
   demographic_survey: https://marketplace-staging.idmeinc.net/cash-back/survey/new
   invite_store: https://marketplace-staging.idmeinc.net/cash-back/store-suggestions/new
+  email_invitation_providers: https://marketplace-staging.idmeinc.net/invitation-providers/new
+  email_batch_invitations: https://marketplace-staging.idmeinc.net/batch-invitations/new
+  refer_friend_email: rich.purnell.rocketman@gmail.com, test+be2@id.me, eddie.park.tester@gmail.com
 
 social_network:
   facebook_email: eddie.park.tester@gmail.com

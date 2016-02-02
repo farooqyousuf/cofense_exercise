@@ -21,4 +21,14 @@ include JavascriptAlerts
   	js_accept
   end
 
+
+  def delete_experian_user
+    find("input[type='search']").set "gentz"
+    sleep 2
+      if page.text.include? "No matching records found"
+        find("input[type='search']").set "CapybaraTester"
+      end
+    sleep 2
+    delete_user
+  end
 end
