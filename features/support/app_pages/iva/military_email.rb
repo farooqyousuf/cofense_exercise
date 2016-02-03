@@ -21,6 +21,7 @@ class MilitaryEmail < IDmeBase
       if ["Military Family", "Military Spouse"].include?(affiliation)
         fill_in "first_name", with: Faker::Name.first_name
         fill_in "last_name", with: Faker::Name.last_name
+        select_option(container_attribute, "#s2id_service_subgroup_id", "Veteran")    
       end
     end
 
