@@ -26,6 +26,7 @@ include JavascriptAlerts
     find("input[type='search']").set "gentz"
     sleep 2
       if page.text.include? "No matching records found"
+        #CapybaraTester is the name for Mil Doc Family/Spouse, to search and delete from Admin Tool
         find("input[type='search']").set "CapybaraTester"
       end
     sleep 2
