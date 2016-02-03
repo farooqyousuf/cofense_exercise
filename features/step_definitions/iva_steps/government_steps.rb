@@ -4,7 +4,7 @@ Given(/^I should be on the government verification screen$/) do
 end
 
 Given(/^I submit the government verification form$/) do
-  @iva_govt.verify(true)
+  @iva_govt.verify
 end
 
 Given(/^I submit the empty government form$/) do
