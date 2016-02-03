@@ -9,6 +9,7 @@ module ErrorMessages
      "select2-container dd214-branch error",
      "select2-container dd214-officer error",
      "select2-container error",
-     "select2-container service-affiliation error"].include?(value)
+     "select2-container service-affiliation error",
+     "select2-container schools validate-me error"].include?(value)
   end
 end

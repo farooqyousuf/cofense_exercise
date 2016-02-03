@@ -35,3 +35,5 @@ military_doc:
   state: Kansas
   zip: 66801
 
+student_creds:
+  school: George Mason University

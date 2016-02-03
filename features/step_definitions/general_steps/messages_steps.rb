@@ -13,13 +13,14 @@ end
   
 Given(/^I should see error messages on required fields for "([^"]*)"$/) do |method|
   var = case method
-  		  when "Government"		            then IVAGovernment
-        when "DD214 Vet"                then DD214
-        when "DD214 Non-Vet"            then DD214NonVet
-        when "Military Email"           then MilitaryEmail
-        when "Military Email Family"    then MilitaryEmailFamily
-        when "Military Document"        then MilitaryDoc
-        when "Military Document Family" then MilitaryDocFamily
+  		  when "Government"		             then IVAGovernment
+        when "DD214 Vet"                 then DD214
+        when "DD214 Non-Vet"             then DD214NonVet
+        when "Military Email"            then MilitaryEmail
+        when "Military Email Family"     then MilitaryEmailFamily
+        when "Military Document"         then MilitaryDoc
+        when "Military Document Family"  then MilitaryDocFamily
+        when "Student Credentials"       then StudentCreds
   		  else fail("Verification option not found")
   	    end
 
