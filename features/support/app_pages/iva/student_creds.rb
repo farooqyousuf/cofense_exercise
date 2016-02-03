@@ -8,7 +8,9 @@ class StudentCreds < IDmeBase
 
   def verify(populate = true)
     find("[data-option=#{container_attribute}]").find(".verification-header").click
-    populate_fields(data_for(:student_creds))
+      if populate
+       populate_fields(data_for(:student_creds))
+      end
     click_verify_button
   end
 
@@ -32,6 +34,10 @@ class StudentCreds < IDmeBase
     random_ssn = "#{rand(3 ** 3).to_s.rjust(3,'0')}1"
     fill_in "social", with: random_ssn
     fill_in "social_confirm", with: random_ssn
+  end
+
+  def required_fields
+    [0,2,3,4,5,6]
   end
 
 end
