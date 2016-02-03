@@ -165,8 +165,12 @@ class MarketplaceLandingPage < IDmeBase
     find(:link, :href =>"/cash-back/activities/refer-friends")
   end
 
+  def refer_25_friends_activity_card
+    find(:link, :href => "/cash-back/activities/refer-25-friends")
+  end
+
   def check_refer_friend_activity_card_connected
-    if @vip_user_acheivement_response[9]["completed"] == true
+    if @vip_user_acheivement_response[8]["completed"] == true
       social_network_activity_card("refer-friends").click
       sleep 1
       expect(page.has_text?("40% completed")).to be(true)
@@ -179,4 +183,19 @@ class MarketplaceLandingPage < IDmeBase
       expect(social_network_modal_popup).to eql("Refer friends and family to ID.me and get 1 point each and up to 10 points for 1 month.")
     end
   end
+
+  def check_refer_25_friends_activity_card
+    if @vip_user_acheivement_response[10]["completed"] == true
+      expect(refer_25_friends_activity_card.text).to eql("COMPLETED Refer 25 friends")
+      return true
+    else
+      expect(refer_25_friends_activity_card.text).to eql("EXTEND VIP Refer 25 friends")
+      page.execute_script "window.scrollBy(0,500)"
+      click_link "Refer 25 friends"
+      sleep 1
+      expect(social_network_modal_popup).to eql("Refer 25 friends to ID.me to extend your VIP status for 1 month.")
+    end
+  end
+
+
 end #end of class MarketplaceLandingPage
