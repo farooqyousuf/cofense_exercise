@@ -20,7 +20,12 @@ include DataMagic
     find("[data-option='#{container}'] #{element} > a.select2-choice").click
 
     #set the seach value
-    fill_in('s2id_autogen2_search', :with => value)
+    if element == ".schools"
+      id = "s2id_autogen3_search"
+    else
+      id = "s2id_autogen2_search"
+    end
+    fill_in(id, :with => value) 
 
     #pick a result
     find('#select2-drop .select2-results').find("div", :text => /^#{value}$/i).click

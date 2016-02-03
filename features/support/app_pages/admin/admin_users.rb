@@ -32,4 +32,5 @@ include JavascriptAlerts
     sleep 2
     delete_user
   end
+  
 end
