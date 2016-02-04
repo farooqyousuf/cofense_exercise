@@ -36,7 +36,7 @@ Given(/^I submit the verification code for "([^"]*)"$/) do |option|
   @IDmeBase.fill_in_verification_code(code)
 end
 
-Given(/^I generate a unique military doc$/) do
+Given(/^I generate a unique doc$/) do
   create_new_window
   use_last_browser_created
   visit 'https://pastie.org'
