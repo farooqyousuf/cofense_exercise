@@ -17,6 +17,7 @@ Given(/^I submit the empty Student form using "([^"]*)"$/) do |method|
 end
 
 Given(/^I verify using student documentation$/) do
+  step 'I generate a unique doc'
   @student_doc = StudentDoc.new
   @student_doc.verify
 end

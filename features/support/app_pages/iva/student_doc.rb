@@ -12,9 +12,10 @@ class StudentDoc < IDmeBase
         populate_fields(data_for(:student_creds))
       end
     click_verify_button
-    sleep 2
+    sleep 3
     populate_doc
-    binding.pry
+    attach_doc
+    click_verify_button
   end
 
   def populate_fields(data)
@@ -45,5 +46,10 @@ class StudentDoc < IDmeBase
   def populate_doc
      select_filter("id_document_type_id", "Student ID")
   end
+
+  def attach_doc
+    page.driver.browser.all(:xpath, '//input[@type="file"]')[0].send_keys("#{Dir.pwd}/screenshots/screenshot.png")
+  end
+
 end
 
