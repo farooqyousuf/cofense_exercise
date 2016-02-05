@@ -15,6 +15,6 @@ Feature: Student verification using student credentials
     * I complete the verification process
     * I should be successfully verified
 
-  Scenario: Successfully prompt for all required fields for Service Member
+  Scenario: Successfully prompt for all required fields
     * I submit the empty Student form using "Student Credentials"
     * I should see error messages on required fields for "Student Credentials"

@@ -12,10 +12,12 @@ class StudentDoc < IDmeBase
         populate_fields(data_for(:student_creds))
       end
     click_verify_button
-    sleep 3
-    populate_doc
-    attach_doc
-    click_verify_button
+      if populate
+        sleep 3
+        populate_doc
+        attach_doc
+        click_verify_button
+      end
   end
 
   def populate_fields(data)
@@ -35,6 +37,7 @@ class StudentDoc < IDmeBase
     'student-document'
   end
 
+  #dupe method found in school creds, maybe add to a module
   def populate_school(school)
     search_option(container_attribute, ".schools", school)
   end
@@ -47,9 +50,13 @@ class StudentDoc < IDmeBase
      select_filter("id_document_type_id", "Student ID")
   end
 
+  #dupe method found in mil doc too, maybe add to a shared module
   def attach_doc
     page.driver.browser.all(:xpath, '//input[@type="file"]')[0].send_keys("#{Dir.pwd}/screenshots/screenshot.png")
   end
 
+  def required_fields
+    [0,2,3,4,5,6,7,8,9,11]
+  end
 end
 

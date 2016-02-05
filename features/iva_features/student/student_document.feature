@@ -15,3 +15,7 @@ Background:
     * I approve the document in IDme admin
     * I complete the verification process
     * I should be successfully verified
+
+  Scenario: Successfully prompt for all required fields
+    * I submit the empty Student form using "Student Document"
+    * I should see error messages on required fields for "Student Document"    
