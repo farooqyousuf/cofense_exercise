@@ -50,11 +50,6 @@ class StudentDoc < IDmeBase
      select_filter("id_document_type_id", "Student ID")
   end
 
-  #dupe method found in mil doc too, maybe add to a shared module
-  def attach_doc
-    page.driver.browser.all(:xpath, '//input[@type="file"]')[0].send_keys("#{Dir.pwd}/screenshots/screenshot.png")
-  end
-
   def required_fields
     [0,2,3,4,5,6,7,8,9,11]
   end

@@ -20,12 +20,6 @@ include DataMagic
     find("[data-option='#{container}'] #{element} > a.select2-choice").click
 
     #set the seach value
-    # if element == ".schools"
-    #   id = "s2id_autogen3_search"
-    # else
-    #   id = "s2id_autogen2_search"
-    # end
-    # fill_in(id, :with => value) 
     find(".select2-input").set(value)
 
     #pick a result
@@ -46,6 +40,10 @@ include DataMagic
 
   def click_verify_button
     click_button("Verify now")
+  end
+
+  def attach_doc
+    page.driver.browser.all(:xpath, '//input[@type="file"]')[0].send_keys("#{Dir.pwd}/screenshots/screenshot.png")
   end
   
 end
