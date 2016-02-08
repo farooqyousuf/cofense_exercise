@@ -13,5 +13,14 @@ Given(/^I submit the empty Student form using "([^"]*)"$/) do |method|
   when "Student Credentials"
   	@student_creds = StudentCreds.new
   	@student_creds.verify(false)	
+  when "Student Document"
+    @student_doc = StudentDoc.new
+    @student_doc.verify(false)
   end
+end
+
+Given(/^I verify using student documentation$/) do
+  step 'I generate a unique doc'
+  @student_doc = StudentDoc.new
+  @student_doc.verify
 end

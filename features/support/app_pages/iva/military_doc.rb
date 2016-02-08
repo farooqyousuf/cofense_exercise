@@ -24,7 +24,7 @@ class MilitaryDoc < IDmeBase
 
       #attach dd214 doc
       populate_dd214_type("DD214 - Other")
-      attach_dd214_file 
+      attach_doc 
   	end
 
   	click_verify_button
@@ -59,10 +59,6 @@ class MilitaryDoc < IDmeBase
   	wait_for_ajax
     sleep 2
   	select_option(container_attribute, "#s2id_document_type_id", value)
-  end
-
-  def attach_dd214_file
-  	page.driver.browser.all(:xpath, '//input[@type="file"]')[0].send_keys("#{Dir.pwd}/screenshots/screenshot.png")
   end
 
   def required_fields

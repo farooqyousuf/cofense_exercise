@@ -37,3 +37,11 @@ military_doc:
 
 student_creds:
   school: George Mason University
+  first_name: Sue
+  last_name: Gentz
+  dob: 09/03/1962
+  ssn: 666360453
+  street: 406 S Market St
+  city: Emporia
+  state: Kansas
+  zip: 66801

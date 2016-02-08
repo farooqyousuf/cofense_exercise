@@ -31,7 +31,7 @@ class StudentCreds < IDmeBase
   end
 
   def populate_ssn
-    random_ssn = "#{rand(3 ** 3).to_s.rjust(3,'0')}1"
+    random_ssn = Faker::Number.number(9)
     fill_in "social", with: random_ssn
     fill_in "social_confirm", with: random_ssn
   end
