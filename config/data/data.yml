@@ -35,6 +35,16 @@ military_doc:
   state: Kansas
   zip: 66801
 
+teacher_doc:
+  first_name: Sue
+  last_name: Gentz
+  dob: 09/03/1962
+  ssn: 666360453
+  street: 406 S Market St
+  city: Emporia
+  state: Kansas
+  zip: 66801  
+
 student_creds:
   school: George Mason University
   first_name: Sue
@@ -45,3 +55,12 @@ student_creds:
   city: Emporia
   state: Kansas
   zip: 66801
+
+teacher_document:
+  number: 1A2B3C
+  city: Herndon
+  district: Fairfax
+  school: Herndon High School
+  fname: ~first_name
+  lname: ~last_name
+  dob: 01/01/1934
