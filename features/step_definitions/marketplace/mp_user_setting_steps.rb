@@ -1,7 +1,3 @@
-Given(/^I click on the Settings Link$/) do
-  pending # Write code here that turns the phrase above into concrete actions
-end
-
 Given(/^I update the user profile name and submit\.$/) do
   @mp_user_settings.fill_in_name
   expect(@mp_user_settings.profile_menu_name).to eql(FigNewton.marketplace.user_fname)
