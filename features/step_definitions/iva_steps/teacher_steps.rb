@@ -7,3 +7,8 @@ Given(/^I verify using teacher documentation$/) do
   @teacher_doc = TeacherDoc.new
   @teacher_doc.verify
 end
+
+Given(/^I submit the empty Teacher form using "([^"]*)"$/) do |arg1|
+  @teacher_doc = TeacherDoc.new
+  @teacher_doc.verify(false)
+end

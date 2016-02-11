@@ -22,6 +22,7 @@ Given(/^I should see error messages on required fields for "([^"]*)"$/) do |meth
         when "Military Document Family"  then MilitaryDocFamily
         when "Student Credentials"       then StudentCreds
         when "Student Document"          then StudentDoc
+        when "Teacher Document"          then TeacherDoc
   		  else fail("Verification option not found")
   	    end
 
