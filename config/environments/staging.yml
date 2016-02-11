@@ -34,6 +34,11 @@ marketplace:
   email_batch_invitations: https://marketplace-staging.idmeinc.net/batch-invitations/new
   refer_friend_email: rich.purnell.rocketman@gmail.com, test+be2@id.me, eddie.park.tester@gmail.com
   refer_25_friends_email: <%= 25.times.map {|n| "test#{n}@id.me"}.join(",") %>
+  user_settings_homepage: https://marketplace-staging.idmeinc.net/profile/edit
+  user_fname: Jack
+  user_lname: Sparrow
+  user_account_edit: https://marketplace-staging.idmeinc.net/account/edit
+
 social_network:
   facebook_email: eddie.park.tester@gmail.com
   facebook_password: Password123123

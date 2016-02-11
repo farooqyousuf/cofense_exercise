@@ -196,6 +196,4 @@ class MarketplaceLandingPage < IDmeBase
       expect(social_network_modal_popup).to eql("Refer 25 friends to ID.me to extend your VIP status for 1 month.")
     end
   end
-
-
 end #end of class MarketplaceLandingPage
