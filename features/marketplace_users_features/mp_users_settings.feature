@@ -36,3 +36,10 @@ Feature: Test the MP_users Account & Profile settings
       | AAAAAAAAAA1   |                  | Password must contain at least one lowercase letter |
       | Password1     | PuppyMonkey12    | Passwords do not match                              |
       | Password1     |                  | Confirm password                                    |
+
+    @mp_password
+    Scenario: Update account - I successfully change my password
+      * I visit "MarketplaceUserAccountEditPage"
+      * I create a Marketplace account edit page object
+      * I update the user account password
+      * I check that the user account password has successfully updated.

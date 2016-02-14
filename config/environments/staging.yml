@@ -38,6 +38,7 @@ marketplace:
   user_fname: Jack
   user_lname: Sparrow
   user_account_edit: https://marketplace-staging.idmeinc.net/account/edit
+  new_password: JollyRoger123
 
 social_network:
   facebook_email: eddie.park.tester@gmail.com

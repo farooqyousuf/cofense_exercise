@@ -16,7 +16,7 @@ Given(/^I create a Marketplace User Setting Page Object$/) do
 end
 
 Given(/^I create a Marketplace account edit page object$/) do
-  @mp_user_account_settings = MarketplaceUserSettingsPage.new
+  @mp_user_account_settings = MarketplaceUserAccountEditPage.new
 end
 
 ##user account page
@@ -26,7 +26,7 @@ Given(/^I enter "([^"]*)" into user account password field$/) do |password|
 end
 
 Given(/^I enter "([^"]*)" into confirm user account password field$/) do |confirm_password|
-  @mp_user_accounts_settings.enter_confirm_password
+  @mp_user_account_settings.enter_confirm_password
 end
 
 Given(/^I should see "([^"]*)" error message appear for user account$/) do |error_message|
@@ -35,4 +35,20 @@ end
 
 Given(/^I click update button$/) do
   click_button "Update"
+end
+
+#successfully updating user password
+
+Given(/^I update the user account password$/) do
+  @mp_user_account_settings.enter_correct_password_fields
+  step "I click update button"
+  expect(page.has_text?("Account updated successfully")).to be(true)
+end
+
+Given(/^I check that the user account password has successfully updated\.$/) do
+  @mp_user_account_settings.sign_out
+  #check url
+  step "I click on SignIn link"
+  @mp_user_account_settings.new_sign_in
+  expect(find(:link,:href =>"/cash-back").text).to eql(FigNewton.marketplace.user_fname)
 end
