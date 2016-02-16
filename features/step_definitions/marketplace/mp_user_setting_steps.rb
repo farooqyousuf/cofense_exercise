@@ -48,7 +48,7 @@ end
 Given(/^I check that the user account password has successfully updated\.$/) do
   @mp_user_account_settings.sign_out
   #check url
-  step "I click on SignIn link"
+  click_link "Sign In"
   @mp_user_account_settings.new_sign_in
   expect(find(:link,:href =>"/cash-back").text).to eql(FigNewton.marketplace.user_fname)
 end

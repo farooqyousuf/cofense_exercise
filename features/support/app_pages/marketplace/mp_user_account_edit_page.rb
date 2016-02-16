@@ -28,6 +28,6 @@ class MarketplaceUserAccountEditPage < IDmeBase
   def new_sign_in
     fill_in(:user_email,:with => FigNewton.mp_users.vip)
     fill_in(:user_password,:with => FigNewton.marketplace.new_password)
-    click_link "Sign in"
+    click_button "Sign in"
   end
 end
