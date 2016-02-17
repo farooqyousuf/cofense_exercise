@@ -23,6 +23,8 @@ Given(/^I verify using teacher credentials with "([^"]*)"$/) do |method|
 		@teacher_lookup.verify("Delaware")
 	when "no license and short ssn"
 		@teacher_lookup.verify("New Mexico")
+	when "license and no ssn"
+		@teacher_lookup.verify("Michigan")
 	end
 end
 

@@ -20,7 +20,10 @@ class TeacherLookup < IDmeBase
     fill_in "teacher_city", with: Faker::Address.city
     fill_in "district", with: Faker::Address.city
     fill_in "school", with: Faker::University.name
-    fill_in "teacher_number", with: Faker::Number.number(10)
+
+    if state == "Michigan"
+      fill_in "teacher_number", with: Faker::Number.number(10) #teacher license number
+    end
 
     if state == "New Mexico"
       fill_in "social", with: "1111"
