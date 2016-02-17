@@ -8,7 +8,30 @@ Given(/^I verify using teacher documentation$/) do
   @teacher_doc.verify
 end
 
-Given(/^I submit the empty Teacher form using "([^"]*)"$/) do |arg1|
-  @teacher_doc = TeacherDoc.new
-  @teacher_doc.verify(false)
+Given(/^I submit the empty Teacher form using "([^"]*)"$/) do |method|
+  case method
+  when "Teacher Document"
+  	@teacher_doc = TeacherDoc.new
+  	@teacher_doc.verify(false)
+  end
+end
+
+Given(/^I verify using teacher credentials with "([^"]*)"$/) do |method|
+	@teacher_lookup = TeacherLookup.new
+	case method		
+	when "no license and no ssn"
+		@teacher_lookup.verify("Delaware")
+	end
+end
+
+Given(/^I approve the teacher verification in IDme admin$/) do
+  @admin_tool = AdminTool.new
+  @admin_tool.login_in_new_window
+
+  step 'I visit "AdminTeacherVerifs"'
+  @admin_teacher_verifs = AdminTeacherVerifs.new
+
+  @admin_teacher_verifs.approve_doc
+  
+  @admin_tool.logout_in_new_window
 end
