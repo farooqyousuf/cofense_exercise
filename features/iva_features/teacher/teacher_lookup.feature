@@ -9,6 +9,7 @@ Feature: Teacher verification using state lookup
     * I should be on the teacher verification screen
 
   @smoke
+  #unique combo of name/dob
   Scenario: Successful verification with no license and no ssn
     * I verify using teacher credentials with "no license and no ssn"
     * I approve the teacher verification in IDme admin
@@ -27,7 +28,8 @@ Feature: Teacher verification using state lookup
     * I complete the verification process
     * I should be successfully verified
 
-  # Scenario: Successful verification with license and short ssn
-  #   * I verify using teacher credentials with "license and short ssn"
-  #   * I complete the verification process
-  #   * I should be successfully verified
+  Scenario: Successful verification with license and short ssn
+    * I verify using teacher credentials with "license and short ssn"
+    * I approve the teacher verification in IDme admin
+    * I complete the verification process
+    * I should be successfully verified

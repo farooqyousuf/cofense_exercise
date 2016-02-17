@@ -21,15 +21,24 @@ class TeacherLookup < IDmeBase
     fill_in "district", with: Faker::Address.city
     fill_in "school", with: Faker::University.name
 
-    if state == "Michigan"
-      fill_in "teacher_number", with: Faker::Number.number(10) #teacher license number
+    case state
+    when "Michigan"
+      fill_teacher_license_number
+    when "New Mexico"
+      fill_short_ssn
+    when "Alabama"
+      fill_teacher_license_number
+      fill_short_ssn
     end
+  end
 
-    if state == "New Mexico"
-      fill_in "social", with: "1111"
-      fill_in "social_confirm", with: "1111"
-    end
+  def fill_teacher_license_number
+    fill_in "teacher_number", with: Faker::Number.number(10) #teacher license number
+  end
 
+  def fill_short_ssn
+    fill_in "social", with: "1111"
+    fill_in "social_confirm", with: "1111"
   end
 
   def populate_first_state(value)
