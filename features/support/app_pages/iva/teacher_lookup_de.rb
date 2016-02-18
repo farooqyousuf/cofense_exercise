@@ -1,6 +1,6 @@
 require_relative '../base_classes/error_messages.rb'
 
-class TeacherLookupDe < IDmeBase
+class TeacherLookupDE < IDmeBase
 
   include IVABase
   include Capybara::DSL

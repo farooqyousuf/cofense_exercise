@@ -45,3 +45,7 @@ Feature: Teacher verification using state lookup
     * I approve the teacher verification in IDme admin
     * I complete the verification process
     * I should be successfully verified
+
+Scenario: Successfully prompt for all required fields for license and short ssn
+    * I submit the empty Teacher form using "Teacher Lookup Alabama"
+    * I should see error messages on required fields for "Teacher Lookup Alabama"     
