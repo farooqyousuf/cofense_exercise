@@ -48,3 +48,14 @@ Given(/^I generate a unique doc$/) do
   use_last_browser_created
 end
 
+Given(/^I approve the document in IDme admin$/) do
+  @admin_tool = AdminTool.new
+  @admin_tool.login_in_new_window
+
+  step 'I visit "AdminDocs"'
+  @admin_docs = AdminDocs.new
+
+  @admin_docs.approve_doc
+  
+  @admin_tool.logout_in_new_window
+end
