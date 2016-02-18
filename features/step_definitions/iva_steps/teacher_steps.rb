@@ -18,6 +18,8 @@ Given(/^I submit the empty Teacher form using "([^"]*)"$/) do |method|
     @teacher_lookup.verify("Delaware", false)
   when "Teacher Lookup New Mexico"
     @teacher_lookup.verify("New Mexico", false)
+  when "Teacher Lookup Michigan"
+    @teacher_lookup.verify("Michigan", false)
   end
 end
 

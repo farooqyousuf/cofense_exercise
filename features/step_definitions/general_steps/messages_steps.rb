@@ -25,6 +25,7 @@ Given(/^I should see error messages on required fields for "([^"]*)"$/) do |meth
         when "Teacher Document"          then TeacherDoc
         when "Teacher Lookup Delaware"   then TeacherLookupDe
         when "Teacher Lookup New Mexico" then TeacherLookupNM
+        when "Teacher Lookup Michigan"   then TeacherLookupMi
   		  else fail("Verification option not found")
   	    end
 

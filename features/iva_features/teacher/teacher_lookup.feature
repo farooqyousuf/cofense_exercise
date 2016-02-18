@@ -36,6 +36,10 @@ Feature: Teacher verification using state lookup
     * I complete the verification process
     * I should be successfully verified
 
+  Scenario: Successfully prompt for all required fields for license and no ssn form
+    * I submit the empty Teacher form using "Teacher Lookup Michigan"
+    * I should see error messages on required fields for "Teacher Lookup Michigan"     
+
   Scenario: Successful verification with license and short ssn
     * I verify using teacher credentials with "license and short ssn"
     * I approve the teacher verification in IDme admin
