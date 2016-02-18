@@ -26,6 +26,10 @@ Feature: Teacher verification using state lookup
     * I complete the verification process
     * I should be successfully verified
 
+ Scenario: Successfully prompt for all required fields for no license and short ssn form
+    * I submit the empty Teacher form using "Teacher Lookup New Mexico"
+    * I should see error messages on required fields for "Teacher Lookup New Mexico"   
+
   Scenario: Successful verification with license and no ssn
     * I verify using teacher credentials with "license and no ssn"
     * I approve the teacher verification in IDme admin
