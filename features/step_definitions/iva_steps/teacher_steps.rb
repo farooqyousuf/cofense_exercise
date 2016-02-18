@@ -9,10 +9,13 @@ Given(/^I verify using teacher documentation$/) do
 end
 
 Given(/^I submit the empty Teacher form using "([^"]*)"$/) do |method|
+  @teacher_doc = TeacherDoc.new
+  @teacher_lookup = TeacherLookup.new
   case method
   when "Teacher Document"
-  	@teacher_doc = TeacherDoc.new
   	@teacher_doc.verify(false)
+  when "Teacher Lookup Delaware"
+    @teacher_lookup.verify("Delaware", false)
   end
 end
 

@@ -8,7 +8,9 @@ class TeacherLookup < IDmeBase
 
   def verify(state, populate = true)
     populate_first_state(state)
-    populate_fields(state)
+      if populate == true
+        populate_fields(state)
+      end
     click_verify_button
   end
   
