@@ -10,6 +10,7 @@ module ErrorMessages
      "select2-container dd214-officer error",
      "select2-container error",
      "select2-container service-affiliation error",
-     "select2-container schools validate-me error"].include?(value)
+     "select2-container schools validate-me error",
+     "select2-container hide-on-poll state-select error"].include?(value)
   end
 end

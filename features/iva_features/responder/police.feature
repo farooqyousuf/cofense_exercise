@@ -16,3 +16,7 @@ Feature: Responder verification as a police officer
     * I approve the document in IDme admin
     * I complete the verification process
     * I should be successfully verified as "Police Officer"
+
+Scenario: Successful prompt for all required fields for Police Officer
+    * I submit the empty Police form
+    * I should see error messages on required fields for "Police"
