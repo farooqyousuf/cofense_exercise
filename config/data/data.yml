@@ -43,7 +43,7 @@ teacher_doc:
   street: 406 S Market St
   city: Emporia
   state: Kansas
-  zip: 66801  
+  zip: 66801
 
 student_creds:
   school: George Mason University
@@ -65,3 +65,7 @@ police:
   city: Emporia
   state: Kansas
   zip: 66801
+
+hlp_page_types:
+  temp_hlp_ungated:
+    name: Sam's Club Military Special

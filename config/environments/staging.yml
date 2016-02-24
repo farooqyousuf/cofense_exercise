@@ -54,3 +54,7 @@ admin:
 
 idp:
   base_url: https://idp-staging.idmeinc.net
+
+hlp:
+  homepage: https://hosted-pages-staging.idmeinc.net/admin/
+  partner_number: 1
