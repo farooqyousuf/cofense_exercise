@@ -9,3 +9,5 @@ Feature: Test the HLP UngatedPage functionality
 
   Scenario: Add a new Ungated page
     * I create a new UngatedPage
+    * I should see UngatedPage edit page elements
+    * I delete the "UngatedPage" hlp page 

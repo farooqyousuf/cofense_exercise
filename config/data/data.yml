@@ -69,3 +69,5 @@ police:
 hlp_page_types:
   temp_hlp_ungated:
     name: Sam's Club Military Special
+    page_redirect_url: https://www.google.com
+    body_copy: Mauris eget ornare enim. Quisque sagittis velit ut dui mollis eleifend. Quisque vel interdum risus. Praesent sit amet cursus ex. Mauris suscipit posuere nibh. Phasellus maximus bibendum lectus eget auctor. Curabitur semper placerat lacus ac tincidunt.
