@@ -13,3 +13,8 @@ Given(/^I submit the empty Police form$/) do
   @police = Police.new
   @police.verify(false)
 end
+
+Given(/^I verify using a ProBoard Firefighter$/) do
+  @pb_firefighter = PBFirefighter.new
+  @pb_firefighter.verify
+end

@@ -65,3 +65,10 @@ police:
   city: Emporia
   state: Kansas
   zip: 66801
+
+firefighter_proboard:
+  first_name: Anika
+  last_name: Smith
+  dob: 01/01/1942
+  ssn: 9103
+  state: Virginia
