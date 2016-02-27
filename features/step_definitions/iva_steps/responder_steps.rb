@@ -18,3 +18,7 @@ Given(/^I verify using a ProBoard Firefighter$/) do
   @pb_firefighter = PBFirefighter.new
   @pb_firefighter.verify
 end
+
+Given(/^I submit the empty ProBoard Firefighter form$/) do
+  PBFirefighter.new.verify(false)
+end

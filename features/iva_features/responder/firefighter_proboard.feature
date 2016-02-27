@@ -14,6 +14,6 @@ Feature: Responder verification as a ProBoard Firefighter
     * I complete the verification process
     * I should be successfully verified as "Firefighter"
 
-# Scenario: Successful prompt for all required fields for ProBoard Firefighter
-#     * I submit the empty ProBoard Firefighter form
-#     * I should see error messages on required fields for "ProBoard Firefighter"
+Scenario: Successful prompt for all required fields for ProBoard Firefighter
+    * I submit the empty ProBoard Firefighter form
+    * I should see error messages on required fields for "ProBoard Firefighter"

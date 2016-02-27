@@ -8,6 +8,8 @@ class PBFirefighter < IDmeBase
 
   def verify(populate = true)    
     find("[data-option=#{container_attribute}]").find(".verification-header").click
+    populate_first_state(data_for(:firefighter_proboard).fetch("state"))
+    choose("proboard_status_certified")
 
     if populate
        populate_fields(data_for(:firefighter_proboard))
@@ -17,9 +19,6 @@ class PBFirefighter < IDmeBase
   end
 
   def populate_fields(data)
-    populate_first_state(data.fetch("state"))
-    choose("proboard_status_certified")
-
     fill_in :first_name, with: data.fetch("first_name")
     fill_in :last_name, with: data.fetch("last_name")
     2.times {fill_in :birth_date, :with => data.fetch("dob")}
@@ -37,6 +36,7 @@ class PBFirefighter < IDmeBase
   end
 
   def required_fields
+    [0,1,2,3,4]
   end
 
 end
