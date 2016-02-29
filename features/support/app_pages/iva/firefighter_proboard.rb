@@ -19,13 +19,12 @@ class PBFirefighter < IDmeBase
   end
 
   def populate_fields(data)
-    fill_in :first_name, with: data.fetch("first_name")
-    fill_in :last_name, with: data.fetch("last_name")
-    2.times {fill_in :birth_date, :with => data.fetch("dob")}
-    fill_in :social, :with => data.fetch("ssn")
-    fill_in :social_confirm, :with => data.fetch("ssn")
-  end
+    %w[first_name last_name social social_confirm].each do |field|
+      fill_in field, with: data.fetch(field)
+    end
 
+    2.times {fill_in :birth_date, :with => data.fetch("birth_date")}
+  end
 
   def populate_first_state(value)
     search_option(container_attribute, "#s2id_firefighter_state", value)

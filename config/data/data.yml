@@ -40,6 +40,7 @@ experian_user:
 firefighter_proboard:
   first_name: Anika
   last_name: Smith
-  dob: 01/01/1942
-  ssn: 9103
+  birth_date: 01/01/1942
+  social: 9103
+  social_confirm: 9103
   state: Virginia
