@@ -23,15 +23,16 @@ class Police < IDmeBase
 
   def populate_fields(data)
     populate_first_state(data.fetch("state"))
-    fill_in :first_name, :with => data.fetch("first_name")
-    fill_in :last_name, :with => data.fetch("last_name")
-    2.times {fill_in :birth_date, :with => data.fetch("dob")}
-    fill_in :social, :with => data.fetch("ssn")
-    fill_in :social_confirm, :with => data.fetch("ssn")
-    fill_in :street, :with => data.fetch("street")
-    fill_in :city, :with => data.fetch("city")
-    populate_second_state("Kansas")
-    2.times {fill_in :zip, :with => data.fetch("zip")}
+
+    %w(first_name last_name social social_confirm street city zip).each do |field|
+      fill_in field, :with => data.fetch(field)
+    end
+    
+    %w(birth_date zip).each do |field|
+      2.times {fill_in field, :with => data.fetch(field)}
+    end
+
+    populate_second_state(data.fetch("state"))
   end
 
 
