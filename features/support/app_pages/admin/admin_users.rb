@@ -21,7 +21,6 @@ include JavascriptAlerts
   	js_accept
   end
 
-
   def delete_experian_user
     find("input[type='search']").set "gentz"
     sleep 2

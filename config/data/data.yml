@@ -1,7 +1,7 @@
 government:
   first_name: Farooq
   last_name: Yousuf
-  dob: 01/05/1985
+  birth_date: 01/05/1985
   city: Ashburn
   county: Loudoun
   state: Virginia
@@ -11,25 +11,27 @@ government:
 military_dd214:
   first_name: Joe
   last_name: Smith
-  member_first_name: Benny
-  member_last_name: Washington
-  ssn: 222222222
-  ssn_confirm: 222222222
-  dob: 02/02/1945
+  service_member_first_name: Benny
+  service_member_last_name: Washington
+  social: 222222222
+  social_confirm: 222222222
+  birth_date: 02/02/1945
   birth_place: USA
-  enter_date: 01/01/2000
-  release_date: 01/01/2003
+  date_entered: 01/01/2000
+  date_released: 01/01/2003
   service_number: FSJA23
   entry_location: Virginia
   discharge_location: Maryland
   last_unit_assignment: New York
   signature: "image/jsignature;base30,6QZ12221111_2V88b5c444_5W5bifmmc_2J3367452_awZ9rb84Y269cinoib43_3FZ120Y13c786420Z6533_9xacm1Kg6_3D123100_9yahmsc_3I34331_fIZ577aa60Y7b93Zbhpje7_3JZ210Y2128cb533Z25745_gQZ20201_3N688b4_fW6adjikf94_3JZ1Y11133001"
 
-military_doc:
+experian_user:
+  school: George Mason University
   first_name: Sue
   last_name: Gentz
-  dob: 09/03/1962
-  ssn: 666360453
+  birth_date: 09/03/1962
+  social: 666360453
+  social_confirm: 666360453
   street: 406 S Market St
   city: Emporia
   state: Kansas
@@ -45,16 +47,24 @@ teacher_doc:
   state: Kansas
   zip: 66801
 
-student_creds:
-  school: George Mason University
-  first_name: Sue
-  last_name: Gentz
-  dob: 09/03/1962
-  ssn: 666360453
+firefighter_proboard:
+  first_name: Anika
+  last_name: Smith
+  birth_date: 01/01/1942
+  social: 9103
+  social_confirm: 9103
+  state: Virginia
+
+mil_doc:
+  service_member_first_name: Sue
+  service_member_last_name: Gentz
+  birth_date: 09/03/1962
+  social: 666360453
+  social_confirm: 666360453
   street: 406 S Market St
   city: Emporia
-  state: Kansas
   zip: 66801
+  state: Kansas
 
 police:
   first_name: Sue

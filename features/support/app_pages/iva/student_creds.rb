@@ -9,7 +9,7 @@ class StudentCreds < IDmeBase
   def verify(populate = true)
     find("[data-option=#{container_attribute}]").find(".verification-header").click
       if populate
-       populate_fields(data_for(:student_creds))
+       populate_fields(data_for(:experian_user))
       end
     click_verify_button
   end
@@ -25,15 +25,15 @@ class StudentCreds < IDmeBase
     2.times {fill_in "birth_date", with: Faker::Date.birthday.strftime("%m%d%Y")}
     populate_ssn
   end
-
   def populate_school(school)
     search_option(container_attribute, ".schools", school)
   end
 
   def populate_ssn
     random_ssn = Faker::Number.number(9)
-    fill_in "social", with: random_ssn
-    fill_in "social_confirm", with: random_ssn
+    %w(social social_confirm).each do |field|
+      fill_in field, :with => random_ssn
+    end
   end
 
   def required_fields

@@ -19,10 +19,12 @@ class MilitaryEmail < IDmeBase
       end
 
       if ["Military Family", "Military Spouse"].include?(affiliation)
-        fill_in "first_name", with: Faker::Name.first_name
-        fill_in "last_name", with: Faker::Name.last_name
+        %w(first_name last_name).each do |field|
+          fill_in field, :with => Faker::Name.field
+        end
         select_option(container_attribute, "#s2id_service_subgroup_id", "Veteran")    
       end
+
     end
 
     click_verify_button
@@ -37,8 +39,10 @@ class MilitaryEmail < IDmeBase
     fake_last_name = Faker::Name.last_name
     unique_email = fake_last_name+"#{rand(6 ** 8)}"+"@id.me"
 
-    fill_in "email", with: unique_email
-    fill_in "email_confirmation", with: unique_email
+    %w(email email_confirmation).each do |field|
+      fill_in field, :with => unique_email
+    end
+
     fill_in "service_member_first_name", with: fake_first_name
     fill_in "service_member_last_name", with: fake_last_name
     2.times {fill_in "birth_date", with: "01/05/1985"}

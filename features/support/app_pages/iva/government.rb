@@ -16,12 +16,11 @@ class IVAGovernment < IDmeBase
   end
 
   def populate_fields(data)
-  	fill_in("first_name", :with => data.fetch("first_name"))
-  	fill_in("last_name", :with => data.fetch("last_name"))
-    fill_in("city", :with => data.fetch("city"))
-    fill_in("county", :with => data.fetch("county"))
+    %w(first_name last_name city county).each do |field|
+      fill_in field, :with => data.fetch(field)
+    end
     unique_email
-    2.times { fill_in("birth_date", :with => data.fetch("dob")) }
+    2.times { fill_in("birth_date", :with => data.fetch("birth_date")) }
   	populate_state(data.fetch("state"))
     populate_affiliation(data.fetch("affiliation"))
     populate_agency(data.fetch("agency"))
@@ -29,8 +28,9 @@ class IVAGovernment < IDmeBase
 
   def unique_email
     @email = "capybara+"+"#{rand(6 ** 8)}"+"@id.me"
-    fill_in("email", :with => @email)
-    fill_in("email_confirmation", :with => @email)
+    %w(email email_confirmation).each do |field|
+      fill_in field, :with => @email
+    end
   end
 
   def container_attribute

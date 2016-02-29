@@ -9,7 +9,7 @@ class TeacherDoc < IDmeBase
   def verify(populate = true)
     populate_first_state("Maryland")
       if populate
-        populate_fields(data_for(:teacher_doc))
+        populate_fields(data_for(:experian_user))
       end
       
       click_verify_button
