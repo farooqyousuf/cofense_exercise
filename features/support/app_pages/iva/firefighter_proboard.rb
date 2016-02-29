@@ -19,8 +19,8 @@ class PBFirefighter < IDmeBase
   end
 
   def populate_fields(data)
-    %w[first_name last_name social social_confirm].each do |field|
-      fill_in field, with: data.fetch(field)
+    %w(first_name last_name social social_confirm).each do |field|
+      fill_in field, :with => data.fetch(field)
     end
 
     2.times {fill_in :birth_date, :with => data.fetch("birth_date")}
