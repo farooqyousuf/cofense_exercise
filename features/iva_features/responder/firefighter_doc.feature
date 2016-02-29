@@ -16,3 +16,7 @@ Feature: Responder verification as a firefighter using document upload
     * I approve the document in IDme admin
     * I complete the verification process
     * I should be successfully verified as "Firefighter"
+
+Scenario: Successful prompt for all required fields for Firefighter Doc Upload
+    * I submit the empty Firefighter doc upload form
+    * I should see error messages on required fields for "Firefighter doc upload"

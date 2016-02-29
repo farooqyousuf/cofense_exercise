@@ -26,3 +26,7 @@ end
 Given(/^I verify using firefighter documentation$/) do
   DocFirefighter.new.verify
 end
+
+Given(/^I submit the empty Firefighter doc upload form$/) do
+  DocFirefighter.new.verify(false)
+end

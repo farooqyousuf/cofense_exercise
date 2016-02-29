@@ -19,8 +19,9 @@ class DocFirefighter < IDmeBase
     if populate
       sleep 3
       attach_doc(1)
-      click_verify_button
     end
+
+    click_verify_button
   end
 
   def populate_fields(data)
@@ -47,8 +48,8 @@ class DocFirefighter < IDmeBase
     "firefighter"
   end
 
-  # def required_fields
-  #   [0,1,2,3,4]
-  # end
+  def required_fields
+    [0,1,2,3,4,5,6,7,9]
+  end
 
 end
