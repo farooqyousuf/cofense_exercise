@@ -14,13 +14,13 @@ After("@oauth_tester_logout") do
 end
 
 After("@delete_experian_user") do
-  delete_user_common
+  visit_admin_users_in_new_window
   @admin_users.delete_experian_user
   @admin_tool.logout_in_new_window
 end
 
 After("@delete_user") do
-  delete_user_common
+  visit_admin_users_in_new_window
   @admin_users.delete_user
   @admin_tool.logout_in_new_window
 end

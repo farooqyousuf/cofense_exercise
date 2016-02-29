@@ -50,7 +50,7 @@ module HelperMethods
     page.find(".label-error").text
   end
 
-  def delete_user_common
+  def visit_admin_users_in_new_window
     @admin_tool = AdminTool.new
     @admin_tool.login_in_new_window
     sleep 2
