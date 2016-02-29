@@ -12,7 +12,7 @@ class MilitaryDoc < IDmeBase
   	populate_affiliation(affiliation)
 
   	if populate
-  		populate_fields(data_for(:military_doc))
+  		populate_fields(data_for(:experian_user))
       
       if ["Military Family", "Military Spouse"].include?(affiliation)
         fill_in "first_name", with: "CapybaraTester" 

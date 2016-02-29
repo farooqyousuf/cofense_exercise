@@ -9,7 +9,7 @@ class StudentDoc < IDmeBase
   def verify(populate = true)
     find("[data-option=#{container_attribute}]").find(".verification-header").click
       if populate
-        populate_fields(data_for(:student_creds))
+        populate_fields(data_for(:experian_user))
       end
     click_verify_button
       if populate
