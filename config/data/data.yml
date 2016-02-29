@@ -36,47 +36,6 @@ experian_user:
   state: Kansas
   zip: 66801
 
-# military_doc:
-#   first_name: Sue
-#   last_name: Gentz
-#   dob: 09/03/1962
-#   ssn: 666360453
-#   street: 406 S Market St
-#   city: Emporia
-#   state: Kansas
-#   zip: 66801
-
-# teacher_doc:
-#   first_name: Sue
-#   last_name: Gentz
-#   dob: 09/03/1962
-#   ssn: 666360453
-#   street: 406 S Market St
-#   city: Emporia
-#   state: Kansas
-#   zip: 66801  
-
-# student_creds:
-#   school: George Mason University
-#   first_name: Sue
-#   last_name: Gentz
-#   dob: 09/03/1962
-#   ssn: 666360453
-#   street: 406 S Market St
-#   city: Emporia
-#   state: Kansas
-#   zip: 66801
-
-# police:
-#   first_name: Sue
-#   last_name: Gentz
-#   dob: 09/03/1962
-#   ssn: 666360453
-#   street: 406 S Market St
-#   city: Emporia
-#   state: Kansas
-#   zip: 66801
-
 firefighter_proboard:
   first_name: Anika
   last_name: Smith
