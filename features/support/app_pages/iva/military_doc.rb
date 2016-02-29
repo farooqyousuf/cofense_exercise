@@ -12,11 +12,12 @@ class MilitaryDoc < IDmeBase
   	populate_affiliation(affiliation)
 
   	if populate
-  		populate_fields(data_for(:experian_user))
+  		populate_fields(data_for(:mil_doc))
       
       if ["Military Family", "Military Spouse"].include?(affiliation)
-        fill_in "first_name", with: "CapybaraTester" 
-        fill_in "last_name", with: "CapybaraTester"
+        %w(first_name last_name).each do |field|
+          fill_in field, :with => "CapybaraTester"
+        end
         select_option(container_attribute, "#s2id_service_subgroup_id", "Veteran")
       end
 
@@ -32,14 +33,14 @@ class MilitaryDoc < IDmeBase
 
   def populate_fields(data)
   	#fill reqd fields
-    fill_in "service_member_first_name", with: data.fetch("first_name")
-	  fill_in "service_member_last_name", with: data.fetch("last_name")
-	  2.times { fill_in "birth_date", with: data.fetch("dob") }
-	  fill_in "social", with: data.fetch("ssn")
-	  fill_in "social_confirm", with: data.fetch("ssn")
-	  fill_in "street", with: data.fetch("street")
-	  fill_in "city", with: data.fetch("city")
-	  2.times { fill_in "zip", with: data.fetch("zip") }
+    %w(service_member_first_name service_member_last_name social social_confirm street city).each do |field|
+      fill_in field, :with => data.fetch(field)
+    end
+    
+    %w(birth_date zip).each do |field|
+      2.times {fill_in field, :with => data.fetch(field)}
+    end
+
     populate_state(data.fetch("state"))
   end
 

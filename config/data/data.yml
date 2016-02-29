@@ -44,3 +44,14 @@ firefighter_proboard:
   social: 9103
   social_confirm: 9103
   state: Virginia
+
+mil_doc:
+  service_member_first_name: Sue
+  service_member_last_name: Gentz
+  birth_date: 09/03/1962
+  social: 666360453
+  social_confirm: 666360453
+  street: 406 S Market St
+  city: Emporia
+  zip: 66801
+  state: Kansas
