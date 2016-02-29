@@ -29,6 +29,7 @@ Given(/^I should see error messages on required fields for "([^"]*)"$/) do |meth
         when "Teacher Lookup Alabama"    then TeacherLookupAL
         when "Police"                    then Police
         when "ProBoard Firefighter"      then PBFirefighter
+        when "Firefighter doc upload"    then DocFirefighter
   		  else fail("Verification option not found")
   	    end
 

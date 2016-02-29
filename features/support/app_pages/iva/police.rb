@@ -11,7 +11,7 @@ class Police < IDmeBase
     find("[data-option=#{container_attribute}]").find(".verification-header").click
 
     if populate
-      populate_fields(data_for(:police))
+      populate_fields(data_for(:experian_user))
       click_verify_button
       sleep 5
       attach_doc(2)
