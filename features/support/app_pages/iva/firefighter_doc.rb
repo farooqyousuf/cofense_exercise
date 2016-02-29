@@ -14,9 +14,6 @@ class DocFirefighter < IDmeBase
     if populate
       populate_fields(data_for(:experian_user))
       click_verify_button
-    end
-
-    if populate
       sleep 3
       attach_doc(1)
     end
@@ -25,15 +22,15 @@ class DocFirefighter < IDmeBase
   end
 
   def populate_fields(data)
-    fill_in "first_name", with: data.fetch("first_name")
-    fill_in "last_name", with: data.fetch("last_name")
-    2.times { fill_in("birth_date", with: data.fetch("dob")) }
-    fill_in "social", with: data.fetch("ssn")
-    fill_in "social_confirm", with: data.fetch("ssn")
-    fill_in "street", with: data.fetch("street")
-    fill_in "city", with: data.fetch("city")
+    %w(first_name last_name social social_confirm street city).each do |field|
+      fill_in field, with: data.fetch(field)
+    end
+
     populate_second_state(data_for(:experian_user).fetch("state"))
-    2.times {fill_in "zip", with: data.fetch("zip")}
+
+    %w(birth_date zip).each do |field|
+      2.times { fill_in field, with: data.fetch(field) }
+    end
   end
 
   def populate_first_state(value)
