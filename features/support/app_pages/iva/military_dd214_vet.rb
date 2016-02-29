@@ -20,8 +20,9 @@ class DD214 < IDmeBase
 
       #first and last name for user
       if ["Next of kin deceased veteran", "Legal guardian"].include?(affiliation)
-        find("#first_name").set(data_for(:military_dd214).fetch("first_name"))
-        find("#last_name").set(data_for(:military_dd214).fetch("last_name"))
+        %w(first_name last_name).each do |field|
+          fill_in field, :with => data.fetch(data_for(:military_dd214).fetch(field))
+        end
       end
     end
 
@@ -30,14 +31,13 @@ class DD214 < IDmeBase
 
   def populate_fields(data)
     #information for service member
-  	find("#service_member_first_name").set(data.fetch("member_first_name"))
-  	find("#service_member_last_name").set(data.fetch("member_last_name"))
-  	find("#social").set(data.fetch("ssn"))
-  	find("#social_confirm").set(data.fetch("ssn_confirm"))
-  	find("#birth_place").set(data.fetch("birth_place"))
-  	2.times { find("#birth_date").set(data.fetch("dob")) }
-    2.times { find("#date_entered").set(data.fetch("enter_date")) }
-    2.times { find("#date_released").set(data.fetch("release_date")) }
+    %w(service_member_first_name service_member_last_name social social_confirm birth_place).each do |field|
+      fill_in field, :with => data.fetch(field)
+    end
+  
+    %w(birth_date date_entered date_released).each do |field|
+      2.times {fill_in field, :with => data.fetch(field)}
+    end
   end
 
    def container_attribute
