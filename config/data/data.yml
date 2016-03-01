@@ -65,19 +65,3 @@ mil_doc:
   city: Emporia
   zip: 66801
   state: Kansas
-
-police:
-  first_name: Sue
-  last_name: Gentz
-  dob: 09/03/1962
-  ssn: 666360453
-  street: 406 S Market St
-  city: Emporia
-  state: Kansas
-  zip: 66801
-
-hlp_page_types:
-  temp_hlp_ungated:
-    name: Sam's Club Military Special
-    page_redirect_url: https://www.google.com
-    body_copy: Mauris eget ornare enim. Quisque sagittis velit ut dui mollis eleifend. Quisque vel interdum risus. Praesent sit amet cursus ex. Mauris suscipit posuere nibh. Phasellus maximus bibendum lectus eget auctor. Curabitur semper placerat lacus ac tincidunt.

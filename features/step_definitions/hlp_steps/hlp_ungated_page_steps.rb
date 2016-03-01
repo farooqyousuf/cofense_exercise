@@ -4,41 +4,39 @@ Given(/^I login with Authority$/) do
   authority.auth_login
 end
 
-Given(/^I check if page name has been already taken for the "([^"]*)"$/) do |page_type|
-  visit "#{FigNewton.hlp.homepage}/partners/#{FigNewton.hlp.partner_number}/pages"
-  pages = { "temp_hlp_document" => 'DocumentPage', "temp_hlp_gated" => 'GatedPage', "temp_hlp_promocode" => 'PromoCodePage', "temp_hlp_ungated" => 'UngatedPage' }
-  hlp_page = pages["#{page_type}"]
-  @partner_page_data = HlpPartnerPage.new
-  @hlp_page_type = @partner_page_data.data_for :hlp_page_types
-  @hlp_edit_page = HlpAdminEditPage.new
+#TODO move this over into a general admin because it will be done for each one
+Given(/^I check if page name has been already taken for the "([^"]*)"$/) do |hlp_type|
+  step 'I visit "HlpPartnerIndexPage"'
 
-  if find("#DataTables_Table_0").has_text? "#{hlp_page}"
-    find("a",:text => @hlp_page_type["#{page_type}"]["name"]).click
-    @hlp_edit_page.delete_hlp_page(hlp_page)
-    expect(find("#DataTables_Table_0").has_text?("#{hlp_page}")).to be(false)
-  else
-    puts "#{@hlp_page_type["#{page_type}"]["name"]} is free to use."
+  @hlp_selected_partner_edit_page = HlpEditPage.new
+  @hlp_selected_partner_page = HlpPartnerPage.new
+
+  hlp_sample_page_type   = case hlp_type
+    when "UngatedPage"   then FigNewton.hlp_page_test_data.ungated_page.name
   end
 
+  if @hlp_selected_partner_page.partner_page_already_exists(hlp_sample_page_type)
+    @hlp_selected_partner_page.select_existing_page(hlp_sample_page_type)
+    @hlp_selected_partner_edit_page.delete_hlp_page
+
+    expect(@hlp_selected_partner_page.partner_page_already_exists(hlp_sample_page_type)).to be(false)
+  else
+    puts "#{hlp_type} is free to use!"
+  end
 end
 
 Given(/^I visit the Add UngatedPage page$/) do
-  click_link "Add UngatedPage"
+  @hlp_selected_partner_page.click_add_ungated_page_link
 end
 
 Given(/^I create a new UngatedPage$/) do
-  fill_in("ungated_page[name]",:with => @hlp_page_type["temp_hlp_ungated"]["name"])
-  fill_in("ungated_page[redirect_url]", :with => @hlp_page_type["temp_hlp_ungated"]["page_redirect_url"])
-
-  within_frame(find("#cke_1_contents").find(".cke_wysiwyg_frame")) do
-      body = find("body")
-      body.set(@hlp_page_type["temp_hlp_ungated"]["body_copy"])
-  end
-  click_button "Create"
+  @hlp_selected_partner_edit_page.enter_page_name
+  @hlp_selected_partner_edit_page.enter_redirect_url
+  @hlp_selected_partner_edit_page.enter_body_contents
+  @hlp_selected_partner_edit_page.click_create_button
 end
 
 Given(/^I should see UngatedPage edit page elements$/) do
-  #this is now a new hlp edit admin page
   expect(page).to have_link "Duplicate Page"
   expect(page).to have_link "Delete Page"
   expect(page).to have_link "Preview"
@@ -46,6 +44,55 @@ Given(/^I should see UngatedPage edit page elements$/) do
   expect(page).to have_button "Update"
 end
 
-Given(/^I delete the "([^"]*)" hlp page$/) do |page_type|
-  @hlp_edit_page.delete_hlp_page(page_type)
+Given(/^I delete the UngatedPage hlp page$/) do
+  @hlp_selected_partner_edit_page.delete_hlp_page
+end
+
+Given(/^I cancel the UngatedPage$/) do
+  @hlp_selected_partner_edit_page.click_cancel_link
+end
+
+Given(/^I should be on the HLP_Test_Partner_Pages page$/) do
+    expect(page.current_url).to eql(FigNewton.hlp.homepage)
+end
+
+Given(/^I delete the original temp_hlp_ungated$/) do
+  @hlp_selected_partner_page.select_original_ungated_page
+  @hlp_selected_partner_edit_page.delete_hlp_page
+end
+
+Given(/^I fill out the data for the UngatedPage$/) do
+  @hlp_selected_partner_edit_page.enter_page_name
+  @hlp_selected_partner_edit_page.enter_redirect_url
+  @hlp_selected_partner_edit_page.enter_body_contents
+end
+
+Given(/^I verify the deleted UngatedPage is deleted$/) do
+  expect(@hlp_selected_partner_page.partner_page_already_exists("UngatedPage")).to be(false)
+end
+
+Given(/^I duplicate the UngatedPage$/) do
+  @hlp_selected_partner_edit_page.click_duplicate_page_link
+end
+
+Given(/^The UngatedPage name should have copy appended at the end$/) do
+  expect(page).to have_field("ungated_page_name", :with => FigNewton.hlp_page_test_data.ungated_page.duplicate_page_name)
+end
+
+Given(/^I delete the UngatedPage copy$/) do
+  @hlp_selected_partner_edit_page.delete_hlp_page
+end
+
+Given(/^I preview the UngatedPage$/) do
+  @new_preview_window = window_opened_by do
+    @hlp_selected_partner_edit_page.click_and_open_new_preview_page
+  end
+end
+
+Given(/^I verify all the elements on the Preview UngatedPage hosted landing page$/) do
+  within_window @new_preview_window do
+    expect(page.current_url).to eql(FigNewton.hlp_page_test_data.ungated_page.preview_page_url)
+    expect(page.title).to eql("Sam's Club Military Special - ID.me")
+    expect(page).to have_text(FigNewton.hlp_page_test_data.ungated_page.body_copy)
+  end
 end
