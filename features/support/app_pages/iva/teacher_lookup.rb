@@ -19,8 +19,9 @@ class TeacherLookup < IDmeBase
     fill_in "last_name", with: Faker::Name.last_name
     2.times {fill_in "birth_date", with: Faker::Date.birthday.strftime("%m%d%Y")}
     
-    fill_in "teacher_city", with: Faker::Address.city
-    fill_in "district", with: Faker::Address.city
+    %w(teacher_city district).each do |field|
+      fill_in field, :with => Faker::Address.city
+    end
     fill_in "school", with: Faker::University.name
 
     case state
@@ -39,8 +40,9 @@ class TeacherLookup < IDmeBase
   end
 
   def fill_short_ssn
-    fill_in "social", with: "1111"
-    fill_in "social_confirm", with: "1111"
+    %w(social social_confirm).each do |field|
+      fill_in field, :with => "1111"
+    end
   end
 
   def populate_first_state(value)
