@@ -13,31 +13,29 @@ class TeacherDoc < IDmeBase
       end
       
       click_verify_button
-      sleep 5
 
       if populate
+        sleep 5
         attach_doc
         click_verify_button
       end
   end
 
   def populate_fields(data)
-    fill_in "first_name", with: data.fetch("first_name")
-    fill_in "last_name", with: data.fetch("last_name")
-    2.times {fill_in "birth_date", with: data.fetch("dob")}
-    
-    fill_in "teacher_city", with: Faker::Address.city
-    fill_in "district", with: Faker::Address.city
-    fill_in "school", with: Faker::Address.city
-    fill_in "teacher_number", with: Faker::Number.number(10)
-    
-    fill_in "social", with: data.fetch("ssn")
-    fill_in "social_confirm", with: data.fetch("ssn")
+    %w(first_name last_name social social_confirm street city).each do |field|
+      fill_in field, :with => data.fetch(field)
+    end
 
-    fill_in "street", with: data.fetch("street")
-    fill_in "city", with: data.fetch("city")
+    %w(birth_date zip).each do |field|
+      2.times {fill_in field, :with => data.fetch(field)}
+    end
+    
+    %w(teacher_city district school).each do |field|
+      fill_in field, :with => Faker::Address.city
+    end
+    
+    fill_in "teacher_number", with: Faker::Number.number(10)
     populate_second_state(data.fetch("state"))
-    2.times {fill_in "zip", with: data.fetch("zip")}
   end
 
   def container_attribute
