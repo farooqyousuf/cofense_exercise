@@ -14,9 +14,9 @@ Feature: Responder verification as an nationally certified EMT
     * I complete the verification process
     * I should be successfully verified as "EMT"
 
-  # Scenario: Successfully prompt for all required fields
-  #   * I submit the empty form as "National EMT"
-  #   * I should see error messages on required fields for "National EMT"
+  Scenario: Successfully prompt for all required fields
+    * I submit the empty National EMT form
+    * I should see error messages on required fields for "National EMT"
 
 
 
