@@ -22,14 +22,24 @@ include JavascriptAlerts
   end
 
   def delete_experian_user
-    find("input[type='search']").set "gentz"
+    search_for_user("gentz")
     sleep 2
       if page.text.include? "No matching records found"
         #CapybaraTester is the name for Mil Doc Family/Spouse, to search and delete from Admin Tool
-        find("input[type='search']").set "CapybaraTester"
+        search_for_user("CapybaraTester")
       end
     sleep 2
     delete_user
+  end
+
+  def delete_natl_emt
+    search_for_user("paucar")
+    sleep 2
+    delete_user
+  end
+
+  def search_for_user(string)
+    find("input[type='search']").set string
   end
   
 end
