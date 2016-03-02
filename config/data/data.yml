@@ -55,3 +55,9 @@ mil_doc:
   city: Emporia
   zip: 66801
   state: Kansas
+
+emt_national:
+  first_name: Jorge
+  last_name: Paucar
+  birth_date: 01/01/1924
+  registry_number: M8037059 
