@@ -31,6 +31,7 @@ Given(/^I should see error messages on required fields for "([^"]*)"$/) do |meth
         when "ProBoard Firefighter"      then PBFirefighter
         when "Firefighter doc upload"    then DocFirefighter
         when "National EMT"              then NationalEMT
+        when "EMT doc upload"            then DocEMT
   		  else fail("Verification option not found")
   	    end
 
