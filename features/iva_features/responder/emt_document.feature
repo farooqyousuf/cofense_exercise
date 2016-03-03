@@ -1,0 +1,21 @@
+@regression @iva @responder @oauth_tester_logout
+Feature: Responder verification as an EMT using document upload
+
+  Background:
+    * I visit the OAuth Tester
+    * I select the "Marketplace Responder" policy
+    * I click on the Sign Up link
+    * I sign up as a new user
+    * I should be on the responder verification screen
+
+  @smoke @delete_experian_user
+  Scenario: Successful verification
+    * I generate a unique doc
+    * I verify using EMT doc upload
+    * I approve the document in IDme admin
+    * I complete the verification process
+    * I should be successfully verified as "EMT"
+
+Scenario: Successful prompt for all required fields for EMT Doc Upload
+    * I submit the empty EMT doc upload form
+    * I should see error messages on required fields for "EMT doc upload"

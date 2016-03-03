@@ -17,7 +17,7 @@ class NationalEMT < IDmeBase
   		click_verify_button  
  	end
 
-  	def populate_fields(data)
+  def populate_fields(data)
   		%w(first_name last_name birth_date registry_number).each do |field|
   			2.times {fill_in field, :with => data.fetch(field)}
   		end

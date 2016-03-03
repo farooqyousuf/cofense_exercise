@@ -38,3 +38,11 @@ end
 Given(/^I submit the empty National EMT form$/) do
   NationalEMT.new.verify(false)
 end
+
+Given(/^I verify using EMT doc upload$/) do
+  DocEMT.new.verify
+end
+
+Given(/^I submit the empty EMT doc upload form$/) do
+  DocEMT.new.verify(false)
+end
