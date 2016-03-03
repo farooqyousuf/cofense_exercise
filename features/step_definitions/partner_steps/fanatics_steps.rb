@@ -1,40 +1,23 @@
-Given(/^I add an item to the cart \("([^"]*)"\)$/) do |brand|
-  case brand
-  when "FAN"
-    url = FigNewton.partners.fanatics
-  when "NFL"
-    url = FigNewton.partners.nfl_shop
-  end
-
-  visit url
-  if brand == "FAN"
-    visit "http://www.fanatics.com/NFL_New_England_Patriots_Mens/Mens_Nike_Tom_Brady_Navy_Blue_Silver_New_England_Patriots_Game_Jersey"
-  end
-  if page.has_link?("lightboxSaleCloseLink") || page.has_link?("lightboxSaleCloseLinkMM")
-    fanatics_lightbox(brand)
-  end
-  click_link "Choose Size S"
+Given(/^FANATICS\- I add an item to the cart$/) do
+  visit FigNewton.partners.fanatics
+  find(:link, :href => "http://www.fanatics.com/NFL_Denver_Broncos/Peyton_Manning_Denver_Broncos_Nike_Super_Bowl_50_Game_Jersey_-_Orange").click
+  click_link "Choose Size XL"
   find("#addToCart").click
 end
 
-Given(/^I apply the Troop ID discount \("([^"]*)"\)$/) do |brand|
-  click_link "militaryAndFirstResponderHeaderTitle"
-  new_window = window_opened_by { find(".desktopIdMeMilitaryBtn").click }
+Given(/^FANATICS\- I apply the Troop ID discount$/) do
+  find("#militaryAndFirstResponderHeaderTitle").click
 
-  within_window new_window do
+  idp_signin = window_opened_by { find("#imgMilitary").click }
+
+  within_window idp_signin do
     sign_in_with_idme
   end
 end
 
-Given(/^I verify the Troop ID discount has been applied \("([^"]*)"\)$/) do |brand|
-  case brand
-  when "FAN"
-    # need something unique to fanatics
-  when "NFL"
-    expect(find(".ui-alert-body").text).to eql("A discount of 15% and free shipping was successfully applied to your order.")
-  end
-
-  Capybara.ignore_hidden_elements = false
-  expect(find("#desktopIdStatus").text).to eq("Status Verified")
-  Capybara.ignore_hidden_elements = true
+Given(/^FANATICS\- I verify the Troop ID discount has been applied$/) do
+  expect(find(".ui-alert-body").text).to eql(FigNewton.partners.fanatics_discount) #find a better expectation for this
+  expect(page).to have_selector("#checkoutCouponTotalValue", :visible => true)
+  expect(find("#checkoutCouponTotalValue").text).to eql("-$12.00")
+  expect(page).to have_selector("#desktopIdMeVerified",:text =>"Status Verified",:visible => false)
 end
