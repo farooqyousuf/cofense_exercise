@@ -54,3 +54,15 @@ admin:
 
 idp:
   base_url: https://idp-staging.idmeinc.net
+
+hlp:
+  homepage: https://hosted-pages-staging.idmeinc.net/admin/partners/1/pages
+  partner_number: 1
+
+hlp_page_test_data:
+  ungated_page:
+    name: Sam's Club Military Special
+    page_redirect_url: https://www.google.com
+    body_copy: Mauris eget ornare enim. Quisque sagittis velit ut dui mollis eleifend. Quisque vel interdum risus. Praesent sit amet cursus ex. Mauris suscipit posuere nibh. Phasellus maximus bibendum lectus eget auctor. Curabitur semper placerat lacus ac tincidunt.
+    duplicate_page_name: Sam's Club Military Special copy
+    preview_page_url: https://hosted-pages-staging.idmeinc.net/sam-s-club-sam-s-club-military-special?preview=true
