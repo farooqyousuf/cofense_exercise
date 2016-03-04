@@ -42,8 +42,12 @@ include DataMagic
     click_button("Verify now")
   end
 
+  def click_submit
+    click_button("Submit")
+  end
+
   def attach_doc(number = 0) 
     page.driver.browser.all(:xpath, '//input[@type="file"]')[number].send_keys("#{Dir.pwd}/screenshots/screenshot.png")
   end
-  
+
 end

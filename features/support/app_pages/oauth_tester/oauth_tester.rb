@@ -18,6 +18,14 @@ class OAuthTester < IDmeBase
    "div.json.verification"
  end
 
+ def json_scope_css
+   "div.json.scope"
+ end
+
+ def verify_loa_scope(level)
+   has_css?(json_scope_css, :text => "http://idmanagement.gov/ns/assurance/loa/#{level.gsub!(/\D/, '')}")
+ end
+
  def verification_status
    has_css?(json_verification_css, :text => "\"verified\": true")
  end

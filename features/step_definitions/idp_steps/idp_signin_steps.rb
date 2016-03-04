@@ -15,8 +15,16 @@ Given(/^I login as a "([^"]*)" user$/) do |user_type|
 end
 
 Given(/^I should be successfully verified(?: as "(.*)")?$/) do |group|
-  expect(@oauth_tester.verification_status).to eq(true)
-  expect(@oauth_tester.affiliated_as(group)).to eq(true) if group
+  
+  flag = ["LOA1", "LOA2", "LOA3"].include?(group)
+
+  if flag == true
+    @oauth_tester.verify_loa_scope(group)
+  else
+    expect(@oauth_tester.verification_status).to eq(true)
+    expect(@oauth_tester.affiliated_as(group)).to eq(true) if group
+  end
+
 end
 
 Given(/^I login with an invalid password$/) do

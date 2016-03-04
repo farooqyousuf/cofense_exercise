@@ -7,6 +7,14 @@ Given(/^I pry$/) do
   binding.pry
 end
 
+Given(/^I confirm my email address$/) do
+  ConfirmEmail.new.confirm_email
+end
+
+Given(/^I authorize the attribute release$/) do
+  Consent.new.allow
+end
+
 Given(/^I complete the verification process$/) do
   @iva_success = IVASuccess.new
   @iva_success.click_here_to_finish
