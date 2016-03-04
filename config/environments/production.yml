@@ -6,9 +6,12 @@ partners:
   user:     tony.chung+test@id.me
   password: Password123
   fanatics: http://www.fanatics.com/NFL_Denver_Broncos
+  fanatics_product_url: http://www.fanatics.com/NFL_Denver_Broncos/Peyton_Manning_Denver_Broncos_Nike_Super_Bowl_50_Game_Jersey_-_Orange
   fanatics_discount: "A discount of 10% and free shipping was successfully applied to your order."
   nfl_shop: https://www.nflshop.com/catalog/product/Mens_Washington_Redskins_Ryan_Kerrigan_Nike_Burgundy_Game_Jersey
   fansedge: http://www.fansedge.com/New_England_Patriots_Merchandise/Nike_Tom_Brady_New_England_Patriots_Navy_Blue_Silver_Game_Jersey
+  fansedge_discount: "A discount of 10% and free shipping was successfully applied to your order."
+  fansedge_discount_amount: "-$10.00"
   ny_giants: http://shop.giants.com/New_York_Giants_Jerseys/Mens_New_York_Giants_Eli_Manning_Nike_Royal_Blue_Game_Jersey
   eagles: http://store.philadelphiaeagles.com/Philadelphia_Eagles_Mens_Jerseys/Mens_Philadelphia_Eagles_Brian_Dawkins_Nike_Midnight_Green_Game_Jersey
   seahawks: http://proshop.seahawks.com/Seattle_Seahawks_Mens_Jerseys/Mens_Seattle_Seahawks_Russell_Wilson_Nike_College_Navy_Game_Jersey
@@ -16,3 +19,13 @@ partners:
   nhl_shop: http://shop.nhl.com/Boston_Bruins_Jerseys/Mens_Boston_Bruins_Reebok_Black_2016_Winter_Classic_Premier_Jersey
   az_cardinals: http://shop.azcardinals.com/Arizona_Cardinals_Mens_Jerseys/Mens_Arizona_Cardinals_Tyrann_Mathieu_Nike_Cardinal_Game_Jersey
   nascar: http://store.nascar.com/Mens_Jackets/Mens_Dale_Earnhardt_Jr._Black_Nationwide_Insurance_Uniform_Twill_Jacket
+  mlb_shop: http://shop.mlb.com/Baltimore_Orioles_Gear
+  mlb_shop_discount: "A discount of 15% was successfully applied to your order."
+  mlb_shop_discount_amount: "-$18.00"
+  caesars_hotels: https://www.caesars.com
+  seaworld_url: http://seaworldparks.com/seaworld-orlando/waves-of-honor/veterans
+  underarmour_url: https://www.underarmour.com/en-us/mens/apparel/tops/shortsleeve
+  underarmour_item_subtotal: "Items: $29.99"
+  underarmour_discount_amount: "Promotion: -$3.00"
+  mlb_tv_subscription_page: http://mlb.mlb.com/mlb/subscriptions
+  mlb_tv_yearly_subscription: "109.99 / Yearly"

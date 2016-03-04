@@ -1,6 +1,15 @@
 Given(/^FANATICS\- I add an item to the cart$/) do
   visit FigNewton.partners.fanatics
-  find(:link, :href => "http://www.fanatics.com/NFL_Denver_Broncos/Peyton_Manning_Denver_Broncos_Nike_Super_Bowl_50_Game_Jersey_-_Orange").click
+
+  begin
+    #TODO : bad taste to use this rescue so liberaly? find a better way that
+      find("#lightboxModal")
+      find("#lightboxOverlay").click
+    rescue
+    #this seems odd ot just have this here
+  end
+
+  find(:link, :href => FigNewton.partners.fanatics_product_url).click
   click_link "Choose Size XL"
   find("#addToCart").click
 end

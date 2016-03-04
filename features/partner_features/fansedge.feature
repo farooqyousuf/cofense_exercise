@@ -1,4 +1,4 @@
-@fanatics @partners @fansedge
+@fanatics @partners @fansedge @version2
 Feature: Test the ID.me FansEdge Partner Integration
 
   @troop_id @windows @saucegit
