@@ -39,3 +39,12 @@ Feature: Test the HLP UngatedPage functionality
     * I preview the UngatedPage
     * I verify all the elements on the Preview UngatedPage hosted landing page
     * I delete the UngatedPage hlp page
+
+  @dupdup
+  Scenario: Launch an UngatedPage
+    * I create a new UngatedPage
+    * I launch the UngatedPage
+    * I live page the UngatedPage
+    * I verify all the elements on the Live UngatedPage hosted landing page
+    * I verify the UngatedPage offer button redirects the user to IDP-IVA
+    * I delete the UngatedPage hlp page

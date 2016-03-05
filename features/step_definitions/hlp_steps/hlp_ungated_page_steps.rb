@@ -12,7 +12,8 @@ Given(/^I check if page name has been already taken for the "([^"]*)"$/) do |hlp
   @hlp_selected_partner_page = HlpPartnerPage.new
 
   hlp_sample_page_type   = case hlp_type
-    when "UngatedPage"   then FigNewton.hlp_page_test_data.ungated_page.name
+  when "UngatedPage"   then FigNewton.hlp_page_test_data.ungated_page.name
+  when "DocumentPage"  then FigNewton.hlp_page_test_data.document_page.name
   end
 
   if @hlp_selected_partner_page.partner_page_already_exists(hlp_sample_page_type)
@@ -30,8 +31,8 @@ Given(/^I visit the Add UngatedPage page$/) do
 end
 
 Given(/^I create a new UngatedPage$/) do
+  binding.pry
   @hlp_selected_partner_edit_page.enter_page_name
-  @hlp_selected_partner_edit_page.enter_redirect_url
   @hlp_selected_partner_edit_page.enter_body_contents
   @hlp_selected_partner_edit_page.click_create_button
 end
@@ -93,6 +94,22 @@ Given(/^I verify all the elements on the Preview UngatedPage hosted landing page
   within_window @new_preview_window do
     expect(page.current_url).to eql(FigNewton.hlp_page_test_data.ungated_page.preview_page_url)
     expect(page.title).to eql("Sam's Club Military Special - ID.me")
-    expect(page).to have_text(FigNewton.hlp_page_test_data.ungated_page.body_copy)
+    expect(page).to have_text(FigNewton.hlp_page_test_data.body_copy)
   end
+end
+
+Given(/^I launch the UngatedPage$/) do
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+Given(/^I live page the UngatedPage$/) do
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+Given(/^I verify all the elements on the Live UngatedPage hosted landing page$/) do
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+Given(/^I verify the UngatedPage offer button redirects the user to IDP\-IVA$/) do
+  pending # Write code here that turns the phrase above into concrete actions
 end
