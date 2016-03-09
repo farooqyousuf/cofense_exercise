@@ -47,7 +47,7 @@ include DataMagic
   end
 
   def click_verify_button
-    click_button("Verify now")
+    click_button("Verify now") 
   end
 
   def click_submit

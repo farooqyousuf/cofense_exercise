@@ -10,6 +10,7 @@ Feature: Test the LOA1 (Level of Assurance 2) functionality
     
     Scenario: Successful LOA2 verification
      * I confirm my email address
-     * I pry
-     * I authorize the attribute release
+     * I submit information for "LOA2"
+     * I answer the KBA questions
+     #* I authorize the attribute release
      * I should be successfully verified as "LOA2"

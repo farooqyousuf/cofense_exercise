@@ -12,6 +12,11 @@ require "capybara/cucumber"
 require_relative "test_helper"
 require_relative "app_pages/base_classes/page_mgmt"
 
+FigNewton.load 'staging.yml'
+DataMagic.load 'data.yml'
+
+KBA ||= YAML.load_file('config/data/kba_questions_answers.yml')
+
 include AllureCucumber::DSL
 
 AllureCucumber.configure do |c|
