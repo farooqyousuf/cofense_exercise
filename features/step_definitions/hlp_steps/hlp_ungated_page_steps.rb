@@ -14,6 +14,7 @@ Given(/^I check if page name has been already taken for the "([^"]*)"$/) do |hlp
   hlp_sample_page_type   = case hlp_type
   when "UngatedPage"   then FigNewton.hlp_page_test_data.ungated_page.name
   when "DocumentPage"  then FigNewton.hlp_page_test_data.document_page.name
+  when "GatedPage"     then FigNewton.hlp_page_test_data.gated_page.name
   end
 
   if @hlp_selected_partner_page.partner_page_already_exists(hlp_sample_page_type)
@@ -31,7 +32,7 @@ Given(/^I visit the Add UngatedPage page$/) do
 end
 
 Given(/^I create a new UngatedPage$/) do
-  @hlp_selected_partner_edit_page.enter_page_name
+  @hlp_selected_partner_edit_page.enter_ungated_page_name
   @hlp_selected_partner_edit_page.enter_body_contents
   @hlp_selected_partner_edit_page.enter_redirect_url
   @hlp_selected_partner_edit_page.click_create_button

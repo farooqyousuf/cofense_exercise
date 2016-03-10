@@ -17,6 +17,10 @@ class HlpPartnerPage < IDmeBase
     click_link "Add UngatedPage"
   end
 
+  def click_add_gated_page_link
+    click_link "Add GatedPage"
+  end
+
   def click_add_document_page_link
     click_link "Add DocumentPage"
   end
@@ -27,5 +31,9 @@ class HlpPartnerPage < IDmeBase
 
   def select_original_document_page
     find("a",:text => FigNewton.hlp_page_test_data.document_page.name).click
+  end
+
+  def select_original_gated_page
+    find("a",:text => FigNewton.hlp_page_test_data.gated_page.name).click
   end
 end
