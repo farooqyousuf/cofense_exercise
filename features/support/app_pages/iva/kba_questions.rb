@@ -34,15 +34,16 @@ class KBAQuestions < IDmeBase
       valid_answers = question_data[1].select { |k, _| k =~ /answer/ }.values
 
       #Set the radio buttons if they match one of the answers
+      answers[i].choose("#{valid_answers}")
+      binding.pry
       #correct_answer = answers[i].all(:radio_button).find do |radio|
-      correct_answer = answers[i].all(:radio_button).find do |radio|
-        valid_answers.include?(radio.parent.text)
-        binding.pry
-      end
+      # correct_answer = answers[i].all(:radio_button).find do |radio|
+      #   valid_answers.include?(radio.parent.text)
+      #   binding.pry
+      # end
         
       i +=1
 
-      binding.pry
       unless @correct_answer
         p "Unable to answer question: #{question_text}" and next
       end
