@@ -14,14 +14,19 @@ class KBAQuestions < IDmeBase
     page.all('.answers')
   end
 
+  def submit_answers
+    click_button("Submit Answers")
+  end
+
   def answer_questions
     i=0
     questions.each do |question|
 
       # Determine what the question is
       question_text = question.text.sub(/^\d.\s/, '')
+      p "Question asked: #{question_text}"
 
-      # Get the valid answers for the question
+      # Get the valid answer for the question
       question_data = KBA.find { |_, value| value["question"] == question_text }
 
       unless question_data
@@ -31,24 +36,13 @@ class KBAQuestions < IDmeBase
       end
 
       #This is accessing the answer value from the selected correct question from the kba.yml file
-      valid_answers = question_data[1].select { |k, _| k =~ /answer/ }.values
+      valid_answer = question_data[1].select { |k, _| k =~ /answer/ }.values
+      p "Valid answer: #{valid_answer}"
 
       #Set the radio buttons if they match one of the answers
-      answers[i].choose("#{valid_answers}")
-      binding.pry
-      #correct_answer = answers[i].all(:radio_button).find do |radio|
-      # correct_answer = answers[i].all(:radio_button).find do |radio|
-      #   valid_answers.include?(radio.parent.text)
-      #   binding.pry
-      # end
+      answers[i].choose(valid_answer[0])
         
       i +=1
-
-      unless @correct_answer
-        p "Unable to answer question: #{question_text}" and next
-      end
-
-      correct_answer.select
     end
   end
 end

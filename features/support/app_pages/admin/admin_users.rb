@@ -22,12 +22,15 @@ include JavascriptAlerts
   end
 
   def delete_experian_user
-    search_for_user("gentz")
+    search_for_user("sue gentz")
     sleep 2
-      if page.text.include? "No matching records found"
-        #CapybaraTester is the name for Mil Doc Family/Spouse, to search and delete from Admin Tool
-        search_for_user("CapybaraTester")
-      end
+    if page.text.include? "No matching records found"    
+      #CapybaraTester is the name for Mil Doc Family/Spouse, to search and delete from Admin Tool
+      search_for_user("CapybaraTester") 
+        if page.text.include? "No matching records found"
+          search_for_user("erin rashid")      
+        end
+    end 
     sleep 2
     delete_user
   end

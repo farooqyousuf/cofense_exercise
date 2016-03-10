@@ -32,7 +32,7 @@
   answer: "NONE OF THE ABOVE/DOES NOT APPLY"
 11:
   question: "According to your credit profile, you may have opened a (BK OF AMER) credit card. Please select the year in which your account was opened."
-  answer: "2010"
+  answer: "NONE OF THE ABOVE/DOES NOT APPLY"
 12:
   question: "According to your credit profile, you may have opened a mortgage loan in or around February 2012. Please select the lender to whom you currently make your mortgage payments. If you do not have a mortgage, select 'NONE OF THE ABOVE/DOES NOT APPLY'."
   answer: "NONE OF THE ABOVE/DOES NOT APPLY"
@@ -149,4 +149,7 @@
   answer: "NONE OF THE ABOVE/DOES NOT APPLY"
 50:
   question: "According to your credit profile, you may have opened a mortgage loan in or around September 2011. Please select the lender to whom you currently make your mortgage payments. If you do not have a mortgage, select 'NONE OF THE ABOVE/DOES NOT APPLY'."
+  answer: "NONE OF THE ABOVE/DOES NOT APPLY"
+51:
+  question: "According to your credit profile, you may have opened a mortgage loan in or around January 2011. Please select the lender to whom you currently make your mortgage payments. If you do not have a mortgage, select 'NONE OF THE ABOVE/DOES NOT APPLY'."
   answer: "NONE OF THE ABOVE/DOES NOT APPLY"

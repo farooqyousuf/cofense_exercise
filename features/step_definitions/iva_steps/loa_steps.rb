@@ -5,7 +5,13 @@ Given(/^I submit information for "([^"]*)"$/) do |level|
 	end
 end
 
-
 Given(/^I answer the KBA questions$/) do
-  KBAQuestions.new.answer_questions
+  kba_questions = KBAQuestions.new
+  kba_questions.answer_questions
+  kba_questions.submit_answers
 end
+
+Given(/^I confirm my phone$/) do
+  ConfirmPhone.new.confirm_phone
+end
+
