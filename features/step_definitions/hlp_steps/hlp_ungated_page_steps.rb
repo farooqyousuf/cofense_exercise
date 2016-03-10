@@ -31,9 +31,9 @@ Given(/^I visit the Add UngatedPage page$/) do
 end
 
 Given(/^I create a new UngatedPage$/) do
-  binding.pry
   @hlp_selected_partner_edit_page.enter_page_name
   @hlp_selected_partner_edit_page.enter_body_contents
+  @hlp_selected_partner_edit_page.enter_redirect_url
   @hlp_selected_partner_edit_page.click_create_button
 end
 
@@ -93,23 +93,36 @@ end
 Given(/^I verify all the elements on the Preview UngatedPage hosted landing page$/) do
   within_window @new_preview_window do
     expect(page.current_url).to eql(FigNewton.hlp_page_test_data.ungated_page.preview_page_url)
-    expect(page.title).to eql("Sam's Club Military Special - ID.me")
+    expect(page.title).to eql("Sam's Club Military Special Ungated Page - ID.me")
     expect(page).to have_text(FigNewton.hlp_page_test_data.body_copy)
   end
 end
 
 Given(/^I launch the UngatedPage$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  @hlp_selected_partner_edit_page.click_launch_page_link
 end
 
 Given(/^I live page the UngatedPage$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(page).to have_link "Live Page"
+
+  @new_live_page_window = window_opened_by do
+    @hlp_selected_partner_edit_page.click_live_page_link
+  end
 end
 
 Given(/^I verify all the elements on the Live UngatedPage hosted landing page$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  within_window @new_live_page_window do
+    expect(page.current_url).to eql(FigNewton.hlp_page_test_data.ungated_page.live_page_url)
+    expect(page.title).to eql("Sam's Club Military Special Ungated Page - ID.me")
+    expect(page).to have_text(FigNewton.hlp_page_test_data.body_copy)
+  end
 end
 
 Given(/^I verify the UngatedPage offer button redirects the user to IDP\-IVA$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  within_window @new_live_page_window do
+    @hlp_selected_partner_edit_page.click_idp_sign_in_button
+    @hlp_selected_partner_edit_page.switch_to_idp_sign_in_window
+
+    expect(page.current_url).to eq(FigNewton.idp.new_session_url)
+  end
 end

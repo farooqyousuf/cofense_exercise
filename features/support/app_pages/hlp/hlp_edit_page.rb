@@ -19,7 +19,7 @@ class HlpEditPage < IDmeBase
   end
 
   def enter_redirect_url #only for ungated
-    fill_in("ungated_page[redirect_url]", :with => FigNewton.hlp_page_test_data.ungated_page.page_redirect_url)
+    fill_in("ungated_page[redirect_url]", :with => FigNewton.idp.new_session_url)
   end
 
   def enter_body_contents
