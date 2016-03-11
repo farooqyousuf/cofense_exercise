@@ -32,7 +32,7 @@ include JavascriptAlerts
         end
     end 
     sleep 2
-    delete_user
+    delete_user 
   end
 
   def delete_natl_emt
