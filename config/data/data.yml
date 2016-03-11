@@ -37,6 +37,18 @@ experian_user:
   state: Kansas
   zip: 66801
 
+experian_user2:
+  fname: Erin
+  lname: Rashid
+  birth_date: 04/30/1942
+  social: 666024882 
+  social_confirm: 666024882
+  phone: 6202318771
+  street: 302 E Adams St
+  city: Pittsburg
+  state: Kansas
+  zip: 66762  
+
 teacher_doc:
   first_name: Sue
   last_name: Gentz
