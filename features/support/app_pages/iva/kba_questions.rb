@@ -36,11 +36,11 @@ class KBAQuestions < IDmeBase
       end
 
       #This is accessing the answer value from the selected correct question from the kba.yml file
-      valid_answer = question_data[1].select { |k, _| k =~ /answer/ }.values
-      p "Valid answer: #{valid_answer}"
+      valid_answers = question_data[1].select { |k, _| k =~ /answer/ }.values
+      p "Valid answer: #{valid_answers}"
 
       #Set the radio buttons if they match one of the answers
-      answers[i].choose(valid_answer[0])
+      answers[i].choose(valid_answers[0])
         
       i +=1
     end
