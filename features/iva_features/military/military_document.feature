@@ -8,7 +8,7 @@ Feature: Military verification using document upload
     * I sign up as a new user
     * I should be on the military verification screen
 
-  @smoke @delete_experian_user
+  @smoke @delete_experian_user1
   #unique doc upload and user creds have to pass experian/preciseID
   Scenario: Successful verification as a Service Member
     * I verify using military documentation for "Service Member"
@@ -16,35 +16,35 @@ Feature: Military verification using document upload
     * I complete the verification process
     * I should be successfully verified as "Service Member"
 
-  @delete_experian_user
+  @delete_experian_user1
   Scenario: Successful verification as a Veteran
     * I verify using military documentation for "Veteran"
     * I approve the document in IDme admin
     * I complete the verification process
     * I should be successfully verified as "Veteran"
 
-  @delete_experian_user
+  @delete_experian_user1
   Scenario: Successful verification as a Retiree
     * I verify using military documentation for "Retiree"
     * I approve the document in IDme admin
     * I complete the verification process
     * I should be successfully verified as "Retiree"
 
-  @delete_experian_user
+  @delete_experian_user3
   Scenario: Successful verification as a Military Spouse
     * I verify using military documentation for "Military Spouse"
     * I approve the document in IDme admin
     * I complete the verification process
     * I should be successfully verified as "Military Spouse"
 
-  @delete_experian_user
+  @delete_experian_user3
   Scenario: Successful verification as a Military Family
     * I verify using military documentation for "Military Family"
     * I approve the document in IDme admin
     * I complete the verification process
     * I should be successfully verified as "Military Family"
 
-  @delete_experian_user
+  @delete_experian_user1
   Scenario: Successful verification as a Military Supporter
     * I verify using military documentation for "Military Supporter"
     * I approve the document in IDme admin

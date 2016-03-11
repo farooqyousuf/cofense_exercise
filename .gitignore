@@ -11,7 +11,6 @@ rerun.txt
 !.gitkeep
 *.swp
 *.rdb
-kba_questions.png
 *.png
 
 output/*

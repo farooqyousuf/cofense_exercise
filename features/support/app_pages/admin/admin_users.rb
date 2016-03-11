@@ -21,18 +21,23 @@ include JavascriptAlerts
   	js_accept
   end
 
-  def delete_experian_user
+  def delete_experian_user1
     search_for_user("sue gentz")
     sleep 2
-    if page.text.include? "No matching records found"    
-      #CapybaraTester is the name for Mil Doc Family/Spouse, to search and delete from Admin Tool
-      search_for_user("CapybaraTester") 
-        if page.text.include? "No matching records found"
-          search_for_user("erin rashid")      
-        end
-    end 
-    sleep 2
     delete_user 
+  end
+
+  def delete_experian_user2
+    search_for_user("erin rashid")
+    sleep 2
+    delete_user
+  end
+
+  def delete_experian_user3
+    #CapybaraTester is the name for Mil Doc Family/Spouse, to search and delete from Admin Tool
+    search_for_user("CapybaraTester")
+    sleep 2
+    delete_user
   end
 
   def delete_natl_emt

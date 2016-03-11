@@ -19,8 +19,7 @@ class KBAQuestions < IDmeBase
   end
 
   def answer_questions
-    i=0
-    questions.each do |question|
+    questions.each_with_index do |question, index|
 
       # Determine what the question is
       question_text = question.text.sub(/^\d.\s/, '')
@@ -40,9 +39,8 @@ class KBAQuestions < IDmeBase
       p "Valid answer: #{valid_answers}"
 
       #Set the radio buttons if they match one of the answers
-      answers[i].choose(valid_answers[0])
-        
-      i +=1
+      answers[index].choose(valid_answers[0])        
     end
   end
+
 end
