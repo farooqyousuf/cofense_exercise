@@ -12,7 +12,9 @@ Given(/^I check if page name has been already taken for the "([^"]*)"$/) do |hlp
   @hlp_selected_partner_page = HlpPartnerPage.new
 
   hlp_sample_page_type   = case hlp_type
-    when "UngatedPage"   then FigNewton.hlp_page_test_data.ungated_page.name
+  when "UngatedPage"   then FigNewton.hlp_page_test_data.ungated_page.name
+  when "DocumentPage"  then FigNewton.hlp_page_test_data.document_page.name
+  when "GatedPage"     then FigNewton.hlp_page_test_data.gated_page.name
   end
 
   if @hlp_selected_partner_page.partner_page_already_exists(hlp_sample_page_type)
@@ -30,9 +32,9 @@ Given(/^I visit the Add UngatedPage page$/) do
 end
 
 Given(/^I create a new UngatedPage$/) do
-  @hlp_selected_partner_edit_page.enter_page_name
-  @hlp_selected_partner_edit_page.enter_redirect_url
+  @hlp_selected_partner_edit_page.enter_ungated_page_name
   @hlp_selected_partner_edit_page.enter_body_contents
+  @hlp_selected_partner_edit_page.enter_redirect_url
   @hlp_selected_partner_edit_page.click_create_button
 end
 
@@ -92,7 +94,36 @@ end
 Given(/^I verify all the elements on the Preview UngatedPage hosted landing page$/) do
   within_window @new_preview_window do
     expect(page.current_url).to eql(FigNewton.hlp_page_test_data.ungated_page.preview_page_url)
-    expect(page.title).to eql("Sam's Club Military Special - ID.me")
-    expect(page).to have_text(FigNewton.hlp_page_test_data.ungated_page.body_copy)
+    expect(page.title).to eql("Sam's Club Military Special Ungated Page - ID.me")
+    expect(page).to have_text(FigNewton.hlp_page_test_data.body_copy)
+  end
+end
+
+Given(/^I launch the UngatedPage$/) do
+  @hlp_selected_partner_edit_page.click_launch_page_link
+end
+
+Given(/^I live page the UngatedPage$/) do
+  expect(page).to have_link "Live Page"
+
+  @new_live_page_window = window_opened_by do
+    @hlp_selected_partner_edit_page.click_live_page_link
+  end
+end
+
+Given(/^I verify all the elements on the Live UngatedPage hosted landing page$/) do
+  within_window @new_live_page_window do
+    expect(page.current_url).to eql(FigNewton.hlp_page_test_data.ungated_page.live_page_url)
+    expect(page.title).to eql("Sam's Club Military Special Ungated Page - ID.me")
+    expect(page).to have_text(FigNewton.hlp_page_test_data.body_copy)
+  end
+end
+
+Given(/^I verify the UngatedPage offer button redirects the user to IDP\-IVA$/) do
+  within_window @new_live_page_window do
+    @hlp_selected_partner_edit_page.click_idp_sign_in_button
+    @hlp_selected_partner_edit_page.switch_to_idp_sign_in_window
+
+    expect(page.current_url).to eq(FigNewton.idp.new_session_url)
   end
 end

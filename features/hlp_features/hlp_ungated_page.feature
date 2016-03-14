@@ -1,4 +1,4 @@
-@regression @hlp @hlp_admin
+@regression @hlp @hlp_admin @hlp_ungated_page
 Feature: Test the HLP UngatedPage functionality
 
   Background:
@@ -21,7 +21,7 @@ Feature: Test the HLP UngatedPage functionality
   Scenario: Cancel an uncreated UngatedPage
     * I fill out the data for the UngatedPage
     * I cancel the UngatedPage
-  @check
+
   Scenario: Delete an UngatedPage
     * I create a new UngatedPage
     * I delete the UngatedPage hlp page
@@ -38,4 +38,12 @@ Feature: Test the HLP UngatedPage functionality
     * I create a new UngatedPage
     * I preview the UngatedPage
     * I verify all the elements on the Preview UngatedPage hosted landing page
+    * I delete the UngatedPage hlp page
+
+  Scenario: Launch an UngatedPage
+    * I create a new UngatedPage
+    * I launch the UngatedPage
+    * I live page the UngatedPage
+    * I verify all the elements on the Live UngatedPage hosted landing page
+    * I verify the UngatedPage offer button redirects the user to IDP-IVA
     * I delete the UngatedPage hlp page
