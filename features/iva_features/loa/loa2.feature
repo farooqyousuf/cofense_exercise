@@ -15,3 +15,23 @@ Feature: Test the LOA2 (Level of Assurance 2) functionality
     * I confirm my phone
     * I authorize the attribute release
     * I should be successfully verified as "LOA2"
+
+  Scenario: LOA2 login flow using a LOA1 verified user
+    * I login as a "LOA1" user
+    * I should see the information collection screen for LOA2
+    * I clear the SP LOA session
+
+  @smoke  
+  Scenario: LOA2 login flow using a LOA2 verified user
+    * I login as a "LOA2" user
+    * I confirm my phone number
+    * I should see the Authorize screen
+    * I authorize the attribute release
+    * I logout of the SP LOA app
+
+  Scenario: LOA2 login flow using a LOA3 verified user
+    * I login as a "LOA3" user
+    * I confirm my phone number
+    * I should see the Authorize screen
+    * I authorize the attribute release
+    * I logout of the SP LOA app
