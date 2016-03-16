@@ -1,7 +1,7 @@
 Given(/^I submit information for "([^"]*)"$/) do |level|
 	case level
 	when "LOA2"
-		LOAInfo.new.verify
+		LOAInfo.new.verify(level)
   when "LOA3"
     LOAInfo.new.verify(level)
 	end

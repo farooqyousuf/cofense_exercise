@@ -12,7 +12,6 @@ class LOAInfo < IDmeBase
   		populate_base_loa_info(data)
 
       if level == "LOA3"
-        binding.pry
         fill_in "card", :with => data.fetch("credit_card")
       end
 
