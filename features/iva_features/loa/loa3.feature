@@ -24,10 +24,9 @@ Feature: Test the LOA3 (Level of Assurance 3) functionality
     * I login as a "LOA2" user
     * I should see the information collection screen for LOA3
 
-  # @smoke
-  # Scenario: LOA3 login flow using a LOA3 verified user
-  #   * I login as a "LOA3" user
-  #   * I confirm my phone number
-  #   * I should see the Authorize screen
-  #   * I authorize the attribute release
-  #   * I logout of the SP LOA app
+  @smoke
+  Scenario: LOA3 login flow using a LOA3 verified user
+    * I login as a "LOA3" user
+    * I confirm my phone
+    * I authorize the attribute release
+    * I should be successfully verified as "LOA3"
