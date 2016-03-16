@@ -5,6 +5,9 @@ Given(/^I login as a "([^"]*)" user$/) do |user_type|
 		     when "nonexistent email"       then FigNewton.oauth_tester.nonexistent
          when "valid"                   then FigNewton.oauth_tester.valid
          when "current_username"        then @username
+         when "LOA1"                    then FigNewton.oauth_tester.loa1
+         when "LOA2"                    then FigNewton.oauth_tester.loa2
+         when "LOA3"                    then FigNewton.oauth_tester.loa3
 	       else fail ("User not found!")
 		     end
 
@@ -19,7 +22,7 @@ Given(/^I should be successfully verified(?: as "(.*)")?$/) do |group|
   flag = ["LOA1", "LOA2", "LOA3"].include?(group)
 
   if flag == true
-    @oauth_tester.verify_loa_scope(group)
+    expect(@oauth_tester.verify_loa_scope(group)).to eq(true)
   else
     expect(@oauth_tester.verification_status).to eq(true)
     expect(@oauth_tester.affiliated_as(group)).to eq(true) if group

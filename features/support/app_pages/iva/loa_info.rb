@@ -1,6 +1,6 @@
 require_relative '../base_classes/error_messages.rb'
 
-class LOA2 < IDmeBase
+class LOAInfo < IDmeBase
 
   include IVABase
   include Capybara::DSL
@@ -9,11 +9,15 @@ class LOA2 < IDmeBase
   def verify(populate = true)
   	if populate 
   		data = data_for(:experian_user2)
-  		populate_fields(data)
-  		populate_state(data)
-  		accept_fcra_terms
+  		populate_base_loa_info(data)
   	end
     click_button("Verify") 
+  end
+
+  def populate_base_loa_info(data)
+    populate_fields(data)
+    populate_state(data)
+    accept_fcra_terms
   end
 
   def populate_fields(data)
@@ -32,6 +36,18 @@ class LOA2 < IDmeBase
 
   def accept_fcra_terms
     find("#accepts_fcra", :visible => false).click
+  end
+
+  def phone_field
+    "#phone"
+  end
+
+  def page_title
+    "Verify with ID.me"
+  end
+
+  def credit_card
+    "#card"
   end
 
 end
