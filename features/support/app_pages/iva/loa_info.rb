@@ -6,10 +6,15 @@ class LOAInfo < IDmeBase
   include Capybara::DSL
   include ErrorMessages
 
-  def verify(populate = true)
-  	if populate 
+  def verify(populate = true, level)
+  	if populate
   		data = data_for(:experian_user2)
   		populate_base_loa_info(data)
+
+      if level == "LOA3"
+        fill_in "card", :with => data.fetch("credit_card")
+      end
+
   	end
     click_button("Verify") 
   end
