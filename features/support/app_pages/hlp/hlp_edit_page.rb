@@ -61,6 +61,10 @@ class HlpEditPage < IDmeBase
     click_button "Launch Page"
   end
 
+  def click_update_page_link
+    click_button "Update"
+  end
+
   def click_live_page_link
     click_link "Live Page"
   end
@@ -72,5 +76,29 @@ class HlpEditPage < IDmeBase
   def switch_to_idp_sign_in_window
     idp_signin = page.driver.browser.window_handles.last
     page.driver.browser.switch_to.window(idp_signin)
+  end
+
+  def enter_promocode_page_name
+    fill_in("promo_code_page[name]",:with => FigNewton.hlp_page_test_data.promo_code_page.name)
+  end
+
+  def enter_promo_header
+    fill_in("promo_code_page[title]",:with => FigNewton.hlp_page_test_data.promo_code_page.header)
+  end
+
+  def enter_promo_subheader
+    fill_in("promo_code_page[subtitle]",:with => FigNewton.hlp_page_test_data.promo_code_page.subheader)
+  end
+
+  def enter_number_of_codes_allowed_per_user
+    fill_in("promo_code_page[promo_code_info_attributes][codes_per_user]",:with => FigNewton.hlp_page_test_data.promo_code_page.number_of_codes_per_user)
+  end
+
+  def attach_promo_code_file
+    page.driver.browser.all(:xpath, '//input[@type="file"]')[2].send_keys("#{Dir.pwd}/features/support/promo_code.csv")
+  end
+
+  def accept_js_alert
+    js_accept
   end
 end

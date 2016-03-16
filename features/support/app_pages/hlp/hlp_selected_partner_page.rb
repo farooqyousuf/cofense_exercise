@@ -21,6 +21,10 @@ class HlpPartnerPage < IDmeBase
     click_link "Add GatedPage"
   end
 
+  def click_add_promocode_page_link
+    click_link "Add PromoCodePage"
+  end
+
   def click_add_document_page_link
     click_link "Add DocumentPage"
   end
@@ -35,5 +39,9 @@ class HlpPartnerPage < IDmeBase
 
   def select_original_gated_page
     find("a",:text => FigNewton.hlp_page_test_data.gated_page.name).click
+  end
+
+  def select_original_promocode_page
+    find("a",:text => FigNewton.hlp_page_test_data.promo_code_page.name).click
   end
 end

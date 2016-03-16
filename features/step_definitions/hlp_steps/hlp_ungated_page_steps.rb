@@ -15,6 +15,7 @@ Given(/^I check if page name has been already taken for the "([^"]*)"$/) do |hlp
   when "UngatedPage"   then FigNewton.hlp_page_test_data.ungated_page.name
   when "DocumentPage"  then FigNewton.hlp_page_test_data.document_page.name
   when "GatedPage"     then FigNewton.hlp_page_test_data.gated_page.name
+  when "PromoCodePage" then FigNewton.hlp_page_test_data.promo_code_page.name 
   end
 
   if @hlp_selected_partner_page.partner_page_already_exists(hlp_sample_page_type)

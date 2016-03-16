@@ -81,3 +81,11 @@ hlp_page_test_data:
     duplicate_page_name: Sam's Club Military Special Gated Page copy
     preview_page_url: https://hosted-pages-staging.idmeinc.net/sam-s-club-sam-s-club-military-special-gated-page?preview=true
     live_page_url: https://hosted-pages-staging.idmeinc.net/sam-s-club-sam-s-club-military-special-gated-page
+  promo_code_page:
+    name: Sam's Club Military Special Promo Code Page
+    header: Honored to Serve Those Who Serve
+    subheader: Join or renew and get up to a $25 Sam's Club Gift Card with promo code
+    number_of_codes_per_user: 1
+    duplicate_page_name: Sam's Club Military Special Promo Code Page copy
+    preview_page_url: https://hosted-pages-staging.idmeinc.net/sam-s-club-sam-s-club-military-special-promo-code-page?preview=true
+    live_page_url: https://hosted-pages-staging.idmeinc.net/sam-s-club-sam-s-club-military-special-promo-code-page
