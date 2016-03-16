@@ -7,6 +7,9 @@ oauth_tester:
  valid1: farooq+1@id.me
  valid2: farooq+2@id.me
  wrong_unlock_code: 123456
+ loa1: farooq+loa1@id.me
+ loa2: farooq+loa2@id.me
+ loa3: farooq+loa3@id.me
 
 authority:
  userid: farooq@id.me
