@@ -38,7 +38,7 @@ Background:
     * I preview the PromoCodePage
     * I verify all the elements on the preview PromoCodePage
     * I delete the PromoCodePage
-  @check 
+   
   Scenario: Launch an PromoCodePage
     * I create a new PromoCodePage
     * I add new promo codes to the page

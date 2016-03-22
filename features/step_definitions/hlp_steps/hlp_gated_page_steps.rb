@@ -61,7 +61,7 @@ end
 Given(/^I verify all the elements on the Preview GatedPage hosted landing page$/) do
   within_window @new_preview_window do
     expect(page.current_url).to eql(FigNewton.hlp_page_test_data.gated_page.preview_page_url)
-    expect(page.title).to eql("Sam's Club Military Special Gated Page - ID.me")
+    expect(page.title).to eql("Sam's Club Military Special Wufoo Page - ID.me")
     expect(page).to have_text(FigNewton.hlp_page_test_data.body_copy)
   end
 end

@@ -101,4 +101,8 @@ class HlpEditPage < IDmeBase
   def accept_js_alert
     js_accept
   end
+
+  def enter_wufoo_page_name
+    fill_in("wufoo_page[name]",:with => "Sam's Club Military Special Wufoo Page")
+  end
 end
