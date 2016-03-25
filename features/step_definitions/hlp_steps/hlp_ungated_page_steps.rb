@@ -15,6 +15,8 @@ Given(/^I check if page name has been already taken for the "([^"]*)"$/) do |hlp
   when "UngatedPage"   then FigNewton.hlp_page_test_data.ungated_page.name
   when "DocumentPage"  then FigNewton.hlp_page_test_data.document_page.name
   when "GatedPage"     then FigNewton.hlp_page_test_data.gated_page.name
+  when "PromoCodePage" then FigNewton.hlp_page_test_data.promo_code_page.name
+  when "WufooPage"     then FigNewton.hlp_page_test_data.wufoo_code_page.name
   end
 
   if @hlp_selected_partner_page.partner_page_already_exists(hlp_sample_page_type)
@@ -64,7 +66,7 @@ Given(/^I delete the original temp_hlp_ungated$/) do
 end
 
 Given(/^I fill out the data for the UngatedPage$/) do
-  @hlp_selected_partner_edit_page.enter_page_name
+  @hlp_selected_partner_edit_page.enter_ungated_page_name
   @hlp_selected_partner_edit_page.enter_redirect_url
   @hlp_selected_partner_edit_page.enter_body_contents
 end
@@ -78,7 +80,8 @@ Given(/^I duplicate the UngatedPage$/) do
 end
 
 Given(/^The UngatedPage name should have copy appended at the end$/) do
-  expect(page).to have_field("ungated_page_name", :with => FigNewton.hlp_page_test_data.ungated_page.duplicate_page_name)
+  binding.pry
+  expect(page).to have_field("ungated_page[name]", :with => FigNewton.hlp_page_test_data.ungated_page.duplicate_page_name)
 end
 
 Given(/^I delete the UngatedPage copy$/) do
