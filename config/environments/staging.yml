@@ -68,7 +68,7 @@ hlp_page_test_data:
   ungated_page:
     name: Sam's Club Military Special Ungated Page
     page_redirect_url: https://www.google.com
-    duplicate_page_name: Sam's Club Military Special copy
+    duplicate_page_name: Sam's Club Military Special Ungated Page copy
     preview_page_url: https://hosted-pages-staging.idmeinc.net/sam-s-club-sam-s-club-military-special-ungated-page?preview=true
     live_page_url: https://hosted-pages-staging.idmeinc.net/sam-s-club-sam-s-club-military-special-ungated-page
   document_page:

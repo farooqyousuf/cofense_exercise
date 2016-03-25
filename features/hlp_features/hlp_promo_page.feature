@@ -22,8 +22,8 @@ Background:
     * I delete the original promocode page
 
   Scenario: Cancel an uncreated PromoCodePage
-    * I fill out the data for the GatedPage
-    * I cancel the GatedPage
+    * I fill out the data for the PromoCodePage
+    * I cancel the PromoCodePage
 
   Scenario: Duplicate an PromoCodePage
     * I create a new PromoCodePage
@@ -38,7 +38,7 @@ Background:
     * I preview the PromoCodePage
     * I verify all the elements on the preview PromoCodePage
     * I delete the PromoCodePage
-   
+
   Scenario: Launch an PromoCodePage
     * I create a new PromoCodePage
     * I add new promo codes to the page

@@ -43,7 +43,7 @@ Given(/^I duplicate a Wufoo Page$/) do
 end
 
 Given(/^The Wufoo Page name should have copy appended at the end$/) do
-  expect(page).to have_field("wufoo_page_slug",:with => FigNewton.hlp_page_test_data.wufoo_code_page.duplicate_page_name)
+  expect(page).to have_field("wufoo_page[name]",:with => FigNewton.hlp_page_test_data.wufoo_code_page.duplicate_page_name)
 end
 
 Given(/^I delete the Wufoo Page copy$/) do

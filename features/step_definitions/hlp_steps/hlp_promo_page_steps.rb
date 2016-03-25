@@ -37,7 +37,7 @@ Given(/^I cancel the PromoCodePage$/) do
   @hlp_selected_partner_edit_page.click_cancel_link
 end
 
-Given(/^I fill out the data for the GatedPage$/) do
+Given(/^I fill out the data for the PromoCodePage$/) do
   @hlp_selected_partner_edit_page.enter_promocode_page_name
   @hlp_selected_partner_edit_page.enter_promo_header
   @hlp_selected_partner_edit_page.enter_promo_subheader

@@ -66,7 +66,7 @@ Given(/^I delete the original temp_hlp_ungated$/) do
 end
 
 Given(/^I fill out the data for the UngatedPage$/) do
-  @hlp_selected_partner_edit_page.enter_page_name
+  @hlp_selected_partner_edit_page.enter_ungated_page_name
   @hlp_selected_partner_edit_page.enter_redirect_url
   @hlp_selected_partner_edit_page.enter_body_contents
 end
@@ -80,7 +80,8 @@ Given(/^I duplicate the UngatedPage$/) do
 end
 
 Given(/^The UngatedPage name should have copy appended at the end$/) do
-  expect(page).to have_field("ungated_page_name", :with => FigNewton.hlp_page_test_data.ungated_page.duplicate_page_name)
+  binding.pry
+  expect(page).to have_field("ungated_page[name]", :with => FigNewton.hlp_page_test_data.ungated_page.duplicate_page_name)
 end
 
 Given(/^I delete the UngatedPage copy$/) do
