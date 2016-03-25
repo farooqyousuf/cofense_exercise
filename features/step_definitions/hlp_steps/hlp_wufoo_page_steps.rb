@@ -8,14 +8,6 @@ Given(/^I create a new Wufoo Page$/) do
   @hlp_selected_partner_edit_page.click_create_button
 end
 
-Given(/^I should see Wufoo edit page elements$/) do
-  expect(page).to have_link "Duplicate Page"
-  expect(page).to have_link "Delete Page"
-  expect(page).to have_link "Preview"
-  expect(page).to have_button "Launch Page"
-  expect(page).to have_button "Update"
-end
-
 Given(/^I delete the Wufoo hlp page$/) do
   @hlp_selected_partner_edit_page.delete_hlp_page
 end

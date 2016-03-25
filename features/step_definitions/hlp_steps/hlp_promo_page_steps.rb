@@ -11,14 +11,6 @@ Given(/^I create a new PromoCodePage$/) do
   @hlp_selected_partner_edit_page.click_create_button
 end
 
-Given(/^I should see PromoCodePage edit page elements$/) do
-  expect(page).to have_link "Duplicate Page"
-  expect(page).to have_link "Delete Page"
-  expect(page).to have_link "Preview"
-  expect(page).to have_button "Launch Page"
-  expect(page).to have_button "Update"
-end
-
 Given(/^I add new promo codes to the page$/) do
   @hlp_selected_partner_edit_page.attach_promo_code_file
   @hlp_selected_partner_edit_page.click_update_page_link

@@ -7,9 +7,10 @@ Feature: Test the HLP UngatedPage functionality
     * I check if page name has been already taken for the "UngatedPage"
     * I visit the Add UngatedPage page
 
+  @refactor
   Scenario: Add a new Ungated page
     * I create a new UngatedPage
-    * I should see UngatedPage edit page elements
+    * I should see the edit hlp page tab elements
     * I delete the UngatedPage hlp page
 
   Scenario: Cancel a created UngatedPage

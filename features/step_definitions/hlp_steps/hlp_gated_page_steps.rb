@@ -9,14 +9,6 @@ Given(/^I create a new GatedPage$/) do
   @hlp_selected_partner_edit_page.click_create_button
 end
 
-Given(/^I should see GatedPage edit page elements$/) do
-  expect(page).to have_link "Duplicate Page"
-  expect(page).to have_link "Delete Page"
-  expect(page).to have_link "Preview"
-  expect(page).to have_button "Launch Page"
-  expect(page).to have_button "Update"
-end
-
 Given(/^I delete the GatedPage hlp page$/) do
   @hlp_selected_partner_edit_page.delete_hlp_page
 end

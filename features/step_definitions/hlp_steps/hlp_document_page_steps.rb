@@ -9,15 +9,6 @@ Given(/^I create a new DocumentPage$/) do
   @hlp_selected_partner_edit_page.click_create_button
 end
 
-Given(/^I should see DocumentPage edit page elements$/) do
-  # TODO : refactor this to generic hlp edit page expectation page
-  expect(page).to have_link "Duplicate Page"
-  expect(page).to have_link "Delete Page"
-  expect(page).to have_link "Preview"
-  expect(page).to have_button "Launch Page"
-  expect(page).to have_button "Update"
-end
-
 Given(/^I fill out the required data for the DocumentPage$/) do
   @hlp_selected_partner_edit_page.enter_document_page_name
   @hlp_selected_partner_edit_page.enter_body_contents

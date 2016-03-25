@@ -8,10 +8,10 @@ Background:
   * I check if page name has been already taken for the "PromoCodePage"
   * I visit the Add PromoCodePage
 
-  @smoke
+  @smoke @refactor
   Scenario: Add a new PromoCodePage
     * I create a new PromoCodePage
-    * I should see PromoCodePage edit page elements
+    * I should see the edit hlp page tab elements
     * I add new promo codes to the page
     * I delete the PromoCodePage
 

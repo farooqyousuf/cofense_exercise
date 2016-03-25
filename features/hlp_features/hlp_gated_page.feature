@@ -6,10 +6,10 @@ Feature: Test the HLP GatedPage functionality
     * I login with Authority
     * I check if page name has been already taken for the "GatedPage"
     * I visit the Add GatedPage page
-
+  @refactor  
   Scenario: Add a new GatedPage page
     * I create a new GatedPage
-    * I should see GatedPage edit page elements
+    * I should see the edit hlp page tab elements
     * I delete the GatedPage hlp page
 
   Scenario: Cancel a created GatedPage
