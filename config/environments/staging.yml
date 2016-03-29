@@ -56,8 +56,8 @@ admin:
   base_url: https://admin-staging.idmeinc.net
 
 idp:
-  base_url: https://idp-staging.idmeinc.net
-  new_session_url: https://idp-staging.idmeinc.net/session/new
+  base_url: https://api-staging.idmeinc.net
+  new_session_url: https://api-staging.idmeinc.net/session/new
 
 hlp:
   homepage: https://hosted-pages-staging.idmeinc.net/admin/partners/1/pages
