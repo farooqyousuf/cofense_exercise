@@ -5,7 +5,6 @@ Given(/^FE \- I add an item to the cart$/) do
       find("#lightboxModal")
       find("#lightboxSaleCloseLink").click
     rescue
-    #this seems odd ot just have this here
   end
   click_link "Choose Size S"
   find("#addToCart").click
@@ -13,7 +12,7 @@ end
 
 Given(/^FE \- I apply the Troop ID discount$/) do
   click_link "militaryAndFirstResponderHeaderTitle"
-  idp_signin = window_opened_by { find(".desktopIdMeMilitaryBtn").click }
+  idp_signin = window_opened_by { find(".desktopIdMeMilitaryBtn").native.send_key :return }
 
   within_window idp_signin do
     sign_in_with_idme
