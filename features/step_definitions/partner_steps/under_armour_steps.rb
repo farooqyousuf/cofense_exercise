@@ -6,7 +6,7 @@ Given(/^UA \- I add an item to the cart$/) do
   rescue
   end
 
-  find(:link ,:href => "/en-us/mens-ua-streaker-run-v-neck-t-shirt/pid1283380-001").click
+  find(:link ,:href => "/en-us/men-s-ua-streaker-run-v-neck-t-shirt/pid1276515-016").click
   find(".size-chip",match: :first).click
   find(".addtocart-btn").click
   find(".cart-added-container").find(".checkout-btn").click #js div modal
@@ -35,12 +35,21 @@ Given(/^UA \- I apply the "([^"]*)" discount$/) do |type|
 end
 
 Given(/^UA \- I verify the "([^"]*)" discount has been applied$/) do |type|
-  case type
-  when "Troop ID"
-    confirmation = "Promo Code Military Veteran 10% off Has Been Applied."
-  end
+  begin
+    case type
+    when "Troop ID"
+      confirmation = "Promo Code Military Veteran 10% off Has Been Applied. Remove"
+    end
 
-  expect(find(".ua-prompt-removable").text).to eq(confirmation)
-  expect(find(".itemsSubtotal").text).to eq(FigNewton.partners.underarmour_item_subtotal)
-  expect(find(".promo").text).to eq(FigNewton.partners.underarmour_discount_amount)
+    expect(find(".ua-prompt-removable").text).to eq(confirmation)
+    expect(find(".itemsSubtotal").text).to eq(FigNewton.partners.underarmour_item_subtotal)
+    expect(find(".promo").text).to eq(FigNewton.partners.underarmour_discount_amount)
+  rescue
+    puts "WARNING-------------->THE REFRESH ISSUE IS STILL PREVELANT WITH UNDERARMOUR PARTNER "
+
+    page.driver.browser.navigate.refresh
+    expect(find(".ua-prompt-removable").text).to eq(confirmation)
+    expect(find(".itemsSubtotal").text).to eq(FigNewton.partners.underarmour_item_subtotal)
+    expect(find(".promo").text).to eq(FigNewton.partners.underarmour_discount_amount)
+  end
 end
