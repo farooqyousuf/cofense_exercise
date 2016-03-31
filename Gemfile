@@ -17,7 +17,7 @@ gem "phantomjs"
 gem "cucumber_statistics"
 gem "parallel_tests"
 gem "capybara"
-gem "cucumber", '2.1.0'
+gem "cucumber"
 gem "rubocop"
 gem "net-http-persistent"
 gem "rest-client"
