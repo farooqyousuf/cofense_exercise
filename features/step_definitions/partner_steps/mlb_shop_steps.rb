@@ -1,7 +1,6 @@
 Given(/^MLBSHOP \- I add an item to the cart$/) do
   visit FigNewton.partners.mlb_shop
   begin
-  #TODO : bad taste to use this rescue so liberaly? find a better way that
     find("#lightboxModal")
     find("#lightboxSaleCloseLink").click
   rescue
@@ -13,6 +12,8 @@ Given(/^MLBSHOP \- I add an item to the cart$/) do
   find(:link, :href =>"/Baltimore_Orioles_Jerseys/Mens_Baltimore_Orioles_Manny_Machado_Majestic_Orange_Cool_Base_Player_Jersey").click
   click_link "Choose Size L"
   find("#addToCart").click
+  find(:link, :href =>"/cart/view").click
+  # 03/31/16 link for cart view is because add to card button is brokenr right now
 end
 
 Given(/^MLBSHOP \- I apply the Troop ID discount$/) do

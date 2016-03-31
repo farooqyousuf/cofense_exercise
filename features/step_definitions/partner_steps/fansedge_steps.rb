@@ -8,11 +8,15 @@ Given(/^FE \- I add an item to the cart$/) do
   end
   click_link "Choose Size S"
   find("#addToCart").click
+  find(:link, :href =>"/cart/view").click
+
 end
 
 Given(/^FE \- I apply the Troop ID discount$/) do
   click_link "militaryAndFirstResponderHeaderTitle"
-  idp_signin = window_opened_by { find(".desktopIdMeMilitaryBtn").native.send_key :return }
+  page.execute_script "window.scrollBy(0,800)"
+
+  idp_signin = window_opened_by { find(".desktopIdMeMilitaryBtn").click}
 
   within_window idp_signin do
     sign_in_with_idme
