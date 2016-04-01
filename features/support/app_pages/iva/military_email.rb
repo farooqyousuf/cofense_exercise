@@ -40,7 +40,7 @@ class MilitaryEmail < IDmeBase
     unique_email = fake_last_name+"#{rand(6 ** 8)}"+"@id.me"
 
     %w(email email_confirmation).each do |field|
-      fill_in field, :with => unique_email
+      2.times {fill_in field, :with => unique_email}
     end
 
     fill_in "service_member_first_name", with: fake_first_name

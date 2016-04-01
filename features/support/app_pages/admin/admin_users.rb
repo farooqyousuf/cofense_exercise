@@ -10,12 +10,14 @@ include JavascriptAlerts
     super("#{FigNewton.admin.base_url}/users")
   end
 
-  def open_newest
+  def open_newest(clear_results = false)
+    if clear_results == true
+      search_for_user(" ") #clears the previous results to default
+    end
     first('.odd > td > a').click
   end
 
   def delete_user
-    open_newest
   	click_link("Delete")
     sleep 1
   	js_accept
@@ -24,12 +26,14 @@ include JavascriptAlerts
   def delete_experian_user1
     search_for_user("sue gentz")
     sleep 2
+    open_newest
     delete_user 
   end
 
   def delete_experian_user2
     search_for_user("erin rashid")
     sleep 2
+    open_newest
     delete_user
   end
 
@@ -37,12 +41,14 @@ include JavascriptAlerts
     #CapybaraTester is the name for Mil Doc Family/Spouse, to search and delete from Admin Tool
     search_for_user("CapybaraTester")
     sleep 2
+    open_newest
     delete_user
   end
 
   def delete_natl_emt
     search_for_user("paucar")
     sleep 2
+    open_newest
     delete_user
   end
 
