@@ -22,7 +22,10 @@ class IDPSignUp < IDmeBase
  def pw_tos
    fill_in_password(FigNewton.oauth_tester.general_password)
    fill_in_password_confirmation
-   binding.pry
+   
+   #exposes the checkbox so capybara can click it
+   page.execute_script("document.getElementById('user_accepts_terms').style.zIndex ='200'")
+   
    first(".field.checkbox").native.find_element(:id, "user_accepts_terms").click
  end
 
