@@ -8,6 +8,7 @@ Background:
   * I check if page name has been already taken for the "DocumentPage"
   * I visit the Add DocumentPage page
 
+  @smoke
   Scenario: Add a new DocumentPage page
     * I create a new DocumentPage
     * I should see the edit hlp page tab elements

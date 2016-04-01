@@ -7,6 +7,7 @@ Feature: Test the HLP GatedPage functionality
     * I check if page name has been already taken for the "GatedPage"
     * I visit the Add GatedPage page
 
+  @smoke  
   Scenario: Add a new GatedPage page
     * I create a new GatedPage
     * I should see the edit hlp page tab elements

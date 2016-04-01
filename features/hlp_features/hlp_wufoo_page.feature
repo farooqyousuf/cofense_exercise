@@ -7,7 +7,7 @@ Feature: Test the HLP Wufoo page functionality
     * I check if page name has been already taken for the "WufooPage"
     * I visit the Add Wufoo page
 
-
+  @smoke  
   Scenario: Add a new Wufoo Page
     * I create a new Wufoo Page
     * I should see the edit hlp page tab elements

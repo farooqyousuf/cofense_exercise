@@ -7,7 +7,7 @@ Feature: Test the HLP UngatedPage functionality
     * I check if page name has been already taken for the "UngatedPage"
     * I visit the Add UngatedPage page
 
-
+  @smoke  
   Scenario: Add a new Ungated page
     * I create a new UngatedPage
     * I should see the edit hlp page tab elements
