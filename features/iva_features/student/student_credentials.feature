@@ -8,7 +8,7 @@ Feature: Student verification using student credentials
     * I sign up as a new user
     * I should be on the student verification screen
 
-  @smoke
+  @smoke @delete_user
   #Unique combo of ssn and dob to verify
   Scenario: Successful verification
     * I verify using student credentials
