@@ -8,7 +8,7 @@ Feature: Military verification using SCRA credentials
     * I sign up as a new user
     * I should be on the military verification screen
 
-  @smoke @delete_scra_user1
+  @delete_scra_user1
   #Unique dob and ssn pair
   Scenario: Successful verification as Service Member
     * I verify using SCRA for "Service Member"
@@ -32,13 +32,12 @@ Feature: Military verification using SCRA credentials
     * I verify using SCRA for "Military Family"
     * I complete the verification process
     * I should be successfully verified as "Military Family"
-  
-  # @ignore
-  # Scenario: Successful verification as Military Supporter
-  #   * I verify using SCRA "Military Supporter" information
-  #   * I should see the verification success page
-  #   * I complete the verification process
-  #   * I should be successfully verified as "Service Member"  
+
+  @delete_scra_user4
+  Scenario: Successful verification as Military Supporter
+    * I verify using SCRA for "Military Supporter"
+    * I complete the verification process
+    * I should be successfully verified as "Military Supporter"  
 
   # Scenario: Successfully prompt for all required fields for Service Member
   #   * I submit the empty SCRA form as "Service Member"

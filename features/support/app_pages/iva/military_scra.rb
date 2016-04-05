@@ -6,30 +6,27 @@ class MilitarySCRA < IDmeBase
   include Capybara::DSL
   include ErrorMessages
 
-  def verify(affiliation, popuplate = true)
+  def verify(affiliation, populate = true)
   	find("[data-option='service-record']").find(".verification-header").click
   	populate_affiliation(affiliation)
   	
   	case affiliation
   	when "Service Member"     then data_set = :scra_service_member
-  	when "Veteran"		      then data_set = :scra_veteran
+  	when "Veteran"		        then data_set = :scra_veteran
   	when "Military Spouse"    then data_set = :scra_mil_spouse
   	when "Military Family"    then data_set = :scra_mil_family
-  	when "Military Supporter" then data_set = :scra_mil_supporter
+  	when "Military Supporter" then data_set = :scra_mil_spouse
   	else puts "Affiliation not found!"
 	end
 
-  	if popuplate
+  	if populate
   	  populate_fields(data_for(data_set))
   	end
 
-  	if ["Military Spouse", "Military Family", "Military Supporter"].include?(affiliation)
+  	if ["Military Spouse", "Military Family"].include?(affiliation)
   	  %w(first_name last_name).each do |field|
   	  	fill_in field, :with => data_for(data_set).fetch(field)
   	  end
-  	end
-
-  	if ["Military Spouse", "Military Family"].include?(affiliation)
       populate_affiliation_2("Service Member")
   	end
 

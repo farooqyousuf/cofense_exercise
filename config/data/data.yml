@@ -86,37 +86,37 @@ emt_national:
   registry_number: M8037059
 
 scra_service_member:
-  service_member_first_name: Benjamin
-  service_member_last_name: Horn
-  birth_date: 01/05/1983
-  social: 606248782
-  social_confirm: 606248782
-  service_date: 01/01/2013
+  service_member_first_name: 
+  service_member_last_name: 
+  birth_date: 
+  social: 
+  social_confirm: 
+  service_date:
 
 scra_veteran:
-  service_member_first_name: Matthew
-  service_member_last_name: Thompson
-  birth_date: 04/12/1981
-  social: 224236636
-  social_confirm: 224236636
-  service_date: 04/01/2004
+  service_member_first_name:
+  service_member_last_name:
+  birth_date:
+  social:
+  social_confirm:
+  service_date:
 
 scra_mil_spouse:
-  first_name: Natasha
-  last_name: Sardo
-  service_member_first_name: Matthew
-  service_member_last_name: Sardo
-  birth_date: 09/17/1984
-  social: 215082431
-  social_confirm: 215082431
-  service_date: 01/01/2014
+  first_name:
+  last_name:
+  service_member_first_name:
+  service_member_last_name:
+  birth_date:
+  social:
+  social_confirm:
+  service_date:
 
 scra_mil_family:
-  first_name: Doca
-  last_name: Poca
-  service_member_first_name: Jeffrey
-  service_member_last_name: Polk
-  birth_date: 06/22/1987
-  social: 387060316
-  social_confirm: 387060316
-  service_date: 01/01/2014
+  first_name:
+  last_name:
+  service_member_first_name:
+  service_member_last_name:
+  birth_date:
+  social:
+  social_confirm:
+  service_date:
