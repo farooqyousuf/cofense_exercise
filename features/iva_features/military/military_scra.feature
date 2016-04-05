@@ -33,7 +33,7 @@ Feature: Military verification using SCRA credentials
     * I complete the verification process
     * I should be successfully verified as "Military Family"
 
-  @delete_scra_user4
+  @delete_scra_user4 @test
   Scenario: Successful verification as Military Supporter
     * I verify using SCRA for "Military Supporter"
     * I complete the verification process
