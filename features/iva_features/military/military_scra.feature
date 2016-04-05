@@ -21,6 +21,12 @@ Feature: Military verification using SCRA credentials
     * I complete the verification process
     * I should be successfully verified as "Veteran"
 
+  @delete_scra_user3
+  Scenario: Successful verification as Military Spouse
+    * I verify using SCRA for "Military Spouse"
+    * I complete the verification process
+    * I should be successfully verified as "Military Spouse"
+
   # Scenario: Successful verification as Military Spouse
   #   * I verify using SCRA "Military Spouse" information
   #   * I should see the verification success page

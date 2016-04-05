@@ -100,3 +100,14 @@ scra_veteran:
   social: 224236636
   social_confirm: 224236636
   service_date: 04/01/2004
+
+scra_mil_spouse:
+  first_name: Natasha
+  last_name: Sardo
+  service_member_first_name: Matthew
+  service_member_last_name: Sardo
+  birth_date: 09/17/1984
+  social: 215082431
+  social_confirm: 215082431
+  service_date: 01/01/2014
+
