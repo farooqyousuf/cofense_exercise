@@ -38,6 +38,13 @@ include JavascriptAlerts
     delete_user
   end
 
+  def delete_scra_user4
+    search_for_user("Doca Polk")
+    sleep 1
+    open_newest
+    delete_user
+  end
+
   def delete_user
   	click_link("Delete")
     sleep 1

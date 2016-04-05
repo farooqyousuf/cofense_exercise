@@ -111,3 +111,12 @@ scra_mil_spouse:
   social_confirm: 215082431
   service_date: 01/01/2014
 
+scra_mil_family:
+  first_name: Doca
+  last_name: Poca
+  service_member_first_name: Jeffrey
+  service_member_last_name: Polk
+  birth_date: 06/22/1987
+  social: 387060316
+  social_confirm: 387060316
+  service_date: 01/01/2014
