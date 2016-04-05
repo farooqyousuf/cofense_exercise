@@ -85,10 +85,18 @@ emt_national:
   birth_date: 01/01/1924
   registry_number: M8037059
 
-military_scra:
+scra_service_member:
   service_member_first_name: Benjamin
   service_member_last_name: Horn
   birth_date: 01/05/1983
   social: 606248782
   social_confirm: 606248782
   service_date: 01/01/2013
+
+scra_veteran:
+  service_member_first_name: Matthew
+  service_member_last_name: Thompson
+  birth_date: 04/12/1981
+  social: 224236636
+  social_confirm: 224236636
+  service_date: 04/01/2004

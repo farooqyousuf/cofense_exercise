@@ -15,12 +15,11 @@ Feature: Military verification using SCRA credentials
     * I complete the verification process
     * I should be successfully verified as "Service Member"
 
-  # @ignore
-  # Scenario: Successful verification as Veteran
-  #   * I verify using SCRA "Veteran" information
-  #   * I should see the verification success page
-  #   * I complete the verification process
-  #   * I should be successfully verified as "Veteran"
+  @delete_scra_user2
+  Scenario: Successful verification as Veteran
+    * I verify using SCRA for "Veteran"
+    * I complete the verification process
+    * I should be successfully verified as "Veteran"
 
   # Scenario: Successful verification as Military Spouse
   #   * I verify using SCRA "Military Spouse" information

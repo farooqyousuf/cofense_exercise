@@ -24,6 +24,13 @@ include JavascriptAlerts
     delete_user
   end
 
+  def delete_scra_user2
+    search_for_user("Matthew Thompson")
+    sleep 1
+    open_newest
+    delete_user
+  end
+
   def delete_user
   	click_link("Delete")
     sleep 1

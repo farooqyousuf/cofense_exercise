@@ -10,8 +10,14 @@ class MilitarySCRA < IDmeBase
   	find("[data-option='service-record']").find(".verification-header").click
   	populate_affiliation(affiliation)
   	
+  	case affiliation
+  	when "Service Member" then data_set = :scra_service_member
+  	when "Veteran"		  then data_set = :scra_veteran
+  	else puts "Affiliation not found!"
+	end
+
   	if popuplate
-  	  populate_fields(data_for(:military_scra))
+  	  populate_fields(data_for(data_set))
   	end
 
   	click_verify_button
