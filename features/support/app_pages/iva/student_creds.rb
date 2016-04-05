@@ -30,9 +30,10 @@ class StudentCreds < IDmeBase
   end
 
   def populate_ssn
-    random_ssn = Faker::Number.number(9)
+    #NSC requires a valid ssn to end with a 1 in their test env
+    random_ssn = Faker::Number.number(3)
     %w(social social_confirm).each do |field|
-      fill_in field, :with => random_ssn
+      fill_in field, :with => "#{random_ssn}1"
     end
   end
 
