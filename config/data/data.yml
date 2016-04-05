@@ -84,3 +84,11 @@ emt_national:
   last_name: Paucar
   birth_date: 01/01/1924
   registry_number: M8037059
+
+military_scra:
+  service_member_first_name: Benjamin
+  service_member_last_name: Horn
+  birth_date: 01/05/1983
+  social: 606248782
+  social_confirm: 606248782
+  service_date: 01/01/2013

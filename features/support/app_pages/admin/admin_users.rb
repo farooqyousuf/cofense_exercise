@@ -17,6 +17,13 @@ include JavascriptAlerts
     first('.odd > td > a').click
   end
 
+  def delete_scra_user1
+    search_for_user("Benjamin Horn")
+    sleep 1
+    open_newest
+    delete_user
+  end
+
   def delete_user
   	click_link("Delete")
     sleep 1
