@@ -39,6 +39,12 @@ Feature: Military verification using SCRA credentials
     * I complete the verification process
     * I should be successfully verified as "Retiree"  
 
+  @delete_scra_user5
+  Scenario: Successful verification as Retiree
+    * I verify using SCRA for "Retiree"
+    * I complete the verification process
+    * I should be successfully verified as "Retiree"  
+
   Scenario: Successfully prompt for all required fields for Service Member
     * I submit the empty SCRA form for "Service Member"
     * I should see error messages on required fields for "SCRA"
@@ -55,10 +61,10 @@ Feature: Military verification using SCRA credentials
     * I submit the empty SCRA form for "Military Supporter"
     * I should see error messages on required fields for "SCRA"  
 
-  # Scenario: Successfully prompt for all required fields for Military Spouse
-  #   * I submit the empty SCRA form as "Military Spouse"
-  #   * I should see error messages on required fields for "SCRA"
-    
-  # Scenario: Successfully prompt for all required fields for Military Family
-  #   * I submit the empty SCRA form as "Military Family"
-  #   * I should see error messages on required fields for "SCRA"
+  Scenario: Successfully prompt for all required fields for Military Spouse
+    * I submit the empty SCRA form for "Military Spouse"
+    * I should see error messages on required fields for "SCRA Family"  
+
+  Scenario: Successfully prompt for all required fields for Military Family
+    * I submit the empty SCRA form for "Military Spouse"
+    * I should see error messages on required fields for "SCRA Family"

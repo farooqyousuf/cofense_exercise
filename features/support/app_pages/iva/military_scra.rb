@@ -13,6 +13,7 @@ class MilitarySCRA < IDmeBase
   	case affiliation
   	when "Service Member"     then data_set = :scra_service_member
   	when "Veteran"		        then data_set = :scra_veteran
+    when "Retiree"            then data_set = :scra_mil_spouse
   	when "Military Spouse"    then data_set = :scra_mil_spouse
   	when "Military Family"    then data_set = :scra_mil_family
   	when "Military Supporter" then data_set = :scra_mil_spouse
@@ -21,13 +22,14 @@ class MilitarySCRA < IDmeBase
 
   	if populate
   	  populate_fields(data_for(data_set))
-  	end
 
-  	if ["Military Spouse", "Military Family"].include?(affiliation)
-  	  %w(first_name last_name).each do |field|
-  	  	fill_in field, :with => data_for(data_set).fetch(field)
-  	  end
-      populate_affiliation_2("Service Member")
+      if ["Military Spouse", "Military Family"].include?(affiliation)
+        %w(first_name last_name).each do |field|
+          fill_in field, :with => data_for(data_set).fetch(field)
+        end
+        populate_affiliation_2("Service Member")
+      end  
+
   	end
 
   	click_verify_button
