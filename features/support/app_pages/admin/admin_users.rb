@@ -18,28 +18,35 @@ include JavascriptAlerts
   end
 
   def delete_scra_user1
-    search_for_user("Benjamin Horn")
+    search_for_user("John Jones")
     sleep 1
     open_newest
     delete_user
   end
 
   def delete_scra_user2
-    search_for_user("Matthew Thompson")
+    search_for_user("Harry Dune")
     sleep 1
     open_newest
     delete_user
   end
 
   def delete_scra_user3
-    search_for_user("Natasha Sardo")
+    search_for_user("Jack Doe")
     sleep 1
     open_newest
     delete_user
   end
 
   def delete_scra_user4
-    search_for_user("Doca Polk")
+    search_for_user("Tiffany Killian")
+    sleep 1
+    open_newest
+    delete_user
+  end
+
+  def delete_scra_user5
+    search_for_user("Jane Doe")
     sleep 1
     open_newest
     delete_user
