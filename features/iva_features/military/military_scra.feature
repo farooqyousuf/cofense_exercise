@@ -39,17 +39,21 @@ Feature: Military verification using SCRA credentials
     * I complete the verification process
     * I should be successfully verified as "Retiree"  
 
-  # Scenario: Successfully prompt for all required fields for Service Member
-  #   * I submit the empty SCRA form as "Service Member"
-  #   * I should see error messages on required fields for "SCRA"
-  
-  # Scenario: Successfully prompt for all required fields for Veteran
-  #   * I submit the empty SCRA form as "Veteran"
-  #   * I should see error messages on required fields for "SCRA"
+  Scenario: Successfully prompt for all required fields for Service Member
+    * I submit the empty SCRA form for "Service Member"
+    * I should see error messages on required fields for "SCRA"
 
-  # Scenario: Successfully prompt for all required fields for Retiree
-  #   * I submit the empty SCRA form as "Retiree"
-  #   * I should see error messages on required fields for "SCRA"
+  Scenario: Successfully prompt for all required fields for Veteran
+    * I submit the empty SCRA form for "Veteran"
+    * I should see error messages on required fields for "SCRA"
+
+  Scenario: Successfully prompt for all required fields for Retiree
+    * I submit the empty SCRA form for "Retiree"
+    * I should see error messages on required fields for "SCRA"
+
+  Scenario: Successfully prompt for all required fields for Military Supporter
+    * I submit the empty SCRA form for "Military Supporter"
+    * I should see error messages on required fields for "SCRA"  
 
   # Scenario: Successfully prompt for all required fields for Military Spouse
   #   * I submit the empty SCRA form as "Military Spouse"
@@ -57,8 +61,4 @@ Feature: Military verification using SCRA credentials
     
   # Scenario: Successfully prompt for all required fields for Military Family
   #   * I submit the empty SCRA form as "Military Family"
-  #   * I should see error messages on required fields for "SCRA"
-  
-  # Scenario: Successfully prompt for all required fields for Military Supporter
-  #   * I submit the empty SCRA form as "Military Supporter"
   #   * I should see error messages on required fields for "SCRA"
