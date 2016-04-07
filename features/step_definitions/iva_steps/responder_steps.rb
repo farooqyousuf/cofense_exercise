@@ -1,3 +1,7 @@
+Given(/^I verify using EMT state lookup$/) do
+  LookupEMT.new.verify
+end
+
 Given(/^I should be on the responder verification screen$/) do
   @police = Police.new
   find(@police.header_css).visible?
