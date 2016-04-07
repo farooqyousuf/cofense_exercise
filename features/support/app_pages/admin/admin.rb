@@ -7,7 +7,7 @@ class AdminTool < IDmeBase
   end
 
   def login_in_new_window
-  	self.create_new_window
+    self.create_new_window
     self.use_last_browser_created
     self.visit
     sleep 2

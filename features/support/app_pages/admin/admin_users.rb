@@ -17,17 +17,52 @@ include JavascriptAlerts
     first('.odd > td > a').click
   end
 
-  def delete_user
-  	click_link("Delete")
+  def delete_scra_user1
+    search_for_user("John Jones")
     sleep 1
-  	js_accept
+    open_newest
+    delete_user
+  end
+
+  def delete_scra_user2
+    search_for_user("Harry Dune")
+    sleep 1
+    open_newest
+    delete_user
+  end
+
+  def delete_scra_user3
+    search_for_user("Jack Doe")
+    sleep 1
+    open_newest
+    delete_user
+  end
+
+  def delete_scra_user4
+    search_for_user("Tiffany Killian")
+    sleep 1
+    open_newest
+    delete_user
+  end
+
+  def delete_scra_user5
+    search_for_user("Jane Doe")
+    sleep 1
+    open_newest
+    delete_user
+  end
+
+  def delete_user
+    click_link("Delete")
+    sleep 1
+    js_accept
   end
 
   def delete_experian_user1
     search_for_user("sue gentz")
     sleep 2
     open_newest
-    delete_user 
+    delete_user
   end
 
   def delete_experian_user2
@@ -55,5 +90,5 @@ include JavascriptAlerts
   def search_for_user(string)
     find("input[type='search']").set string
   end
-  
+
 end

@@ -7,13 +7,13 @@ class MilitaryDoc < IDmeBase
   include ErrorMessages
 
   def verify(affiliation, populate = true)
-  	find("[data-option=#{container_attribute}]").find(".verification-header").click
+    find("[data-option=#{container_attribute}]").find(".verification-header").click
 
-  	populate_affiliation(affiliation)
+    populate_affiliation(affiliation)
 
-  	if populate
-  		populate_fields(data_for(:mil_doc))
-      
+    if populate
+      populate_fields(data_for(:mil_doc))
+
       if ["Military Family", "Military Spouse"].include?(affiliation)
         %w(first_name last_name).each do |field|
           fill_in field, :with => "CapybaraTester"
@@ -25,18 +25,18 @@ class MilitaryDoc < IDmeBase
 
       #attach dd214 doc
       populate_dd214_type("DD214 - Other")
-      attach_doc 
-  	end
+      attach_doc
+    end
 
-  	click_verify_button
+    click_verify_button
   end
 
   def populate_fields(data)
-  	#fill reqd fields
+    #fill reqd fields
     %w(service_member_first_name service_member_last_name social social_confirm street city).each do |field|
       fill_in field, :with => data.fetch(field)
     end
-    
+
     %w(birth_date zip).each do |field|
       2.times {fill_in field, :with => data.fetch(field)}
     end
@@ -45,21 +45,21 @@ class MilitaryDoc < IDmeBase
   end
 
   def container_attribute
-  	"military-document"
+    "military-document"
   end
 
   def populate_affiliation(value)
-	  select_option(container_attribute, ".military-affiliation", value)
-  end 
+    select_option(container_attribute, ".military-affiliation", value)
+  end
 
   def populate_state(value)
-  	select_option(container_attribute, "#s2id_state", value)
+    select_option(container_attribute, "#s2id_state", value)
   end
 
   def populate_dd214_type(value)
-  	wait_for_ajax
+    wait_for_ajax
     sleep 2
-  	select_option(container_attribute, "#s2id_document_type_id", value)
+    select_option(container_attribute, "#s2id_document_type_id", value)
   end
 
   def required_fields

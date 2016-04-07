@@ -1,7 +1,7 @@
 module ErrorMessages
 
   def error_on(field)
-  	value = (all('.error')[field]['class'])
+    value = (all('.error')[field]['class'])
     ["error", 
      "select2-container government-affiliation error", 
      "select2-container state-select error", 

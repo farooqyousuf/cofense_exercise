@@ -1,4 +1,4 @@
-Given(/^I verify using military documentation for "([^"]*)"$/) do |affiliation	|
+Given(/^I verify using military documentation for "([^"]*)"$/) do |affiliation|
   step 'I generate a unique doc'
   @military_doc = MilitaryDoc.new
   @military_doc.verify(affiliation)

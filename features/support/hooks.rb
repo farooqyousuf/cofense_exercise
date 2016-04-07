@@ -13,6 +13,36 @@ After("@oauth_tester_logout") do
   end
 end
 
+After("@delete_scra_user2") do
+  visit_admin_users_in_new_window
+  @admin_users.delete_scra_user2
+  @admin_tool.logout_in_new_window
+end
+
+After("@delete_scra_user1") do
+  visit_admin_users_in_new_window
+  @admin_users.delete_scra_user1
+  @admin_tool.logout_in_new_window
+end
+
+After("@delete_scra_user3") do
+  visit_admin_users_in_new_window
+  @admin_users.delete_scra_user3
+  @admin_tool.logout_in_new_window
+end
+
+After("@delete_scra_user4") do
+  visit_admin_users_in_new_window
+  @admin_users.delete_scra_user4
+  @admin_tool.logout_in_new_window
+end
+
+After("@delete_scra_user5") do
+  visit_admin_users_in_new_window
+  @admin_users.delete_scra_user5
+  @admin_tool.logout_in_new_window
+end
+
 After("@delete_experian_user1") do
   visit_admin_users_in_new_window
   @admin_users.delete_experian_user1
