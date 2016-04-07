@@ -34,7 +34,7 @@ class DD214 < IDmeBase
     %w(service_member_first_name service_member_last_name social social_confirm birth_place).each do |field|
       fill_in field, :with => data.fetch(field)
     end
-  
+
     %w(birth_date date_entered date_released).each do |field|
       2.times {fill_in field, :with => data.fetch(field)}
     end
@@ -65,15 +65,15 @@ class DD214 < IDmeBase
   end
 
   def release_checkbox
-  	all(".checkbox")[0].click
+    all(".checkbox")[0].click
   end
 
   def liable_checkbox
-  	all(".checkbox")[1].click
+    all(".checkbox")[1].click
   end
 
   def verify_checkbox
-  	all(".checkbox")[2].click
+    all(".checkbox")[2].click
   end
 
   def populate_checkboxes

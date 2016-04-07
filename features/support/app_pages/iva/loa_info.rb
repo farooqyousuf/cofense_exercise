@@ -7,16 +7,16 @@ class LOAInfo < IDmeBase
   include ErrorMessages
 
   def verify(populate = true, level)
-  	if populate
-  		data = data_for(:experian_user2)
-  		populate_base_loa_info(data)
+    if populate
+      data = data_for(:experian_user2)
+      populate_base_loa_info(data)
 
       if level == "LOA3"
         fill_in "card", :with => data.fetch("credit_card")
       end
 
-  	end
-    click_button("Verify") 
+    end
+    click_button("Verify")
   end
 
   def populate_base_loa_info(data)
@@ -26,9 +26,9 @@ class LOAInfo < IDmeBase
   end
 
   def populate_fields(data)
-  	%w(fname lname social social_confirm street city).each do |field|
-  		fill_in field, :with => data.fetch(field)
-  	end
+    %w(fname lname social social_confirm street city).each do |field|
+      fill_in field, :with => data.fetch(field)
+    end
 
     %w(birth_date phone zip).each do |field|
       2.times {fill_in field, :with => data.fetch(field)}
@@ -36,7 +36,7 @@ class LOAInfo < IDmeBase
   end
 
   def populate_state(data)
-  	select_filter2("#s2id_state", data.fetch("state"))
+    select_filter2("#s2id_state", data.fetch("state"))
   end
 
   def accept_fcra_terms

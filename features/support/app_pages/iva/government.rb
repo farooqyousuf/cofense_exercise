@@ -7,9 +7,9 @@ class IVAGovernment < IDmeBase
   include ErrorMessages
 
   def verify(populate = true)
-  	if populate
-  		data = data_for(:government)
-  		populate_fields(data)
+    if populate
+      data = data_for(:government)
+      populate_fields(data)
     end
 
     click_verify_button
@@ -21,7 +21,7 @@ class IVAGovernment < IDmeBase
     end
     unique_email
     2.times { fill_in("birth_date", :with => data.fetch("birth_date")) }
-  	populate_state(data.fetch("state"))
+    populate_state(data.fetch("state"))
     populate_affiliation(data.fetch("affiliation"))
     populate_agency(data.fetch("agency"))
   end

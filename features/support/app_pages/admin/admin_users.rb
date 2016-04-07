@@ -53,16 +53,16 @@ include JavascriptAlerts
   end
 
   def delete_user
-  	click_link("Delete")
+    click_link("Delete")
     sleep 1
-  	js_accept
+    js_accept
   end
 
   def delete_experian_user1
     search_for_user("sue gentz")
     sleep 2
     open_newest
-    delete_user 
+    delete_user
   end
 
   def delete_experian_user2
@@ -90,5 +90,5 @@ include JavascriptAlerts
   def search_for_user(string)
     find("input[type='search']").set string
   end
-  
+
 end
