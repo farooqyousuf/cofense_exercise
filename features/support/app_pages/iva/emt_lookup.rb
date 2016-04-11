@@ -12,18 +12,25 @@ class LookupEMT < IDmeBase
     populate_first_state("Alaska")
 
     if populate
-      populate_fields(data_for(:))
+      populate_fields(data_for(:experian_user))
     end
+
+    click_verify_button
   end
 
   def populate_fields(data)
-     %w(first_name last_name birth_date social social_confirm street city zip emt_city emt_county emt_zip emt_number).each do |field|
+    %w(first_name last_name social social_confirm street city emt_city emt_county).each do |field|
         fill_in field, :with => data.fetch(field)
     end
-    populate_second_state("Alaska")
+
+    %w(birth_date zip emt_zip).each do |field|
+      2.times {fill_in field, :with => data.fetch(field)}
+    end
+
+    populate_second_state("Kansas")
   end
 
-  def container_attrbute
+  def container_attribute
     "emt"
   end
 

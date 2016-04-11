@@ -8,10 +8,9 @@ Feature: Responder verification as an EMT using state lookup
     * I sign up as a new user
     * I should be on the responder verification screen
 
-  @smoke
+  @smoke @delete_experian_user1
   Scenario: Successful verification
-    #* I generate a unique doc
     * I verify using EMT state lookup
-    #* I approve the document in IDme admin
+    * I approve the EMT verification in IDme admin
     * I complete the verification process
     * I should be successfully verified as "EMT"
