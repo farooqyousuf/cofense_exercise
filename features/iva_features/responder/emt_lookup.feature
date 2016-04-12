@@ -1,5 +1,5 @@
 @regression @iva @responder @oauth_tester_logout
-Feature: Responder verification as an EMT using document upload
+Feature: Responder verification as an EMT using state lookup
 
   Background:
     * I visit the OAuth Tester
@@ -10,12 +10,11 @@ Feature: Responder verification as an EMT using document upload
 
   @smoke @delete_experian_user1
   Scenario: Successful verification
-    * I generate a unique doc
-    * I verify using EMT doc upload
-    * I approve the document in IDme admin
+    * I verify using EMT state lookup
+    * I approve the EMT verification in IDme admin
     * I complete the verification process
     * I should be successfully verified as "EMT"
 
-Scenario: Successful prompt for all required fields for EMT Doc Upload
-    * I submit the empty EMT doc upload form
-    * I should see error messages on required fields for "EMT doc upload"
+  Scenario: Successful prompt for all required fields for EMT state lookup
+    * I submit the empty EMT state lookup form
+    * I should see error messages on required fields for "EMT state lookup"

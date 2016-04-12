@@ -1,3 +1,23 @@
+Given(/^I approve the EMT verification in IDme admin$/) do
+
+  @admin_tool = AdminTool.new
+  @admin_tool.login_in_new_window
+
+  step 'I visit "AdminEMTVerifs"'
+  @admin_emt_verifs = AdminEMTVerifs.new
+  @admin_emt_verifs.approve_doc
+
+  @admin_tool.logout_in_new_window
+end
+
+Given(/^I submit the empty EMT state lookup form$/) do
+  @emt_lookup = LookupEMT.new.verify(false)
+end
+
+Given(/^I verify using EMT state lookup$/) do
+  LookupEMT.new.verify
+end
+
 Given(/^I should be on the responder verification screen$/) do
   @police = Police.new
   find(@police.header_css).visible?

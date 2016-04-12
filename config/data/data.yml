@@ -36,6 +36,9 @@ experian_user:
   city: Emporia
   state: Kansas
   zip: 66801
+  emt_city: Emporia
+  emt_county: Loudoun
+  emt_zip: 66801
 
 experian_user2:
   fname: Erin
