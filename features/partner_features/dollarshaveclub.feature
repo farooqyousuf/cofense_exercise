@@ -1,4 +1,4 @@
-@parnters @dollarshaveclub @version2
+@parnters @dollarshaveclub
 Feature: Test the ID.me Dollar Shave Club Partner Integration
 
   Scenario: Test Military Partner HLP Integration
