@@ -10,6 +10,9 @@ Given(/^I approve the EMT verification in IDme admin$/) do
   @admin_tool.logout_in_new_window
 end
 
+Given(/^I submit the empty EMT state lookup form$/) do
+  @emt_lookup = LookupEMT.new.verify(false)
+end
 
 Given(/^I verify using EMT state lookup$/) do
   LookupEMT.new.verify
