@@ -7,7 +7,7 @@ class ConfirmEmail < IDmeBase
   include ErrorMessages
 
   def data_code
-    find(".form-instructions").find('strong')[:'data-code']
+    find(".form-content strong")[:'data-code']
   end
 
   def confirm_email
