@@ -46,5 +46,3 @@ class OAuthTester < IDmeBase
    fill_in "pass", :with => "facebooktest"
    find("#loginbutton").click
  end
-
-end
