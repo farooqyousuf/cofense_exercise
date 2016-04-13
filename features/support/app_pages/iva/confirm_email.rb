@@ -12,7 +12,7 @@ class ConfirmEmail < IDmeBase
 
   def confirm_email
     fill_in "code", :with => data_code
-    click_submit
+    click_continue
   end
 
 end

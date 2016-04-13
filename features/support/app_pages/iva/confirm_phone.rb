@@ -13,7 +13,7 @@ class ConfirmPhone < IDmeBase
   def confirm_phone
     click_continue
     fill_in "code", :with => data_code
-    click_submit
+    click_continue
   end
 
 end
