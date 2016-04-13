@@ -41,3 +41,7 @@ Given(/^I create the test conditions for Login with invalid password$/) do
   step 'I visit the OAuth Tester'
   step 'I select the "Marketplace" policy'
 end
+
+Given(/^I login with Facebook$/) do
+  @oauth_tester = OAuthTester.new.login_with_facebook
+end

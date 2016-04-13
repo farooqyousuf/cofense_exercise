@@ -40,4 +40,11 @@ class OAuthTester < IDmeBase
    click_link("Logout »")
  end
 
+ def login_with_facebook
+   find("img[alt='Facebook']").click
+   fill_in "email", :with => "qnkuwmb_sadanberg_1446693931@tfbnw.net"
+   fill_in "pass", :with => "facebooktest"
+   find("#loginbutton").click
+ end
+
 end
