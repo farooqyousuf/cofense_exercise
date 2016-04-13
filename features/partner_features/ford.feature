@@ -6,3 +6,4 @@ Feature: Test the Ford Partner Integration
 
   Scenario: Test Ford Military Integration
     * ford - I register through the Troop ID Integration
+    * ford - I verify the Troop ID Integration for invalid service member
