@@ -41,13 +41,13 @@ include DataMagic
     # pick an option
     find("#select2-drop .select2-results").find("div", :text => /^#{value}$/i).click
   end
-  
+
   def header_css
     ".form-title"
   end
 
   def click_verify_button
-    click_button("Verify now") 
+    click_button("Verify now")
   end
 
   def click_submit
@@ -58,7 +58,8 @@ include DataMagic
     click_button("Continue")
   end
 
-  def attach_doc(number = 0) 
+  def attach_doc(number = 0)
+    page.has_css?(".file-upload") #will wait until this is true which means the file upload page has loaded, and the bottom command will not fail.
     page.driver.browser.all(:xpath, '//input[@type="file"]')[number].send_keys("#{Dir.pwd}/screenshots/screenshot.png")
   end
 
