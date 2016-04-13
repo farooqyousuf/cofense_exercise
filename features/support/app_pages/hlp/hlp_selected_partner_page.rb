@@ -5,12 +5,12 @@ class HlpPartnerPage < IDmeBase
   def initialize
   end
 
-  def partner_page_already_exists(hlp_sample_page_type )
+  def partner_page_already_exists(hlp_sample_page_type)
     find("#DataTables_Table_0").has_text? hlp_sample_page_type
   end
 
-  def select_existing_page(hlp_sample_page_type )
-    find("a",:text => hlp_sample_page_type  , match: :prefer_exact).click
+  def select_existing_page(hlp_sample_page_type)
+    find("a", :text => hlp_sample_page_type, match: :prefer_exact).click
   end
 
   def click_add_ungated_page_link
@@ -34,22 +34,22 @@ class HlpPartnerPage < IDmeBase
   end
 
   def select_original_ungated_page
-    find("a",:text => FigNewton.hlp_page_test_data.ungated_page.name).click
+    find("a", :text => FigNewton.hlp_page_test_data.ungated_page.name).click
   end
 
   def select_original_document_page
-    find("a",:text => FigNewton.hlp_page_test_data.document_page.name).click
+    find("a", :text => FigNewton.hlp_page_test_data.document_page.name).click
   end
 
   def select_original_gated_page
-    find("a",:text => FigNewton.hlp_page_test_data.gated_page.name).click
+    find("a", :text => FigNewton.hlp_page_test_data.gated_page.name).click
   end
 
   def select_original_promocode_page
-    find("a",:text => FigNewton.hlp_page_test_data.promo_code_page.name).click
+    find("a", :text => FigNewton.hlp_page_test_data.promo_code_page.name).click
   end
 
   def select_original_wufoo_page
-    find("a",:text => FigNewton.hlp_page_test_data.wufoo_code_page.name).click
+    find("a", :text => FigNewton.hlp_page_test_data.wufoo_code_page.name).click
   end
 end

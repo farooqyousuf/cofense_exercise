@@ -11,7 +11,8 @@ class OAuthTester < IDmeBase
    select(consumer, :from => "consumer")
    select(policy, :from => "policy")
    click_button("Authenticate")
-   return IDPSignIn.new
+
+   IDPSignIn.new
  end
 
  def json_verification_css

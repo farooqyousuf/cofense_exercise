@@ -1,6 +1,6 @@
 class HlpEditPage < IDmeBase
-    include IDPBase
-    include JavascriptAlerts
+  include IDPBase
+  include JavascriptAlerts
 
   def initialize
   end
@@ -11,11 +11,11 @@ class HlpEditPage < IDmeBase
   end
 
   def enter_ungated_page_name
-    fill_in("ungated_page[name]",:with => FigNewton.hlp_page_test_data.ungated_page.name)
+    fill_in("ungated_page[name]", :with => FigNewton.hlp_page_test_data.ungated_page.name)
   end
 
   def enter_gated_page_name
-    fill_in("gated_page[name]",:with => FigNewton.hlp_page_test_data.gated_page.name)
+    fill_in("gated_page[name]", :with => FigNewton.hlp_page_test_data.gated_page.name)
   end
 
   def enter_document_page_name
@@ -79,19 +79,19 @@ class HlpEditPage < IDmeBase
   end
 
   def enter_promocode_page_name
-    fill_in("promo_code_page[name]",:with => FigNewton.hlp_page_test_data.promo_code_page.name)
+    fill_in("promo_code_page[name]", :with => FigNewton.hlp_page_test_data.promo_code_page.name)
   end
 
   def enter_promo_header
-    fill_in("promo_code_page[title]",:with => FigNewton.hlp_page_test_data.promo_code_page.header)
+    fill_in("promo_code_page[title]", :with => FigNewton.hlp_page_test_data.promo_code_page.header)
   end
 
   def enter_promo_subheader
-    fill_in("promo_code_page[subtitle]",:with => FigNewton.hlp_page_test_data.promo_code_page.subheader)
+    fill_in("promo_code_page[subtitle]", :with => FigNewton.hlp_page_test_data.promo_code_page.subheader)
   end
 
   def enter_number_of_codes_allowed_per_user
-    fill_in("promo_code_page[promo_code_info_attributes][codes_per_user]",:with => FigNewton.hlp_page_test_data.promo_code_page.number_of_codes_per_user)
+    fill_in("promo_code_page[promo_code_info_attributes][codes_per_user]", :with => FigNewton.hlp_page_test_data.promo_code_page.number_of_codes_per_user)
   end
 
   def attach_promo_code_file
@@ -103,6 +103,6 @@ class HlpEditPage < IDmeBase
   end
 
   def enter_wufoo_page_name
-    fill_in("wufoo_page[name]",:with => "Sam's Club Military Special Wufoo Page")
+    fill_in("wufoo_page[name]", :with => "Sam's Club Military Special Wufoo Page")
   end
 end
