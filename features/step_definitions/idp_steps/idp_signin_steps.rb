@@ -17,10 +17,18 @@ Given(/^I login as a "([^"]*)" user$/) do |user_type|
   @idp_signin.sign_in(user, password)
 end
 
-Given(/^I should be successfully authenticated(?: as "(.*)")?$/) do |person|
+Given(/^I should be successfully authenticated using "([^"]*)"$/) do |method|
   @oauth_tester = OAuthTester.new
-  expect(@oauth_tester.verification_status).to eq(true)
-  expect(@oauth_tester.authenticated_as(person)).to eq(true) if person
+
+  person = case method
+           when "Facebook"      then FigNewton.oauth_tester.facebook_user
+           when "Google"        then FigNewton.oauth_tester.google_user
+           when "LinkedIn"      then FigNewton.oauth_tester.linkedin_user
+           when "Twitter"       then FigNewton.oauth_tester.twitter_user
+           else fail ("Error!")
+           end
+
+  expect(@oauth_tester.authenticated_as(person)).to eq(true)
 end
 
 

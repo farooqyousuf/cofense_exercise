@@ -8,4 +8,4 @@ Feature: IDP Facebook Login
   @oauth_tester_logout @delete_facebook_user
   Scenario: Create and login with a new Facebook account
     * I login with Facebook
-    * I should be successfully authenticated as "Karen Sadanberg"
+    * I should be successfully authenticated using "Facebook"

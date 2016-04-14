@@ -10,6 +10,10 @@ oauth_tester:
  loa1: farooq+loa1@id.me
  loa2: farooq+loa2@id.me
  loa3: farooq+loa3@id.me
+ facebook_user: Karen Sadanberg
+ google_user:
+ linkedin_user:
+ twitter_user:
 
 authority:
  userid: farooq@id.me
