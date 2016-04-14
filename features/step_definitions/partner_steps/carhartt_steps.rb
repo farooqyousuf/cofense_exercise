@@ -1,6 +1,6 @@
 Given(/^carhartt \- I add an item to the cart$/) do
   visit FigNewton.partners.carhartt_homepage
-  find(:link, :href =>"http://www.carhartt.com/products/carhartt-men-outerwear/Shoreline-Jacket-J162").click
+  first(:link, :href =>"http://www.carhartt.com/products/carhartt-men-outerwear/Shoreline-Jacket-J162").click
   click_on "MEDIUM"
   click_on "Add to Cart"
   click_on "Checkout Now"

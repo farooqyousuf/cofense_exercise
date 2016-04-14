@@ -1,11 +1,12 @@
 Given(/^FE \- I add an item to the cart$/) do
   visit FigNewton.partners.fansedge
-  begin
-    #TODO : bad taste to use this rescue so liberaly? find a better way that
-      find("#lightboxModal")
-      find("#lightboxSaleCloseLink").click
-    rescue
-  end
+  page.driver.browser.navigate.refresh
+  # begin
+  #   #TODO : bad taste to use this rescue so liberaly? find a better way that
+  #     find("#lightboxModal")
+  #     find("#lightboxSaleCloseLink").click
+  #   rescue
+  # end
   click_link "Choose Size S"
   find("#addToCart").click
   find(:link, :href =>"/cart/view").click

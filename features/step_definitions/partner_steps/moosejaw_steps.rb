@@ -1,7 +1,6 @@
 
 Given(/^moosejaw \- I add an item to the cart$/) do
-  visit "http://www.moosejaw.com/moosejaw/shop/search_Mens-SS-Shirts____"
-  find(:link, :href=>"http://www.moosejaw.com/moosejaw/shop/product_Arcteryx-Men-s-Captive-SS-Polo_10235054_10208_10000001_-1_").click
+  visit "http://www.moosejaw.com/moosejaw/shop/product_Arcteryx-Men-s-Captive-SS-Polo_10235054_10208_10000001_-1_"
 
   click_link "po-link-selectSize"
   click_link "pd_prod_Small"

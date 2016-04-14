@@ -6,7 +6,7 @@ Given(/^UA \- I add an item to the cart$/) do
   rescue
   end
 
-  find(:link ,:href => "/en-us/men-s-ua-streaker-run-v-neck-t-shirt/pid1276515-016").click
+  #find(:link ,:href => "/en-us/men-s-ua-streaker-run-v-neck-t-shirt/pid1276515-016").click
   find(".size-chip",match: :first).click
   find(".addtocart-btn").click
   find(".cart-added-container").find(".checkout-btn").click #js div modal

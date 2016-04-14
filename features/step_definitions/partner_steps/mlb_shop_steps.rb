@@ -1,11 +1,12 @@
 Given(/^MLBSHOP \- I add an item to the cart$/) do
   visit FigNewton.partners.mlb_shop
-  begin
-    find("#lightboxModal")
-    find("#lightboxSaleCloseLink").click
-  rescue
-
-  end
+  # begin
+  #   find("#lightboxModal")
+  #   find("#lightboxSaleCloseLink").click
+  # rescue
+  #
+  # end
+  page.driver.browser.navigate.refresh
 
   first(:link , :text => "Jerseys").click
   # TODO : move the link to fignewton or abstract to non specific selection

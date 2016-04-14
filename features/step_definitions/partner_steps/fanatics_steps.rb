@@ -8,8 +8,6 @@ Given(/^FANATICS\- I add an item to the cart$/) do
     rescue
     #this seems odd ot just have this here
   end
-
-  find(:link, :href => FigNewton.partners.fanatics_product_url).click
   click_link "Choose Size XL"
   find("#addToCart").click
 end
@@ -25,6 +23,7 @@ Given(/^FANATICS\- I apply the Troop ID discount$/) do
 end
 
 Given(/^FANATICS\- I verify the Troop ID discount has been applied$/) do
+  sleep 2
   expect(find(".ui-alert-body").text).to eql(FigNewton.partners.fanatics_discount) #find a better expectation for this
   expect(page).to have_selector("#checkoutCouponTotalValue", :visible => true)
   expect(find("#checkoutCouponTotalValue").text).to eql("-$12.00")

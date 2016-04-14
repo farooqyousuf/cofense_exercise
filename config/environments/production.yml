@@ -5,8 +5,7 @@ sauce_labs:
 partners:
   user:     tony.chung+test@id.me
   password: Password123
-  fanatics: http://www.fanatics.com/NFL_Denver_Broncos
-  fanatics_product_url: http://www.fanatics.com/NFL_Denver_Broncos/Peyton_Manning_Denver_Broncos_Nike_Super_Bowl_50_Game_Jersey_-_Orange
+  fanatics: http://www.fanatics.com/NFL_Denver_Broncos_Mens/Peyton_Manning_Denver_Broncos_Nike_Super_Bowl_50_Game_Jersey_-_Orange
   fanatics_discount: "A discount of 10% and free shipping was successfully applied to your order."
   nfl_shop: https://www.nflshop.com/catalog/product/Mens_Washington_Redskins_Ryan_Kerrigan_Nike_Burgundy_Game_Jersey
   fansedge: http://www.fansedge.com/New_England_Patriots_Merchandise/Nike_Tom_Brady_New_England_Patriots_Navy_Blue_Silver_Game_Jersey
@@ -24,7 +23,7 @@ partners:
   mlb_shop_discount_amount: "-$18.00"
   caesars_hotels: https://www.caesars.com
   seaworld_url: http://seaworldparks.com/seaworld-orlando/waves-of-honor/veterans
-  underarmour_url: https://www.underarmour.com/en-us/mens/apparel/tops/shortsleeve
+  underarmour_url: https://www.underarmour.com/en-us/men-s-ua-streaker-run-v-neck-t-shirt/pid1276515-016
   underarmour_item_subtotal: "Items: $34.99"
   underarmour_discount_amount: "Promotion: -$3.50"
   mlb_tv_subscription_page: http://mlb.mlb.com/mlb/subscriptions
