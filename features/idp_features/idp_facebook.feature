@@ -5,7 +5,7 @@ Feature: IDP Facebook Login
     * I visit the OAuth Tester
     * I select the "Marketplace" policy
 
-  @oauth_tester_logout
-  Scenario: Create and login with a Facebook account
+  @oauth_tester_logout @delete_facebook_user
+  Scenario: Create and login with a new Facebook account
     * I login with Facebook
-    * I pry
+    * I should be successfully authenticated as "Karen Sadanberg"

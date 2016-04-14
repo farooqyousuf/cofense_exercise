@@ -17,6 +17,13 @@ Given(/^I login as a "([^"]*)" user$/) do |user_type|
   @idp_signin.sign_in(user, password)
 end
 
+Given(/^I should be successfully authenticated(?: as "(.*)")?$/) do |person|
+  @oauth_tester = OAuthTester.new
+  expect(@oauth_tester.verification_status).to eq(true)
+  expect(@oauth_tester.authenticated_as(person)).to eq(true) if person
+end
+
+
 Given(/^I should be successfully verified(?: as "(.*)")?$/) do |group|
 
   flag = ["LOA1", "LOA2", "LOA3"].include?(group)
@@ -43,5 +50,11 @@ Given(/^I create the test conditions for Login with invalid password$/) do
 end
 
 Given(/^I login with Facebook$/) do
-  @oauth_tester = OAuthTester.new.login_with_facebook
+  @oauth_tester = OAuthTester.new
+  @oauth_tester.login_with_facebook
+
+  @idp_new_wallet = IDPNewWallet.new
+  @idp_new_wallet.click_joining_first_time
+  @idp_new_wallet.check_tos_pp
+  @idp_new_wallet.click_continue_button
 end
