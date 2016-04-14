@@ -12,16 +12,24 @@ end
 
 Given(/^shave \- I sign up a new membership and apply Troop ID promo code$/) do
 #get through cart
-  find("#ember1952").find(:button).click
+  first(".orange").click
   find(".checkout-bar").find(:button).click
   fill_in("firstName",:with =>"Mary")
   fill_in("lastName",:with =>"Lamb")
   fill_in("email",:with => "eddie.park.tester@gmail.com")
   fill_in("password",:with =>"Password123")
+  page.execute_script "window.scrollBy(0,1000)"
+  #issue right now where ember will not load the next page
+  #when manually clear page cache the item works 
   first(".button").click
   find(:link, :href =>"/coupon/redeem").click
+  binding.pry
+  fill_in("#ember3282",:with => promo_code )
+  click_on "Redeem"
 end
 
 Given(/^shave \- I verify the Troop ID discount has been applied$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  page.has_text? "Your promo has been applied."
+  page.has_text? "Discount Applied"
+  page.has_text? "-$10.00"
 end
