@@ -22,7 +22,8 @@ Given(/^UA \- I apply the "([^"]*)" discount$/) do |type|
   end
 
   page.execute_script "window.scrollBy(0,1000)"
-  find("a[data-target='#military']").click
+  #find("a[data-target='#military']").click
+  find(".panel-heading",:text=>"Military & First Responder Discount").click
 
   idp_signin = window_opened_by do
     find(".idme-btn-primary-lg-" + button)
