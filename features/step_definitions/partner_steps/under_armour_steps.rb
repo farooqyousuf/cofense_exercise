@@ -20,14 +20,11 @@ Given(/^UA \- I apply the "([^"]*)" discount$/) do |type|
   when "First Responder"
     button = "Responder"
   end
-
-  page.execute_script "window.scrollBy(0,1000)"
-  #find("a[data-target='#military']").click
-  find(".panel-heading",:text=>"Military & First Responder Discount").click
+  page.execute_script "window.scrollBy(0,850)"
+  find("a[data-target='#military']").click
 
   idp_signin = window_opened_by do
-    find(".idme-btn-primary-lg-" + button)
-    .first(:xpath, ".//..").native.send_key :return # .native drops down to access the selenium webdriver API methods
+    find(".idme-btn-primary-lg-Troop").first(:xpath, ".//..").native.send_key :return # .native drops down to access the selenium webdriver API methods
   end
 
   within_window idp_signin do
