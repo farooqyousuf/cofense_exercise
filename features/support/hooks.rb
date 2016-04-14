@@ -13,6 +13,12 @@ After("@oauth_tester_logout") do
   end
 end
 
+After("@delete_dd214_user") do
+  visit_admin_users_in_new_window
+  @admin_users.delete_dd214_user
+  @admin_tool.logout_in_new_window
+end
+
 After("@delete_facebook_user") do
   visit_admin_users_in_new_window
   @admin_users.delete_facebook_user
