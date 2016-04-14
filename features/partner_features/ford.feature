@@ -10,7 +10,7 @@ Feature: Test the Ford Partner Integration
     * ford - I visit the First Responder Integration Page
     * ford - I sign in with IDP
     * ford - I verify the First Responder Integration
-  @active_mem
+
   Scenario: Test Ford Military for active service member
     * ford - I visit the Military Integration Page
     * ford - I sign in with IDP as active member

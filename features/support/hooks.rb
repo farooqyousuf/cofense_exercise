@@ -5,6 +5,10 @@ Before do
   page.driver.browser.manage.window.maximize
 end
 
+After do
+  Capybara.current_session.driver.quit
+end
+
 After("@oauth_tester_logout") do
   if page.has_link?("Logout »")
     click_link("Logout »")
@@ -29,7 +33,7 @@ After("@marketplace_cash_back") do
  @marketplace_shop.sign_out
 end
 
-After("@delete_natl_emt") do 
+After("@delete_natl_emt") do
   visit_admin_users_in_new_window
   @admin_users.delete_natl_emt
   @admin_tool.logout_in_new_window

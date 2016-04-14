@@ -47,7 +47,7 @@ Given(/^ford \- I verify the Troop ID Integration for active member$/) do
   page.has_text? "Military Appreciation Bonus Cash"
 end
 
-#TODO temp fix remove this duplication asap 
+#TODO temp fix remove this duplication asap
 def sign_in_with_idme_active_service_member
   if page.has_content? "Sign in"
     fill_in "user_email", :with => FigNewton.partners.ford_user
