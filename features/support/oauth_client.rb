@@ -11,16 +11,16 @@ class OAuthClient
   end
 
   def auth_url
-    @auth_url ||= client.implicit.authorize_url(:redirect_uri => @redirect_uri, :scope => @scope)
+    client.implicit.authorize_url(:redirect_uri => @redirect_uri, :scope => @scope)
   end
 
   def save_token(token_params)
     @token ||= OAuth2::AccessToken.from_kvform(client, token_params)
   end
 
-  def verify_loa_scope(level)
-    level_regexed = level.gsub!(/\D/, '')
-    has_css?(json_scope_css, :text => "http://idmanagement.gov/ns/assurance/loa/#{level_regexed}")
+  def verify_loa_scope(group)
+    level = group.gsub!(/\D/, '')
+    @scope == "http://idmanagement.gov/ns/assurance/loa/#{level}"
   end
 
   def verified?
