@@ -1,8 +1,8 @@
 Given(/^carhartt \- I add an item to the cart$/) do
   visit FigNewton.partners.carhartt_homepage
-  first(:link, :href =>"http://www.carhartt.com/products/carhartt-men-outerwear/Shoreline-Jacket-J162").click
   click_on "MEDIUM"
   click_on "Add to Cart"
+  sleep 1#long delay for their checkout modal to show 
   click_on "Checkout Now"
 end
 
