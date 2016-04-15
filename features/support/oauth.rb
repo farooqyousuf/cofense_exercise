@@ -7,6 +7,7 @@ class OAuthClient
     @client_secret = options[:client_secret]
     @site          = options[:site]
     @redirect_uri  = options[:redirect_uri]
+    @scope         = options[:scope]
   end
 
   def client
@@ -14,7 +15,7 @@ class OAuthClient
   end
 
   def idp_endpoint
-    @auth_url ||= client.implicit.authorize_url(:redirect_uri => @redirect_uri)
+    @auth_url ||= client.implicit.authorize_url(:redirect_uri => @redirect_uri, :scope => @scope)
   end
 
   def token(token_params)
