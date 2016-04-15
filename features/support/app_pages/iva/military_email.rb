@@ -10,7 +10,7 @@ class MilitaryEmail < IDmeBase
   def verify(affiliation, populate = true)
     find("[data-option=#{container_attribute}]").find(".verification-header").click
     populate_affiliation(affiliation)
-    
+
     if populate
       populate_fields
 
@@ -22,7 +22,7 @@ class MilitaryEmail < IDmeBase
         %w(first_name last_name).each do |field|
           fill_in field, :with => Faker::Name.field
         end
-        select_option(container_attribute, "#s2id_service_subgroup_id", "Veteran")    
+        select_option(container_attribute, "#s2id_service_subgroup_id", "Veteran")
       end
 
     end
@@ -32,7 +32,7 @@ class MilitaryEmail < IDmeBase
 
   def populate_affiliation(value)
     select_option(container_attribute, ".military-affiliation", value)
-  end 
+  end
 
   def populate_fields
     fake_first_name = Faker::Name.first_name

@@ -1,4 +1,4 @@
-@regression @iva @military @email @oauth_tester_logout  
+@regression @iva @military @email @oauth_tester_logout
 Feature: Military verification using .mil email
 
   Background:
@@ -14,9 +14,9 @@ Feature: Military verification using .mil email
     * I verify using military email information for "Service Member"
     * I submit the verification code for "Military Email Code"
     * I complete the verification process
-    * I should be successfully verified as "Service Member"  
+    * I should be successfully verified as "Service Member"
 
-  @delete_user  
+  @delete_user
   Scenario: Successful verification with a military email as Military Spouse
     * I verify using military email information for "Military Spouse"
     * I submit the verification code for "Military Email Code"
@@ -29,8 +29,8 @@ Feature: Military verification using .mil email
     * I submit the verification code for "Military Email Code"
     * I complete the verification process
     * I should be successfully verified as "Military Family"
-    
-  @delete_user  
+
+  @delete_user
   Scenario: Successful verification as Military Supporter
     * I verify using military email information for "Military Supporter"
     * I submit the verification code for "Military Email Code"
@@ -39,8 +39,8 @@ Feature: Military verification using .mil email
 
   Scenario: Successfully prompt for all required fields for Service Member
     * I submit the empty military email form for "Service Member"
-    * I should see error messages on required fields for "Military Email"    
-      
+    * I should see error messages on required fields for "Military Email"
+
   Scenario: Successfully prompt for all required fields for Military Spouse
     * I submit the empty military email form for "Military Spouse"
     * I should see error messages on required fields for "Military Email Family"

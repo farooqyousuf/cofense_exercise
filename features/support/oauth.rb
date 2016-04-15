@@ -5,21 +5,44 @@ class OAuthClient
   def initialize(options = {})
     @client_id     = options[:client_id]
     @client_secret = options[:client_secret]
-    @site          = options[:site]
+    @endpoint      = options[:endpoint]
     @redirect_uri  = options[:redirect_uri]
     @scope         = options[:scope]
   end
 
-  def client
-    @client ||= OAuth2::Client.new(@client_id, @client_secret, :site => @site)
-  end
-
-  def idp_endpoint
+  def auth_url
     @auth_url ||= client.implicit.authorize_url(:redirect_uri => @redirect_uri, :scope => @scope)
   end
 
-  def token(token_params)
+  def save_token(token_params)
     @token ||= OAuth2::AccessToken.from_kvform(client, token_params)
+  end
+
+  def verify_loa_scope(level)
+    level_regexed = level.gsub!(/\D/, '')
+    has_css?(json_scope_css, :text => "http://idmanagement.gov/ns/assurance/loa/#{level_regexed}")
+  end
+
+  def verified?
+    api_endpoint = "#{@endpoint}/api/public/v2/data.json?access_token=#{@token.token}"
+    response = get_response(api_endpoint)
+    response["verified"] == true
+  end
+
+  def affiliated_as?(group)
+    api_endpoint = "#{@endpoint}/api/public/v2/affiliation.json?access_token=#{@token.token}"
+    response = get_response(api_endpoint)
+    response["affiliation"] == group
+  end
+
+  private
+
+  def client
+    @client ||= OAuth2::Client.new(@client_id, @client_secret, :site => @endpoint)
+  end
+
+  def get_response(api_endpoint)
+    JSON.parse@token.get(api_endpoint).body
   end
 
 end

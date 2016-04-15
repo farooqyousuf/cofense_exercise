@@ -37,10 +37,10 @@ Given(/^I should be successfully verified(?: as "(.*)")?$/) do |group|
   flag = ["LOA1", "LOA2", "LOA3"].include?(group)
 
   if flag == true
-    expect(@oauth_tester.verify_loa_scope(group)).to eq(true)
+    expect(@oauth_client.verify_loa_scope(group)).to eq(true)
   else
-    expect(@oauth_tester.verification_status).to eq(true)
-    expect(@oauth_tester.affiliated_as(group)).to eq(true) if group
+    expect(@oauth_client.verified?).to eq(true)
+    expect(@oauth_client.affiliated_as?(group)).to eq(true) if group
   end
 
 end
