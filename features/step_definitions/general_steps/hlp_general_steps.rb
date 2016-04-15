@@ -1,5 +1,6 @@
 
 Given(/^I should see the edit hlp page tab elements$/) do
+  sleep 1
   ["Duplicate Page","Delete Page","Preview"].each do |edit_link|
     expect(page).to have_link(edit_link)
   end
@@ -41,7 +42,7 @@ Given(/^I check if page name has been already taken for the "([^"]*)"$/) do |hlp
 
   @hlp_selected_partner_edit_page = HlpEditPage.new
   @hlp_selected_partner_page = HlpPartnerPage.new
-  
+
   hlp_sample_page_type   = case hlp_type
   when "UngatedPage"   then FigNewton.hlp_page_test_data.ungated_page.name
   when "DocumentPage"  then FigNewton.hlp_page_test_data.document_page.name
