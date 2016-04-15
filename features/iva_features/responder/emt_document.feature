@@ -8,7 +8,7 @@ Feature: Responder verification as an EMT using document upload
     * I sign up as a new user
     * I should be on the responder verification screen
 
-  @smoke @delete_experian_user
+  @smoke @delete_experian_user1
   Scenario: Successful verification
     * I generate a unique doc
     * I verify using EMT doc upload

@@ -5,7 +5,7 @@ class AdminVerificationAttempts < IDmeBase
 include PageManagement
 
   def initialize
-  	super("#{FigNewton.admin.base_url}/verification/attempts")
+    super("#{FigNewton.admin.base_url}/verification/attempts")
   end
 
   def open_newest

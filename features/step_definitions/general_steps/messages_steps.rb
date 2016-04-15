@@ -10,10 +10,10 @@ Given(/^I should see an error on the "(.*)" field$/) do |expected_text|
   sleep 1
   expect(all(error_label_css).map(&:text)).to include(expected_text)
 end
-  
+
 Given(/^I should see error messages on required fields for "([^"]*)"$/) do |method|
   var = case method
-  		  when "Government"		             then IVAGovernment
+        when "Government"                 then IVAGovernment
         when "DD214 Vet"                 then DD214
         when "DD214 Non-Vet"             then DD214NonVet
         when "Military Email"            then MilitaryEmail
@@ -32,14 +32,17 @@ Given(/^I should see error messages on required fields for "([^"]*)"$/) do |meth
         when "Firefighter doc upload"    then DocFirefighter
         when "National EMT"              then NationalEMT
         when "EMT doc upload"            then DocEMT
-  		  else fail("Verification option not found")
-  	    end
+        when "SCRA"                      then MilitarySCRA
+        when "SCRA Family"               then MilitarySCRAFamily
+        when "EMT state lookup"          then LookupEMT
+        else fail("Verification option not found")
+        end
 
     page = (var).new
     sleep 1
-	  page.required_fields.each do |field|
-	  expect(page.error_on(field)).to be_truthy
-	end
+    page.required_fields.each do |field|
+    expect(page.error_on(field)).to be_truthy
+  end
 end
 
 Given(/^I should see the red error "(.*?)" below the textfield$/) do |expected_text|

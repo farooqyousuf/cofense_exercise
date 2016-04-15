@@ -36,6 +36,22 @@ experian_user:
   city: Emporia
   state: Kansas
   zip: 66801
+  emt_city: Emporia
+  emt_county: Loudoun
+  emt_zip: 66801
+
+experian_user2:
+  fname: Erin
+  lname: Rashid
+  birth_date: 04/30/1942
+  social: 666024882
+  social_confirm: 666024882
+  phone: 6202318771
+  credit_card: 4888603132346941
+  street: 302 E Adams St
+  city: Pittsburg
+  state: Kansas
+  zip: 66762
 
 teacher_doc:
   first_name: Sue
@@ -71,3 +87,39 @@ emt_national:
   last_name: Paucar
   birth_date: 01/01/1924
   registry_number: M8037059
+
+scra_service_member:
+  service_member_first_name: John
+  service_member_last_name: Jones
+  birth_date: 05/25/1989
+  social: 000149876
+  social_confirm: 000149876
+  service_date: 04/05/2016
+
+scra_veteran:
+  service_member_first_name: Harry
+  service_member_last_name: Dune
+  birth_date: 10/25/1963
+  social: 000905188
+  social_confirm: 000905188
+  service_date: 04/05/2016
+
+scra_mil_spouse:
+  first_name: Jack
+  last_name: Doe
+  service_member_first_name: Jane
+  service_member_last_name: Doe
+  birth_date: 08/05/1959
+  social: 000489552
+  social_confirm: 000489552
+  service_date: 04/05/2016
+
+scra_mil_family:
+  first_name: Tiffany
+  last_name: Killian
+  service_member_first_name: George
+  service_member_last_name: Killian
+  birth_date: 06/26/1980
+  social: 000196548
+  social_confirm: 000196548
+  service_date: 04/05/2016

@@ -11,7 +11,7 @@ rerun.txt
 !.gitkeep
 *.swp
 *.rdb
-questions.png
+*.png
 
 output/*
 features/support/env.rb

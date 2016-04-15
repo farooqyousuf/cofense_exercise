@@ -8,7 +8,7 @@ Background:
     * I sign up as a new user
     * I should be on the student verification screen
 
-  @smoke @delete_experian_user
+  @smoke @delete_experian_user1
   #unique dob/ssn and vetted by Experian/PreciseID, have to use their test data
   Scenario: Successful verification
     * I verify using student documentation

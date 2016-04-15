@@ -10,7 +10,7 @@ Feature: Responder verification as a police officer
   
 
   #experian check and also need a unique doc for police  
-  @smoke @delete_experian_user
+  @smoke @delete_experian_user1
   Scenario: Successful verification as a police officer
     * I verify using police officer documentation 
     * I approve the document in IDme admin

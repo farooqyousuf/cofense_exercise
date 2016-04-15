@@ -5,5 +5,4 @@ class HlpPartnerIndexPage < IDmeBase
     super(FigNewton.hlp.homepage)
   end
 
-
 end
