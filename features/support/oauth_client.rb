@@ -15,7 +15,7 @@ class OAuthClient
   end
 
   def save_token(token_params)
-    @token ||= OAuth2::AccessToken.from_kvform(client, token_params)
+    @token = OAuth2::AccessToken.from_kvform(client, token_params)
   end
 
   def verify_loa_scope(group)
@@ -29,7 +29,7 @@ class OAuthClient
     response["verified"] == true
   end
 
-  def affiliated_as?(group)
+  def has_affiliation?(group)
     api_endpoint = "#{@endpoint}/api/public/v2/affiliation.json?access_token=#{@token.token}"
     response = get_response(api_endpoint)
     response["affiliation"] == group
@@ -38,7 +38,7 @@ class OAuthClient
   private
 
   def client
-    @client ||= OAuth2::Client.new(@client_id, @client_secret, :site => @endpoint)
+    OAuth2::Client.new(@client_id, @client_secret, :site => @endpoint)
   end
 
   def get_response(api_endpoint)

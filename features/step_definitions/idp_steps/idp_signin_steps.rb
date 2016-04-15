@@ -40,7 +40,7 @@ Given(/^I should be successfully verified(?: as "(.*)")?$/) do |group|
     expect(@oauth_client.verify_loa_scope(group)).to eq(true)
   else
     expect(@oauth_client.verified?).to eq(true)
-    expect(@oauth_client.affiliated_as?(group)).to eq(true) if group
+    expect(@oauth_client.has_affiliation?(group)).to eq(true) if group
   end
 
 end
