@@ -20,7 +20,7 @@ class MilitaryEmail < IDmeBase
 
       if ["Military Family", "Military Spouse"].include?(affiliation)
         %w(first_name last_name).each do |field|
-          fill_in field, :with => Faker::Name.field
+          fill_in field, :with => Faker::Name.send(field)
         end
         select_option(container_attribute, "#s2id_service_subgroup_id", "Veteran")
       end
