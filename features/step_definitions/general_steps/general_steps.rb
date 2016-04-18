@@ -18,15 +18,17 @@ end
 Given(/^I complete the verification process$/) do
   @iva_success = IVASuccess.new
   @iva_success.click_here_to_finish
+
+  @oauth_client.save_token(current_url) if @oauth_client
 end
 
 Given(/^I submit the verification code for "([^"]*)"$/) do |option|
-  @admin_tool = AdminTool.new 
+  @admin_tool = AdminTool.new
   @admin_tool.login_in_new_window
 
   step 'I visit "AdminVerificationAttempts"'
   @admin_verif_attempts = AdminVerificationAttempts.new
-  
+
   # open and view the latest record
   select("#{option}", :from => "option")
   @admin_verif_attempts.open_newest
@@ -49,7 +51,7 @@ Given(/^I generate a unique doc$/) do
   use_last_browser_created
   visit 'https://pastie.org'
   fill_in "paste_body", with: Faker::Lorem.paragraph(50)
-  
+
   @IDmeBase = IDmeBase.new
   @IDmeBase.save_screenshot
   close_current_browser
@@ -64,6 +66,7 @@ Given(/^I approve the document in IDme admin$/) do
   @admin_docs = AdminDocs.new
 
   @admin_docs.approve_doc
-  
+
   @admin_tool.logout_in_new_window
 end
+
