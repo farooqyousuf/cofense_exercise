@@ -19,7 +19,7 @@ Given(/^I complete the verification process$/) do
   @iva_success = IVASuccess.new
   @iva_success.click_here_to_finish
 
-  @oauth_client.save_token(token_params) if @oauth_client
+  @oauth_client.save_token(current_url) if @oauth_client
 end
 
 Given(/^I submit the verification code for "([^"]*)"$/) do |option|
@@ -70,9 +70,3 @@ Given(/^I approve the document in IDme admin$/) do
   @admin_tool.logout_in_new_window
 end
 
-
-private
-
-def token_params
-  current_url.match(/[^#]*$/).to_s
-end
