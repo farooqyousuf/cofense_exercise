@@ -1,6 +1,6 @@
 # general module helpers for step definitions
 module HelperMethods
-  
+
   def sign_in_with_idme
     if page.has_content? "Sign in"
       fill_in "user_email", :with => FigNewton.partners.user
@@ -8,8 +8,8 @@ module HelperMethods
       click_button "Sign in"
     end
 
-    if page.has_content? "Click here to finish"
-      click_link "Click here to finish"
+    if page.has_content? "Click here to continue"
+      click_link "Click here to continue"
     elsif page.has_content? "Authorize"
       click_button "Authorize"
     end

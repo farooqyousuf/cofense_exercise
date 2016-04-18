@@ -1,5 +1,5 @@
 class MarketplaceCashBackPage < IDmeBase
-    require "rest-client"
+    #srequire "rest-client"
     include IDPBase
 
     def initialize

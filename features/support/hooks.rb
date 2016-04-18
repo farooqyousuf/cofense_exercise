@@ -5,6 +5,10 @@ Before do
   page.driver.browser.manage.window.maximize
 end
 
+After do
+  Capybara.current_session.driver.quit
+end
+
 After("@oauth_tester_logout") do
   if page.has_link?("Logout »")
     click_link("Logout »")
