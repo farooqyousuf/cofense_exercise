@@ -1,9 +1,8 @@
-@regression @iva @government 
+@regression @iva @government
 Feature: Government verification using .gov email
 
   Background:
-    * I visit the OAuth Tester
-    * I select the "Marketplace Government" policy
+    * I visit IDP through the "government" policy
     * I click on the Sign Up link
     * I sign up as a new user
     * I should be on the government verification screen
@@ -16,7 +15,7 @@ Feature: Government verification using .gov email
     * I submit the verification code for "Government Email"
     * I complete the verification process
     * I should be successfully verified
-    
+
   Scenario: Successfully prompt for all required fields
     * I submit the empty government form
     * I should see error messages on required fields for "Government"

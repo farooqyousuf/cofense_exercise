@@ -28,19 +28,19 @@ Given(/^I should be successfully authenticated using "([^"]*)"$/) do |method|
            else fail ("Error!")
            end
 
-  expect(@oauth_tester.authenticated_as(person)).to eq(true)
+  expect(@oauth_tester.authenticated_as?(person)).to eq(true)
 end
 
-
 Given(/^I should be successfully verified(?: as "(.*)")?$/) do |group|
-
+  # Support both oauth_tester and new oauth_client until all tests are converted to use only oauth_client
+  oauth = @oauth_tester ? @oauth_tester : @oauth_client
   flag = ["LOA1", "LOA2", "LOA3"].include?(group)
 
   if flag == true
-    expect(@oauth_tester.verify_loa_scope(group)).to eq(true)
+    expect(oauth.verify_loa_scope(group)).to eq(true)
   else
-    expect(@oauth_tester.verification_status).to eq(true)
-    expect(@oauth_tester.affiliated_as(group)).to eq(true) if group
+    expect(oauth.verified?).to eq(true)
+    expect(oauth.has_affiliation?(group)).to eq(true) if group
   end
 
 end

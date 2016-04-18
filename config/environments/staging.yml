@@ -19,6 +19,29 @@ authority:
  userid: farooq@id.me
  password: idmeadmin
 
+oauth:
+  client_id     : 8e7d94dd2114a4ba54b8ef7950446aaa
+  client_secret : ff5a9ef3aeb9a98ab49ee42662b8f58e
+  idp_endpoint  : https://api-staging.idmeinc.net
+  redirect_uri  : https://oauth-tester-staging.idmeinc.net
+  policy:
+    developer         : developer
+    farooq            : farooq
+    government        : government
+    ficam_loa_1       : http://idmanagement.gov/ns/assurance/loa/1
+    ficam_loa_1       : http://idmanagement.gov/ns/assurance/loa/2
+    ficam_loa_1       : http://idmanagement.gov/ns/assurance/loa/3
+    marketplace       : marketplace
+    marketplace_edit  : marketplace_edit
+    military          : military
+    military_enforced : military-enforced
+    military_scra     : military_scra
+    payfone           : payfone
+    responder         : responder
+    student           : student
+    teacher           : teacher
+    wallet            : wallet
+
 mp_users:
   mp_homepage: https://marketplace-users-staging.idmeinc.net
   basic: test+basic@id.me
