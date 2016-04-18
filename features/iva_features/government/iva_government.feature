@@ -2,7 +2,7 @@
 Feature: Government verification using .gov email
 
   Background:
-    * I visit IDP through the "Marketplace Government" policy
+    * I visit IDP through the "government" policy
     * I click on the Sign Up link
     * I sign up as a new user
     * I should be on the government verification screen
