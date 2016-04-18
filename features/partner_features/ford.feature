@@ -1,6 +1,6 @@
 @partners @ford @version2
 Feature: Test the Ford Partner Integration
-
+  @newset
   Scenario: Test Ford Military Integration for inactive service member
     * ford - I visit the Military Integration Page
     * ford - I sign in with IDP
