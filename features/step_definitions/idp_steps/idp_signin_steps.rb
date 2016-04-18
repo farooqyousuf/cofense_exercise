@@ -31,7 +31,6 @@ Given(/^I should be successfully authenticated using "([^"]*)"$/) do |method|
   expect(@oauth_tester.authenticated_as?(person)).to eq(true)
 end
 
-
 Given(/^I should be successfully verified(?: as "(.*)")?$/) do |group|
   # Support both oauth_tester and new oauth_client until all tests are converted to use only oauth_client
   oauth = @oauth_tester ? @oauth_tester : @oauth_client
