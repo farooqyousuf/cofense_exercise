@@ -1,8 +1,8 @@
 # ID.me Revelator
 
 Before running you need to set the env.rb file depending on the environment. We use the
-[Thor Ruby Gem](http://whatisthor.com/) to set it. Just type in the appropriate selection
-below into the command line before hand for the test environment you will require. 
+[Thor Ruby Gem](http://whatisthor.com/) to manage this. Just type in the appropriate command
+below into the CLI before hand for the test environment you will require.
 
 ```
 thor set:android_saucelabs       # Use Android on Sauce Labs on Production
