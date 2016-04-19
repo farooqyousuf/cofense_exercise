@@ -1,9 +1,8 @@
-@regression @iva @student @oauth_tester_logout
+@regression @iva @student
 Feature: Student verification using document upload
 
 Background:
-    * I visit the OAuth Tester
-    * I select the "Marketplace Student" policy
+    * I visit IDP through the "student" policy
     * I click on the Sign Up link
     * I sign up as a new user
     * I should be on the student verification screen
@@ -18,4 +17,4 @@ Background:
 
   Scenario: Successfully prompt for all required fields
     * I submit the empty Student form using "Student Document"
-    * I should see error messages on required fields for "Student Document"    
+    * I should see error messages on required fields for "Student Document"
