@@ -1,4 +1,4 @@
-@regression @iva @responder @oauth_tester_logout
+@regression @iva @responder
 Feature: Responder verification as an EMT using document upload
 
   Background:

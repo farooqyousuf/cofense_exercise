@@ -1,4 +1,4 @@
-@regression @iva @responder @oauth_tester_logout
+@regression @iva @responder
 Feature: Responder verification as a ProBoard Firefighter
 
   Background:
