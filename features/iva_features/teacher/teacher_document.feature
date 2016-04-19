@@ -2,7 +2,7 @@
 Feature: Teacher verification using document upload
 
   Background:
-    * I visit IDP through the "government" policy
+    * I visit IDP through the "teacher" policy
     * I click on the Sign Up link
     * I sign up as a new user
     * I should be on the teacher verification screen
