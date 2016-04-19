@@ -2,8 +2,7 @@
 Feature: Military verification using SCRA credentials
 
   Background:
-    * I visit the OAuth Tester
-    * I select the "Marketplace Military" policy
+    * I visit IDP through the "military" policy
     * I click on the Sign Up link
     * I sign up as a new user
     * I should be on the military verification screen
@@ -37,13 +36,13 @@ Feature: Military verification using SCRA credentials
   Scenario: Successful verification as Military Supporter
     * I verify using SCRA for "Military Supporter"
     * I complete the verification process
-    * I should be successfully verified as "Retiree"  
+    * I should be successfully verified as "Retiree"
 
   @delete_scra_user5
   Scenario: Successful verification as Retiree
     * I verify using SCRA for "Retiree"
     * I complete the verification process
-    * I should be successfully verified as "Retiree"  
+    * I should be successfully verified as "Retiree"
 
   Scenario: Successfully prompt for all required fields for Service Member
     * I submit the empty SCRA form for "Service Member"
@@ -59,11 +58,11 @@ Feature: Military verification using SCRA credentials
 
   Scenario: Successfully prompt for all required fields for Military Supporter
     * I submit the empty SCRA form for "Military Supporter"
-    * I should see error messages on required fields for "SCRA"  
+    * I should see error messages on required fields for "SCRA"
 
   Scenario: Successfully prompt for all required fields for Military Spouse
     * I submit the empty SCRA form for "Military Spouse"
-    * I should see error messages on required fields for "SCRA Family"  
+    * I should see error messages on required fields for "SCRA Family"
 
   Scenario: Successfully prompt for all required fields for Military Family
     * I submit the empty SCRA form for "Military Spouse"
