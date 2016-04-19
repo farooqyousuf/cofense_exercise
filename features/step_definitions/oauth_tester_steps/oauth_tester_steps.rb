@@ -8,5 +8,6 @@ Given(/^I select the "([^"]*)" policy$/) do |policy|
 end
 
 Given(/^I logout of the OAuth Tester$/) do
+  @oauth_tester = OAuthTester.new
   @oauth_tester.logout
 end

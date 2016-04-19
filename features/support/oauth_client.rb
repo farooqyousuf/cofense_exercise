@@ -1,5 +1,6 @@
 class OAuthClient
 
+  include Capybara::DSL
   require 'oauth2'
 
   def initialize(options = {})
@@ -35,6 +36,10 @@ class OAuthClient
 
   def payload
     @payload ||= JSON.parse@token.get(api_endpoint).body
+  end
+
+  def logout
+    visit("https://oauth-tester-staging.idmeinc.net/oauths/6/logout")
   end
 
   private
