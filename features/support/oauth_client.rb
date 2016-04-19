@@ -24,21 +24,23 @@ class OAuthClient
   end
 
   def verified?
+    puts "Payload Verified Value: #{payload['verified']}"
     payload["verified"] == true
   end
 
   def has_affiliation?(group)
+    puts "Payload Affiliation Value: #{payload['affiliation']}"
     payload["affiliation"] == group
+  end
+
+  def payload
+    @payload ||= JSON.parse@token.get(api_endpoint).body
   end
 
   private
 
   def client
     @client ||= OAuth2::Client.new(@client_id, @client_secret, :site => @endpoint)
-  end
-
-  def payload
-    @payload ||= JSON.parse@token.get(api_endpoint).body
   end
 
   def api_endpoint

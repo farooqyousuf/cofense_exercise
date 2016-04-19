@@ -1,9 +1,8 @@
-@regression @iva @military @email @oauth_tester_logout
+@regression @iva @military @email
 Feature: Military verification using .mil email
 
   Background:
-    * I visit the OAuth Tester
-    * I select the "Marketplace Military" policy
+    * I visit IDP through the "military" policy
     * I click on the Sign Up link
     * I sign up as a new user
     * I should be on the military verification screen

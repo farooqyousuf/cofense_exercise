@@ -24,6 +24,13 @@ include JavascriptAlerts
     delete_user
   end
 
+  def delete_dd214_user2
+    search_for_user("Joel Smith")
+    sleep 1
+    open_newest
+    delete_user
+  end
+
   def delete_facebook_user
     search_for_user("Sadanberg")
     sleep 1

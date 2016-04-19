@@ -8,13 +8,13 @@ Feature: Government verification using .gov email
     * I should be on the government verification screen
 
   # TODO: break this out into the initial email step, admin step, code step
-  @smoke @delete_user @oauth_tester_logout
+  @smoke @delete_user
   #unique email address
   Scenario: Successful verification with a Government email
     * I submit the government verification form
     * I submit the verification code for "Government Email"
     * I complete the verification process
-    * I should be successfully verified
+    * I should be successfully verified as "Federal"
 
   Scenario: Successfully prompt for all required fields
     * I submit the empty government form

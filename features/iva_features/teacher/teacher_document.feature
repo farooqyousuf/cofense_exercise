@@ -1,11 +1,10 @@
-@regression @iva @teacher @oauth_tester_logout
+@regression @iva @teacher
 Feature: Teacher verification using document upload
 
   Background:
-    * I visit the OAuth Tester
-    * I select the "Marketplace Teacher" policy
+    * I visit IDP through the "teacher" policy
     * I click on the Sign Up link
-    * I sign up as a new user    
+    * I sign up as a new user
     * I should be on the teacher verification screen
 
   @smoke @delete_experian_user1
