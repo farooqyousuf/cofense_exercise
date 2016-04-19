@@ -1,9 +1,8 @@
-@regression @iva @student @oauth_tester_logout
+@regression @iva @student
 Feature: Student verification using student credentials
 
   Background:
-    * I visit the OAuth Tester
-    * I select the "Marketplace Student" policy
+    * I visit IDP through the "student" policy
     * I click on the Sign Up link
     * I sign up as a new user
     * I should be on the student verification screen
