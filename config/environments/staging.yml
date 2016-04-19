@@ -29,8 +29,8 @@ oauth:
     farooq            : farooq
     government        : government
     ficam_loa_1       : http://idmanagement.gov/ns/assurance/loa/1
-    ficam_loa_1       : http://idmanagement.gov/ns/assurance/loa/2
-    ficam_loa_1       : http://idmanagement.gov/ns/assurance/loa/3
+    ficam_loa_2       : http://idmanagement.gov/ns/assurance/loa/2
+    ficam_loa_3       : http://idmanagement.gov/ns/assurance/loa/3
     marketplace       : marketplace
     marketplace_edit  : marketplace_edit
     military          : military
