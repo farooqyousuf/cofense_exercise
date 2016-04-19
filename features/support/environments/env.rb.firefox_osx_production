@@ -1,6 +1,6 @@
 require_relative "dependencies"
 
-FigNewton.load('staging.yml')
+FigNewton.load('production.yml')
 
 Capybara.default_driver = :selenium
 Capybara.default_max_wait_time = 10
