@@ -44,7 +44,8 @@ class OAuthTester < IDmeBase
   end
 
   def logout
-    click_link("Logout »")
+    #page is required below b/c the visit method is already pre-defined in the IDmeBase class
+    page.visit("https://oauth-tester-staging.idmeinc.net/oauths/6/logout")
   end
 
   def login_with_facebook

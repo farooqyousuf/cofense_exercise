@@ -2,14 +2,12 @@
 Feature: User account lock and unlock
 
   Background:
-    * I visit the OAuth Tester
-    * I select the "Marketplace" policy
+    * I visit IDP through the "marketplace" policy
     * I click on the Sign Up link
     * I sign up as a new user
-    * I logout of the OAuth Tester
-    * I visit the OAuth Tester
-    * I select the "Marketplace" policy
-    
+    * I logout of the OAuth Client
+    * I visit IDP through the "marketplace" policy
+
   Scenario: User Account locked due to failed logins
     * I lockout my account
     * I click on the unlock account link
@@ -21,7 +19,6 @@ Feature: User account lock and unlock
     * I login as a "current_username" user
     * I should see the red alert box error message "Your account has been locked due to a number of failed sign-in attempts. Please click here to unlock it."
 
- @oauth_tester_logout
  Scenario: Verify if account can be used after unlocking it
     * I lockout my account
     * I click on the unlock account link
@@ -38,9 +35,9 @@ Feature: User account lock and unlock
     * I lockout my account
     * I enter a wrong unlock code 1 time
     * I should see the red alert box error message "The code you entered is invalid. Please make sure you enter the correct code and try again."
-    
+
   Scenario: Entering non-existent account email for unlock
     * I lockout my account
     * I click on the unlock account link
     * I enter a non-existant account email to attempt to unlock my account
-    * I should see the red error "We could not find an ID.me Wallet with the email address you entered." below the textfield
+    * I should see the red alert box error message "We couldn't find an ID.me Wallet with the given email address. Please try again."

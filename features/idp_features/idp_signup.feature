@@ -2,11 +2,10 @@
 Feature: User account creation
 
   Background:
-    * I visit the OAuth Tester
-    * I select the "Marketplace" policy
+    * I visit IDP through the "marketplace" policy
     * I click on the Sign Up link
-  
-  @smoke @oauth_tester_logout
+
+  @smoke
   Scenario: Successful sign up
     * I sign up as a new user
     * I should be successfully verified

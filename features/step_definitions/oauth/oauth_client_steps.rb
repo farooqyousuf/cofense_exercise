@@ -9,3 +9,7 @@ Given(/^I visit IDP through the "([^"]*)" policy$/) do |handle|
 
   visit @oauth_client.auth_url
 end
+
+Given(/^I logout of the OAuth Client$/) do
+  @oauth_client.logout
+end

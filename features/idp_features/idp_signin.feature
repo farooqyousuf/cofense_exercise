@@ -2,10 +2,9 @@
 Feature: User sign in with an existing account
 
   Background:
-    * I visit the OAuth Tester
-    * I select the "Marketplace" policy
+    * I visit IDP through the "marketplace" policy
 
-  @smoke @oauth_tester_logout
+  @smoke
   Scenario: Successful login
     * I login as a "Unverified" user
     * I should be successfully verified
