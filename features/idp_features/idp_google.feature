@@ -1,4 +1,4 @@
-@regression @idp
+@regression @idp @social @google
 Feature: IDP Google Login
 
   Background:

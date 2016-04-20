@@ -1,4 +1,4 @@
-@regression @idp
+@regression @idp @social @facebook
 Feature: IDP Facebook Login
 
   Background:
