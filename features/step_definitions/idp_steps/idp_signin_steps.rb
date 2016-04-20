@@ -19,7 +19,6 @@ end
 
 Given(/^I should be successfully authenticated using "([^"]*)"$/) do |method|
   #@oauth_tester = OAuthTester.new
-  @oauth_client = OAuthClient.new
 
   person = case method
            when "Facebook"      then FigNewton.oauth_tester.facebook_user
@@ -38,7 +37,7 @@ Given(/^I should be successfully verified(?: as "(.*)")?$/) do |group|
   oauth = @oauth_tester ? @oauth_tester : @oauth_client
   flag = ["LOA1", "LOA2", "LOA3"].include?(group)
 
-  #save oauth client token for idp tests
+  #save oauth client token for idp and iva tests
   if oauth == @oauth_client
     @oauth_client.save_token(current_url)
   end

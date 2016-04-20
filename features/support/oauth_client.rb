@@ -35,10 +35,9 @@ class OAuthClient
   end
 
   def authenticated_as?(person)
-    binding.pry
     first_name = person.gsub(/\w+$/,"")
     last_name = person.gsub(/^\w+/,"")
-    puts "Payload Full Name Value: #{payload['fname'] + payload['lname']}"
+    puts "Payload Full Name Value: #{payload['fname']} " + "#{payload['lname']}"
     payload["fname"] == first_name.strip
     payload["lname"] == last_name.strip
   end

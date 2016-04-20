@@ -20,7 +20,7 @@ Given(/^I complete the verification process$/) do
   @iva_success.click_here_to_finish
 
   #saving oauth client token for iva tests
-  @oauth_client.save_token(current_url) if @oauth_client
+  #@oauth_client.save_token(current_url) if @oauth_client
 end
 
 Given(/^I submit the verification code for "([^"]*)"$/) do |option|
