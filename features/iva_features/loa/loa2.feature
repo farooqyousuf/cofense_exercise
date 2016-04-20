@@ -14,7 +14,6 @@ Feature: Test the LOA2 (Level of Assurance 2) functionality
     * I confirm my phone
     * I authorize the attribute release
     * I should be successfully verified
-    * I should be successfully authenticated using "LOA2"
 
   Scenario: LOA2 login flow using a LOA1 verified user
     * I login as a "LOA1" user

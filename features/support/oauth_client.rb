@@ -25,7 +25,6 @@ class OAuthClient
   end
 
   def verified?
-    binding.pry
     puts "Payload Verified Value: #{payload['verified']}"
     payload["verified"] == true
   end

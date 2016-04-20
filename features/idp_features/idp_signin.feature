@@ -7,7 +7,7 @@ Feature: User sign in with an existing account
   @smoke
   Scenario: Successful login
     * I login as a "Unverified" user
-    * I should be successfully verified
+    * I should be successfully authenticated
 
   Scenario: Login with invalid password
     * I create the test conditions for Login with invalid password

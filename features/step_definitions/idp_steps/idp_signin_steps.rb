@@ -17,35 +17,39 @@ Given(/^I login as a "([^"]*)" user$/) do |user_type|
   @idp_signin.sign_in(user, password)
 end
 
-Given(/^I should be successfully authenticated using "([^"]*)"$/) do |method|
 
-  person = case method
-           when "Facebook"      then FigNewton.oauth_tester.facebook_user
-           when "Google"        then FigNewton.oauth_tester.google_user
-           when "LinkedIn"      then FigNewton.oauth_tester.linkedin_user
-           when "Twitter"       then FigNewton.oauth_tester.twitter_user
-           when "LOA2"          then FigNewton.oauth_tester.experian_user
-           else fail ("Error!")
-           end
+Given(/^I should be successfully authenticated(?: using "(.*)")?$/) do |method|
+  @oauth_client.save_token(current_url)
 
-  expect(@oauth_client.authenticated_as?(person)).to eq(true)
+  if method
+    person = case method
+             when "Facebook"      then FigNewton.oauth_tester.facebook_user
+             when "Google"        then FigNewton.oauth_tester.google_user
+             when "LinkedIn"      then FigNewton.oauth_tester.linkedin_user
+             when "Twitter"       then FigNewton.oauth_tester.twitter_user
+             else fail ("Error!")
+             end
+    expect(@oauth_client.authenticated_as?(person)).to eq(true)
+  end
+
+  expect(@oauth_client.verified?).to eq(true)
 end
 
 Given(/^I should be successfully verified(?: as "(.*)")?$/) do |group|
   # Support both oauth_tester and new oauth_client until all tests are converted to use only oauth_client
-  oauth = @oauth_tester ? @oauth_tester : @oauth_client
+  # oauth = @oauth_tester ? @oauth_tester : @oauth_client
   flag = ["LOA1", "LOA2", "LOA3"].include?(group)
 
   #save oauth client token for idp and iva tests
-  if oauth == @oauth_client
-    @oauth_client.save_token(current_url)
-  end
+  #if oauth == @oauth_client
+  @oauth_client.save_token(current_url)
+  #end
 
   if flag == true
-    expect(oauth.verify_loa_scope(group)).to eq(true)
+    expect(@oauth_client.verify_loa_scope(group)).to eq(true)
   else
-    expect(oauth.verified?).to eq(true)
-    expect(oauth.has_affiliation?(group)).to eq(true) if group
+    expect(@oauth_client.verified?).to eq(true)
+    expect(@oauth_client.has_affiliation?(group)).to eq(true) if group
   end
 end
 
