@@ -2,8 +2,7 @@
 Feature: IDP Google Login
 
   Background:
-    * I visit the OAuth Tester
-    * I select the "Marketplace" policy
+    * I visit IDP through the "marketplace" policy
 
   @delete_google_user
   Scenario: Create and login with a new Google account
