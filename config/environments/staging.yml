@@ -16,7 +16,7 @@ oauth_tester:
  twitter_user:
 
 authority:
- userid: farooq@id.me
+ userid: farooq+1@id.me
  password: idmeadmin
 
 oauth:
