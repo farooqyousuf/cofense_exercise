@@ -29,7 +29,6 @@ class OAuthTester < IDmeBase
   end
 
   def verified?
-    binding.pry
     has_css?(json_verification_css, :text => "\"verified\": true")
   end
 
