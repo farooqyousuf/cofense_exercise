@@ -18,17 +18,19 @@ Given(/^I login as a "([^"]*)" user$/) do |user_type|
 end
 
 Given(/^I should be successfully authenticated using "([^"]*)"$/) do |method|
-  @oauth_tester = OAuthTester.new
+  #@oauth_tester = OAuthTester.new
+  @oauth_client = OAuthClient.new
 
   person = case method
            when "Facebook"      then FigNewton.oauth_tester.facebook_user
            when "Google"        then FigNewton.oauth_tester.google_user
            when "LinkedIn"      then FigNewton.oauth_tester.linkedin_user
            when "Twitter"       then FigNewton.oauth_tester.twitter_user
+           when "LOA2"          then FigNewton.oauth_tester.experian_user
            else fail ("Error!")
            end
 
-  expect(@oauth_tester.authenticated_as?(person)).to eq(true)
+  expect(@oauth_client.authenticated_as?(person)).to eq(true)
 end
 
 Given(/^I should be successfully verified(?: as "(.*)")?$/) do |group|

@@ -14,6 +14,7 @@ oauth_tester:
  google_user:
  linkedin_user:
  twitter_user:
+ experian_user: Erin Rashid
 
 authority:
  userid: farooq+1@id.me
