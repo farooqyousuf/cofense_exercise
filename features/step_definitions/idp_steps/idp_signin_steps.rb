@@ -18,7 +18,6 @@ Given(/^I login as a "([^"]*)" user$/) do |user_type|
 end
 
 Given(/^I should be successfully authenticated using "([^"]*)"$/) do |method|
-  #@oauth_tester = OAuthTester.new
 
   person = case method
            when "Facebook"      then FigNewton.oauth_tester.facebook_user
@@ -63,8 +62,7 @@ Given(/^I create the test conditions for Login with invalid password$/) do
 end
 
 Given(/^I login with Facebook$/) do
-  @oauth_tester = OAuthTester.new
-  @oauth_tester.login_with_facebook
+  @oauth_client.login_with_facebook
 
   @idp_new_wallet = IDPNewWallet.new
   @idp_new_wallet.click_joining_first_time

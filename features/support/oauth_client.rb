@@ -25,6 +25,7 @@ class OAuthClient
   end
 
   def verified?
+    binding.pry
     puts "Payload Verified Value: #{payload['verified']}"
     payload["verified"] == true
   end
@@ -48,6 +49,14 @@ class OAuthClient
 
   def logout
     visit("https://oauth-tester-staging.idmeinc.net/oauths/6/logout")
+  end
+
+  def login_with_facebook
+    find("img[alt='Facebook']").click
+    fill_in "email", :with => "qnkuwmb_sadanberg_1446693931@tfbnw.net"
+    fill_in "pass", :with => "facebooktest"
+    #prod: qa@id.me / P@ssword123
+    find("#loginbutton").click
   end
 
   private
