@@ -9,7 +9,7 @@ end
 
 Given(/^I answer the KBA questions$/) do
   kba_questions = KBAQuestions.new
-  binding.pry
+  #binding.pry
   kba_questions.answer_questions
   kba_questions.submit_answers
 end

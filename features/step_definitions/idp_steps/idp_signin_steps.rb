@@ -1,17 +1,17 @@
 Given(/^I login as a "([^"]*)" user$/) do |user_type|
 
   user = case user_type
-         when "Unverified"              then FigNewton.oauth_tester.unverified
-         when "nonexistent email"       then FigNewton.oauth_tester.nonexistent
-         when "valid"                   then FigNewton.oauth_tester.valid
+         when "Unverified"              then FigNewton.oauth.unverified
+         when "nonexistent email"       then FigNewton.oauth.nonexistent
+         when "valid"                   then FigNewton.oauth.valid
          when "current_username"        then @username
-         when "LOA1"                    then FigNewton.oauth_tester.loa1
-         when "LOA2"                    then FigNewton.oauth_tester.loa2
-         when "LOA3"                    then FigNewton.oauth_tester.loa3
+         when "LOA1"                    then FigNewton.oauth.loa1
+         when "LOA2"                    then FigNewton.oauth.loa2
+         when "LOA3"                    then FigNewton.oauth.loa3
          else fail ("User not found!")
          end
 
-  password = FigNewton.oauth_tester.general_password
+  password = FigNewton.oauth.general_password
 
   @idp_signin = IDPSignIn.new
   @idp_signin.sign_in(user, password)
@@ -23,10 +23,10 @@ Given(/^I should be successfully authenticated(?: using "(.*)")?$/) do |method|
 
   if method
     person = case method
-             when "Facebook"      then FigNewton.oauth_tester.facebook_user
-             when "Google"        then FigNewton.oauth_tester.google_user
-             when "LinkedIn"      then FigNewton.oauth_tester.linkedin_user
-             when "Twitter"       then FigNewton.oauth_tester.twitter_user
+             when "Facebook"      then FigNewton.oauth.facebook_user
+             when "Google"        then FigNewton.oauth.google_user
+             when "LinkedIn"      then FigNewton.oauth.linkedin_user
+             when "Twitter"       then FigNewton.oauth.twitter_user
              else fail ("Error!")
              end
     expect(@oauth_client.authenticated_as?(person)).to eq(true)
@@ -36,14 +36,10 @@ Given(/^I should be successfully authenticated(?: using "(.*)")?$/) do |method|
 end
 
 Given(/^I should be successfully verified(?: as "(.*)")?$/) do |group|
-  # Support both oauth_tester and new oauth_client until all tests are converted to use only oauth_client
-  # oauth = @oauth_tester ? @oauth_tester : @oauth_client
   flag = ["LOA1", "LOA2", "LOA3"].include?(group)
 
   #save oauth client token for idp and iva tests
-  #if oauth == @oauth_client
   @oauth_client.save_token(current_url)
-  #end
 
   if flag == true
     expect(@oauth_client.verify_loa_scope(group)).to eq(true)
@@ -60,9 +56,7 @@ end
 Given(/^I create the test conditions for Login with invalid password$/) do
   step 'I click on the Sign Up link'
   step 'I sign up as a new user'
-  step 'I logout of the OAuth Tester'
-  step 'I visit the OAuth Tester'
-  step 'I select the "Marketplace" policy'
+  step 'I visit IDP through the "marketplace" policy'
 end
 
 Given(/^I login with Facebook$/) do
