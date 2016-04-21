@@ -58,6 +58,15 @@ class OAuthClient
     find("#loginbutton").click
   end
 
+  def login_with_google
+    binding.pry
+    find("img[alt='Google Plus']").click
+    fill_in "Email", :with => "idme.qa.automation@gmail.com"
+    find("#next").click
+    fill_in "Passwd", :with => "$taRbuck$"
+    find("#signIn").click
+  end
+
   private
 
   def client

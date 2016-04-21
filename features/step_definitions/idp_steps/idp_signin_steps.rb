@@ -52,3 +52,12 @@ Given(/^I login with Facebook$/) do
   @idp_new_wallet.check_tos_pp
   @idp_new_wallet.click_continue_button
 end
+
+Given(/^I login with Google$/) do
+  @oauth_client.login_with_google
+
+  @idp_new_wallet = IDPNewWallet.new
+  @idp_new_wallet.click_joining_first_time
+  @idp_new_wallet.check_tos_pp
+  @idp_new_wallet.click_continue_button
+end
