@@ -8,7 +8,7 @@ Feature: User account creation
   @smoke
   Scenario: Successful sign up
     * I sign up as a new user
-    * I should be successfully verified
+    * I should be successfully authenticated
 
   Scenario: Attempt to sign up with only email
     * I fill in the Sign Up textfield

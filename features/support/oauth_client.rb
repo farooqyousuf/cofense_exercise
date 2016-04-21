@@ -34,12 +34,28 @@ class OAuthClient
     payload["affiliation"] == group
   end
 
+  def authenticated_as?(person)
+    first_name = person.gsub(/\w+$/,"")
+    last_name = person.gsub(/^\w+/,"")
+    puts "Payload Full Name Value: #{payload['fname']} " + "#{payload['lname']}"
+    payload["fname"] == first_name.strip
+    payload["lname"] == last_name.strip
+  end
+
   def payload
     @payload ||= JSON.parse@token.get(api_endpoint).body
   end
 
   def logout
     visit("https://oauth-tester-staging.idmeinc.net/oauths/6/logout")
+  end
+
+  def login_with_facebook
+    find("img[alt='Facebook']").click
+    fill_in "email", :with => "qnkuwmb_sadanberg_1446693931@tfbnw.net"
+    fill_in "pass", :with => "facebooktest"
+    #prod: qa@id.me / P@ssword123
+    find("#loginbutton").click
   end
 
   private

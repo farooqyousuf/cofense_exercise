@@ -9,7 +9,7 @@ class IDPUnlock < IDmeBase
   def lockout_account(username)
     11.times do |variable|
       fill_in_email_by_id(username)
-      fill_in_password(FigNewton.oauth_tester.weak_password)
+      fill_in_password(FigNewton.oauth.weak_password)
       click_sign_in
     end
   end

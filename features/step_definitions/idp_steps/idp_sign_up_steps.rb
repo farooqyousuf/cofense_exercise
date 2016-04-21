@@ -20,7 +20,7 @@ Given(/^I click on the Sign Up button$/) do
 end
 
 Given(/^I fill in the Password textfield$/) do
-  @idp_sign_up.fill_in_password(FigNewton.oauth_tester.general_password)
+  @idp_sign_up.fill_in_password(FigNewton.oauth.general_password)
 end
 
 Given(/^I fill in the Password Confirmation textfield$/) do

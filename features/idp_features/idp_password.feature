@@ -9,7 +9,7 @@ Feature: User password reset
     * I send the forgot password code to a "valid" email account
     * I reset my password
     * I verify I can login with the newly reset password
-    * I should be successfully verified
+    * I should be successfully authenticated
 
   Scenario: Password Reset code can be used no more than 5 times
     * I send the forgot password code to a "valid1" email account

@@ -16,9 +16,9 @@ end
 Given(/^I enter a wrong unlock code (\d+) times?/) do |number|
   @idp_signin.unlock_link
 
-  @idp_unlock.fill_in_email_by_name(FigNewton.oauth_tester.valid)
+  @idp_unlock.fill_in_email_by_name(FigNewton.oauth.valid)
   @idp_unlock.click_continue_button
-  @idp_unlock.fill_in_code(FigNewton.oauth_tester.wrong_unlock_code)
+  @idp_unlock.fill_in_code(FigNewton.oauth.wrong_unlock_code)
 
     (number.to_i).times do
       @idp_unlock.click_submit_button
@@ -27,6 +27,6 @@ Given(/^I enter a wrong unlock code (\d+) times?/) do |number|
 end
 
 Given(/^I enter a non\-existant account email to attempt to unlock my account$/) do
-  @idp_unlock.fill_in_email_by_name(FigNewton.oauth_tester.nonexistent)
+  @idp_unlock.fill_in_email_by_name(FigNewton.oauth.nonexistent)
   @idp_unlock.click_continue_button
 end

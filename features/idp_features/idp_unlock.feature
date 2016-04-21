@@ -24,7 +24,7 @@ Feature: User account lock and unlock
     * I click on the unlock account link
     * I unlock my account
     * I login as a "current_username" user
-    * I should be successfully verified
+    * I should be successfully authenticated
 
   Scenario: Unlock code can be used no more than 5 times
     * I lockout my account

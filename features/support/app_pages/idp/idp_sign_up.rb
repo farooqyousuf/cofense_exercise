@@ -20,7 +20,7 @@ class IDPSignUp < IDmeBase
   end
 
   def pw_tos
-    fill_in_password(FigNewton.oauth_tester.general_password)
+    fill_in_password(FigNewton.oauth.general_password)
     fill_in_password_confirmation
 
     #exposes the checkbox so capybara can click it
@@ -40,7 +40,7 @@ class IDPSignUp < IDmeBase
   end
 
   def fill_in_password_confirmation
-    fill_in("user_password_confirmation", :with => FigNewton.oauth_tester.general_password)
+    fill_in("user_password_confirmation", :with => FigNewton.oauth.general_password)
   end
 
   def forgot_password_link

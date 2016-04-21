@@ -2,10 +2,10 @@
 Feature: IDP Facebook Login
 
   Background:
-    * I visit the OAuth Tester
-    * I select the "Marketplace" policy
+    * I visit IDP through the "marketplace" policy
 
-  @oauth_tester_logout  @delete_facebook_user
+  @delete_facebook_user
   Scenario: Create and login with a new Facebook account
     * I login with Facebook
     * I should be successfully authenticated using "Facebook"
+
