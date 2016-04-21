@@ -40,7 +40,7 @@ oauth:
     student           : student
     teacher           : teacher
     wallet            : wallet
-    general_password: Password123
+    general_password  : Password123
 
 mp_users:
   mp_homepage: https://marketplace-users-staging.idmeinc.net
