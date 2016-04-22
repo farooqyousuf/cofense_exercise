@@ -21,14 +21,14 @@ Given(/^I should be successfully authenticated(?: using "(.*)")?$/) do |method|
   @oauth_client.save_token(current_url)
 
   if method
-    person = case method
+    email = case method
              when "Facebook"      then FigNewton.oauth.facebook_user
              when "Google"        then FigNewton.oauth.google_user
              when "LinkedIn"      then FigNewton.oauth.linkedin_user
              when "Twitter"       then FigNewton.oauth.twitter_user
              else fail ("Error!")
              end
-    expect(@oauth_client.authenticated_as?(person)).to eq(true)
+    expect(@oauth_client.authenticated_as?(email)).to eq(true)
   end
 
   expect(@oauth_client.verified?).to eq(true)
@@ -44,11 +44,17 @@ Given(/^I create the test conditions for Login with invalid password$/) do
   step 'I visit IDP through the "marketplace" policy'
 end
 
-Given(/^I login with Facebook$/) do
-  @oauth_client.login_with_facebook
-
+Given(/^I complete the new Wallet account linking process$/) do
   @idp_new_wallet = IDPNewWallet.new
   @idp_new_wallet.click_joining_first_time
   @idp_new_wallet.check_tos_pp
   @idp_new_wallet.click_continue_button
+end
+
+Given(/^I login with Facebook$/) do
+  @oauth_client.login_with_facebook
+end
+
+Given(/^I login with Google$/) do
+  @oauth_client.login_with_google
 end
