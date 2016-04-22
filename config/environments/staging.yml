@@ -22,8 +22,10 @@ oauth:
   facebook_pw: facebooktest
   google_user: idme.qa.automation@gmail.com
   google_pw: $taRbuck$
-  linkedin_user:
+  linkedin_user: idme.qa.automation@gmail.com
+  linkedin_pw: Password123
   twitter_user:
+  twitter_pw:
   experian_user: Erin Rashid
   policy:
     developer         : developer

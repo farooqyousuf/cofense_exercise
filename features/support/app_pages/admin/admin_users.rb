@@ -45,6 +45,13 @@ include JavascriptAlerts
     delete_user
   end
 
+  def delete_linkedin_user
+    search_for_user("idme.qa.automation@gmail.com")
+    sleep 1
+    open_newest
+    delete_user
+  end
+
   def delete_scra_user1
     search_for_user("John Jones")
     sleep 1
