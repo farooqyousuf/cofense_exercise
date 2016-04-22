@@ -32,3 +32,7 @@ partners:
   ford_user: eddie.park.tester@gmail.com
   ford_password: Password123
   taylormadegolf: http://taylormadegolf.com/M1-Driver/N1184507.html
+
+oauth:
+  facebook_user: qa@id.me
+  facebook_pw: P@ssword123

@@ -29,17 +29,14 @@ class OAuthClient
     payload["verified"] == true
   end
 
+  def authenticated_as?(email)
+    puts "Payload Email Value: #{payload['email']}"
+    payload["email"] == email
+  end
+
   def has_affiliation?(group)
     puts "Payload Affiliation Value: #{payload['affiliation']}"
     payload["affiliation"] == group
-  end
-
-  def authenticated_as?(person)
-    first_name = person.gsub(/\w+$/,"")
-    last_name = person.gsub(/^\w+/,"")
-    puts "Payload Full Name Value: #{payload['fname']} " + "#{payload['lname']}"
-    payload["fname"] == first_name.strip
-    payload["lname"] == last_name.strip
   end
 
   def payload
@@ -52,18 +49,16 @@ class OAuthClient
 
   def login_with_facebook
     find("img[alt='Facebook']").click
-    fill_in "email", :with => "qnkuwmb_sadanberg_1446693931@tfbnw.net"
-    fill_in "pass", :with => "facebooktest"
-    #prod: qa@id.me / P@ssword123
+    fill_in "email", :with => FigNewton.oauth.facebook_user
+    fill_in "pass", :with => FigNewton.oauth.facebook_pw
     find("#loginbutton").click
   end
 
   def login_with_google
-    binding.pry
     find("img[alt='Google Plus']").click
-    fill_in "Email", :with => "idme.qa.automation@gmail.com"
+    fill_in "Email", :with => FigNewton.oauth.google_user
     find("#next").click
-    fill_in "Passwd", :with => "$taRbuck$"
+    fill_in "Passwd", :with => FigNewton.oauth.google_pw
     find("#signIn").click
   end
 
