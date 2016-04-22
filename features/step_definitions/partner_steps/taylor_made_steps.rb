@@ -15,9 +15,12 @@ Given(/^TAYLOR MADE \- I apply the Troop ID discount$/) do
 end
 
 Given(/^TAYLOR MADE \- I verify the Troop ID discount has been applied$/) do
-  page.has_text? "You Saved: - $75.00"
+  original_product_amt_string = find(".price-unadjusted").text
+  actual_product_discounted_amt_string = find(".total-savings").find("span:nth-child(2)").text 
+
+  discount_applied = verify_discount(original_product_amt_string, actual_product_discounted_amt_string, ".15") 
+  expect(discount_applied).to be(true)
   page.has_text? "- ID.me Discount 15% off"
-  page.has_text? "Order Total: $424.99"
 end
 
 Given(/^ADIDAS GOLF \- I add a item to the checkout cart$/) do
@@ -48,7 +51,6 @@ Given(/^ADIDAS GOLF \- I verify the Troop ID discount has been applied$/) do
 
   #TODO: replace ".15" with data_for
   discount_applied = verify_discount(original_product_amt_string, actual_product_discounted_amt_string, ".15") 
-
   expect(discount_applied).to be(true)
   page.has_text? "- ID.me Discount 15% off"
 end
