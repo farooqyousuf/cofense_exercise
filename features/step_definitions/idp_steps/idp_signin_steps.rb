@@ -58,3 +58,7 @@ end
 Given(/^I login with Google$/) do
   @oauth_client.login_with_google
 end
+
+Given(/^I login with LinkedIn$/) do
+  @oauth_client.login_with_linkedin
+end
