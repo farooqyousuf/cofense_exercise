@@ -17,9 +17,3 @@ Feature: Test Taylor Made partner sites integrations
     * ASHWORTH GOLF - I add a item to the checkout cart
     * ASHWORTH GOLF - I apply the Troop ID discount
     * ASHWORTH GOLF - I verify the Troop ID discount has been applied 
-
-  @adamsgolf
-  Scenario: Test military integration for adamsgolf.com 
-    * ADAMS GOLF - I add a item to the checkout cart
-    * ADAMS GOLF - I apply the Troop ID discount
-    * ADAMS GOLF - I verify the Troop ID  discount has been applied 
