@@ -1,6 +1,7 @@
 Given(/^TAYLOR MADE \- I add a item to the checkout cart$/) do
   visit FigNewton.partners.taylormadegolf
   page.driver.browser.navigate.refresh
+  sleep 1
   click_button "Add to Cart"
   first(:link ,:href =>"https://taylormadegolf.com/cart").click
 end
