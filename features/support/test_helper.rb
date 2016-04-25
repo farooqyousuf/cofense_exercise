@@ -62,10 +62,20 @@ module HelperMethods
 
   def verify_discount(original_product_amt_string, actual_product_discounted_amt_string, discount_percentage)
    full_price = original_product_amt_string.delete "$"
-   calc_discount_amt = ( full_price.to_f * discount_percentage.to_f ).round.to_i
-   actual_discount_amt = /\d{1,3}[,\\.]?(\\d{1,2})?/.match(actual_product_discounted_amt_string)[0].chop.to_i 
-   binding.pry
+   calc_discount_amt =  should_round_amt(full_price,discount_percentage)
+   actual_discount_amt = /\d{1,3}[,\\.]?(\\d{1,2})?/.match(actual_product_discounted_amt_string)[0].chop.to_i
    return actual_discount_amt == calc_discount_amt 
   end 
 
+  private 
+
+  def should_round_amt(full_price,discount_percentage)
+    expected_discount_amt = full_price.to_f * discount_percentage.to_f
+
+    if expected_discount_amt.to_s.split(".")[1] === "5" #will prevent rounded up number being returned 
+      return expected_discount_amt.to_s.split(".")[0].to_i
+    else 
+      return expected_discount_amt.round.to_i
+    end 
+  end 
 end
