@@ -67,6 +67,15 @@ module HelperMethods
    return actual_discount_amt == calc_discount_amt 
   end 
 
+    def verify_discount_for_exact_match(original_product_amt_string, actual_product_discounted_amt_string, discount_percentage)
+  #TODO : merge into single discount method
+   full_price = original_product_amt_string.delete "$"
+   calc_discount_amt = ( full_price.to_f * discount_percentage.to_f ).to_i
+   actual_discount_amt = /\d{1,3}[,\\.]?(\\d{1,2})?/.match(actual_product_discounted_amt_string)[0].chop.to_i 
+   binding.pry
+   return actual_discount_amt == calc_discount_amt 
+  end 
+
   private 
 
   def should_round_amt(full_price,discount_percentage)
