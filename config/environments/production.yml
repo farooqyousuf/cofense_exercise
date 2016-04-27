@@ -22,7 +22,6 @@ partners:
   mlb_shop_discount: "A discount of 15% was successfully applied to your order."
   mlb_shop_discount_amount: "-$18.00"
   caesars_hotels: https://www.caesars.com
-  seaworld_url: http://seaworldparks.com/seaworld-orlando/waves-of-honor/veterans
   underarmour_url: https://www.underarmour.com/en-us/men-s-ua-streaker-run-v-neck-t-shirt/pid1276515-016
   underarmour_item_subtotal: "Items: $34.99"
   underarmour_discount_amount: "Promotion: -$3.50"
@@ -35,6 +34,8 @@ partners:
   adidasgolf: http://adidasgolf.com/Puremotion-Short-Sleeve/DW-LBV48.html?dwvar_DW-LBV48_color=AE8964#start=1
   ashworthgolf: http://ashworthgolf.com/PRIMATEC-Pique-Solid-Novelty-Rib-Collar-Shirt/DW-KFZ18.html?dwvar_DW-KFZ18_color=AE4826#start=1
   adamsgolf: http://adamsgolf.com/Lightweight-Stand-Bag---ST1404/DW-JIV33.html?dwvar_DW-JIV33_color=M70608#start=1
+  seaworld:
+    orlando: http://seaworldparks.com/seaworld-orlando/waves-of-honor/veterans
 
 oauth:
   facebook_user: qa@id.me

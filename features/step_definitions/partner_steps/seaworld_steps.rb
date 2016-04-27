@@ -1,8 +1,11 @@
-Given(/^I visit the waves of honor seaworld site$/) do
-  visit FigNewton.partners.seaworld_url
+Given(/^I visit the waves of honor "([^"]*)" Integration$/) do |park_partner|
+  seaworld_promotion_homepage = case park_partner
+    when "Seaworld Orlando"           then FigNewton.partners.seaworld.orlando 
+    end 
+  visit seaworld_promotion_homepage
 end
 
-Given(/^I log in with my ID\.me military account$/) do
+Given(/^I log in with my Id\.me military account$/) do
   idp_signin = window_opened_by do
     find(".IDmeLoginButton").click
   end
@@ -12,9 +15,10 @@ Given(/^I log in with my ID\.me military account$/) do
   end
 end
 
-Given(/^I verify access to discounted tickets$/) do
-  #TODO: trouble having capybara select tickets but need to proceed through whole checkout and confirm 
-  page.has_text? "Military Ticket Offers"
-  page.has_text? "Thank you for your service. Please see all offers available for you below."
-  expect(find(".tagName").text).to eql("SeaWorld Orlando 2016 Fun Card Price: $99.00 $49.50")
+Given(/^I verify that my discounted tickets are available$/) do
+  full_price = find(".tagName").find("strike").text 
+  actual_price = first(".content-maincontent-ticketbox-tixchoose-inner").find(".dynPrice").text
+  discount_applied = verify_discount_for_exact_match(full_price, actual_price, ".5")
+
+  expect(discount_applied).to be(true)
 end
