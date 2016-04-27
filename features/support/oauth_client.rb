@@ -1,5 +1,6 @@
 class OAuthClient
 
+  include Capybara::DSL
   require 'oauth2'
 
   def initialize(options = {})
@@ -28,6 +29,11 @@ class OAuthClient
     payload["verified"] == true
   end
 
+  def authenticated_as?(email)
+    puts "Payload Email Value: #{payload['email']}"
+    payload["email"] == email
+  end
+
   def has_affiliation?(group)
     puts "Payload Affiliation Value: #{payload['affiliation']}"
     payload["affiliation"] == group
@@ -35,6 +41,32 @@ class OAuthClient
 
   def payload
     @payload ||= JSON.parse@token.get(api_endpoint).body
+  end
+
+  def logout
+    visit("https://oauth-tester-staging.idmeinc.net/oauths/6/logout")
+  end
+
+  def login_with_facebook
+    find("img[alt='Facebook']").click
+    fill_in "email", :with => FigNewton.oauth.facebook_user
+    fill_in "pass", :with => FigNewton.oauth.facebook_pw
+    find("#loginbutton").click
+  end
+
+  def login_with_google
+    find("img[alt='Google Plus']").click
+    fill_in "Email", :with => FigNewton.oauth.google_user
+    find("#next").click
+    fill_in "Passwd", :with => FigNewton.oauth.google_pw
+    find("#signIn").click
+  end
+
+   def login_with_linkedin
+    find("img[alt='LinkedIn']").click
+    fill_in "session_key", :with => FigNewton.oauth.linkedin_user
+    fill_in "session_password", :with => FigNewton.oauth.linkedin_pw
+    find(".allow").click
   end
 
   private

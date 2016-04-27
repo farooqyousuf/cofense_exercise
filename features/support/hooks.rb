@@ -9,14 +9,6 @@ After do
   Capybara.current_session.driver.quit
 end
 
-After("@oauth_tester_logout") do
-  if page.has_link?("Logout »")
-    click_link("Logout »")
-  else
-    visit("https://oauth-tester-staging.idmeinc.net/oauths/6/logout")
-  end
-end
-
 After("@delete_dd214_user2") do
   visit_admin_users_in_new_window
   @admin_users.delete_dd214_user2
@@ -32,6 +24,18 @@ end
 After("@delete_facebook_user") do
   visit_admin_users_in_new_window
   @admin_users.delete_facebook_user
+  @admin_tool.logout_in_new_window
+end
+
+After("@delete_google_user") do
+  visit_admin_users_in_new_window
+  @admin_users.delete_google_user
+  @admin_tool.logout_in_new_window
+end
+
+After("@delete_linkedin_user") do
+  visit_admin_users_in_new_window
+  @admin_users.delete_linkedin_user
   @admin_tool.logout_in_new_window
 end
 

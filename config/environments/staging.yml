@@ -1,22 +1,5 @@
-oauth_tester:
- general_password: Password123
- weak_password: Password1
- unverified: farooq+noverifications@id.me
- nonexistent: fake_email@id.me
- valid: farooq@id.me
- valid1: farooq+1@id.me
- valid2: farooq+2@id.me
- wrong_unlock_code: 123456
- loa1: farooq+loa1@id.me
- loa2: farooq+loa2@id.me
- loa3: farooq+loa3@id.me
- facebook_user: Karen Sadanberg
- google_user:
- linkedin_user:
- twitter_user:
-
 authority:
- userid: farooq@id.me
+ userid: farooq+1@id.me
  password: idmeadmin
 
 oauth:
@@ -24,6 +7,26 @@ oauth:
   client_secret : ff5a9ef3aeb9a98ab49ee42662b8f58e
   idp_endpoint  : https://api-staging.idmeinc.net
   redirect_uri  : https://oauth-tester-staging.idmeinc.net
+  general_password: Password123
+  weak_password: Password1
+  unverified: farooq+noverifications@id.me
+  nonexistent: fake_email@id.me
+  valid: farooq@id.me
+  valid1: farooq+1@id.me
+  valid2: farooq+2@id.me
+  wrong_unlock_code: 123456
+  loa1: farooq+loa1@id.me
+  loa2: farooq+loa2@id.me
+  loa3: farooq+loa3@id.me
+  facebook_user: qnkuwmb_sadanberg_1446693931@tfbnw.net
+  facebook_pw: facebooktest
+  google_user: idme.qa.automation@gmail.com
+  google_pw: $taRbuck$
+  linkedin_user: idme.qa.automation@gmail.com
+  linkedin_pw: Password123
+  twitter_user:
+  twitter_pw:
+  experian_user: Erin Rashid
   policy:
     developer         : developer
     farooq            : farooq
@@ -41,6 +44,7 @@ oauth:
     student           : student
     teacher           : teacher
     wallet            : wallet
+    general_password  : Password123
 
 mp_users:
   mp_homepage: https://marketplace-users-staging.idmeinc.net

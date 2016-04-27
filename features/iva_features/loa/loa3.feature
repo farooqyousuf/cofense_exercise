@@ -13,7 +13,7 @@ Feature: Test the LOA3 (Level of Assurance 3) functionality
     * I answer the KBA questions
     * I confirm my phone
     * I authorize the attribute release
-    * I should be successfully verified as "LOA3"
+    * I should be successfully verified
 
   Scenario: LOA3 login flow using a LOA1 verified user
     * I login as a "LOA1" user
@@ -28,4 +28,4 @@ Feature: Test the LOA3 (Level of Assurance 3) functionality
     * I login as a "LOA3" user
     * I confirm my phone
     * I authorize the attribute release
-    * I should be successfully verified as "LOA3"
+    * I should be successfully verified

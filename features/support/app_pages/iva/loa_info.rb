@@ -40,7 +40,8 @@ class LOAInfo < IDmeBase
   end
 
   def accept_fcra_terms
-    find("#accepts_fcra", :visible => false).click
+    #for some reason the first time it doesn't work sometimes
+    3.times {first(".checkbox").native.find_element(:id, "accepts_fcra").click}
   end
 
   def phone_field

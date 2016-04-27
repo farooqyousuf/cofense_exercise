@@ -18,7 +18,7 @@ class IDPSignIn < IDmeBase
 
   def invalid_pw(email)
    fill_in_email_by_id(email)
-   fill_in_password(FigNewton.oauth_tester.weak_password)
+   fill_in_password(FigNewton.oauth.weak_password)
    click_sign_in
 end
 

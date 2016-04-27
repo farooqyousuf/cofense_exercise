@@ -1,11 +1,11 @@
-@regression @idp
+@regression @idp @social_media @google
 Feature: IDP Google Login
 
   Background:
-    * I visit the OAuth Tester
-    * I select the "Marketplace" policy
+    * I visit IDP through the "marketplace" policy
 
-  @oauth_tester_logout @delete_google_user
+  @delete_google_user
   Scenario: Create and login with a new Google account
     * I login with Google
+    * I complete the new Wallet account linking process
     * I should be successfully authenticated using "Google"

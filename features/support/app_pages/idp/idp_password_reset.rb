@@ -14,11 +14,11 @@ class IDPPasswordReset < IDmeBase
   end
 
   def fill_in_password
-    fill_in("password", :with => FigNewton.oauth_tester.general_password)
+    fill_in("password", :with => FigNewton.oauth.general_password)
   end
 
   def fill_in_password_confirm
-    fill_in("password_confirmation", :with => FigNewton.oauth_tester.general_password)
+    fill_in("password_confirmation", :with => FigNewton.oauth.general_password)
   end
 
   def resend_code_link
