@@ -18,7 +18,7 @@ end
 Given(/^I verify that my discounted tickets are available$/) do
   full_price = find(".tagName").find("strike").text 
   actual_price = first(".content-maincontent-ticketbox-tixchoose-inner").find(".dynPrice").text
-  discount_applied = verify_discount_for_exact_match(full_price, actual_price, ".5")
+  discount_applied = verify_discount(full_price, actual_price, ".5",exact_match: true)
 
   expect(discount_applied).to be(true)
 end
