@@ -5,3 +5,8 @@ Feature: Test the ID.me Seaworld Waves of Honor Partner Integrations
     * I visit the waves of honor "Seaworld Orlando" Integration 
     * I log in with my Id.me military account
     * I verify that my discounted tickets are available
+
+  Scenario: Test Seaworld San Antonio Military Integration 
+    * I visit the waves of honor "Seaworld San Antonio" Integration 
+    * I log in with my Id.me military account
+    * I verify that my discounted tickets are available 

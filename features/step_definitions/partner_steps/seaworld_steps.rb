@@ -1,6 +1,7 @@
 Given(/^I visit the waves of honor "([^"]*)" Integration$/) do |park_partner|
   seaworld_promotion_homepage = case park_partner
     when "Seaworld Orlando"           then FigNewton.partners.seaworld.orlando 
+    when "Seaworld San Antonio"       then FigNewton.partners.seaworld.san_antonio
     end 
   visit seaworld_promotion_homepage
 end
