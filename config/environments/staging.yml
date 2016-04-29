@@ -24,6 +24,8 @@ oauth:
   google_pw: $taRbuck$
   linkedin_user: idme.qa.automation@gmail.com
   linkedin_pw: Password123
+  paypal_user: test@id.me
+  paypal_pw: testtest
   twitter_user:
   twitter_pw:
   experian_user: Erin Rashid
