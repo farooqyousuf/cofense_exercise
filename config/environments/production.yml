@@ -37,6 +37,30 @@ partners:
   seaworld:
     orlando: http://seaworldparks.com/seaworld-orlando/waves-of-honor/veterans
     san_antonio: https://seaworldparks.com/seaworld-sanantonio/waves-of-honor/active
+    busch_gardens_tampa: https://seaworldparks.com/buschgardens-tampa/waves-of-honor/active
+    busch_gardens_williamsburg: https://seaworldparks.com/buschgardens-williamsburg/waves-of-honor/active
+    san_diego_teacher: https://seaworldparks.com/en/seaworld-sandiego/educational-programs/teachers
+    orlando_teacher: https://seaworldparks.com/en/seaworld-orlando/educational-programs/teacher-programs/seaworld-florida-teacher-card
+    san_diego_military: https://seaworldparks.com/seaworld-sandiego/waves-of-honor/active
+    sesame_place: https://sesameplace.com/langhorne/waves-of-honor/active/
+    aquatica_san_diego: https://aquaticabyseaworld.com/sandiego/waves-of-honor/active
+    adventure_island_tampa: https://adventureisland.com/tampa/waves-of-honor/active
+    water_country_usa: https://watercountryusa.com/williamsburg/waves-of-honor/active
+    orlando_veteran: https://seaworldparks.com/en/seaworld-orlando/waves-of-honor/veterans
+    busch_gardens_tampa_veteran: https://seaworldparks.com/buschgardens-tampa/waves-of-honor/veterans
+    busch_gardens_williamsburg_veteran: https://seaworldparks.com/buschgardens-williamsburg/waves-of-honor/veterans
+    sesame_place_veteran: https://sesameplace.com/langhorne/waves-of-honor/veteran
 oauth:
   facebook_user: qa@id.me
   facebook_pw: P@ssword123
+
+test_user:
+  password: Password123
+  military:
+    veteran:
+      user_email: rich.purnell.rocketman@gmail.com #TODO replace with veteran+test@id.me
+
+
+
+
+

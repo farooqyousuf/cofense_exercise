@@ -33,10 +33,11 @@ Given(/^UA \- I apply the "([^"]*)" discount$/) do |type|
 end
 
 Given(/^UA \- I verify the "([^"]*)" discount has been applied$/) do |type|
+binding.pry
   begin
     case type
     when "Troop ID"
-      confirmation = "Promo Code Military Veteran 10% off Has Been Applied. Remove"
+      confirmation = "Promo Code Military 10% off Has Been Applied. Remove"
     end
 
     expect(find(".ua-prompt-removable").text).to eq(confirmation)

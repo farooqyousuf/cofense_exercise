@@ -1,7 +1,8 @@
 # general module helpers for step definitions
 module HelperMethods
 
-  def sign_in_with_idme
+  def sign_in_with_idme 
+    #TODO figure out why you alotted two identical sign_in_with_idme in manual_helper.rb too
     if page.has_content? "Sign in"
       fill_in "user_email", :with => FigNewton.partners.user
       fill_in "user_password", :with => FigNewton.partners.password
@@ -12,8 +13,31 @@ module HelperMethods
       click_link "Click here to continue"
     elsif page.has_content? "Authorize"
       click_button "Authorize"
+    elsif page.has_content? "Continue"
+      click_link "Continue"
     end
   end
+
+  def sign_in_with_idme_veteran
+  if page.has_content? "Sign in"
+    fill_in "user_email", :with => FigNewton.test_user.military.veteran.user_email
+    fill_in "user_password", :with => FigNewton.test_user.password
+    click_button "Sign in"
+  end
+
+  if page.has_content? "Click here to finish"
+    click_link "Click here to finish"
+  
+  elsif page.has_content? "Allow"
+     click_button "Allow"
+
+  elsif page.has_content? "Authorize" 
+    click_button "Authorize"
+
+  elsif page.has_content? "Continue"
+    click_link "Continue"
+  end
+end
 
   def sign_out_of_idme
     page.driver.browser.manage.delete_all_cookies # clears cookies from partner site first
