@@ -1,6 +1,6 @@
 Given(/^BODYBUILDING \- I verify the Troop ID HLP military page$/) do
-	visit "https://hosted-pages.id.me/bodybuilding-military-discount?offer_id=25202"
- 
+	visit FigNewton.partners.bodybuilding_hlp
+
   idp_signin = window_opened_by do
     find(".idme-trigger").click
   end
@@ -12,10 +12,9 @@ Given(/^BODYBUILDING \- I verify the Troop ID HLP military page$/) do
 end
 
 Given(/^BODYBUILDING \- I add a item to my cart$/) do
-	sleep 1
 	@coupon_code = find("#couponCode").text
 
-	visit "http://www.bodybuilding.com/store/bsn/synth.html"
+	visit FigNewton.partners.bodybuilding
 	find("#BSN063-right-submit").click
 	find(:link , :href =>"https://www.bodybuilding.com/store/commerce/cart.jsp").click
 	find("#promo-code-toggler").click
