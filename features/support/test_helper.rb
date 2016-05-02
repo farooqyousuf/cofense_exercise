@@ -12,6 +12,9 @@ module HelperMethods
       click_link "Click here to continue"
     elsif page.has_content? "Authorize"
       click_button "Authorize"
+     #same problem where it's returning to this method, investagite that  
+    elsif page.has_content? "Continue"
+      click_link "Continue"
     end
   end
 
