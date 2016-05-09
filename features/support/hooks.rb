@@ -1,6 +1,6 @@
 # NOTE: order matters here, hooks defined last will be ran first
 
-# Actions performed before/after each scenario
+Actions performed before/after each scenario
 Before do
   page.driver.browser.manage.window.maximize
 end
