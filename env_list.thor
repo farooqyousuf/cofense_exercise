@@ -7,7 +7,7 @@ class Set < Thor
     end
   end
 
-  desc "android_saucelabs", "Use Android on Sauce Labs on Production"
+  desc "android_saucelabs", "Use Android on Sauce Labs on Staging"
   def android_saucelabs
     copy_environment("android_saucelabs")
   end
@@ -37,12 +37,12 @@ class Set < Thor
     copy_environment("firefox_osx_production")
   end
 
-  desc "ios_local", "Use iOS locally on Production"
+  desc "ios_local", "Use iOS locally on Staging"
   def ios_local
     copy_environment("ios_local")
   end
 
-  desc "ios_saucelabs", "Use iOS on Sauce Labs on Production"
+  desc "ios_saucelabs", "Use iOS on Sauce Labs on Staging"
   def ios_saucelabs
     copy_environment("ios_saucelabs")
   end
