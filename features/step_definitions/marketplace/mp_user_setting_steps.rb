@@ -4,6 +4,10 @@ Given(/^I update the user profile name and submit\.$/) do
 end
 
 Given(/^I check the user subscribed checkbox and save the Changes$/) do
+  @mp_user_settings.visit_subscription_settings_tab
+  expect(page).to have_text("Manage your email subscriptions")
+
+  @mp_user_settings.reset_if_already_subscribed #TODO: find better solution to reseting this with either hook or just delete user
   @mp_user_settings.subscribe_to_email
 end
 
