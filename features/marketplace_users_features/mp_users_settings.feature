@@ -36,8 +36,13 @@ Feature: Test the MP_users Account & Profile settings
       | Password1     |                  | Confirm password                                    |
 
     @mp_password
-    Scenario: Update account - I successfully change my password
+    Scenario: Update Profile - I successfully change my password
       * I visit "MarketplaceUserAccountEditPage"
       * I create a Marketplace account edit page object
       * I update the user account password
-      * I check that the user account password has successfully updated.
+      * I check that the user account password has successfully updated
+    @mp_authorizations
+    Scenario: Update Profile - I manage my Authorizations
+      * I visit "MarketplaceUserAccountEditPage" 
+      * I create a Marketplace account edit page object
+      * I check that Authorizations section is visible 

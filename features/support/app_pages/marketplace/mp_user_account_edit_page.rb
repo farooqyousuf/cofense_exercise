@@ -30,4 +30,8 @@ class MarketplaceUserAccountEditPage < IDmeBase
     fill_in(:user_password,:with => FigNewton.marketplace.new_password)
     click_button "Sign in"
   end
+  
+  def visit_user_authorizations
+    find(:link ,:href =>"/settings/authorizations").click
+  end 
 end

@@ -56,3 +56,11 @@ Given(/^I check that the user account password has successfully updated\.$/) do
   @mp_user_account_settings.new_sign_in
   expect(find(:link,:href =>"/cash-back").text).to eql(FigNewton.marketplace.user_fname)
 end
+
+# user authorizations
+Given(/^I check that Authorizations section is visible$/) do
+  @mp_user_account_settings.visit_user_authorizations
+  expect(page).to have_text "Manage partner applications and websites that you've previously authorized to view your ID.me information."
+  expect(page).to have_text "You do not have any connected applications."
+  #TODO: figure out how to mock out a app authorization in staging enviroment
+end
