@@ -7,11 +7,11 @@ class MarketplaceUserAccountEditPage < IDmeBase
     super(FigNewton.marketplace.user_account_edit)
   end
 
-  def enter_initial_password
+  def enter_initial_password(password)
     fill_in(:core_user_password,:with => password)
   end
 
-  def enter_confirm_password
+  def enter_confirm_password(confirm_password)
     sleep 1
     fill_in(:core_user_confirm_password,:with => confirm_password)
   end

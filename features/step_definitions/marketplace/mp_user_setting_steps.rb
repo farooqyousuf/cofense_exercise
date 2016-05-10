@@ -26,11 +26,11 @@ end
 ##user account page
 
 Given(/^I enter "([^"]*)" into user account password field$/) do |password|
-  @mp_user_account_settings.enter_initial_password
+  @mp_user_account_settings.enter_initial_password(password)
 end
 
 Given(/^I enter "([^"]*)" into confirm user account password field$/) do |confirm_password|
-  @mp_user_account_settings.enter_confirm_password
+  @mp_user_account_settings.enter_confirm_password(confirm_password)
 end
 
 Given(/^I should see "([^"]*)" error message appear for user account$/) do |error_message|
