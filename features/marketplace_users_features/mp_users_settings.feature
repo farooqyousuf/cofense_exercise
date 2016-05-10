@@ -2,8 +2,6 @@
 Feature: Test the MP_users Account & Profile settings
 
     Background:
-      * I GET MP_User info for "vip_uid"
-      * I check the "vip_uid" user level is "vip"
       * I visit "MarketplaceLandingPage"
       * I click on SignIn link
       * I login to marketplace as a "vip" user
@@ -18,7 +16,7 @@ Feature: Test the MP_users Account & Profile settings
     @mp_email_subscribe
     Scenario: Update Profile - Subscribe to ID.me offers and discounts
       * I check the user subscribed checkbox and save the Changes
-      * I should see successful flash message with "Profile updated"
+      * I should see successful flash message with "Email subscriptions updated successfully"
       * I check that user has been subscribed in marketplace
 
     @incorrect

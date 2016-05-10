@@ -4,6 +4,10 @@ Given(/^I update the user profile name and submit\.$/) do
 end
 
 Given(/^I check the user subscribed checkbox and save the Changes$/) do
+  @mp_user_settings.visit_subscription_settings_tab
+  expect(page).to have_text("Manage your email subscriptions")
+
+  @mp_user_settings.reset_if_already_subscribed #TODO: find better solution to reseting this with either hook or just delete user
   @mp_user_settings.subscribe_to_email
 end
 
@@ -22,11 +26,11 @@ end
 ##user account page
 
 Given(/^I enter "([^"]*)" into user account password field$/) do |password|
-  @mp_user_account_settings.enter_initial_password
+  @mp_user_account_settings.enter_initial_password(password)
 end
 
 Given(/^I enter "([^"]*)" into confirm user account password field$/) do |confirm_password|
-  @mp_user_account_settings.enter_confirm_password
+  @mp_user_account_settings.enter_confirm_password(confirm_password)
 end
 
 Given(/^I should see "([^"]*)" error message appear for user account$/) do |error_message|
