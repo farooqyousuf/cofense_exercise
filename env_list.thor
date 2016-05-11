@@ -52,4 +52,14 @@ class Set < Thor
     copy_environment("chrome_osx")
   end
 
+  desc "safari_saucelabs", "Use Safari on SauceLabs on Staging"
+  def safari_saucelabs
+    copy_environment("safari_saucelabs")
+  end
+
+  desc "safari_local", "User Safari locally on Staging"
+  def safari_local
+    copy_environment("safari_local")
+  end
+
 end

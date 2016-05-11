@@ -1,3 +1,10 @@
+Given(/^I scroll to the bottom of the page$/) do
+  sleep 2
+  page.execute_script "window.scrollBy(0,10000)"
+  sleep 2
+
+end
+
 Given(/^I visit "(.*?)"$/) do |page|
   @page = Object.const_get(page).new # converts a string text into a class name
   @page.visit
