@@ -1,17 +1,18 @@
-class SavedOffersPage < IDmeBase
+class FavoritesPage < IDmeBase
   include IDPBase
 
   def initialize
-    super(FigNewton.marketplace.saved_offers_page)
+    super(FigNewton.marketplace.favorites_page)
   end
 
   def navigate_from_side_menu_bar
-    find(".user-menu").find(:link,:href => "/saved_offers").click
+    find(".user-menu").find(:link,:href => "/favorites").click
   end
 
   def navigate_from_user_menu_nav
     find(".user-nav").click
-    first(:link,:href =>"/saved_offers").click
+    binding.pry
+    first(:link,:href =>"/favorites").click
     sleep 1
   end
 
@@ -25,5 +26,10 @@ class SavedOffersPage < IDmeBase
     find(:link,:href =>"offers").native.send_keys(:enter)
     sleep 1
     first(".offer-card").find(".fa-heart").click
+  end
+
+  def add_favorite_store
+    find(".stores-list").first(".table__row").first(".table__cell").find("a").click 
+    click_button "Add to Favorites"
   end
 end
