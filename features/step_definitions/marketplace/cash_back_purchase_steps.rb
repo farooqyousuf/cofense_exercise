@@ -19,7 +19,7 @@ Given(/^I click on SignIn link$/) do
 end
 
 Given(/^I click on the Sign up link$/) do
-  click_link "Sign up"
+  first(:link, "Sign Up").click
 end
 
 Given(/^I login to marketplace as a "([^"]*)" user$/) do |user_type|

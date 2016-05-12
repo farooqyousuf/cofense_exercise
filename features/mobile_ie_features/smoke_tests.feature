@@ -1,5 +1,5 @@
-@ios @android
-Feature: iOS Smoke Tests
+@ios @android @ie
+Feature: Basic Smoke Tests for IDP and IVA
 
   Background:
     * I visit "MarketplaceLandingPage"
@@ -14,4 +14,7 @@ Feature: iOS Smoke Tests
     * I click on the Sign up link
     * I scroll to the bottom of the page
 
+  Scenario: Successfully prompt for all required fields
+    * I submit the empty government form
+    * I should see error messages on required fields for "Government"
 
