@@ -1,4 +1,4 @@
-@fanatics @partners @eagles
+@fanatics @partners @eagles @desktop
 Feature: Test the ID.me nfl eagles Partner Integration
 
   @troop_id @windows @saucegit

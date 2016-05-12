@@ -1,4 +1,4 @@
-@fanatics @partners @nhl
+@fanatics @partners @nhl @desktop
 Feature: Test the ID.me NHL Shop Partner Integration
 
   @troop_id @windows @sauce

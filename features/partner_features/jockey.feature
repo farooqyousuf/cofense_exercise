@@ -1,4 +1,4 @@
-@jockey
+@jockey @desktop
 Feature: Test the ID.me Jockey.com Partner Integration
 
   @troop_id

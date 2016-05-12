@@ -1,4 +1,4 @@
-@regression @idp @social_media @paypal
+@regression @idp @social_media @paypal @desktop
 Feature: IDP Paypal Login
 
   Background:

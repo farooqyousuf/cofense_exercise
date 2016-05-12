@@ -1,4 +1,4 @@
-@ios
+@ios @android
 Feature: iOS Smoke Tests
 
   Background:

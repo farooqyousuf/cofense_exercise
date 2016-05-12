@@ -1,4 +1,4 @@
-@fanatics_mobile @partners_mobile @nfl_mobile
+@fanatics_mobile @partners_mobile @nfl_mobile @desktop
 Feature: Test the ID.me NFL Mobile Shop Partner Integration
 
   @troop_id @windows @saucegit

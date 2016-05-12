@@ -1,4 +1,4 @@
-@regression @idp @oauth
+@regression @idp @oauth @desktop
 Feature: User account lock and unlock
 
   Background:

@@ -1,4 +1,4 @@
-@regression @marketplace @mp_users @mp_leveling_activity
+@regression @marketplace @mp_users @mp_leveling_activity @desktop
 Feature: Test the MP_users Leveling Activities (Client - Workflow/Action)
 
   Background:

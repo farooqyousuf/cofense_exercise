@@ -1,4 +1,4 @@
-@fanatics @partners @nascar
+@fanatics @partners @nascar @desktop
 Feature: Test the ID.me NASCAR Partner Integration
 
   @troop_id @windows @saucegit
