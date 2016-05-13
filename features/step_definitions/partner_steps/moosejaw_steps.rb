@@ -22,7 +22,10 @@ end
 
 Given(/^moosejaw \- I verify the troop ID discount has been applied$/) do
   page.has_text?("IDMEPROMO")
-  page.assert_selector("div.checkout-total-figures",:text =>"$68.95")
-  page.assert_selector("div.checkout-total-figures",:text =>"$13.79")
-  page.assert_selector("div.checkout-total-figures",:text =>"$55.16")
+
+  original_product_amt_string = find("#order_total").first(".checkout-total-figures").text
+  actual_product_discounted_amt_string = find("#order_total").find("div:nth-child(4)").find(".checkout-total-figures").text
+  discount_applied = verify_discount(original_product_amt_string, actual_product_discounted_amt_string, ".20", :exact_match => true ) 
+
+  expect(discount_applied).to be(true)
 end
