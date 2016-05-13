@@ -1,7 +1,6 @@
 
 Given(/^moosejaw \- I add an item to the cart$/) do
-  visit "http://www.moosejaw.com/moosejaw/shop/product_Arcteryx-Men-s-Captive-SS-Polo_10235054_10208_10000001_-1_"
-  
+  visit FigNewton.partners.moosejaw
   click_link "po-link-selectSize"
   click_link "pd_prod_Small"
   click_link "po-link-selectColor"
