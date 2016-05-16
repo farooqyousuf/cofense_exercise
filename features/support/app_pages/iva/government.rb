@@ -6,30 +6,46 @@ class IVAGovernment < IDmeBase
   include Capybara::DSL
   include ErrorMessages
 
-  def verify(populate = true)
+  def verify(populate = true, dupe = false)
     if populate
       data = data_for(:government)
-      populate_fields(data)
+        if dupe
+          populate_fields(data, true)
+        else
+          populate_fields(data)
+        end
     end
 
     click_verify_button
   end
 
-  def populate_fields(data)
+  def populate_fields(data, dupe = false)
     %w(first_name last_name city county).each do |field|
       fill_in field, :with => data.fetch(field)
     end
-    unique_email
+
+    #checks if a unique email is needed or not
+    if dupe
+      unique_email(false)
+    else
+      unique_email
+    end
+
+    %w(email email_confirmation).each do |field|
+      fill_in field, :with => @email
+    end
     2.times { fill_in("birth_date", :with => data.fetch("birth_date")) }
     populate_state(data.fetch("state"))
     populate_affiliation(data.fetch("affiliation"))
     populate_agency(data.fetch("agency"))
   end
 
-  def unique_email
-    @email = "capybara+"+"#{rand(6 ** 8)}"+"@id.me"
-    %w(email email_confirmation).each do |field|
-      fill_in field, :with => @email
+  def unique_email(unique = true)
+    #checks if a unique email is needed or not
+    if unique
+      @email = "capybara+"+"#{rand(6 ** 8)}"+"@id.me"
+    else
+      @email = @email
     end
   end
 

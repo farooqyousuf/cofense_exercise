@@ -19,3 +19,16 @@ Feature: Government verification using .gov email
   Scenario: Successfully prompt for all required fields
     * I submit the empty government form
     * I should see error messages on required fields for "Government"
+
+Scenario: Dupe/fraud check for Government verification
+    * I submit the government verification form
+    * I submit the verification code for "Government Email"
+    * I complete the verification process
+    * I logout of the OAuth Client
+    * I clear the current Government session
+    * I visit IDP through the "government" policy
+    * I click on the Sign Up link
+    * I sign up as a new user
+    * I submit the government verification form as a dupe record
+    * I pry
+
