@@ -1,4 +1,4 @@
-@regression @iva @military @email
+@regression @iva @military @email @desktop
 Feature: Military verification using .mil email
 
   Background:

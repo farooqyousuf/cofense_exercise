@@ -1,4 +1,4 @@
-@partners @ford @version2
+@partners @ford @version2 @desktop
 Feature: Test the Ford Partner Integration
   @newset
   Scenario: Test Ford Military Integration for inactive service member

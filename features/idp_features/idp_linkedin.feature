@@ -1,4 +1,4 @@
-@regression @idp @social_media @linkedin
+@regression @idp @social_media @linkedin @desktop
 Feature: IDP LinkedIn Login
 
   Background:

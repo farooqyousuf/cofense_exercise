@@ -1,4 +1,4 @@
-@regression @iva @military @scra
+@regression @iva @military @scra @desktop
 Feature: Military verification using SCRA credentials
 
   Background:

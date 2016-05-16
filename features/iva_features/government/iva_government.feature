@@ -1,4 +1,4 @@
-@regression @iva @government
+@regression @iva @government @desktop
 Feature: Government verification using .gov email
 
   Background:

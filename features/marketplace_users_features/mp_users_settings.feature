@@ -1,4 +1,4 @@
-@regression @marketplace @mp_user_settings
+@regression @marketplace @mp_user_settings @desktop
 Feature: Test the MP_users Account & Profile settings
 
     Background:
@@ -43,6 +43,6 @@ Feature: Test the MP_users Account & Profile settings
       * I check that the user account password has successfully updated
     @mp_authorizations
     Scenario: Update Profile - I manage my Authorizations
-      * I visit "MarketplaceUserAccountEditPage" 
+      * I visit "MarketplaceUserAccountEditPage"
       * I create a Marketplace account edit page object
-      * I check that Authorizations section is visible 
+      * I check that Authorizations section is visible

@@ -1,4 +1,4 @@
-@fanatics @partners @nba
+@fanatics @partners @nba @desktop
 Feature: Test the ID.me NBA Shop Partner Integration
 
   @troop_id @windows @saucegit

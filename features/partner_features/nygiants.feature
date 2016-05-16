@@ -1,4 +1,4 @@
-@fanatics @partners @nygiants
+@fanatics @partners @nygiants @desktop
 Feature: Test the ID.me NY Giants Partner Integration
 
   @troop_id @windows @saucegit

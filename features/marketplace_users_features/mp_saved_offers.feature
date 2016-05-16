@@ -1,4 +1,4 @@
-@regression @marketplace @mp_saved_offers
+@regression @marketplace @mp_saved_offers @desktop
 Feature: Test the MP_users Account & Profile settings
 
   Background:

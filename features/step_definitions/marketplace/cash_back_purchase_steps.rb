@@ -18,6 +18,10 @@ Given(/^I click on SignIn link$/) do
   click_link "Sign In"
 end
 
+Given(/^I click on the Sign up link$/) do
+  first(:link, "Sign Up").click
+end
+
 Given(/^I login to marketplace as a "([^"]*)" user$/) do |user_type|
   user = case user_type
          when "vip"       then FigNewton.mp_users.vip

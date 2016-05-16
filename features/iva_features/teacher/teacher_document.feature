@@ -1,4 +1,4 @@
-@regression @iva @teacher
+@regression @iva @teacher @desktop
 Feature: Teacher verification using document upload
 
   Background:

@@ -1,3 +1,14 @@
+Given(/^I should be on the Shop Homepage$/) do
+  expect(find(".site-header__logo").visible?).to eql true
+  expect(page.current_url).to eql(FigNewton.marketplace.shop_homepage)
+end
+
+Given(/^I scroll to the bottom of the page$/) do
+  sleep 2
+  page.execute_script "window.scrollBy(0,10000)"
+  sleep 2
+end
+
 Given(/^I visit "(.*?)"$/) do |page|
   @page = Object.const_get(page).new # converts a string text into a class name
   @page.visit
@@ -67,4 +78,3 @@ Given(/^I approve the document in IDme admin$/) do
 
   @admin_tool.logout_in_new_window
 end
-

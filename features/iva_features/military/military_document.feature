@@ -1,4 +1,4 @@
-@regression @iva @military
+@regression @iva @military @desktop
 Feature: Military verification using document upload
 
   Background:
