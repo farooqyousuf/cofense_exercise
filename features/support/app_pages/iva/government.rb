@@ -26,9 +26,9 @@ class IVAGovernment < IDmeBase
 
     #checks if a unique email is needed or not
     if dupe
-      unique_email(false)
+      unique_email(data, false)
     else
-      unique_email
+      unique_email(data, true)
     end
 
     %w(email email_confirmation).each do |field|
@@ -40,12 +40,12 @@ class IVAGovernment < IDmeBase
     populate_agency(data.fetch("agency"))
   end
 
-  def unique_email(unique = true)
+  def unique_email(data = nil, unique = true)
     #checks if a unique email is needed or not
     if unique
       @email = "capybara+"+"#{rand(6 ** 8)}"+"@id.me"
     else
-      @email = @email
+      @email = data.fetch("dupe_email")
     end
   end
 

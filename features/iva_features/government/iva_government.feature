@@ -21,14 +21,6 @@ Feature: Government verification using .gov email
     * I should see error messages on required fields for "Government"
 
 Scenario: Dupe/fraud check for Government verification
-    * I submit the government verification form
-    * I submit the verification code for "Government Email"
-    * I complete the verification process
-    * I logout of the OAuth Client
-    * I clear the current Government session
-    * I visit IDP through the "government" policy
-    * I click on the Sign Up link
-    * I sign up as a new user
     * I submit the government verification form as a dupe record
-    * I pry
-
+    * I should see the red alert box error message "We’re sorry, but we are unable to verify your credentials with the information you provided."
+    * I verify the attempt is marked as a duplicate

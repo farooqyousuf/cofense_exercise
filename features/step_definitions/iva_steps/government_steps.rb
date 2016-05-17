@@ -5,6 +5,7 @@ end
 
 Given(/^I submit the government verification form$/) do
   @iva_govt.verify
+  @iva_govt.click_verify_button
 end
 
 Given(/^I submit the empty government form$/) do
