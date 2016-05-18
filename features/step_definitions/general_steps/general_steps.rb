@@ -1,3 +1,13 @@
+Given(/^I verify the attempt is marked as a duplicate$/) do
+  @admin_tool = AdminTool.new
+  @admin_tool.login_in_new_window
+
+  step 'I visit "AdminVerificationAttempts"'
+  @admin_verif_attempts = AdminVerificationAttempts.new
+  sleep 1
+  all(".duplicate")[0].text.should == "DUPLICATE"
+end
+
 Given(/^I should be on the Shop Homepage$/) do
   expect(find(".site-header__logo").visible?).to eql true
   expect(page.current_url).to eql(FigNewton.marketplace.shop_homepage)
