@@ -10,12 +10,12 @@ end
 
 Given(/^I submit the empty government form$/) do
   @iva_govt = IVAGovernment.new
-  @iva_govt.verify(false)
+  @iva_govt.verify(populate: false)
 end
 
 Given(/^I submit the government verification form as a dupe record$/) do
   @iva_govt = IVAGovernment.new
-  @iva_govt.verify(true, true)
+  @iva_govt.verify(populate: true, dupe: true)
 end
 
 Given(/^I clear the current Government session$/) do
