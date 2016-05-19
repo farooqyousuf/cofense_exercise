@@ -37,7 +37,7 @@ class MilitaryDoc < IDmeBase
       fill_in field, :with => data.fetch(field)
     end
 
-    %w(birth_date zip).each do |field|
+    %w(service_member_birth_date zip).each do |field|
       2.times {fill_in field, :with => data.fetch(field)}
     end
 

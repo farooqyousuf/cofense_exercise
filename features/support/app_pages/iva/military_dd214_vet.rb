@@ -35,7 +35,7 @@ class DD214 < IDmeBase
       fill_in field, :with => data.fetch(field)
     end
 
-    %w(birth_date date_entered date_released).each do |field|
+    %w(service_member_birth_date date_entered date_released).each do |field|
       2.times {fill_in field, :with => data.fetch(field)}
     end
   end

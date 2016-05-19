@@ -16,7 +16,7 @@ military_dd214:
   service_member_last_name: Washington
   social: 222222222
   social_confirm: 222222222
-  birth_date: 02/02/1945
+  service_member_birth_date: 02/02/1945
   birth_place: USA
   date_entered: 01/01/2000
   date_released: 01/01/2003
@@ -75,7 +75,7 @@ firefighter_proboard:
 mil_doc:
   service_member_first_name: Sue
   service_member_last_name: Gentz
-  birth_date: 09/03/1962
+  service_member_birth_date: 09/03/1962
   social: 666360453
   social_confirm: 666360453
   street: 406 S Market St

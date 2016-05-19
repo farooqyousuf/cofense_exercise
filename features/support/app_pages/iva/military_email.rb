@@ -45,7 +45,8 @@ class MilitaryEmail < IDmeBase
 
     fill_in "service_member_first_name", with: fake_first_name
     fill_in "service_member_last_name", with: fake_last_name
-    2.times {fill_in "birth_date", with: "01/05/1985"}
+    binding.pry
+    2.times {fill_in "service_member_birth_date", with: "01/05/1985"}
   end
 
   def container_attribute
