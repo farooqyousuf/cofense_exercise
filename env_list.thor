@@ -7,6 +7,11 @@ class Set < Thor
     end
   end
 
+  desc "firefox_osx_saucelabs", "Use Firefox on OSX on Sauce Labs"
+  def firefox_osx_saucelabs
+    copy_environment("firefox_osx_saucelabs")
+  end
+
   desc "android_saucelabs", "Use Android on Sauce Labs on Staging"
   def android_saucelabs
     copy_environment("android_saucelabs")
