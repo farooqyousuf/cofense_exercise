@@ -22,6 +22,7 @@ class MilitaryEmail < IDmeBase
         %w(first_name last_name).each do |field|
           fill_in field, :with => Faker::Name.send(field)
         end
+        2.times {fill_in "birth_date", :with => "01/01/1985"}
         select_option(container_attribute, "#s2id_service_subgroup_id", "Veteran")
       end
 
