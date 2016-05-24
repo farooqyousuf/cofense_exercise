@@ -15,8 +15,8 @@ class MilitaryDoc < IDmeBase
       populate_fields(data_for(:mil_doc))
 
       if ["Military Family", "Military Spouse"].include?(affiliation)
-        %w(first_name last_name).each do |field|
-          fill_in field, :with => "CapybaraTester"
+        %w(first_name last_name birth_date).each do |field|
+          2.times {fill_in field, :with => (data_for(:mil_doc).fetch(field))}
         end
         select_option(container_attribute, "#s2id_service_subgroup_id", "Veteran")
       end

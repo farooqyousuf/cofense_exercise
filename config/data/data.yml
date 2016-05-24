@@ -74,6 +74,9 @@ firefighter_proboard:
   state: Virginia
 
 mil_doc:
+  first_name: CapybaraTester
+  last_name: CapybaraTester
+  birth_date: 01/05/1985
   service_member_first_name: Sue
   service_member_last_name: Gentz
   service_member_birth_date: 09/03/1962
