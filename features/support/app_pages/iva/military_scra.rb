@@ -40,7 +40,7 @@ class MilitarySCRA < IDmeBase
       fill_in field, :with => data.fetch(field)
     end
 
-    %w(birth_date service_date).each do |field|
+    %w(service_member_birth_date service_date).each do |field|
       2.times {fill_in field, :with => data.fetch(field)}
     end
   end
