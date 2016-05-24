@@ -37,6 +37,7 @@ class IVAGovernment < IDmeBase
     2.times { fill_in("birth_date", :with => data.fetch("birth_date")) }
     populate_state(data.fetch("state"))
     populate_affiliation(data.fetch("affiliation"))
+    sleep 2
     populate_agency(data.fetch("agency"))
   end
 
