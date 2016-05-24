@@ -112,6 +112,7 @@ scra_veteran:
 scra_mil_spouse:
   first_name: Jack
   last_name: Doe
+  birth_date: 01/05/1985
   service_member_first_name: Jane
   service_member_last_name: Doe
   service_member_birth_date: 08/05/1959
@@ -122,6 +123,7 @@ scra_mil_spouse:
 scra_mil_family:
   first_name: Tiffany
   last_name: Killian
+  birth_date: 01/05/1985
   service_member_first_name: George
   service_member_last_name: Killian
   service_member_birth_date: 06/26/1980

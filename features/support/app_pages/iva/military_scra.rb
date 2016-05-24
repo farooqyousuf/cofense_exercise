@@ -24,8 +24,8 @@ class MilitarySCRA < IDmeBase
       populate_fields(data_for(data_set))
 
       if ["Military Spouse", "Military Family"].include?(affiliation)
-        %w(first_name last_name).each do |field|
-          fill_in field, :with => data_for(data_set).fetch(field)
+        %w(first_name last_name birth_date).each do |field|
+          2.times {fill_in field, :with => data_for(data_set).fetch(field)}
         end
         populate_affiliation_2("Service Member")
       end
