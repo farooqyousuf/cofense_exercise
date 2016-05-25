@@ -1,4 +1,4 @@
-@regression @hlp @hlp_admin @hlp_gated_page
+@regression @hlp @hlp_admin @hlp_gated_page @desktop
 Feature: Test the HLP GatedPage functionality
 
   Background:
@@ -7,7 +7,7 @@ Feature: Test the HLP GatedPage functionality
     * I check if page name has been already taken for the "GatedPage"
     * I visit the Add GatedPage page
 
-  @smoke  
+  @smoke
   Scenario: Add a new GatedPage page
     * I create a new GatedPage
     * I should see the edit hlp page tab elements

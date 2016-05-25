@@ -1,4 +1,4 @@
-@regression @marketplace @marketplace_cash_back
+@regression @marketplace @marketplace_cash_back @desktop
 Feature: Test the MP_users Cash Back - My Cash
 
   Background:

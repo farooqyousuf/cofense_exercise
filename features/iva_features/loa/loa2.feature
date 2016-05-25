@@ -1,4 +1,4 @@
-@regression @iva @loa
+@regression @iva @loa @desktop
 Feature: Test the LOA2 (Level of Assurance 2) functionality
 
   Background:

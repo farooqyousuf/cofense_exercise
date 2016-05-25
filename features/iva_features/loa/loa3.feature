@@ -1,4 +1,4 @@
-@regression @iva @loa
+@regression @iva @loa @desktop
 Feature: Test the LOA3 (Level of Assurance 3) functionality
 
   Background:

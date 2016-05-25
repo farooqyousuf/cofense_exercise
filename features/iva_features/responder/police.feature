@@ -1,4 +1,4 @@
-@regression @iva @responder
+@regression @iva @responder @desktop
 Feature: Responder verification as a police officer
 
   Background:

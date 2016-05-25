@@ -1,4 +1,4 @@
-@seaworld
+@seaworld @desktop
 Feature: Test the ID.me Seaworld Partner Integration
 
   @troop_id

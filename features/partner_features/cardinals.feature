@@ -1,4 +1,4 @@
-@fanatics @partners @cardinals
+@fanatics @partners @cardinals @desktop
 Feature: Test the ID.me nfl Arizona Cardinals Partner Integration
 
   @troop_id @windows @saucegit

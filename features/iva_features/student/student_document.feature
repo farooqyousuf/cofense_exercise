@@ -1,4 +1,4 @@
-@regression @iva @student
+@regression @iva @student @desktop
 Feature: Student verification using document upload
 
 Background:
