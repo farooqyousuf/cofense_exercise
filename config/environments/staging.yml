@@ -60,7 +60,7 @@ mp_users:
   preferred_uid: d7e81e6cf5dc20e21025
   premium: test+premium@id.me
   premium_uid: 363e2633e104eb951023
-  vip: test+24@id.me
+  military: test+24@id.me
   general_password: Password123
   vip_uid: 551dee265b914ad2a0af7eebf872d502
 
