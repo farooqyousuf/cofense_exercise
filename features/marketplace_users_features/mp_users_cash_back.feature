@@ -2,11 +2,9 @@
 Feature: Test the MP_users Cash Back - My Cash
 
   Background:
-   * I GET MP_User info for "vip_uid"
-   * I check the "vip_uid" user level is "vip"
    * I visit "MarketplaceLandingPage"
    * I click on SignIn link
-   * I login to marketplace as a "vip" user
+   * I login to marketplace as a "Military" user
 
    Scenario: Purchases - Summary Info Card Check
    * I visit "CashBack_PurchasesPage"

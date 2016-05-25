@@ -24,7 +24,7 @@ end
 
 Given(/^I login to marketplace as a "([^"]*)" user$/) do |user_type|
   user = case user_type
-         when "vip"       then FigNewton.mp_users.vip
+         when "Military"       then FigNewton.mp_users.vip
          end
 
   @marketplace_shop = MarketplaceLandingPage.new

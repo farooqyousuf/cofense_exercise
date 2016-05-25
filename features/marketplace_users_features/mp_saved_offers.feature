@@ -4,9 +4,8 @@ Feature: Test the MP_users Account & Profile settings
   Background:
     * I visit "MarketplaceLandingPage"
     * I click on SignIn link
-    * I login to marketplace as a "vip" user
+    * I login to marketplace as a "Military" user
     * I create a Marketplace saved offers page object
-
 
   Scenario: Check Marketplace Saved Offers
     * I visit saved offers from side menu navigation page

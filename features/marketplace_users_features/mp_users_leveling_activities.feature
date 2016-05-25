@@ -1,12 +1,11 @@
-@regression @marketplace @mp_users @mp_leveling_activity @desktop
+BLOCKED - until VIP removal determines need for this, might be integrated to regular regression tests.
+
 Feature: Test the MP_users Leveling Activities (Client - Workflow/Action)
 
   Background:
-     * I GET MP_User info for "vip_uid"
-     * I check the "vip_uid" user level is "vip"
      * I visit "MarketplaceLandingPage"
      * I click on SignIn link
-     * I login to marketplace as a "vip" user
+     * I login to marketplace as a "Military" user
      * I click on Username link
      * The page url should be the CashBack Page
 
