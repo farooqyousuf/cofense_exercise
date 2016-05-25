@@ -11,7 +11,6 @@ class FavoritesPage < IDmeBase
 
   def navigate_from_user_menu_nav
     find(".user-nav").click
-    binding.pry
     first(:link,:href =>"/favorites").click
     sleep 1
   end
