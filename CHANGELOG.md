@@ -2,6 +2,9 @@ Change Log
 
 All notable changes to this project will be documented in this file. This project does not adhere to [Semantic Versioning](http://semver.org/)
 
+## 2.0.2 (05/26/16)
+- HOTFIX: Fixed the Fireman doc upload test
+
 ## 2.0.1 (05/25/16)
 - HOTFIX: Fixed neg tests for mil doc verifier
 - QA-234: Fix Mil SCRA family dob tests
