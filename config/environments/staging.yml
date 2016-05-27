@@ -79,7 +79,7 @@ marketplace:
   user_lname: Sparrow
   user_account_edit: https://marketplace-staging.idmeinc.net/account/edit
   new_password: JollyRoger123
-  saved_offers_page: https://marketplace-staging.idmeinc.net/saved_offers
+  favorites_page: https://marketplace-staging.idmeinc.net/favorites
 
 social_network:
   facebook_email: eddie.park.tester@gmail.com
