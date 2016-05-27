@@ -4,7 +4,7 @@ Feature: Test the MP_users Account & Profile settings
     Background:
       * I visit "MarketplaceLandingPage"
       * I click on SignIn link
-      * I login to marketplace as a "vip" user
+      * I login to marketplace as a "Military" user
       * I visit "MarketplaceUserSettingsPage"
       * I create a Marketplace User Setting Page Object
 

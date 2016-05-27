@@ -4,7 +4,7 @@ Feature: Test Marketplace Users Favorite Stores & Offers Features
   Background:
     * I visit "MarketplaceLandingPage"
     * I click on SignIn link
-    * I login to marketplace as a "vip" user
+    * I login to marketplace as a "Military" user
     * I create a Marketplace Favorites page object
 
   Scenario: Check Marketplace Favorites page and tabs
