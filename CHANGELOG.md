@@ -1,6 +1,8 @@
 Change Log
 
 All notable changes to this project will be documented in this file. This project does not adhere to [Semantic Versioning](http://semver.org/)
+## 2.0.3 (05/27/2016)
+- QA-223: Update Marketplace saved offers to favorites and add favorite stores spec 
 
 ## 2.0.2 (05/26/16)
 - HOTFIX: Fixed the Fireman doc upload test
