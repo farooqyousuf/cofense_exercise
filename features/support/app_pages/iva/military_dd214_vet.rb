@@ -20,8 +20,8 @@ class DD214 < IDmeBase
 
       #first and last name for user
       if ["Next of kin deceased veteran", "Legal guardian"].include?(affiliation)
-        %w(first_name last_name).each do |field|
-          fill_in field, :with => (data_for(:military_dd214).fetch(field))
+        %w(first_name last_name birth_date).each do |field|
+          2.times {fill_in field, :with => (data_for(:military_dd214).fetch(field))}
         end
       end
     end

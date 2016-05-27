@@ -14,8 +14,7 @@ class DocFirefighter < IDmeBase
     if populate
       populate_fields(data_for(:experian_user))
       click_verify_button
-      sleep 3
-      attach_doc(1)
+      attach_doc(2)
     end
 
     click_verify_button

@@ -15,3 +15,8 @@ thor set:ie_windows              # Use Internet Explorer on Windows on Sauce Lab
 thor set:ios_local               # Use iOS locally on Production
 thor set:ios_saucelabs           # Use iOS on Sauce Labs on Production
 ```
+
+## CHANGELOG
+
+Before merging in pull-requests, update the [Change Log](CHANGELOG.md) with the
+date (MM/DD/YY) and corresponding Jira ticket number and title. If need to push a fix straight to master then mark as HOTFIX. 
