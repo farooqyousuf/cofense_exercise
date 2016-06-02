@@ -8,8 +8,3 @@ Given(/^I submit the empty DD214 form for "([^"]*)"$/) do |group|
   @dd214 = DD214.new
   @dd214.verify(group, false)
 end
-
-# Given(/^I submit the DD214 verification form as a dupe record$/) do
-#   @dd214 = DD214.new
-#   # @dd214.verify()
-# end
