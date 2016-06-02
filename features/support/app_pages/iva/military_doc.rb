@@ -6,7 +6,7 @@ class MilitaryDoc < IDmeBase
   include Capybara::DSL
   include ErrorMessages
 
-  def verify(affiliation, populate = true)
+  def verify(affiliation:, populate: true, dupe: false)
     find("[data-option=#{container_attribute}]").find(".verification-header").click
 
     populate_affiliation(affiliation)
