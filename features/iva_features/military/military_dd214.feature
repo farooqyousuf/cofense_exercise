@@ -13,6 +13,7 @@ Feature: Military verification using DD214 request
     * I verify using DD214 information for "Veteran"
     * I complete the verification process
     * I should be successfully verified as "Veteran"
+    * I pry
 
   @delete_dd214_user2
   Scenario: Successful verification as a Next of Kin Deceased Veteran
@@ -25,6 +26,11 @@ Feature: Military verification using DD214 request
     * I verify using DD214 information for "Legal guardian"
     * I complete the verification process
     * I should be successfully verified as "Military Family"
+
+  # Scenario: Dupe check/unsuccessful attempt for DD214 verification
+  #   * I submit the DD214 verification form as a dupe record
+  #   * I should see the red alert box error message "We’re sorry, but we are unable to verify your credentials with the information you provided."
+  #   * I verify the attempt is marked as "DUPLICATE"
 
  Scenario: Successfully prompt for all required fields for Veteran
     * I submit the empty DD214 form for "Veteran"

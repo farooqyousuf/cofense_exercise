@@ -43,6 +43,11 @@ Feature: Military verification using document upload
     * I complete the verification process
     * I should be successfully verified as "Military Family"
 
+  # Scenario: Dupe check/unsuccessful attempt for Military Document verification
+  #   * I submit the Military Document verification form as a dupe record
+  #   * I should see the red alert box error message "We’re sorry, but we are unable to verify your credentials with the information you provided."
+  #   * I verify the attempt is marked as "DUPLICATE"
+
   # commented out supporter as this option is not being used in production currently
   # @delete_experian_user1
   # Scenario: Successful verification as a Military Supporter

@@ -1,11 +1,11 @@
-Given(/^I verify the attempt is marked as a duplicate$/) do
+Given(/^I verify the attempt is marked as "([^"]*)"$/) do |status|
   @admin_tool = AdminTool.new
   @admin_tool.login_in_new_window
 
   step 'I visit "AdminVerificationAttempts"'
   @admin_verif_attempts = AdminVerificationAttempts.new
   sleep 1
-  all(".duplicate")[0].text.should == "DUPLICATE"
+  all(".#{status}".downcase)[0].text.should == status
 end
 
 Given(/^I should be on the Shop Homepage$/) do
