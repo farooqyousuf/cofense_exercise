@@ -27,6 +27,18 @@ military_dd214:
   last_unit_assignment: New York
   signature: "image/jsignature;base30,6QZ12221111_2V88b5c444_5W5bifmmc_2J3367452_awZ9rb84Y269cinoib43_3FZ120Y13c786420Z6533_9xacm1Kg6_3D123100_9yahmsc_3I34331_fIZ577aa60Y7b93Zbhpje7_3JZ210Y2128cb533Z25745_gQZ20201_3N688b4_fW6adjikf94_3JZ1Y11133001"
 
+fail_experian:
+  school: George Mason University
+  first_name: Maurice
+  last_name: Ruiz
+  birth_date: 06/04/1974
+  social: 222222222
+  social_confirm: 222222222
+  street: 3929 Main Road
+  city: Richmond
+  state: VA
+  zip: 23219
+
 experian_user:
   school: George Mason University
   first_name: Sue

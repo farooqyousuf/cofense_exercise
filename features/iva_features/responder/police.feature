@@ -7,7 +7,6 @@ Feature: Responder verification as a police officer
     * I sign up as a new user
     * I should be on the responder verification screen
 
-
   #experian check and also need a unique doc for police
   @smoke @delete_experian_user1
   Scenario: Successful verification as a police officer
