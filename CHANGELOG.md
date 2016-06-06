@@ -1,6 +1,9 @@
 Change Log
 
 All notable changes to this project will be documented in this file. This project does not adhere to [Semantic Versioning](http://semver.org/)
+## 2.0.6 (06/06/2016)
+- QA-178: Update ford specs for new military deal
+
 ## 2.0.5 (06/03/2016)
 - QA-247: Test for denied attempt for EMT doc upload
 
