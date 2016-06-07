@@ -9,35 +9,36 @@ module HelperMethods
       click_button "Sign in"
     end
 
-    if page.has_content? "Click here to continue"
+    if page.has_text? "Click here to continue"
       click_link "Click here to continue"
-    elsif page.has_content? "Authorize"
+    elsif page.has_text? "Authorize"
       click_button "Authorize"
-    elsif page.has_content? "Continue"
+    elsif page.has_text? "Continue"
       click_link "Continue"
     end
   end
 
-  def sign_in_with_idme_veteran
-  if page.has_content? "Sign in"
-    fill_in "user_email", :with => FigNewton.test_user.military.veteran.user_email
-    fill_in "user_password", :with => FigNewton.test_user.password
-    click_button "Sign in"
+  #TODO - Refactor the duplicategit l sign_in options we have right now
+  def sign_in_with_idme_veteran 
+    if page.has_content? "Sign in"
+      fill_in "user_email", :with => FigNewton.test_user.military.veteran.user_email
+      fill_in "user_password", :with => FigNewton.test_user.password
+      click_button "Sign in"
+    end
+
+    if page.has_text? "Click here to finish"
+      click_link "Click here to finish"
+    
+    elsif page.has_text? "Allow"
+       click_button "Allow"
+
+    elsif page.has_text? "Authorize" 
+      click_button "Authorize"
+
+    elsif page.has_text? "Continue"
+      click_link "Continue"
+    end
   end
-
-  if page.has_content? "Click here to finish"
-    click_link "Click here to finish"
-  
-  elsif page.has_content? "Allow"
-     click_button "Allow"
-
-  elsif page.has_content? "Authorize" 
-    click_button "Authorize"
-
-  elsif page.has_content? "Continue"
-    click_link "Continue"
-  end
-end
 
   def sign_out_of_idme
     page.driver.browser.manage.delete_all_cookies # clears cookies from partner site first

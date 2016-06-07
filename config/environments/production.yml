@@ -64,8 +64,3 @@ test_user:
   military:
     veteran:
       user_email: rich.purnell.rocketman@gmail.com #TODO replace with veteran+test@id.me
-
-
-
-
-
