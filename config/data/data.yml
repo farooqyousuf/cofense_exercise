@@ -8,6 +8,7 @@ government:
   affiliation: Federal
   agency: CIA
   dupe_email: farooq+govtdonotdelete@id.me
+  denied_email: fake@email.com
 
 military_dd214:
   first_name: Joel
