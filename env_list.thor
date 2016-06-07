@@ -7,7 +7,12 @@ class Set < Thor
     end
   end
 
-  desc "android_saucelabs", "Use Android on Sauce Labs on Production"
+  desc "firefox_osx_saucelabs", "Use Firefox on OSX on Sauce Labs"
+  def firefox_osx_saucelabs
+    copy_environment("firefox_osx_saucelabs")
+  end
+
+  desc "android_saucelabs", "Use Android on Sauce Labs on Staging"
   def android_saucelabs
     copy_environment("android_saucelabs")
   end
@@ -37,12 +42,12 @@ class Set < Thor
     copy_environment("firefox_osx_production")
   end
 
-  desc "ios_local", "Use iOS locally on Production"
+  desc "ios_local", "Use iOS locally on Staging"
   def ios_local
     copy_environment("ios_local")
   end
 
-  desc "ios_saucelabs", "Use iOS on Sauce Labs on Production"
+  desc "ios_saucelabs", "Use iOS on Sauce Labs on Staging"
   def ios_saucelabs
     copy_environment("ios_saucelabs")
   end
@@ -50,6 +55,16 @@ class Set < Thor
   desc "chrome_osx", "Use Chrome on OSX on Sauce Labs on Production"
   def chrome_osx
     copy_environment("chrome_osx")
+  end
+
+  desc "safari_saucelabs", "Use Safari on SauceLabs on Staging"
+  def safari_saucelabs
+    copy_environment("safari_saucelabs")
+  end
+
+  desc "safari_local", "User Safari locally on Staging"
+  def safari_local
+    copy_environment("safari_local")
   end
 
 end

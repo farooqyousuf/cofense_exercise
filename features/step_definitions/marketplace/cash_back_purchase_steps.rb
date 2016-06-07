@@ -1,26 +1,21 @@
-
-Given(/^I GET MP_User info for "([^"]*)"$/) do |user|
-  case user
-  when "vip_uid"
-    @user_level = MarketplaceCashBackPage.new
-    @user_level_response = @user_level.request_vip_uid
-  end
-end
-
-Given(/^I check the "([^"]*)" user level is "([^"]*)"$/) do |user, level|
+Given(/^I check the "([^"]*)" user level is "([^"]*)"$/) do |user, level| #TODO: switch this to a military affinity check
   case user
   when "vip_uid"
     expect(@user_level_response).to eql(level)
   end
-end
+end 
 
 Given(/^I click on SignIn link$/) do
   click_link "Sign In"
 end
 
+Given(/^I click on the Sign up link$/) do
+  first(:link, "Sign Up").click
+end
+
 Given(/^I login to marketplace as a "([^"]*)" user$/) do |user_type|
   user = case user_type
-         when "vip"       then FigNewton.mp_users.vip
+         when "Military"       then FigNewton.mp_users.military
          end
 
   @marketplace_shop = MarketplaceLandingPage.new

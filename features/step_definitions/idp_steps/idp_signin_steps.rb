@@ -25,7 +25,7 @@ Given(/^I should be successfully authenticated(?: using "(.*)")?$/) do |method|
              when "Facebook"      then FigNewton.oauth.facebook_user
              when "Google"        then FigNewton.oauth.google_user
              when "LinkedIn"      then FigNewton.oauth.linkedin_user
-             when "Twitter"       then FigNewton.oauth.twitter_user
+             when "Paypal"        then FigNewton.oauth.paypal_user
              else fail ("Error!")
              end
     expect(@oauth_client.authenticated_as?(email)).to eq(true)
@@ -61,4 +61,8 @@ end
 
 Given(/^I login with LinkedIn$/) do
   @oauth_client.login_with_linkedin
+end
+
+Given(/^I login with Paypal$/) do
+  @oauth_client.login_with_paypal
 end

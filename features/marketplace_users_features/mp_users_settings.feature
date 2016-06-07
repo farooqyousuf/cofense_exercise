@@ -1,12 +1,10 @@
-@regression @marketplace @mp_user_settings
+@regression @marketplace @mp_user_settings @desktop
 Feature: Test the MP_users Account & Profile settings
 
     Background:
-      * I GET MP_User info for "vip_uid"
-      * I check the "vip_uid" user level is "vip"
       * I visit "MarketplaceLandingPage"
       * I click on SignIn link
-      * I login to marketplace as a "vip" user
+      * I login to marketplace as a "Military" user
       * I visit "MarketplaceUserSettingsPage"
       * I create a Marketplace User Setting Page Object
 
@@ -18,7 +16,7 @@ Feature: Test the MP_users Account & Profile settings
     @mp_email_subscribe
     Scenario: Update Profile - Subscribe to ID.me offers and discounts
       * I check the user subscribed checkbox and save the Changes
-      * I should see successful flash message with "Profile updated"
+      * I should see successful flash message with "Email subscriptions updated successfully"
       * I check that user has been subscribed in marketplace
 
     @incorrect
@@ -38,8 +36,13 @@ Feature: Test the MP_users Account & Profile settings
       | Password1     |                  | Confirm password                                    |
 
     @mp_password
-    Scenario: Update account - I successfully change my password
+    Scenario: Update Profile - I successfully change my password
       * I visit "MarketplaceUserAccountEditPage"
       * I create a Marketplace account edit page object
       * I update the user account password
-      * I check that the user account password has successfully updated.
+      * I check that the user account password has successfully updated
+    @mp_authorizations
+    Scenario: Update Profile - I manage my Authorizations
+      * I visit "MarketplaceUserAccountEditPage"
+      * I create a Marketplace account edit page object
+      * I check that Authorizations section is visible

@@ -1,4 +1,4 @@
-@regression @hlp @hlp_admin @hlp_promo_page
+@regression @hlp @hlp_admin @hlp_promo_page @desktop
 
 Feature: Test the HLP DocumentPage functionality
 

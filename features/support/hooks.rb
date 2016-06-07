@@ -1,7 +1,7 @@
 # NOTE: order matters here, hooks defined last will be ran first
 
-# Actions performed before/after each scenario
-Before do
+#Actions performed before/after each scenario
+Before("@desktop") do
   page.driver.browser.manage.window.maximize
 end
 
@@ -18,6 +18,12 @@ end
 After("@delete_dd214_user") do
   visit_admin_users_in_new_window
   @admin_users.delete_dd214_user
+  @admin_tool.logout_in_new_window
+end
+
+After("@delete_paypal_user") do
+  visit_admin_users_in_new_window
+  @admin_users.delete_paypal_user
   @admin_tool.logout_in_new_window
 end
 

@@ -6,7 +6,7 @@ class MilitaryDoc < IDmeBase
   include Capybara::DSL
   include ErrorMessages
 
-  def verify(affiliation, populate = true)
+  def verify(affiliation:, populate: true, dupe: false)
     find("[data-option=#{container_attribute}]").find(".verification-header").click
 
     populate_affiliation(affiliation)
@@ -15,8 +15,8 @@ class MilitaryDoc < IDmeBase
       populate_fields(data_for(:mil_doc))
 
       if ["Military Family", "Military Spouse"].include?(affiliation)
-        %w(first_name last_name).each do |field|
-          fill_in field, :with => "CapybaraTester"
+        %w(first_name last_name birth_date).each do |field|
+          2.times {fill_in field, :with => (data_for(:mil_doc).fetch(field))}
         end
         select_option(container_attribute, "#s2id_service_subgroup_id", "Veteran")
       end
@@ -37,7 +37,7 @@ class MilitaryDoc < IDmeBase
       fill_in field, :with => data.fetch(field)
     end
 
-    %w(birth_date zip).each do |field|
+    %w(service_member_birth_date zip).each do |field|
       2.times {fill_in field, :with => data.fetch(field)}
     end
 

@@ -31,6 +31,13 @@ include JavascriptAlerts
     delete_user
   end
 
+  def delete_paypal_user
+    search_for_user("test@id.me")
+    sleep 1
+    open_newest
+    delete_user
+  end
+
   def delete_facebook_user
     search_for_user("Sadanberg")
     sleep 1

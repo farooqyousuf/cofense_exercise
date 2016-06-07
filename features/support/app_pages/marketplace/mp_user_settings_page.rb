@@ -13,16 +13,26 @@ class MarketplaceUserSettingsPage < IDmeBase
     click_button "Save Changes"
   end
 
+  def reset_if_already_subscribed
+    if user_subscribed
+      find("#subscriptions_13337_subscribed").click
+    end 
+  end
+
   def profile_menu_name
     first(:link, :href =>"/cash-back").text
   end
 
+  def visit_subscription_settings_tab
+    find(:link,:href =>"/settings/subscriptions").click
+  end 
+
   def subscribe_to_email
-    find("div.checkbox").click
+    find("#subscriptions_13337_subscribed").click
     click_on "Save Changes"
   end
 
   def user_subscribed
-    find("div.checkbox").all("input",:visible => false)[1].checked?
+    find("#subscriptions_13337_subscribed").checked?
   end
 end

@@ -1,4 +1,4 @@
-@fanatics @partners @seahawks @nfl
+@fanatics @partners @seahawks @nfl @desktop
 Feature: Test the ID.me Seattle Seahawks Pro Shop Partner Integration
 
   @troop_id @windows @saucegit

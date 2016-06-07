@@ -1,4 +1,4 @@
-@regression @iva @responder
+@regression @iva @responder @desktop
 Feature: Responder verification as a police officer
 
   Background:
@@ -6,7 +6,6 @@ Feature: Responder verification as a police officer
     * I click on the Sign Up link
     * I sign up as a new user
     * I should be on the responder verification screen
-
 
   #experian check and also need a unique doc for police
   @smoke @delete_experian_user1

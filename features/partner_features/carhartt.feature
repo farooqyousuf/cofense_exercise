@@ -1,4 +1,4 @@
-@partners @carhartt @version2
+@partners @carhartt @version2 @desktop
 Feature: Test the Carhartt Partner Integration
 
   Background:

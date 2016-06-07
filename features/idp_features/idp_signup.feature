@@ -1,4 +1,4 @@
-@regression @idp
+@regression @idp @desktop
 Feature: User account creation
 
   Background:

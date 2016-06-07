@@ -1,3 +1,4 @@
+
 @seaworld @version2
 Feature: Test the ID.me Seaworld Waves of Honor Partner Integrations
 
@@ -70,6 +71,4 @@ Feature: Test the ID.me Seaworld Waves of Honor Partner Integrations
     * I visit the waves of honor "Seaworld Orlando Teacher" Integration
     * I log in with my Id.me teacher account
     * I verify that my orlando teacher discount tickets 
-
-
 

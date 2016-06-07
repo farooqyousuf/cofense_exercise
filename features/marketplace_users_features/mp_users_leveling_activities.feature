@@ -1,23 +1,22 @@
-@regression @marketplace @mp_users @mp_leveling_activity
+#BLOCKED - until VIP removal determines need for this, might be integrated to regular regression tests.
+
 Feature: Test the MP_users Leveling Activities (Client - Workflow/Action)
 
   Background:
-     * I GET MP_User info for "vip_uid"
-     * I check the "vip_uid" user level is "vip"
      * I visit "MarketplaceLandingPage"
      * I click on SignIn link
-     * I login to marketplace as a "vip" user
+     * I login to marketplace as a "Military" user
      * I click on Username link
      * The page url should be the CashBack Page
 
-     @facebook_connect
+    
      Scenario: Authorize a Social Media Account - Connect to Facebook
        * I get the "vip_uid" user achievements progress
        * I check the Connect Your Facebook activity card
        * I Connect My Facebook Account
        * I should see successful flash message with "Third party account connection not authorized."
 
-     @twitter_connect
+    
      Scenario: Authorize a Social Media Account - Connect to Twitter
        * I get the "vip_uid" user achievements progress
        * I check the Connect Your Twitter Account activity card
@@ -26,7 +25,7 @@ Feature: Test the MP_users Leveling Activities (Client - Workflow/Action)
        * I get the "vip_uid" user achievements progress after I connected My Twitter Account
        * I check the Connect Your Twitter Account activity card after I connected My Twitter Account
 
-     @linkedin_connect
+  
      Scenario: Authorize a Social Media Account - Connect to LinkedIn
        * I get the "vip_uid" user achievements progress
        * I check the Connect Your LinkedIn Account activity card
@@ -35,7 +34,7 @@ Feature: Test the MP_users Leveling Activities (Client - Workflow/Action)
        * I get the "vip_uid" user achievements progress after I connected My LinkedIn Account
        * I check the Connect Your LinkedIn Account activity card after I connected My LinkedIn Account
 
-     @demographic_survey
+    
      Scenario: Complete A Demographic Survey
        * I get the "vip_uid" user achievements progress
        * I check the Complete A Survey activity card
@@ -48,7 +47,6 @@ Feature: Test the MP_users Leveling Activities (Client - Workflow/Action)
        * I get the "vip_uid" user achievements progress after I Completed A Survey
        * I check the Complete A Survey activity card after I Completed A Survey
 
-     @invite_store
      Scenario: Submit Invite Store form
        * I get the "vip_uid" user achievements progress
        * I check the Invite A Store activity card
@@ -61,7 +59,6 @@ Feature: Test the MP_users Leveling Activities (Client - Workflow/Action)
        * I get the "vip_uid" user achievements progress after I Invited A Store
        * I check the Invite A Store activity card after I Invited A Store
 
-     @refer_friends_batch_invitation
      Scenario: Send Email Invitations - Batch Invitation
        * I get the "vip_uid" user achievements progress
        * I check the Refer A Friend activity card
@@ -75,7 +72,7 @@ Feature: Test the MP_users Leveling Activities (Client - Workflow/Action)
        * I get the "vip_uid" user achievements progress after I submitted Batch Invitations form
        * I check the Refer A Friend activity card after I submitted Batch Invitations form
 
-     @refer_25_friends
+     
      Scenario: Send Email Invitations - refer 25 friends
        * I check user activity level before referring 25 friends
        * I incorrectly submit to refer 25 email invitations

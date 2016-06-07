@@ -6,22 +6,30 @@ class DocEMT < IDmeBase
   include Capybara::DSL
   include ErrorMessages
 
-   def verify(populate = true)
+   def verify(populate: true, dupe: false)
     find("[data-option=#{container_attribute}]").find(".verification-header").click
     choose("emt_level_state")
     populate_first_state("Wyoming")
 
       if populate
-        populate_fields(data_for(:experian_user))
-        click_verify_button
-        sleep 5
-        attach_doc
+        data = data_for(:experian_user)
+          if dupe
+            populate_fields(data: data_for(:fail_experian))
+            click_verify_button
+          else
+            populate_fields(data: data)
+            sleep 5
+            click_verify_button
+            attach_doc
+          end
       end
 
-    click_verify_button
+     if dupe == false
+      click_verify_button
+    end
    end
 
-  def populate_fields(data)
+  def populate_fields(data:)
     %w(first_name last_name birth_date social social_confirm street city zip).each do |field|
       2.times {fill_in field, :with => data.fetch(field)}
     end

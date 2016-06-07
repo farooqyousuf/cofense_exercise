@@ -1,4 +1,4 @@
-@regression @iva @military @dd214 @document
+@regression @iva @military @dd214 @document @desktop
 Feature: Military verification using DD214 request
 
   Background:

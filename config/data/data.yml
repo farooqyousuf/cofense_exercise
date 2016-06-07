@@ -7,15 +7,17 @@ government:
   state: Virginia
   affiliation: Federal
   agency: CIA
+  dupe_email: farooq+govtdonotdelete@id.me
 
 military_dd214:
   first_name: Joel
   last_name: Smith
+  birth_date: 01/05/1985
   service_member_first_name: Benny
   service_member_last_name: Washington
   social: 222222222
   social_confirm: 222222222
-  birth_date: 02/02/1945
+  service_member_birth_date: 02/02/1945
   birth_place: USA
   date_entered: 01/01/2000
   date_released: 01/01/2003
@@ -24,6 +26,18 @@ military_dd214:
   discharge_location: Maryland
   last_unit_assignment: New York
   signature: "image/jsignature;base30,6QZ12221111_2V88b5c444_5W5bifmmc_2J3367452_awZ9rb84Y269cinoib43_3FZ120Y13c786420Z6533_9xacm1Kg6_3D123100_9yahmsc_3I34331_fIZ577aa60Y7b93Zbhpje7_3JZ210Y2128cb533Z25745_gQZ20201_3N688b4_fW6adjikf94_3JZ1Y11133001"
+
+fail_experian:
+  school: George Mason University
+  first_name: Maurice
+  last_name: Ruiz
+  birth_date: 06/04/1974
+  social: 222222222
+  social_confirm: 222222222
+  street: 3929 Main Road
+  city: Richmond
+  state: VA
+  zip: 23219
 
 experian_user:
   school: George Mason University
@@ -72,9 +86,12 @@ firefighter_proboard:
   state: Virginia
 
 mil_doc:
+  first_name: CapybaraTester
+  last_name: CapybaraTester
+  birth_date: 01/05/1985
   service_member_first_name: Sue
   service_member_last_name: Gentz
-  birth_date: 09/03/1962
+  service_member_birth_date: 09/03/1962
   social: 666360453
   social_confirm: 666360453
   street: 406 S Market St
@@ -91,7 +108,7 @@ emt_national:
 scra_service_member:
   service_member_first_name: John
   service_member_last_name: Jones
-  birth_date: 05/25/1989
+  service_member_birth_date: 05/25/1989
   social: 000149876
   social_confirm: 000149876
   service_date: 04/05/2016
@@ -99,7 +116,7 @@ scra_service_member:
 scra_veteran:
   service_member_first_name: Harry
   service_member_last_name: Dune
-  birth_date: 10/25/1963
+  service_member_birth_date: 10/25/1963
   social: 000905188
   social_confirm: 000905188
   service_date: 04/05/2016
@@ -107,9 +124,10 @@ scra_veteran:
 scra_mil_spouse:
   first_name: Jack
   last_name: Doe
+  birth_date: 01/05/1985
   service_member_first_name: Jane
   service_member_last_name: Doe
-  birth_date: 08/05/1959
+  service_member_birth_date: 08/05/1959
   social: 000489552
   social_confirm: 000489552
   service_date: 04/05/2016
@@ -117,9 +135,10 @@ scra_mil_spouse:
 scra_mil_family:
   first_name: Tiffany
   last_name: Killian
+  birth_date: 01/05/1985
   service_member_first_name: George
   service_member_last_name: Killian
-  birth_date: 06/26/1980
+  service_member_birth_date: 06/26/1980
   social: 000196548
   social_confirm: 000196548
   service_date: 04/05/2016
