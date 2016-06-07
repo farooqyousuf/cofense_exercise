@@ -7,14 +7,14 @@ class Police < IDmeBase
   include ErrorMessages
 
   def verify(populate = true)
-    
+
     find("[data-option=#{container_attribute}]").find(".verification-header").click
 
     if populate
       populate_fields(data_for(:experian_user))
       click_verify_button
       sleep 5
-      attach_doc(2)
+      attach_doc(3)
     end
 
     click_verify_button
@@ -27,7 +27,7 @@ class Police < IDmeBase
     %w(first_name last_name social social_confirm street city zip).each do |field|
       fill_in field, :with => data.fetch(field)
     end
-    
+
     %w(birth_date zip).each do |field|
       2.times {fill_in field, :with => data.fetch(field)}
     end
