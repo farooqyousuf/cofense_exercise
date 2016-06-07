@@ -43,3 +43,9 @@ partners:
 oauth:
   facebook_user: qa@id.me
   facebook_pw: P@ssword123
+
+test_user:
+  password: Password123
+  military:
+    veteran:
+      user_email: rich.purnell.rocketman@gmail.com #TODO replace with veteran+test@id.me
