@@ -25,7 +25,7 @@ Feature: Government verification using .gov email
     * I should see the red alert box error message "We’re sorry, but we are unable to verify your credentials with the information you provided."
     * I verify the attempt is marked as "DUPLICATE"
 
-Scenario: Denied attempt for Government verification
+  Scenario: Denied attempt for Government verification
     * I submit the government verification form as a denied record
     * I should see the red alert box error message "Please provide a valid government email address."
     * I verify the attempt is marked as "DENIED"
