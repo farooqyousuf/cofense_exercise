@@ -18,7 +18,7 @@ module HelperMethods
     end
   end
 
-  #TODO - Refactor the duplicategit l sign_in options we have right now
+  #TODO - Refactor the duplicate sign_in options we have right now to single
   def sign_in_with_idme_veteran 
     if page.has_content? "Sign in"
       fill_in "user_email", :with => FigNewton.test_user.military.veteran.user_email
