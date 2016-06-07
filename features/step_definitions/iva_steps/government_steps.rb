@@ -4,7 +4,7 @@ Given(/^I should be on the government verification screen$/) do
 end
 
 Given(/^I submit the government verification form$/) do
-  @iva_govt.verify
+  @iva_govt.verify(email_type: "unique")
   @iva_govt.click_verify_button
 end
 
@@ -15,7 +15,7 @@ end
 
 Given(/^I submit the government verification form as a dupe record$/) do
   @iva_govt = IVAGovernment.new
-  @iva_govt.verify(populate: true, dupe: true)
+  @iva_govt.verify(email_type: "dupe")
 end
 
 Given(/^I clear the current Government session$/) do
@@ -24,4 +24,8 @@ Given(/^I clear the current Government session$/) do
   browser.manage.delete_all_cookies
   browser.navigate.refresh
   step 'I visit IDP through the "government" policy'
+end
+
+Given(/^I submit the government verification form as a denied record$/) do
+  IVAGovernment.new.verify(email_type: "denied")
 end

@@ -6,48 +6,36 @@ class IVAGovernment < IDmeBase
   include Capybara::DSL
   include ErrorMessages
 
-  def verify(populate: true, dupe: false)
+  def verify(populate: true, email_type: "none")
     if populate
       data = data_for(:government)
-        if dupe
-          populate_fields(data: data, dupe: true)
-        else
-          populate_fields(data: data)
+        case email_type
+        when "unique"
+          populate_fields(data: data, email: "capybara+"+"#{rand(6 ** 8)}"+"@id.me")
+        when "dupe"
+          populate_fields(data: data, email: data.fetch("dupe_email"))
+        when "denied"
+          populate_fields(data: data, email: data.fetch("denied_email"))
+        when "none"
+          puts "No email type specified"
         end
     end
 
     click_verify_button
   end
 
-  def populate_fields(data:, dupe: false)
-    %w(first_name last_name city county).each do |field|
-      fill_in field, :with => data.fetch(field)
-    end
-
-    #checks if a unique email is needed or not
-    if dupe
-      unique_email(data: data, unique: false)
-    else
-      unique_email(data: data, unique: true)
+  def populate_fields(data:, email:)
+    %w(first_name last_name city county birth_date).each do |field|
+      2.times {fill_in field, :with => data.fetch(field)} #twice b/c dob doesn't get filled first time occasionally
     end
 
     %w(email email_confirmation).each do |field|
-      fill_in field, :with => @email
+      fill_in field, :with => email
     end
-    2.times { fill_in("birth_date", :with => data.fetch("birth_date")) }
     populate_state(data.fetch("state"))
     populate_affiliation(data.fetch("affiliation"))
-    sleep 2
+    sleep 1
     populate_agency(data.fetch("agency"))
-  end
-
-  def unique_email(data: nil, unique: true)
-    #checks if a unique email is needed or not
-    if unique
-      @email = "capybara+"+"#{rand(6 ** 8)}"+"@id.me"
-    else
-      @email = data.fetch("dupe_email")
-    end
   end
 
   def container_attribute
