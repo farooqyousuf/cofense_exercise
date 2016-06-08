@@ -29,13 +29,10 @@ Feature: Military verification using .mil email
     * I complete the verification process
     * I should be successfully verified as "Military Family"
 
-  # commented out supporter as this option is not being used in production currently
-  # @delete_user
-  # Scenario: Successful verification as Military Supporter
-  #   * I verify using military email information for "Military Supporter"
-  #   * I submit the verification code for "Military Email Code"
-  #   * I complete the verification process
-  #   * I should be successfully verified as "Military Supporter"
+  Scenario: Denied attempt for military email verification
+    * I submit the military email verification form as a denied record
+    * I should see the red alert box error message "We're sorry, but the name you entered does not match the name specified by the email address. Please try a different verification option."
+    * I verify the attempt is marked as "DENIED"
 
   Scenario: Successfully prompt for all required fields for Service Member
     * I submit the empty military email form for "Service Member"
@@ -48,8 +45,3 @@ Feature: Military verification using .mil email
   Scenario: Successfully prompt for all required fields for Military Family
     * I submit the empty military email form for "Military Family"
     * I should see error messages on required fields for "Military Email Family"
-
-  # commented out supporter as this option is not being used in production currently
-  # Scenario: Successfully prompt for all required fields for Military Supporter
-  #   * I submit the empty military email form for "Military Supporter"
-  #   * I should see error messages on required fields for "Military Email"

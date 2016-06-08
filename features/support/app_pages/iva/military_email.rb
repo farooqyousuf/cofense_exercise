@@ -7,12 +7,20 @@ class MilitaryEmail < IDmeBase
   include ErrorMessages
 
 
-  def verify(affiliation, populate = true)
+  def verify(affiliation:, populate: true, type:)
     find("[data-option=#{container_attribute}]").find(".verification-header").click
     populate_affiliation(affiliation)
 
     if populate
-      populate_fields
+
+      build_fake_info
+
+      case type
+      when "unique"
+        populate_fields(email: @unique_email)
+      when "denied"
+        populate_fields(email: "farooq@id.me")
+      end
 
       if ["Service Member", "Military Supporter"].include?(affiliation)
         find(".checkbox").click
@@ -35,18 +43,19 @@ class MilitaryEmail < IDmeBase
     select_option(container_attribute, ".military-affiliation", value)
   end
 
-  def populate_fields
-    fake_first_name = Faker::Name.first_name
-    fake_last_name = Faker::Name.last_name
-    unique_email = fake_last_name+"#{rand(6 ** 8)}"+"@id.me"
+  def build_fake_info
+    @fake_first_name = Faker::Name.first_name
+    @fake_last_name = Faker::Name.last_name
+    @unique_email = @fake_last_name+"#{rand(6 ** 8)}"+"@id.me"
+  end
 
-    %w(email email_confirmation).each do |field|
-      2.times {fill_in field, :with => unique_email}
-    end
-
-    fill_in "service_member_first_name", with: fake_first_name
-    fill_in "service_member_last_name", with: fake_last_name
+  def populate_fields(email:)
+    fill_in "service_member_first_name", with: @fake_first_name
+    fill_in "service_member_last_name", with: @fake_last_name
     2.times {fill_in "service_member_birth_date", with: "01/05/1985"}
+    %w(email email_confirmation).each do |field|
+      2.times {fill_in field, :with => email}
+    end
   end
 
   def container_attribute
