@@ -1,6 +1,9 @@
 Change Log
 
 All notable changes to this project will be documented in this file. This project does not adhere to [Semantic Versioning](http://semver.org/)
+## 2.0.8 (06/08/2016)
+- QA-221: Add Seaworld Waves of Honor Partner Integration Test
+
 ## 2.0.7 (06/07/2016)
 - HOTFIX: Fixed Police doc upload test
 - QA-257: Denied attempt test for Govt IVA method and refactored Govt page class
