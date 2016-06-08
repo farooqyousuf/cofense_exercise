@@ -65,7 +65,7 @@ Feature: Test the ID.me Seaworld Waves of Honor Partner Integrations
   Scenario: Test Seaworld San Diego Teachers Integration 
     * I visit the waves of honor "Seaworld San Diego Teacher" Integration
     * I log in with my Id.me teacher account
-    * I verify that my sand diego teacher discount tickets 
+    * I verify that my san diego teacher discount tickets 
   
   Scenario: Test Seaworld Orlando Florida Teachers Integration 
     * I visit the waves of honor "Seaworld Orlando Teacher" Integration

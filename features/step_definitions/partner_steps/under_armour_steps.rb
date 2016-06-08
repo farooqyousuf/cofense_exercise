@@ -33,7 +33,6 @@ Given(/^UA \- I apply the "([^"]*)" discount$/) do |type|
 end
 
 Given(/^UA \- I verify the "([^"]*)" discount has been applied$/) do |type|
-binding.pry
   begin
     case type
     when "Troop ID"

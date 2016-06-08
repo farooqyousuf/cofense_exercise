@@ -78,7 +78,7 @@ Given(/^I verify that my orlando teacher discount tickets$/) do
   expect(ticket_price_total).to eql("$0.00")
 end
 
-Given(/^I verify that my sand diego teacher discount tickets$/) do
+Given(/^I verify that my san diego teacher discount tickets$/) do
   sleep 2 #need because otherwise encounter (Selenium::WebDriver::Error::JavascriptError) JS is undefined
 
   page.execute_script("document.getElementsByClassName('_oi20134')[0].childNodes[1].childNodes[1].style.opacity = 10") #allow you select tickets because opacity is set to 0
