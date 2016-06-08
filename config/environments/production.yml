@@ -22,7 +22,6 @@ partners:
   mlb_shop_discount: "A discount of 15% was successfully applied to your order."
   mlb_shop_discount_amount: "-$18.00"
   caesars_hotels: https://www.caesars.com
-  seaworld_url: http://seaworldparks.com/seaworld-orlando/waves-of-honor/veterans
   underarmour_url: https://www.underarmour.com/en-us/men-s-ua-streaker-run-v-neck-t-shirt/pid1276515-016
   underarmour_item_subtotal: "Items: $34.99"
   underarmour_discount_amount: "Promotion: -$3.50"
@@ -35,6 +34,22 @@ partners:
   adidasgolf: http://adidasgolf.com/Puremotion-Short-Sleeve/DW-LBV48.html?dwvar_DW-LBV48_color=AE8964#start=1
   ashworthgolf: http://ashworthgolf.com/PRIMATEC-Pique-Solid-Novelty-Rib-Collar-Shirt/DW-KFZ18.html?dwvar_DW-KFZ18_color=AE4826#start=1
   adamsgolf: http://adamsgolf.com/Lightweight-Stand-Bag---ST1404/DW-JIV33.html?dwvar_DW-JIV33_color=M70608#start=1
+  seaworld:
+    orlando: http://seaworldparks.com/seaworld-orlando/waves-of-honor/veterans
+    san_antonio: https://seaworldparks.com/seaworld-sanantonio/waves-of-honor/active
+    busch_gardens_tampa: https://seaworldparks.com/buschgardens-tampa/waves-of-honor/active
+    busch_gardens_williamsburg: https://seaworldparks.com/buschgardens-williamsburg/waves-of-honor/active
+    san_diego_teacher: https://seaworldparks.com/en/seaworld-sandiego/educational-programs/teachers
+    orlando_teacher: https://seaworldparks.com/en/seaworld-orlando/educational-programs/teacher-programs/seaworld-florida-teacher-card
+    san_diego_military: https://seaworldparks.com/seaworld-sandiego/waves-of-honor/active
+    sesame_place: https://sesameplace.com/langhorne/waves-of-honor/active/
+    aquatica_san_diego: https://aquaticabyseaworld.com/sandiego/waves-of-honor/active
+    adventure_island_tampa: https://adventureisland.com/tampa/waves-of-honor/active
+    water_country_usa: https://watercountryusa.com/williamsburg/waves-of-honor/active
+    orlando_veteran: https://seaworldparks.com/en/seaworld-orlando/waves-of-honor/veterans
+    busch_gardens_tampa_veteran: https://seaworldparks.com/buschgardens-tampa/waves-of-honor/veterans
+    busch_gardens_williamsburg_veteran: https://seaworldparks.com/buschgardens-williamsburg/waves-of-honor/veterans
+    sesame_place_veteran: https://sesameplace.com/langhorne/waves-of-honor/veteran
   bodybuilding_hlp: https://hosted-pages.id.me/bodybuilding-military-discount?offer_id=25202
   bodybuilding: http://www.bodybuilding.com/store/bsn/synth.html
   moosejaw: http://www.moosejaw.com/moosejaw/shop/product_Arcteryx-Men-s-Captive-SS-Polo_10235054_10208_10000001_-1_

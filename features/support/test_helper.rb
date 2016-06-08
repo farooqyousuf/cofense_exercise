@@ -1,7 +1,8 @@
 # general module helpers for step definitions
 module HelperMethods
 
-  def sign_in_with_idme
+  def sign_in_with_idme 
+    #TODO figure out why you alotted two identical sign_in_with_idme in manual_helper.rb too
     if page.has_content? "Sign in"
       fill_in "user_email", :with => FigNewton.partners.user
       fill_in "user_password", :with => FigNewton.partners.password
@@ -12,13 +13,12 @@ module HelperMethods
       click_link "Click here to continue"
     elsif page.has_text? "Authorize"
       click_button "Authorize"
-     #same problem where it's returning to this method, investagite that  
     elsif page.has_text? "Continue"
       click_link "Continue"
     end
   end
 
-  #TODO - Refactor the duplicategit l sign_in options we have right now
+  #TODO - Refactor the duplicate sign_in options we have right now to single
   def sign_in_with_idme_veteran 
     if page.has_content? "Sign in"
       fill_in "user_email", :with => FigNewton.test_user.military.veteran.user_email
