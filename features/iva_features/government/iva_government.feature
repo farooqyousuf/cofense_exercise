@@ -11,7 +11,7 @@ Feature: Government verification using .gov email
   @smoke @delete_user
   #unique email address
   Scenario: Successful verification with a Government email
-    * I submit the government verification form
+    * I submit the government verification form as a "unique" record
     * I submit the verification code for "Government Email"
     * I complete the verification process
     * I should be successfully verified as "Federal"
@@ -21,11 +21,11 @@ Feature: Government verification using .gov email
     * I should see error messages on required fields for "Government"
 
   Scenario: Dupe check attempt for Government verification
-    * I submit the government verification form as a dupe record
+    * I submit the government verification form as a "dupe" record
     * I should see the red alert box error message "We’re sorry, but we are unable to verify your credentials with the information you provided."
     * I verify the attempt is marked as "DUPLICATE"
 
   Scenario: Denied attempt for Government verification
-    * I submit the government verification form as a denied record
+    * I submit the government verification form as a "denied" record
     * I should see the red alert box error message "Please provide a valid government email address."
     * I verify the attempt is marked as "DENIED"
