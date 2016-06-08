@@ -23,7 +23,7 @@ class MilitaryEmail < IDmeBase
                         lname: @fake_last_name,
                         dob:   @dob)
       when "denied"
-        populate_fields(email: "farooq@id.me",
+        populate_fields(email: data.fetch("denied_email"),
                         fname: @fake_first_name,
                         lname: @fake_last_name,
                         dob:   @dob)

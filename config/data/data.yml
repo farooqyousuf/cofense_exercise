@@ -3,6 +3,7 @@ mil_email:
   dupe_fname: "Capybara"
   dupe_lname: "DoNotDelete"
   dupe_dob: "01/05/1985"
+  denied_email: "farooq@id.me"
 
 government:
   first_name: Farooq
