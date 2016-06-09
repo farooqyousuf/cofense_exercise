@@ -4,6 +4,8 @@ All notable changes to this project will be documented in this file. This projec
 ## 2.0.8 (06/08/2016)
 - QA-221: Add Seaworld Waves of Honor Partner Integration Test
 - HOTFIX: Refactored some Govt test code
+- QA-261: Denied test for military email
+- QA-245: Dupe test for military email
 
 ## 2.0.7 (06/07/2016)
 - HOTFIX: Fixed Police doc upload test
