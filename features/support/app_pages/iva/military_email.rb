@@ -7,7 +7,7 @@ class MilitaryEmail < IDmeBase
   include ErrorMessages
 
 
-  def verify(affiliation:, populate: true, type:)
+  def verify(affiliation:, populate: true, type: nil)
     find("[data-option=#{container_attribute}]").find(".verification-header").click
     populate_affiliation(affiliation)
 
@@ -42,7 +42,7 @@ class MilitaryEmail < IDmeBase
         %w(first_name last_name).each do |field|
           fill_in field, :with => Faker::Name.send(field)
         end
-        2.times {fill_in "birth_date", :with => "01/01/1985"}
+        2.times {fill_in "birth_date", :with => @dob}
         select_option(container_attribute, "#s2id_service_subgroup_id", "Veteran")
       end
 
@@ -58,8 +58,8 @@ class MilitaryEmail < IDmeBase
   def build_fake_info
     @fake_first_name = Faker::Name.first_name
     @fake_last_name = Faker::Name.last_name
+    @dob = Faker::Date.birthday.strftime("%m%d%Y")
     @unique_email = @fake_last_name+"#{rand(6 ** 8)}"+"@id.me"
-    @dob = "01/05/1985"
   end
 
   def populate_fields(email:, fname:, lname:, dob:)
@@ -67,7 +67,7 @@ class MilitaryEmail < IDmeBase
     fill_in "service_member_last_name", with: lname
     2.times {fill_in "service_member_birth_date", with: dob}
     %w(email email_confirmation).each do |field|
-      2.times {fill_in field, :with => email}
+      fill_in field, :with => email
     end
   end
 
