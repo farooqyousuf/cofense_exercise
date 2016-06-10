@@ -47,8 +47,7 @@ fail_experian:
   social_confirm: 222222222
   street: 3929 Main Road
   city: Richmond
-  state: VA
-  state_dropdown: Virginia
+  state: Virginia
   zip: 23219
 
 experian_user:

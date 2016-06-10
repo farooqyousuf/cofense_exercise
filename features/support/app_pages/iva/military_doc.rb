@@ -52,7 +52,7 @@ class MilitaryDoc < IDmeBase
       2.times {fill_in field, :with => data.fetch(field)}
     end
 
-    populate_state(data.fetch("state_dropdown"))
+    populate_state(data.fetch("state"))
   end
 
   def container_attribute
