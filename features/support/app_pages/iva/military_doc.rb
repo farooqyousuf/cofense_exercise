@@ -6,13 +6,22 @@ class MilitaryDoc < IDmeBase
   include Capybara::DSL
   include ErrorMessages
 
-  def verify(affiliation:, populate: true, dupe: false)
+  def verify(affiliation:, populate: true, type: "none")
     find("[data-option=#{container_attribute}]").find(".verification-header").click
 
     populate_affiliation(affiliation)
 
     if populate
-      populate_fields(data_for(:mil_doc))
+
+      unique_data = data_for(:mil_doc)
+      denied_data = data_for(:fail_experian)
+
+      case type
+      when "unique"
+        populate_fields(data: unique_data)
+      when "denied"
+        populate_fields(data: denied_data)
+      end
 
       if ["Military Family", "Military Spouse"].include?(affiliation)
         %w(first_name last_name birth_date).each do |field|
@@ -23,15 +32,17 @@ class MilitaryDoc < IDmeBase
 
       click_verify_button
 
+    end
+
+    if type == "unique"
       #attach dd214 doc
       populate_dd214_type("DD214 - Other")
       attach_doc
+      click_verify_button
     end
-
-    click_verify_button
   end
 
-  def populate_fields(data)
+  def populate_fields(data:)
     #fill reqd fields
     %w(service_member_first_name service_member_last_name social social_confirm street city).each do |field|
       fill_in field, :with => data.fetch(field)
@@ -41,7 +52,7 @@ class MilitaryDoc < IDmeBase
       2.times {fill_in field, :with => data.fetch(field)}
     end
 
-    populate_state(data.fetch("state"))
+    populate_state(data.fetch("state_dropdown"))
   end
 
   def container_attribute
