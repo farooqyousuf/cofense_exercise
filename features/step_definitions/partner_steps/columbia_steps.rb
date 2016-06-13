@@ -13,8 +13,9 @@ Given(/^COLUMBIA \- I add a item to the cart and checkout$/) do
 
 	visit "http://www.columbia.com/mens-zero-rules-short-sleeve-shirt-AM6464.html?cgid=men-shirts-shortsleeve&dwvar_AM6464_variationColor=845#start=1"
 	find(".variationboxes").first(".swatchanchor").click
-
+	sleep 1
 	click_button "Add to Cart"
+	sleep 2 
 end
 
 Given(/^COLUMBIA \- I verify that a discount has been applied$/) do
@@ -24,6 +25,8 @@ Given(/^COLUMBIA \- I verify that a discount has been applied$/) do
 	original_product_amt_string = find(".item-price").text
 	actual_product_discounted_amt_string = find(".price-adjusted-total").text
 
-  discount_applied = verify_discount(original_product_amt_string, actual_product_discounted_amt_string, ".15",:verify_discounted_total => true) 
+  discount_applied = verify_discount(original_product_amt_string, actual_product_discounted_amt_string, ".15",:verify_discount_total => true) 
+  binding.pry
   expect(discount_applied).to be(true)
+
 end
