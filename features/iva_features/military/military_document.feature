@@ -43,13 +43,10 @@ Feature: Military verification using document upload
     * I complete the verification process
     * I should be successfully verified as "Military Family"
 
-  # commented out supporter as this option is not being used in production currently
-  # @delete_experian_user1
-  # Scenario: Successful verification as a Military Supporter
-  #   * I verify using military documentation for "Military Supporter"
-  #   * I approve the document in IDme admin
-  #   * I complete the verification process
-  #   * I should be successfully verified as "Military Supporter"
+ Scenario: Denied attempt for Military Document verification
+    * I submit the military document verification form as a "denied" record
+    * I should see the red alert box error message "We're sorry, but we were unable to verify the information you provided. The information entered must match the information on official records. Note: If you've recently had a name change, try your maiden or prior name."
+    * I verify the attempt is marked as "DENIED"
 
  Scenario: Successfully prompt for all required fields for Service Member
     * I submit the empty military document form for "Service Member"
@@ -75,3 +72,11 @@ Scenario: Successfully prompt for all required fields for Military Family
 # Scenario: Successfully prompt for all required fields for Military Supporter
 #     * I submit the empty military document form for "Military Supporter"
 #     * I should see error messages on required fields for "Military Document"
+
+  # commented out supporter as this option is not being used in production currently
+  # @delete_experian_user1
+  # Scenario: Successful verification as a Military Supporter
+  #   * I verify using military documentation for "Military Supporter"
+  #   * I approve the document in IDme admin
+  #   * I complete the verification process
+  #   * I should be successfully verified as "Military Supporter"

@@ -6,6 +6,7 @@ Given(/^I verify the attempt is marked as "([^"]*)"$/) do |status|
   @admin_verif_attempts = AdminVerificationAttempts.new
   sleep 1
   all(".#{status}".downcase)[0].text.should == status
+  click_link("Logout")
 end
 
 Given(/^I should be on the Shop Homepage$/) do

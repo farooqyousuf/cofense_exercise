@@ -1,9 +1,11 @@
 Given(/^I verify using SCRA for "([^"]*)"$/) do |affiliation|
-  @military_scra = MilitarySCRA.new
-  @military_scra.verify(affiliation)
+  MilitarySCRA.new.verify(affiliation: affiliation, type: "unique")
 end
 
 Given(/^I submit the empty SCRA form for "([^"]*)"$/) do |group|
-  @military_scra = MilitarySCRA.new
-  @military_scra.verify(group, false)
+  MilitarySCRA.new.verify(affiliation: group, populate: false)
+end
+
+Given(/^I submit the military scra verification form as a "([^"]*)" record$/) do |type|
+  MilitarySCRA.new.verify(affiliation: "Service Member", type: type)
 end

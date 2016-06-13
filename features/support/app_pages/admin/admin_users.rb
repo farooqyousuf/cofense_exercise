@@ -59,6 +59,13 @@ include JavascriptAlerts
     delete_user
   end
 
+  def delete_scra_denied_user
+    search_for_user("Johnn Joness")
+    sleep 1
+    open_newest
+    delete_user
+  end
+
   def delete_scra_user1
     search_for_user("John Jones")
     sleep 1
