@@ -6,7 +6,7 @@ class MilitarySCRA < IDmeBase
   include Capybara::DSL
   include ErrorMessages
 
-  def verify(affiliation, populate = true)
+  def verify(affiliation:, populate: true, type: nil)
     find("[data-option='service-record']").find(".verification-header").click
     populate_affiliation(affiliation)
 
@@ -21,7 +21,16 @@ class MilitarySCRA < IDmeBase
     end
 
     if populate
-      populate_fields(data_for(data_set))
+
+      data = data_for(data_set) #info for unique user
+      data_denied = data_for(:scra_denied_data) #info for denied user
+
+      case type
+      when "unique"
+        populate_fields(data: data)
+      when "denied"
+        populate_fields(data: data_denied)
+      end
 
       if ["Military Spouse", "Military Family"].include?(affiliation)
         %w(first_name last_name birth_date).each do |field|
@@ -35,7 +44,7 @@ class MilitarySCRA < IDmeBase
     click_verify_button
   end
 
-  def populate_fields(data)
+  def populate_fields(data:)
     %w(service_member_first_name service_member_last_name social social_confirm).each do |field|
       fill_in field, :with => data.fetch(field)
     end

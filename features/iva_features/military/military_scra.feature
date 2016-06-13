@@ -32,18 +32,17 @@ Feature: Military verification using SCRA credentials
     * I complete the verification process
     * I should be successfully verified as "Military Family"
 
-  # commented out supporter as this option is not being used in production currently
-  # @delete_scra_user5
-  # Scenario: Successful verification as Military Supporter
-  #   * I verify using SCRA for "Military Supporter"
-  #   * I complete the verification process
-  #   * I should be successfully verified as "Retiree"
-
   @delete_scra_user5
   Scenario: Successful verification as Retiree
     * I verify using SCRA for "Retiree"
     * I complete the verification process
     * I should be successfully verified as "Retiree"
+
+  @delete_scra_denied_user
+  Scenario: Denied attempt for military scra verification
+    * I submit the military scra verification form as a "denied" record
+    * I should see the red alert box error message "We're sorry, but we were unable to verify your military status with the information you provided. Please utilize the name you held when discharged, and be sure to use an active duty date from the middle of your period of service. Note that Reservists, National Guardsmen, and all pre-1985 Veterans, must verify by uploading documentation. For additional information, please see our Support page."
+    * I verify the attempt is marked as "DENIED"
 
   Scenario: Successfully prompt for all required fields for Service Member
     * I submit the empty SCRA form for "Service Member"
@@ -57,11 +56,6 @@ Feature: Military verification using SCRA credentials
     * I submit the empty SCRA form for "Retiree"
     * I should see error messages on required fields for "SCRA"
 
-  # commented out supporter as this option is not being used in production currently
-  # Scenario: Successfully prompt for all required fields for Military Supporter
-  #   * I submit the empty SCRA form for "Military Supporter"
-  #   * I should see error messages on required fields for "SCRA"
-
   Scenario: Successfully prompt for all required fields for Military Spouse
     * I submit the empty SCRA form for "Military Spouse"
     * I should see error messages on required fields for "SCRA Family"
@@ -69,3 +63,15 @@ Feature: Military verification using SCRA credentials
   Scenario: Successfully prompt for all required fields for Military Family
     * I submit the empty SCRA form for "Military Spouse"
     * I should see error messages on required fields for "SCRA Family"
+
+# commented out supporter as this option is not being used in production currently
+  # Scenario: Successfully prompt for all required fields for Military Supporter
+  #   * I submit the empty SCRA form for "Military Supporter"
+  #   * I should see error messages on required fields for "SCRA"
+
+# commented out supporter as this option is not being used in production currently
+  # @delete_scra_user5
+  # Scenario: Successful verification as Military Supporter
+  #   * I verify using SCRA for "Military Supporter"
+  #   * I complete the verification process
+  #   * I should be successfully verified as "Retiree"

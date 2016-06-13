@@ -1,6 +1,9 @@
 Change Log
 
 All notable changes to this project will be documented in this file. This project does not adhere to [Semantic Versioning](http://semver.org/)
+## 2.1.0 (06/13/2016)
+- QA-262: Denied user test for military scra
+
 ## 2.0.9 (06/10/2016)
 - QA-259: Military doc denied test
 

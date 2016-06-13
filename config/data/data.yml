@@ -124,6 +124,14 @@ scra_service_member:
   social_confirm: 000149876
   service_date: 04/05/2016
 
+scra_denied_data:
+  service_member_first_name: Johnn
+  service_member_last_name: Joness
+  service_member_birth_date: 05/25/1989
+  social: 000149876
+  social_confirm: 000149876
+  service_date: 04/05/2016
+
 scra_veteran:
   service_member_first_name: Harry
   service_member_last_name: Dune

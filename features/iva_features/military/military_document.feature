@@ -43,7 +43,7 @@ Feature: Military verification using document upload
     * I complete the verification process
     * I should be successfully verified as "Military Family"
 
-  Scenario: Denied attempt for Military Document verification
+ Scenario: Denied attempt for Military Document verification
     * I submit the military document verification form as a "denied" record
     * I should see the red alert box error message "We're sorry, but we were unable to verify the information you provided. The information entered must match the information on official records. Note: If you've recently had a name change, try your maiden or prior name."
     * I verify the attempt is marked as "DENIED"
