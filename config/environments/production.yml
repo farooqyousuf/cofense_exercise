@@ -55,6 +55,10 @@ partners:
   moosejaw: http://www.moosejaw.com/moosejaw/shop/product_Arcteryx-Men-s-Captive-SS-Polo_10235054_10208_10000001_-1_
   atlantis_hlp: https://hosted-pages.id.me/atlantis-military-discount
   dell_hlp: https://hosted-pages.id.me/dell-saluting-service-members?offer_id=25186
+  columbia_sport:
+    hlp_page: https://hosted-pages.id.me/columbia-military?offer_id=25204
+    product_page: http://www.columbia.com/mens-zero-rules-short-sleeve-shirt-AM6464.html?cgid=men-shirts-shortsleeve&dwvar_AM6464_variationColor=845#start=1
+    shopping_cart_page: https://www.columbia.com/cart
 
 oauth:
   facebook_user: qa@id.me
