@@ -26,7 +26,6 @@ Given(/^COLUMBIA \- I verify that a discount has been applied$/) do
 	actual_product_discounted_amt_string = find(".price-adjusted-total").text
 
   discount_applied = verify_discount(original_product_amt_string, actual_product_discounted_amt_string, ".15",:verify_discount_total => true) 
-  binding.pry
   expect(discount_applied).to be(true)
 
 end
