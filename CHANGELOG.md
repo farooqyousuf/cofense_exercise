@@ -4,6 +4,8 @@ All notable changes to this project will be documented in this file. This projec
 ## 2.1.1 (06/14/2016)
 - QA-224: Add Dell HLP Integration
 - QA-228: Add Columbia Sport HLP Integration
+- QA-264: Denied test for EMT lookup
+
 ## 2.1.0 (06/13/2016)
 - QA-262: Denied user test for military scra
 
