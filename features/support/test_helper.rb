@@ -9,7 +9,7 @@ module HelperMethods
       click_button "Sign in"
     end
 
-    click_link "Continue"
+    click_link "Continue" #currently all partners have been authorized with test user so this will speed up the test suite
     # if page.has_text? "Click here to continue"
     #   click_link "Click here to continue"
     # elsif page.has_text? "Authorize"
@@ -86,27 +86,29 @@ module HelperMethods
     @admin_users.visit
   end
 
-   def verify_discount(original_product_amt_string, actual_product_discounted_amt_string, discount_percentage, options={})
-   exact_match = options[:exact_match]
-   verify_discount_total = options[:verify_discount_total]
-   full_price = original_product_amt_string.delete "$"
+  def verify_discount(original_product_amt_string, actual_product_discounted_amt_string, discount_percentage, options={})
+    #TODO : this whole method needs to be refactored and more semanticaly named
+    exact_match = options[:exact_match]
+    verify_discount_total = options[:verify_discount_total]
+    full_price = original_product_amt_string.delete "$"
 
-  if exact_match
-    calc_discount_amt = ( full_price.to_f * discount_percentage.to_f ).to_i
-  else 
-    calc_discount_amt =  should_round_amt(full_price,discount_percentage)
-  end 
+    if exact_match
+      calc_discount_amt = ( full_price.to_f * discount_percentage.to_f ).to_i
+    else 
+      calc_discount_amt =  should_round_amt(full_price,discount_percentage)
+    end 
 
-   full_price = original_product_amt_string.delete "$"
+    full_price = original_product_amt_string.delete "$"
 
-   if verify_discount_total
-     #TODO: rename this whole conditional variable and even move it out to its own method
-     original_total = original_product_amt_string[0] = ""
-     discount_total = actual_product_discounted_amt_string[0] =""
-     actual_discount_amt = original_product_amt_string.to_f - actual_product_discounted_amt_string.to_f 
-   else 
-    actual_discount_amt = /\d{1,3}[,\\.]?(\\d{1,2})?/.match(actual_product_discounted_amt_string)[0].chop.to_i
-   end 
+    if verify_discount_total
+      #TODO : rename this whole conditional variable and even move it out to its own method but it works right now
+      original_total = original_product_amt_string.delete "$"
+      discount_total = actual_product_discounted_amt_string.delete "$"
+      actual_discount_amt = original_product_amt_string.to_f - actual_product_discounted_amt_string.to_f 
+    else 
+      actual_discount_amt = /\d{1,3}[,\\.]?(\\d{1,2})?/.match(actual_product_discounted_amt_string)[0].chop.to_i
+    end 
+    
    return actual_discount_amt == calc_discount_amt 
   end 
 
