@@ -6,19 +6,28 @@ class LookupEMT < IDmeBase
   include Capybara::DSL
   include ErrorMessages
 
-  def verify(populate = true)
+  def verify(populate: true, type: nil)
     find("[data-option=#{container_attribute}]").find(".verification-header").click
     choose("emt_level_state")
     populate_first_state("Alaska")
 
     if populate
-      populate_fields(data_for(:experian_user))
+
+      data = data_for(:experian_user) #info for unique user
+      denied_data = data_for(:fail_experian) #info for denied user
+
+      case type
+      when "unique"
+        populate_fields(data: data)
+      when "denied"
+        populate_fields(data: denied_data)
+      end
     end
 
     click_verify_button
   end
 
-  def populate_fields(data)
+  def populate_fields(data:)
     %w(first_name last_name social social_confirm street city emt_city emt_county).each do |field|
         fill_in field, :with => data.fetch(field)
     end
