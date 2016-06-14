@@ -1,5 +1,5 @@
 Given(/^COLUMBIA \- I visit the military HLP and verify$/) do
-	visit FigNewton.partners.columbia_sport_hlp
+	visit FigNewton.partners.columbia_sport.hlp_page
 
 	new_window = window_opened_by { find(".idme-trigger").click }
 
@@ -11,7 +11,7 @@ end
 Given(/^COLUMBIA \- I add a item to the cart and checkout$/) do
 	find(".modal-close").click 
 
-	visit "http://www.columbia.com/mens-zero-rules-short-sleeve-shirt-AM6464.html?cgid=men-shirts-shortsleeve&dwvar_AM6464_variationColor=845#start=1"
+	visit FigNewton.partners.columbia_sport.product_page
 	find(".variationboxes").first(".swatchanchor").click
 	sleep 1
 	click_button "Add to Cart"
@@ -19,7 +19,7 @@ Given(/^COLUMBIA \- I add a item to the cart and checkout$/) do
 end
 
 Given(/^COLUMBIA \- I verify that a discount has been applied$/) do
-	visit "https://www.columbia.com/cart"
+	visit FigNewton.partners.columbia_sport.shopping_cart_page
 	expect(page).to have_css(".promo-adjustment",:text=>'Thank you for your service')
 
 	original_product_amt_string = find(".item-price").text
