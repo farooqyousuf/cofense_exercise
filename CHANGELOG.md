@@ -1,6 +1,9 @@
 Change Log
 
 All notable changes to this project will be documented in this file. This project does not adhere to [Semantic Versioning](http://semver.org/)
+## 2.1.2 (06/15/2016)
+- QA-264: Denied attempt test for EMT National
+
 ## 2.1.1 (06/14/2016)
 - QA-224: Add Dell HLP Integration
 - QA-228: Add Columbia Sport HLP Integration
