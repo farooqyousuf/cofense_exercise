@@ -49,6 +49,9 @@ fail_experian:
   city: Richmond
   state: Virginia
   zip: 23219
+  emt_city: McLean
+  emt_county: Fairfax
+  emt_zip: 12345
 
 experian_user:
   school: George Mason University
