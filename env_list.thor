@@ -52,7 +52,7 @@ class Set < Thor
     copy_environment("ios_saucelabs")
   end
 
-  desc "chrome_osx", "Use Chrome on OSX on Sauce Labs on Production"
+  desc "chrome_osx", "Use Chrome on OSX locally on staging"
   def chrome_osx
     copy_environment("chrome_osx")
   end
