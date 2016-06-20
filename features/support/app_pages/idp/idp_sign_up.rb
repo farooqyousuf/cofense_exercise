@@ -7,7 +7,7 @@ class IDPSignUp < IDmeBase
   attr_reader :username
 
   def initialize
-    super("#{FigNewton.idp.base_url}/registrations/new")
+    super("#{FigNewton.idp.base_url}/registration/new")
   end
 
   def user_email_css
