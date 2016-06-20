@@ -32,7 +32,7 @@ class Police < IDmeBase
     end
   end
 
-  def populate_fields(data: )
+  def populate_fields(data: nil)
     populate_first_state(data.fetch("state"))
 
     %w(first_name last_name social social_confirm street city zip).each do |field|
