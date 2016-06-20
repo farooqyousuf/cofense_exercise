@@ -15,6 +15,11 @@ Feature: Responder verification as a police officer
     * I complete the verification process
     * I should be successfully verified as "Police Officer"
 
-Scenario: Successful prompt for all required fields for Police Officer
+  Scenario: Denied attempt for police verification
+    * I submit the police verification form as a "denied" record
+    * I should see the red alert box error message "We're sorry, but we were unable to verify the information you provided. The information entered must match the information on official records. Note: If you've recently had a name change, try your maiden or prior name."
+    * I verify the attempt is marked as "DENIED"
+
+  Scenario: Successful prompt for all required fields for Police Officer
     * I submit the empty Police form
     * I should see error messages on required fields for "Police"
