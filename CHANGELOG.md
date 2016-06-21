@@ -3,6 +3,7 @@ Change Log
 All notable changes to this project will be documented in this file. This project does not adhere to [Semantic Versioning](http://semver.org/)
 ## 2.1.4 (06/21/2016)
 - QA-277: Add Outline for Verify Group Affiliation page and verify military
+- HOTFIX: Increased wait time for Firefox staging env file
 
 ## 2.1.3 (06/20/2016)
 - HOTFIX: Update IDP Signup url
