@@ -13,6 +13,10 @@ class MarketplaceLandingPage < IDmeBase
     click_sign_in
   end
 
+  def sign_up
+    first(:link, :text=> "Sign Up").click 
+  end 
+
   def sign_out
     click_link("Sign Out")
   end
