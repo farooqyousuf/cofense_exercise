@@ -16,6 +16,11 @@ Feature: Responder verification as a firefighter using document upload
     * I complete the verification process
     * I should be successfully verified as "Firefighter"
 
-Scenario: Successful prompt for all required fields for Firefighter Doc Upload
+  Scenario: Denied attempt for firefighter doc upload verification
+    * I submit the firefighter doc upload verification form as a "denied" record
+    * I should see the red alert box error message "We're sorry, but we were unable to verify the information you provided. The information entered must match the information on official records. Note: If you've recently had a name change, try your maiden or prior name."
+    * I verify the attempt is marked as "DENIED"
+
+  Scenario: Successful prompt for all required fields for Firefighter Doc Upload
     * I submit the empty Firefighter doc upload form
     * I should see error messages on required fields for "Firefighter doc upload"
