@@ -13,6 +13,11 @@ Feature: Responder verification as a ProBoard Firefighter
     * I complete the verification process
     * I should be successfully verified as "Firefighter"
 
-Scenario: Successful prompt for all required fields for ProBoard Firefighter
+  Scenario: Denied attempt for proboard firefighter verification
+    * I submit the proboard firefighter verification form as a "denied" record
+    * I should see the red alert box error message "We're sorry, but we were unable to verify your firefighter status with the information you provided. Please ensure your name and SSN are entered correctly and try again. For additional information, please see our Support page."
+    * I verify the attempt is marked as "DENIED"
+
+  Scenario: Successful prompt for all required fields for ProBoard Firefighter
     * I submit the empty ProBoard Firefighter form
     * I should see error messages on required fields for "ProBoard Firefighter"

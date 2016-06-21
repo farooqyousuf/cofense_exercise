@@ -6,19 +6,28 @@ class PBFirefighter < IDmeBase
   include Capybara::DSL
   include ErrorMessages
 
-  def verify(populate = true)    
+  def verify(populate: true, type: "none")
     find("[data-option=#{container_attribute}]").find(".verification-header").click
     populate_first_state(data_for(:firefighter_proboard).fetch("state"))
     choose("proboard_status_certified")
 
     if populate
-       populate_fields(data_for(:firefighter_proboard))
+
+      unique_data = data_for(:firefighter_proboard)
+      denied_data = data_for(:denied_pb_fireman)
+
+      case type
+      when "unique"
+        populate_fields(data: unique_data)
+      when "denied"
+        populate_fields(data: denied_data)
+      end
     end
 
     click_verify_button
   end
 
-  def populate_fields(data)
+  def populate_fields(data:)
     %w(first_name last_name social social_confirm).each do |field|
       fill_in field, :with => data.fetch(field)
     end
