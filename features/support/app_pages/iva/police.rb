@@ -6,22 +6,33 @@ class Police < IDmeBase
   include Capybara::DSL
   include ErrorMessages
 
-  def verify(populate = true)
+  def verify(populate: true, type: nil)
 
     find("[data-option=#{container_attribute}]").find(".verification-header").click
 
     if populate
-      populate_fields(data_for(:experian_user))
-      click_verify_button
-      sleep 5
-      attach_doc(3)
+
+      data = data_for(:experian_user) #info for unique user
+      denied_data = data_for(:fail_experian) #info for denied user
+
+      case type
+      when "unique"
+        populate_fields(data: data)
+      when "denied"
+        populate_fields(data: denied_data)
+      end
     end
 
     click_verify_button
 
+    if type == "unique"
+      sleep 2
+      attach_doc(3)
+      click_verify_button
+    end
   end
 
-  def populate_fields(data)
+  def populate_fields(data: nil)
     populate_first_state(data.fetch("state"))
 
     %w(first_name last_name social social_confirm street city zip).each do |field|
