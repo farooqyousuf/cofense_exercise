@@ -9,7 +9,8 @@ Given(/^I click on the Marketplace Sign Up link$/) do
 end
 
 Given(/^I verify user "([^"]*)" Group Affiliation is approved on Marketplace$/) do |group_affiliation|
-	@user_identifier = find(".user-menu__header").text 
+	@admin_user_marketplace = AdminUsers.new
+	@admin_user_marketplace.record_test_user_email
 	expect(page).to have_css(".-verified", :text => group_affiliation)
 	expect(page).to have_css(".-verified .-checkmark-square",:visible => true)
 end

@@ -6,6 +6,7 @@ All notable changes to this project will be documented in this file. This projec
 - HOTFIX: Increased wait time for Firefox staging env file
 - QA-265: Denied Attempt Test for EMT Fireman Document
 - QA-266: Denied attept test for Proboard Fireman
+- QA-278: Delete test user in Marketplace after each Scenario
 
 ## 2.1.3 (06/20/2016)
 - HOTFIX: Update IDP Signup url

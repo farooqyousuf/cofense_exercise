@@ -2,7 +2,6 @@ require_relative "../base_classes/page_mgmt"
 require_relative "../base_classes/js_alerts"
 
 class AdminUsers < IDmeBase
-
 include PageManagement
 include JavascriptAlerts
 
@@ -135,6 +134,17 @@ include JavascriptAlerts
     open_newest
     delete_user
   end
+
+  def delete_marketplace_test_user
+    search_for_user(@user_identifier)
+    sleep 2
+    open_newest
+    delete_user
+  end 
+
+  def record_test_user_email
+    @user_identifier = find(".user-menu__header").text 
+  end 
 
   def search_for_user(string)
     find("input[type='search']").set string
