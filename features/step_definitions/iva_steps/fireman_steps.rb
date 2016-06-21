@@ -1,11 +1,15 @@
 ###Firefighter ProBoard Steps###
 
 Given(/^I verify using a ProBoard Firefighter$/) do
-  PBFirefighter.new.verify
+  PBFirefighter.new.verify(type: "unique")
 end
 
 Given(/^I submit the empty ProBoard Firefighter form$/) do
-  PBFirefighter.new.verify(false)
+  PBFirefighter.new.verify(populate: false)
+end
+
+Given(/^I submit the proboard firefighter verification form as a "([^"]*)" record$/) do |type|
+  PBFirefighter.new.verify(type: type)
 end
 
 

@@ -5,6 +5,7 @@ All notable changes to this project will be documented in this file. This projec
 - QA-277: Add Outline for Verify Group Affiliation page and verify military
 - HOTFIX: Increased wait time for Firefox staging env file
 - QA-265: Denied Attempt Test for EMT Fireman Document
+- QA-266: Denied attept test for Proboard Fireman
 
 ## 2.1.3 (06/20/2016)
 - HOTFIX: Update IDP Signup url
