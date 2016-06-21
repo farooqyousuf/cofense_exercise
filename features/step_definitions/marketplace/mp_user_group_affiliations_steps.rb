@@ -1,4 +1,5 @@
 Given(/^I select to verify the Military Group Affiliation$/) do
+	#TODO: refactor out to MarketplaceGroupAffiliationsPage object when add CSS scenario
   find(:link, :text =>"Military").click
 end
 
