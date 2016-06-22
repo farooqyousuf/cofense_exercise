@@ -15,6 +15,11 @@ Background:
     * I complete the verification process
     * I should be successfully verified
 
+  Scenario: Denied attempt for student doc upload verification
+    * I submit the student doc upload verification form as a "denied" record
+    * I should see the red alert box error message "We're sorry, but we were unable to verify the information you provided. The information entered must match the information on official records. Note: If you've recently had a name change, try your maiden or prior name."
+    * I verify the attempt is marked as "DENIED"
+
   Scenario: Successfully prompt for all required fields
     * I submit the empty Student form using "Student Document"
     * I should see error messages on required fields for "Student Document"

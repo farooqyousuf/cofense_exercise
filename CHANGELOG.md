@@ -5,6 +5,7 @@ All notable changes to this project will be documented in this file. This projec
 - QA-268: Denied attempt test for Student NSC verifier
 - QA-253: Dupe attempt test for Student NSC verifier
 - QA-279: Verify Marketplace Group Affilation page displays correctly
+- QA-269: Denied attempt test for student doc upload verifier
 
 
 ## 2.1.4 (06/21/2016)

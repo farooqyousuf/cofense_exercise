@@ -16,11 +16,15 @@ Given(/^I submit the empty Student form using "([^"]*)"$/) do |method|
   when "Student Credentials"
     StudentCreds.new.verify(populate: false)
   when "Student Document"
-    StudentDoc.new.verify(false)
+    StudentDoc.new.verify(populate: false)
   end
 end
 
 Given(/^I verify using student documentation$/) do
   step 'I generate a unique doc'
-  StudentDoc.new.verify
+  StudentDoc.new.verify(type: "unique")
+end
+
+Given(/^I submit the student doc upload verification form as a "([^"]*)" record$/) do |type|
+  StudentDoc.new.verify(type: type)
 end
