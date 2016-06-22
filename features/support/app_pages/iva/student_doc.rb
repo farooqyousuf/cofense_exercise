@@ -6,31 +6,44 @@ class StudentDoc < IDmeBase
   include Capybara::DSL
   include ErrorMessages
 
-  def verify(populate = true)
+  def verify(populate: true, type: "none")
     find("[data-option=#{container_attribute}]").find(".verification-header").click
+
       if populate
-        populate_fields(data_for(:experian_user))
+
+        unique_data = data_for(:experian_user) #info for unique user
+        denied_data = data_for(:fail_experian) #info for denied user
+
+        case type
+        when "unique"
+          populate_fields(data: unique_data)
+        when "denied"
+          populate_fields(data: denied_data)
+        end
+
       end
+
     click_verify_button
-      if populate
-        sleep 3
-        populate_doc
-        attach_doc
-        click_verify_button
-      end
+
+    if type == "unique"
+      sleep 3
+      populate_doc
+      attach_doc
+      click_verify_button
+    end
   end
 
-  def populate_fields(data)
+  def populate_fields(data:)
     populate_school(data.fetch("school"))
-    
+
     %w(first_name last_name street city social social_confirm).each do |field|
       fill_in field, :with => data.fetch(field)
     end
-      
+
     %w(birth_date zip).each do |field|
       2.times {fill_in field, :with => data.fetch(field)}
     end
-    
+
     populate_state(data.fetch("state"))
   end
 
