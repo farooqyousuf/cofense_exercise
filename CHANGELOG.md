@@ -5,6 +5,7 @@ All notable changes to this project will be documented in this file. This projec
 - QA-268: Denied attempt test for Student NSC verifier
 - QA-279: Verify Marketplace Group Affilation page displays correctly
 
+
 ## 2.1.4 (06/21/2016)
 - QA-277: Add Outline for Verify Group Affiliation page and verify military
 - HOTFIX: Increased wait time for Firefox staging env file
