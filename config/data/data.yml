@@ -5,12 +5,15 @@ mil_email:
   dupe_dob: 01/05/1985
   denied_email: farooq@id.me
 
-student_creds_denied:
+student_creds:
   school: George Mason University
   fname: Farooq
   lname: Yousuf
   dob: 01/05/1985
   denied_ssn: 1234
+  dupe_fname: Capybara
+  dupe_lname: DoNotDelete
+  dupe_ssn: 2221
 
 government:
   first_name: Farooq

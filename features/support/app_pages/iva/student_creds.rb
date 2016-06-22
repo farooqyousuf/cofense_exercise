@@ -12,7 +12,7 @@ class StudentCreds < IDmeBase
       if populate
 
         build_unique_info #info for unique and denied users
-        data = data_for(:student_creds_denied)
+        data = data_for(:student_creds) #info for denied and dupe users
 
         case type
         when "unique"
@@ -27,10 +27,14 @@ class StudentCreds < IDmeBase
                           lname:  data.fetch("lname"),
                           dob:    data.fetch("dob"),
                           ssn:    data.fetch("denied_ssn"))
+        when "duplicate"
+          populate_fields(school: data.fetch("school"),
+                          fname:  data.fetch("dupe_fname"),
+                          lname:  data.fetch("dupe_lname"),
+                          dob:    data.fetch("dob"),
+                          ssn:    data.fetch("dupe_ssn"))
         end
-
       end
-
     click_verify_button
   end
 
