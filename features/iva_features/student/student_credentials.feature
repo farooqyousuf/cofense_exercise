@@ -14,6 +14,11 @@ Feature: Student verification using student credentials
     * I complete the verification process
     * I should be successfully verified
 
+  Scenario: Denied attempt for student credentials verification
+    * I submit the student credentials verification form as a "denied" record
+    * I should see the red alert box error message "We're sorry, but our records indicate that you are no longer enrolled in this school. This sometimes occurs to students in a period of transition. If available, please try another verification option, or visit our Support page for more information."
+    * I verify the attempt is marked as "DENIED"
+
   Scenario: Successfully prompt for all required fields
     * I submit the empty Student form using "Student Credentials"
     * I should see error messages on required fields for "Student Credentials"

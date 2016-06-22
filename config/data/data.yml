@@ -1,9 +1,16 @@
 mil_email:
-  dupe_email: "donotdelete@id.me"
-  dupe_fname: "Capybara"
-  dupe_lname: "DoNotDelete"
-  dupe_dob: "01/05/1985"
-  denied_email: "farooq@id.me"
+  dupe_email: donotdelete@id.me
+  dupe_fname: Capybara
+  dupe_lname: DoNotDelete
+  dupe_dob: 01/05/1985
+  denied_email: farooq@id.me
+
+student_creds_denied:
+  school: George Mason University
+  fname: Farooq
+  lname: Yousuf
+  dob: 01/05/1985
+  denied_ssn: 1234
 
 government:
   first_name: Farooq
