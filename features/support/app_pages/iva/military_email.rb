@@ -14,18 +14,18 @@ class MilitaryEmail < IDmeBase
     if populate
 
       data = data_for(:mil_email) #info for duplicate user
-      build_fake_info #info for unique and denied users
+      build_unique_info #info for unique and denied users
 
       case type
       when "unique"
         populate_fields(email: @unique_email,
-                        fname: @fake_first_name,
-                        lname: @fake_last_name,
+                        fname: @unique_first_name,
+                        lname: @unique_last_name,
                         dob:   @dob)
       when "denied"
         populate_fields(email: data.fetch("denied_email"),
-                        fname: @fake_first_name,
-                        lname: @fake_last_name,
+                        fname: @unique_first_name,
+                        lname: @unique_last_name,
                         dob:   @dob)
       when "duplicate"
         populate_fields(email: data.fetch("dupe_email"),
@@ -55,11 +55,11 @@ class MilitaryEmail < IDmeBase
     select_option(container_attribute, ".military-affiliation", value)
   end
 
-  def build_fake_info
-    @fake_first_name = Faker::Name.first_name
-    @fake_last_name = Faker::Name.last_name
+  def build_unique_info
+    @unique_first_name = Faker::Name.first_name
+    @unique_last_name = Faker::Name.last_name
     @dob = Faker::Date.birthday.strftime("%m%d%Y")
-    @unique_email = @fake_last_name+"#{rand(6 ** 8)}"+"@id.me"
+    @unique_email = @unique_last_name+"#{rand(6 ** 8)}"+"@id.me"
   end
 
   def populate_fields(email:, fname:, lname:, dob:)

@@ -6,11 +6,31 @@ class StudentCreds < IDmeBase
   include Capybara::DSL
   include ErrorMessages
 
-  def verify(populate = true)
+  def verify(populate: true, type: "none")
     find("[data-option=#{container_attribute}]").find(".verification-header").click
+
       if populate
-       populate_fields(data_for(:experian_user))
+
+        build_unique_info #info for unique and denied users
+        data = data_for(:student_creds_denied)
+
+        case type
+        when "unique"
+          populate_fields(school: data.fetch("school"),
+                          fname:  @unique_first_name,
+                          lname:  @unique_last_name,
+                          dob:    @dob,
+                          ssn:    @random_ssn)
+        when "denied"
+          populate_fields(school: data.fetch("school"),
+                          fname:  data.fetch("fname"),
+                          lname:  data.fetch("lname"),
+                          dob:    data.fetch("dob"),
+                          ssn:    data.fetch("denied_ssn"))
+        end
+
       end
+
     click_verify_button
   end
 
@@ -18,23 +38,26 @@ class StudentCreds < IDmeBase
     "clearinghouse"
   end
 
-  def populate_fields(data)
-    populate_school(data.fetch("school"))
-    fill_in "first_name", with: Faker::Name.first_name
-    fill_in "last_name", with: Faker::Name.last_name
-    2.times {fill_in "birth_date", with: Faker::Date.birthday.strftime("%m%d%Y")}
-    populate_ssn
-  end
-  def populate_school(school)
-    search_option(container_attribute, ".schools", school)
+  def build_unique_info
+    #NSC requires a valid ssn to end with a 1 in their test env
+    @unique_first_name = Faker::Name.first_name
+    @unique_last_name = Faker::Name.last_name
+    @dob = Faker::Date.birthday.strftime("%m%d%Y")
+    @random_ssn = "#{Faker::Number.number(3)}1"
   end
 
-  def populate_ssn
-    #NSC requires a valid ssn to end with a 1 in their test env
-    random_ssn = Faker::Number.number(3)
+  def populate_fields(school:, fname:, lname:, dob:, ssn:)
+    populate_school(school)
+    fill_in "first_name", :with => fname
+    fill_in "last_name", :with => lname
+    2.times {fill_in "birth_date", :with => dob}
     %w(social social_confirm).each do |field|
-      fill_in field, :with => "#{random_ssn}1"
+      fill_in field, :with => ssn
     end
+  end
+
+  def populate_school(school)
+    search_option(container_attribute, ".schools", school)
   end
 
   def required_fields

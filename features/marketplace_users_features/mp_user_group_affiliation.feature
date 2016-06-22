@@ -5,10 +5,9 @@ Feature: Test User Group Affiliation Page & Verification Features
 		* I visit "MarketplaceLandingPage"
 		* I click on the Marketplace Sign Up link
     * I sign up as a new user
-    * I visit "MarketplaceGroupAffiliationsPage"
+    * I visit group affiliations from the shop homepage 
 
   Scenario: Check Group Affiliations page and tabs
-    * I visit group affiliations from the shop homepage 
     * I expect to be at the group affiliations page
     * I expect to see the verify group affiliations dashboard
     * I expect that all groups are marked as Instant VIP
