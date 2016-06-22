@@ -4,23 +4,23 @@ Given(/^I should be on the student verification screen$/) do
 end
 
 Given(/^I verify using student credentials$/) do
-  @student_creds = StudentCreds.new
-  @student_creds.verify
+  StudentCreds.new.verify(type: "unique")
+end
+
+Given(/^I submit the student credentials verification form as a "([^"]*)" record$/) do |type|
+  StudentCreds.new.verify(type: type)
 end
 
 Given(/^I submit the empty Student form using "([^"]*)"$/) do |method|
   case method
   when "Student Credentials"
-    @student_creds = StudentCreds.new
-    @student_creds.verify(false)
+    StudentCreds.new.verify(populate: false)
   when "Student Document"
-    @student_doc = StudentDoc.new
-    @student_doc.verify(false)
+    StudentDoc.new.verify(false)
   end
 end
 
 Given(/^I verify using student documentation$/) do
   step 'I generate a unique doc'
-  @student_doc = StudentDoc.new
-  @student_doc.verify
+  StudentDoc.new.verify
 end
