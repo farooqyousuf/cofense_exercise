@@ -19,6 +19,11 @@ Feature: Student verification using student credentials
     * I should see the red alert box error message "We're sorry, but our records indicate that you are no longer enrolled in this school. This sometimes occurs to students in a period of transition. If available, please try another verification option, or visit our Support page for more information."
     * I verify the attempt is marked as "DENIED"
 
+Scenario: Duplicate attempt for student credentials verification
+    * I submit the student credentials verification form as a "duplicate" record
+    * I should see the red alert box error message "We're sorry, but we were unable to confirm your enrollment in the school you selected. If available, please try another verification option, or visit our Support page for more information."
+    * I verify the attempt is marked as "DUPLICATE"
+
   Scenario: Successfully prompt for all required fields
     * I submit the empty Student form using "Student Credentials"
     * I should see error messages on required fields for "Student Credentials"
