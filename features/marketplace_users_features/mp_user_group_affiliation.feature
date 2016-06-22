@@ -7,6 +7,12 @@ Feature: Test User Group Affiliation Page & Verification Features
     * I sign up as a new user
     * I visit "MarketplaceGroupAffiliationsPage"
 
+  Scenario: Check Group Affiliations page and tabs
+    * I visit group affiliations from the shop homepage 
+    * I expect to be at the group affiliations page
+    * I expect to see the verify group affiliations dashboard
+    * I expect that all groups are marked as Instant VIP
+
   Scenario: Verify a Military Group Affiliation
   	* I select to verify the Military Group Affiliation 
   	* I should be on the military verification screen 
