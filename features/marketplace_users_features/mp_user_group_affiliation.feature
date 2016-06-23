@@ -19,4 +19,10 @@ Feature: Test User Group Affiliation Page & Verification Features
     * I submit the verification code for "Military Email Code"
     * I complete the verification process
     * I verify user "Military" Group Affiliation is approved on Marketplace
-
+    @optimus_prime
+  Scenario: Verify a Student Group Affiliation
+    * I select to verify the Student Group Affiliation
+    * I should be on the student verification screen
+    * I verify using student credentials
+    * I complete the verification process
+    * I verify user "Students" Group Affiliation is approved on Marketplace

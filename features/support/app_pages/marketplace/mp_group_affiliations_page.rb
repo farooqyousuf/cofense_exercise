@@ -16,4 +16,8 @@ class MarketplaceGroupAffiliationsPage < IDmeBase
 	def click_verify_military_affiliation_link
 		find(:link, :text =>"Military").click
 	end 
+
+	def click_verify_student_affiliation_link
+		find(:link, :text =>"Students").click
+	end 
 end 
