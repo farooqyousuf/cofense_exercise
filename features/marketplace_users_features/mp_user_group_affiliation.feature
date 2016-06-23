@@ -20,3 +20,10 @@ Feature: Test User Group Affiliation Page & Verification Features
     * I complete the verification process
     * I verify user "Military" Group Affiliation is approved on Marketplace
 
+  Scenario: Verify a Government Group Affiliation
+    * I select to verify the Government Group Affiliation
+    * I should be on the government verification screen
+    * I submit the government verification form as a "unique" record
+    * I submit the verification code for "Government Email"
+    * I complete the verification process
+    * I verify user "Government Employees" Group Affiliation is approved on Marketplace
