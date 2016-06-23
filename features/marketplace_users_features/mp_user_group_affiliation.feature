@@ -19,4 +19,13 @@ Feature: Test User Group Affiliation Page & Verification Features
     * I submit the verification code for "Military Email Code"
     * I complete the verification process
     * I verify user "Military" Group Affiliation is approved on Marketplace
+  @teacher_group
+  Scenario: Verify a Teacher Group Affiliation
+    * I select to verify the Teacher Group Affiliation
+    * I should be on the teacher verification screen
+    * I verify using teacher credentials with "no license and no ssn"
+    * I approve the teacher verification in IDme admin
+    * I complete the verification process
+    * I verify user "Teachers" Group Affiliation is approved on Marketplace
+
 
