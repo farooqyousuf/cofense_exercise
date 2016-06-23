@@ -3,6 +3,7 @@ Change Log
 All notable changes to this project will be documented in this file. This project does not adhere to [Semantic Versioning](http://semver.org/)
 ## 2.1.6 (06/23/2016)
 - QA-286: Verify Marketplace Group Affiliation for First Responders 
+- QA-287: Verify Marketplace Group Affiliation for Teachers
 
 ## 2.1.5 (06/22/2016)
 - QA-268: Denied attempt test for Student NSC verifier
