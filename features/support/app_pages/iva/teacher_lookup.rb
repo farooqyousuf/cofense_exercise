@@ -6,23 +6,48 @@ class TeacherLookup < IDmeBase
   include Capybara::DSL
   include ErrorMessages
 
-  def verify(state, populate = true)
+  def verify(state: "Delaware", populate: true, type: "unique")
     populate_first_state(state)
-      if populate == true
-        populate_fields(state)
+
+      if populate
+
+        build_unique_info #info for unique and denied users
+
+        case type
+        when "unique", "denied"
+          populate_fields(state:          state,
+                          fname:          @fname,
+                          lname:          @lname,
+                          dob:            @dob,
+                          teacher_city:   @teacher_city,
+                          district:       @district,
+                          school:         @school)
+        when "dupe"
+          #populate_fields() #work in progress
+        end
+
       end
     click_verify_button
   end
-  
-  def populate_fields(state)
-    fill_in "first_name", with: Faker::Name.first_name
-    fill_in "last_name", with: Faker::Name.last_name
-    2.times {fill_in "birth_date", with: Faker::Date.birthday.strftime("%m%d%Y")}
-    
-    %w(teacher_city district).each do |field|
-      fill_in field, :with => Faker::Address.city
-    end
-    fill_in "school", with: Faker::University.name
+
+  def build_unique_info
+    @fname = Faker::Name.first_name
+    @lname = Faker::Name.last_name
+    @dob = Faker::Date.birthday.strftime("%m%d%Y")
+    @teacher_city = Faker::Address.city
+    @district = Faker::Address.city
+    @school = Faker::University.name
+    @teacher_number = Faker::Number.number(10) #teacher license number
+    @ssn = "1111"
+  end
+
+  def populate_fields(state:, fname:, lname:, dob:, teacher_city:, district:, school:)
+    fill_in "first_name", :with => fname
+    fill_in "last_name", :with => lname
+    fill_in "teacher_city", :with => teacher_city
+    fill_in "district", :with => district
+    fill_in "school", :with => school
+    2.times {fill_in "birth_date", :with => dob}
 
     case state
     when "Michigan"
@@ -36,12 +61,12 @@ class TeacherLookup < IDmeBase
   end
 
   def fill_teacher_license_number
-    fill_in "teacher_number", with: Faker::Number.number(10) #teacher license number
+    fill_in "teacher_number", :with => @teacher_number #teacher license number
   end
 
   def fill_short_ssn
     %w(social social_confirm).each do |field|
-      fill_in field, :with => "1111"
+      fill_in field, :with => @ssn
     end
   end
 
