@@ -20,3 +20,9 @@ Feature: Test User Group Affiliation Page & Verification Features
     * I complete the verification process
     * I verify user "Military" Group Affiliation is approved on Marketplace
 
+  Scenario: Verify a First Responder Group Affiliation
+    * I select to verify the First Responder Group Affiliation
+    * I should be on the responder verification screen
+    * I verify using a ProBoard Firefighter
+    * I complete the verification process
+    * I verify user "First Responders" Group Affiliation is approved on Marketplace
