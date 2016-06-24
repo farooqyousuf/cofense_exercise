@@ -8,6 +8,10 @@ Given(/^I select to verify the Military Group Affiliation$/) do
   @marketplace_group_affiliations_page.click_verify_military_affiliation_link
 end
 
+Given(/^I select to verify the Student Group Affiliation$/) do
+  @marketplace_group_affiliations_page.click_verify_student_affiliation_link
+end 
+
 Given(/^I select to verify the Government Group Affiliation$/) do
   @marketplace_group_affiliations_page.click_verify_government_affiliation_link
 end

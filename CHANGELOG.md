@@ -5,6 +5,7 @@ All notable changes to this project will be documented in this file. This projec
 - QA-270: Denied attempt test for Teacher Doc Upload verifier
 - QA-287: Verify Marketplace Group Affiliation for Teachers
 - QA-288: Verify Marketplace Group Affiliation for Govt Employees
+- QA-289: Verify Marketplace Group Affiliation for Students
 
 ## 2.1.6 (06/23/2016)
 - QA-286: Verify Marketplace Group Affiliation for First Responders 
