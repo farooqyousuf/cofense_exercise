@@ -4,8 +4,11 @@ Given(/^I should be on the teacher verification screen$/) do
 end
 
 Given(/^I verify using teacher documentation$/) do
-  @teacher_doc = TeacherDoc.new
-  @teacher_doc.verify
+  TeacherDoc.new.verify(type: "unique")
+end
+
+Given(/^I submit the teacher doc upload verification form as a "([^"]*)" record$/) do |type|
+  TeacherDoc.new.verify(type: type)
 end
 
 Given(/^I submit the empty Teacher form using "([^"]*)"$/) do |method|

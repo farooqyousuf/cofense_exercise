@@ -1,6 +1,9 @@
 Change Log
 
 All notable changes to this project will be documented in this file. This project does not adhere to [Semantic Versioning](http://semver.org/)
+## 2.1.7 (06/24/2016)
+- QA-270: Denied attempt test for Teacher Doc Upload verifier
+
 ## 2.1.6 (06/23/2016)
 - QA-286: Verify Marketplace Group Affiliation for First Responders
 - QA-271: Denied attempt test for Teacher Lookup verifier
@@ -81,4 +84,4 @@ All notable changes to this project will be documented in this file. This projec
 ### Added
 - New branch commits being restructured in Capybara / Selenium-Webdriver
 ### Removed
-- Removed earlier V1 to branch using Watir-Webdriver / Selenium Grid
+- Removed earlier V1 to branch using Watir / Selenium-Webdriver
