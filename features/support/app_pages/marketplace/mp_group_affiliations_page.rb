@@ -25,4 +25,7 @@ class MarketplaceGroupAffiliationsPage < IDmeBase
 		find(:link, :text =>"First Responders").click 
 	end 
 
+	def click_verify_government_affiliation_link
+		find(:link, :text =>"Government Employees").click
+	end 
 end 
