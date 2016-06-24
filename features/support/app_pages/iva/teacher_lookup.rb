@@ -7,6 +7,7 @@ class TeacherLookup < IDmeBase
   include ErrorMessages
 
   def verify(state: "Delaware", populate: true, type: "unique")
+    #Delaware is randomly used as a default state
     populate_first_state(state)
 
       if populate
