@@ -7,7 +7,6 @@ All notable changes to this project will be documented in this file. This projec
 
 ## 2.1.6 (06/23/2016)
 - QA-286: Verify Marketplace Group Affiliation for First Responders 
-- QA-286: Verify Marketplace Group Affiliation for First Responders
 - QA-271: Denied attempt test for Teacher Lookup verifier
 
 ## 2.1.5 (06/22/2016)
