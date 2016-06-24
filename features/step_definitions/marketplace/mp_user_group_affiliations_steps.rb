@@ -10,6 +10,18 @@ end
 
 Given(/^I select to verify the Student Group Affiliation$/) do
   @marketplace_group_affiliations_page.click_verify_student_affiliation_link
+end 
+
+Given(/^I select to verify the Government Group Affiliation$/) do
+  @marketplace_group_affiliations_page.click_verify_government_affiliation_link
+end
+
+Given(/^I select to verify the Teacher Group Affiliation$/) do
+  @marketplace_group_affiliations_page.click_verify_teacher_affiliation_link
+end 
+
+Given(/^I select to verify the First Responder Group Affiliation$/) do
+  @marketplace_group_affiliations_page.click_verify_first_responder_affiliation_link
 end
 
 Given(/^I click on the Marketplace Sign Up link$/) do

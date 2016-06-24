@@ -15,6 +15,12 @@ include JavascriptAlerts
     click_button("Update")
   end
 
+  def deny_doc
+    open_newest
+    find("#verification_attempt_status_event_deny").click
+    click_button("Update")
+  end
+
   def open_newest
     first('.odd > td > a').click
   end

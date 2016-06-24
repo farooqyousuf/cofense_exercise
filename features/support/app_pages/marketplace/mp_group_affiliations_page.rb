@@ -15,6 +15,18 @@ class MarketplaceGroupAffiliationsPage < IDmeBase
 
 	def click_verify_military_affiliation_link
 		find(:link, :text =>"Military").click
+	end
+
+	def click_verify_teacher_affiliation_link
+		find(:link, :text =>"Teachers").click 
+	end  
+
+	def click_verify_first_responder_affiliation_link
+		find(:link, :text =>"First Responders").click 
+	end 
+
+	def click_verify_government_affiliation_link
+		find(:link, :text =>"Government Employees").click
 	end 
 
 	def click_verify_student_affiliation_link

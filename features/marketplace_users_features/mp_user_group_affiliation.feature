@@ -19,10 +19,35 @@ Feature: Test User Group Affiliation Page & Verification Features
     * I submit the verification code for "Military Email Code"
     * I complete the verification process
     * I verify user "Military" Group Affiliation is approved on Marketplace
-    @optimus_prime
+
   Scenario: Verify a Student Group Affiliation
     * I select to verify the Student Group Affiliation
     * I should be on the student verification screen
     * I verify using student credentials
     * I complete the verification process
     * I verify user "Students" Group Affiliation is approved on Marketplace
+  
+  Scenario: Verify a Teacher Group Affiliation
+    * I select to verify the Teacher Group Affiliation
+    * I should be on the teacher verification screen
+    * I verify using teacher credentials with "no license and no ssn"
+    * I approve the teacher verification in IDme admin
+    * I complete the verification process
+    * I verify user "Teachers" Group Affiliation is approved on Marketplace
+
+  Scenario: Verify a Government Group Affiliation
+    * I select to verify the Government Group Affiliation
+    * I should be on the government verification screen
+    * I submit the government verification form as a "unique" record
+    * I submit the verification code for "Government Email"
+    * I complete the verification process
+    * I verify user "Government Employees" Group Affiliation is approved on Marketplace
+
+  Scenario: Verify a First Responder Group Affiliation
+    * I select to verify the First Responder Group Affiliation
+    * I should be on the responder verification screen
+    * I verify using a ProBoard Firefighter
+    * I complete the verification process
+    * I verify user "First Responders" Group Affiliation is approved on Marketplace
+
+

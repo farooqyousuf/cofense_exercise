@@ -4,8 +4,11 @@ Given(/^I should be on the teacher verification screen$/) do
 end
 
 Given(/^I verify using teacher documentation$/) do
-  @teacher_doc = TeacherDoc.new
-  @teacher_doc.verify
+  TeacherDoc.new.verify(type: "unique")
+end
+
+Given(/^I submit the teacher doc upload verification form as a "([^"]*)" record$/) do |type|
+  TeacherDoc.new.verify(type: type)
 end
 
 Given(/^I submit the empty Teacher form using "([^"]*)"$/) do |method|
@@ -15,46 +18,50 @@ Given(/^I submit the empty Teacher form using "([^"]*)"$/) do |method|
 
   case method
   when "Teacher Document"
-    @teacher_doc.verify(false)
+    @teacher_doc.verify(populate: false)
   when "Teacher Lookup Delaware"
-    @teacher_lookup.verify("Delaware", false)
+    @teacher_lookup.verify(state: "Delaware", populate: false)
   when "Teacher Lookup New Mexico"
-    @teacher_lookup.verify("New Mexico", false)
+    @teacher_lookup.verify(state: "New Mexico", populate: false)
   when "Teacher Lookup Michigan"
-    @teacher_lookup.verify("Michigan", false)
+    @teacher_lookup.verify(state: "Michigan", populate: false)
   when "Teacher Lookup Alabama"
-    @teacher_lookup.verify("Alabama", false)
+    @teacher_lookup.verify(state: "Alabama", populate: false)
   end
-
 end
 
 Given(/^I verify using teacher credentials with "([^"]*)"$/) do |method|
-
   @teacher_lookup = TeacherLookup.new
 
   case method
   when "no license and no ssn"
-    @teacher_lookup.verify("Delaware")
+    @teacher_lookup.verify()
   when "no license and short ssn"
-    @teacher_lookup.verify("New Mexico")
+    @teacher_lookup.verify(state: "New Mexico")
   when "license and no ssn"
-    @teacher_lookup.verify("Michigan")
+    @teacher_lookup.verify(state: "Michigan")
   when "license and short ssn"
-    @teacher_lookup.verify("Alabama")
+    @teacher_lookup.verify(state: "Alabama")
   end
-
 end
 
-Given(/^I approve the teacher verification in IDme admin$/) do
+Given(/^I submit the teacher lookup verification form as a "([^"]*)" record$/) do |type|
+  TeacherLookup.new.verify(type: type)
+end
 
+
+Given(/^I "([^"]*)" the teacher verification in IDme admin$/) do |action|
   @admin_tool = AdminTool.new
   @admin_tool.login_in_new_window
 
   step 'I visit "AdminTeacherVerifs"'
   @admin_teacher_verifs = AdminTeacherVerifs.new
 
-  @admin_teacher_verifs.approve_doc
+  if action == "approve"
+    @admin_teacher_verifs.approve_doc
+  else
+    @admin_teacher_verifs.deny_doc
+  end
 
   @admin_tool.logout_in_new_window
-
 end
