@@ -18,7 +18,6 @@ Feature: Test the MP_users Cash Back - My Cash
    * I check Next Payment Info Card existence
    * I check Next Payment Info Card content
 
-   @qa_ready
    Scenario: Purchases - Purchases Table Check
    * I visit "CashBack_PurchasesPage"
    * Cash Back Activity Tab should be selected

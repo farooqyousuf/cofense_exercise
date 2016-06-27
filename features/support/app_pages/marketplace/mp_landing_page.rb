@@ -37,9 +37,7 @@ class MarketplaceLandingPage < IDmeBase
   end
 
   def request_vip_achievements
-    $vip_user_acheivement_response_raw = RestClient.get "#{FigNewton.mp_users.mp_homepage}/user/#{FigNewton.mp_users.vip_uid}/achievements_progress", {:accept => :json}
-    @vip_user_acheivement_response =  JSON.parse($vip_user_acheivement_response_raw)
-    return @vip_user_acheivement_response
+   #vip either removed or will hit db directly 
   end
 
   def social_network_login(name)
