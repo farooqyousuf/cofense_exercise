@@ -1,6 +1,9 @@
 Change Log
 
 All notable changes to this project will be documented in this file. This project does not adhere to [Semantic Versioning](http://semver.org/)
+## 2.1.8 (06/27/2016)
+- QA-273: Remove rest-client and net-http-persistant gem and feature
+
 ## 2.1.7 (06/24/2016)
 - QA-270: Denied attempt test for Teacher Doc Upload verifier
 - QA-287: Verify Marketplace Group Affiliation for Teachers
