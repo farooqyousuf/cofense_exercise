@@ -6,17 +6,23 @@ class DD214 < IDmeBase
   include Capybara::DSL
   include ErrorMessages
 
-  def verify(affiliation, populate = true)
+  def verify(affiliation: "Veteran", populate: true, type: "none")
     find("[data-option='dd214-request']").find(".verification-header").click
     populate_affiliation(affiliation)
 
     if populate
-      populate_signature
-      populate_branch
-      populate_officer
-      populate_component
-      populate_checkboxes
-      populate_fields(data_for(:military_dd214))
+
+      case type
+      when "unique", "denied"
+        populate_signature
+        populate_branch
+        populate_officer
+        populate_component
+        populate_checkboxes
+        populate_fields(data_for(:military_dd214))
+      when "dupe"
+        #work in progress
+      end
 
       #first and last name for user
       if ["Next of kin deceased veteran", "Legal guardian"].include?(affiliation)
@@ -26,6 +32,7 @@ class DD214 < IDmeBase
       end
     end
 
+    binding.pry
     click_verify_button
   end
 

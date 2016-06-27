@@ -3,6 +3,7 @@ Change Log
 All notable changes to this project will be documented in this file. This project does not adhere to [Semantic Versioning](http://semver.org/)
 ## 2.1.8 (06/27/2016)
 - QA-273: Remove rest-client and net-http-persistant gem and feature
+- QA-258: Denied attempt test for DD214 Military
 
 ## 2.1.7 (06/24/2016)
 - QA-270: Denied attempt test for Teacher Doc Upload verifier
@@ -11,7 +12,7 @@ All notable changes to this project will be documented in this file. This projec
 - QA-289: Verify Marketplace Group Affiliation for Students
 
 ## 2.1.6 (06/23/2016)
-- QA-286: Verify Marketplace Group Affiliation for First Responders 
+- QA-286: Verify Marketplace Group Affiliation for First Responders
 - QA-271: Denied attempt test for Teacher Lookup verifier
 
 ## 2.1.5 (06/22/2016)
