@@ -32,7 +32,6 @@ class DD214 < IDmeBase
       end
     end
 
-    binding.pry
     click_verify_button
   end
 
