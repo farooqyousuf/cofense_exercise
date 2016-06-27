@@ -26,6 +26,12 @@ Feature: Military verification using DD214 request
     * I complete the verification process
     * I should be successfully verified as "Military Family"
 
+  @delete_dd214_user
+  Scenario: Denied attempt for DD214 verification
+    * I submit the DD214 verification form as a "denied" record
+    * I "deny" the DD214 in IDme admin
+    * I verify the attempt is marked as "DENIED"
+
  Scenario: Successfully prompt for all required fields for Veteran
     * I submit the empty DD214 form for "Veteran"
     * I should see error messages on required fields for "DD214 Vet"
