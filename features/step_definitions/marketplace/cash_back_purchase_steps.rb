@@ -71,3 +71,8 @@ end
 Given(/^I check Purchases Table content$/) do
   expect(@marketplace_my_cash_page.check_purchases_made).to be(true)
 end
+
+Given(/^I have to kill mcbane$/) do
+  @offer_cms_admin = OfferCMSTool.new
+  @offer_cms_admin.login_in_new_window
+end

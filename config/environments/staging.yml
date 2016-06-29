@@ -137,3 +137,6 @@ hlp_page_test_data:
     preview_page_url: https://hosted-pages-staging.idmeinc.net/sam-s-club-sam-s-club-military-special-wufoo-page?preview=true
     live_page_url: https://hosted-pages-staging.idmeinc.net/sam-s-club-sam-s-club-military-special-wufoo-page
     live_page_title: Sam's Club Military Special Wufoo Page - ID.me
+
+offer_cms:
+  base_url: https://offers-cms-staging.idmeinc.net/
