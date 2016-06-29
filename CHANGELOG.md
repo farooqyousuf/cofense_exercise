@@ -1,6 +1,9 @@
 Change Log
 
 All notable changes to this project will be documented in this file. This project does not adhere to [Semantic Versioning](http://semver.org/)
+## 2.1.9 (06/29/2016)
+- QA-279: Update Authority auth_login method to use capybara matcher
+
 ## 2.1.8 (06/27/2016)
 - QA-273: Remove rest-client and net-http-persistant gem and feature
 - QA-258: Denied attempt test for DD214 Military
