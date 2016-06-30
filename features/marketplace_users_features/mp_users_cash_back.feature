@@ -25,5 +25,5 @@ Feature: Test the MP_users Cash Back - My Cash
    * I check Purchases Table content
 
    @mcboatface
-   Scenario: offer-cms test
-   * I have to kill mcbane
+   Scenario: Purchase - Verify Cash back from Purchase 
+   * I find the user uid in offerCMS
