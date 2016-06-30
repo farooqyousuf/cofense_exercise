@@ -8,6 +8,7 @@ end
 
 Given(/^I should see an error on the "(.*)" field$/) do |expected_text|
   sleep 1
+  binding.pry
   expect(all(error_label_css).map(&:text)).to include(expected_text)
 end
 
@@ -48,3 +49,20 @@ end
 Given(/^I should see the red error "(.*?)" below the textfield$/) do |expected_text|
   (red_error_below_field.should eq(expected_text)).should == true
 end
+
+Given(/^I should see a red highlighted error on the (.*?)"$/) do |fields|
+  case fields
+  when "password, confirm password and tos fields"
+    page.has_css?(".field-group div:nth-child(2).error")
+    page.has_css?(".field-group div:nth-child(3).error")
+    page.has_css?(".check-group .error")
+  when "confirm password and tos fields"
+    page.has_css?(".field-group div:nth-child(3).error")
+    page.has_css?(".check-group .error")
+  when "tos field"
+    page.has_css?(".check-group .error")
+  end
+end
+
+
+
