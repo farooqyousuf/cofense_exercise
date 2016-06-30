@@ -1,3 +1,9 @@
+Given(/^I clear the session from Authority$/) do
+  @authority = Authority.new
+  @authority.auth_login
+  OAuthClient.new.logout
+end
+
 Given(/^I verify the attempt is marked as "([^"]*)"$/) do |status|
   @admin_tool = AdminTool.new
   @admin_tool.login_in_new_window

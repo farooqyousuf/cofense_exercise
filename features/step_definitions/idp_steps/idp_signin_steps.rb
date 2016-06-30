@@ -45,12 +45,6 @@ Given(/^I create the test conditions for Login with invalid password$/) do
   step 'I visit IDP through the "marketplace" policy'
 end
 
-Given(/^I clear the session from Authority$/) do
-  @authority = Authority.new
-  @authority.auth_login
-  OAuthClient.new.logout
-end
-
 Given(/^I complete the new Wallet account linking process$/) do
   @idp_new_wallet = IDPNewWallet.new
   @idp_new_wallet.click_joining_first_time
