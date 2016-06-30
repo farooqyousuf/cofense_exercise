@@ -15,7 +15,6 @@ class OfferCMSTool < IDmeBase
     authority = Authority.new
     sleep 2
     authority.auth_login
-    #BLOCKED due to farooq+1@id.me not having Authority Access to offer-cms
   end
 
    def logout_in_new_window
