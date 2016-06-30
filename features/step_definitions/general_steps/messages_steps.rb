@@ -8,7 +8,6 @@ end
 
 Given(/^I should see an error on the "(.*)" field$/) do |expected_text|
   sleep 1
-  binding.pry
   expect(all(error_label_css).map(&:text)).to include(expected_text)
 end
 
