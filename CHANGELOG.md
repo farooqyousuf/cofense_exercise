@@ -4,6 +4,7 @@ All notable changes to this project will be documented in this file. This projec
 ## 2.2.0 (06/30/2016)
 - QA-299: Fixed idp signup tests assertions
 - QA-300: Fixed social media tests with exception of LinkedIn as that account is suspended
+- QA-296: Add OfferCMS admin tool and add purchase for cash back method
 
 ## 2.1.9 (06/29/2016)
 - QA-279: Update Authority auth_login method to use capybara matcher
