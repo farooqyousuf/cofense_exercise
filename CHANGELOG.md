@@ -1,6 +1,9 @@
 Change Log
 
 All notable changes to this project will be documented in this file. This project does not adhere to [Semantic Versioning](http://semver.org/)
+## 2.2.0 (06/30/2016)
+- QA-299: Fixed idp signup tests assertions
+
 ## 2.1.9 (06/29/2016)
 - QA-279: Update Authority auth_login method to use capybara matcher
 - HOTFIX: Fixed idp signin test
