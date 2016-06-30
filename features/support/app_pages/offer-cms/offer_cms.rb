@@ -1,6 +1,8 @@
 require_relative "../base_classes/base_idme.rb"
 
 class OfferCMSTool < IDmeBase
+  attr_reader :user_uid 
+
 	def initialize 
 		super(FigNewton.offer_cms.base_url)
 	end 
@@ -22,10 +24,10 @@ class OfferCMSTool < IDmeBase
     self.use_last_browser_created
   end
 
-  def find_user_uid
-    #so then how 
-    visit "https://offers-cms-staging.idmeinc.net/marketplace_users"
-    fill_in("query2", :with => "whatevertheuseremailishere")
+  def find_user_uid 
+    2.times { find(:link, :href =>"/marketplace_users").click }
+    sleep 1
+    fill_in("query2", :with => "test+24@id.me")
     click_link "Search"
 
     @user_uid = find("#DataTables_Table_0 tbody td:nth-child(3)").text #double check that instance variable should persist past scenario

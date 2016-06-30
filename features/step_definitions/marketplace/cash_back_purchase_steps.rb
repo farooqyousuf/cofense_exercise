@@ -72,9 +72,14 @@ Given(/^I check Purchases Table content$/) do
   expect(@marketplace_my_cash_page.check_purchases_made).to be(true)
 end
 
-Given(/^I have to kill mcbane$/) do
+Given(/^I find the user uid in offerCMS$/) do
   @offer_cms_admin = OfferCMSTool.new
   @offer_cms_admin.login_in_new_window
   @offer_cms_admin.find_user_uid
   @offer_cms_admin.logout_in_new_window 
+end
+
+Given(/^I create a marketplace purchase with cash back for the user$/) do
+  @marketplace_cash_back_api = MarketplaceCashBackPage.new  #TODO improve naming of this 
+  @marketplace_cash_back_api.create_cash_back_purchase(@offer_cms_admin.user_uid)
 end

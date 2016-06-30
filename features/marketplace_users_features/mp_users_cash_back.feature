@@ -27,3 +27,4 @@ Feature: Test the MP_users Cash Back - My Cash
    @mcboatface
    Scenario: Purchase - Verify Cash back from Purchase 
    * I find the user uid in offerCMS
+   * I create a marketplace purchase with cash back for the user
