@@ -30,6 +30,6 @@ class OfferCMSTool < IDmeBase
     fill_in("query2", :with => "test+24@id.me")
     click_link "Search"
 
-    @user_uid = find("#DataTables_Table_0 tbody td:nth-child(3)").text #double check that instance variable should persist past scenario
+    @user_uid = find("#DataTables_Table_0 tbody td:nth-child(3)").text
   end
 end 	
