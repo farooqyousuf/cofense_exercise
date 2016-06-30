@@ -21,4 +21,13 @@ class OfferCMSTool < IDmeBase
     self.close_current_browser
     self.use_last_browser_created
   end
+
+  def find_user_uid
+    #so then how 
+    visit "https://offers-cms-staging.idmeinc.net/marketplace_users"
+    fill_in("query2", :with => "whatevertheuseremailishere")
+    click_link "Search"
+
+    @user_uid = find("#DataTables_Table_0 tbody td:nth-child(3)").text #double check that instance variable should persist past scenario
+  end
 end 	

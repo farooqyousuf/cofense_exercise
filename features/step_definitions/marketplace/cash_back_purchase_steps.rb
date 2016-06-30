@@ -75,4 +75,6 @@ end
 Given(/^I have to kill mcbane$/) do
   @offer_cms_admin = OfferCMSTool.new
   @offer_cms_admin.login_in_new_window
+  @offer_cms_admin.find_user_uid
+  @offer_cms_admin.logout_in_new_window 
 end
