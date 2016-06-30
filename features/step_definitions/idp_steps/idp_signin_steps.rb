@@ -41,6 +41,7 @@ end
 Given(/^I create the test conditions for Login with invalid password$/) do
   step 'I click on the Sign Up link'
   step 'I sign up as a new user'
+  step 'I clear the session from Authority'
   step 'I visit IDP through the "marketplace" policy'
 end
 

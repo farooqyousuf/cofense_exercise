@@ -15,7 +15,6 @@ Given(/^I submit the government verification form as a "([^"]*)" record$/) do |t
   if type == "unique"
     @iva_govt.click_verify_button
   end
-
 end
 
 Given(/^I clear the current Government session$/) do

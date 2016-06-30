@@ -1,4 +1,5 @@
-@regression @idp @social_media @linkedin @desktop
+@regression @idp @social_media @linkedin @desktop @ignore
+#LinkedIn account is currently restricted...
 Feature: IDP LinkedIn Login
 
   Background:
