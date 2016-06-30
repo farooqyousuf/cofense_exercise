@@ -6,7 +6,6 @@ Given(/^I visit IDP through the "([^"]*)" policy$/) do |handle|
                     :redirect_uri  => FigNewton.oauth.redirect_uri,
                     :scope         => FigNewton.oauth.policy.send(handle)
                   )
-
   visit @oauth_client.auth_url
 end
 
