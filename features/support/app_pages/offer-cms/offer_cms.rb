@@ -23,10 +23,10 @@ class OfferCMSTool < IDmeBase
     self.use_last_browser_created
   end
 
-  def find_user_uid 
+  def find_user_uid(username)
     2.times { find(:link, :href =>"/marketplace_users").click }
     sleep 1
-    fill_in("query2", :with => "test+24@id.me")
+    fill_in("query2", :with => username)
     click_link "Search"
 
     @user_uid = find("#DataTables_Table_0 tbody td:nth-child(3)").text

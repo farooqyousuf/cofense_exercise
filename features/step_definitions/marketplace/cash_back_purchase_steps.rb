@@ -75,33 +75,26 @@ end
 Given(/^I find the user uid in offerCMS$/) do
   @offer_cms_admin = OfferCMSTool.new
   @offer_cms_admin.login_in_new_window
-  @offer_cms_admin.find_user_uid
+  @offer_cms_admin.find_user_uid(@username)
   @offer_cms_admin.logout_in_new_window 
 end
 
 Given(/^I create a marketplace purchase with cash back for the user$/) do
-  @marketplace_cash_back_api = MarketplaceCashBackPage.new  #TODO improve naming of this 
+  @marketplace_cash_back_api = MarketplaceCashBackPage.new 
   @marketplace_cash_back_api.create_cash_back_purchase(@offer_cms_admin.user_uid)
 end
 
 
 Given(/^I check that the cash back is displayed on the Summary Info Card$/) do
-  page.has_css?("div .column:nth-child(1) .cash",:text =>"$6.70") #update with the actual amount provided 
+  expect(page).to have_css("div .column:nth-child(1) .cash",:text =>"$6.60")
 end
 
 Given(/^I check that the cash back is displayed on the Purchases Table$/) do
-  page.has_css?("#cash-back-purchases tbody td:nth-child(5)",:text =>"$6.70")
+  expect(page).to have_css("#cash-back-purchases tbody td:nth-child(5)",:text =>"$6.60")
 end
 
-
-
-
-
-
-
-
-
-
-
-
-
+Given(/^I save the new user email$/) do
+  @admin_user = AdminUsers.new 
+  @admin_tool = AdminTool.new
+  @admin_user.record_test_user_email
+end

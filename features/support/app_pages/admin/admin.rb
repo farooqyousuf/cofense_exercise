@@ -21,5 +21,4 @@ class AdminTool < IDmeBase
     self.close_current_browser
     self.use_last_browser_created
   end
-
 end
