@@ -1,6 +1,9 @@
 Change Log
 
 All notable changes to this project will be documented in this file. This project does not adhere to [Semantic Versioning](http://semver.org/)
+## 2.2.1 (07/01/2016)
+- QA-296: Verify cash back feature for marketplace 
+
 ## 2.2.0 (06/30/2016)
 - QA-299: Fixed idp signup tests assertions
 - QA-300: Fixed social media tests with exception of LinkedIn as that account is suspended
