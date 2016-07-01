@@ -6,6 +6,7 @@ Feature: User account lock and unlock
     * I click on the Sign Up link
     * I sign up as a new user
     * I logout of the OAuth Client
+    * I clear the session from Authority
     * I visit IDP through the "marketplace" policy
 
   Scenario: User Account locked due to failed logins
@@ -17,7 +18,7 @@ Feature: User account lock and unlock
     * I lockout my account
     * I visit "IDPSignIn"
     * I login as a "current_username" user
-    * I should see the red alert box error message "Your account has been locked due to a number of failed sign-in attempts. Please click here to unlock it."
+    * I should see the red alert box error message "Your ID.me Wallet has been locked due to a high number of failed sign-in attempts. Please click here to unlock it."
 
  Scenario: Verify if account can be used after unlocking it
     * I lockout my account
