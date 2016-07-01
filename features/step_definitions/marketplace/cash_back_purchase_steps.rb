@@ -83,3 +83,25 @@ Given(/^I create a marketplace purchase with cash back for the user$/) do
   @marketplace_cash_back_api = MarketplaceCashBackPage.new  #TODO improve naming of this 
   @marketplace_cash_back_api.create_cash_back_purchase(@offer_cms_admin.user_uid)
 end
+
+
+Given(/^I check that the cash back is displayed on the Summary Info Card$/) do
+  page.has_css?("div .column:nth-child(1) .cash",:text =>"$6.70") #update with the actual amount provided 
+end
+
+Given(/^I check that the cash back is displayed on the Purchases Table$/) do
+  page.has_css?("#cash-back-purchases tbody td:nth-child(5)",:text =>"$6.70")
+end
+
+
+
+
+
+
+
+
+
+
+
+
+

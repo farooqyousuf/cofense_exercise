@@ -28,3 +28,6 @@ Feature: Test the MP_users Cash Back - My Cash
    Scenario: Purchase - Verify Cash back from Purchase 
    * I find the user uid in offerCMS
    * I create a marketplace purchase with cash back for the user
+   * I visit "CashBack_PurchasesPage"
+   * I check that the cash back is displayed on the Summary Info Card
+   * I check that the cash back is displayed on the Purchases Table 
