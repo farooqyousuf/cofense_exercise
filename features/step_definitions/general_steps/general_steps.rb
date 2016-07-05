@@ -1,3 +1,14 @@
+Given(/^I create a new account after clearing my old "([^"]*)" session$/) do |group|
+  case group
+  when "military"
+    step 'I visit IDP through the "military" policy'
+  when "responder"
+    #this
+  end
+  step 'I click on the Sign Up link'
+  step 'I sign up as a new user'
+end
+
 Given(/^I clear the session from Authority$/) do
   @authority = Authority.new
   @authority.auth_login

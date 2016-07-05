@@ -10,3 +10,12 @@ Given(/^I should be successfully verified(?: as "(.*)")?$/) do |group|
     expect(@oauth_client.has_affiliation?(group)).to eq(true) if group
   end
 end
+
+Given(/^I verify using a duplicate "([^"]*)" record$/) do |affiliation|
+  case affiliation
+  when "DD214"
+    step 'I verify using DD214 information for "Veteran"'
+  when "other"
+    #this
+  end
+end

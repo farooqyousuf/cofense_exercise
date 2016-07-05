@@ -32,6 +32,16 @@ Feature: Military verification using DD214 request
     * I "deny" the DD214 in IDme admin
     * I verify the attempt is marked as "DENIED"
 
+ @delete_dd214_dupe_user
+ Scenario: Dupe attempt test for Military DD214
+    * I verify using DD214 information for "Veteran"
+    * I complete the verification process
+    * I clear the session from Authority
+    * I create a new account after clearing my old "military" session
+    * I verify using a duplicate "DD214" record
+    * I should see the red alert box error message "We’re sorry, but we are unable to verify your military status with the information you provided."
+    #* I verify the attempt is marked as "DUPLICATE"
+
  Scenario: Successfully prompt for all required fields for Veteran
     * I submit the empty DD214 form for "Veteran"
     * I should see error messages on required fields for "DD214 Vet"

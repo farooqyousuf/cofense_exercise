@@ -5,9 +5,11 @@ include Capybara::DSL
   def auth_login
      if (page.has_text?  "Sign in with ID.me Authority") || (page.has_text?  "You need to sign in or sign up before continuing.")
       auth_click_sign_in
+      sleep 1
       if page.has_text? "Authenticate"
           auth_base_login
       end
+      sleep 1
       auth_approve
     elsif page.has_text?  "Authenticate"
       auth_base_login
@@ -29,7 +31,7 @@ include Capybara::DSL
   end
 
   def auth_approve
-    sleep 1
+    sleep 2
     click_button("Approve")
   end
 
