@@ -13,7 +13,6 @@ Given(/^I clear the session from Authority$/) do
   @authority = Authority.new
   @authority.auth_login
   OAuthClient.new.logout
-  @authority.logout
 end
 
 Given(/^I verify the attempt is marked as "([^"]*)"$/) do |status|
