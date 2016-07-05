@@ -98,3 +98,19 @@ Given(/^I save the new user email$/) do
   @admin_tool = AdminTool.new
   @admin_user.record_test_user_email
 end
+
+Given(/^I check that the Cash Back purchase can be reviewed$/) do
+
+end
+
+Given(/^I create a review for the Cash Back purchase$/) do
+
+end
+
+Given(/^I check that the review is displayed on the merchant page$/) do
+
+end
+
+
+
+
