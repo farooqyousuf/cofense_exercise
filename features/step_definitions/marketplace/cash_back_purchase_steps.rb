@@ -117,9 +117,9 @@ end
 
 Given(/^I check that the review is displayed on the merchant page$/) do
   #redirects to fanatics page
-  expect(page.current_url).to eql ("https://marketplace-staging.idmeinc.net/stores/175-fanatics")
+  expect(page.current_url).to eql(FigNewton.marketplace.merchant_page)
   find(".reviews").click 
-  expect(page).to have_css(".store-offers-list li:nth-child(1)",:text =>"Review for Fanatics By William Wallace on July 05, 2016 I just got a discount at Fanatics and earned $6.60 in cash back.")
+  expect(page).to have_css(".store-offers-list li:nth-child(1)",:text => FigNewton.marketplace.merchant_review_text)
 end
 
 
