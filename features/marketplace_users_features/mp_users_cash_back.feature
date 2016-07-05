@@ -30,7 +30,6 @@ Feature: Test the MP_users Cash Back - My Cash
    * I check that the cash back is displayed on the Summary Info Card
    * I check that the cash back is displayed on the Purchases Table 
 
-   @mp_review
    Scenario: Purchase - Review Cash Back purchase 
    * I check that the Cash Back purchase can be reviewed
    * I create a review for the Cash Back purchase
