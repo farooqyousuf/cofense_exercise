@@ -98,3 +98,30 @@ Given(/^I save the new user email$/) do
   @admin_tool = AdminTool.new
   @admin_user.record_test_user_email
 end
+
+Given(/^I check that the Cash Back purchase can be reviewed$/) do
+  step 'I find the user uid in offerCMS'
+  step 'I create a marketplace purchase with cash back for the user'
+  page.driver.browser.navigate.refresh
+  expect(page).to have_css("#cash-back-purchases tbody td:nth-child(6)",:text =>"Write Review")
+end
+
+Given(/^I create a review for the Cash Back purchase$/) do
+  page.execute_script "window.scrollBy(0,1000)"
+  find(".button",:text => "Write Review").click
+  find(".review_rating i:nth-child(4)").click
+  fill_in("review_name",:with =>"William Wallace")
+  click_button "Submit Review"
+  expect(page).to have_css(".alert", :text =>"Successfully reviewed Fanatics")
+end
+
+Given(/^I check that the review is displayed on the merchant page$/) do
+  #redirects to fanatics page
+  expect(page.current_url).to eql(FigNewton.marketplace.merchant_page)
+  find(".reviews").click 
+  expect(page).to have_css(".store-offers-list li:nth-child(1)",:text => FigNewton.marketplace.merchant_review_text)
+end
+
+
+
+
