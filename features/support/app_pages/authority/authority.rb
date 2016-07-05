@@ -38,4 +38,8 @@ include Capybara::DSL
   def auth_click_sign_in
     click_link("Sign in with ID.me Authority")
   end
+
+  def logout
+    click_link("Log out")
+  end
 end
