@@ -23,7 +23,6 @@ Feature: Test the MP_users Cash Back - My Cash
    * I check Purchases Table existence
    * I check Purchases Table content
 
-   @mp_review 
    Scenario: Purchase - Verify Cash back from Purchase 
    * I find the user uid in offerCMS
    * I create a marketplace purchase with cash back for the user
