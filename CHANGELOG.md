@@ -1,6 +1,9 @@
 Change Log
 
 All notable changes to this project will be documented in this file. This project does not adhere to [Semantic Versioning](http://semver.org/)
+## 2.2.3 (07/07/2016)
+- QA-246: Dupe attempt test for SCRA
+
 ## 2.2.2 (07/05/2016)
 - QA-294: Add spec for marketplace reviews
 - QA-243: Dupe attempt test for DD214
