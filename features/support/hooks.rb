@@ -9,6 +9,13 @@ After do
   Capybara.current_session.driver.quit
 end
 
+After("@delete_dd214_dupe_user") do
+  visit_admin_users_in_new_window
+  @admin_users.delete_dd214_user
+  @admin_users.delete_dd214_user
+  @admin_tool.logout_in_new_window
+end
+
 After("@delete_dd214_user2") do
   visit_admin_users_in_new_window
   @admin_users.delete_dd214_user2
@@ -116,14 +123,14 @@ After("@delete_natl_emt") do
   @admin_tool.logout_in_new_window
 end
 
-After("@mp_user_group_affiliations") do 
+After("@mp_user_group_affiliations") do
   visit_admin_users_in_new_window
   @admin_user_marketplace.delete_marketplace_test_user
   @admin_tool.logout_in_new_window
-end 
+end
 
-After("@marketplace_cash_back") do 
+After("@marketplace_cash_back") do
   visit_admin_users_in_new_window
   @admin_user.delete_marketplace_test_user
   @admin_tool.logout_in_new_window
-end 
+end

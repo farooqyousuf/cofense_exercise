@@ -2,11 +2,12 @@ Change Log
 
 All notable changes to this project will be documented in this file. This project does not adhere to [Semantic Versioning](http://semver.org/)
 ## 2.2.2 (07/05/2016)
-- QA-294: Add spec for marketplace reviews 
+- QA-294: Add spec for marketplace reviews
+- QA-243: Dupe attempt test for DD214
 
 ## 2.2.1 (07/01/2016)
 - HOTFIX: Fixed idp unlock tests
-- QA-296: Verify cash back feature for marketplace 
+- QA-296: Verify cash back feature for marketplace
 
 ## 2.2.0 (06/30/2016)
 - QA-299: Fixed idp signup tests assertions
