@@ -3,7 +3,7 @@ Given(/^I create a new account after clearing my old "([^"]*)" session$/) do |gr
   when "military"
     step 'I visit IDP through the "military" policy'
   when "responder"
-    #this
+    step 'I visit IDP through the "responder" policy'
   end
   step 'I click on the Sign Up link'
   step 'I sign up as a new user'
