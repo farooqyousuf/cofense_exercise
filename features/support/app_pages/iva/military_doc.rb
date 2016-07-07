@@ -13,11 +13,11 @@ class MilitaryDoc < IDmeBase
 
     if populate
 
-      unique_data = data_for(:mil_doc)
-      denied_data = data_for(:fail_experian)
+      unique_data = data_for(:mil_doc) #info used for unique and dupe users
+      denied_data = data_for(:fail_experian) #info used for denied users
 
       case type
-      when "unique"
+      when "unique", "duplicate"
         populate_fields(data: unique_data)
       when "denied"
         populate_fields(data: denied_data)
@@ -34,7 +34,7 @@ class MilitaryDoc < IDmeBase
 
     end
 
-    if type == "unique"
+    if (type == "unique")
       #attach dd214 doc
       populate_dd214_type("DD214 - Other")
       attach_doc
