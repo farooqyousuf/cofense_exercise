@@ -5,6 +5,7 @@ All notable changes to this project will be documented in this file. This projec
 - QA-246: Dupe attempt test for SCRA
 - QA-244: Dupe attempt test for Military Document
 - QA-248: Dupe attempt test for EMT State Lookup
+- QA-302: Verify marketplace stores index merchant cards page
 
 ## 2.2.2 (07/05/2016)
 - QA-294: Add spec for marketplace reviews
