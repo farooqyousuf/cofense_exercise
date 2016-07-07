@@ -17,5 +17,9 @@ Given(/^I verify using a duplicate "([^"]*)" record$/) do |affiliation|
     step 'I verify using DD214 information for "Veteran"'
   when "SCRA"
     step 'I verify using SCRA for "Service Member"'
+  when "Military Document"
+    step 'I submit the military document verification form as a "duplicate" record'
+  when "EMT State Lookup"
+    step 'I submit the emt state lookup verification form as a "duplicate" record'
   end
 end
