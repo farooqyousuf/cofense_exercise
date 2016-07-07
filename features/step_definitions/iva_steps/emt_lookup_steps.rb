@@ -7,5 +7,5 @@ Given(/^I verify using EMT state lookup$/) do
 end
 
 Given(/^I submit the emt state lookup verification form as a "([^"]*)" record$/) do |type|
-  LookupEMT.new.verify(type: "denied")
+  LookupEMT.new.verify(type: type)
 end
