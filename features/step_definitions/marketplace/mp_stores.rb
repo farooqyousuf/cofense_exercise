@@ -19,3 +19,19 @@ Given(/^I verify the stores merchant card$/) do
 	expect(page).to have_css(".stores-list-static li:nth-child(1) .merchant-card .resource-card__teaser",:visible => true )
 	expect(page).to have_css(".stores-list-static li:nth-child(1) .merchant-card .button",:text =>"View Offers")
 end
+
+Given(/^I check to sort stores by name$/) do
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+Given(/^I check to sort stores by newest$/) do
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+Given(/^I check to sort stores by highest cash back %$/) do
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+Given(/^I check to sort stores by highest cash back \$$/) do
+  pending # Write code here that turns the phrase above into concrete actions
+end
