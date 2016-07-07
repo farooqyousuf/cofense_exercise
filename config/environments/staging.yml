@@ -83,6 +83,7 @@ marketplace:
   group_affiliations_page: https://marketplace-staging.idmeinc.net/cash-back/group-affiliations
   merchant_page: https://marketplace-staging.idmeinc.net/stores/175-fanatics
   merchant_review_text: Review for Fanatics By William Wallace on July 05, 2016 I just got a discount at Fanatics and earned $6.60 in cash back.
+  stores_index_page: https://marketplace-staging.idmeinc.net/stores 
 
 social_network:
   facebook_email: eddie.park.tester@gmail.com

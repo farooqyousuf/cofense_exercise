@@ -5,9 +5,8 @@ Feature: Test Stores Index page
 		* I visit "MarketplaceStoreIndexPage"
 		* I create Marketplace Store Index Page object
 
-	Scenario: Check Stores Table Index
+	Scenario: Check Stores Table listing
 		* I expect to be at the Marketplace Stores Index Page
-
-	Scenario: Check Stores Index Filter
-
-	Scneario: Check Stores Sidebar 
+		* I check that the filter is visible 
+		* I check that the Stores index is visible
+		* I verify the stores merchant card 
