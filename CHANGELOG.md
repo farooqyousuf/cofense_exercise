@@ -1,6 +1,9 @@
 Change Log
 
 All notable changes to this project will be documented in this file. This project does not adhere to [Semantic Versioning](http://semver.org/)
+## 2.2.4 (07/08/2016)
+- QA-249: Dupe attempt test for emt national
+
 ## 2.2.3 (07/07/2016)
 - QA-246: Dupe attempt test for SCRA
 - QA-244: Dupe attempt test for Military Document
