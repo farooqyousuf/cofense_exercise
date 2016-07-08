@@ -61,7 +61,7 @@ Feature: Test the ID.me Seaworld Waves of Honor Partner Integrations
     * I visit the waves of honor "Sesame Place Langhorne Veteran" Integration
     * I log in with my Id.me veteran account
     * I verify that my "Sesame Place Langhorne Veteran" discount tickets are available 
- 
+  @bowie
   Scenario: Test Seaworld San Diego Teachers Integration 
     * I visit the waves of honor "Seaworld San Diego Teacher" Integration
     * I log in with my Id.me teacher account

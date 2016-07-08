@@ -21,17 +21,33 @@ Given(/^I verify the stores merchant card$/) do
 end
 
 Given(/^I check to sort stores by name$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+	select("name", :from => "filters")
+
+	['100 Percent Pure','123Greetings Store','123Inkjets'].each.with_index(offset=1) do |title,index|
+		expect(page).to have_css(".stores-list-static li:nth-child(#{index}) .merchant-card figure a[title='#{title}']")
+	end 
 end
 
 Given(/^I check to sort stores by newest$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+	select("newest", :from => "filters")
+
+	['DISH Network','GlobeIn','Fairway Styles'].each.with_index(offset=1) do |title,index|
+		expect(page).to have_css(".stores-list-static li:nth-child(#{index}) .merchant-card figure a[title='#{title}']")
+	end 
 end
 
 Given(/^I check to sort stores by highest cash back %$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+	select("Highest Cash Back %",:from => "filters")
+
+	['Bigcommerce','The Shaw Academy','FreeTaxUSA'].each.with_index(offset=1) do |title,index|
+		expect(page).to have_css(".stores-list-static li:nth-child(#{index}) .merchant-card figure a[title='#{title}']")
+	end 
 end
 
 Given(/^I check to sort stores by highest cash back \$$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+	select("Highest Cash Back $",:from => "filters")
+	
+	['DISH Network','KitchenAid','99designs'].each.with_index(offset=1) do |title,index|
+		expect(page).to have_css(".stores-list-static li:nth-child(#{index}) .merchant-card figure a[title='#{title}']")
+	end 
 end
