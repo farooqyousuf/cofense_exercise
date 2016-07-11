@@ -20,12 +20,11 @@ end
 
 Given(/^COLUMBIA \- I verify that a discount has been applied$/) do
 	visit FigNewton.partners.columbia_sport.shopping_cart_page
-	expect(page).to have_css(".promo-adjustment",:text=>'Thank you for your service')
 
+	expect(page).to have_css(".promo-adjustment",:text=>'Thank you for your service')
 	original_product_amt_string = find(".item-price").text
 	actual_product_discounted_amt_string = find(".price-adjusted-total").text
 
   discount_applied = verify_discount(original_product_amt_string, actual_product_discounted_amt_string, ".15",:verify_discount_total => true) 
   expect(discount_applied).to be(true)
-
 end

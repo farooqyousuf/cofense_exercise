@@ -104,11 +104,10 @@ module HelperMethods
       #TODO : rename this whole conditional variable and even move it out to its own method but it works right now
       original_total = original_product_amt_string.delete "$"
       discount_total = actual_product_discounted_amt_string.delete "$"
-      actual_discount_amt = original_product_amt_string.to_f - actual_product_discounted_amt_string.to_f 
+      actual_discount_amt = original_total.to_f - discount_total.to_f
     else 
       actual_discount_amt = /\d{1,3}[,\\.]?(\\d{1,2})?/.match(actual_product_discounted_amt_string)[0].chop.to_i
     end 
-    
    return actual_discount_amt == calc_discount_amt 
   end 
 
