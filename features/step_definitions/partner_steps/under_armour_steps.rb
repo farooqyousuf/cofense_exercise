@@ -7,7 +7,7 @@ Given(/^UA \- I add an item to the cart$/) do
   end
 
   #find(:link ,:href => "/en-us/men-s-ua-streaker-run-v-neck-t-shirt/pid1276515-016").click
-  find(".size-chip",match: :first).click
+  find("li.size-chip:nth-child(2)").click
   find(".addtocart-btn").click
   find(".cart-added-container").find(".checkout-btn").click #js div modal
   find(".checkout-btn",match: :first).click
@@ -21,7 +21,7 @@ Given(/^UA \- I apply the "([^"]*)" discount$/) do |type|
     button = "Responder"
   end
   page.execute_script "window.scrollBy(0,850)"
-  find("a[data-target='#military']").click
+  find(".extras .panel-group .panel:nth-child(2)").click
 
   idp_signin = window_opened_by do
     find(".idme-btn-primary-lg-Troop").first(:xpath, ".//..").native.send_key :return # .native drops down to access the selenium webdriver API methods

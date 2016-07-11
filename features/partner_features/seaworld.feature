@@ -46,7 +46,7 @@ Feature: Test the ID.me Seaworld Waves of Honor Partner Integrations
     * I visit the waves of honor "Water Country USA Williamsburg" Integration
     * I log in with my Id.me military account
     * I verify that my "Water Country USA Williamsburg" service member Complimentary tickets are available
-  
+
   Scenario: Test Seaworld Orlando Veteran Promotion 
     * I visit the waves of honor "Seaworld Orlando Veteran" Integration 
     * I log in with my Id.me veteran account 
