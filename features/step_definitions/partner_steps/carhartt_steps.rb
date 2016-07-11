@@ -15,8 +15,8 @@ Given(/^carhartt \- I apply the "([^"]*)" discount$/) do |type|
 end
 
 Given(/^carhartt \- I verify the "([^"]*)" discount has been applied$/) do |type|
-  expect(find(".order-subtotal-title")).to have_text("$139.99")
+  expect(page).to have_css(".order-subtotal-title",:text =>"$134.99")
   expect(page).to have_text "Military and First Responders receive 10% off"
-  expect(find(".discount").find(".small-4").text).to eql("-$14.00")
-  expect(find("#estimated-total").text).to eql("$125.99")
+  expect(page).to have_css(".discount .small-4",:text =>"-$13.50")
+  expect(page).to have_css("#estimated-total", :text =>"$121.49")
 end

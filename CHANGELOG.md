@@ -1,7 +1,10 @@
 Change Log
 
 All notable changes to this project will be documented in this file. This project does not adhere to [Semantic Versioning](http://semver.org/)
-## 2.2.5 (07/08/2016)
+## 2.2.6 (07/11/2016)
+- HOTFIX: Update Carhartt partner test
+
+## 2.2.5 (07/10/2016)
 - HOTFIX: Update Underarmour partner test
 
 ## 2.2.4 (07/08/2016)
