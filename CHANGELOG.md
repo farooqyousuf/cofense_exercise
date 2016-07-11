@@ -6,6 +6,7 @@ All notable changes to this project will be documented in this file. This projec
 - HOTFIX: Update Columbia sport test and fix verify_discount helper method
 - QA-250: Dupe attempt test for fireman doc upload
 - QA-252: Dupe attempt test for police officer
+- QA-254: Dupe attempt test for student doc upload
 
 ## 2.2.5 (07/10/2016)
 - HOTFIX: Update Underarmour partner test
