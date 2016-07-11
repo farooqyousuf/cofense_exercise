@@ -5,6 +5,7 @@ All notable changes to this project will be documented in this file. This projec
 - HOTFIX: Update Carhartt partner test
 - HOTFIX: Update Columbia sport test and fix verify_discount helper method
 - QA-250: Dupe attempt test for fireman doc upload
+- QA-252: Dupe attempt test for police officer
 
 ## 2.2.5 (07/10/2016)
 - HOTFIX: Update Underarmour partner test
