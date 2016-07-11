@@ -23,5 +23,7 @@ Given(/^I verify using a duplicate "([^"]*)" record$/) do |affiliation|
     step 'I submit the emt state lookup verification form as a "duplicate" record'
   when "EMT National"
     step 'I submit the emt national verification form as a "duplicate" record'
+  when "Fireman Doc Upload"
+    step 'I submit the firefighter doc upload verification form as a "duplicate" record'
   end
 end
