@@ -34,10 +34,10 @@ Feature: Test the MP_users Cash Back - My Cash
    * I check that the Cash Back purchase can be reviewed
    * I create a review for the Cash Back purchase
    * I check that the review is displayed on the merchant page 
-
-   Scenario: Payment Settings
-   * I check that payment settings is visible 
-   * I check the update payment modal 
+   @raichu
+   Scenario: Purchase - Payment Settings
+   * I check that payment settings dashboard is visible 
+   * I check the payment settings modal
    * I update my payment information to receive via Amazon gift card
    * I update my payment information to receive via Paypal
-   * I incorrectly update my paypal account information 
+   * I incorrectly update my paypal account information and see a error message

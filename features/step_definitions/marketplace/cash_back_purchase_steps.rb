@@ -123,5 +123,30 @@ Given(/^I check that the review is displayed on the merchant page$/) do
 end
 
 
+Given(/^I check that payment settings dashboard is visible$/) do
+  expect(page).to have_css(".dashboard__payment-info")
+  expect(page).to have_css(".dashboard__payment-info .title",:text =>"We need some information to send your future cash back payments!")
+  expect(page).to have_css(".dashboard__payment-info .button",:text =>"Update Payment Settings")
+end
+
+Given(/^I check the payment settings modal$/) do
+  find(".dashboard__payment-info .button").click 
+  expect(page).to have_css(".modal-header",:text => "Update Your Payment Information Confirm your information below for future cash back payments!")
+  expect(page).to have_css(".payment-option-radios span:nth-child(1)",:text =>"PayPal")
+  expect(page).to have_css(".payment-option-radios span:nth-child(2)",:text =>"Amazon.com Gift Card")
+  expect(page).to have_css(".modal-block input[value='Update Payment Settings']")
+end
+
+Given(/^I update my payment information to receive via Amazon gift card$/) do
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+Given(/^I update my payment information to receive via Paypal$/) do
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+Given(/^I incorrectly update my paypal account information and see a error message$/) do
+  pending # Write code here that turns the phrase above into concrete actions
+end
 
 
