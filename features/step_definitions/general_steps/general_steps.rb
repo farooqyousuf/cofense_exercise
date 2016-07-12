@@ -4,6 +4,8 @@ Given(/^I create a new account after clearing my old "([^"]*)" session$/) do |gr
     step 'I visit IDP through the "military" policy'
   when "responder"
     step 'I visit IDP through the "responder" policy'
+  when "student"
+    step 'I visit IDP through the "student" policy'
   end
   step 'I click on the Sign Up link'
   step 'I sign up as a new user'

@@ -17,7 +17,7 @@ Feature: Responder verification as an EMT using document upload
     * I should be successfully verified as "EMT"
 
   Scenario: Denied attempt for EMT Document verification
-    * I submit the EMT Document verification form as a dupe record
+    * I submit the EMT Document verification form as a denied record
     * I should see the red alert box error message "We're sorry, but we were unable to verify the information you provided. The information entered must match the information on official records. Note: If you've recently had a name change, try your maiden or prior name."
     * I verify the attempt is marked as "DENIED"
 

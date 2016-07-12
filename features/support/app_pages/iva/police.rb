@@ -12,11 +12,11 @@ class Police < IDmeBase
 
     if populate
 
-      data = data_for(:experian_user) #info for unique user
+      data = data_for(:experian_user) #info for unique and duplicate users
       denied_data = data_for(:fail_experian) #info for denied user
 
       case type
-      when "unique"
+      when "unique", "duplicate"
         populate_fields(data: data)
       when "denied"
         populate_fields(data: denied_data)
