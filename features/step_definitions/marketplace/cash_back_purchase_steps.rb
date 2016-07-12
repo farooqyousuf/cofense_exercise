@@ -138,7 +138,10 @@ Given(/^I check the payment settings modal$/) do
 end
 
 Given(/^I update my payment information to receive via Amazon gift card$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  find(".payment-option-radios span:nth-child(2)").click 
+  expect(page).to have_css(".payment-option-radios span:nth-child(2)[class='active']")
+  find(".modal-block input[value='Update Payment Settings']").click 
+  expect(page).to have_css(".alert",:text => "Successfully updated payment information") 
 end
 
 Given(/^I update my payment information to receive via Paypal$/) do
