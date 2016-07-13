@@ -16,6 +16,13 @@ include JavascriptAlerts
     first('.odd > td > a').click
   end
 
+  def delete_pb_fireman_user
+    search_for_user("Anika Smith")
+    sleep 1
+    open_newest
+    delete_user
+  end
+
   def delete_dd214_user
     search_for_user("Benny Washington")
     sleep 1
@@ -140,11 +147,11 @@ include JavascriptAlerts
     sleep 2
     open_newest
     delete_user
-  end 
+  end
 
   def record_test_user_email
-    @user_identifier = find(".user-menu__header").text 
-  end 
+    @user_identifier = find(".user-menu__header").text
+  end
 
   def search_for_user(string)
     find("input[type='search']").set string
