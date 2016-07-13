@@ -123,5 +123,60 @@ Given(/^I check that the review is displayed on the merchant page$/) do
 end
 
 
+Given(/^I check that payment settings dashboard is visible$/) do
+  @marketplace_my_cash_page = CashBack_PurchasesPage.new
+  expect(page).to have_css(".dashboard__payment-info")
+  expect(page).to have_css(".dashboard__payment-info .title",:text =>"We need some information to send your future cash back payments!")
+  expect(page).to have_css(".dashboard__payment-info .button",:text =>"Update Payment Settings")
+end
+
+Given(/^I check the payment settings modal$/) do
+  @marketplace_my_cash_page.click_update_payment_settings_dashboard_button
+  expect(page).to have_css(".modal-header",:text => "Update Your Payment Information Confirm your information below for future cash back payments!")
+  expect(page).to have_css(".payment-option-radios span:nth-child(1)",:text =>"PayPal")
+  expect(page).to have_css(".payment-option-radios span:nth-child(2)",:text =>"Amazon.com Gift Card")
+  expect(page).to have_css(".modal-block input[value='Update Payment Settings']")
+
+  @marketplace_my_cash_page.click_update_payment_settings_modal_button
+end
+
+Given(/^I update my payment information to receive via Amazon gift card$/) do
+  @marketplace_my_cash_page.click_update_payment_settings_dashboard_button
+  @marketplace_my_cash_page.select_amazon_payment_method 
+  
+  expect(page).to have_css(".payment-option-radios span:nth-child(2)[class='active']")
+  expect(page).to have_css(".core_user_payment_method_amazon_gift_card .heading",:text =>"Receive Payment Through Amazon.com")
+  
+  @marketplace_my_cash_page.click_update_payment_settings_modal_button
+  
+  expect(page).to have_css(".alert",:text => "Successfully updated payment information") 
+  expect(page).to have_css(".dashboard__payment-info img[alt='Amazon.com']")
+end
+
+Given(/^I update my payment information to receive via Paypal$/) do
+  @marketplace_my_cash_page.click_update_payment_settings_dashboard_button
+  @marketplace_my_cash_page.select_paypal_payment_method
+
+  expect(page).to have_css(".core_user_payment_method_paypal .heading",:text =>"Receive Payment Through PayPal")
+  expect(page).to have_css(".payment-option-radios span:nth-child(1)[class='active']")
+
+  @marketplace_my_cash_page.enter_paypal_email
+  @marketplace_my_cash_page.click_update_payment_settings_modal_button
+
+  expect(page).to have_css(".alert",:text =>"Successfully updated payment information")
+  expect(page).to have_css(".dashboard__payment-info img[alt='PayPal']")
+end
+
+Given(/^I incorrectly update my paypal account information and see a error message$/) do
+  @marketplace_my_cash_page.click_update_payment_settings_dashboard_button
+  @marketplace_my_cash_page.select_paypal_payment_method
+
+  expect(page).to have_css(".core_user_payment_method_paypal .heading",:text =>"Receive Payment Through PayPal")
+  expect(page).to have_css(".payment-option-radios span:nth-child(1)[class='active']")
+ 
+  @marketplace_my_cash_page.click_update_payment_settings_modal_button
+ 
+  expect(page).to have_css(".alert", :text =>"Unable to update payment information. Paypal account can't be blank")
+end
 
 

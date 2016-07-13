@@ -1,7 +1,8 @@
 Change Log
 
 All notable changes to this project will be documented in this file. This project does not adhere to [Semantic Versioning](http://semver.org/)
-## 2.2.7 (07/12/2016)
+## 2.2.7 (07/13/2016)
+- QA-295: My cash update payment method spec
 - QA-304: Marketplace Offer spec for Logged out User
 
 ## 2.2.6 (07/11/2016)
