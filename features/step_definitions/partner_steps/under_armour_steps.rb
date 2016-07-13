@@ -1,5 +1,6 @@
 Given(/^UA \- I add an item to the cart$/) do
   visit FigNewton.partners.underarmour_url
+  
   begin
     find(".modal-dialog")
     find(".close").click
