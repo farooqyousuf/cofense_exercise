@@ -39,6 +39,6 @@ Feature: Test the MP_users Cash Back - My Cash
    Scenario: Purchase - Payment Settings
    * I check that payment settings dashboard is visible 
    * I check the payment settings modal
+   * I incorrectly update my paypal account information and see a error message
    * I update my payment information to receive via Amazon gift card
    * I update my payment information to receive via Paypal
-   * I incorrectly update my paypal account information and see a error message
