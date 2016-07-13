@@ -12,5 +12,12 @@ Feature: Test Marketplace Offers Page
 		* I check that store offer index card is visible
 		* I check the store offer card links for "Logged Out" User
 		* I check that the store offer card favorite and report bug is not visible 
-		
+	
+	Scenario: Check Offers Index Table - Logged in 
+		* I click on SignIn link
+    * I login to marketplace as a "Military" user
+    * I expect the page url to be for Marketplace Offers Page
+		* I check that the Offers Index is available 
+		* I check the store offer card links for "Logged In" User
+		* I check that the store offer card favorite and report bug is visible 		
 

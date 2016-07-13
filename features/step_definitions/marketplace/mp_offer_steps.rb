@@ -16,13 +16,21 @@ Given(/^I check that store offer index card is visible$/) do
 end
 
 Given(/^I check the store offer card links for "([^"]*)" User$/) do |user_type|
-	if "Logged Out"
+	if user_type == "Logged Out"
 		expect(page).to have_css(".resource-card .button", :match => :first , :text =>"Sign Up & Save")
-		expect(page).to have_css(".resource-card .offer-card__share-alt",:match => :first , :text =>"Share with Friends")
+	elsif user_type == "Logged In"
+		expect(page).to have_css(".resource-card .button", :match => :first ,:text =>"Shop Now")
 	end 
+
+	expect(page).to have_css(".resource-card .offer-card__share-alt",:match => :first , :text =>"Share with Friends")
 end
 
 Given(/^I check that the store offer card favorite and report bug is not visible$/) do
 	expect(page).to have_no_selector(".save-offer")
 	expect(page).to have_no_selector(".report-offer")
+end
+
+Given(/^I check that the store offer card favorite and report bug is visible$/) do
+	expect(page).to have_css(".resource-card .save-offer", :match =>:first)
+	expect(page).to have_css(".resource-card .report-offer", :match =>:first)
 end
