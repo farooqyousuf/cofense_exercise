@@ -140,12 +140,19 @@ end
 Given(/^I update my payment information to receive via Amazon gift card$/) do
   find(".payment-option-radios span:nth-child(2)").click 
   expect(page).to have_css(".payment-option-radios span:nth-child(2)[class='active']")
+  expect(page).to have_css(".core_user_payment_method_amazon_gift_card .heading",:text =>"Receive Payment Through Amazon.com")
   find(".modal-block input[value='Update Payment Settings']").click 
   expect(page).to have_css(".alert",:text => "Successfully updated payment information") 
 end
 
 Given(/^I update my payment information to receive via Paypal$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  find(".dashboard__payment-info .button").click
+  find(".payment-option-radios span:nth-child(1)").click 
+  expect(page).to have_css(".core_user_payment_method_paypal .heading",:text =>"Receive Payment Through PayPal")
+  expect(page).to have_css(".payment-option-radios span:nth-child(1)[class='active']")
+  find("#core_user_paypal_account").set(FigNewton.oauth.paypal_user)
+  find(".modal-block input[value='Update Payment Settings']").click 
+  expect(page).to have_css(".alert",:text =>"Successfully updated payment information")
 end
 
 Given(/^I incorrectly update my paypal account information and see a error message$/) do
