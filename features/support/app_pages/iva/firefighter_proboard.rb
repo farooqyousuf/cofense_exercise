@@ -17,7 +17,7 @@ class PBFirefighter < IDmeBase
       denied_data = data_for(:denied_pb_fireman)
 
       case type
-      when "unique"
+      when "unique", "duplicate"
         populate_fields(data: unique_data)
       when "denied"
         populate_fields(data: denied_data)
