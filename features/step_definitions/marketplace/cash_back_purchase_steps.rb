@@ -156,7 +156,12 @@ Given(/^I update my payment information to receive via Paypal$/) do
 end
 
 Given(/^I incorrectly update my paypal account information and see a error message$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  find(".dashboard__payment-info .button").click
+  find(".payment-option-radios span:nth-child(1)").click 
+  expect(page).to have_css(".core_user_payment_method_paypal .heading",:text =>"Receive Payment Through PayPal")
+  expect(page).to have_css(".payment-option-radios span:nth-child(1)[class='active']")
+  find(".modal-block input[value='Update Payment Settings']").click 
+  expect(page).to have_css(".alert", :text =>"Unable to update payment information. Paypal account can't be blank")
 end
 
 
