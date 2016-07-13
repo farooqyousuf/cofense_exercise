@@ -5,6 +5,7 @@ All notable changes to this project will be documented in this file. This projec
 - QA-310: Marketplace Offer spec for Logged In User
 - QA-295: My cash update payment method spec
 - QA-304: Marketplace Offer spec for Logged out User
+- QA-255: Dupe attempt test for teacher doc upload
 
 ## 2.2.6 (07/11/2016)
 - HOTFIX: Update Carhartt partner test
