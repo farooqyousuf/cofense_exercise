@@ -144,7 +144,7 @@ Given(/^I update my payment information to receive via Amazon gift card$/) do
   expect(page).to have_css(".core_user_payment_method_amazon_gift_card .heading",:text =>"Receive Payment Through Amazon.com")
   find(".modal-block input[value='Update Payment Settings']").click 
   expect(page).to have_css(".alert",:text => "Successfully updated payment information") 
-  #check dashboard css return
+  expect(page).to have_Css(".dashboard__payment-info img[alt='Amazon.com']")
 end
 
 Given(/^I update my payment information to receive via Paypal$/) do
@@ -155,7 +155,7 @@ Given(/^I update my payment information to receive via Paypal$/) do
   find("#core_user_paypal_account").set(FigNewton.oauth.paypal_user)
   find(".modal-block input[value='Update Payment Settings']").click 
   expect(page).to have_css(".alert",:text =>"Successfully updated payment information")
-  #check dashboard css return 
+  expect(page).to have_css(".dashboard__payment-info img[alt='PayPal']")
 end
 
 Given(/^I incorrectly update my paypal account information and see a error message$/) do
