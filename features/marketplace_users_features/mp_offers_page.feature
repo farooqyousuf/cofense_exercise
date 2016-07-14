@@ -19,5 +19,11 @@ Feature: Test Marketplace Offers Page
     * I expect the page url to be for Marketplace Offers Page
 		* I check that the Offers Index is available 
 		* I check the store offer card links for "Logged In" User
-		* I check that the store offer card favorite and report bug is visible 		
+		* I check that the store offer card favorite and report bug is visible 
+
+	Scenario: Check Offers Side Bar - Promo Codes
+		* I click on SignIn link
+		* I login to marketplace as a "Military" user
+		* I click to see all promo code offers
+		* I check that the table index are promo code offers
 
