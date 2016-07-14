@@ -23,7 +23,10 @@ Feature: Test Marketplace Offers Page
 
 	Scenario: Check Offers Side Bar - Promo Codes
 		* I click on SignIn link
-		* I login to marketplace as a "Military" user
+    * I login to marketplace as a "Military" user
 		* I click to see all promo code offers
 		* I check that the table index are promo code offers
 
+	Scenario: Check Offers Side Bar - Coupons
+		* I click to see all Coupon offers
+		* I check that the table index are coupon offers 

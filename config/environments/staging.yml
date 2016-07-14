@@ -86,6 +86,7 @@ marketplace:
   stores_index_page: https://marketplace-staging.idmeinc.net/stores 
   offers_index_page: https://marketplace-staging.idmeinc.net/offers 
   offers_promo_code_index_page: https://marketplace-staging.idmeinc.net/offers?type=code
+  offers_coupon_index_page: https://marketplace-staging.idmeinc.net/offers?type=coupon
 
 social_network:
   facebook_email: eddie.park.tester@gmail.com
