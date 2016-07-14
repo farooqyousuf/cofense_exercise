@@ -36,8 +36,8 @@ Given(/^I check that the store offer card favorite and report bug is visible$/) 
 end
 
 Given(/^I click to see all promo code offers$/) do
-	find(:link ,:text =>"Promo Codes").click 
-	
+	@marketplace_offers.click_promocodes_sidebar_link
+
 	expect(page.current_url).to eql(FigNewton.marketplace.offers_promo_code_index_page)
 	expect(page).to have_css(".listing__header .breadcrumbs",:text =>"Shop › Offers › Codes")
 end
@@ -52,8 +52,8 @@ Given(/^I check that the table index are promo code offers$/) do
 end
 
 Given(/^I click to see all Coupon offers$/) do
-	find(:link, :text =>"Coupons").click 
-
+	@marketplace_offers.click_coupons_sidebar_link
+	 
 	expect(page.current_url).to eql(FigNewton.marketplace.offers_coupon_index_page)
 	expect(page).to have_css(".listing__header .breadcrumbs",:text =>"Shop › Offers › Coupons")
 end
