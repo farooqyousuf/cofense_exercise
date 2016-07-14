@@ -1,4 +1,4 @@
-@regression @marketplace @mp_offers @desktop
+@regression @marketplace  @desktop @mp_offers
 
 Feature: Test Marketplace Offers Page 
 	Background:

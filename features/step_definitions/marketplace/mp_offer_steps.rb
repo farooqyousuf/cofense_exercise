@@ -31,6 +31,24 @@ Given(/^I check that the store offer card favorite and report bug is not visible
 end
 
 Given(/^I check that the store offer card favorite and report bug is visible$/) do
-	expect(page).to have_css(".resource-card .save-offer", :match =>:first)
+	expect(page).to have_css(".resource-card .save-offer", :matchex =>:first)
 	expect(page).to have_css(".resource-card .report-offer", :match =>:first)
 end
+
+Given(/^I click to see all promo code offers$/) do
+	find(:link ,:text =>"Promo Codes").click 
+	
+	expect(page.current_url).to eql(FigNewton.marketplace.offers_promo_code_index_page)
+	expect(page).to have_css(".listing__header .breadcrumbs",:text =>"Shop › Offers › Codes")
+end
+
+Given(/^I check that the table index are promo code offers$/) do
+	expect(page).to have_css(".offers-list-static li:nth-child(1) .button",:match => :first, :text =>"Claim Code")
+	expect(page).to have_css(".offer-card__share-alt",:match =>:first, :text =>"Share with Friends")
+
+	(2..10).each do |card_number|
+		expect(page).to have_css(".offers-list-static li:nth-child(#{ card_number }) .button",:match =>:first, :text =>"Claim Code")
+	end 
+end
+
+
