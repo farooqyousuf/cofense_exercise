@@ -11,11 +11,11 @@ class TeacherDoc < IDmeBase
 
       if populate
 
-        unique_data = data_for(:experian_user) #info used for unique user
+        unique_data = data_for(:experian_user) #info used for unique and dupliate users
         denied_data = data_for(:fail_experian) #info used for denied user
 
         case type
-        when "unique"
+        when "unique", "duplicate"
           populate_fields(data: unique_data)
         when "denied"
           populate_fields(data: denied_data)
