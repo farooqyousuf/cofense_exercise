@@ -6,27 +6,30 @@ class DocEMT < IDmeBase
   include Capybara::DSL
   include ErrorMessages
 
-   def verify(populate: true, dupe: false)
+   def verify(populate: true, type: "none")
     find("[data-option=#{container_attribute}]").find(".verification-header").click
     choose("emt_level_state")
     populate_first_state("Wyoming")
 
       if populate
-        data = data_for(:experian_user)
-          if dupe
-            populate_fields(data: data_for(:fail_experian))
-            click_verify_button
-          else
-            populate_fields(data: data)
-            sleep 5
-            click_verify_button
-            attach_doc
-          end
+
+        unique_data = data_for(:experian_user) #info for unique and duplicate users
+        denied_data = data_for(:fail_experian) #info for denied user
+
+        case type
+        when "unique", "duplicate"
+          populate_fields(data: unique_data)
+        when "denied"
+          populate_fields(data: denied_data)
+        end
       end
 
-     if dupe == false
       click_verify_button
-    end
+
+      if type == "unique"
+        attach_doc
+        click_verify_button
+      end
    end
 
   def populate_fields(data:)
