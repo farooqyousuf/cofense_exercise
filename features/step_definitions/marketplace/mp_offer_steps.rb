@@ -115,6 +115,35 @@ Given(/^I check that the table index shows all government employee specific offe
 		#TODO: Add a couple test gov specific offers
 end 
 
+Given(/^I click to see Group Teacher offers$/) do 
+	find(".filters .groups-filter").click 
+	find(".filter__links:nth-child(5)").click 
+	expect(".filter__links:nth-child(5)",:visible => true)
+end 
+
+Given(/^I check that the table index shows all teacher specific offers$/) do 
+	(2..10).each do |card_number|
+		expect(page).to have_css(".offers-list-static li:nth-child(#{ card_number }) .offer-card__tags .-teacher")
+	end
+end 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
