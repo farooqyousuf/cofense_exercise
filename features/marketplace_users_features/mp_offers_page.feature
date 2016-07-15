@@ -42,3 +42,8 @@ Feature: Test Marketplace Offers Page
 	Scenario: Check Offer Groups - Students Specific Offers
 		* I click to see Group Student offers
 		* I check that the table index shows all student specific offers
+
+	Scenario: Check Offer Groups - Government Employees Offers
+		* I click to see Group Government Employees offers
+		* I check that the table index shows all government employee specific offers
+		
