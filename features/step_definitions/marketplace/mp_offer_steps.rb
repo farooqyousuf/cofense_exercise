@@ -67,3 +67,11 @@ Given(/^I check that the table index are coupon offers$/) do
 	expect(page).to have_css(".offers-list-static li:nth-child(3)",:text =>"PLUS UP TO 4.0% CASH BACK 10% Off Orders for the Military Community Sign Up & Save Share with Friends")
 end
 
+Given(/^I click to see Group Military offers$/) do
+	pending
+end
+
+Given(/^I check that the table index shows all military specific$/) do
+	pending
+end
+
