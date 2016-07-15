@@ -91,6 +91,29 @@ Given(/^I check that the table index shows all first responder specific offers$/
 	end 
 end 
 
+Given(/^I click to see Group Student offers$/) do 
+	find(".filters .groups-filter").click
+	find(".filter__links:nth-child(3)").click
+	expect(".filter__links:nth-child(3)",:visible => true )
+end
+
+Given(/^I check that the table index shows all student specific offers$/) do 
+	(2..10).each do |card_number|
+		expect(page).to have_css(".offers-list-static li:nth-child(#{ card_number }) .offer-card__tags .-student")
+	end
+end 
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

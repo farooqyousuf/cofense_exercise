@@ -35,6 +35,10 @@ Feature: Test Marketplace Offers Page
 		* I click to see Group Military offers
 		* I check that the table index shows all military specific offers
 
-	Scenario: Check Offer Groups - First Responder Specific offers
+	Scenario: Check Offer Groups - First Responder Specific Offers
 		* I click to see Group First Responder offers
 		* I check that the table index shows all first responder specific offers
+
+	Scenario: Check Offer Groups - Students Specific Offers
+		* I click to see Group Student offers
+		* I check that the table index shows all student specific offers
