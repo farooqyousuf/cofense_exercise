@@ -68,8 +68,9 @@ Given(/^I check that the table index are coupon offers$/) do
 end
 
 Given(/^I click to see Group Military offers$/) do
-	find(".filters .groups-filter").click
-	find(".filter__links:nth-child(1)").click 
+	@marketplace_offers.click_offer_groups_filter_sidebar_link
+	@marketplace_offers.click_groups_military_sidebar_link 
+
 	expect(".filter__links:nth-child(1)",:visible => true)
 end
 
@@ -80,8 +81,9 @@ Given(/^I check that the table index shows all military specific$/) do
 end
 
 Given(/^I click to see Group First Responder offers$/) do
-	find(".filters .groups-filter").click
-	find(".filter__links:nth-child(2)").click
+	@marketplace_offers.click_offer_groups_filter_sidebar_link
+	@marketplace_offers.click_groups_first_responder_sidebar_link 
+
 	expect(".filter__links:nth-child(2)",:visible => true)
 end 
 
@@ -92,8 +94,9 @@ Given(/^I check that the table index shows all first responder specific offers$/
 end 
 
 Given(/^I click to see Group Student offers$/) do 
-	find(".filters .groups-filter").click
-	find(".filter__links:nth-child(3)").click
+	@marketplace_offers.click_offer_groups_filter_sidebar_link
+	@marketplace_offers.click_groups_student_sidebar_link
+
 	expect(".filter__links:nth-child(3)",:visible => true)
 end
 
@@ -104,8 +107,8 @@ Given(/^I check that the table index shows all student specific offers$/) do
 end 
 
 Given(/^I click to see Group Government Employees Offers$/) do 
-	find(".filters .groups-filter").click
-	find(".filter__links:nth-child(4)").click 
+	@marketplace_offers.click_offer_groups_filter_sidebar_link
+	@marketplace_offers.click_groups_government_sidebar_link 
 	expect(".filter__links:nth-child(4)",:visible => true)
 end 
 
@@ -116,8 +119,8 @@ Given(/^I check that the table index shows all government employee specific offe
 end 
 
 Given(/^I click to see Group Teacher offers$/) do 
-	find(".filters .groups-filter").click 
-	find(".filter__links:nth-child(5)").click 
+	@marketplace_offers.click_offer_groups_filter_sidebar_link 
+	@marketplace_offers.click_groups_teacher_sidebar_link
 	expect(".filter__links:nth-child(5)",:visible => true)
 end 
 
