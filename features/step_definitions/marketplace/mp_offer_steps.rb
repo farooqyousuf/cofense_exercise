@@ -68,7 +68,9 @@ Given(/^I check that the table index are coupon offers$/) do
 end
 
 Given(/^I click to see Group Military offers$/) do
-	pending
+	find(".filters .groups-filter").click
+	find(".filter__links:nth-child(1)").click 
+	expect(".filter__links:nth-child(1)",:visible => true)
 end
 
 Given(/^I check that the table index shows all military specific$/) do
