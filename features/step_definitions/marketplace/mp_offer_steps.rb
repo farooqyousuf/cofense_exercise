@@ -74,6 +74,8 @@ Given(/^I click to see Group Military offers$/) do
 end
 
 Given(/^I check that the table index shows all military specific$/) do
-	pending
+	(2..10).each do |card_number|
+		expect(page).to have_css(".offers-list-static li:nth-child(#{ card_number }) .offer-card__tags .-military")
+	end 
 end
 
