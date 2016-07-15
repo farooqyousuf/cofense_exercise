@@ -79,3 +79,59 @@ Given(/^I check that the table index shows all military specific$/) do
 	end 
 end
 
+Given(/^I click to see Group First Responder offers$/) do
+	find(".filters .groups-filter").click
+	find(".filter__links:nth-child(2)").click
+	expect(".filter__links:nth-child(2)",:visible => true)
+end 
+
+Given(/^I check that the table index shows all first responder specific offers$/) do 
+	(2..10).each do |card_number|
+		expect(page).to have_css(".offers-list-static li:nth-child(#{ card_number }) .offer-card__tags .-responder")
+	end 
+end 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

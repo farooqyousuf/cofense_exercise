@@ -32,7 +32,9 @@ Feature: Test Marketplace Offers Page
 		* I check that the table index are coupon offers 
 
 	Scenario: Check Offer Groups - Military Specific Offers
-		* I click on the SignIn link
-		* I login to marketplace as a "Military" user
 		* I click to see Group Military offers
 		* I check that the table index shows all military specific offers
+
+	Scenario: Check Offer Groups - First Responder Specific offers
+		* I click to see Group First Responder offers
+		* I check that the table index shows all first responder specific offers
