@@ -1,6 +1,9 @@
 Change Log
 
 All notable changes to this project will be documented in this file. This project does not adhere to [Semantic Versioning](http://semver.org/)
+## 2.2.9 (07/17/2016)
+- QA-308: Marketplace Offer spec for Groups filter
+
 ## 2.2.8 (07/14/2016)
 - QA-309: Marketplace Offer spec for Promo Code and Coupons sidebar index
 - QA-260: Dupe attempt for EMT Document Upload
