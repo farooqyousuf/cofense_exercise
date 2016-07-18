@@ -67,3 +67,13 @@ Given(/^I check that the table index are coupon offers$/) do
 	expect(page).to have_css(".offers-list-static li:nth-child(3)",:text =>"PLUS UP TO 4.0% CASH BACK 10% Off Orders for the Military Community Sign Up & Save Share with Friends")
 end
 
+Given(/^I click to see all Offer Categories$/) do
+	find(".filters .categories-filter").click 
+	expect(page).to have_css(".categories-filter .filter__links",:visible => true)
+end 
+
+Given(/^I check the "([^"]*)" categories link$/) do |category|
+	find(:link,:href =>"/offers?categories=#{category.downcase}").click 
+	expect(page.current_url).to eql("https://marketplace-staging.idmeinc.net/offers?categories=#{category.downcase}")
+	expect(page).to have_css(".listing__header .breadcrumbs",:text =>"Shop › Offers › #{category}")
+end
