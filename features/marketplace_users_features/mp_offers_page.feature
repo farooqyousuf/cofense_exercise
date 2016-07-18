@@ -31,6 +31,28 @@ Feature: Test Marketplace Offers Page
 		* I click to see all Coupon offers
 		* I check that the table index are coupon offers 
 
+	Scenario: Check Offers Side Bar - Categories 
+		* I click to see all Offer Categories
+		* I check the "Accessories" categories link 
+		* I check the "Amazon" categories link 
+		* I check the "Books" categories link 
+		* I check the "Business" categories link 
+		* I check the "Clothing" categories link 
+		* I check the "Electronics" categories link 
+		* I check the "Entertainment" categories link 
+		* I check the "Food-cooking" categories link 
+		* I check the "Gifts" categories link 
+		* I check the "Health-beauty" categories link 
+		* I check the "Hobby-collectibles" categories link 
+		* I check the "Holiday" categories link 
+		* I check the "House-home" categories link 
+		* I check the "Kids" categories link 
+		* I check the "Local" categories link 
+		* I check the "Services" categories link 
+		* I check the "Shopping" categories link 
+		* I check the "Sports" categories link 
+		* I check the "Travel" categories link 
+
 	Scenario: Check Offer Groups - Military Specific Offers
 		* I click to see Group Military offers
 		* I check that the table index shows all military specific offers
@@ -50,4 +72,3 @@ Feature: Test Marketplace Offers Page
 	Scenario: Check Offer Groups - Teacher Offers
 		* I click to see Group Teacher offers
 		* I check that the table index shows all teacher specific offers 
-		
