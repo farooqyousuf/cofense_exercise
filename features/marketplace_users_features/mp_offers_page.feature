@@ -30,3 +30,24 @@ Feature: Test Marketplace Offers Page
 	Scenario: Check Offers Side Bar - Coupons
 		* I click to see all Coupon offers
 		* I check that the table index are coupon offers 
+
+	Scenario: Check Offer Groups - Military Specific Offers
+		* I click to see Group Military offers
+		* I check that the table index shows all military specific offers
+
+	Scenario: Check Offer Groups - First Responder Specific Offers
+		* I click to see Group First Responder offers
+		* I check that the table index shows all first responder specific offers
+
+	Scenario: Check Offer Groups - Students Specific Offers
+		* I click to see Group Student offers
+		* I check that the table index shows all student specific offers
+
+	Scenario: Check Offer Groups - Government Employees Offers
+		* I click to see Group Government Employees offers
+		* I check that the table index shows all government employee specific offers
+
+	Scenario: Check Offer Groups - Teacher Offers
+		* I click to see Group Teacher offers
+		* I check that the table index shows all teacher specific offers 
+		
