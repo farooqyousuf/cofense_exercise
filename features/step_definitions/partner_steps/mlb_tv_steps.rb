@@ -19,7 +19,7 @@ Given(/^MLBTV \- I verify the Troop ID discount has been applied$/) do
   click_button("BUY & ACCEPT TERMS") #not a fan of having to induce the error but having focus issue
   sleep 2
   expect(page).to have_text("Step 2: Payment")
-  expect(find("#success-id").text).to eq("Military discount with ID.me Status Verified; Discount Applied")
-  expect(find("#discount").text).to eq("$38.50") #discount amount
-  expect(find("#totalAmount").text).to eq("$71.49")
+  expect(page).to have_css("#success-id", :text => "Military discount with ID.me Status Verified; Discount Applied")
+  expect(page).to have_css("#discount",:text =>"$28.00")
+  expect(page).to have_css("#totalAmount",:text =>"$51.99")
 end
