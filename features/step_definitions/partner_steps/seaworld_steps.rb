@@ -31,7 +31,6 @@ end
 
 
 Given(/^I verify that my "([^"]*)" service member Complimentary tickets are available$/) do |seaworld_park|
-
   cart_id = case seaworld_park
     when "Seaworld San Antonio"           then "_oi20180"
     when "Seaworld Orlando"               then "_oi30086"

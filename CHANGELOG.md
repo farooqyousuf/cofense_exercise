@@ -1,6 +1,9 @@
 Change Log
 
 All notable changes to this project will be documented in this file. This project does not adhere to [Semantic Versioning](http://semver.org/)
+## 2.2.11 (07/19/2016)
+- HOTFIX: Fix MLB TV partner spec
+
 ## 2.2.10 (07/18/2016)
 - QA-307: Marketplace Offer page Categories filter spec
 
