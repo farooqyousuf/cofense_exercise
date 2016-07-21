@@ -29,11 +29,28 @@ Given(/^CAMP\- I apply the Troop ID discount$/) do
   end
 end
 
-Given(/^CAMP\- I verify the Troop ID discount has been applied$/) do
+Given(/^CAMP\- I verify the IDme discount has been applied$/) do
 	expect(page).to have_css(".success-msg",:text =>"Successfully verified your affiliation via ID.me")
 	expect(page).to have_css("#shopping-cart-table tbody td:nth-child(2) div" ,:text =>"ID.me Group Discount Applied") 
 	original_prudct_amt_string = first("#shopping-cart-table .price_old").text
 	actual_product_discount_amt_string = find("#shopping-cart-totals-table tbody tr:nth-child(3) td:nth-child(2)").text 
 	discount_applied = verify_discount(original_prudct_amt_string,actual_product_discount_amt_string,".20", :exact_match => true )
 	expect(discount_applied).to be(true)
+end
+
+
+Given(/^CAMP\- I apply the Responder ID discount$/) do
+  idp_signin = window_opened_by { find(".idme-btn-primary-lg-Responder").click }
+
+  within_window idp_signin do
+    sign_in_with_idme_responder
+  end
+end
+
+Given(/^CAMP\- I apply the Student ID discount$/) do
+  idp_signin = window_opened_by { find(".idme-btn-primary-lg-Student").click }
+
+  within_window idp_signin do
+    sign_in_with_idme_student
+  end
 end

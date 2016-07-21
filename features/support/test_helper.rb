@@ -41,6 +41,48 @@ module HelperMethods
     end
   end
 
+    def sign_in_with_idme_student 
+    if page.has_content? "Sign in"
+      fill_in "user_email", :with => FigNewton.test_user.student.user_email
+      fill_in "user_password", :with => FigNewton.test_user.password
+      click_button "Sign in"
+    end
+
+    if page.has_text? "Click here to finish"
+      click_link "Click here to finish"
+    
+    elsif page.has_text? "Allow"
+       click_button "Allow"
+
+    elsif page.has_text? "Authorize" 
+      click_button "Authorize"
+
+    elsif page.has_text? "Continue"
+      click_link "Continue"
+    end
+  end
+
+    def sign_in_with_idme_responder 
+    if page.has_content? "Sign in"
+      fill_in "user_email", :with => FigNewton.test_user.first_responder.user_email
+      fill_in "user_password", :with => FigNewton.test_user.password
+      click_button "Sign in"
+    end
+
+    if page.has_text? "Click here to finish"
+      click_link "Click here to finish"
+    
+    elsif page.has_text? "Allow"
+       click_button "Allow"
+
+    elsif page.has_text? "Authorize" 
+      click_button "Authorize"
+
+    elsif page.has_text? "Continue"
+      click_link "Continue"
+    end
+  end
+
   def sign_out_of_idme
     page.driver.browser.manage.delete_all_cookies # clears cookies from partner site first
     visit "https://api.id.me/sessions/new"

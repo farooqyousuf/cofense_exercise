@@ -72,3 +72,7 @@ test_user:
   military:
     veteran:
       user_email: rich.purnell.rocketman@gmail.com #TODO replace with veteran+test@id.me
+  first_responder:
+    user_email: test+responder@id.me 
+  student:
+    user_email: test+student@id.me 
