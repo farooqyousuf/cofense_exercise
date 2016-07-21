@@ -1,6 +1,9 @@
 Change Log
 
 All notable changes to this project will be documented in this file. This project does not adhere to [Semantic Versioning](http://semver.org/)
+## 2.2.12 (07/20/2016)
+- QA-313: Campsaver Partner Integration test
+
 ## 2.2.11 (07/19/2016)
 - HOTFIX: Fix MLB TV partner spec
 
