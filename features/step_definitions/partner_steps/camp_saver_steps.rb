@@ -1,7 +1,6 @@
 Given(/^CAMP\- I check the Camp Saver ID\.me Verify Instruction Page$/) do
 	visit FigNewton.partners.camp_saver.verify_idme_page
 	expect(page).to have_css("h2", :text =>"CampSaver.com Offers 20% Off Regular Price For Military, First Responders & Students")
-	#having issue with a delayed modal pop=up maybe like a delayed refresh?
 	sleep 2
 	page.driver.browser.navigate.refresh
 end
