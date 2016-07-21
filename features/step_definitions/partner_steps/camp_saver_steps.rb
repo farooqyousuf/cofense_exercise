@@ -25,7 +25,7 @@ Given(/^CAMP\- I apply the Troop ID discount$/) do
   idp_signin = window_opened_by { find(".idme-btn-primary-lg-Troop").click }
 
   within_window idp_signin do
-    sign_in_with_idme
+    sign_in_with_idme_account("troop_id")
   end
 end
 
@@ -43,7 +43,7 @@ Given(/^CAMP\- I apply the Responder ID discount$/) do
   idp_signin = window_opened_by { find(".idme-btn-primary-lg-Responder").click }
 
   within_window idp_signin do
-    sign_in_with_idme_responder
+    sign_in_with_idme_account("responder_id")
   end
 end
 
@@ -51,6 +51,6 @@ Given(/^CAMP\- I apply the Student ID discount$/) do
   idp_signin = window_opened_by { find(".idme-btn-primary-lg-Student").click }
 
   within_window idp_signin do
-    sign_in_with_idme_student
+    sign_in_with_idme_account("student_id")
   end
 end

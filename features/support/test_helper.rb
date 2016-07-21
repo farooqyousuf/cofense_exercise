@@ -3,68 +3,39 @@ module HelperMethods
 
   def sign_in_with_idme 
     #TODO figure out why you alotted two identical sign_in_with_idme in manual_helper.rb too
+    #TODO once convert everything over the sign_in_with_idme_account method then delete this method
     if page.has_content? "Sign in"
       fill_in "user_email", :with => FigNewton.partners.user
       fill_in "user_password", :with => FigNewton.partners.password
       click_button "Sign in"
     end
 
-    click_link "Continue" #currently all partners have been authorized with test user so this will speed up the test suite
-    # if page.has_text? "Click here to continue"
-    #   click_link "Click here to continue"
-    # elsif page.has_text? "Authorize"
-    #   click_button "Authorize"
-    # elsif page.has_text? "Continue"
-    #   click_link "Continue"
-    # end
+    click_link "Continue"
+  end
+
+  def sign_in_with_idme_account(group_type) 
+    user_email = case group_type
+    when "troop_id" 
+      FigNewton.partners.user
+    when "student_id"
+      FigNewton.test_user.student.user_email
+    when "responder_id"
+      FigNewton.test_user.first_responder.user_email
+    end 
+
+    if page.has_content? "Sign in"
+      fill_in "user_email", :with => user_email 
+      fill_in "user_password", :with => FigNewton.partners.password
+      click_button "Sign in"
+    end
+
+    click_link "Continue" 
   end
 
   #TODO - Refactor the duplicate sign_in options we have right now to single
   def sign_in_with_idme_veteran 
     if page.has_content? "Sign in"
       fill_in "user_email", :with => FigNewton.test_user.military.veteran.user_email
-      fill_in "user_password", :with => FigNewton.test_user.password
-      click_button "Sign in"
-    end
-
-    if page.has_text? "Click here to finish"
-      click_link "Click here to finish"
-    
-    elsif page.has_text? "Allow"
-       click_button "Allow"
-
-    elsif page.has_text? "Authorize" 
-      click_button "Authorize"
-
-    elsif page.has_text? "Continue"
-      click_link "Continue"
-    end
-  end
-
-    def sign_in_with_idme_student 
-    if page.has_content? "Sign in"
-      fill_in "user_email", :with => FigNewton.test_user.student.user_email
-      fill_in "user_password", :with => FigNewton.test_user.password
-      click_button "Sign in"
-    end
-
-    if page.has_text? "Click here to finish"
-      click_link "Click here to finish"
-    
-    elsif page.has_text? "Allow"
-       click_button "Allow"
-
-    elsif page.has_text? "Authorize" 
-      click_button "Authorize"
-
-    elsif page.has_text? "Continue"
-      click_link "Continue"
-    end
-  end
-
-    def sign_in_with_idme_responder 
-    if page.has_content? "Sign in"
-      fill_in "user_email", :with => FigNewton.test_user.first_responder.user_email
       fill_in "user_password", :with => FigNewton.test_user.password
       click_button "Sign in"
     end
