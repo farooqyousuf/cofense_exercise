@@ -1,7 +1,10 @@
 @caesars @partners @desktop
 Feature: Test the ID.me Caesars Integration
-  @troop_id
+
   Scenario: Test the Caesars Military Partner Integration
-    * CS - I add an item to the cart
-    * CS - I apply the Troop ID discount
-    * CS - I verify the discount has been applied
+    * CAESARS- I visit homepage and check best room rates
+    * CAESARS- I verify my "troop_id" through ID.me
+    * CAESARS- I verify my "troop_id" integration is displayed on the rate calendar page
+    * CAESARS- I choose a room date and verify the "troop_id" discount on the modal
+    * CAESARS- I book a room and verify my "troop_id" discount has been applied
+
