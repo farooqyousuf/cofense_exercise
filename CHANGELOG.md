@@ -6,6 +6,7 @@ All notable changes to this project will be documented in this file. This projec
 
 ## 2.2.12 (07/20/2016)
 - QA-313: Campsaver Partner Integration test
+- QA-312: Ashley Stewart Partner Integration test
 
 ## 2.2.11 (07/19/2016)
 - HOTFIX: Fix MLB TV partner spec
