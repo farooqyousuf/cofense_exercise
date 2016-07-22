@@ -60,6 +60,9 @@ partners:
     product_page: http://www.columbia.com/mens-pfg-bonehead-short-sleeve-shirt-%E2%80%94-big-FS7130.html?dwvar_FS7130_variationColor=450#start=20
     shopping_cart_page: https://www.columbia.com/cart
   ashley_stewart: http://www.ashleystewart.com/screenprint-mock-neck-tee/041-U11935452.html?dwvar_041-U11935452_color=0022#start=4&cgid=tops
+  camp_saver:
+    verify_idme_page: http://www.campsaver.com/verify-with-idme/?utm_source=idme&utm_medium=email&utm_campaign=may13
+    product_page: http://www.campsaver.com/interval-tee-women-s
 
 oauth:
   facebook_user: qa@id.me
@@ -70,3 +73,7 @@ test_user:
   military:
     veteran:
       user_email: rich.purnell.rocketman@gmail.com #TODO replace with veteran+test@id.me
+  first_responder:
+    user_email: test+responder@id.me 
+  student:
+    user_email: test+student@id.me 

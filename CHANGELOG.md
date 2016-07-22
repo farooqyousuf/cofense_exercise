@@ -1,7 +1,11 @@
 Change Log
 
 All notable changes to this project will be documented in this file. This project does not adhere to [Semantic Versioning](http://semver.org/)
+## 2.2.13 (07/22/16)
+- QA-314: Add Caesars Entertainment Partner Integration test 
+
 ## 2.2.12 (07/20/2016)
+- QA-313: Campsaver Partner Integration test
 - QA-312: Ashley Stewart Partner Integration test
 
 ## 2.2.11 (07/19/2016)

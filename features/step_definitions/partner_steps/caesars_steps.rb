@@ -1,29 +1,65 @@
-Given(/^CS \- I add an item to the cart$/) do
+Given(/^CAESARS\- I visit homepage and check best room rates$/) do
   visit FigNewton.partners.caesars_hotels
+  find(".cet-dialog-close-box").click #for pop-up modal upon visit 
+
   click_link "Check Best Rates"
-  # this is UP TO 15% which means it'll be different which means that you are going to need
-  #to make sure they're variable
-  find("#datalist").first("a",:text => "ROOMS & RATES").click
 end
 
-Given(/^CS \- I apply the Troop ID discount$/) do
+Given(/^CAESARS\- I verify my "([^"]*)" through ID\.me$/) do |group|
+  user_group = case group
+    when "troop_id"
+      ".idme-btn-primary-sm-Troop-main"
+    when "teacher_id"
+      ".idme-btn-primary-sm-Teacher"
+    when "responder_id"
+      ".idme-btn-primary-sm-Responder"
+    when "student_id"
+      ".idme-btn-primary-sm-Student"
+  end 
+
   @idp_signin = window_opened_by do
-    first(".idme-btn-container a").native.send_key :return
-  end
+    find(user_group).click 
+  end 
 
-  within_window @idp_signin do
-    sign_in_with_idme
-  end
-  # note that will need sleep or extended sync selector because visible delay in content loading
-  # TODO : add expectations to check first count that discount has been applied here
-  expect(page).to have_css(".idmeimg") # Military Discount Applied image
-  binding.pry
-  expect(find("#roomList").first(".box").find(".troop-promo").text).to eql("+Additional Military Discount")
-  find("#roomList").first("a",:text => "BOOK NOW").click
+  within_window @idp_signin do 
+    sign_in_with_idme_account(group)
+  end 
 end
 
-Given(/^CS \- I verify the discount has been applied$/) do
-  expect(find(".title")).to have_text("Military Discount: 10%")
-  #I dont think there is a good way to find the price amount to be set right now?
-  #TODO : turns out the new window was incorrect so instead adding expectations to check otherwise
+Given(/^CAESARS\- I verify my "([^"]*)" integration is displayed on the rate calendar page$/) do |group|
+  user_group_text = find_user_group_text(group)
+
+  expect(page).to have_css(".id-me-bx",:text =>"Additional #{user_group_text} Discount applied through")
+  expect(page).to have_css(".troopSwapSidepanel",:text =>"ID.me Up to 15% Room Discount for Military, First Responders, Students & Teachers. What is ID.me? Verification by ID.me")
 end
+
+Given(/^CAESARS\- I choose a room date and verify the "([^"]*)" discount on the modal$/) do |group|
+  user_group_text = find_user_group_text(group)
+
+  find(".cal-table div:nth-child(2) div:nth-child(3)").click 
+  expect(page).to have_css("#idme",:text =>"Additional #{user_group_text} Discount applied through ID.me")
+  
+  find(".rate-table dl:nth-child(1) .cfive").click 
+  expect(page).to have_css(".troopSwapSidepanel",:text =>"ID.me Up to 15% Room Discount for Military, First Responders, Students & Teachers. What is ID.me? Verification by ID.me")
+end
+
+Given(/^CAESARS\- I book a room and verify my "([^"]*)" discount has been applied$/) do |group|
+  user_group_text = find_user_group_text(group)
+
+  first(".hotel-list #A1").click 
+  expect(page).to have_css(".title dd:nth-child(3)",:text => "#{user_group_text} Discount: 10% - Applied")
+  #NOTE: Caesears doesn't disclose their promotional discount amounts so cannot at this time confirm discount being applied
+end
+
+def find_user_group_text(group)
+  case group
+     when "troop_id"
+      "Military"
+     when "teacher_id"
+      "Teacher"
+     when "responder_id"
+      "First Responder"
+     when "student_id"
+      "Student"
+  end 
+end 
