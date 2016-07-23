@@ -76,3 +76,5 @@ test_user:
     user_email: test+responder@id.me 
   student:
     user_email: test+student@id.me 
+  teacher:
+    user_email: test+teacher@id.me
