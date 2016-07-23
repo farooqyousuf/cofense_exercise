@@ -1,6 +1,9 @@
 Change Log
 
 All notable changes to this project will be documented in this file. This project does not adhere to [Semantic Versioning](http://semver.org/)
+## 2.2.14 (08/23/2016)
+- QA-314: Add Caesars Entertainment Student, Teacher and First Responder Integration test
+
 ## 2.2.13 (07/22/16)
 - QA-314: Add Caesars Entertainment Partner Integration test 
 
