@@ -3,6 +3,7 @@ Change Log
 All notable changes to this project will be documented in this file. This project does not adhere to [Semantic Versioning](http://semver.org/)
 ## 2.2.14 (07/26/16)
 - HOTFIX: Update MLB shop product selector and verify matchers
+- HOTFIX: Update Camp Saver product selector
 
 ## 2.2.13 (07/22/16)
 - QA-314: Add Caesars Entertainment Partner Integration test 
