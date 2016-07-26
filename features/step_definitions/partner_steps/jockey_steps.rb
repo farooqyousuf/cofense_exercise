@@ -4,6 +4,7 @@ Given(/^JO \- I add an item to the cart$/) do
   first("#ProductColors a").click
   first("#ProductSizes a").click
   find("#AddToBagPD").click
+
   if find("#TopNavCheckOutButton").visible?
     find("#TopNavCheckOutButton").click
   else
@@ -12,16 +13,30 @@ Given(/^JO \- I add an item to the cart$/) do
   first("a", :text => "CHECKOUT").click
 end
 
-Given(/^JO \- I apply the Troop ID discount$/) do
-  idme_window = window_opened_by do
-    find(".military-discount-container").click
-  end
+Given(/^JO \- I apply the "([^"]*)" discount$/) do |group|
+  user_group = case group
+    when "troop_id"
+      ".idme-btn-primary-lg-Troop"
+    when "responder_id"
+      ".idme-btn-primary-lg-Responder"
+    when "student_id"
+      ".idme-btn-primary-lg-Student"
+  end 
 
-  within_window idme_window do
-    sign_in_with_idme
-  end
+  @idp_signin = window_opened_by do
+    find(user_group).click 
+  end 
+
+  within_window @idp_signin do 
+    sign_in_with_idme_account(group)
+  end 
 end
 
-Given(/^JO \- I verify the Troop ID discount has been applied$/) do
-  page.has_text? "Military members receive 10% off with ID.me"
+Given(/^JO \- I verify the IDme discount has been applied$/) do
+  expect(page).to have_css(".idme_sr_row",:text =>"Military members receive 10% off! with ID.me")
+  original_product_amt_string = first(".summary-detail-row .summary-right").text
+  actual_product_discounted_amt_string = find(".red-discount-ledger .summary-right").text
+
+  discount_applied = verify_discount(original_product_amt_string, actual_product_discounted_amt_string, ".10", :exact_match => true) 
+  expect(discount_applied).to be(true)
 end
