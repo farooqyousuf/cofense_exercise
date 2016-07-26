@@ -1,6 +1,11 @@
 Change Log
 
 All notable changes to this project will be documented in this file. This project does not adhere to [Semantic Versioning](http://semver.org/)
+## 2.2.14 (07/26/16)
+- HOTFIX: Update MLB shop product selector and verify matchers
+- HOTFIX: Update Camp Saver product selector
+- QA-317: Update Jockey Partner test and add student ID and first responder ID integration tests
+
 ## 2.2.14 (08/23/2016)
 - QA-314: Add Caesars Entertainment Student, Teacher and First Responder Integration test
 
@@ -9,6 +14,7 @@ All notable changes to this project will be documented in this file. This projec
 
 ## 2.2.12 (07/20/2016)
 - QA-313: Campsaver Partner Integration test
+- QA-312: Ashley Stewart Partner Integration test
 
 ## 2.2.11 (07/19/2016)
 - HOTFIX: Fix MLB TV partner spec
