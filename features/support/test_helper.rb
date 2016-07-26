@@ -121,6 +121,7 @@ module HelperMethods
     else 
       actual_discount_amt = /\d{1,3}[,\\.]?(\\d{1,2})?/.match(actual_product_discounted_amt_string)[0].chop.to_i
     end 
+
    return actual_discount_amt == calc_discount_amt 
   end 
 

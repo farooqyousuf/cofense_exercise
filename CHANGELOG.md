@@ -4,6 +4,7 @@ All notable changes to this project will be documented in this file. This projec
 ## 2.2.14 (07/26/16)
 - HOTFIX: Update MLB shop product selector and verify matchers
 - HOTFIX: Update Camp Saver product selector
+- QA-317: Update Jockey Partner test and add student ID and first responder ID integration tests
 
 ## 2.2.13 (07/22/16)
 - QA-314: Add Caesars Entertainment Partner Integration test 
