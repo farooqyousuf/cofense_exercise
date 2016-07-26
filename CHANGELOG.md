@@ -6,6 +6,9 @@ All notable changes to this project will be documented in this file. This projec
 - HOTFIX: Update Camp Saver product selector
 - QA-317: Update Jockey Partner test and add student ID and first responder ID integration tests
 
+## 2.2.14 (08/23/2016)
+- QA-314: Add Caesars Entertainment Student, Teacher and First Responder Integration test
+
 ## 2.2.13 (07/22/16)
 - QA-314: Add Caesars Entertainment Partner Integration test 
 
