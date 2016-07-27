@@ -63,6 +63,8 @@ partners:
   camp_saver:
     verify_idme_page: http://www.campsaver.com/verify-with-idme/?utm_source=idme&utm_medium=email&utm_campaign=may13
     product_page: http://www.campsaver.com/lunar-pull-on-women-s
+  irobot:
+    hlp_page: https://hosted-pages.id.me/military-and-veteran-discount?offer_id=101377
 
 oauth:
   facebook_user: qa@id.me
