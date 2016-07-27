@@ -8,3 +8,23 @@ Feature: Test the ID.me Caesars Integration
     * CAESARS- I choose a room date and verify the "troop_id" discount on the modal
     * CAESARS- I book a room and verify my "troop_id" discount has been applied
 
+  Scenario: Test the Caesars Teacher Partner Integration
+    * CAESARS- I visit homepage and check best room rates
+    * CAESARS- I verify my "teacher_id" through ID.me
+    * CAESARS- I verify my "teacher_id" integration is displayed on the rate calendar page
+    * CAESARS- I choose a room date and verify the "teacher_id" discount on the modal
+    * CAESARS- I book a room and verify my "teacher_id" discount has been applied
+
+  Scenario: Test the Caesars Student Partner Integration
+    * CAESARS- I visit homepage and check best room rates
+    * CAESARS- I verify my "student_id" through ID.me
+    * CAESARS- I verify my "student_id" integration is displayed on the rate calendar page
+    * CAESARS- I choose a room date and verify the "student_id" discount on the modal
+    * CAESARS- I book a room and verify my "student_id" discount has been applied
+
+  Scenario: Test the Caesars Student Partner Integration
+    * CAESARS- I visit homepage and check best room rates
+    * CAESARS- I verify my "responder_id" through ID.me
+    * CAESARS- I verify my "responder_id" integration is displayed on the rate calendar page
+    * CAESARS- I choose a room date and verify the "responder_id" discount on the modal
+    * CAESARS- I book a room and verify my "responder_id" discount has been applied
