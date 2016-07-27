@@ -5,6 +5,7 @@ All notable changes to this project will be documented in this file. This projec
 - HOTFIX: Fix Jockey Partner Test matcher for studentID and first responderID
 - HOTFIX: Add new selector for Seaworld Adventure Island Tampa Military Partner
 - HOTFIX: Update MLB shop discount element selector
+- QA-323: Add iRobot partner military integration test
 
 ## 2.2.14 (07/26/16)
 - HOTFIX: Update MLB shop product selector and verify matchers
