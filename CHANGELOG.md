@@ -1,6 +1,11 @@
 Change Log
 
 All notable changes to this project will be documented in this file. This project does not adhere to [Semantic Versioning](http://semver.org/)
+## 2.2.15 (07/27/16)
+- HOTFIX: Fix Jockey Partner Test matcher for studentID and first responderID
+- HOTFIX: Add new selector for Seaworld Adventure Island Tampa Military Partner
+- HOTFIX: Update MLB shop discount element selector
+
 ## 2.2.14 (07/26/16)
 - HOTFIX: Update MLB shop product selector and verify matchers
 - HOTFIX: Update Camp Saver product selector

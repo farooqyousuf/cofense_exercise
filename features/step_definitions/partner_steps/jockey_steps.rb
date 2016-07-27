@@ -32,8 +32,17 @@ Given(/^JO \- I apply the "([^"]*)" discount$/) do |group|
   end 
 end
 
-Given(/^JO \- I verify the IDme discount has been applied$/) do
-  expect(page).to have_css(".idme_sr_row",:text =>"Military members receive 10% off! with ID.me")
+Given(/^JO \- I verify the IDme "([^"]*)" discount has been applied$/) do |group|
+  discount_message_text = case group
+  when "troop_id"
+    "Military members receive 10% off! with ID.me"
+  when "student_id"
+    "Students receive 10% off! with ID.me"
+  when "responder_id"
+    "First Responders receive 10% off! with ID.me"
+  end 
+
+  expect(page).to have_css(".idme_sr_row",:text => discount_message_text)
   original_product_amt_string = first(".summary-detail-row .summary-right").text
   actual_product_discounted_amt_string = find(".red-discount-ledger .summary-right").text
 

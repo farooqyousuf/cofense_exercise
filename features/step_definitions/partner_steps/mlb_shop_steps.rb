@@ -22,6 +22,6 @@ Given(/^MLBSHOP \- I verify the Troop ID discount has been applied$/) do
   #TODO: refactor this to use the verify_discount method
   expect(page).to have_css(".ui-alert-body",:text => FigNewton.partners.mlb_shop_discount)
   expect(page).to have_selector("#checkoutCouponTotalValue", :visible => true)
-  expect(page).to have_css("#checkoutCouponTotal",:text => FigNewton.partners.mlb_shop_discount_amount)
+  expect(page).to have_css("#checkoutCouponTotalValue",:text => FigNewton.partners.mlb_shop_discount_amount)
   expect(page).to have_selector("#desktopIdMeVerified",:text =>"Status Verified",:visible => false)
 end

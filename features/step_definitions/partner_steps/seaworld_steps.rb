@@ -29,6 +29,10 @@ Given(/^I log in with my Id\.me military account$/) do
   end
 end
 
+Given(/^I click the Active Duty Program ticket link for Adventure Island Tampa$/) do
+  first(:link,:href =>"/en/buschgardens-tampa/waves-of-honor/active").click 
+end 
+
 
 Given(/^I verify that my "([^"]*)" service member Complimentary tickets are available$/) do |seaworld_park|
   cart_id = case seaworld_park

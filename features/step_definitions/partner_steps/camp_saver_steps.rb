@@ -33,7 +33,6 @@ Given(/^CAMP\- I verify the IDme discount has been applied$/) do
 	original_prudct_amt_string = first("#shopping-cart-table .price_old").text
 	actual_product_discount_amt_string = find("#shopping-cart-totals-table tbody tr:nth-child(3) td:nth-child(2)").text 
 	discount_applied = verify_discount(original_prudct_amt_string,actual_product_discount_amt_string,".20", :exact_match => true )
-	binding.pry
 	expect(discount_applied).to be(true)
 	expect(page).to have_css("#shopping-cart-table tbody td:nth-child(2) div" ,:text =>"ID.me Group Discount Applied") 
 end
