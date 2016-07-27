@@ -1,5 +1,5 @@
 
-@seaworld @version2
+@seaworld @version2 @desktop
 Feature: Test the ID.me Seaworld Waves of Honor Partner Integrations
 
   Scenario: Test Seaworld Orlando Active Military Integration
@@ -36,7 +36,7 @@ Feature: Test the ID.me Seaworld Waves of Honor Partner Integrations
     * I visit the waves of honor "Aquatica San Diego" Integration 
     * I log in with my Id.me military account
     * I verify that my "Aquatica San Diego" service member Complimentary tickets are available
-  
+
   Scenario: Test Adventure Island Tampa Active Military Integration 
     * I visit the waves of honor "Adventure Island Tampa" Integration 
     * I click the Active Duty Program ticket link for Adventure Island Tampa
