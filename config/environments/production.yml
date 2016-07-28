@@ -3,7 +3,8 @@ sauce_labs:
   access_key: a2280004-36fd-4a44-ae1a-209696270d5e
 
 partners:
-  user:     tony.chung+test@id.me
+  user: tony.chung+test@id.me
+  user_email_random: <%= "capybara+"+"#{rand(6 ** 8)}"+"@yahoo.com" %>
   password: Password123
   fanatics: http://www.fanatics.com/NFL_Denver_Broncos_Mens/Peyton_Manning_Denver_Broncos_Nike_Super_Bowl_50_Game_Jersey_-_Orange
   fanatics_discount: "A discount of 10% and free shipping was successfully applied to your order."
@@ -65,6 +66,7 @@ partners:
     product_page: http://www.campsaver.com/lunar-pull-on-women-s
   irobot:
     hlp_page: https://hosted-pages.id.me/military-and-veteran-discount?offer_id=101377
+  jr_cigar_landing_page: https://www.jrcigars.com/military-discount?source=cj
 
 oauth:
   facebook_user: qa@id.me
