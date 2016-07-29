@@ -1,6 +1,9 @@
 Change Log
 
 All notable changes to this project will be documented in this file. This project does not adhere to [Semantic Versioning](http://semver.org/)
+## 2.2.16 (07/28/16)
+- QA-328: JR Cigar Partner Integration Test
+
 ## 2.2.15 (07/27/16)
 - HOTFIX: Fix Jockey Partner Test matcher for studentID and first responderID
 - HOTFIX: Add new selector for Seaworld Adventure Island Tampa Military Partner
