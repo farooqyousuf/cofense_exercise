@@ -13,9 +13,6 @@ Given(/^JRCIGAR \- I login to JR Cigar$/) do
 end
 
 Given(/^JRCIGAR \- I add item to the cart$/) do
-	visit "https://www.jrcigars.com/item/drew-estate-cigars/joya-red/canonazo/jdnrca"
-	click_button "Add to cart"
-	sleep 1
 	visit "https://www.jrcigars.com/cart"
 end
 
@@ -33,13 +30,12 @@ Given(/^JRCIGAR \- I login with my military Idme account$/) do
 		find(".idme-btn-alt-lg-Troop").click
 	end 
 
-	within_window idp_signin do
+	within_window idp_simgnin do
 		sign_in_with_idme
 	end 
 end
 
 Given(/^JRCIGAR \- I verify my IDme military discount has been applied$/) do
-	binding.pry
 	expect(page).to have_css(".coupon-title",:match => :first, :text =>"Coupon 10MILT-AFFILIATES Save $10.84")
 	expect(page).to have_css("a[href='#military-discount']",:text => "MILITARY DISCOUNT APPLIES TO YOUR ORDER!")
 end
@@ -55,7 +51,7 @@ Given(/^JRCIGAR \- I login with my First Responder Idme account$/) do
 end
 
 Given(/^JRCIGAR \- I verify my IDme First Responder discount has been applied$/) do
-	binding.pry
+	visit "https://www.jrcigars.com/cart"
 	expect(page).to have_css(".coupon-title",:match => :first, :text =>"Coupon 10MILT-AFFILIATES Save $10.84")
 	expect(page).to have_css("a[href='#military-discount']",:text => "MILITARY DISCOUNT APPLIES TO YOUR ORDER!")
 end
