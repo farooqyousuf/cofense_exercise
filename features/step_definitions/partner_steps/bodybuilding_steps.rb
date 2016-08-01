@@ -18,7 +18,6 @@ Given(/^BODYBUILDING \- I add a item to my cart$/) do
 	find("#BSN063-right-submit").click
 	find(:link , :href =>"https://www.bodybuilding.com/store/commerce/cart.jsp").click
 	find("#promo-code-toggler").click
-
 	find(".qa-automation-var-couponcode").set(@coupon_code)
 end
 

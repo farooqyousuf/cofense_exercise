@@ -1,4 +1,4 @@
-@caesars @partners @desktop
+@caesars @partners @desktop @version2
 Feature: Test the ID.me Caesars Integration
 
   Scenario: Test the Caesars Military Partner Integration
