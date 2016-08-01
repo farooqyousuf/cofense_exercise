@@ -1,6 +1,9 @@
 Change Log
 
 All notable changes to this project will be documented in this file. This project does not adhere to [Semantic Versioning](http://semver.org/)
+## 2.2.17 (08/01/2016)
+- HOTFIX: Update MLB tv and included Caesars Entertainment test to daily
+
 ## 2.2.16 (07/28/16)
 - QA-328: JR Cigar Partner Integration Test
 
