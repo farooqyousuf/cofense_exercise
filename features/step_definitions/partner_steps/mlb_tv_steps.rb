@@ -20,6 +20,6 @@ Given(/^MLBTV \- I verify the Troop ID discount has been applied$/) do
   sleep 2
   expect(page).to have_text("Step 2: Payment")
   expect(page).to have_css("#success-id", :text => "Military discount with ID.me Status Verified; Discount Applied")
-  expect(page).to have_css("#discount",:text =>"$17.50"
+  expect(page).to have_css("#discount",:text =>"$17.50")
   expect(page).to have_css("#totalAmount",:text =>"$32.49")
 end
