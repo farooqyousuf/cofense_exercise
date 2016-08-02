@@ -1,6 +1,9 @@
 Change Log
 
 All notable changes to this project will be documented in this file. This project does not adhere to [Semantic Versioning](http://semver.org/)
+## 2.2.18 (08/02/2016)
+- QA-356: Add Merrell Military Partner Integration test
+
 ## 2.2.17 (08/01/2016)
 - HOTFIX: Update MLB tv and included Caesars Entertainment test to daily
 
