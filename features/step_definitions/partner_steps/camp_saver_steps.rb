@@ -34,7 +34,8 @@ Given(/^CAMP\- I verify the IDme discount has been applied$/) do
 	actual_product_discount_amt_string = find("#shopping-cart-totals-table tbody tr:nth-child(3) td:nth-child(2)").text 
 	discount_applied = verify_discount(original_prudct_amt_string,actual_product_discount_amt_string,".20", :exact_match => true )
 	expect(discount_applied).to be(true)
-	expect(page).to have_css("#shopping-cart-table tbody td:nth-child(2) div" ,:text =>"ID.me Group Discount Applied") 
+	#expect(page).to have_css("#shopping-cart-table tbody td:nth-child(2) div" ,:text =>"ID.me Group Discount Applied") #08/2/16 : use this matcher when they change over copy
+	expect(page).to have_css("#shopping-cart-table tbody td:nth-child(2) div", :text => "Id.me Verify")
 end
 
 
