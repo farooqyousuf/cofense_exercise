@@ -29,8 +29,8 @@ Given(/^MERRELL\- I verify my military discount was applied$/) do
 
 	begin
 		expect(page).to have_css(".IDmeButtonMil",:visible => true)
-		expect(page).to have_css("a[class='login-trigger']")
-	rescue
+		expect(page).to have_css(".IDmeButtonMil .military")
+	rescue 
 		puts "==================== MERRELL IDme LOGIN BUTTON HAS CHANGED . REVIEW AND CHECK CSS ================================="
 		#08/2/16: merrell is suppose to change UI for the button sometime this or next week 
 	end 

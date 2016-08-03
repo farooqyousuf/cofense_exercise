@@ -1,6 +1,9 @@
 Change Log
 
 All notable changes to this project will be documented in this file. This project does not adhere to [Semantic Versioning](http://semver.org/)
+## 2.2.19 (08/03/2016)
+- Partner-Update: Updated tests for JRCigar, MLB.tv, Merrell, Camp Saver, Tampa Seaworld.
+
 ## 2.2.18 (08/02/2016)
 - QA-356: Add Merrell Military Partner Integration test
 
