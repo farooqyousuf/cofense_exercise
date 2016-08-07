@@ -47,7 +47,8 @@ Given(/^CAESARS\- I book a room and verify my "([^"]*)" discount has been applie
   user_group_text = find_user_group_text(group)
 
   first(".hotel-list #A1").click 
-  expect(page).to have_css(".title dd:nth-child(3)",:text => "#{user_group_text} Discount: 10% - Applied")
+
+  expect(page).to have_css(".promo-details",:text => "#{user_group_text} Discount: 10%")
   #NOTE: Caesears doesn't disclose their promotional discount amounts so cannot at this time confirm discount being applied
 end
 
