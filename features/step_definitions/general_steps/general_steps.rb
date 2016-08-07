@@ -71,7 +71,10 @@ Given(/^I submit the verification code for "([^"]*)"$/) do |option|
   @admin_verif_attempts = AdminVerificationAttempts.new
 
   # open and view the latest record
-  select("#{option}", :from => "option")
+  find('#s2id_option').click
+  find("#select2-results-5").find("div", :text => "#{option}").click
+
+  #select("#{option}", :from => "option")
   @admin_verif_attempts.open_newest
 
   # get the verification code
