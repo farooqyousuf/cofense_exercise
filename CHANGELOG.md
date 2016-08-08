@@ -1,6 +1,9 @@
 Change Log
 
 All notable changes to this project will be documented in this file. This project does not adhere to [Semantic Versioning](http://semver.org/)
+## 2.2.21 (08/08/2016)
+- HOTFIX: Update Ashley Stewart partner test selector
+
 ## 2.2.20 (08/07/2016)
 - HOTFIX: Update Caesar verify ID expectation matcher
 
