@@ -104,7 +104,7 @@ module HelperMethods
   def verify_discount(original_product_amt_string, actual_product_discounted_amt_string, discount_percentage, options={})
     #TODO : this whole method needs to be refactored and more semanticaly named
     exact_match = options[:exact_match]
-    verify_discount_total = options[:verify_discount_total]
+    verify_discount_total = options[:verify_discount_total] #when only the total after subtracted discount amount is visible 
     full_price = original_product_amt_string.delete "$"
 
     if exact_match
