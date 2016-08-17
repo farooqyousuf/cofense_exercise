@@ -3,6 +3,7 @@ Change Log
 All notable changes to this project will be documented in this file. This project does not adhere to [Semantic Versioning](http://semver.org/)
 ## 2.2.23 (08/17/2016)
 - QA-358: Add Rhone partner military integration test
+- HOTFIX: Fixed tests using Test Drive
 
 ## 2.2.22 (08/14/2016)
 - HOTFIX: Update TaylorMade partner checkout flow
@@ -40,7 +41,7 @@ All notable changes to this project will be documented in this file. This projec
 - QA-314: Add Caesars Entertainment Student, Teacher and First Responder Integration test
 
 ## 2.2.13 (07/22/16)
-- QA-314: Add Caesars Entertainment Partner Integration test 
+- QA-314: Add Caesars Entertainment Partner Integration test
 
 ## 2.2.12 (07/20/2016)
 - QA-313: Campsaver Partner Integration test
