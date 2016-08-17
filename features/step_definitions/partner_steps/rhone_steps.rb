@@ -17,4 +17,6 @@ Given(/^RHONE \- I verify my military discount was applied$/) do
 	original_product_amt_string = find(".order-summary__section--total-lines .total-line--subtotal .total-line__price").text
 	actual_product_discounted_amt_string = find(".order-summary__section--total-lines .total-line--reduction .total-line__price").text
 	discount_applied = verify_discount(original_product_amt_string,actual_product_discounted_amt_string,".15",:exact_match => true)
+
+	expect(discount_applied).to be(true)
 end 
