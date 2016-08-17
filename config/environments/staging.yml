@@ -10,7 +10,7 @@ oauth:
   client_id     : 8e7d94dd2114a4ba54b8ef7950446aaa
   client_secret : ff5a9ef3aeb9a98ab49ee42662b8f58e
   idp_endpoint  : https://api-staging.idmeinc.net
-  redirect_uri  : https://oauth-tester-staging.idmeinc.net
+  redirect_uri  : https://test-drive-staging.idmeinc.net
   general_password: Password123
   weak_password: Password1
   unverified: farooq+noverifications@id.me
@@ -83,8 +83,8 @@ marketplace:
   group_affiliations_page: https://marketplace-staging.idmeinc.net/cash-back/group-affiliations
   merchant_page: https://marketplace-staging.idmeinc.net/stores/175-fanatics
   merchant_review_text: Review for Fanatics By William Wallace on July 05, 2016 I just got a discount at Fanatics and earned $6.60 in cash back.
-  stores_index_page: https://marketplace-staging.idmeinc.net/stores 
-  offers_index_page: https://marketplace-staging.idmeinc.net/offers 
+  stores_index_page: https://marketplace-staging.idmeinc.net/stores
+  offers_index_page: https://marketplace-staging.idmeinc.net/offers
   offers_promo_code_index_page: https://marketplace-staging.idmeinc.net/offers?type=code
   offers_coupon_index_page: https://marketplace-staging.idmeinc.net/offers?type=coupon
 

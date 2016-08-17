@@ -44,7 +44,7 @@ class OAuthClient
   end
 
   def logout
-    visit("https://oauth-tester-staging.idmeinc.net/oauths/6/logout")
+    visit("https://test-drive-staging.idmeinc.net/oauths/6/logout")
   end
 
   def login_with_facebook
