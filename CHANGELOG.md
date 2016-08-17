@@ -1,6 +1,9 @@
 Change Log
 
 All notable changes to this project will be documented in this file. This project does not adhere to [Semantic Versioning](http://semver.org/)
+## 2.2.23 (08/17/2016)
+- QA-358: Add Rhone partner military integration test
+
 ## 2.2.22 (08/14/2016)
 - HOTFIX: Update TaylorMade partner checkout flow
 
