@@ -35,8 +35,8 @@ class PBFirefighter < IDmeBase
     2.times {fill_in :birth_date, :with => data.fetch("birth_date")}
   end
 
-  def populate_first_state(value)
-    search_option(container_attribute, "#s2id_firefighter_state", value)
+  def populate_first_state(value, index=0)
+    search_option(container_attribute, "#s2id_state", value, index)
   end
 
   def container_attribute

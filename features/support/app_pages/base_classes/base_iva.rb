@@ -7,17 +7,19 @@ include DataMagic
   #IVA Methods#
   #############
 
-  def select_option(container, element, value)
+  def select_option(container, element, value, index)
     # click the dropdown
-    find("[data-option='#{container}'] #{element} > a.select2-choice").click
+    all("#{element}")[index].click
+    #find("[data-option='#{container}'] #{element} > a.select2-choice").click
 
     # pick an option
     find("#select2-drop .select2-results").find("div", :text => /^#{value}$/i).click
   end
 
-  def search_option(container, element, value)
+  def search_option(container, element, value, index)
     # click the dropdown
-    find("[data-option='#{container}'] #{element} > a.select2-choice").click
+    #find("[data-option='#{container}'] #{element} > a.select2-choice").click
+    all("#{element}")[index].click
 
     #set the seach value
     find(".select2-input").set(value)
@@ -29,9 +31,6 @@ include DataMagic
   def select_filter(id, value)
     # click the dropdown
     find(".select2-container#s2#{id} > a.select2-choice").click
-
-    # pick an options
-    find("#select2-drop .select2-results").find("div", :text => /^#{value}$/i).click
   end
 
   def select_filter2(id, value)

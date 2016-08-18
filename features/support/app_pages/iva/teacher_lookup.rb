@@ -71,8 +71,8 @@ class TeacherLookup < IDmeBase
     end
   end
 
-  def populate_first_state(value)
-    select_filter("id_teacher_state", value)
+  def populate_first_state(value, index=0)
+    select_filter("id_teacher_state", value, index)
   end
 
 end

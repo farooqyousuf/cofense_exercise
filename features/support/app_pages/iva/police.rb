@@ -47,12 +47,12 @@ class Police < IDmeBase
   end
 
 
-  def populate_first_state(value)
-    search_option(container_attribute, "#s2id_police_state", value)
+  def populate_first_state(value, index=0)
+    search_option(container_attribute, "#s2id_police_state", value, index)
   end
 
-  def populate_second_state(value)
-    select_option(container_attribute, "#s2id_state", value)
+  def populate_second_state(value, index=1)
+    select_option(container_attribute, "#s2id_state", value, index)
   end
 
   def container_attribute
