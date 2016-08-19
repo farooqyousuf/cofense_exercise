@@ -7,7 +7,7 @@ include DataMagic
   #IVA Methods#
   #############
 
-  def populate_first_state(value)
+  def populate_first_state(value, unique_id)
     search_option(container_attribute, unique_id, value)
   end
 
