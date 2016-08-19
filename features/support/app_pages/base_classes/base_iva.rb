@@ -7,12 +7,12 @@ include DataMagic
   #IVA Methods#
   #############
 
-  def populate_first_state(value, index=0)
-    search_option(container_attribute, "#s2id_state", value, index)
+  def populate_first_state(value)
+    search_option(container_attribute, unique_id, value)
   end
 
-  def populate_second_state(value, index=1)
-    select_option(container_attribute, second_state, value, index)
+  def populate_second_state(value, index)
+    select_option(container_attribute, "#s2id_state", value, index)
   end
 
   def select_option(container, element, value, index)
@@ -24,12 +24,13 @@ include DataMagic
     find("#select2-drop .select2-results").find("div", :text => /^#{value}$/i).click
   end
 
-  def search_option(container, element, value, index)
+  def search_option(container, element, value)
     # click the dropdown
+    find("[data-option='#{container}'] #{element}").click
     #find("[data-option='#{container}'] #{element} > a.select2-choice").click
-    all("#{element}")[index].click
+    #all("#{element}")[index].click
 
-    #set the seach value
+    #set the search value
     find(".select2-input").set(value)
 
     #pick a result
