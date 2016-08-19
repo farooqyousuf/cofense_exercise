@@ -36,20 +36,16 @@ class LookupEMT < IDmeBase
       2.times {fill_in field, :with => data.fetch(field)}
     end
 
-    populate_second_state("Kansas")
+    populate_second_state("Kansas", index=0)
   end
 
   def container_attribute
     "emt"
   end
 
-  # def populate_first_state(value, index=0)
-  #   select_option(container_attribute, "#s2id_emt_state", value, index)
-  # end
-
-  # def populate_second_state(value, index=1)
-  #   select_option(container_attribute, "#s2id_state", value, index)
-  # end
+  def unique_id
+    "#s2id_emt_state"
+  end
 
   def required_fields
     [0,1,2,3,4,5,6,7,9,10,11,12]
