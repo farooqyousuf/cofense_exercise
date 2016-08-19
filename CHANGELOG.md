@@ -1,6 +1,9 @@
 Change Log
 
 All notable changes to this project will be documented in this file. This project does not adhere to [Semantic Versioning](http://semver.org/)
+## 2.2.24 (08/19/2016)
+- QA-363: Fixed a bunch of Responder tests and switched to using Pastbin instead of Pastie
+
 ## 2.2.23 (08/17/2016)
 - QA-358: Add Rhone partner military integration test
 - HOTFIX: Fixed tests using Test Drive

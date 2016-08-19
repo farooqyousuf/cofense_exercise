@@ -18,7 +18,6 @@ include DataMagic
   def select_option(container, element, value, index)
     # click the dropdown
     all("#{element}")[index].click
-    #find("[data-option='#{container}'] #{element} > a.select2-choice").click
 
     # pick an option
     find("#select2-drop .select2-results").find("div", :text => /^#{value}$/i).click
@@ -27,8 +26,6 @@ include DataMagic
   def search_option(container, element, value)
     # click the dropdown
     find("[data-option='#{container}'] #{element}").click
-    #find("[data-option='#{container}'] #{element} > a.select2-choice").click
-    #all("#{element}")[index].click
 
     #set the search value
     find(".select2-input").set(value)
