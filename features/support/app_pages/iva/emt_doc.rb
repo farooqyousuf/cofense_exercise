@@ -43,13 +43,13 @@ class DocEMT < IDmeBase
     "emt"
   end
 
-  def populate_first_state(value, index=0)
-    select_option(container_attribute, "#s2id_emt_state", value, index)
-  end
+  # def populate_first_state(value, index=0)
+  #   select_option(container_attribute, "#s2id_emt_state", value, index)
+  # end
 
-  def populate_second_state(value, index=1)
-    select_option(container_attribute, "#s2id_state", value, index)
-  end
+  # def populate_second_state(value, index=1)
+  #   select_option(container_attribute, "#s2id_state", value, index)
+  # end
 
   def required_fields
     [0,1,2,3,4,5,6,7]

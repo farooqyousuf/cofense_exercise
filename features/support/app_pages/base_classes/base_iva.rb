@@ -7,6 +7,14 @@ include DataMagic
   #IVA Methods#
   #############
 
+  def populate_first_state(value, index=0)
+    search_option(container_attribute, "#s2id_state", value, index)
+  end
+
+  def populate_second_state(value, index=1)
+    select_option(container_attribute, second_state, value, index)
+  end
+
   def select_option(container, element, value, index)
     # click the dropdown
     all("#{element}")[index].click
