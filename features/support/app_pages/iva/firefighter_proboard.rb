@@ -8,7 +8,7 @@ class PBFirefighter < IDmeBase
 
   def verify(populate: true, type: "none")
     find("[data-option=#{container_attribute}]").find(".verification-header").click
-    populate_first_state(data_for(:firefighter_proboard).fetch("state"))
+    populate_first_state(data_for(:firefighter_proboard).fetch("state"), unique_id)
     choose("proboard_status_certified")
 
     if populate
@@ -35,12 +35,12 @@ class PBFirefighter < IDmeBase
     2.times {fill_in :birth_date, :with => data.fetch("birth_date")}
   end
 
-  # def populate_first_state(value, index=0)
-  #   search_option(container_attribute, "#s2id_state", value, index)
-  # end
-
   def container_attribute
     "firefighter"
+  end
+
+  def unique_id
+    "#s2id_state"
   end
 
   def required_fields
