@@ -9,7 +9,7 @@ class DocEMT < IDmeBase
    def verify(populate: true, type: "none")
     find("[data-option=#{container_attribute}]").find(".verification-header").click
     choose("emt_level_state")
-    populate_first_state("Wyoming")
+    populate_first_state("Wyoming", unique_id)
 
       if populate
 

@@ -9,7 +9,7 @@ class LookupEMT < IDmeBase
   def verify(populate: true, type: nil)
     find("[data-option=#{container_attribute}]").find(".verification-header").click
     choose("emt_level_state")
-    populate_first_state("Alaska")
+    populate_first_state("Alaska", unique_id)
 
     if populate
 
