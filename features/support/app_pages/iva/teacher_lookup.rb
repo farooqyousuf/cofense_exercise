@@ -8,7 +8,7 @@ class TeacherLookup < IDmeBase
 
   def verify(state: "Delaware", populate: true, type: "unique")
     #Delaware is randomly used as a default state
-    populate_first_state(state)
+    populate_teacher_first_state(state)
 
       if populate
 
@@ -71,9 +71,9 @@ class TeacherLookup < IDmeBase
     end
   end
 
-  # def populate_first_state(value, index=0)
-  #   select_filter("id_teacher_state", value, index)
-  # end
+  def populate_teacher_first_state(value)
+    select_filter("id_teacher_state", value)
+  end
 
 end
 

@@ -37,6 +37,9 @@ include DataMagic
   def select_filter(id, value)
     # click the dropdown
     find(".select2-container#s2#{id} > a.select2-choice").click
+
+    # pick an options
+    find("#select2-drop .select2-results").find("div", :text => /^#{value}$/i).click
   end
 
   def select_filter2(id, value)
