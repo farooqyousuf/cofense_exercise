@@ -8,7 +8,7 @@ class DocFirefighter < IDmeBase
 
   def verify(populate: true, type: "none")
     find("[data-option=#{container_attribute}]").find(".verification-header").click
-    populate_first_state(data_for(:experian_user).fetch("state"))
+    populate_first_state(data_for(:experian_user).fetch("state"), unique_id)
     choose("proboard_status_uncertified")
 
     if populate
@@ -37,23 +37,19 @@ class DocFirefighter < IDmeBase
       fill_in field, with: data.fetch(field)
     end
 
-    populate_second_state(data_for(:experian_user).fetch("state"))
+    populate_second_state(data_for(:experian_user).fetch("state"), index=1)
 
     %w(birth_date zip).each do |field|
       2.times { fill_in field, with: data.fetch(field) }
     end
   end
 
-  def populate_first_state(value)
-    search_option(container_attribute, "#s2id_firefighter_state", value)
-  end
-
-  def populate_second_state(value)
-    select_option(container_attribute, "#s2id_state", value)
-  end
-
   def container_attribute
     "firefighter"
+  end
+
+  def unique_id
+    "#s2id_state"
   end
 
   def required_fields

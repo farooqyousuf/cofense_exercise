@@ -7,7 +7,7 @@ class TeacherDoc < IDmeBase
   include ErrorMessages
 
   def verify(populate: true, type: "none")
-    populate_first_state("Maryland")
+    populate_teacher_first_state("Maryland")
 
       if populate
 
@@ -46,19 +46,15 @@ class TeacherDoc < IDmeBase
     end
 
     fill_in "teacher_number", with: Faker::Number.number(10)
-    populate_second_state(data.fetch("state"))
+    populate_second_state(data.fetch("state"), index=0)
   end
 
   def container_attribute
     'teacher-state'
   end
 
-  def populate_first_state(value)
+  def populate_teacher_first_state(value)
     select_filter("id_teacher_state", value)
-  end
-
-  def populate_second_state(value)
-    select_option(container_attribute, "#s2id_state", value)
   end
 
   def required_fields

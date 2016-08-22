@@ -9,7 +9,7 @@ class DocEMT < IDmeBase
    def verify(populate: true, type: "none")
     find("[data-option=#{container_attribute}]").find(".verification-header").click
     choose("emt_level_state")
-    populate_first_state("Wyoming")
+    populate_first_state("Wyoming", unique_id)
 
       if populate
 
@@ -36,19 +36,15 @@ class DocEMT < IDmeBase
     %w(first_name last_name birth_date social social_confirm street city zip).each do |field|
       2.times {fill_in field, :with => data.fetch(field)}
     end
-    populate_second_state("Wyoming")
+    populate_second_state("Wyoming", index=0)
   end
 
   def container_attribute
     "emt"
   end
 
-  def populate_first_state(value)
-    select_option(container_attribute, "#s2id_emt_state", value)
-  end
-
-  def populate_second_state(value)
-    select_option(container_attribute, "#s2id_state", value)
+  def unique_id
+    "#s2id_emt_state"
   end
 
   def required_fields

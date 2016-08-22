@@ -33,7 +33,7 @@ class Police < IDmeBase
   end
 
   def populate_fields(data:)
-    populate_first_state(data.fetch("state"))
+    populate_first_state(data.fetch("state"), unique_id)
 
     %w(first_name last_name social social_confirm street city zip).each do |field|
       fill_in field, :with => data.fetch(field)
@@ -43,20 +43,15 @@ class Police < IDmeBase
       2.times {fill_in field, :with => data.fetch(field)}
     end
 
-    populate_second_state(data.fetch("state"))
-  end
-
-
-  def populate_first_state(value)
-    search_option(container_attribute, "#s2id_police_state", value)
-  end
-
-  def populate_second_state(value)
-    select_option(container_attribute, "#s2id_state", value)
+    populate_second_state(data.fetch("state"), index=0)
   end
 
   def container_attribute
     "police"
+  end
+
+  def unique_id
+    "#s2id_police_state"
   end
 
   def required_fields
