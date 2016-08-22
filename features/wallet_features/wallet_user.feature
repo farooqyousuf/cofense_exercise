@@ -9,3 +9,4 @@ Scenario: Successful User Wallet Sign up
 	* I should be on the marketplace landing page
 	* I click on the Wallet shared nav link
 	* I should be on the Wallet dashboard page 
+	* I should see my sign up on the activity feed

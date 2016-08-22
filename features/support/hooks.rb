@@ -154,3 +154,9 @@ After("@marketplace_cash_back") do
   @admin_user.delete_marketplace_test_user
   @admin_tool.logout_in_new_window
 end
+After("@wallet_signup") do
+  visit_admin_users_in_new_window
+  @admin_user.delete_marketplace_test_user
+  @admin_tool.logout_in_new_window
+end
+

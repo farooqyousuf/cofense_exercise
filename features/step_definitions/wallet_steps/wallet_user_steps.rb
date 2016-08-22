@@ -4,26 +4,30 @@ Given(/^I visit the Wallet homepage$/) do
 end
 
 Given(/^I click on the Wallet Sign Up link$/) do
-	click_link "Sign Up" #might have to turn into first
+	click_link "Sign Up"
 end
 
 Given(/^I should be on the marketplace landing page$/) do
-  #check the page url is correct
-  # check the user name matches?
-  # check maybe some page text is available 
-  binding.pry
-  expect(page.current_url).to eql(FigNewton.)
+	find(".hero--store-grid") #holder allow page to load 
+  expect(page.current_url).to eql(FigNewton.marketplace.shop_homepage)
+  expect(page).to have_css(".site-header__extra-links",:text =>"About Business Wallet")
+  expect(page).to have_css(".hero--store-grid .heading",:text =>"Shop Exclusive Deals and Cash Back")
 end
 
 Given(/^I click on the Wallet shared nav link$/) do
-  pending # Write code here that turns the phrase above into concrete actions
-  #this should be a page object by now however 
-  #click link for it 
+ find(".site-header__extra-links a",:text => "Wallet").click 
 end
 
 Given(/^I should be on the Wallet dashboard page$/) do
-  pending # Write code here that turns the phrase above into concrete actions
-  #confirm page url
-  #check user url
-  #check that page section portions are in fact available 
+	find(".wallet-dashboard-module") #holder allow page to load 
+  expect(page.current_url).to eql(FigNewton.wallet.homepage)
+  expect(page).to have_css(".wallet-content-main .heading",:text =>"Dashboard")
+  expect(page).to have_css(".wallet-dashboard-module",:visible => true)
+  expect(page).to have_css(".wallet-dashboard-module",:visible => true)
 end
+
+Given(/^I should see my sign up on the activity feed$/) do
+  expect(page).to have_css(".wallet-events li:nth-child(1)",:text =>"You signed in on")
+  expect(page).to have_css(".wallet-events li:nth-child(2)",:text =>"You signed up for ID.me Wallet on")
+end
+

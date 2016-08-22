@@ -65,7 +65,7 @@ mp_users:
   vip_uid: 551dee265b914ad2a0af7eebf872d502
 
 marketplace:
-  shop_homepage: https://marketplace-staging.idmeinc.net/shop
+  shop_homepage: https://shop-staging.idmeinc.net/shop
   cashback_purchases_homepage: https://marketplace-staging.idmeinc.net/cash-back/purchases
   user_cashback_profile_url: https://marketplace-staging.idmeinc.net/cash-back
   demographic_survey: https://marketplace-staging.idmeinc.net/cash-back/survey/new
@@ -148,4 +148,4 @@ offer_cms:
   base_url: https://offers-cms-staging.idmeinc.net/
 
 wallet:
-  homepage: https://wallet-staging.idmeinc.net
+  homepage: https://wallet-staging.idmeinc.net/
