@@ -146,3 +146,6 @@ hlp_page_test_data:
 
 offer_cms:
   base_url: https://offers-cms-staging.idmeinc.net/
+
+wallet:
+  homepage: https://wallet-staging.idmeinc.net
