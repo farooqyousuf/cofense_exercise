@@ -93,8 +93,8 @@ end
 Given(/^I generate a unique doc$/) do
   create_new_window
   use_last_browser_created
-  visit 'https://pastie.org'
-  fill_in "paste_body", with: Faker::Lorem.paragraph(50)
+  visit 'http://pastebin.com/'
+  fill_in "paste_code", with: Faker::Lorem.paragraph(50)
 
   @IDmeBase = IDmeBase.new
   @IDmeBase.save_screenshot

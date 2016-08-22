@@ -9,7 +9,7 @@ class LookupEMT < IDmeBase
   def verify(populate: true, type: nil)
     find("[data-option=#{container_attribute}]").find(".verification-header").click
     choose("emt_level_state")
-    populate_first_state("Alaska")
+    populate_first_state("Alaska", unique_id)
 
     if populate
 
@@ -36,19 +36,15 @@ class LookupEMT < IDmeBase
       2.times {fill_in field, :with => data.fetch(field)}
     end
 
-    populate_second_state("Kansas")
+    populate_second_state("Kansas", index=0)
   end
 
   def container_attribute
     "emt"
   end
 
-  def populate_first_state(value)
-    select_option(container_attribute, "#s2id_emt_state", value)
-  end
-
-  def populate_second_state(value)
-    select_option(container_attribute, "#s2id_state", value)
+  def unique_id
+    "#s2id_emt_state"
   end
 
   def required_fields
