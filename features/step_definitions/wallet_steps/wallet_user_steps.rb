@@ -1,10 +1,16 @@
-Given(/^I visit the Wallet homepage$/) do
-	visit FigNewton.wallet.homepage 
-	#add some basic verifications of homepage here?
+
+Given(/^I create a WalletHomepage page object$/) do
+  @wallet_homepage = WalletHomepage.new 
 end
 
 Given(/^I click on the Wallet Sign Up link$/) do
+  step "I create a WalletHomepage page object"
 	click_link "Sign Up"
+end
+
+Given(/^I click on the Wallet Sign in link$/) do
+  step "I create a WalletHomepage page object"
+  first(:link ,:text =>"Sign In").click 
 end
 
 Given(/^I should be on the marketplace landing page$/) do
@@ -31,3 +37,15 @@ Given(/^I should see my sign up on the activity feed$/) do
   expect(page).to have_css(".wallet-events li:nth-child(2)",:text =>"You signed up for ID.me Wallet on")
 end
 
+Given(/^I login to wallet as a "([^"]*)" user$/) do |affinity_group|
+  
+  user_email = case affinity_group
+    when "Military" then FigNewton.mp_users.military
+  end 
+
+  @wallet_homepage.sign_in(user_email)
+end
+
+Given(/^I should see my sign in on the activity feed$/) do
+  expect(page).to have_css(".wallet-events li:nth-child(1)",:text =>"You signed in on")
+end
