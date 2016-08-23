@@ -1,13 +1,15 @@
-Given(/^I visit the Wallet homepage$/) do
-	visit FigNewton.wallet.homepage 
-	#add some basic verifications of homepage here?
+
+Given(/^I create a WalletHomepage page object$/) do
+  @wallet_homepage = WalletHomepage.new 
 end
 
 Given(/^I click on the Wallet Sign Up link$/) do
+  step "I create a WalletHomepage page object"
 	click_link "Sign Up"
 end
 
 Given(/^I click on the Wallet Sign in link$/) do
+  step "I create a WalletHomepage page object"
   first(:link ,:text =>"Sign In").click 
 end
 
@@ -37,13 +39,11 @@ end
 
 Given(/^I login to wallet as a "([^"]*)" user$/) do |affinity_group|
   
-  group = case affinity_group
+  user_email = case affinity_group
     when "Military" then FigNewton.mp_users.military
   end 
 
-  fill_in("user_email", :with => group)
-  fill_in("user_password",:with =>FigNewton.mp_users.general_password)
-  click_button "Sign in"
+  @wallet_homepage.sign_in(user_email)
 end
 
 Given(/^I should see my sign in on the activity feed$/) do
