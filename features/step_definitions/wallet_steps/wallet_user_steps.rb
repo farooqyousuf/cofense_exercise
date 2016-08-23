@@ -7,6 +7,10 @@ Given(/^I click on the Wallet Sign Up link$/) do
 	click_link "Sign Up"
 end
 
+Given(/^I click on the Wallet Sign in link$/) do
+  first(:link ,:text =>"Sign In").click 
+end
+
 Given(/^I should be on the marketplace landing page$/) do
 	find(".hero--store-grid") #holder allow page to load 
   expect(page.current_url).to eql(FigNewton.marketplace.shop_homepage)
@@ -31,10 +35,17 @@ Given(/^I should see my sign up on the activity feed$/) do
   expect(page).to have_css(".wallet-events li:nth-child(2)",:text =>"You signed up for ID.me Wallet on")
 end
 
-Given(/^I login to wallet as a "([^"]*)" user$/) do |arg1|
-  pending # Write code here that turns the phrase above into concrete actions
+Given(/^I login to wallet as a "([^"]*)" user$/) do |affinity_group|
+  
+  group = case affinity_group
+    when "Military" then FigNewton.mp_users.military
+  end 
+
+  fill_in("user_email", :with => group)
+  fill_in("user_password",:with =>FigNewton.mp_users.general_password)
+  click_button "Sign in"
 end
 
 Given(/^I should see my sign in on the activity feed$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(page).to have_css(".wallet-events li:nth-child(1)",:text =>"You signed in on")
 end

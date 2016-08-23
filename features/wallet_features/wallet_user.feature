@@ -14,7 +14,7 @@ Scenario: Successful User Wallet Sign up
 @wallet_signin
 Scenario: Succesful User Wallet Sign In
   * I visit the Wallet homepage 
-	* I click on the Wallet Sign Up link 
+	* I click on the Wallet Sign in link 
 	* I login to wallet as a "Military" user 
 	* I should be on the marketplace landing page
 	* I click on the Wallet shared nav link
