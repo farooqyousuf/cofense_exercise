@@ -31,3 +31,10 @@ Given(/^I should see my sign up on the activity feed$/) do
   expect(page).to have_css(".wallet-events li:nth-child(2)",:text =>"You signed up for ID.me Wallet on")
 end
 
+Given(/^I login to wallet as a "([^"]*)" user$/) do |arg1|
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+Given(/^I should see my sign in on the activity feed$/) do
+  pending # Write code here that turns the phrase above into concrete actions
+end
