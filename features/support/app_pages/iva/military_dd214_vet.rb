@@ -14,6 +14,7 @@ class DD214 < IDmeBase
 
       case type
       when "unique", "denied"
+        sleep 2
         populate_signature
         populate_branch
         populate_officer
@@ -51,7 +52,7 @@ class DD214 < IDmeBase
   end
 
   def populate_affiliation(value)
-    select_option(container_attribute, ".dd214-affiliation", value)
+    select_option(container_attribute, ".dd214-affiliation", value, index=0)
   end
 
   def populate_signature
@@ -59,15 +60,15 @@ class DD214 < IDmeBase
   end
 
   def populate_branch
-    select_option(container_attribute, ".dd214-branch", "Air Force")
+    select_option(container_attribute, ".dd214-branch", "Air Force", index=0)
   end
 
   def populate_officer
-    select_option(container_attribute, ".dd214-officer", "Officer")
+    select_option(container_attribute, ".dd214-officer", "Officer", index=0)
   end
 
   def populate_component
-    select_option(container_attribute, ".dd214-component", "Active Duty")
+    select_option(container_attribute, ".dd214-component", "Active Duty", index=0)
   end
 
   def release_checkbox

@@ -57,7 +57,7 @@ class StudentDoc < IDmeBase
   end
 
   def populate_state(value)
-    select_option(container_attribute, "#s2id_state", value)
+    select_option(container_attribute, "#s2id_state", value, index=0)
   end
 
   def populate_doc
