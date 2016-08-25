@@ -42,16 +42,16 @@ class IVAGovernment < IDmeBase
     'government-email'
   end
 
-  def populate_affiliation(value)
-    select_option(container_attribute, ".government-affiliation", value)
+  def populate_affiliation(affiliation)
+    select_option(container_attribute, ".government-affiliation", affiliation, index=0)
   end
 
-  def populate_agency(value)
-    search_option(container_attribute, ".government-agency", value)
+  def populate_agency(agency)
+    search_option(container_attribute, ".government-agency", agency)
   end
 
-  def populate_state(value)
-    select_option(container_attribute, ".state-select", value)
+  def populate_state(state)
+    select_option(container_attribute, ".state-select", state, index=0)
   end
 
   def required_fields
