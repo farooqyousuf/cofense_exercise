@@ -27,7 +27,7 @@ class MilitaryDoc < IDmeBase
         %w(first_name last_name birth_date).each do |field|
           2.times {fill_in field, :with => (data_for(:mil_doc).fetch(field))}
         end
-        select_option(container_attribute, "#s2id_service_subgroup_id", "Veteran")
+        select_option(container_attribute, "#s2id_service_subgroup_id", "Veteran", index=0)
       end
 
       click_verify_button
@@ -60,17 +60,17 @@ class MilitaryDoc < IDmeBase
   end
 
   def populate_affiliation(value)
-    select_option(container_attribute, ".military-affiliation", value)
+    select_option(container_attribute, ".military-affiliation", value, index=0)
   end
 
   def populate_state(value)
-    select_option(container_attribute, "#s2id_state", value)
+    select_option(container_attribute, "#s2id_state", value, index=0)
   end
 
   def populate_dd214_type(value)
     wait_for_ajax
     sleep 2
-    select_option(container_attribute, "#s2id_document_type_id", value)
+    select_option(container_attribute, "#s2id_document_type_id", value, index=0)
   end
 
   def required_fields

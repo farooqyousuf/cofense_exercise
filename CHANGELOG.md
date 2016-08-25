@@ -4,6 +4,7 @@ All notable changes to this project will be documented in this file. This projec
 ## 2.2.27 (08/25/2016)
 - HOTFIX: Fixed some broken govt tests
 - HOTFIX: Fixed some broken mil dd215 tests
+- HOTFIX: Fixed some broke mil doc tests
 
 ## 2.2.26 (08/23/2016)
 - QA-341: Wallet User Sign in test
