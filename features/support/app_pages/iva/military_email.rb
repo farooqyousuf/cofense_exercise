@@ -6,7 +6,6 @@ class MilitaryEmail < IDmeBase
   include Capybara::DSL
   include ErrorMessages
 
-
   def verify(affiliation:, populate: true, type: nil)
     find("[data-option=#{container_attribute}]").find(".verification-header").click
     populate_affiliation(affiliation)
@@ -43,7 +42,7 @@ class MilitaryEmail < IDmeBase
           fill_in field, :with => Faker::Name.send(field)
         end
         2.times {fill_in "birth_date", :with => @dob}
-        select_option(container_attribute, "#s2id_service_subgroup_id", "Veteran")
+        select_option(container_attribute, "#s2id_service_subgroup_id", "Veteran", index=0)
       end
 
     end
@@ -52,7 +51,7 @@ class MilitaryEmail < IDmeBase
   end
 
   def populate_affiliation(value)
-    select_option(container_attribute, ".military-affiliation", value)
+    select_option(container_attribute, ".military-affiliation", value, index=0)
   end
 
   def build_unique_info
