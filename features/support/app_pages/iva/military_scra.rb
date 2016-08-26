@@ -55,11 +55,11 @@ class MilitarySCRA < IDmeBase
   end
 
   def populate_affiliation(value)
-    select_option(container_attribute, ".military-affiliation", value)
+    select_option(container_attribute, ".military-affiliation", value, index=0)
   end
 
   def populate_affiliation_2(value)
-    select_option(container_attribute, ".service-affiliation", value)
+    select_option(container_attribute, ".service-affiliation", value, index=0)
   end
 
   def container_attribute
