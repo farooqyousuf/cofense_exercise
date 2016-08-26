@@ -29,10 +29,9 @@ class MilitaryDoc < IDmeBase
         end
         select_option(container_attribute, "#s2id_service_subgroup_id", "Veteran", index=0)
       end
-
-      click_verify_button
-
     end
+
+    click_verify_button
 
     if (type == "unique")
       #attach dd214 doc

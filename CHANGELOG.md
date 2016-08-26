@@ -1,6 +1,9 @@
 Change Log
 
 All notable changes to this project will be documented in this file. This project does not adhere to [Semantic Versioning](http://semver.org/)
+## 2.2.28 (08/26/2016)
+- HOTFIX: Fixed mil doc blank fields test
+
 ## 2.2.27 (08/25/2016)
 - HOTFIX: Fixed some broken govt tests
 - HOTFIX: Fixed some broken mil dd215 tests
