@@ -9,6 +9,13 @@ include JavascriptAlerts
     super("#{FigNewton.admin.base_url}/users")
   end
 
+  def delete_scra_multi_family_users
+    7.times do
+      open_newest
+      delete_user
+    end
+  end
+
   def open_newest(clear_results = false)
     if clear_results == true
       search_for_user(" ") #clears the previous results to default

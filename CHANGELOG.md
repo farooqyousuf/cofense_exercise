@@ -1,6 +1,9 @@
 Change Log
 
 All notable changes to this project will be documented in this file. This project does not adhere to [Semantic Versioning](http://semver.org/)
+## 2.2.29 (08/30/2016)
+- QA-318: SCRA Multiple spouse and family member test
+
 ## 2.2.28 (08/26/2016)
 - HOTFIX: Fixed mil doc blank fields test
 - HOTFIX: Fixed mil email tests

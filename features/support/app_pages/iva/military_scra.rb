@@ -11,12 +11,13 @@ class MilitarySCRA < IDmeBase
     populate_affiliation(affiliation)
 
     case affiliation
-    when "Service Member"     then data_set = :scra_service_member
-    when "Veteran"            then data_set = :scra_veteran
-    when "Retiree"            then data_set = :scra_mil_spouse
-    when "Military Spouse"    then data_set = :scra_mil_spouse
-    when "Military Family"    then data_set = :scra_mil_family
-    when "Military Supporter" then data_set = :scra_mil_spouse
+    when "Service Member"        then data_set = :scra_service_member
+    when "Veteran"               then data_set = :scra_veteran
+    when "Retiree"               then data_set = :scra_mil_spouse
+    when "Military Spouse"       then data_set = :scra_mil_spouse
+    when "Military Family"       then data_set = :scra_mil_family
+    when "Military Supporter"    then data_set = :scra_mil_spouse
+    when "Military Multi Family" then data_set = :scra_multi_family
     else puts "Affiliation not found!"
     end
 
@@ -32,7 +33,7 @@ class MilitarySCRA < IDmeBase
         populate_fields(data: data_denied)
       end
 
-      if ["Military Spouse", "Military Family"].include?(affiliation)
+      if ["Military Spouse", "Military Family", "Military Multi Family"].include?(affiliation)
         %w(first_name last_name birth_date).each do |field|
           2.times {fill_in field, :with => data_for(data_set).fetch(field)}
         end
@@ -55,6 +56,9 @@ class MilitarySCRA < IDmeBase
   end
 
   def populate_affiliation(value)
+    if value == "Military Multi Family"
+      value = "Military Family"
+    end
     select_option(container_attribute, ".military-affiliation", value, index=0)
   end
 
