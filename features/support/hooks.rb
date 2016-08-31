@@ -9,6 +9,12 @@ After do
   Capybara.current_session.driver.quit
 end
 
+After("@delete_scra_multi_family_users") do
+  visit_admin_users_in_new_window
+  @admin_users.delete_scra_multi_family_users
+  @admin_tool.logout_in_new_window
+end
+
 After("@delete_natl_emt_dupe") do
   visit_admin_users_in_new_window
   @admin_users.delete_natl_emt

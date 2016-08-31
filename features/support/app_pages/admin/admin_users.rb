@@ -9,11 +9,24 @@ include JavascriptAlerts
     super("#{FigNewton.admin.base_url}/users")
   end
 
+  def delete_scra_multi_family_users
+    delete_scra_user1
+    2.times do delete_scra_user3 end
+    4.times do delete_scra_family_member end
+  end
+
   def open_newest(clear_results = false)
     if clear_results == true
       search_for_user(" ") #clears the previous results to default
     end
     first('.odd > td > a').click
+  end
+
+  def delete_scra_family_member
+    search_for_user("Mike Doe")
+    sleep 1
+    open_newest
+    delete_user
   end
 
   def delete_pb_fireman_user
@@ -87,7 +100,7 @@ include JavascriptAlerts
   end
 
   def delete_scra_user3
-    search_for_user("Jack Doe")
+    search_for_user("Erin Doe")
     sleep 1
     open_newest
     delete_user

@@ -39,6 +39,18 @@ Feature: Military verification using SCRA credentials
     * I complete the verification process
     * I should be successfully verified as "Retiree"
 
+  @delete_scra_multi_family_users
+  Scenario: Disallow second spouse and fourth family member to verify
+    * I verify using SCRA for "Service Member"
+    * I complete the verification process
+    * I clear the session from Authority
+    * Multi-spouse: I verify "first" spouse via "scra"
+    * Multi-family: I verify "first" family via "scra"
+    * Multi-family: I verify "second" family via "scra"
+    * Multi-family: I verify "third" family via "scra"
+    * Multi-spouse: I verify "second" spouse via "scra" is not allowed to verify
+    * Multi-family: I verify "fourth" family via "scra" is not allowed to verify
+
   @delete_scra_denied_user
   Scenario: Denied attempt for military scra verification
     * I submit the military scra verification form as a "denied" record
