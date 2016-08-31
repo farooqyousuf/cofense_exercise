@@ -48,15 +48,8 @@ Feature: Military verification using SCRA credentials
     * Multi-family: I verify "first" family via "scra"
     * Multi-family: I verify "second" family via "scra"
     * Multi-family: I verify "third" family via "scra"
-    * Multi-spouse: I verify "second" spouse via "scra"
-    * Multi-family: I verify "fourth" family via "scra"
-
-    # * I visit IDP through the "military" policy
-    # * I click on the Sign Up link
-    # * I sign up as a new user
-    # * I verify using SCRA for "Military Spouse"
-    # * I complete the verification process
-
+    * Multi-spouse: I verify "second" spouse via "scra" is not allowed to verify
+    * Multi-family: I verify "fourth" family via "scra" is not allowed to verify
 
   @delete_scra_denied_user
   Scenario: Denied attempt for military scra verification

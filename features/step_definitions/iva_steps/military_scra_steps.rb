@@ -10,7 +10,7 @@ Given(/^I submit the military scra verification form as a "([^"]*)" record$/) do
   MilitarySCRA.new.verify(affiliation: "Service Member", type: type)
 end
 
-Given(/^Multi\-spouse: I verify "([^"]*)" spouse via "([^"]*)"$/) do |number, method|
+Given(/^Multi\-spouse: I verify "([^"]*)" spouse via "([^"]*)"(?: is not allowed to verify)?$/) do |number, method|
     step 'I visit IDP through the "military" policy'
     step 'I click on the Sign Up link'
     step 'I sign up as a new user'
@@ -30,7 +30,7 @@ Given(/^Multi\-spouse: I verify "([^"]*)" spouse via "([^"]*)"$/) do |number, me
 end
 
 
-Given(/^Multi\-family: I verify "([^"]*)" family via "([^"]*)"$/) do |number, method|
+Given(/^Multi\-family: I verify "([^"]*)" family via "([^"]*)"(?: is not allowed to verify)?$/) do |number, method|
     step 'I visit IDP through the "military" policy'
     step 'I click on the Sign Up link'
     step 'I sign up as a new user'
