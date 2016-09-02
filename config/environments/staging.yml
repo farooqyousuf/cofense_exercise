@@ -62,6 +62,7 @@ mp_users:
   premium_uid: 363e2633e104eb951023
   military: test+24@id.me
   general_password: Password123
+  incorrect_password: 2legit2quit
   vip_uid: 551dee265b914ad2a0af7eebf872d502
 
 marketplace:
