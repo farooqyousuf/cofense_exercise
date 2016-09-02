@@ -1,6 +1,9 @@
 Change Log
 
 All notable changes to this project will be documented in this file. This project does not adhere to [Semantic Versioning](http://semver.org/)
+## 2.2.31 (09/02/2016)
+- QA-342: Wallet User Failed Sign in test 
+
 ## 2.2.30 (08/31/2016)
 - QA-318: Removed some comments and added some clarification to the scra multi spouse/family feature
 - QA-318: Refactored deletion of multi spouse and family accounts
