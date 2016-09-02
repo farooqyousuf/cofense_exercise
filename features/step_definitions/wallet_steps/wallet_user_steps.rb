@@ -52,15 +52,15 @@ end
 
 
 Given(/^I should see a IDP failed attempt sign in error$/) do
-  pending # Write code here that= turns the phrase above into concrete actions
+  expect(page).to have_css(".alert",:text => "The email or password you entered is incorrect. Please try again.")
 end
 
 Given(/^I should see my failed sign in on the activity feed$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(page).to have_css(".wallet-events li:nth-child(1)",:text =>"You signed in on")
+  expect(page).to have_css(".wallet-events li:nth-child(2)",:text =>"You had an unsuccessful sign in attempt on")
 end
 
 
 Given(/^I fail a attempt to login to wallet$/) do
   @wallet_homepage.incorrect_sign_in
-  binding.pry
 end
