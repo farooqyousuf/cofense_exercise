@@ -23,8 +23,9 @@ partners:
   mlb_shop_discount_amount: "-$18.00"
   caesars_hotels: https://www.caesars.com
   underarmour_url: https://www.underarmour.com/en-us/men-s-ua-streaker-run-v-neck-t-shirt/pid1276515-016
-  underarmour_item_subtotal: "Items: $34.99"
+  underarmour_item_subtotal: "$34.99"
   underarmour_discount_amount: "Promotion: -$3.50"
+  underarmour_discounted_total: "TOTAL: $31.49"
   mlb_tv_subscription_page: http://mlb.mlb.com/mlb/subscriptions
   mlb_tv_yearly_subscription: Buy Now - $49.99
   carhartt_homepage: http://www.carhartt.com/products/carhartt-men-outerwear/Shoreline-Jacket-J162

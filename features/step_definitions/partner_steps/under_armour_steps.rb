@@ -21,7 +21,8 @@ Given(/^UA \- I apply the "([^"]*)" discount$/) do |type|
   when "First Responder"
     button = "Responder"
   end
-  page.execute_script "window.scrollBy(0,850)"
+  page.execute_script "window.scrollBy(0,650)"
+  sleep 1
   find(".extras .panel-group .panel:nth-child(2)").click
 
   idp_signin = window_opened_by do
@@ -40,15 +41,9 @@ Given(/^UA \- I verify the "([^"]*)" discount has been applied$/) do |type|
       confirmation = "Promo Code Military 10% off Has Been Applied. Remove"
     end
 
-    expect(find(".ua-prompt-removable").text).to eq(confirmation)
-    expect(find(".itemsSubtotal").text).to eq(FigNewton.partners.underarmour_item_subtotal)
-    expect(find(".promo").text).to eq(FigNewton.partners.underarmour_discount_amount)
-  rescue
-    puts "WARNING-------------->THE REFRESH ISSUE IS STILL PREVELANT WITH UNDERARMOUR PARTNER "
-
-    page.driver.browser.navigate.refresh
-    expect(find(".ua-prompt-removable").text).to eq(confirmation)
-    expect(find(".itemsSubtotal").text).to eq(FigNewton.partners.underarmour_item_subtotal)
-    expect(find(".promo").text).to eq(FigNewton.partners.underarmour_discount_amount)
+    expect(page).to have_css(".ua-prompt-removable", :text => confirmation )
+    expect(page).to have_css("span[class='subtotal']",:text => FigNewton.partners.underarmour_item_subtotal)
+    expect(page).to have_css(".promo",:text => FigNewton.partners.underarmour_discount_amount)
+    expect(page).to have_css("div[class='total']",:text => FigNewton.partners.underarmour_discounted_total)
   end
 end

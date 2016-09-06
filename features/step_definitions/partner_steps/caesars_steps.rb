@@ -1,6 +1,7 @@
 Given(/^CAESARS\- I visit homepage and check best room rates$/) do
   visit FigNewton.partners.caesars_hotels
-  find(".cet-dialog-close-box").click #for pop-up modal upon visit 
+
+  #find(".cet-dialog-close-box").click #for pop-up modal upon visit 
 
   click_link "Check Best Rates"
 end
