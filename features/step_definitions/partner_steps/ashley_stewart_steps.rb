@@ -3,12 +3,13 @@ Given(/^ASHLEY\- I visit the shop page$/) do
 end
 
 Given(/^ASHLEY\- I add a item to the cart$/) do
-	find(".size li:nth-child(1)").click 
+	find(".size li:nth-child(2)").click 
 	find("#add-to-cart").click
 end
 
 Given(/^ASHLEY\- I visit the checkout page$/) do
 	visit "https://www.ashleystewart.com/cart"
+	sleep 1
 	page.driver.browser.navigate.refresh # to remove pop-up promotion
 end
 

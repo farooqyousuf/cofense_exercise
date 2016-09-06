@@ -1,6 +1,9 @@
 Change Log
 
 All notable changes to this project will be documented in this file. This project does not adhere to [Semantic Versioning](http://semver.org/)
+## 2.2.32 (09/06/2016)
+- HOTFIX: Update series of partner tests
+
 ## 2.2.31 (09/02/2016)
 - QA-342: Wallet User Failed Sign in test 
 
