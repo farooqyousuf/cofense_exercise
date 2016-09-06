@@ -9,6 +9,11 @@ include JavascriptAlerts
     super("#{FigNewton.admin.base_url}/users")
   end
 
+  def delete_mil_doc_multi_family_users
+    delete_experian_user1
+    6.times do delete_experian_user3 end
+  end
+
   def delete_scra_multi_family_users
     delete_scra_user1
     2.times do delete_scra_user3 end
