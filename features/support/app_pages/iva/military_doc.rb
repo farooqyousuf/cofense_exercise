@@ -32,8 +32,9 @@ class MilitaryDoc < IDmeBase
     end
 
     click_verify_button
+    sleep 5
 
-    if (type == "unique")
+    if ((type == "unique") && (page.has_no_text?("We’re sorry, but we are unable to verify your credentials with the information you provided.")))
       #attach dd214 doc
       populate_dd214_type("DD214 - Other")
       attach_doc

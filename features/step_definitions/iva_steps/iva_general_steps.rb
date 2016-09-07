@@ -64,7 +64,7 @@ Given(/^Multi\-spouse: I verify "([^"]*)" spouse via "([^"]*)"(?: is not allowed
         step 'I clear the session from Authority'
      when "second" then
         step 'I verify using military documentation for "Military Spouse"'
-        step 'We’re sorry, but we are unable to verify your credentials with the information you provided.'
+        step 'I should see the red alert box error message "We’re sorry, but we are unable to verify your credentials with the information you provided."'
         step 'I clear the session from Authority'
      end
    end
@@ -89,16 +89,16 @@ Given(/^Multi\-family: I verify "([^"]*)" family via "([^"]*)"(?: is not allowed
       step 'I clear the session from Authority'
     end
 
-  elseif method == "mil doc"
+  elsif method == "mil doc"
     case number
-    when "first," "second", "third" then
+    when "first", "second", "third" then
       step 'I verify using military documentation for "Military Family"'
       step 'I approve the document in IDme admin'
       step 'I complete the verification process'
       step 'I clear the session from Authority'
     when "fourth" then
       step 'I verify using military documentation for "Military Family"'
-      step 'We’re sorry, but we are unable to verify your credentials with the information you provided.'
+      step 'I should see the red alert box error message "We’re sorry, but we are unable to verify your credentials with the information you provided."'
       step 'I clear the session from Authority'
     end
   end
