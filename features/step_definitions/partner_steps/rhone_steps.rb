@@ -1,8 +1,11 @@
 Given(/^RHONE \- I add a item to the cart$/) do
+	visit "https://www.rhone.com"
+	sleep 1
 	visit FigNewton.partners.rhone 
 	first(".sizes li").click 
 	find(".product-details__addtocart").click 
 	find(".main-nav__aux-bag").click
+	sleep 1
 	find(".sidecart-actions__checkout").click 
 end
 

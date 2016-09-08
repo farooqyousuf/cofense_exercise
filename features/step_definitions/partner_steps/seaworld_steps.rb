@@ -65,8 +65,7 @@ end
 
 Given(/^I verify that my orlando teacher discount tickets$/) do
   sleep 2 #need because otherwise encounter (Selenium::WebDriver::Error::JavascriptError) JS is undefined
-
-  page.execute_script("document.getElementsByClassName('_oi19006')[0].childNodes[1].childNodes[1].style.opacity = 10") #orlando
+  page.execute_script("document.getElementsByClassName('_oi14944')[0].childNodes[1].childNodes[1].style.opacity = 10") #orlando
   first(".content-maincontent-ticketbox-tixchoose-inner").first(".first").select("1",:from =>"selOrderItemCount")
   first(".content-maincontent-ticketbox-add2cart").click
 
@@ -98,10 +97,9 @@ Given(/^I log in with my Id\.me veteran account$/) do
 end
 
 Given(/^I verify that my "([^"]*)" discount tickets are available$/) do |seaworld_park|
-
   cart_id = case seaworld_park
-  when "Seaworld Orlando Veteran"           then '_oi4883'
-  when "Busch Gardens Williamsburg Veteran" then '_oi11735'
+  when "Seaworld Orlando Veteran"           then '_oi30086'
+  when "Busch Gardens Williamsburg Veteran" then '_oi26707'
   when "Sesame Place Langhorne Veteran"     then '_oi23014'
   end
 
@@ -110,19 +108,22 @@ Given(/^I verify that my "([^"]*)" discount tickets are available$/) do |seaworl
   first(".content-maincontent-ticketbox-tixchoose-inner").first(".first").select("1",:from =>"selOrderItemCount")
   first(".content-maincontent-ticketbox-add2cart").click
   sleep 2
+
   if seaworld_park == "Sesame Place Langhorne Veteran" 
-    expect(page).to have_css("header[class='tagName']",:text =>"Veteran's Discount Admission")
+    expect(page).to have_css("header[class='tagName']",:text =>"Active Duty Service Member Complimentary Admission")
   elsif seaworld_park == "Busch Gardens Williamsburg Veteran"
-    expect(page).to have_css("header[class='tagName']",:text =>"Busch Gardens Single-Day Ticket")
+    expect(page).to have_css("header[class='tagName']",:text =>"Active Duty Service Member Complimentary Admission $77 Value")
   else 
     expect(page).to have_css("header[class='tagName']",:text =>"SeaWorld Orlando 2016 Fun Card Price:")
   end 
 
   #veteran pages discounts are hard-coded 
   if seaworld_park == "Busch Gardens Williamsburg Veteran"
-    expect(page).to have_css(".cartSubTotal  td:nth-child(2)",:text =>"$53.94")
+    expect(page).to have_css(".cartSubTotal  td:nth-child(2)",:text =>"$0.00")
   elsif seaworld_park == "Sesame Place Langhorne Veteran"
     expect(page).to have_css(".cartSubTotal  td:nth-child(2)",:text =>"$32.50")
+  elsif seaworld_park == "Seaworld Orlando Veteran"
+    expect(page).to have_css(".cartSubTotal td:nth-child(2)",:text =>"0.00")
   else
     expect(page).to have_css(".cartSubTotal  td:nth-child(2)",:text =>"$49.50")
   end 
