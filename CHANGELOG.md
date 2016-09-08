@@ -1,6 +1,9 @@
 Change Log
 
 All notable changes to this project will be documented in this file. This project does not adhere to [Semantic Versioning](http://semver.org/)
+## 2.2.34 (09/09/2016)
+- QA-320: Military document multi spouse/family test
+
 ## 2.2.33 (09/08/2016)
 - HOTFIX: Update seaworld and mlb shop partner tests
 
@@ -8,7 +11,7 @@ All notable changes to this project will be documented in this file. This projec
 - HOTFIX: Update series of partner tests
 
 ## 2.2.31 (09/02/2016)
-- QA-342: Wallet User Failed Sign in test 
+- QA-342: Wallet User Failed Sign in test
 
 ## 2.2.30 (08/31/2016)
 - QA-318: Removed some comments and added some clarification to the scra multi spouse/family feature
