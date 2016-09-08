@@ -11,7 +11,7 @@ include JavascriptAlerts
 
   def delete_mil_doc_multi_family_users
     delete_experian_user1
-    6.times do delete_experian_user3 end
+    4.times do delete_experian_user3 end
   end
 
   def delete_scra_multi_family_users
