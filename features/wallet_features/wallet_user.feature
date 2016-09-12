@@ -47,3 +47,14 @@ Scenario: User verifies a Military Group Affiliation
   * I verify my military group affiliation has been added 
   * I should see my military group addition on the activity feed  
 
+@wallet_account_revoke 
+Scenario: User deactivates Wallet account and revokes access 
+  * I visit "WalletHomepage" 
+  * I create Wallet page objects
+  * I click on the Wallet Sign Up link 
+  * I sign up as a new user 
+  * I should be on the Wallet dashboard page
+  * I record the wallet user email 
+  * I deactivate my Wallet account
+  * I confirm that my Wallet session has been terminated
+  * I verify my Wallet account has been deactived 

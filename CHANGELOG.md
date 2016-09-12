@@ -1,6 +1,9 @@
 Change Log
 
 All notable changes to this project will be documented in this file. This project does not adhere to [Semantic Versioning](http://semver.org/)
+## 2.2.36 (09/13/2016)
+- QA-347: Add Wallet account revoked test
+
 ## 2.2.35 (09/12/2016)
 - HOTFIX: Update MLBtv, Ashley Stewart and Ford Military partner tests
 - QA-347: Wallet add Affinity Group verification spec

@@ -178,3 +178,9 @@ After("@wallet_military_verify") do
   @admin_users.delete_marketplace_test_user
   @admin_tool.logout_in_new_window
 end
+
+After("@wallet_account_revoke") do
+  visit_admin_users_in_new_window
+  @admin_users.delete_marketplace_test_user
+  @admin_tool.logout_in_new_window
+end

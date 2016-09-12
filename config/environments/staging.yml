@@ -150,3 +150,5 @@ offer_cms:
 
 wallet:
   homepage: https://wallet-staging.idmeinc.net/
+  dashboard: https://wallet-staging.idmeinc.net/dashboard 
+  settings: https://wallet-staging.idmeinc.net/settings 
