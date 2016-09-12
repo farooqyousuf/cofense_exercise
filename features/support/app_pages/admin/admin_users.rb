@@ -174,8 +174,4 @@ include JavascriptAlerts
   def search_for_user(string)
     find("input[type='search']").set string
   end
-
-  def delete_wallet_test_user
-    binding.pry
-  end 
 end
