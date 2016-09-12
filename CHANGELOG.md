@@ -3,6 +3,7 @@ Change Log
 All notable changes to this project will be documented in this file. This project does not adhere to [Semantic Versioning](http://semver.org/)
 ## 2.2.35 (09/12/2016)
 - HOTFIX: Update MLBtv, Ashley Stewart and Ford Military partner tests
+- QA-347: Wallet add Affinity Group verification spec
 
 ## 2.2.34 (09/09/2016)
 - QA-320: Military document multi spouse/family test

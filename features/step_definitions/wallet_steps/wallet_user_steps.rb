@@ -21,7 +21,7 @@ Given(/^I should be on the marketplace landing page$/) do
 end
 
 Given(/^I click on the Wallet shared nav link$/) do
- find(".site-header__extra-links a",:text => "Wallet").click 
+  find(".shared-nav a",:text =>"Wallet")
 end
 
 Given(/^I should be on the Wallet dashboard page$/) do
@@ -64,3 +64,23 @@ end
 Given(/^I fail a attempt to login to wallet$/) do
   @wallet_homepage.incorrect_sign_in
 end
+
+Given(/^I click to verify a military group affiliation$/) do
+  find(:link , :href =>"https://wallet-staging.idmeinc.net/ids/new?scope=military").click
+end
+
+Given(/^I verify my military group affiliation has been added$/) do
+  expect(page).to have_css(".wallet-card-group .wallet-card-military:nth-child(1)")
+end
+
+Given(/^I should see my military group addition on the activity feed$/) do
+  expect(page).to have_css(".wallet-events li:nth-child(1)",:text =>"You added Military to your ID.me Wallet on")
+end
+
+Given(/^I record the wallet user email$/) do 
+  find(".shared-nav-user-avatar").click
+  @user_identifier = find(".shared-nav-user-menu-details li:nth-child(2)").text 
+  puts @user_identifier
+  find(".icon-wallet-close").click 
+  sleep 1
+end 
