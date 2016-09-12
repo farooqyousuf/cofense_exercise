@@ -27,7 +27,7 @@ end
 Given(/^ASHLEY\- I verify my military discount was applied$/) do
 	expect(page).to have_css(".cart-promo",:text => "Order Discount: Extra 10% Discount for our Military! Thanks for all you do. ....... Ashley")
 
-	original_product_amt_string = find(".price-adjusted-total").text
+	original_product_amt_string = find(".price-total").text
 	actual_product_discount_amt_string = find(".order-discount td:nth-child(2)").text
 
 	discount_applied = verify_discount(original_product_amt_string, actual_product_discount_amt_string, ".10",:exact_match => true)
@@ -48,7 +48,7 @@ end
 Given(/^ASHLEY\- I verify my teacher discount was applied$/) do
 	expect(page).to have_css(".cart-promo",:text => "Order Discount: Extra 10% Discount for our Teachers! Thanks for all you do. ....... Ashley")
 
-	original_product_amt_string = find(".price-adjusted-total").text
+	original_product_amt_string = find(".price-total").text
 	actual_product_discount_amt_string = find(".order-discount td:nth-child(2)").text
 
 	discount_applied = verify_discount(original_product_amt_string, actual_product_discount_amt_string, ".10",:exact_match => true)

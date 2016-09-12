@@ -31,8 +31,9 @@ Given(/^ford \- I sign in with IDP as military member$/) do
 end
 
 Given(/^ford \- I verify the Troop ID Integration for military member$/) do
-  select("Ford",:from =>"lstIntBrand")
-
+  select("Ford",:from =>"brand")
+  click_on "Submit"
+  sleep 1
   expect(page.driver.browser.current_url).to have_text "https://www.fordsalutesthosewhoserve.com/Register/EnrollFord"
   page.has_text? "Military Appreciation Bonus Cash"
 end
