@@ -97,7 +97,7 @@ Given(/^I generate a unique doc$/) do
   fill_in "paste_code", with: Faker::Lorem.paragraph(50)
 
   @IDmeBase = IDmeBase.new
-  @IDmeBase.save_screenshot
+  @IDmeBase.save_screenshot_in_dir
   close_current_browser
   use_last_browser_created
 end

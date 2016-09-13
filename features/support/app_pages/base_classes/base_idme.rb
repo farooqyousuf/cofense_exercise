@@ -27,7 +27,7 @@ class IDmeBase
     click_verify_button
   end
 
-  def save_screenshot
+  def save_screenshot_in_dir
     Dir.mkdir("./screenshots") unless Dir.exists?("./screenshots")
     page.save_screenshot("#{Dir.pwd}/screenshots/screenshot.png")
   end

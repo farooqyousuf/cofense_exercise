@@ -9,6 +9,23 @@ After do
   Capybara.current_session.driver.quit
 end
 
+After do |scenario|
+  if scenario.failed?
+    file = "FAILED_#{scenario.name.gsub(" ","_").gsub(/[^0-9A-Za-z_]/, "")}.png"
+
+    # create directory for images
+    Dir.mkdir("./screenshots") unless Dir.exists?("./screenshots")
+
+    # save the file locally
+    page.save_screenshot("./screenshots/#{file}")
+
+    if AllureCucumber::FeatureTracker.tracker
+      # attaches failed test screenshot to Allure reports
+      attach_file(file, File.open("./screenshots/#{file}"))
+    end
+  end
+end
+
 After("@delete_mil_doc_multi_family_users") do
   visit_admin_users_in_new_window
   @admin_users.delete_mil_doc_multi_family_users
