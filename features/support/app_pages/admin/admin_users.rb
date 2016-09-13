@@ -174,5 +174,4 @@ include JavascriptAlerts
   def search_for_user(string)
     find("input[type='search']").set string
   end
-
 end
