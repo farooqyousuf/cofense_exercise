@@ -17,11 +17,11 @@ After do |scenario|
     Dir.mkdir("./screenshots") unless Dir.exists?("./screenshots")
 
     # save the file locally
-    page.save_screenshot("./screenshots/#{file}")
+    page.save_screenshot("#{Dir.pwd}/screenshots/#{file}")
 
     if AllureCucumber::FeatureTracker.tracker
       # attaches failed test screenshot to Allure reports
-      attach_file(file, File.open("./screenshots/#{file}"))
+      attach_file(file, File.open("#{Dir.pwd}/screenshots/#{file}"))
     end
   end
 end
