@@ -1,6 +1,6 @@
 require_relative '../base_classes/error_messages.rb'
 
-class DocEMT < IDmeBase
+class StateDocEMT < IDmeBase
 
   include IVABase
   include Capybara::DSL

@@ -1,6 +1,6 @@
 require_relative '../base_classes/error_messages.rb'
 
-class LookupEMT < IDmeBase
+class StateLookupEMT < IDmeBase
 
   include IVABase
   include Capybara::DSL

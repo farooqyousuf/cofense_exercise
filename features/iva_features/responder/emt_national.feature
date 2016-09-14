@@ -1,4 +1,4 @@
-@regression @iva @responder @desktop
+@regression @iva @responder @desktop @emt
 Feature: Responder verification as an nationally certified EMT
 
   Background:
