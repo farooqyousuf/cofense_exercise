@@ -9,20 +9,26 @@ Feature: Military verification using DD214 request
 
   @smoke @delete_dd214_user
   #unique dob/ssn to pass verification
-  Scenario: Successful verification as a Veteran
-    * I verify using DD214 information for "Veteran"
+  Scenario: Successful DD214 verification as a Veteran
+    * I verify using DD214 information for "Veteran" via "document"
+    * I complete the verification process
+    * I should be successfully verified as "Veteran"
+
+  @delete_scra_user2
+  Scenario: Successful DD214 verification via SCRA
+    * I verify using DD214 information for "Veteran" via "SCRA"
     * I complete the verification process
     * I should be successfully verified as "Veteran"
 
   @delete_dd214_user2
-  Scenario: Successful verification as a Next of Kin Deceased Veteran
-    * I verify using DD214 information for "Next of kin deceased veteran"
+  Scenario: Successful DD214 verification as a Next of Kin Deceased Veteran
+    * I verify using DD214 information for "Next of kin deceased veteran" via "document"
     * I complete the verification process
     * I should be successfully verified as "Military Family"
 
   @delete_dd214_user2
-  Scenario: Successful verification as a Legal Guardian
-    * I verify using DD214 information for "Legal guardian"
+  Scenario: Successful DD214 verification as a Legal Guardian
+    * I verify using DD214 information for "Legal guardian" via "document"
     * I complete the verification process
     * I should be successfully verified as "Military Family"
 
@@ -34,7 +40,7 @@ Feature: Military verification using DD214 request
 
  @delete_dd214_dupe_user
  Scenario: Dupe attempt test for Military DD214
-    * I verify using DD214 information for "Veteran"
+    * I verify using DD214 information for "Veteran" via "document"
     * I complete the verification process
     * I clear the session from Authority
     * I create a new account after clearing my old "military" session
@@ -42,14 +48,14 @@ Feature: Military verification using DD214 request
     * I should see the red alert box error message "We’re sorry, but we are unable to verify your military status with the information you provided."
     * I verify the attempt is marked as "DUPLICATE"
 
- Scenario: Successfully prompt for all required fields for Veteran
+ Scenario: Successfully prompt for all DD214 required fields for Veteran
     * I submit the empty DD214 form for "Veteran"
     * I should see error messages on required fields for "DD214 Vet"
 
- Scenario: Successfully prompt for all required fields for Next of Kin Deceased Veteran
+ Scenario: Successfully prompt for all DD214 required fields for Next of Kin Deceased Veteran
     * I submit the empty DD214 form for "Next of kin deceased veteran"
     * I should see error messages on required fields for "DD214 Non-Vet"
 
-Scenario: Successfully prompt for all required fields for Legal Guardian
+Scenario: Successfully prompt for all DD214 required fields for Legal Guardian
     * I submit the empty DD214 form for "Legal guardian"
     * I should see error messages on required fields for "DD214 Non-Vet"
