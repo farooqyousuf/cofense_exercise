@@ -1,6 +1,9 @@
 @regression @wallet @desktop
 Feature: Test Wallet User Features
 
+Background:
+  * I create "WalletHomepage,WalletDashboard,WalletSettings" page objects
+
 @wallet_signup
 Scenario: Successful User Wallet Sign up
   * I visit "WalletHomepage" 
@@ -50,7 +53,6 @@ Scenario: User verifies a Military Group Affiliation
 @wallet_account_revoke 
 Scenario: User deactivates Wallet account and revokes access 
   * I visit "WalletHomepage" 
-  * I create Wallet page objects
   * I click on the Wallet Sign Up link 
   * I sign up as a new user 
   * I should be on the Wallet dashboard page
