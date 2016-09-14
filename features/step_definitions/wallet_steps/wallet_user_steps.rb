@@ -1,31 +1,15 @@
-
-Given(/^I create a WalletHomepage page object$/) do
-  @wallet_homepage = WalletHomepage.new 
-end
-
-Given(/^I create Wallet page objects$/) do 
-  step 'I create a WalletHomepage page object'
-  step 'I create a WalletDashboard page object'
-  step 'I create a WalletSettings page object'
-end 
-
-
-Given(/^I create a WalletDashboard page object$/) do
-  @wallet_dashboard = WalletDashboard.new 
-end
-
-
-Given(/^I create a WalletSettings page object$/) do
-  @wallet_settings = WalletSettings.new 
+Given(/^I create "([^"]*)" page objects$/) do |page_objects|
+  page_objects_array = page_objects.split(",")
+  page_objects_array.each do |d|
+    instance_variable_set("@#{d}", Object.const_get(d).new )
+  end 
 end
 
 Given(/^I click on the Wallet Sign Up link$/) do
-  step "I create a WalletHomepage page object"
 	click_link "Sign Up"
 end
 
 Given(/^I click on the Wallet Sign in link$/) do
-  step "I create a WalletHomepage page object"
   first(:link ,:text =>"Sign In").click 
 end
 
@@ -58,7 +42,7 @@ Given(/^I login to wallet as a "([^"]*)" user$/) do |affinity_group|
     when "Military" then FigNewton.mp_users.military
   end 
 
-  @wallet_homepage.sign_in(user_email)
+  @WalletHomepage.sign_in(user_email)
 end
 
 Given(/^I should see my sign in on the activity feed$/) do
@@ -77,7 +61,7 @@ end
 
 
 Given(/^I fail a attempt to login to wallet$/) do
-  @wallet_homepage.incorrect_sign_in
+  @WalletHomepage.incorrect_sign_in
 end
 
 Given(/^I click to verify a military group affiliation$/) do
@@ -93,17 +77,17 @@ Given(/^I should see my military group addition on the activity feed$/) do
 end
 
 Given(/^I record the wallet user email$/) do 
-  @wallet_dashboard.open_shared_side_navigation 
+  @WalletDashboard.open_shared_side_navigation 
   @user_identifier = find(".shared-nav-user-menu-details li:nth-child(2)").text 
-  @wallet_dashboard.close_shared_side_navigation 
+  @WalletDashboard.close_shared_side_navigation 
   sleep 1
 end 
 
 Given(/^I deactivate my Wallet account$/) do
   step 'I visit "WalletSettings"'
   
-  @wallet_settings.switch_to_security_tab
-  @wallet_settings.deactivate_wallet_user_account
+  @WalletSettings.switch_to_security_tab
+  @WalletSettings.deactivate_wallet_user_account
 
   expect(page).to have_text("Your request to deactivate your account was received and will be processed shortly.")
 end
@@ -115,7 +99,7 @@ end
 
 Given(/^I verify my Wallet account has been deactived$/) do
   click_link "Sign In"
-  @wallet_homepage.sign_in(@user_identifier) 
+  @WalletHomepage.sign_in(@user_identifier) 
 
   expect(page).to have_css(".alert-error",:text =>"We're sorry, this account has been revoked. Please contact our Member Support team for assistance.")
 end
