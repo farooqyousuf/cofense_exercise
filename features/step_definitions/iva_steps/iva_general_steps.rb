@@ -34,7 +34,7 @@ Given(/^I verify using a duplicate "([^"]*)" record$/) do |affiliation|
   when "Proboard Fireman"
     step 'I submit the proboard firefighter verification form as a "duplicate" record'
   when "EMT Document Upload"
-    step 'I submit the EMT Document Upload form as a "duplicate" record'
+    step 'I submit the state EMT Document Upload form as a "duplicate" record'
   end
 end
 
