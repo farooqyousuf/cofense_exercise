@@ -1,5 +1,9 @@
-Given(/^I verify using DD214 information for "(.*)"$/) do |affiliation|
-  DD214.new.verify(affiliation: affiliation, type: "unique")
+Given(/^I verify using DD214 information for "(.*)" via "(.*)"$/) do |affiliation, method|
+  if method == "SCRA"
+    DD214.new.verify(affiliation: affiliation, type: "unique", method: method)
+  else
+    DD214.new.verify(affiliation: affiliation, type: "unique", method: method)
+  end
 end
 
 Given(/^I submit the empty DD214 form for "([^"]*)"$/) do |group|

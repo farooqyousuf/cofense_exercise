@@ -6,9 +6,15 @@ class DD214 < IDmeBase
   include Capybara::DSL
   include ErrorMessages
 
-  def verify(affiliation: "Veteran", populate: true, type: "none")
+  def verify(affiliation: "Veteran", populate: true, type: "none", method:)
     find("[data-option='dd214-request']").find(".verification-header").click
     populate_affiliation(affiliation)
+
+    if method == "SCRA"
+      data_set = :dd214_via_scra
+    else
+      data_set = :military_dd214
+    end
 
     if populate
 
@@ -20,7 +26,7 @@ class DD214 < IDmeBase
         populate_officer
         populate_component
         populate_checkboxes
-        populate_fields(data_for(:military_dd214))
+        populate_fields(data_for(data_set))
       when "dupe"
         #work in progress
       end
