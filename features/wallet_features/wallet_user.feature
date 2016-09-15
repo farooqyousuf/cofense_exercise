@@ -60,3 +60,19 @@ Scenario: User deactivates Wallet account and revokes access
   * I deactivate my Wallet account
   * I confirm that my Wallet session has been terminated
   * I verify my Wallet account has been deactived 
+
+@wallet_account_locked
+Scenario: User Wallet account locked and unlocked via code  
+  * I visit "WalletHomepage" 
+  * I click on the Wallet Sign Up link 
+  * I sign up as a new user 
+  * I should be on the Wallet dashboard page
+  * I log out of Wallet user account 
+  * I click on the Wallet Sign in link
+  * I lockout my account
+  * I click on the unlock account link
+  * I unlock my account
+  * I login as a "current_username" user
+  * I should be on the Wallet dashboard page 
+  * I verify my Wallet lock and unlock on the Wallet activity feed
+

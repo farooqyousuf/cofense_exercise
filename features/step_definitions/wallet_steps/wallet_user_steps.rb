@@ -79,7 +79,8 @@ end
 Given(/^I record the wallet user email$/) do 
   @WalletDashboard.open_shared_side_navigation 
   @user_identifier = find(".shared-nav-user-menu-details li:nth-child(2)").text 
-  @WalletDashboard.close_shared_side_navigation 
+  @WalletDashboard.close_shared_side_navigation
+  @username = @user_identifier #required for lockout feature to work TODO: refactor lockout so all use same instance variable  
   sleep 1
 end 
 
@@ -104,7 +105,16 @@ Given(/^I verify my Wallet account has been deactived$/) do
   expect(page).to have_css(".alert-error",:text =>"We're sorry, this account has been revoked. Please contact our Member Support team for assistance.")
 end
 
+Given(/^I log out of Wallet user account$/) do
+  @WalletDashboard.open_shared_side_navigation
+  @WalletDashboard.click_shared_side_navigation_sign_out 
+end 
 
+Given(/^I verify my Wallet lock and unlock on the Wallet activity feed$/) do
+  expect(page).to have_css(".wallet-events li:nth-child(1)",:text =>"You signed in on")
+  expect(page).to have_css(".wallet-events li:nth-child(2)",:text =>"Your ID.me Wallet was unlocked on")
+  expect(page).to have_css(".wallet-events li:nth-child(3)",:text =>"Your ID.me Wallet was locked due to too many failed sign in attempts on")
+end 
 
 
 
