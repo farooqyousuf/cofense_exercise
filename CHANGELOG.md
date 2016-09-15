@@ -1,6 +1,9 @@
 Change Log
 
 All notable changes to this project will be documented in this file. This project does not adhere to [Semantic Versioning](http://semver.org/)
+## 2.2.38 (09/15/2016)
+- QA-345: Add Wallet test for user account locked & unlocked via password failure
+
 ## 2.2.37 (09/14/2016)
 - QA-238: DD214 via SCRA test complete
 - QA-366: Refactor EMT tests structure
