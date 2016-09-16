@@ -1,4 +1,4 @@
-@regression @iva @responder @desktop @emt @ignore
+@regression @iva @responder @desktop @emt
 Feature: Responder verification as an EMT using document upload
 
   Background:
