@@ -3,6 +3,7 @@ Change Log
 All notable changes to this project will be documented in this file. This project does not adhere to [Semantic Versioning](http://semver.org/)
 ## 2.2.39 (09/16/2016)
 - HOTFIX: Update Ashley Stewart partner test 
+- QA-330: Add Wallet user social sign up spec 
 
 ## 2.2.38 (09/15/2016)
 - QA-345: Add Wallet test for user account locked & unlocked via password failure
