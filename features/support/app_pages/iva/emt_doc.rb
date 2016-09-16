@@ -38,9 +38,7 @@ class DocEMT < IDmeBase
       2.times {fill_in field, :with => data.fetch(field)}
     end
     sleep 2
-    # binding.pry
     populate_second_state("Kansas", index=0)
-    #find(:id, 'select2-result-label-220').click
   end
 
 end
