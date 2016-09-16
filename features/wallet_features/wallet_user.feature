@@ -76,3 +76,13 @@ Scenario: User Wallet account locked and unlocked via code
   * I should be on the Wallet dashboard page 
   * I verify my Wallet lock and unlock on the Wallet activity feed
 
+@wallet_account_sign_up_social_federation 
+Scenario: User Signs up in Wallet via Social Federation 
+  * I visit "WalletHomepage"
+  * I click on the Wallet Sign Up link 
+  * I signup with LinkedIn social federation
+  * I verify my Wallet LinkedIn Social Federation login
+
+
+
+
