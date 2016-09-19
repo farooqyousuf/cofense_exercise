@@ -117,6 +117,14 @@ Given(/^I verify my Wallet lock and unlock on the Wallet activity feed$/) do
 end 
 
 
+Given(/^I signup with LinkedIn social federation$/) do 
+  @oauth_client = OAuthClient.new 
+  step 'I login with LinkedIn'
+  step 'I complete the new Wallet account linking process'
+end 
 
-
-
+Given(/^I verify my Wallet LinkedIn Social Federation login$/) do
+  step 'I should be on the Wallet dashboard page'
+  expect(page).to have_css(".wallet-events li:nth-child(2)",:text =>"You signed in with your Linkedin login on")
+  expect(page).to have_css(".wallet-events li:nth-child(4)",:text =>"You signed up for ID.me Wallet using your Linkedin login on")
+end 
