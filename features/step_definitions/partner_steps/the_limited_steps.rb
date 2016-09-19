@@ -11,12 +11,18 @@ Given(/^LIMITED\- I visit the checkout flow$/) do
 	visit FigNewton.partners.the_limited.checkout_cart
 end
 
-Given(/^LIMITED\- I sign in with my Id\.me military account$/) do
+Given(/^LIMITED\- I sign in with my Id\.me "([^"]*)" account$/) do |affinity_group|
+	group_id = case affinity_group
+		when "military" then ".IDmeButtonMil a"
+		when "teacher"	then ".IDmeButtonTea a"
+		when "student" 	then ".IDmeButtonStu a"
+	end 
+
 	expect(page).to have_css(".idme-section")
 	find(".idme-section-header").click
 	
 	idp_signin = window_opened_by do
-   	find(".IDmeButtonMil a").click
+   	find(group_id).click
   end
 
   within_window idp_signin do
@@ -24,7 +30,7 @@ Given(/^LIMITED\- I sign in with my Id\.me military account$/) do
   end	
 end
 
-Given(/^LIMITED\- I verify my military discount was applied$/) do
+Given(/^LIMITED\- I verify my IDme discount was applied$/) do
 	expect(page).to have_css(".idme-section",:text =>"You are verified with")
 	expect(page).to have_css(".orderdiscount .label",:text =>"Extra 10% Off Purchase:")
 
