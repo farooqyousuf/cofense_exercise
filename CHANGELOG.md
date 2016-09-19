@@ -1,6 +1,9 @@
 Change Log
 
 All notable changes to this project will be documented in this file. This project does not adhere to [Semantic Versioning](http://semver.org/)
+## 2.2.39 (09/19/2016)
+- QA-370: Add The Limited Partner test for military, student and teacher
+
 ## 2.2.38 (09/15/2016)
 - QA-345: Add Wallet test for user account locked & unlocked via password failure
 - QA-229: Successful verification via EMT Doc method
