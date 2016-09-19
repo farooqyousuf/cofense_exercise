@@ -1,19 +1,36 @@
 Given(/^LIMITED\- I visit the shop page$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+	visit FigNewton.partners.the_limited.product_page
 end
 
 Given(/^LIMITED\- I add a item to the cart$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+	find(".size .swatchesdisplay .emptyswatch:nth-child(4)").click
+	find(".addtocart").click 
 end
 
 Given(/^LIMITED\- I visit the checkout flow$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+	visit FigNewton.partners.the_limited.checkout_cart
 end
 
 Given(/^LIMITED\- I sign in with my Id\.me military account$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+	expect(page).to have_css(".idme-section")
+	find(".idme-section-header").click
+	
+	idp_signin = window_opened_by do
+   	find(".IDmeButtonMil a").click
+  end
+
+  within_window idp_signin do
+    sign_in_with_idme
+  end	
 end
 
 Given(/^LIMITED\- I verify my military discount was applied$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+	expect(page).to have_css(".idme-section",:text =>"You are verified with")
+	expect(page).to have_css(".orderdiscount .label",:text =>"Extra 10% Off Purchase:")
+
+	original_product_amt_string = find(".ordersubtotal .value").text
+	actual_product_discount_amt_string = find(".orderdiscount .value").text
+
+	discount_applied = verify_discount(original_product_amt_string, actual_product_discount_amt_string, ".10",:exact_match => true)
+	expect(discount_applied).to be(true)
 end
