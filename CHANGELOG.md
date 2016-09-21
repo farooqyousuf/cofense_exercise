@@ -3,13 +3,14 @@ Change Log
 All notable changes to this project will be documented in this file. This project does not adhere to [Semantic Versioning](http://semver.org/)
 ## 2.2.40 (09/21/2016)
 - QA-329: Add Wallet sign in via social federation spec
+- HOTFIX: Fix Wallet step matcher
 
 ## 2.2.39 (09/19/2016)
 - QA-370: Add The Limited Partner test for military, student and teacher
 
 ## 2.2.39 (09/16/2016)
-- HOTFIX: Update Ashley Stewart partner test 
-- QA-330: Add Wallet user social sign up spec 
+- HOTFIX: Update Ashley Stewart partner test
+- QA-330: Add Wallet user social sign up spec
 
 ## 2.2.38 (09/15/2016)
 - QA-345: Add Wallet test for user account locked & unlocked via password failure
