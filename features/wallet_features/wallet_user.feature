@@ -83,6 +83,17 @@ Scenario: User Signs up in Wallet via Social Federation
   * I signup with LinkedIn social federation
   * I verify my Wallet LinkedIn Social Federation login
 
+@wallet_account_sign_in_social_federation
+Scenario: User Signs in Wallet via Social Federation
+  * I visit "WalletHomepage" 
+  * I click on the Wallet Sign Up link 
+  * I signup with LinkedIn social federation
+  * I should be on the Wallet dashboard page
+  * I log out of Wallet user account 
+  * I visit "WalletHomepage"
+  * I click on the Wallet Sign in link
+  * I signin with LinkedIn social federation
+  * I verify my Wallet Linkedin Social Federation signin 
 
 
 
