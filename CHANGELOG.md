@@ -1,6 +1,9 @@
 Change Log
 
 All notable changes to this project will be documented in this file. This project does not adhere to [Semantic Versioning](http://semver.org/)
+## 2.2.41 (09/27/2016)
+- IDME-2648: Remove outdate Marketplace code
+
 ## 2.2.40 (09/21/2016)
 - QA-329: Add Wallet sign in via social federation spec
 - HOTFIX: Fix Wallet step matcher
