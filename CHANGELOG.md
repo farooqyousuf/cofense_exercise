@@ -1,6 +1,8 @@
 Change Log
 
 All notable changes to this project will be documented in this file. This project does not adhere to [Semantic Versioning](http://semver.org/)
+## 2.2.42 (09/28/2016)
+- IDME-2774: Add overstock partner test
 ## 2.2.41 (09/27/2016)
 - IDME-2648: Remove outdate Marketplace code
 
