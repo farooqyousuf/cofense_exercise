@@ -72,6 +72,10 @@ partners:
   the_limited: 
     product_page: http://www.thelimited.com/product/classic-ankle-skinny-jeans/8733618.html
     checkout_cart: https://www.thelimited.com/cart
+  overstock:
+    military: https://www.overstock.com/clubomilitary
+    teacherstudents: https://www.overstock.com/cluboclassroom
+    firstresponders: https://www.overstock.com/clubofirstresponder
 oauth:
   facebook_user: qa@id.me
   facebook_pw: P@ssword123

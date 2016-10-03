@@ -110,6 +110,5 @@ Given(/^I approve the document in IDme admin$/) do
   @admin_docs = AdminDocs.new
 
   @admin_docs.approve_doc
-
   @admin_tool.logout_in_new_window
 end
