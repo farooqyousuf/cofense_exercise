@@ -103,7 +103,7 @@ admin:
 idp:
   base_url: https://api-staging.idmeinc.net
   new_session_url: https://api-staging.idmeinc.net/session/new
-
+  new_registration_url: https://api-staging.idmeinc.net/registration/new
 hlp:
   homepage: https://hosted-pages-staging.idmeinc.net/admin/partners/1/pages
   partner_number: 1
@@ -149,6 +149,14 @@ offer_cms:
   base_url: https://offers-cms-staging.idmeinc.net/
 
 wallet:
-  homepage: https://wallet-staging.idmeinc.net/
-  dashboard: https://wallet-staging.idmeinc.net/dashboard 
-  settings: https://wallet-staging.idmeinc.net/settings 
+  homepage:
+    url: https://wallet-staging.idmeinc.net/
+    title: One Identity. One Wallet. | ID.me
+  dashboard: https://wallet-staging.idmeinc.net/dashboard
+  settings: https://wallet-staging.idmeinc.net/settings
+  shop: https://shop-staging.idmeinc.net/
+
+idme:
+  about_page: https://wallet-staging.idmeinc.net/about
+  business_page: https://business.id.me
+

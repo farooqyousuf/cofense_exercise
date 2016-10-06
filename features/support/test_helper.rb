@@ -1,7 +1,7 @@
 # general module helpers for step definitions
 module HelperMethods
 
-  def sign_in_with_idme 
+  def sign_in_with_idme
     #TODO figure out why you alotted two identical sign_in_with_idme in manual_helper.rb too
     #TODO once convert everything over the sign_in_with_idme_account method then delete this method
     if page.has_content? "Sign in"
@@ -13,9 +13,9 @@ module HelperMethods
     click_link "Continue"
   end
 
-  def sign_in_with_idme_account(group_type) 
+  def sign_in_with_idme_account(group_type)
     user_email = case group_type
-    when "troop_id" 
+    when "troop_id"
       FigNewton.partners.user
     when "student_id"
       FigNewton.test_user.student.user_email
@@ -23,19 +23,19 @@ module HelperMethods
       FigNewton.test_user.first_responder.user_email
     when "teacher_id"
       FigNewton.test_user.teacher.user_email
-    end 
+    end
 
     if page.has_content? "Sign in"
-      fill_in "user_email", :with => user_email 
+      fill_in "user_email", :with => user_email
       fill_in "user_password", :with => FigNewton.partners.password
       click_button "Sign in"
     end
 
-    click_link "Continue" 
+    click_link "Continue"
   end
 
   #TODO - Refactor the duplicate sign_in options we have right now to single
-  def sign_in_with_idme_veteran 
+  def sign_in_with_idme_veteran
     if page.has_content? "Sign in"
       fill_in "user_email", :with => FigNewton.test_user.military.veteran.user_email
       fill_in "user_password", :with => FigNewton.test_user.password
@@ -44,11 +44,11 @@ module HelperMethods
 
     if page.has_text? "Click here to finish"
       click_link "Click here to finish"
-    
+
     elsif page.has_text? "Allow"
        click_button "Allow"
 
-    elsif page.has_text? "Authorize" 
+    elsif page.has_text? "Authorize"
       click_button "Authorize"
 
     elsif page.has_text? "Continue"
@@ -104,14 +104,14 @@ module HelperMethods
   def verify_discount(original_product_amt_string, actual_product_discounted_amt_string, discount_percentage, options={})
     #TODO : this whole method needs to be refactored and more semanticaly named
     exact_match = options[:exact_match]
-    verify_discount_total = options[:verify_discount_total] #when only the total after subtracted discount amount is visible 
+    verify_discount_total = options[:verify_discount_total] #when only the total after subtracted discount amount is visible
     full_price = original_product_amt_string.delete "$"
 
     if exact_match
       calc_discount_amt = ( full_price.to_f * discount_percentage.to_f ).to_i
-    else 
+    else
       calc_discount_amt =  should_round_amt(full_price,discount_percentage)
-    end 
+    end
 
     full_price = original_product_amt_string.delete "$"
 
@@ -120,20 +120,24 @@ module HelperMethods
       original_total = original_product_amt_string.delete "$"
       discount_total = actual_product_discounted_amt_string.delete "$"
       actual_discount_amt = original_total.to_f - discount_total.to_f
-    else 
+    else
       actual_discount_amt = /\d{1,3}[,\\.]?(\\d{1,2})?/.match(actual_product_discounted_amt_string)[0].chop.to_i
-    end 
-   return actual_discount_amt == calc_discount_amt 
-  end 
+    end
+   return actual_discount_amt == calc_discount_amt
+  end
 
-  private 
+  private
 
   def should_round_amt(full_price,discount_percentage)
     expected_discount_amt = full_price.to_f * discount_percentage.to_f
-    if expected_discount_amt.to_s.split(".")[1] === "5" #will prevent rounded up number being returned 
+    if expected_discount_amt.to_s.split(".")[1] === "5" #will prevent rounded up number being returned
       expected_discount_amt.to_s.split(".")[0].to_i
-    else 
+    else
       expected_discount_amt.round.to_i
-    end 
-  end 
+    end
+  end
+
+  def return_to_previous_page
+    page.driver.go_back
+  end
 end
