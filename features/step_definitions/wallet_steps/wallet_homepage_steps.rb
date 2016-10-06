@@ -26,15 +26,16 @@ Given(/^I verify the Wallet shared navigation tab "([^"]*)" successfully links$/
   nav_link_url = case nav_tab
               when "About"    then FigNewton.idme.about_page
               when "Business" then FigNewton.idme.business_page
-              when "Shop"     then FigNewton.marketplace.shop_homepage
+              when "Shop"     then FigNewton.wallet.shop
               when "Wallet"   then FigNewton.wallet.homepage.url
               end
   find(".wallet-header-nav a",:text => nav_tab ).click
 
   if nav_tab == "Business"
-    #switch to new window
-    #expectation statement
-    #close window and switch to previous
+    use_last_browser_created
+    expect(page).to have_current_path(nav_link_url, :url => true)
+    close_current_browser
+    use_last_browser_created
   else
     expect(page).to have_current_path(nav_link_url, :url => true)
     return_to_previous_page

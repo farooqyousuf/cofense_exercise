@@ -154,6 +154,7 @@ wallet:
     title: One Identity. One Wallet. | ID.me
   dashboard: https://wallet-staging.idmeinc.net/dashboard
   settings: https://wallet-staging.idmeinc.net/settings
+  shop: https://shop-staging.idmeinc.net/
 
 idme:
   about_page: https://wallet-staging.idmeinc.net/about
