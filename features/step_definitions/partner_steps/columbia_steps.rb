@@ -12,7 +12,7 @@ Given(/^COLUMBIA \- I add a item to the cart and checkout$/) do
 	find(".modal-close").click 
 
 	visit FigNewton.partners.columbia_sport.product_page
-	find(".variationboxes").first(".swatchanchor").click
+	find(".variationboxes .swatchanchor",:match =>:first ).click 
 	sleep 1
 	click_button "Add to Cart"
 	sleep 2 
