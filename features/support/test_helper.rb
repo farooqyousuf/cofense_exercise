@@ -140,4 +140,8 @@ module HelperMethods
   def return_to_previous_page
     page.driver.go_back
   end
+
+  def refresh_browser_page
+    page.driver.browser.navigate.refresh
+  end
 end
