@@ -26,10 +26,8 @@ end
 
 Given(/^I should be on the Wallet dashboard page$/) do
   find(".wallet-dashboard-module") #holder allow page to load 
-  expect(page.current_url).to eql(FigNewton.wallet.homepage)
+  expect(page).to have_current_path(FigNewton.wallet.homepage.url, :url => true)
   expect(page).to have_css(".wallet-content-main .heading",:text =>"Dashboard")
-  expect(page).to have_css(".wallet-dashboard-module",:visible => true)
-  expect(page).to have_css(".wallet-dashboard-module",:visible => true)
 end
 
 Given(/^I should see my sign up on the activity feed$/) do
