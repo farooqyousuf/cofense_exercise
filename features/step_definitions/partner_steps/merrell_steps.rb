@@ -5,6 +5,7 @@ Given(/^MERRELL\- I add a item to the cart$/) do
 	find("#variationsdropdown-24572M").click
 	find("label[id='swatch-L']").click
 	find(".variations-other").click
+  find(".product-name-v2").click #click added to counter size menu from blocking cart click
 	find("#add-to-cart").click
 
 	visit "http://www.merrell.com/US/en/cart"
@@ -18,7 +19,7 @@ Given(/^MERRELL\- I signin with my Id\.me military account$/) do
   within_window idp_signin do
     sign_in_with_idme
 	end
-end 
+end
 
 Given(/^MERRELL\- I verify my military discount was applied$/) do
 	expect(page).to have_css(".order-discount",:visible => true)
@@ -30,8 +31,8 @@ Given(/^MERRELL\- I verify my military discount was applied$/) do
 	begin
 		expect(page).to have_css(".IDmeButtonMil",:visible => true)
 		expect(page).to have_css(".IDmeButtonMil .military")
-	rescue 
+	rescue
 		puts "==================== MERRELL IDme LOGIN BUTTON HAS CHANGED . REVIEW AND CHECK CSS ================================="
-		#08/2/16: merrell is suppose to change UI for the button sometime this or next week 
-	end 
+		#08/2/16: merrell is suppose to change UI for the button sometime this or next week
+	end
 end

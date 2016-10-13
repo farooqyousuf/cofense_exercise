@@ -1,9 +1,8 @@
 Given(/^MLBSHOP \- I add an item to the cart$/) do
   visit FigNewton.partners.mlb_shop
   page.driver.browser.navigate.refresh
-  first(:link , :text => "Jerseys").click
-  first(".dlpProductsContainer .ItemContainer:nth-child(7)").click 
-  find(".sizeChoiceContainer a[title='Choose Size L']").click  
+  visit "http://www.mlbshop.com/Baltimore_Orioles_Jerseys/Mens_Baltimore_Orioles_Manny_Machado_Majestic_Orange_Alternate_Cool_Base_Player_Jersey"
+  find(".sizeChoiceContainer a[title='Choose Size L']").click
   find("#addToCart").click
   find(:link, :href =>"/cart/view").click
   # 03/31/16 link for cart view is because add to card button is brokenr right now

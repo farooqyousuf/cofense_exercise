@@ -3,7 +3,7 @@ Given(/^ASHLEY\- I visit the shop page$/) do
 end
 
 Given(/^ASHLEY\- I add a item to the cart$/) do
-	find(".size li:nth-child(2)").click 
+	find(".size li:nth-child(1)").click
 	find("#add-to-cart").click
 end
 
@@ -14,7 +14,7 @@ Given(/^ASHLEY\- I visit the checkout page$/) do
 end
 
 Given(/^ASHLEY\- I sign in with my Id\.me military account$/) do
-	find(".idme-buttons-wrapper").click 
+	find(".idme-buttons-wrapper").click
   page.execute_script("window.scrollBy(0,-100)")
 	idp_signin = window_opened_by do
    	find(".IDmeButtonMil a").click
@@ -35,7 +35,7 @@ Given(/^ASHLEY\- I verify my military discount was applied$/) do
 end
 
 Given(/^ASHLEY\- I sign in with my Id\.me teacher account$/) do
-	find(".idme-buttons-wrapper").click 
+	find(".idme-buttons-wrapper").click
 	idp_signin = window_opened_by do
    	find(".IDmeButtonTea a").click
   end
