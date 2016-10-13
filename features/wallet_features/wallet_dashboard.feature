@@ -2,7 +2,7 @@
 Feature: Test Wallet Dashboard Page Feature
 
 Background:
-  * I create "WalletHomepage,WalletDashboard" page objects
+  * I create "WalletHomepage,WalletDashboard,WalletMyids" page objects
   * I visit "WalletHomepage"
 
 @wallet_smoke @smoke
