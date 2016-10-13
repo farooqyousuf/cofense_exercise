@@ -30,5 +30,6 @@ Given(/^I click on the Activity navigation link$/) do
 end
 
 Given(/^I check that Wallet Activity page is visible$/) do
+	expect(page).to have_current_path(FigNewton.wallet.activity,:url => true)
 	expect(page).to have_css(".wallet-content-main .heading",:text =>"Activity Feed")
 end

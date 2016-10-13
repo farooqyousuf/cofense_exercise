@@ -155,6 +155,7 @@ wallet:
   dashboard: https://wallet-staging.idmeinc.net/dashboard
   settings: https://wallet-staging.idmeinc.net/settings
   myids: https://wallet-staging.idmeinc.net/ids
+  activity: https://wallet-staging.idmeinc.net/activity
   shop: https://shop-staging.idmeinc.net/
 
 idme:
