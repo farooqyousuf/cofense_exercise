@@ -2,9 +2,10 @@
 Feature: Test Wallet Dashboard Page Feature
 
 Background:
-  * I create "WalletHomepage,WalletDashboard" page objects
+  * I create "WalletHomepage,WalletDashboard,WalletMyids" page objects
   * I visit "WalletHomepage"
 
+@wallet_smoke @smoke
 Scenario: Dashboard Smoke Test
   * I click on the Wallet Sign Up link
   * I sign up as a new user
