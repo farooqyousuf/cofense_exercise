@@ -15,7 +15,7 @@ Given(/^CAMP\- I visit the product page$/) do
 end
 
 Given(/^CAMP\- I add product to the cart and checkout$/) do
-	select "Tangerine - Large: $84.95",:from => "super_attributes_single_select"
+	select "Nightlife/Ultra Blue - Medium: $100.00",:from => "super_attributes_single_select"
 	find(".btn-cart").click
 	find(".checkout").click 
 end
@@ -54,3 +54,4 @@ Given(/^CAMP\- I apply the Student ID discount$/) do
     sign_in_with_idme_account("student_id")
   end
 end
+
