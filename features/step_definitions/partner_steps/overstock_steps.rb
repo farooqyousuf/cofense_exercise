@@ -20,7 +20,7 @@ Given(/^OVERSTOCK \- I verify my IDme account$/) do
 end
 
 Given(/^OVERSTOCK \- I verify my club o membership$/) do
-	expect(page).to have_css(".co-fg-signup-contents",:text =>"Congratulations! Valued Customer, You have been verified for Club O Gold! Your Club O membership will be applied to your account within 24 hours. We will send you an email welcoming you to the Club O program shortly.")
+	expect(page).to have_css(".co-fg-signup-contents",:text =>"Congratulations! Valued Customer, You have been verified as a Teacher! Your Club O membership will be applied to your account within 24 hours. We will send you an email welcoming you to the Club O program shortly. Start Earning Club O Dollars")
 end
 
 Given(/^OVERSTOCK \- I visit the club o "([^"]*)" page$/) do |group|
