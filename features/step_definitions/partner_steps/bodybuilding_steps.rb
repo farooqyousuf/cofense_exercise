@@ -12,11 +12,12 @@ Given(/^BODYBUILDING \- I verify the Troop ID HLP military page$/) do
 end
 
 Given(/^BODYBUILDING \- I add a item to my cart$/) do
-  @coupon_code = find("#couponCode").text
+  @coupon_code = find("#couponText").text
 
   visit FigNewton.partners.bodybuilding
   find("#BSN063-right-submit").click
-  find("#promo-code-toggler").click
+  find(".add2cart__footer a:nth-child(2)").click 
+  find("#promo-code-toggler").click 
   find(".qa-automation-var-couponcode").set(@coupon_code)
 end
 

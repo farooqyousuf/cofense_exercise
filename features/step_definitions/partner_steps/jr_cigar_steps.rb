@@ -7,7 +7,7 @@ Given(/^JRCIGAR \- I verify the military discount landing page$/) do
 end
 
 Given(/^JRCIGAR \- I login to JR Cigar$/) do
-	find("form[name='loginForm'] input[type='email']").set(FigNewton.partners.user)
+	find("form[name='loginForm'] input[type='email']").set(FigNewton.partners.previous_user)
 	find("form[name='loginForm'] input[name='password']").set(FigNewton.partners.password)
 	click_button "Log In"
 end

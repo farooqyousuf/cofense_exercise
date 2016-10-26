@@ -1,6 +1,8 @@
 Change Log
 
 All notable changes to this project will be documented in this file. This project does not adhere to [Semantic Versioning](http://semver.org/)
+## 2.2.46 (10/14/2016)
+- IDME-2897: Updated bodybuilding.com,Campsaver,Dell,Fanatics,FansEdge,Jockey,JrCigar,Overstock
 
 ## 2.2.45 (10/13/2016)
 - IDME-2800: Add Wallet dashboard smoke test

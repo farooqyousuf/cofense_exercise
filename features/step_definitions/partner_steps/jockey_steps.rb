@@ -2,17 +2,17 @@ Given(/^JO \- I add an item to the cart$/) do
   visit "http://www.jockey.com/catalog?department=men&category=t-shirts#/"
   sleep 1
   page.driver.browser.navigate.refresh
-  find("a", :text => "Jockey® Classic Crew Neck - 6 Pack").click
-  first("#ProductColors a").click
-  first("#ProductSizes a").click
-  find("#AddToBagPD").click
 
+  find("a", :text => "Jockey® Classic Crew Neck - 6 Pack").click
+  first(".color-select-control").click
+  first(".size-select-control").click
+  find(".add-to-bag-btn").click
+ 
   if find("#TopNavCheckOutButton").visible?
     find("#TopNavCheckOutButton").click
   else
-    find("#CheckOutButtonPD").click
+    first("a", :text => "CHECKOUT").click
   end
-  first("a", :text => "CHECKOUT").click
 end
 
 Given(/^JO \- I apply the "([^"]*)" discount$/) do |group|
@@ -44,7 +44,7 @@ Given(/^JO \- I verify the IDme "([^"]*)" discount has been applied$/) do |group
     "First Responders receive 10% off! with ID.me"
   end 
 
-  expect(page).to have_css(".idme_sr_row",:text => discount_message_text)
+  expect(page).to have_css(".idme-container",:text => discount_message_text)
   original_product_amt_string = first(".summary-detail-row .summary-right").text
   actual_product_discounted_amt_string = find(".red-discount-ledger .summary-right").text
 
