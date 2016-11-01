@@ -1,7 +1,7 @@
 @fanatics @partners @fansedge @version2 @desktop
 Feature: Test the ID.me FansEdge Partner Integration
 
-  @troop_id @windows @saucegit
+  @troop_id @windows @saucegit @rerunner
   Scenario: Test FansEdge Shop Military Partner Integration
     * FE - I add an item to the cart
     * FE - I apply the Troop ID discount

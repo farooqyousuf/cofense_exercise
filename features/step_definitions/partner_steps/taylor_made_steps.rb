@@ -7,7 +7,8 @@ Given(/^TAYLOR MADE \- I add a item to the checkout cart$/) do
 end
 
 Given(/^TAYLOR MADE \- I apply the Troop ID discount$/) do
-  page.execute_script "window.scrollBy(0,-100)"
+  sleep 1
+  page.execute_script "window.scrollBy(0,600)"
   first(".biling-payment-options-block fieldset fieldset fieldset:nth-child(2)").click
   new_window = window_opened_by { find(".idme-button").click } 
  
@@ -29,6 +30,7 @@ Given (/^TAYLOR MADE - I sign in through the checkout flow$/) do
   
   fill_in("dwfrm_singleshipping_shippingAddress_addressFields_zip",:with =>"22102")
   fill_in("dwfrm_singleshipping_shippingAddress_addressFields_phone",:with =>"866-775-4663")
+  page.execute_script("window.scrollBy(0,200)")
   click_button "Proceed to billing"
 end 
 
@@ -38,7 +40,6 @@ Given(/^TAYLOR MADE \- I verify the Troop ID discount has been applied$/) do
 
   discount_applied = verify_discount(original_product_amt_string, actual_product_discounted_amt_string, ".15",:verify_discount_total => true) 
   expect(discount_applied).to be(true)
-  page.has_text? "- ID.me Discount 15% off"
 end
 
 Given(/^ADIDAS GOLF \- I add a item to the checkout cart$/) do
