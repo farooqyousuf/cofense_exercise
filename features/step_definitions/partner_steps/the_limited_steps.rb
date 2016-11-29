@@ -34,10 +34,10 @@ end
 Given(/^LIMITED\- I verify my IDme discount was applied$/) do
   expect(page).to have_css(".idme-section",:text =>"You are verified with")
   expect(page).to have_css(".orderdiscount .label",:text =>"Extra 10% Off Purchase:")
-
   original_product_amt_string = find(".ordersubtotal .value").text
   actual_product_discount_amt_string = find(".orderdiscount .value").text
 
-  discount_applied = verify_discount(original_product_amt_string, actual_product_discount_amt_string, ".10",:exact_match => true)
+  discount_applied = verify_discount(original_product_amt_string, actual_product_discount_amt_string, ".10")
+  binding.pry
   expect(discount_applied).to be(true)
 end
