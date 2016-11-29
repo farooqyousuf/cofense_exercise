@@ -6,18 +6,18 @@ Given(/^CAMP\- I check the Camp Saver ID\.me Verify Instruction Page$/) do
 end
 
 Given(/^CAMP\- I click Shop now and verify redirect to camp saver partner$/) do
-	find(:link,:href=>"/").click 
+	find(:link,:href=>"/").click
 	expect(page.current_url).to eql("http://www.campsaver.com/")
 end
 
 Given(/^CAMP\- I visit the product page$/) do
-	visit FigNewton.partners.camp_saver.product_page 
+	visit FigNewton.partners.camp_saver.product_page
 end
 
 Given(/^CAMP\- I add product to the cart and checkout$/) do
-	select "Nightlife/Ultra Blue - Medium: $100.00",:from => "super_attributes_single_select"
+  select "Nightlife/Ultra Blue - Small: $100.00",:from => "super_attributes_single_select"
 	find(".btn-cart").click
-	find(".checkout").click 
+	find(".checkout").click
 end
 
 Given(/^CAMP\- I apply the Troop ID discount$/) do
@@ -31,7 +31,7 @@ end
 Given(/^CAMP\- I verify the IDme discount has been applied$/) do
 	expect(page).to have_css(".success-msg",:text =>"Successfully verified your affiliation via ID.me")
 	original_prudct_amt_string = first("#shopping-cart-table .price_old").text
-	actual_product_discount_amt_string = find("#shopping-cart-totals-table tbody tr:nth-child(3) td:nth-child(2)").text 
+	actual_product_discount_amt_string = find("#shopping-cart-totals-table tbody tr:nth-child(3) td:nth-child(2)").text
 	discount_applied = verify_discount(original_prudct_amt_string,actual_product_discount_amt_string,".20", :exact_match => true )
 	expect(discount_applied).to be(true)
 	#expect(page).to have_css("#shopping-cart-table tbody td:nth-child(2) div" ,:text =>"ID.me Group Discount Applied") #08/2/16 : use this matcher when they change over copy
