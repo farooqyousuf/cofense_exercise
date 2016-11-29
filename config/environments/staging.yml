@@ -7,8 +7,8 @@ authority:
  password: IDmeadmin3
 
 oauth:
-  client_id     : 8e7d94dd2114a4ba54b8ef7950446aaa
-  client_secret : ff5a9ef3aeb9a98ab49ee42662b8f58e
+  client_id     : 19bc32958f52e7dd8fd7b5f2eaa42718
+  client_secret : 905cb39e22d413a8b4a74a2544ae8bf8
   idp_endpoint  : https://api-staging.idmeinc.net
   redirect_uri  : https://test-drive-staging.idmeinc.net
   general_password: Password123
