@@ -19,9 +19,14 @@ Given(/^OVERSTOCK \- I verify my IDme account$/) do
   end
 end
 
-Given(/^OVERSTOCK \- I verify my club o membership$/) do
-
-	expect(page).to have_css(".co-fg-signup-contents",:text =>"Congratulations! Valued Customer, You have been verified as a Teacher! Your Club O membership will be applied to your account within 24 hours. We will send you an email welcoming you to the Club O program shortly. Start Earning Club O Dollars")
+Given(/^OVERSTOCK \- I verify my club o "([^"]*)" membership$/) do |group|
+	success_copy = case group 
+	when "military"   then "Congratulations! Valued Customer, You have been verified for Club O Gold! Your Club O membership will be applied to your account within 24 hours. We will send you an email welcoming you to the Club O program shortly. Start Earning Club O Dollars"
+	when "teachers"   then "Congratulations! Valued Customer, You have been verified as a Teacher! Your Club O membership will be applied to your account within 24 hours. We will send you an email welcoming you to the Club O program shortly. Start Earning Club O Dollars"
+	when "students"   then "Congratulations! Valued Customer, You have been verified as a Student! Your Club O membership will be applied to your account within 24 hours. We will send you an email welcoming you to the Club O program shortly. Start Earning Club O Dollars"
+	when "responders" then "Congratulations! Valued Customer, You have been verified as a First-Responder! Your Club O membership will be applied to your account within 24 hours. We will send you an email welcoming you to the Club O program shortly. Start Earning Club O Dollars"
+	end
+	expect(page).to have_css(".co-fg-signup-contents",:text => success_copy)	
 end
 
 Given(/^OVERSTOCK \- I visit the club o "([^"]*)" page$/) do |group|
