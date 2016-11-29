@@ -17,7 +17,6 @@ end
 
 Given(/^ford \- I verify the First Responder Integration$/) do
  select("Ford",:from =>"lstIntBrand")
-
  expect(page.driver.browser.current_url).to have_text "https://www.fordspecialoffer.com/firstresponders/Register/EnrollFord"
  page.has_text? "First Responder Appreciation Bonus Cash"
 end
@@ -32,6 +31,7 @@ end
 
 Given(/^ford \- I verify the Troop ID Integration for military member$/) do
   select("Ford",:from =>"brand")
+  fill_in("zip",:with =>"22066")
   click_on "Submit"
   sleep 1
   expect(page.driver.browser.current_url).to have_text "https://www.fordsalutesthosewhoserve.com/Register/EnrollFord"
