@@ -17,7 +17,6 @@ Given(/^RHONE \- I sign in with my Idme military account$/) do
 end
 
 Given(/^RHONE \- I verify my military discount was applied$/) do
-	expect(page).to have_text("ID.ME-SERVICE MEMBER")
 	original_product_amt_string = find(".order-summary__section--total-lines .total-line--subtotal .total-line__price").text
 	actual_product_discounted_amt_string = find(".order-summary__section--total-lines .total-line--reduction .total-line__price").text
 	discount_applied = verify_discount(original_product_amt_string,actual_product_discounted_amt_string,".15",:exact_match => true)
