@@ -9,8 +9,6 @@ Given(/^COLUMBIA \- I visit the military HLP and verify$/) do
 end
 
 Given(/^COLUMBIA \- I add a item to the cart and checkout$/) do
-#	find(".modal-close").click
-
 	visit FigNewton.partners.columbia_sport.product_page
 	find(".variationboxes .swatchanchor",:match =>:first ).click
 	sleep 1
@@ -20,8 +18,6 @@ end
 
 Given(/^COLUMBIA \- I verify that a discount has been applied$/) do
 	visit FigNewton.partners.columbia_sport.shopping_cart_page
- binding.pry
-	#expect(page).to have_css(".promo-adjustment",:text=>'Thank you for your service')
 	original_product_amt_string = find(".item-price").text
 	actual_product_discounted_amt_string = find(".price-adjusted-total").text
 

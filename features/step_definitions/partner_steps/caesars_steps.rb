@@ -1,7 +1,6 @@
 Given(/^CAESARS\- I visit homepage and check best room rates$/) do
   visit FigNewton.partners.caesars_hotels
   find(".fa-times-circle-o").click
- # find(".cet-dialog-close-box").click #for pop-up modal upon visit
 
   click_link "Check Best Rates"
 end
@@ -28,7 +27,6 @@ Given(/^CAESARS\- I verify my "([^"]*)" through ID\.me$/) do |group|
 end
 
 Given(/^CAESARS\- I verify my "([^"]*)" integration is displayed on the rate calendar page$/) do |group|
-  binding.pry
   user_group_text = find_user_group_text(group)
 
   expect(page).to have_css(".id-me-bx",:text =>"Additional #{user_group_text} Discount applied through")
