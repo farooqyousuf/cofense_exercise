@@ -1,9 +1,9 @@
 Given(/^JO \- I add an item to the cart$/) do
-  visit "http://www.jockey.com/catalog?department=men&category=t-shirts#/"
-  sleep 1
-  page.driver.browser.navigate.refresh
-
+  visit "http://www.jockey.com/catalog?department=men&category=t-shirts#"
+  sleep 2
+  2.times { refresh_browser_page }
   find("a", :text => "Jockey® Classic Crew Neck - 6 Pack").click
+  
   first(".color-select-control").click
   first(".size-select-control").click
   find(".add-to-bag-btn").click

@@ -1,7 +1,6 @@
 Given(/^CAESARS\- I visit homepage and check best room rates$/) do
   visit FigNewton.partners.caesars_hotels
-
-  find(".cet-dialog-close-box").click #for pop-up modal upon visit
+  find(".fa-times-circle-o").click
 
   click_link "Check Best Rates"
 end
@@ -31,7 +30,7 @@ Given(/^CAESARS\- I verify my "([^"]*)" integration is displayed on the rate cal
   user_group_text = find_user_group_text(group)
 
   expect(page).to have_css(".id-me-bx",:text =>"Additional #{user_group_text} Discount applied through")
-  expect(page).to have_css(".troopSwapSidepanel",:text =>"ID.me Up to 15% Room Discount for Military, First Responders, Students & Teachers. What is ID.me? Verification by ID.me")
+  expect(page).to have_css(".troopSwapSidepanel",:text =>"ID.me Up to 10% Room Discount for Military, First Responders, Students & Teachers. What is ID.me? Verification by ID.me")
 end
 
 Given(/^CAESARS\- I choose a room date and verify the "([^"]*)" discount on the modal$/) do |group|
@@ -41,7 +40,7 @@ Given(/^CAESARS\- I choose a room date and verify the "([^"]*)" discount on the 
   expect(page).to have_css("#idme",:text =>"Additional #{user_group_text} Discount applied through ID.me")
 
   find(".rate-table dl:nth-child(1) .cfive").click
-  expect(page).to have_css(".troopSwapSidepanel",:text =>"ID.me Up to 15% Room Discount for Military, First Responders, Students & Teachers. What is ID.me? Verification by ID.me")
+  expect(page).to have_css(".troopSwapSidepanel",:text =>"ID.me Up to 10% Room Discount for Military, First Responders, Students & Teachers. What is ID.me? Verification by ID.me")
 end
 
 Given(/^CAESARS\- I book a room and verify my "([^"]*)" discount has been applied$/) do |group|

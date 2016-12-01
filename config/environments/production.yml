@@ -59,9 +59,9 @@ partners:
   dell_hlp: https://hosted-pages.id.me/dell-saluting-service-members?offer_id=25186
   columbia_sport:
     hlp_page: https://hosted-pages.id.me/columbia-military?offer_id=25204
-    product_page: http://www.columbia.com/mens-pfg-bonehead-short-sleeve-shirt-%E2%80%94-big-FS7130.html?dwvar_FS7130_variationColor=450#start=20
+    product_page: http://www.columbia.com/mens-mekong-river-hoodie-1698732.html?cgid=men-shirts-hoodies&dwvar_1698732_variationColor=425#start=15
     shopping_cart_page: https://www.columbia.com/cart
-  ashley_stewart: http://www.ashleystewart.com/geo-scuba-peplum-top/041-F1349X.html?dwvar_041-F1349X_color=0001#start=1&cgid=trendslooks
+  ashley_stewart: http://www.ashleystewart.com/pleat-detail-button-shirt/035-L1I1657.html?dwvar_035-L1I1657_color=0606#start=1&cgid=tops_styles_shirts
   camp_saver:
     verify_idme_page: http://www.campsaver.com/verify-with-idme/?utm_source=idme&utm_medium=email&utm_campaign=may13
     product_page: http://www.campsaver.com/moving-comfort-lsd-jacket-women-s
@@ -69,9 +69,9 @@ partners:
     hlp_page: https://hosted-pages.id.me/military-and-veteran-discount?offer_id=101377
   jr_cigar_landing_page: https://www.jrcigars.com/military-discount?source=cj
   merrell: http://www.merrell.com/US/en/palm-rope-print-shirt/24572M.html?dwvar_24572M_color=JMS23097-406#cgid=men-clothing-shirts--tees&start=1
-  rhone: https://www.rhone.com/products/monk-terry-hoodie?variant=11505264965
-  the_limited: 
-    product_page: http://www.thelimited.com/product/classic-ankle-skinny-jeans/8733618.html
+  rhone: https://www.rhone.com/products/sequoia-2-0-1-4-zip
+  the_limited:
+    product_page: http://www.thelimited.com/product/printed-sleeveless-sheath-dress/3262748.html?cgid=dresses&prefn1=saleStatus&start=32&dwvar_3262748_colorCode=298&prefv1=regular&ppid=c32
     checkout_cart: https://www.thelimited.com/cart
   overstock:
     military: https://www.overstock.com/clubomilitary
@@ -87,8 +87,8 @@ test_user:
     veteran:
       user_email: rich.purnell.rocketman@gmail.com #TODO replace with veteran+test@id.me
   first_responder:
-    user_email: test+responder@id.me 
+    user_email: test+responder@id.me
   student:
-    user_email: test+student@id.me 
+    user_email: test+student@id.me
   teacher:
     user_email: test+teacher@id.me
