@@ -10,12 +10,21 @@ include JavascriptAlerts
   end
 
   def approve_doc
+    sort_newest_to_top
     open_newest
     find("#verification_attempt_status_event_accept").click
     click_button("Update")
   end
 
+  def sort_newest_to_top
+    sleep 1
+    all(".short.sorting")[1].click
+    sleep 1
+    find(".sorting_asc").click
+  end
+
   def open_newest
+    sleep 1
     first('.odd > td > a').click
   end
 
