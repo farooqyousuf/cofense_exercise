@@ -1,6 +1,9 @@
 Change Log
 
 All notable changes to this project will be documented in this file. This project does not adhere to [Semantic Versioning](http://semver.org/)
+## 2.2.50 (12/8/2016)
+- IDME-3032: Update selectors for Wallet expectations"
+
 ## 2.2.49 (12/7/2016)
 - HOTFIX: Fixed admin doc sorting by newest
 
