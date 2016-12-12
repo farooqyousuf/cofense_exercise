@@ -1,6 +1,9 @@
 Change Log
 
 All notable changes to this project will be documented in this file. This project does not adhere to [Semantic Versioning](http://semver.org/)
+## 2.2.51 (12/12/2016)
+- HOTFIX: Fixed EMT State Lookup test, needed to add an emt number to the test
+
 ## 2.2.50 (12/8/2016)
 - IDME-3032: Update selectors for Wallet expectations"
 

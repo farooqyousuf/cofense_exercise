@@ -28,7 +28,7 @@ class StateLookupEMT < IDmeBase
   end
 
   def populate_fields(data:)
-    %w(first_name last_name social social_confirm street city emt_city emt_county).each do |field|
+    %w(first_name last_name social social_confirm street city emt_city emt_county emt_number).each do |field|
         fill_in field, :with => data.fetch(field)
     end
 
