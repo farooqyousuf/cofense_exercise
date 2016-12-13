@@ -1,6 +1,8 @@
 Change Log
 
-All notable changes to this project will be documented in this file. This project does not adhere to [Semantic Versioning](http://semver.org/)
+All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
+## 2.2.52 (12/13/16)
+- IDME-3032: HOTFIX Update Wallet dashboard my ID expectation
 ## 2.2.51 (12/12/2016)
 - HOTFIX: Fixed EMT State Lookup test, needed to add an emt number to the test
 
