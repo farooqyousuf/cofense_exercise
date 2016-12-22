@@ -18,7 +18,7 @@ end
 
 Given(/^I reset my password$/) do
   @idp_pw_reset.reset_password
-  step 'I should see the green alert box error message "Your ID.me Wallet password has been successfully reset."'
+  step 'I should see the green alert box error message "Your ID.me Wallet password was successfully reset."'
 end
 
 Given(/^I verify I can login with the newly reset password$/) do
