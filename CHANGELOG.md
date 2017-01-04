@@ -1,6 +1,9 @@
 Change Log
 
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
+## 2.2.54 (1/4/17)
+- HOTFIX: Changed password to an accepted password in staging.yml file
+
 ## 2.2.53 (12/22/16)
 - HOTFIX: Fixed some assertion text on idp unlock test
 - HOTFIX: Fixed some assertion text on idp password tests

@@ -11,7 +11,7 @@ oauth:
   client_secret : 905cb39e22d413a8b4a74a2544ae8bf8
   idp_endpoint  : https://api-staging.idmeinc.net
   redirect_uri  : https://test-drive-staging.idmeinc.net
-  general_password: Password123
+  general_password: Changeme123
   weak_password: Password1
   unverified: farooq+noverifications@id.me
   nonexistent: fake_email@id.me
