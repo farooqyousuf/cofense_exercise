@@ -9,7 +9,7 @@ Given(/^CAESARS\- I visit homepage and check best room rates$/) do
   
   click_link("Book Now",:match => :first)
 end
-
+binding.pry
 Given(/^CAESARS\- I verify my "([^"]*)" through ID\.me$/) do |group|
   user_group = case group
     when "troop_id"
