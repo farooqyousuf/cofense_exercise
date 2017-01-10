@@ -1,8 +1,13 @@
 Given(/^CAESARS\- I visit homepage and check best room rates$/) do
   visit FigNewton.partners.caesars_hotels
-  find(".fa-times-circle-o").click
-
-  click_link "Check Best Rates"
+  
+  begin
+    find(".fa-times-circle-o").click
+  rescue
+    puts "Pop up window not available"
+  end
+  
+  click_link("Book Now",:match => :first)
 end
 
 Given(/^CAESARS\- I verify my "([^"]*)" through ID\.me$/) do |group|
