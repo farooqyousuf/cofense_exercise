@@ -1,6 +1,6 @@
 Given(/^UA \- I add an item to the cart$/) do
   visit FigNewton.partners.underarmour_url
-  
+
   begin
     find(".modal-dialog")
     find(".close").click
@@ -39,14 +39,12 @@ Given(/^UA \- I verify the "([^"]*)" discount has been applied$/) do |type|
     when "Troop ID"
       confirmation = "Promo Code Military 10% off Has Been Applied. Remove"
     end
-    
-        expect(page).to have_css(".ua-prompt-removable", :text => confirmation )
+    expect(page).to have_css(".ua-prompt-removable", :text => confirmation )
 
     original_product_amt_string = find("span[class='subtotal']").text
     actual_product_discounted_amt_string = find(".promo div[class='number']").text
     discount_applied = verify_discount(original_product_amt_string,actual_product_discounted_amt_string,".10",:exact_match => true)
 
     expect(discount_applied).to be(true)
-
   end
 end
