@@ -1,4 +1,4 @@
-@partners @taylormade @desktop @version2
+@partners @taylormade @desktop
 Feature: Test Taylor Made partner sites integrations
   @taylormadegolf
   Scenario: Test military integration for taylormadegolf.com
