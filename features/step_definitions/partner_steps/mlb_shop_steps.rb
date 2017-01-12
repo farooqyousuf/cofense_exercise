@@ -5,7 +5,6 @@ Given(/^MLBSHOP \- I add an item to the cart$/) do
   find(".sizeChoiceContainer a[title='Choose Size S']").click
   find("#addToCart").click
   find(:link, :href =>"/cart/view").click
-  # 03/31/16 link for cart view is because add to card button is brokenr right now
 end
 
 Given(/^MLBSHOP \- I apply the Troop ID discount$/) do

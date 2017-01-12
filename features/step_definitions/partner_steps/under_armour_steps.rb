@@ -5,6 +5,7 @@ Given(/^UA \- I add an item to the cart$/) do
     find(".modal-dialog")
     find(".close").click
   rescue
+    puts "Promo Popup is not being displayed"
   end
 
   find("li.size-chip:nth-child(2)").click
@@ -20,6 +21,7 @@ Given(/^UA \- I apply the "([^"]*)" discount$/) do |type|
   when "First Responder"
     button = "Responder"
   end
+
   page.execute_script "window.scrollBy(0,650)"
   sleep 1
   find(".extras .panel-group .panel:nth-child(2)").click
@@ -34,11 +36,11 @@ Given(/^UA \- I apply the "([^"]*)" discount$/) do |type|
 end
 
 Given(/^UA \- I verify the "([^"]*)" discount has been applied$/) do |type|
-  begin
     case type
     when "Troop ID"
       confirmation = "Promo Code Military 10% off Has Been Applied. Remove"
     end
+
     expect(page).to have_css(".ua-prompt-removable", :text => confirmation )
 
     original_product_amt_string = find("span[class='subtotal']").text
@@ -46,5 +48,4 @@ Given(/^UA \- I verify the "([^"]*)" discount has been applied$/) do |type|
     discount_applied = verify_discount(original_product_amt_string,actual_product_discounted_amt_string,".10",:exact_match => true)
 
     expect(discount_applied).to be(true)
-  end
 end
