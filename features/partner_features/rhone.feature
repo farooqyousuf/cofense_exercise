@@ -1,4 +1,4 @@
-@partners @rhone @version2 @desktop
+@partners @rhone @desktop
 Feature: Test Rhone partner Integration
 
 	Scenario: Test Rhone Military Partner Integration
