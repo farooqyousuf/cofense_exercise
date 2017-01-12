@@ -1,6 +1,9 @@
 Change Log
 
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
+## 2.2.55 (1/12/17)
+- IDME-3135: Update relevant parter tests and remove any outdate tests
+
 ## 2.2.54 (1/4/17)
 - HOTFIX: Changed password to an accepted password in staging.yml file
 
