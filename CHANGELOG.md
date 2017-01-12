@@ -1,4 +1,10 @@
-Change Log
+# Change Log
+
+### UnReleased
+
+- INT-840: Cucumber fail-fast if things break
+
+### Released
 
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 ## 2.2.55 (1/12/17)
