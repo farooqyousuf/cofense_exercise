@@ -1,5 +1,7 @@
 Given(/^ford \- I visit the Military Integration Page$/) do
   visit "https://www.fordsalutesthosewhoserve.com/"
+  fill_in("ZipCode",:with =>"22066")
+  find("#buttonGeneral:nth-child(2)").click
 end
 
 Given(/^ford \- I sign in with IDP$/) do
@@ -13,6 +15,8 @@ end
 
 Given(/^ford \- I visit the First Responder Integration Page$/) do
  visit "https://www.fordspecialoffer.com/firstresponders"
+ fill_in("ZipCode",:with =>"22066")
+ find("#buttonGeneral1").click
 end
 
 Given(/^ford \- I verify the First Responder Integration$/) do
@@ -30,8 +34,7 @@ Given(/^ford \- I sign in with IDP as military member$/) do
 end
 
 Given(/^ford \- I verify the Troop ID Integration for military member$/) do
-  select("Ford",:from =>"brand")
-  fill_in("zip",:with =>"22066")
+  select("Ford",:from =>"lstIntBrand")
   click_on "Submit"
   sleep 1
   expect(page.driver.browser.current_url).to have_text "https://www.fordsalutesthosewhoserve.com/Register/EnrollFord"

@@ -1,13 +1,13 @@
 Given(/^UA \- I add an item to the cart$/) do
   visit FigNewton.partners.underarmour_url
-  
+
   begin
     find(".modal-dialog")
     find(".close").click
   rescue
+    puts "Promo Popup is not being displayed"
   end
 
-  #find(:link ,:href => "/en-us/men-s-ua-streaker-run-v-neck-t-shirt/pid1276515-016").click
   find("li.size-chip:nth-child(2)").click
   find(".addtocart-btn").click
   find(".cart-added-container").find(".checkout-btn").click #js div modal
@@ -21,6 +21,7 @@ Given(/^UA \- I apply the "([^"]*)" discount$/) do |type|
   when "First Responder"
     button = "Responder"
   end
+
   page.execute_script "window.scrollBy(0,650)"
   sleep 1
   find(".extras .panel-group .panel:nth-child(2)").click
@@ -35,15 +36,16 @@ Given(/^UA \- I apply the "([^"]*)" discount$/) do |type|
 end
 
 Given(/^UA \- I verify the "([^"]*)" discount has been applied$/) do |type|
-  begin
     case type
     when "Troop ID"
       confirmation = "Promo Code Military 10% off Has Been Applied. Remove"
     end
 
     expect(page).to have_css(".ua-prompt-removable", :text => confirmation )
-    expect(page).to have_css("span[class='subtotal']",:text => FigNewton.partners.underarmour_item_subtotal)
-    expect(page).to have_css(".promo",:text => FigNewton.partners.underarmour_discount_amount)
-    expect(page).to have_css("div[class='total']",:text => FigNewton.partners.underarmour_discounted_total)
-  end
+
+    original_product_amt_string = find("span[class='subtotal']").text
+    actual_product_discounted_amt_string = find(".promo div[class='number']").text
+    discount_applied = verify_discount(original_product_amt_string,actual_product_discounted_amt_string,".10",:exact_match => true)
+
+    expect(discount_applied).to be(true)
 end

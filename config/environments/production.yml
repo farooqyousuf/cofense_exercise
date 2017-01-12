@@ -24,9 +24,6 @@ partners:
   mlb_shop_discount_amount: "-$18.00"
   caesars_hotels: https://www.caesars.com
   underarmour_url: https://www.underarmour.com/en-us/men-s-ua-streaker-run-v-neck-t-shirt/pid1276515-016
-  underarmour_item_subtotal: "$34.99"
-  underarmour_discount_amount: "Promotion: -$3.50"
-  underarmour_discounted_total: "TOTAL: $31.49"
   mlb_tv_subscription_page: http://mlb.mlb.com/mlb/subscriptions
   mlb_tv_yearly_subscription: Buy Now - $49.99
   carhartt_homepage: http://www.carhartt.com/products/carhartt-men-outerwear/Shoreline-Jacket-J162
@@ -53,13 +50,13 @@ partners:
     busch_gardens_williamsburg_veteran: https://seaworldparks.com/buschgardens-williamsburg/waves-of-honor/veterans
     sesame_place_veteran: https://sesameplace.com/langhorne/waves-of-honor/veteran
   bodybuilding_hlp: https://hosted-pages.id.me/bodybuilding-military-discount?offer_id=25202
-  bodybuilding: http://www.bodybuilding.com/store/bsn/synth.html
+  bodybuilding: http://www.bodybuilding.com/store/opt/whey.html
   moosejaw: http://www.moosejaw.com/moosejaw/shop/product_Arcteryx-Men-s-Captive-SS-Polo_10235054_10208_10000001_-1_
   atlantis_hlp: https://hosted-pages.id.me/atlantis-military-discount
   dell_hlp: https://hosted-pages.id.me/dell-saluting-service-members?offer_id=25186
   columbia_sport:
     hlp_page: https://hosted-pages.id.me/columbia-military?offer_id=25204
-    product_page: http://www.columbia.com/mens-mekong-river-hoodie-1698732.html?cgid=men-shirts-hoodies&dwvar_1698732_variationColor=425#start=15
+    product_page: https://www.columbia.com/mens-outdry-ex-gold-interchange-jacket-1680752.html?dwvar_1680752_variationColor=452&dwvar_1680752_variationSize=S
     shopping_cart_page: https://www.columbia.com/cart
   ashley_stewart: http://www.ashleystewart.com/pleat-detail-button-shirt/035-L1I1657.html?dwvar_035-L1I1657_color=0606#start=1&cgid=tops_styles_shirts
   camp_saver:

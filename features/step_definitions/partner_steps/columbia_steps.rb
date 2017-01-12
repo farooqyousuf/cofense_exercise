@@ -9,10 +9,12 @@ Given(/^COLUMBIA \- I visit the military HLP and verify$/) do
 end
 
 Given(/^COLUMBIA \- I add a item to the cart and checkout$/) do
+  sleep 2
+  refresh_browser_page
+  find("#home_hero_text_wintersale_shopmens").click
   sleep 1
   visit FigNewton.partners.columbia_sport.product_page
-	find(".variationboxes .swatchanchor",:match =>:first ).click
-	sleep 1
+  sleep 1
 	click_button "Add to Cart"
 	sleep 2
 end

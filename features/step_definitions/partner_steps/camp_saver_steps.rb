@@ -15,7 +15,7 @@ Given(/^CAMP\- I visit the product page$/) do
 end
 
 Given(/^CAMP\- I add product to the cart and checkout$/) do
-  select "Nightlife/Ultra Blue - Small: $100.00",:from => "super_attributes_single_select"
+  select "Navy Cosmo - Small: $100.00",:from => "super_attributes_single_select"
 	find(".btn-cart").click
 	find(".checkout").click
 end

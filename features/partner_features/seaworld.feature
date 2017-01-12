@@ -1,5 +1,5 @@
 
-@seaworld @version2 @desktop
+@version2 @desktop
 Feature: Test the ID.me Seaworld Waves of Honor Partner Integrations
 
   Scenario: Test Seaworld Orlando Active Military Integration

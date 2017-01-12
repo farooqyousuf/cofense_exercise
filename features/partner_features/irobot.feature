@@ -1,4 +1,4 @@
-@irobot @version2 @desktop
+@irobot @desktop
 Feature: Test the ID.me iRobot Partner Integration
 
 	Scenario: Test iRobot Military Integration
