@@ -30,9 +30,9 @@ Given(/^CAESARS\- I verify my "([^"]*)" through ID\.me$/) do |group|
     when "student_id"
       "Student"
   end
-
+ 
   @idp_signin = window_opened_by do
-    find(".idme-btn-container div[title=#{user_group}]").click
+    find(".idme-btn-container div[title='#{user_group}']").click
   end
 
   within_window @idp_signin do
