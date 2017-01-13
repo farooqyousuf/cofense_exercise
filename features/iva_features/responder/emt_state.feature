@@ -7,7 +7,7 @@ Feature: Responder verification as an EMT using state lookup
     * I sign up as a new user
     * I should be on the responder verification screen
 
-  @smoke @delete_experian_user1 @wip
+  @smoke @delete_experian_user1
   # TODO Ticket# INT-845
   Scenario: Successful verification with EMT state lookup
     * I verify using EMT state lookup
@@ -35,7 +35,7 @@ Feature: Responder verification as an EMT using state lookup
     * I submit the empty EMT state lookup form
     * I should see error messages on required fields for "EMT state lookup"
 
-  @smoke @delete_experian_user1 @wip
+  @smoke @delete_experian_user1
   #unique doc and user must pass experian check
   # TODO Ticket# INT-846
   Scenario: Successful verification with EMT state doc upload

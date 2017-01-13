@@ -18,7 +18,7 @@ include DataMagic
   def select_option(container, element, value, index)
     # click the dropdown
     all("#{element}")[index].click
-
+    sleep 1
     # pick an option
     find("#select2-drop .select2-results").find("div", :text => /^#{value}$/i).click
   end

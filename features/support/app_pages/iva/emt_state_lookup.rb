@@ -36,6 +36,11 @@ class StateLookupEMT < IDmeBase
       2.times {fill_in field, :with => data.fetch(field)}
     end
 
+    #escaping out of the Google address autocomplete
+    %w(#street #emt_city).each do |field|
+      find(field).native.send_keys :escape
+    end
+
     populate_second_state("Kansas", index=0)
   end
 
