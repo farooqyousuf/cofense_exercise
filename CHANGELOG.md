@@ -3,6 +3,7 @@
 ### UnReleased
 
 - INT-840: Cucumber fail-fast if things break
+- INT-867: Cucumber feature tests wip'd
 
 ### Released
 
