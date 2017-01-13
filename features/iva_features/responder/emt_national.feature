@@ -7,7 +7,8 @@ Feature: Responder verification as an nationally certified EMT
     * I sign up as a new user
     * I should be on the responder verification screen
 
-  @smoke @delete_natl_emt
+  @smoke @delete_natl_emt @wip
+  # TODO Ticket# INT-844
   Scenario: Successful verification
     * I verify using nationally certified EMT credentials
     * I complete the verification process

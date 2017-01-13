@@ -4,7 +4,8 @@ Feature: User sign in with an existing account
   Background:
     * I visit IDP through the "marketplace" policy
 
-  @smoke
+  @smoke @wip
+  # TODO INT-841
   Scenario: Successful login
     * I login as a "Unverified" user
     * I should be successfully authenticated

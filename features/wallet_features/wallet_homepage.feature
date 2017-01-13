@@ -15,10 +15,10 @@ Scenario: Wallet User sign-in / sign-up links successfully link
   * I verify the wallet sign in links direct to idp
   * I verify the wallet sign up links direct to idp
 
-@wallet_smoke @smoke
+@wallet_smoke @smoke @wip
+# TODO Ticket# INT-866
 Scenario: Wallet shared navigation bar successfully link
   * I verify the Wallet shared navigation tab "About" successfully links
   * I verify the Wallet shared navigation tab "Business" successfully links
   * I verify the Wallet shared navigation tab "Shop" successfully links
   * I verify the Wallet shared navigation tab "Wallet" successfully links
-
