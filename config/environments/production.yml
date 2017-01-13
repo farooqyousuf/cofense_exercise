@@ -74,6 +74,8 @@ partners:
     military: https://www.overstock.com/clubomilitary
     teacherstudents: https://www.overstock.com/cluboclassroom
     firstresponders: https://www.overstock.com/clubofirstresponder
+  uber_hlp: https://hosted-pages.id.me/ubermilitary-driver-partner-verification
+
 oauth:
   facebook_user: qa@id.me
   facebook_pw: P@ssword123
