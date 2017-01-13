@@ -7,8 +7,9 @@ Background:
     * I sign up as a new user
     * I should be on the student verification screen
 
-  @smoke @delete_experian_user1
+  @smoke @delete_experian_user1 @wip
   #unique dob/ssn and vetted by Experian/PreciseID, have to use their test data
+  # TODO Ticket# INT-863
   Scenario: Successful verification
     * I verify using student documentation
     * I approve the document in IDme admin

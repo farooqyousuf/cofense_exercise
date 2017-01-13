@@ -7,8 +7,9 @@ Feature: Student verification using student credentials
     * I sign up as a new user
     * I should be on the student verification screen
 
-  @smoke @delete_user
+  @smoke @delete_user @wip
   #Unique combo of ssn and dob to verify
+  # TODO Ticket# INT-862
   Scenario: Successful verification
     * I verify using student credentials
     * I complete the verification process
