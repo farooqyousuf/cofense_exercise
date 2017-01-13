@@ -36,6 +36,7 @@ class StateDocEMT < IDmeBase
     %w(first_name last_name birth_date social social_confirm street city zip).each do |field|
       2.times {fill_in field, :with => data.fetch(field)}
     end
+    find("#street").native.send_keys :escape
     populate_second_state("Wyoming", index=0)
   end
 
