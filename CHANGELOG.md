@@ -8,6 +8,10 @@
 ### Released
 
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
+
+## 2.2.56 (1/14/17)
+- IDME-3135: Update cucumber tags for top partners
+
 ## 2.2.55 (1/12/17)
 - IDME-3135: Update relevant parter tests and remove any outdate tests
 
