@@ -1,4 +1,4 @@
-@partners @ford @version2 @desktop
+@ford @desktop @top_partners
 Feature: Test the Ford Partner Integration
 
   Scenario: Test Ford First Responder Integration

@@ -1,4 +1,4 @@
-@fanatics @partners @nfl @desktop
+@fanatics @nfl @desktop @top_partners
 Feature: Test the ID.me NFL Shop Partner Integration
 
   @troop_id @windows

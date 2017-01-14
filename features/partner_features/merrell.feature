@@ -1,4 +1,4 @@
-@partners @version2 @desktop @merrell
+@desktop @merrell @top_partners
 Feature: Test Merrell Partner Integration
 
 Scenario: Test Merrell Military Integration
