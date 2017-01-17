@@ -1,4 +1,4 @@
-@partners @version2 @desktop @ashley_stewart
+@ashley_stewart @desktop @top_partners
 Feature: Test Ashley Stewart Partner Integration
 	Background:
 		* ASHLEY- I visit the shop page

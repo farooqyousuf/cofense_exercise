@@ -1,4 +1,4 @@
-@desktop
+@desktop @top_partners
 Feature: Test the ID.me MLB shop Integration
 
   @troop_id @windows @sauce @version2 @mlb_shop

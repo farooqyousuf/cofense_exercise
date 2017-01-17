@@ -1,4 +1,4 @@
-@underarmour @partners @version2 @desktop
+@underarmour @desktop @top_partners
 Feature: Test the ID.me Under Armour Partner Integration
 
   Background:

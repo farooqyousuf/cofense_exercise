@@ -1,4 +1,4 @@
-@partners @overstock @desktop @version2
+@overstock @desktop @top_partners
 Feature: Test Overstock partner Integration 
 
   Scenario: Test Military integration for Overstock

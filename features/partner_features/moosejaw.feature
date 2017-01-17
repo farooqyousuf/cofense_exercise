@@ -1,4 +1,4 @@
-@partners @moosejaw @version2 @desktop
+@moosejaw @desktop @top_partners
 Feature: Test the Moosejaw Partner Integration
 
   Background:
