@@ -5,7 +5,7 @@ Feature: User account creation
     * I visit IDP through the "marketplace" policy
     * I click on the Sign Up link
 
-  # @smoke
+  @smoke
   Scenario: Successful sign up
     * I sign up as a new user
     * I should be successfully authenticated

@@ -42,6 +42,11 @@ class DocFirefighter < IDmeBase
     %w(birth_date zip).each do |field|
       2.times { fill_in field, with: data.fetch(field) }
     end
+
+    #escaping out of the Google address autocomplete
+    %w(#street #city).each do |field|
+      find(field).native.send_keys :escape
+    end
   end
 
   def container_attribute

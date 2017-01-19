@@ -7,9 +7,8 @@ Feature: Responder verification as a firefighter using document upload
     * I sign up as a new user
     * I should be on the responder verification screen
 
-  @smoke @delete_experian_user1 @wip
+  @smoke @delete_experian_user1
   # combo of experian/precise id check and unique doc
-  # TODO Ticket# INT-847
   Scenario: Successful verification as a Firefighter using doc upload
     * I generate a unique doc
     * I verify using firefighter documentation
