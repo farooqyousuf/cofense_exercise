@@ -6,8 +6,10 @@ partners:
   user: rich.purnell.rocketman2@gmail.com
   previous_user: tony.chung+test@id.me
   password: Password123
-  fanatics: http://www.fanatics.com/NFL_Denver_Broncos_Mens/Peyton_Manning_Denver_Broncos_Nike_Super_Bowl_50_Game_Jersey_-_Orange
-  fanatics_discount: "A discount of 10% on items and a shipping discount on eligible methods was successfully applied to your order."
+  fanatics: 
+    product_page: http://www.fanatics.com/NFL_Denver_Broncos_Mens/Peyton_Manning_Denver_Broncos_Nike_Super_Bowl_50_Game_Jersey_-_Orange
+    discount_copy: "A discount of 10% on items and a shipping discount on eligible methods was successfully applied to your order."
+    product_size1: ""
   nfl_shop: https://www.nflshop.com/catalog/product/Mens_Washington_Redskins_Ryan_Kerrigan_Nike_Burgundy_Game_Jersey
   fansedge: http://www.fansedge.com/New_England_Patriots_Merchandise/Nike_Tom_Brady_New_England_Patriots_Navy_Blue_Silver_Game_Jersey
   fansedge_discount: "A discount of 10% on items and a shipping discount on eligible methods was successfully applied to your order."
