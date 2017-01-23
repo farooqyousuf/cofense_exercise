@@ -144,4 +144,12 @@ module HelperMethods
   def refresh_browser_page
     page.driver.browser.navigate.refresh
   end
+
+  def select_product_item(partner_name)
+    begin 
+      click_link FigNewton.partners.send("#{partner_name}").product_selection_1
+    rescue
+      click_link FigNewton.partners.send("#{partner_name}").product_selection_2
+    end 
+  end 
 end
