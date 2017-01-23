@@ -59,6 +59,9 @@ class TeacherLookup < IDmeBase
       fill_teacher_license_number
       fill_short_ssn
     end
+
+    escape_google_address_autocomplete(%w(#teacher_city #district))
+
   end
 
   def fill_teacher_license_number

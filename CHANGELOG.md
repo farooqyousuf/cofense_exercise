@@ -8,6 +8,9 @@
 ### Released
 
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
+## 2.2.58 (1/23/2017)
+- INT-869: Fix IVA tests that broke b/c of Google address autocomplete
+
 ## 2.2.57 (1/20/2017)
 - IDME-3206: Update Ashley Stewart partner test
 
