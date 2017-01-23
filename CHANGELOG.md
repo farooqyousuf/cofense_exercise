@@ -10,6 +10,7 @@
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 ## 2.2.57 (1/20/2017)
 - IDME-3206: Update Ashley Stewart partner test
+
 ## 2.2.56 (1/14/17)
 - IDME-3135: Update cucumber tags for top partners
 
