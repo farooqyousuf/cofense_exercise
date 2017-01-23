@@ -1,4 +1,5 @@
-@desktop @the_limited @top_partners
+@desktop @the_limited 
+#1/23/17 Removed due to company site being taken down
 Feature: Test The Limited Partner Integration
   Background:
     * LIMITED- I visit the shop page
