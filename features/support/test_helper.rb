@@ -145,11 +145,11 @@ module HelperMethods
     page.driver.browser.navigate.refresh
   end
 
-  def select_product_item(partner_name)
+  def select_product_size(partner_name)
     begin 
-      click_link FigNewton.partners.send("#{partner_name}").product_selection_1
+      find(FigNewton.partners.send("#{partner_name}").product_selection_1).click 
     rescue
-      click_link FigNewton.partners.send("#{partner_name}").product_selection_2
+      find(FigNewton.partners.send("#{partner_name}").product_selection_2).click 
     end 
   end 
 end
