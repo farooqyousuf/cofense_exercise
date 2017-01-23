@@ -43,10 +43,7 @@ class DocFirefighter < IDmeBase
       2.times { fill_in field, with: data.fetch(field) }
     end
 
-    #escaping out of the Google address autocomplete
-    %w(#street #city).each do |field|
-      find(field).native.send_keys :escape
-    end
+    escape_google_address_autocomplete(%w(#street #city))
   end
 
   def container_attribute

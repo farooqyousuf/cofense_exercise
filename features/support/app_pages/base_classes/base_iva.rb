@@ -7,6 +7,12 @@ include DataMagic
   #IVA Methods#
   #############
 
+  def escape_google_address_autocomplete(array)
+    array.each do |field|
+      find(field).native.send_keys :escape
+    end
+  end
+
   def populate_first_state(value, unique_id)
     search_option(container_attribute, unique_id, value)
   end
