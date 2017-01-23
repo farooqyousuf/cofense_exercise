@@ -8,7 +8,8 @@ Given(/^FANATICS\- I add an item to the cart$/) do
     rescue
     #this seems odd ot just have this here
   end
-  select_product_item("fanatics")
+
+  select_product_size("fanatics")
   find("#addToCart").click
 end
 
