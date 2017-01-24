@@ -5,6 +5,7 @@
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 ## 2.2.59 (1/24/2017)
 - HOTFIX: Cleaning up @smoke tags
+- HOTFIX: Removed cuke quiting if failure
 
 ## 2.2.58 (1/23/2017)
 - INT-869: Fix IVA tests that broke b/c of Google address autocomplete
