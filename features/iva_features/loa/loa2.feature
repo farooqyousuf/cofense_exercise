@@ -19,7 +19,6 @@ Feature: Test the LOA2 (Level of Assurance 2) functionality
     * I login as a "LOA1" user
     * I should see the information collection screen for LOA2
 
-  @smoke
   Scenario: LOA2 login flow using a LOA2 verified user
     * I login as a "LOA2" user
     * I confirm my phone

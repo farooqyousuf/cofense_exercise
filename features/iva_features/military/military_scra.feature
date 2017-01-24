@@ -8,7 +8,7 @@ Feature: Military verification using SCRA credentials
     * I sign up as a new user
     * I should be on the military verification screen
 
-  @delete_scra_user1
+  @delete_scra_user1 @smoke
   #Unique dob and ssn pair
   Scenario: Successful verification as Service Member
     * I verify using SCRA for "Service Member"
