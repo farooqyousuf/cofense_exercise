@@ -61,7 +61,6 @@ class TeacherLookup < IDmeBase
     end
 
     escape_google_address_autocomplete(%w(#teacher_city #district))
-
   end
 
   def fill_teacher_license_number
