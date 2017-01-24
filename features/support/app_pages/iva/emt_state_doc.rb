@@ -36,6 +36,9 @@ class StateDocEMT < IDmeBase
     %w(first_name last_name birth_date social social_confirm street city zip).each do |field|
       2.times {fill_in field, :with => data.fetch(field)}
     end
+
+    escape_google_address_autocomplete(%w(#street))
+
     populate_second_state("Wyoming", index=0)
   end
 

@@ -7,9 +7,8 @@ Feature: Teacher verification using state lookup
     * I sign up as a new user
     * I should be on the teacher verification screen
 
-  @smoke @wip
+  @smoke
   #unique combo of ssn/dob
-  # TODO Ticket# INT-865
   Scenario: Successful verification with no license and no ssn
     * I verify using teacher credentials with "no license and no ssn"
     * I "approve" the teacher verification in IDme admin

@@ -7,9 +7,8 @@ Feature: Teacher verification using document upload
     * I sign up as a new user
     * I should be on the teacher verification screen
 
-  @smoke @delete_experian_user1 @wip
+  @smoke @delete_experian_user1
   #experian/precise id check
-  # TODO Ticket# INT-864
   Scenario: Successful verification
     * I verify using teacher documentation
     * I approve the document in IDme admin

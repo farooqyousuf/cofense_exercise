@@ -36,13 +36,15 @@ class StudentDoc < IDmeBase
   def populate_fields(data:)
     populate_school(data.fetch("school"))
 
-    %w(first_name last_name street city social social_confirm).each do |field|
+    %w(first_name last_name social social_confirm street city).each do |field|
       fill_in field, :with => data.fetch(field)
     end
 
     %w(birth_date zip).each do |field|
       2.times {fill_in field, :with => data.fetch(field)}
     end
+
+    escape_google_address_autocomplete(%w(#street #city))
 
     populate_state(data.fetch("state"))
   end

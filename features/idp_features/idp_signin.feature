@@ -1,4 +1,4 @@
-@regression @idp @desktop
+ @regression @idp @desktop
 Feature: User sign in with an existing account
 
   Background:

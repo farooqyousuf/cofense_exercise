@@ -8,8 +8,7 @@ Feature: Responder verification as a police officer
     * I should be on the responder verification screen
 
   #experian check and also need a unique doc for police
-  # TODO TICKET# INT-861
-  @smoke @delete_experian_user1 @wip
+  @smoke @delete_experian_user1
   Scenario: Successful verification as a police officer
     * I verify using police officer documentation
     * I approve the document in IDme admin

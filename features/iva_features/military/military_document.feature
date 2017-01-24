@@ -7,8 +7,7 @@ Feature: Military verification using document upload
     * I sign up as a new user
     * I should be on the military verification screen
 
-  @smoke @delete_experian_user1 @wip
-  # TODO: INT-842
+  @smoke @delete_experian_user1
   #unique doc upload and user creds have to pass experian/preciseID
   Scenario: Successful verification as a Service Member
     * I verify using military documentation for "Service Member"

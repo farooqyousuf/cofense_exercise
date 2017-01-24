@@ -46,6 +46,9 @@ class TeacherDoc < IDmeBase
     end
 
     fill_in "teacher_number", with: Faker::Number.number(10)
+
+    escape_google_address_autocomplete(%w(#street #city))
+
     populate_second_state(data.fetch("state"), index=0)
   end
 

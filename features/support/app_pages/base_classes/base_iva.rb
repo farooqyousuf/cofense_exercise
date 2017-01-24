@@ -7,6 +7,12 @@ include DataMagic
   #IVA Methods#
   #############
 
+  def escape_google_address_autocomplete(array)
+    array.each do |field|
+      find(field).native.send_keys :escape
+    end
+  end
+
   def populate_first_state(value, unique_id)
     search_option(container_attribute, unique_id, value)
   end
@@ -18,7 +24,7 @@ include DataMagic
   def select_option(container, element, value, index)
     # click the dropdown
     all("#{element}")[index].click
-
+    sleep 1
     # pick an option
     find("#select2-drop .select2-results").find("div", :text => /^#{value}$/i).click
   end
