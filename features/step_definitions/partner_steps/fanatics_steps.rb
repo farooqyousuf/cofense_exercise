@@ -9,7 +9,7 @@ Given(/^FANATICS\- I add an item to the cart$/) do
     #this seems odd ot just have this here
   end
 
-  select_product_size("fanatics")
+  select_product_size_for_partner("fanatics")
   find("#addToCart").click
 end
 
