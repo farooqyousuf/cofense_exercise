@@ -144,4 +144,12 @@ module HelperMethods
   def refresh_browser_page
     page.driver.browser.navigate.refresh
   end
+
+  def select_product_size_for_partner(partner_name) #offers alternative selector in case first size is sold out or unavailable
+    begin
+      find(FigNewton.partners.send("#{partner_name}").product_selection_1).click
+    rescue
+      find(FigNewton.partners.send("#{partner_name}").product_selection_2).click
+    end
+  end
 end

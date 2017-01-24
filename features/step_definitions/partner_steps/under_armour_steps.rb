@@ -1,5 +1,5 @@
 Given(/^UA \- I add an item to the cart$/) do
-  visit FigNewton.partners.underarmour_url
+  visit FigNewton.partners.underarmour.product_page
 
   begin
     find(".modal-dialog")
@@ -7,8 +7,7 @@ Given(/^UA \- I add an item to the cart$/) do
   rescue
     puts "Promo Popup is not being displayed"
   end
-
-  find("li.size-chip:nth-child(2)").click
+  select_product_size_for_partner("underarmour")
   find(".addtocart-btn").click
   find(".cart-added-container").find(".checkout-btn").click #js div modal
   find(".checkout-btn",match: :first).click
