@@ -1,10 +1,5 @@
 # Change Log
 
-### UnReleased
-
-- INT-840: Cucumber fail-fast if things break
-- INT-867: Cucumber feature tests wip'd
-
 ### Released
 
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
