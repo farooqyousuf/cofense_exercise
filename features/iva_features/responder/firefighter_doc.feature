@@ -7,7 +7,7 @@ Feature: Responder verification as a firefighter using document upload
     * I sign up as a new user
     * I should be on the responder verification screen
 
-  @smoke @delete_experian_user1
+  @smoke @delete_experian_user1 @doc
   # combo of experian/precise id check and unique doc
   Scenario: Successful verification as a Firefighter using doc upload
     * I generate a unique doc
