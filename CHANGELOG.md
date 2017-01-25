@@ -3,6 +3,9 @@
 ### Released
 
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
+## 2.2.60 (1/25/2017)
+- HOTFIX: Added @doc tags to IVA doc tests
+
 ## 2.2.59 (1/24/2017)
 - HOTFIX: Cleaning up @smoke tags
 - HOTFIX: Removed cuke quiting if failure
