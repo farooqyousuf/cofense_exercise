@@ -1,21 +1,21 @@
 Given(/^I visit the waves of honor "([^"]*)" Integration$/) do |park_partner|
   seaworld_promotion_homepage = case park_partner
-    when "Seaworld Orlando"                   then FigNewton.partners.seaworld.orlando 
+    when "Seaworld Orlando"                   then FigNewton.partners.seaworld.orlando
     when "Seaworld San Antonio"               then FigNewton.partners.seaworld.san_antonio
     when "Busch Gardens Tampa"                then FigNewton.partners.seaworld.busch_gardens_tampa
     when "Busch Gardens Williamsburg"         then FigNewton.partners.seaworld.busch_gardens_williamsburg
     when "Seaworld San Diego Teacher"         then FigNewton.partners.seaworld.san_diego_teacher
     when "Seaworld Orlando Teacher"           then FigNewton.partners.seaworld.orlando_teacher
-    when "Seaworld San Diego Military"        then FigNewton.partners.seaworld.san_diego_military 
+    when "Seaworld San Diego Military"        then FigNewton.partners.seaworld.san_diego_military
     when "Sesame Place Langhorne"             then FigNewton.partners.seaworld.sesame_place
-    when "Aquatica San Diego"                 then FigNewton.partners.seaworld.aquatica_san_diego 
-    when "Adventure Island Tampa"             then FigNewton.partners.seaworld.adventure_island_tampa 
+    when "Aquatica San Diego"                 then FigNewton.partners.seaworld.aquatica_san_diego
+    when "Adventure Island Tampa"             then FigNewton.partners.seaworld.adventure_island_tampa
     when "Water Country USA Williamsburg"     then FigNewton.partners.seaworld.water_country_usa
     when "Seaworld Orlando Veteran"           then FigNewton.partners.seaworld.orlando_veteran
     when "Busch Gardens Tampa Veteran"        then FigNewton.partners.seaworld.busch_gardens_tampa_veteran
     when "Busch Gardens Williamsburg Veteran" then FigNewton.partners.seaworld.busch_gardens_williamsburg_veteran
     when "Sesame Place Langhorne Veteran"     then FigNewton.partners.seaworld.sesame_place_veteran
-    end 
+    end
   visit seaworld_promotion_homepage
 end
 
@@ -41,21 +41,21 @@ Given(/^I verify that my "([^"]*)" service member Complimentary tickets are avai
     when "Adventure Island Tampa"         then "_oi30181"
     when "Water Country USA Williamsburg" then "_oi26708"
     when "Seaworld Orlando Veteran"       then "_oi4883"
-    
+
     end
-    
-  if seaworld_park == "Seaworld San Antonio" 
+
+  if seaworld_park == "Seaworld San Antonio"
     ticket_cart_amt = "1 Other $0.00"
   elsif seaworld_park == "Sesame Place Langhorne"
     ticket_cart_amt = "1 Guest $0.00"
-  else 
+  else
     ticket_cart_amt = "1 Adult $0.00"
   end
 
-  sleep 2
+  sleep 3
   page.evaluate_script("document.getElementsByClassName('#{cart_id}')[0].childNodes[1].childNodes[1].style.opacity = 10")
   first(".content-maincontent-ticketbox-tixchoose-inner").first(".first").select("1",:from =>"selOrderItemCount")
-  first(".content-maincontent-ticketbox-add2cart").click 
+  first(".content-maincontent-ticketbox-add2cart").click
   expect(page).to have_css(".cartItems tr:nth-child(2)",:text =>ticket_cart_amt)
 end
 
@@ -71,7 +71,7 @@ Given(/^I verify that my orlando teacher discount tickets$/) do
 
   ticket_price_total = find(".cartSubTotal").find(".last").text
   #discount amount is hard-coded because full amount is not disclosed
-  
+
   expect(ticket_price_total).to eql("$0.00")
 end
 
@@ -109,15 +109,15 @@ Given(/^I verify that my "([^"]*)" discount tickets are available$/) do |seaworl
   first(".content-maincontent-ticketbox-add2cart").click
   sleep 2
 
-  if seaworld_park == "Sesame Place Langhorne Veteran" 
+  if seaworld_park == "Sesame Place Langhorne Veteran"
     expect(page).to have_css("header[class='tagName']",:text =>"Active Duty Service Member Complimentary Admission")
   elsif seaworld_park == "Busch Gardens Williamsburg Veteran"
     expect(page).to have_css("header[class='tagName']",:text =>"Active Duty Service Member Complimentary Admission $77 Value")
-  else 
+  else
     expect(page).to have_css("header[class='tagName']",:text =>"SeaWorld Orlando 2016 Fun Card Price:")
-  end 
+  end
 
-  #veteran pages discounts are hard-coded 
+  #veteran pages discounts are hard-coded
   if seaworld_park == "Busch Gardens Williamsburg Veteran"
     expect(page).to have_css(".cartSubTotal  td:nth-child(2)",:text =>"$0.00")
   elsif seaworld_park == "Sesame Place Langhorne Veteran"
@@ -126,6 +126,6 @@ Given(/^I verify that my "([^"]*)" discount tickets are available$/) do |seaworl
     expect(page).to have_css(".cartSubTotal td:nth-child(2)",:text =>"0.00")
   else
     expect(page).to have_css(".cartSubTotal  td:nth-child(2)",:text =>"$49.50")
-  end 
+  end
 end
 
