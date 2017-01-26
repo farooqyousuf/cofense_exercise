@@ -47,11 +47,11 @@ Given(/^FANATICS_M\- I apply the Troop ID discount$/) do
 end
 
 Given(/^FANATICS_M\- I verify the Troop ID discount has been applied$/) do
- expect(page).to have_text FigNewton.partners.fanatics.mobile.discount_copy
- expect(page).to have_css(".couponAmount",:visible => true)
+  expect(page).to have_text FigNewton.partners.fanatics.mobile.discount_copy
+  expect(page).to have_css(".couponAmount",:visible => true)
 
- original_product_amt_string = find(".cartTotalAmount").text
- actual_product_discounted_amt_string = find(".couponAmount").text
- discount_applied = verify_discount(original_product_amt_string,actual_product_discounted_amt_string,".10")
- expect(discount_applied).to be(true)
+  original_product_amt_string = find(".cartTotalAmount").text
+  actual_product_discounted_amt_string = find(".couponAmount").text
+  discount_applied = verify_discount(original_product_amt_string,actual_product_discounted_amt_string,".10")
+  expect(discount_applied).to be(true)
 end
