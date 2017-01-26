@@ -1,5 +1,7 @@
 Given(/^GORUCK STUDENT \- I add a item to the cart$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  visit FigNewton.partners.goruck.product_page
+  select("21L")
+  click_on("Add To Cart")
 end
 
 Given(/^GORUCK STUDENT \- I sign in with my IDme Student account$/) do
