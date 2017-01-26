@@ -3,9 +3,11 @@
 ### Released
 
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
+## 2.2.61 (1/26/2017)
+- IDME-3228: Add fanatics mobile partner test
 ## 2.2.60 (1/25/2017)
 - HOTFIX: Added @doc tags to IVA doc tests
-
+- IDME-3208: Remove The limited partner, Add product alternative size method and add seaworld partners
 ## 2.2.59 (1/24/2017)
 - HOTFIX: Cleaning up @smoke tags
 - HOTFIX: Removed cuke quiting if failure
