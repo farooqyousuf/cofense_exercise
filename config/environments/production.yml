@@ -84,6 +84,8 @@ partners:
     teacherstudents: https://www.overstock.com/cluboclassroom
     firstresponders: https://www.overstock.com/clubofirstresponder
   uber_hlp: https://hosted-pages.id.me/ubermilitary-driver-partner-verification
+  goruck:
+    product_page: http://www.goruck.com/gr1-rucksack-black-/p/GEAR-000574
 
 oauth:
   facebook_user: qa@id.me
