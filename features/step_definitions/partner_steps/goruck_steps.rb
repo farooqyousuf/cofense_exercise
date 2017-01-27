@@ -15,8 +15,8 @@ end
 Given(/^GORUCK STUDENT \- I verify that my student discount was applied$/) do
   page.has_text? ("Earned Service Discount")
   original_product_amt_string = find(".is-crossedout").text
-  actual_product_discounted_amt_string = find("#mz-carttable-total").text
+  actual_product_discounted_amt_string = find(".mz-item-discount").text
 
-  discount_applied = verify_discount(original_product_amt_string, actual_product_discounted_amt_string, ".25",:verify_discount_total => true)
+  discount_applied = verify_discount(original_product_amt_string, actual_product_discounted_amt_string, ".25",:exact_match => true)
   expect(discount_applied).to be(true)
 end
