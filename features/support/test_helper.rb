@@ -33,15 +33,7 @@ module HelperMethods
       click_button "Sign in"
     end
 
-    if page.has_link? "Continue"
       click_link "Continue"
-    else
-      find(:css, "btn-submit").find("Allow").click
-      click_link "Continue"
-    end
-
-
-
   end
 
   #TODO - Refactor the duplicate sign_in options we have right now to single
