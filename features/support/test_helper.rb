@@ -23,6 +23,8 @@ module HelperMethods
       FigNewton.test_user.first_responder.user_email
     when "teacher_id"
       FigNewton.test_user.teacher.user_email
+    when "government_id"
+      FigNewton.partners.user      
     end
 
     if page.has_content? "Sign in"
