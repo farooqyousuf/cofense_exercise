@@ -11,7 +11,7 @@ Feature: Test the ID.me YETI integration
     * YETI- I verify my "responder_id" through ID.me
     * YETI- I verify my "responder_id" discount has been applied
 
-  Scenario: Test the YETI Student Partner Integration
+  Scenario: Test the YETI Government Partner Integration
     * YETI- I add an item to the cart
-    * YETI- I verify my "student_id" through ID.me
-    * YETI- I verify my "student_id" discount has been applied
+    * YETI- I verify my "government_id" through ID.me
+    * YETI- I verify my "government_id" discount has been applied

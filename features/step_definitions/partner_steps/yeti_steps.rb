@@ -11,6 +11,8 @@ Given(/^YETI\- I verify my "([^"]*)" through ID\.me$/) do |group|
       "military"
     when "responder_id"
       "responder"
+    when "government_id"
+      "government"
   end
 
   idp_signin = window_opened_by do
@@ -30,6 +32,8 @@ Given(/^YETI\- I verify my "([^"]*)" discount has been applied$/) do |group|
       "military"
     when "responder_id"
       "responder"
+    when "government_id"
+      "government"
   end
 
   page.has_text? ("YOU HAVE SUCCESSFULLY VERIFIED YOURSELF AS")
