@@ -23,6 +23,8 @@ module HelperMethods
       FigNewton.test_user.first_responder.user_email
     when "teacher_id"
       FigNewton.test_user.teacher.user_email
+    when "government_id"
+      FigNewton.partners.user
     end
 
     if page.has_content? "Sign in"
@@ -31,11 +33,13 @@ module HelperMethods
       click_button "Sign in"
     end
 
-    unless click_link "Continue"
-      click_link "Allow"
+    if page.has_link? "Continue"
+      click_link "Continue"
+    else
+      find(:css, "btn-submit").find("Allow").click
+      click_link "Continue"
     end
 
-    click_link "Continue"
 
 
   end
