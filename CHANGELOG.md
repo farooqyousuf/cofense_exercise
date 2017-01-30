@@ -3,6 +3,9 @@
 ### Released
 
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
+## 2.2.62 (1/30/2017)
+- IDME-3208: Fix MLB shop and Merrell partner tests and update seaworld test
+
 ## 2.2.61 (1/26/2017)
 - IDME-3228: Add fanatics mobile partner test
 ## 2.2.60 (1/25/2017)
