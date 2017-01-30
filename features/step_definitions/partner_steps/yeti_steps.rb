@@ -9,9 +9,9 @@ end
 Given(/^YETI\- I verify my "([^"]*)" through ID\.me$/) do |group|
 
   user_group = case group
-  when "troop_id"
-    "military"
-  end
+    when "troop_id"
+      "military"
+    end
 
   idp_signin = window_opened_by do
     find(".button-container a[data-scope='#{user_group}']").click
@@ -21,9 +21,14 @@ Given(/^YETI\- I verify my "([^"]*)" through ID\.me$/) do |group|
     sign_in_with_idme_account(group)
   end
 
-  puts "#{user_group} successfully opened idp window"
 end
 
-Given(/^YETI\- I verify my "([^"]*)" discount has been applied$/) do |arg1|
-  pending # Write code here that turns the phrase above into concrete actions
+Given(/^YETI\- I verify my "([^"]*)" discount has been applied$/) do |group|
+
+  user_group = case group
+  when "troop_id"
+      "military"
+    end
+    
+  page.has_text? ("YOU HAVE SUCCESSFULLY VERIFIED YOURSELF AS")
 end
