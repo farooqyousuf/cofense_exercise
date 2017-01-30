@@ -31,7 +31,13 @@ module HelperMethods
       click_button "Sign in"
     end
 
+    unless click_link "Continue"
+      click_link "Allow"
+    end
+
     click_link "Continue"
+
+
   end
 
   #TODO - Refactor the duplicate sign_in options we have right now to single
