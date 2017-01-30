@@ -21,3 +21,8 @@ Feature: Test the ID.me Goruck Partner Integration
     * GORUCK- I add a item to the cart
     * GORUCK- I sign in with my IDme "responder_id" account
     * GORUCK- I verify that my "responder_id" discount was applied
+
+    Scenario: Test Goruck Government Integration
+    * GORUCK- I add a item to the cart
+    * GORUCK- I sign in with my IDme "government_id" account
+    * GORUCK- I verify that my "government_id" discount was applied
