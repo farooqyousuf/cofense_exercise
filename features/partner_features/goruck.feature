@@ -1,5 +1,5 @@
 @partners @version2 @goruck
-Feature: Test Goruck Partner Integration
+Feature: Test the ID.me Goruck Partner Integration
 
   Scenario: Test Goruck Military Integration
     * GORUCK - I add a item to the cart
