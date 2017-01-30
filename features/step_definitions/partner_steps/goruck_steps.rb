@@ -42,7 +42,9 @@ Given(/^GORUCK\- I sign in with my IDme "([^"]*)" account$/) do |group|
 
   find("#gr-idme-#{user_group}").click
   puts "#{user_group} was selected"
-  
+  sign_in_with_idme_account(group)
+  puts "#{user_group} has signed in"
+
 end
 
 
