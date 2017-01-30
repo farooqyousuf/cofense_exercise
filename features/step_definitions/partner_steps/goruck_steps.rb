@@ -1,4 +1,7 @@
 # Given(/^GORUCK STUDENT \- I add a item to the cart$/) do
+    # visit FigNewton.partners.goruck.product_page
+    # select("21L")
+    # click_on("Add To Cart")
 # end
 #
 # Given(/^GORUCK STUDENT \- I sign in with my IDme Student account$/) do
@@ -17,32 +20,36 @@
 #   discount_applied = verify_discount(original_product_amt_string, actual_product_discounted_amt_string, ".25",:exact_match => true)
 #   expect(discount_applied).to be(true)
 # end
-Given(/^GORUCK \- I add a item to the cart$/) do
-    visit FigNewton.partners.goruck.product_page
-      select("21L")
-      click_on("Add To Cart")
+
+Given(/^GORUCK\- I add a item to the cart$/) do
+  visit FigNewton.partners.goruck.product_page
+  select("21L")
+  click_on("Add To Cart")
 end
 
-Given(/^GORUCK \- I sign in with my IDme "([^"]*)" account$/) do |group|
+Given(/^GORUCK\- I sign in with my IDme "([^"]*)" account$/) do |group|
 
   user_group = case group
-  when "troop_id"
-    "military"
-  when "teacher_id"
-    "teacher"
-  when "responder_id"
-    "first Responder"
-  when "student_id"
-    "student"
+    when "troop_id"
+      "military"
+    when "teacher_id"
+      "teacher"
+    when "responder_id"
+      "firstResponder"
+    when "student_id"
+      "student"
   end
 
-  begin
-    find("gr-idme-#{user_group}").click
-  rescue
-    puts "View #{user_group} sign in page"
-  end
+  find("#gr-idme-#{user_group}").click
+  puts "#{user_group} was selected"
+  
 end
 
-Given(/^GORUCK \- I verify that my "([^"]*)" discount was applied$/) do
+
+Given(/^GORUCK\- I verify that my "([^"]*)" discount was applied$/) do |arg1|
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+Given(/^GORUCK \- I verify that my "([^"]*)" discount was applied$/) do |arg1|
   pending # Write code here that turns the phrase above into concrete actions
 end
