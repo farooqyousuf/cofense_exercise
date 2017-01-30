@@ -23,10 +23,26 @@ Given(/^GORUCK \- I add a item to the cart$/) do
       click_on("Add To Cart")
 end
 
-Given(/^GORUCK \- I sign in with my IDme account$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+Given(/^GORUCK \- I sign in with my IDme "([^"]*)" account$/) do |group|
+
+  user_group = case group
+  when "troop_id"
+    "military"
+  when "teacher_id"
+    "teacher"
+  when "responder_id"
+    "first Responder"
+  when "student_id"
+    "student"
+  end
+
+  begin
+    find("gr-idme-#{user_group}").click
+  rescue
+    puts "View #{user_group} sign in page"
+  end
 end
 
-Given(/^GORUCK \- I verify that my student discount was applied$/) do
+Given(/^GORUCK \- I verify that my "([^"]*)" discount was applied$/) do
   pending # Write code here that turns the phrase above into concrete actions
 end
