@@ -29,9 +29,9 @@ partners:
   nhl_shop: http://shop.nhl.com/Boston_Bruins_Jerseys/Mens_Boston_Bruins_Reebok_Black_2016_Winter_Classic_Premier_Jersey
   az_cardinals: http://shop.azcardinals.com/Arizona_Cardinals_Mens_Jerseys/Mens_Arizona_Cardinals_Tyrann_Mathieu_Nike_Cardinal_Game_Jersey
   nascar: http://store.nascar.com/Mens_Jackets/Mens_Dale_Earnhardt_Jr._Black_Nationwide_Insurance_Uniform_Twill_Jacket
-  mlb_shop: http://shop.mlb.com/Baltimore_Orioles_Gear
-  mlb_shop_discount: "A discount of 15% was successfully applied to your order."
-  mlb_shop_discount_amount: "-$18.00"
+  mlb_shop: 
+    product_page: http://shop.mlb.com/Baltimore_Orioles_Gear
+    discount_copy: "A discount of 15% was successfully applied to your order."
   caesars_hotels: https://www.caesars.com
   underarmour:
     product_page: https://www.underarmour.com/en-us/pid1289681-001
