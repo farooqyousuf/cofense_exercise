@@ -78,7 +78,7 @@ end
 Given(/^I verify that my san diego teacher discount tickets$/) do
   sleep 2 #need because otherwise encounter (Selenium::WebDriver::Error::JavascriptError) JS is undefined
 
-  page.execute_script("document.getElementsByClassName('_oi20134')[0].childNodes[1].childNodes[1].style.opacity = 10") #allow you select tickets because opacity is set to 0
+  page.execute_script("document.getElementsByClassName('_oi20374')[0].childNodes[1].childNodes[1].style.opacity = 10") #allow you select tickets because opacity is set to 0
   first(".content-maincontent-ticketbox-tixchoose-inner").first(".first").select("1",:from =>"selOrderItemCount")
   first(".content-maincontent-ticketbox-add2cart").click
 
