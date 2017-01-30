@@ -32,6 +32,11 @@ class Set < Thor
     copy_environment("chrome_windows")
   end
 
+  desc "firefox_osx_local", "Use Firefox on OSX on Local"
+  def firefox_osx_local
+    copy_environment("firefox_osx_local")
+  end
+
   desc "firefox_osx_staging", "Use Firefox on OSX on Staging"
   def firefox_osx_staging
     copy_environment("firefox_osx_staging")
