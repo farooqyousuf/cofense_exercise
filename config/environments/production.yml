@@ -15,6 +15,10 @@ partners:
       product_page: http://m.fanatics.com/NFL_Baltimore_Ravens_Mens/Justin_Tucker_Baltimore_Ravens_Nike_Game_Jersey_-_Purple
       discount_copy: "A discount of 10% on items and a shipping discount on eligible methods was successfully applied to your order."
   nfl_shop: https://www.nflshop.com/catalog/product/Mens_Washington_Redskins_Ryan_Kerrigan_Nike_Burgundy_Game_Jersey
+  nfl_mobile:
+    product_page: http://m.nflshop.com/Baltimore_Ravens_Jerseys/Mens_Baltimore_Ravens_Terrell_Suggs_Nike_Purple_Game_Jersey
+    product_selection_1: "#pdpSizeSelector button[value='2609011']"
+    product_selection_2: "#pdpSizeSelector button[value='2609014']"
   fansedge: http://www.fansedge.com/New_England_Patriots_Merchandise/Nike_Tom_Brady_New_England_Patriots_Navy_Blue_Silver_Game_Jersey
   fansedge_discount: "A discount of 10% on items and a shipping discount on eligible methods was successfully applied to your order."
   fansedge_discount_amount: "-$10.00"
