@@ -1,9 +1,9 @@
 Given(/^MERRELL\- I add a item to the cart$/) do
-	visit FigNewton.partners.merrell
+	visit FigNewton.partners.merrell.product_page
 	page.driver.browser.navigate.refresh #remove email modal
 
 	find("#variationsdropdown-24572M").click
-	find("label[id='swatch-L']").click
+	select_product_size_for_partner("merrell")
 	find(".variations-other").click
   find(".product-name-v2").click #click added to counter size menu from blocking cart click
 	find("#add-to-cart").click
