@@ -4,7 +4,6 @@ Given(/^MERRELL\- I add a item to the cart$/) do
 
 	find("#variationsdropdown-24572M").click
 	select_product_size_for_partner("merrell")
-	#find("label[id='swatch-L']").click
 	find(".variations-other").click
   find(".product-name-v2").click #click added to counter size menu from blocking cart click
 	find("#add-to-cart").click
