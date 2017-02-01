@@ -84,6 +84,8 @@ partners:
     teacherstudents: https://www.overstock.com/cluboclassroom
     firstresponders: https://www.overstock.com/clubofirstresponder
   uber_hlp: https://hosted-pages.id.me/ubermilitary-driver-partner-verification
+  yeti:
+    product_page: http://yeti.com/tundra-45-cooler
 
 oauth:
   facebook_user: qa@id.me
