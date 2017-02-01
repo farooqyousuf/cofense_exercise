@@ -24,7 +24,7 @@ module HelperMethods
     when "teacher_id"
       FigNewton.test_user.teacher.user_email
     when "government_id"
-      FigNewton.partners.user      
+      FigNewton.partners.user
     end
 
     if page.has_content? "Sign in"
@@ -33,7 +33,7 @@ module HelperMethods
       click_button "Sign in"
     end
 
-    click_link "Continue"
+      click_link "Continue"
   end
 
   #TODO - Refactor the duplicate sign_in options we have right now to single
