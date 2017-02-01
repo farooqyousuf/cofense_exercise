@@ -5,7 +5,6 @@ Given(/^YETI\- I add an item to the cart$/) do
 end
 
 Given(/^YETI\- I verify my "([^"]*)" through ID\.me$/) do |group|
-
   user_group = case group
     when "troop_id"
       "military"
@@ -26,7 +25,6 @@ Given(/^YETI\- I verify my "([^"]*)" through ID\.me$/) do |group|
 end
 
 Given(/^YETI\- I verify my "([^"]*)" discount has been applied$/) do |group|
-
   user_group = case group
     when "troop_id"
       "military"
