@@ -15,6 +15,10 @@ partners:
       product_page: http://m.fanatics.com/NFL_Baltimore_Ravens_Mens/Justin_Tucker_Baltimore_Ravens_Nike_Game_Jersey_-_Purple
       discount_copy: "A discount of 10% on items and a shipping discount on eligible methods was successfully applied to your order."
   nfl_shop: https://www.nflshop.com/catalog/product/Mens_Washington_Redskins_Ryan_Kerrigan_Nike_Burgundy_Game_Jersey
+  nfl_mobile:
+    product_page: http://m.nflshop.com/Baltimore_Ravens_Jerseys/Mens_Baltimore_Ravens_Terrell_Suggs_Nike_Purple_Game_Jersey
+    product_selection_1: "#pdpSizeSelector button[value='2609011']"
+    product_selection_2: "#pdpSizeSelector button[value='2609014']"
   fansedge: http://www.fansedge.com/New_England_Patriots_Merchandise/Nike_Tom_Brady_New_England_Patriots_Navy_Blue_Silver_Game_Jersey
   fansedge_discount: "A discount of 10% on items and a shipping discount on eligible methods was successfully applied to your order."
   fansedge_discount_amount: "-$10.00"
@@ -67,7 +71,7 @@ partners:
     hlp_page: https://hosted-pages.id.me/columbia-military?offer_id=25204
     product_page: https://www.columbia.com/mens-outdry-ex-gold-interchange-jacket-1680752.html?dwvar_1680752_variationColor=452&dwvar_1680752_variationSize=S
     shopping_cart_page: https://www.columbia.com/cart
-  ashley_stewart: http://www.ashleystewart.com/pleat-detail-button-shirt/035-L1I1657.html?dwvar_035-L1I1657_color=0606#start=1&cgid=tops_styles_shirts
+  ashley_stewart: http://www.ashleystewart.com/nautical-crash-course/12-8-16_Look12_914.html#start=5&cgid=musthave_lookbook_springpreview
   camp_saver:
     verify_idme_page: http://www.campsaver.com/verify-with-idme/?utm_source=idme&utm_medium=email&utm_campaign=may13
     product_page: http://www.campsaver.com/moving-comfort-lsd-jacket-women-s
@@ -86,6 +90,9 @@ partners:
   uber_hlp: https://hosted-pages.id.me/ubermilitary-driver-partner-verification
   goruck:
     product_page: http://www.goruck.com/gr1-rucksack-black-/p/GEAR-000574
+  yeti:
+    product_page: http://yeti.com/tundra-45-cooler
+
 
 oauth:
   facebook_user: qa@id.me

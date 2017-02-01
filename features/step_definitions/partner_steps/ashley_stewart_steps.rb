@@ -4,7 +4,7 @@ end
 
 Given(/^ASHLEY\- I add a item to the cart$/) do
 	find(".size li:nth-child(1)").click
-	find("#add-to-cart").click
+	find(".add-to-cart").click
 end
 
 Given(/^ASHLEY\- I visit the checkout page$/) do
@@ -52,5 +52,5 @@ Given(/^ASHLEY\- I verify my teacher discount was applied$/) do
 	actual_product_discount_amt_string = find(".order-discount td:nth-child(2)").text
 
 	discount_applied = verify_discount(original_product_amt_string, actual_product_discount_amt_string, ".10",:exact_match => true)
-	expect(discount_applied).to be(true)
+  expect(discount_applied).to be(true)
 end
