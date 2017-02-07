@@ -13,7 +13,7 @@ class MilitarySCRA < IDmeBase
     case affiliation
     when "Service Member"        then data_set = :scra_service_member
     when "Veteran"               then data_set = :scra_veteran
-    when "Retiree"               then data_set = :scra_mil_spouse
+    when "Retiree"               then data_set = :scra_veteran
     when "Military Spouse"       then data_set = :scra_mil_spouse
     when "Military Family"       then data_set = :scra_mil_family
     when "Military Supporter"    then data_set = :scra_mil_spouse
@@ -42,6 +42,7 @@ class MilitarySCRA < IDmeBase
 
     end
 
+    sleep 1
     click_verify_button
   end
 
@@ -50,8 +51,10 @@ class MilitarySCRA < IDmeBase
       fill_in field, :with => data.fetch(field)
     end
 
-    %w(service_member_birth_date service_date).each do |field|
-      2.times {fill_in field, :with => data.fetch(field)}
+    2.times {fill_in "service_member_birth_date", :with => data.fetch("service_member_birth_date")}
+
+    if ["veteran"].include?(data["affiliation"])
+      2.times {fill_in "service_date", :with => data.fetch("service_date")}
     end
   end
 
