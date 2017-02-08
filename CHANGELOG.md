@@ -3,6 +3,9 @@
 ### Released
 
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
+## 2.2.65 (2/1/2017)
+- IDME-3283: Refactor Fanatics discount verifier and add back up page selector
+
 ## 2.2.63 (2/1/2017)
 - IDME-3262: Update product and car selector for Ashley Stewart partner
 - IDME-3250: Add NFL mobile partner test
