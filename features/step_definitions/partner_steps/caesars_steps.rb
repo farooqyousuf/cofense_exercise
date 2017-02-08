@@ -30,7 +30,7 @@ Given(/^CAESARS\- I verify my "([^"]*)" through ID\.me$/) do |group|
     when "student_id"
       "Student"
   end
- 
+
   @idp_signin = window_opened_by do
     find(".idme-btn-container div[title='#{user_group}']").click
   end
@@ -48,7 +48,7 @@ Given(/^CAESARS\- I verify my "([^"]*)" integration is displayed on the rate cal
     puts "Alernative Flow Cue"
   end
     expect(page).to have_css(".troopSwapSidepanel",:text =>"ID.me Up to 10% Room Discount for Military, First Responders, Students & Teachers. What is ID.me? Verification by ID.me")
-    expect(page).to have_css(".idmeimg", :visible => true)
+    expect(page).to have_css("img[alt='ID.me applied']")
 end
 
 def find_user_group_text(group)
