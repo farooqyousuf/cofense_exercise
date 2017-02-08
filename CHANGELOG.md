@@ -3,6 +3,8 @@
 ### Released
 
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
+## 2.2.65 (2/8/2017)
+- IDME-3269: Update Ashley Stewart test
 
 ## 2.2.64 (2/7/2017)
 - IDME-3283: Refactor Fanatics discount verifier and add back up page selector
