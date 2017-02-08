@@ -6,6 +6,10 @@ end
 Given(/^I create user$/) do
   click_link("Members")
   click_link("Users")
+  click_link("Add new user")
+  find("#s2id_user_consumer_id").click
+  find(".select2-results > li:nth-child(9)").click
+  sleep 2
 end
 
 Given(/^I verify new user was created$/) do
