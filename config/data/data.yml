@@ -156,6 +156,7 @@ denied_emt_national:
   registry_number: FJAL1234
 
 scra_service_member:
+  affiliation: service member
   service_member_first_name: John
   service_member_last_name: Jones
   service_member_birth_date: 05/25/1989
@@ -172,6 +173,7 @@ scra_denied_data:
   service_date: 04/05/2016
 
 scra_veteran:
+  affiliation: veteran
   service_member_first_name: Harry
   service_member_last_name: Dune
   service_member_birth_date: 10/25/1963
@@ -180,6 +182,7 @@ scra_veteran:
   service_date: 04/05/2016
 
 scra_mil_spouse:
+  affiliation: spouse
   first_name: Erin
   last_name: Doe
   birth_date: 01/05/1985
@@ -202,6 +205,7 @@ scra_multi_family:
   service_date: 04/05/2016
 
 scra_mil_family:
+  affiliation: family
   first_name: Tiffany
   last_name: Killian
   birth_date: 01/05/1985

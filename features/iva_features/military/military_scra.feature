@@ -33,13 +33,13 @@ Feature: Military verification using SCRA credentials
     * I complete the verification process
     * I should be successfully verified as "Military Family"
 
-  @delete_scra_user5
+  @delete_scra_user2
   Scenario: Successful verification as Retiree
     * I verify using SCRA for "Retiree"
     * I complete the verification process
     * I should be successfully verified as "Retiree"
 
-  @delete_scra_multi_family_users
+  @delete_scra_multi_family_users @wip
   Scenario: Disallow second spouse and fourth family member to verify
     * I verify using SCRA for "Service Member"
     * I complete the verification process
@@ -57,7 +57,7 @@ Feature: Military verification using SCRA credentials
     * I should see the red alert box error message "We're sorry, but we were unable to verify your military status with the information you provided. Please utilize the name you held when discharged, and be sure to use an active duty date from the middle of your period of service. Note that Reservists, National Guardsmen, and all pre-1985 Veterans, must verify by uploading documentation. For additional information, please see our Support page."
     * I verify the attempt is marked as "DENIED"
 
- @delete_scra_dupe_user
+ @delete_scra_dupe_user @wip
  Scenario: Dupe attempt test for Military SCRA
     * I verify using SCRA for "Service Member"
     * I complete the verification process
