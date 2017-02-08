@@ -5,7 +5,8 @@ Given(/^I visit the user quick search page$/) do
 end
 
 Given(/^I search user by email$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  fill_in("query", with: "capybara+471715@id.me")
+  click_button("Search")
 end
 
 Given(/^I verify that the user was searched$/) do
