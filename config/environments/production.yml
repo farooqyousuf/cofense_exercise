@@ -30,7 +30,7 @@ partners:
   nhl_shop: http://shop.nhl.com/Boston_Bruins_Jerseys/Mens_Boston_Bruins_Reebok_Black_2016_Winter_Classic_Premier_Jersey
   az_cardinals: http://shop.azcardinals.com/Arizona_Cardinals_Mens_Jerseys/Mens_Arizona_Cardinals_Tyrann_Mathieu_Nike_Cardinal_Game_Jersey
   nascar: http://store.nascar.com/Mens_Jackets/Mens_Dale_Earnhardt_Jr._Black_Nationwide_Insurance_Uniform_Twill_Jacket
-  mlb_shop: 
+  mlb_shop:
     product_page: http://shop.mlb.com/Baltimore_Orioles_Gear
     discount_copy: "A discount of 15% was successfully applied to your order."
   caesars_hotels: https://www.caesars.com
@@ -72,14 +72,16 @@ partners:
     hlp_page: https://hosted-pages.id.me/columbia-military?offer_id=25204
     product_page: https://www.columbia.com/mens-outdry-ex-gold-interchange-jacket-1680752.html?dwvar_1680752_variationColor=452&dwvar_1680752_variationSize=S
     shopping_cart_page: https://www.columbia.com/cart
-  ashley_stewart: http://www.ashleystewart.com/nautical-crash-course/12-8-16_Look12_914.html#start=5&cgid=musthave_lookbook_springpreview
+  ashley_stewart:
+    product_page1: http://www.ashleystewart.com/double-keyhole-bodycon-dress/402009802140.html#start=2&cgid=dresses_styles_webexclusives
+    product_page2: http://www.ashleystewart.com/cascade-sleeve-keyhole-blouse/035-68882M.html?dwvar_035-68882M_color=0001#start=1&cgid=tops_styles_shirts
   camp_saver:
     verify_idme_page: http://www.campsaver.com/verify-with-idme/?utm_source=idme&utm_medium=email&utm_campaign=may13
     product_page: http://www.campsaver.com/moving-comfort-lsd-jacket-women-s
   irobot:
     hlp_page: https://hosted-pages.id.me/military-and-veteran-discount?offer_id=101377
   jr_cigar_landing_page: https://www.jrcigars.com/military-discount?source=cj
-  merrell: 
+  merrell:
     product_page: http://www.merrell.com/US/en/palm-rope-print-shirt/24572M.html?dwvar_24572M_color=JMS23097-406#cgid=men-clothing-shirts--tees&start=1
     product_selection_1: "label[id='swatch-M']"
     product_selection_2: "label[id='swatch-L']"
