@@ -10,5 +10,6 @@ Given(/^I search user by email$/) do
 end
 
 Given(/^I verify that the user was searched$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  click_link("Capybara DoNotDelete")
+  expect(page).to have_text("Capybara DoNotDelete")
 end
