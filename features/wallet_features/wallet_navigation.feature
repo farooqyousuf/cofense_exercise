@@ -5,8 +5,8 @@ Background:
   * I create "WalletHomepage,WalletNavigation" page objects
   * I visit "WalletHomepage"
 
-@wallet_smoke @smoke @test_smoke 
-Scenario: Wallet Navigation Smoke Test  
+@smoke @test_smoke
+Scenario: Wallet Navigation Smoke Test
   * I click on the Wallet Sign Up link
   * I sign up as a new user
   * I should be on the Wallet dashboard page
@@ -17,4 +17,4 @@ Scenario: Wallet Navigation Smoke Test
   * I click on the Settings navigation link
   * I check the Wallet Settings page is visible
   * I click on the Activity navigation link
-  * I check that Wallet Activity page is visible 
+  * I check that Wallet Activity page is visible
