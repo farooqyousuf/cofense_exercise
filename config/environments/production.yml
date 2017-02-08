@@ -7,7 +7,8 @@ partners:
   previous_user: tony.chung+test@id.me
   password: Password123
   fanatics:
-    product_page: http://www.fanatics.com/NFL_Denver_Broncos_Mens/Peyton_Manning_Denver_Broncos_Nike_Super_Bowl_50_Game_Jersey_-_Orange
+    product_page: http://www.fanatics.com/NFL_Atlanta_Falcons_Mens/Julio_Jones_Atlanta_Falcons_Nike_Alternate_Game_Jersey_%E2%80%93_Black
+    product_page2: http://www.fanatics.com/NFL_New_England_Patriots/Tom_Brady_New_England_Patriots_Nike_Game_Jersey_-_Navy_Blue_Silver
     discount_copy: "A discount of 10% on items and a shipping discount on eligible methods was successfully applied to your order."
     product_selection_1: "a[title ='Choose Size L']"
     product_selection_2: "a[title ='Choose Size XL']"
