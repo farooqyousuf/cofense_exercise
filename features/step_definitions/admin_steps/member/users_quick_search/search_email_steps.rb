@@ -4,9 +4,14 @@ Given(/^I visit the user quick search page$/) do
   visit FigNewton.admin.user_quick_search
 end
 
-Given(/^I search user by email$/) do
-  fill_in("query", with: "capybara+471715@id.me")
-  click_button("Search")
+Given(/^I search user by "([^"]*)"$/) do |type|
+  # fill_in("query", with: "capybara+471715@id.me")
+  # click_button("Search")
+  search_type =  case type
+  when "email"
+    "email"
+  end
+  search_user(type)
 end
 
 Given(/^I verify that the user was searched$/) do
