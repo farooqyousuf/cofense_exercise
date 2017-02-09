@@ -30,10 +30,12 @@ module HelperMethods
     if page.has_content? "Sign in"
       fill_in "user_email", :with => user_email
       fill_in "user_password", :with => FigNewton.partners.password
+
+      page.execute_script "window.scrollBy(0,1000)"
       click_button "Sign in"
     end
 
-      click_link "Continue"
+    click_link "Continue"
   end
 
   #TODO - Refactor the duplicate sign_in options we have right now to single
