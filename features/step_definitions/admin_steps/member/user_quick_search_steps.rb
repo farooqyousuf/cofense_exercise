@@ -18,12 +18,11 @@ end
 
 Given(/^I verify that the user was searched by "([^"]*)"$/) do |type|
   case type
-  when "email"
+  when "email" || "full_name"
     click_link("Capybara DoNotDelete")
     expect(page).to have_text("Capybara DoNotDelete")
-  when "full_name"
-    puts "verify full_name"
   when "first_name"
-    puts "verify first_name"
+    find("body > div.main-container > div > div:nth-child(2) > div > table > tbody > tr:nth-child(1) > td:nth-child(2) > a").click
+    expect(page).to have_text("capybara")
   end
 end
