@@ -6,4 +6,8 @@ include Capybara::DSL
       fill_in("query", with: "capybara+471715@id.me")
       click_button("Search")
     end
+
+    def search_user_first_name
+      
+    end
 end

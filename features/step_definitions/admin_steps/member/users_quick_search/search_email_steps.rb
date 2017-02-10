@@ -5,8 +5,6 @@ Given(/^I visit the user quick search page$/) do
 end
 
 Given(/^I search user by "([^"]*)"$/) do |type|
-  # fill_in("query", with: "capybara+471715@id.me")
-  # click_button("Search")
   @user_email_search = UserSearch.new
   if type == "email"
     @user_email_search.search_email_user
