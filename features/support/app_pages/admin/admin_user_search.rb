@@ -1,4 +1,4 @@
-class UserSearch
+class UserQuickSearch
 
 include Capybara::DSL
 
