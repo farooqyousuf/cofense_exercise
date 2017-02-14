@@ -13,7 +13,7 @@ include DataMagic
       when "email"
         populate_field(search_box: data.fetch("dupe_email"))
       when "full_name"
-        populate_field(search_box: data.fetch("dupe_fname" "dupe_lname"))
+        populate_field(search_box: data.fetch("dupe_fname") + " " + data.fetch("dupe_lname"))
       when "first_name"
         populate_field(search_box: data.fetch("dupe_fname"))
       end
