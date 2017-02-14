@@ -1,7 +1,11 @@
-class UserQuickSearch
+class UserQuickSearch < IDmeBase
 
 include Capybara::DSL
 include DataMagic
+
+  def initialize
+    super(FigNewton.admin.user_quick_search)
+  end
 
   def search_user(populate: true, type: "none")
 
