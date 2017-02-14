@@ -34,7 +34,9 @@ Scenario: Settings Page
   * I verify that Account page settings are present
   * I verify Security page options
   * I verify changing my password
+  * I verify changing my email
   * I verify Privacy page text
+  * I verify closing my account
 
 Scenario: Activity Feed Page
   * I click on the Activity navigation link
