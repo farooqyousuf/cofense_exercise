@@ -1,20 +1,11 @@
 Given(/^I visit the user quick search page$/) do
   @admin_tool = AdminTool.new
-  @admin_tool.login_in_new_window
-  visit FigNewton.admin.user_quick_search
+  @admin_tool.login
+  step 'I visit "UserQuickSearch"'
 end
-
+#
 Given(/^I search user by "([^"]*)"$/) do |type|
   UserQuickSearch.new.search_user(type: type)
-  # @search_user = UserQuickSearch.new
-  # case type
-  #   when "email"
-  #     @search_user.search_user_email
-  #   when "full_name"
-  #     @search_user.search_user_full_name
-  #   when "first_name"
-  #     @search_user.search_user_first_name
-  #   end
 end
 
 Given(/^I verify that the user was searched by "([^"]*)"$/) do |type|
