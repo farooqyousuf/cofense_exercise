@@ -1,6 +1,5 @@
 Given(/^I visit the user quick search page$/) do
-  @admin_tool = AdminTool.new
-  @admin_tool.login
+  @admin_tool = AdminTool.new.login
   step 'I visit "UserQuickSearch"'
 end
 
