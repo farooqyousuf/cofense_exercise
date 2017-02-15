@@ -3,6 +3,9 @@
 ### Released
 
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
+## 2.2.66 (2/10/2017)
+- CORE-6972: Fix Google address autocomplete issue - Part 2
+
 ## 2.2.65 (2/8/2017)
 - IDME-3269: Update Ashley Stewart test
 
