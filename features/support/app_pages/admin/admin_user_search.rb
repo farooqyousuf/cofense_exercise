@@ -38,9 +38,8 @@ include RSpec::Matchers
       page.text.include? "Capybara DoNotDelete"
     when "first_name"
       find("body > div.main-container > div > div:nth-child(2) > div > table > tbody > tr:nth-child(1) > td:nth-child(2) > a").click
-      page.text.include?("capybara")
+      page.text.include? "capybara"
     end
-    binding.pry
   end
 
 end
