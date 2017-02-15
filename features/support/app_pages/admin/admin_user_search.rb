@@ -24,7 +24,6 @@ include RSpec::Matchers
       click_button("Search")
   end
 
-
   def populate_field(search_box:)
     fill_in("query", :with => search_box)
   end
@@ -39,5 +38,4 @@ include RSpec::Matchers
       page.text.include? "capybara"
     end
   end
-
 end
