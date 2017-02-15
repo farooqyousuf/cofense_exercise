@@ -29,4 +29,15 @@ include DataMagic
   def populate_field(search_box:)
     fill_in("query", :with => search_box)
   end
+
+  def verify(type)
+    case type
+    when "email" || "full_name"
+      click_link("Capybara DoNotDelete")
+      expect(page).to have_text("Capybara DoNotDelete")
+    when "first_name"
+      find("body > div.main-container > div > div:nth-child(2) > div > table > tbody > tr:nth-child(1) > td:nth-child(2) > a").click
+      expect(page).to have_text("capybara")
+    end
+  end
 end
