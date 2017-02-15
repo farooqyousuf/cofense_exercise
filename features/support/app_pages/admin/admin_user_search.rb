@@ -9,9 +9,7 @@ include RSpec::Matchers
   end
 
   def search_user(populate: true, type: "none")
-
     if populate
-
       data = data_for(:mil_email)
 
       case type
