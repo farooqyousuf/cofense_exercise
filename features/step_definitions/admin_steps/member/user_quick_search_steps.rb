@@ -3,7 +3,7 @@ Given(/^I visit the user quick search page$/) do
   @admin_tool.login
   step 'I visit "UserQuickSearch"'
 end
-#
+
 Given(/^I search user by "([^"]*)"$/) do |type|
   UserQuickSearch.new.search_user(type: type)
 end
