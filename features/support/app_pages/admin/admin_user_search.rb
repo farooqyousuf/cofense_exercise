@@ -2,6 +2,7 @@ class UserQuickSearch < IDmeBase
 
 include Capybara::DSL
 include DataMagic
+include RSpec::Matchers
 
   def initialize
     super(FigNewton.admin.user_quick_search)
@@ -30,14 +31,16 @@ include DataMagic
     fill_in("query", :with => search_box)
   end
 
-  def verify(type)
+  def verify(type:)
     case type
     when "email" || "full_name"
       click_link("Capybara DoNotDelete")
-      expect(page).to have_text("Capybara DoNotDelete")
+      page.text.include? "Capybara DoNotDelete"
     when "first_name"
       find("body > div.main-container > div > div:nth-child(2) > div > table > tbody > tr:nth-child(1) > td:nth-child(2) > a").click
-      expect(page).to have_text("capybara")
+      page.text.include?("capybara")
     end
+    binding.pry
   end
+
 end
