@@ -2,7 +2,6 @@ class UserQuickSearch < IDmeBase
 
 include Capybara::DSL
 include DataMagic
-include RSpec::Matchers
 
   def initialize
     super(FigNewton.admin.user_quick_search)
