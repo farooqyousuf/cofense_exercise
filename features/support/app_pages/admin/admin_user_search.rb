@@ -10,14 +10,13 @@ include DataMagic
   def search_user(populate: true, type: "none")
     if populate
       data = data_for(:mil_email)
-
       case type
       when "email"
         populate_field(search_box: data.fetch("dupe_email"))
       when "full_name"
         populate_field(search_box: data.fetch("dupe_fname") + " " + data.fetch("dupe_lname"))
       when "first_name"
-        populate_field(search_box: data.fetch("dupe_fname"))
+        populate_field(search_box: "Testname")
       end
     end
       click_button("Search")
@@ -31,10 +30,10 @@ include DataMagic
     case type
     when "email" || "full_name"
       click_link("Capybara DoNotDelete")
-      page.text.include? "Capybara DoNotDelete"
+      page.assert_text "Capybara DoNotDelete"
     when "first_name"
-      find("body > div.main-container > div > div:nth-child(2) > div > table > tbody > tr:nth-child(1) > td:nth-child(2) > a").click
-      page.text.include? "capybara"
+      click_link("Testname")
+      page.assert_text "Testname"
     end
   end
 end
