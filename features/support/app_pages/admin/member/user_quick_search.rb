@@ -9,14 +9,14 @@ include DataMagic
 
   def search_user(populate: true, type: "none")
     if populate
-      data = data_for(:mil_email)
+      data = data_for(:admin_government)
       case type
       when "email"
-        populate_field(search_box: data.fetch("dupe_email"))
+        populate_field(search_box: data.fetch("email"))
       when "full_name"
-        populate_field(search_box: data.fetch("dupe_fname") + " " + data.fetch("dupe_lname"))
+        populate_field(search_box: data.fetch("first_name") + " " + data.fetch("last_name"))
       when "first_name"
-        populate_field(search_box: "Testname")
+        populate_field(search_box: data.fetch("first_name"))
       end
     end
       click_button("Search")
@@ -27,13 +27,16 @@ include DataMagic
   end
 
   def verify(type:)
+    data = data_for(:admin_government)
     case type
-    when "email" || "full_name"
-      click_link("Capybara DoNotDelete")
-      page.assert_text "Capybara DoNotDelete"
+    when "email"
+      click_link(data.fetch("email"))
+    when "full_name"
+      click_link(data.fetch("first_name") + " " + data.fetch("last_name"))
     when "first_name"
-      click_link("Testname")
-      page.assert_text "Testname"
+      click_link(data.fetch("first_name"))
+      # page.assert_text "Testname"
     end
+    page.assert_text(data.fetch("first_name") + " " + data.fetch("last_name"))
   end
 end
