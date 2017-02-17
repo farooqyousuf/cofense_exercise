@@ -1,3 +1,8 @@
+admin_government:
+  first_name: admintestfirstname
+  last_name: admintestlastname
+  email: admintest_donotdelete@id.me
+
 mil_email:
   dupe_email: donotdelete@id.me
   dupe_fname: Capybara
