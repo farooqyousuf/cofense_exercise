@@ -35,7 +35,6 @@ include DataMagic
       click_link(data.fetch("first_name") + " " + data.fetch("last_name"))
     when "first_name"
       click_link(data.fetch("first_name"))
-      # page.assert_text "Testname"
     end
     page.assert_text(data.fetch("first_name") + " " + data.fetch("last_name"))
   end
