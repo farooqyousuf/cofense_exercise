@@ -38,6 +38,9 @@ class DocEMT < IDmeBase
       2.times {fill_in field, :with => data.fetch(field)}
     end
     sleep 2
+
+    escape_google_address_autocomplete(%w(#street #city))
+
     populate_second_state("Kansas", index=0)
   end
 
