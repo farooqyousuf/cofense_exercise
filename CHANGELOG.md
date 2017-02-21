@@ -3,6 +3,10 @@
 ### Released
 
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
+
+## 2.2.66 (2/10/2017)
+- INT-968: User Quick Search Email, Full Name, First Name, Tests
+
 ## 2.2.66 (2/10/2017)
 - CORE-6972: Fix Google address autocomplete issue - Part 2
 
