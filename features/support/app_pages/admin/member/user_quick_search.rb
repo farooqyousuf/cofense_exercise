@@ -9,7 +9,7 @@ include DataMagic
 
   def search_user(populate: true, type: "none")
     if populate
-      data = data_for(:admin_government)
+      data = data_for(:admin_test_user)
       case type
       when "email"
         populate_field(search_box: data.fetch("email"))
@@ -27,7 +27,7 @@ include DataMagic
   end
 
   def verify(type:)
-    data = data_for(:admin_government)
+    data = data_for(:admin_test_user)
     case type
     when "email"
       click_link(data.fetch("email"))
