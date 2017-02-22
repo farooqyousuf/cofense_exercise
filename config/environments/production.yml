@@ -35,7 +35,8 @@ partners:
     discount_copy: "A discount of 15% was successfully applied to your order."
   caesars_hotels: https://www.caesars.com
   underarmour:
-    product_page: https://www.underarmour.com/en-us/pid1289681-001
+    product_page_1: https://www.underarmour.com/en-us/pid1289681-001
+    product_page_2: https://www.underarmour.com/en-us/mens-ua-lightweight-swacket/pid1289694-997
     product_selection_1: "#sizeChipList_Item1"
     product_selection_2: "#sizeChipList_Item2"
   mlb_tv_subscription_page: http://mlb.mlb.com/mlb/subscriptions
