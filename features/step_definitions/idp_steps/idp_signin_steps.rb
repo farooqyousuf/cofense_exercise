@@ -49,8 +49,10 @@ Given(/^I complete the new Wallet account linking process$/) do
   @idp_new_wallet.click_joining_first_time
   @idp_new_wallet.check_tos_pp
   @idp_new_wallet.click_continue_button
-  @idp_new_wallet.create_password
-  @idp_new_wallet.click_continue_button
+  if page.text.include? "Please create a password for your ID.me Wallet."
+    @idp_new_wallet.create_password
+    @idp_new_wallet.click_continue_button
+  end
 end
 
 Given(/^I login with Facebook$/) do
