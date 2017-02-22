@@ -52,7 +52,6 @@ class OAuthClient
     fill_in "email", :with => FigNewton.oauth.facebook_user
     fill_in "pass", :with => FigNewton.oauth.facebook_pw
     find("#loginbutton").click
-    # binding.pry
   end
 
   def login_with_google
