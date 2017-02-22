@@ -55,7 +55,7 @@ class OAuthClient
   end
 
   def login_with_google
-    find("img[alt='Google Plus']").click
+    find("a[title='Google']").click
     fill_in "Email", :with => FigNewton.oauth.google_user
     find("#next").click
     fill_in "Passwd", :with => FigNewton.oauth.google_pw
