@@ -1,6 +1,5 @@
 Given(/^UA \- I add an item to the cart$/) do
   visit FigNewton.partners.underarmour.product_page_1
-  # you need to add two back up page settings here 
   begin
     find(".modal-dialog")
     find(".close").click
