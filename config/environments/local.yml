@@ -2,3 +2,62 @@
 support_tool:
   homepage:
     url: http://support.idme.dev
+
+authority:
+ userid: test@id.me
+ password: Password123
+
+oauth:
+  client_id     : <insert your local ID.me TestDrive consumer's client_id here>
+  client_secret : <insert your local ID.me TestDrive consumer's client_secret here>
+  idp_endpoint  : http://api.idme.dev
+  redirect_uri  : http://testdrive.idme.dev
+  general_password: Changeme123
+  weak_password: Password1
+  unverified: farooq+noverifications@id.me
+  nonexistent: fake_email@id.me
+  valid: farooq@id.me
+  valid1: farooq+1@id.me
+  valid2: farooq+2@id.me
+  wrong_unlock_code: 123456
+  loa1: farooq+loa1@id.me
+  loa2: farooq+loa2@id.me
+  loa3: farooq+loa3@id.me
+  facebook_user: qnkuwmb_sadanberg_1446693931@tfbnw.net
+  facebook_pw: facebooktest
+  google_user: idme.qa.automation@gmail.com
+  google_pw: $taRbuck$
+  linkedin_user: bruce.wayne_test@yahoo.com
+  linkedin_pw: PassWord12345
+  paypal_user: test@id.me
+  paypal_pw: testtest
+  twitter_user:
+  twitter_pw:
+  experian_user: Erin Rashid
+  policy:
+    developer         : developer
+    farooq            : farooq
+    government        : government
+    ficam_loa_1       : http://idmanagement.gov/ns/assurance/loa/1
+    ficam_loa_2       : http://idmanagement.gov/ns/assurance/loa/2
+    ficam_loa_3       : http://idmanagement.gov/ns/assurance/loa/3
+    marketplace       : marketplace
+    marketplace_edit  : marketplace_edit
+    military          : military
+    military_enforced : military-enforced
+    military_scra     : military_scra
+    payfone           : payfone
+    responder         : responder
+    student           : student
+    teacher           : teacher
+    wallet            : wallet
+    general_password  : Password123
+
+admin:
+  base_url: http://admin.idme.dev
+  user_quick_search: http://admin.idme.dev/searches
+
+idp:
+  base_url: http://api.idme.dev
+  new_session_url: http://api.idme.dev/session/new
+  new_registration_url: http://api.idme.dev/registration/new
