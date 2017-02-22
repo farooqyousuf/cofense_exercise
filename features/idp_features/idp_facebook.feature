@@ -7,6 +7,5 @@ Feature: IDP Facebook Login
   @delete_facebook_user
   Scenario: Create and login with a new Facebook account
     * I login with Facebook
-    * I pry
     * I complete the new Wallet account linking process
     * I should be successfully authenticated using "Facebook"
