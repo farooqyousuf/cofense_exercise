@@ -3,6 +3,9 @@
 ### Released
 
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
+##2.2.70
+- CORE-7002: Fixed broken Google IDP test
+
 ## 2.2.68 (2/22/2017)
 - INT-1033: Update Partner test Underarmour
 
