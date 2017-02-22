@@ -48,7 +48,8 @@ class OAuthClient
   end
 
   def login_with_facebook
-    find("img[alt='Facebook']").click
+    find("a[title='Facebook']").click
+    # find("img[alt='Facebook']").click
     fill_in "email", :with => FigNewton.oauth.facebook_user
     fill_in "pass", :with => FigNewton.oauth.facebook_pw
     find("#loginbutton").click
