@@ -9,4 +9,3 @@ Feature: IDP Facebook Login
     * I login with Facebook
     * I complete the new Wallet account linking process
     * I should be successfully authenticated using "Facebook"
-
