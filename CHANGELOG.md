@@ -3,13 +3,16 @@
 ### Released
 
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
-##2.2.70
+##2.2.72
 - CORE-7002: Fixed broken Google IDP test
 
-## 2.2.68 (2/22/2017)
+## 2.2.71 (2/22/2017)
+- CORE-7001: Fixed broken Facebook IDP test
+
+## 2.2.70 (2/22/2017)
 - INT-1033: Update Partner test Underarmour
 
-## 2.2.68 (2/22/2017)
+## 2.2.69 (2/22/2017)
 - CORE-7007: Added required parameters to local.yml to run tests against local env
 
 ## 2.2.67 (2/21/2017)
