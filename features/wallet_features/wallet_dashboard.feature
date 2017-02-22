@@ -6,12 +6,16 @@ Background:
   * I visit "WalletHomepage"
 
 @smoke
-Scenario: Verify Shared Nav and Sub-Nav Bars
+Scenario: Verify Wallet Shared Main Nav
   * I verify ID.me logo is present
   * I verify that all the main nav tab links are directing to correct pages
-  * I verify that all the sub-nav tab links are directing to correct pages
   * I click on the Wallet Sign Up link
   * I sign up as a new user
+
+Scenario: Verify Wallet Sub-Nav bar
+  * I verify that all the sub-nav tab links are directing to correct pages
+
+Scenario: Verify Wallet Shared Side Nav
   * I click on the shared side navigation
   * I verify user email is displayed
   * I verify membership date is displayed correctly
