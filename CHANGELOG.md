@@ -6,6 +6,9 @@ All notable changes to this project will be documented in this file. This projec
 ## 2.2.68 (2/22/2017)
 - INT-1033: Update Partner test Underarmour
 
+## 2.2.68 (2/22/2017)
+- CORE-7007: Added required parameters to local.yml to run tests against local env
+
 ## 2.2.67 (2/21/2017)
 - INT-968: User Quick Search Email, Full Name, First Name, Tests
 
