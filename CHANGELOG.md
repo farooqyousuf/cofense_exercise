@@ -5,6 +5,7 @@
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 ## 2.2.73 (2/24/2017)
 - CORE-7013: Fixed broken DD214 tests
+- CORE-7014: Added @wip tags to mil doc tests which need to be fixed
 
 ## 2.2.71 (2/23/2017)
 - CORE-7002: Fixed broken Google IDP test

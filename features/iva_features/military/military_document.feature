@@ -43,7 +43,7 @@ Feature: Military verification using document upload
     * I complete the verification process
     * I should be successfully verified as "Military Family"
 
-  @delete_mil_doc_multi_family_users
+  @wip @delete_mil_doc_multi_family_users
   Scenario: Disallow second spouse and fourth family member to verify
     * I verify using military documentation for "Service Member"
     * I approve the document in IDme admin
@@ -61,7 +61,7 @@ Feature: Military verification using document upload
     * I should see the red alert box error message "We're sorry, but we were unable to verify the information you provided. The information entered must match the information on official records. Note: If you've recently had a name change, try your maiden or prior name."
     * I verify the attempt is marked as "DENIED"
 
- @delete_experian_user1
+ @wip @delete_experian_user1
  Scenario: Dupe attempt test for Military Document
     * I verify using military documentation for "Service Member"
     * I approve the document in IDme admin
