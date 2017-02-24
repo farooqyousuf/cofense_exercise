@@ -6,8 +6,8 @@ Background:
   * I visit "WalletHomepage"
   * I sign in to Wallet
 
-@smoke @test_smoke
-Scenario: Wallet Navigation Smoke Test
+@smoke @test_smoke @wip
+Scenario: Verify Wallet Dashboard
   * I should be on the Wallet dashboard page
   * I click on the Dashboard navigation link
   * I check the Wallet dashboard page is visible
