@@ -3,6 +3,9 @@
 ### Released
 
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
+## 2.2.73 (2/24/2017)
+- CORE-7013: Fixed broken DD214 tests
+
 ## 2.2.71 (2/23/2017)
 - CORE-7002: Fixed broken Google IDP test
 

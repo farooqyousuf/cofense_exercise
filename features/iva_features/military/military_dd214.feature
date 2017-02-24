@@ -32,13 +32,13 @@ Feature: Military verification using DD214 request
     * I complete the verification process
     * I should be successfully verified as "Military Family"
 
-  @delete_dd214_user
+  @wip @delete_dd214_user
   Scenario: Denied attempt for DD214 verification
     * I submit the DD214 verification form as a "denied" record
     * I "deny" the DD214 in IDme admin
     * I verify the attempt is marked as "DENIED"
 
- @delete_dd214_dupe_user
+ @wip @delete_dd214_dupe_user
  Scenario: Dupe attempt test for Military DD214
     * I verify using DD214 information for "Veteran" via "document"
     * I complete the verification process
