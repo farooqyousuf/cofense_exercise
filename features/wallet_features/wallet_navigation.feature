@@ -16,9 +16,9 @@ Scenario: Verify Wallet Dashboard
 Scenario: Verify Wallet IDs and Logins Page
   * I click on the My IDs navigation link
   * I check the My IDs page is visible
-  * I verify that Ids and Logins toggle buttons direct me to corresponding page views #IDs or Logins
+  * I verify that IDs and Logins toggle buttons direct me to corresponding page views #IDs or Logins
   * I verify required sub header sections are available #My IDs, Inactive IDs, My Logins, Inactive Logins <h4>
-  * I verify that IDs and Logins page buttons are visible #Inactive ids, Add ID, Inactive logins, Add Login
+  * I verify that IDs and Logins page buttons are visible #Inactive IDs, Add ID, Inactive logins, Add Login
 
 @wip
 Scenario: Add a new ID to Wallet
