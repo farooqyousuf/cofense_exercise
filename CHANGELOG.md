@@ -3,6 +3,12 @@
 ### Released
 
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
+## 2.2.73 (2/27/2017)
+- CORE-7004: Fixed broken PayPal IDP test
+
+## 2.2.72 (2/27/2017)
+- CORE-7003: Fixed broken LinkedIn IDP test
+
 ## 2.2.71 (2/23/2017)
 - CORE-7002: Fixed broken Google IDP test
 
