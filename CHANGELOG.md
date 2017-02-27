@@ -6,8 +6,10 @@ All notable changes to this project will be documented in this file. This projec
 ## 2.2.75 (2/27/2017)
 - INT-1053: Shop admin ability to filter by active and inactive offers
 
-## 2.2.74 (2/25/2017)
+## 2.2.74 (2/27/2017)
 - CORE-7034: Fixed broken Teacher Lookup tests
+- CORE-7004: Fixed broken PayPal IDP test
+- CORE-7003: Fixed broken LinkedIn IDP test
 
 ## 2.2.73 (2/24/2017)
 - CORE-7013: Fixed broken DD214 tests
