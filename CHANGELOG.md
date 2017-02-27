@@ -7,6 +7,7 @@ All notable changes to this project will be documented in this file. This projec
 - CORE-7034: Fixed broken Teacher Lookup tests
 - CORE-7004: Fixed broken PayPal IDP test
 - CORE-7003: Fixed broken LinkedIn IDP test
+- CORE-7018: Fixed broken SCRA tests
 
 ## 2.2.73 (2/24/2017)
 - CORE-7013: Fixed broken DD214 tests
