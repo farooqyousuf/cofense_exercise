@@ -162,3 +162,7 @@ wallet:
 idme:
   about_page: https://wallet-staging.idmeinc.net/about
   business_page: https://business.id.me
+
+shop_admin:
+  base: https://shop-staging.idmeinc.net/admin
+  offers: https://shop-staging.idmeinc.net/admin/offers

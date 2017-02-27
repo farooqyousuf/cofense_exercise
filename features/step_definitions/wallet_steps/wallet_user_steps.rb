@@ -1,10 +1,3 @@
-Given(/^I create "([^"]*)" page objects$/) do |page_objects|
-  page_objects_array = page_objects.split(",")
-  page_objects_array.each do |d|
-    instance_variable_set("@#{d}", Object.const_get(d).new )
-  end 
-end
-
 Given(/^I click on the Wallet Sign Up link$/) do
 	click_link "Sign Up"
 end
