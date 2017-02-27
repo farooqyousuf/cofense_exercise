@@ -34,6 +34,7 @@ Feature: Military verification using .mil email
     * I should see the red alert box error message "We're sorry, but the name you entered does not match the name specified by the email address. Please try a different verification option."
     * I verify the attempt is marked as "DENIED"
 
+  @wip
   Scenario: Duplicate attempt for military email verification
     * I submit the military email verification form as a "duplicate" record
     * I should see the red alert box error message "We’re sorry, but we are unable to verify your military status with the information you provided."
