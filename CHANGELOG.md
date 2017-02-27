@@ -3,6 +3,9 @@
 ### Released
 
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
+## 2.2.75 (2/27/2017)
+- INT-1053: Shop admin ability to filter by active and inactive offers
+
 ## 2.2.74 (2/25/2017)
 - CORE-7034: Fixed broken Teacher Lookup tests
 
