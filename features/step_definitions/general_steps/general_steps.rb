@@ -112,3 +112,10 @@ Given(/^I approve the document in IDme admin$/) do
   @admin_docs.approve_doc
   @admin_tool.logout_in_new_window
 end
+
+Given(/^I create "([^"]*)" page objects$/) do |page_objects|
+  page_objects_array = page_objects.split(",")
+  page_objects_array.each do |d|
+    instance_variable_set("@#{d}", Object.const_get(d).new )
+  end 
+end
