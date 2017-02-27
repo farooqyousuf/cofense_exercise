@@ -5,6 +5,7 @@
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 ## 2.2.74 (2/27/2017)
 - CORE-7034: Fixed broken Teacher Lookup tests
+- CORE-7004: Fixed broken PayPal IDP test
 - CORE-7003: Fixed broken LinkedIn IDP test
 
 ## 2.2.73 (2/24/2017)
