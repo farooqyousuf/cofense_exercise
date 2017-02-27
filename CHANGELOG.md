@@ -3,8 +3,9 @@
 ### Released
 
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
-## 2.2.74 (2/25/2017)
+## 2.2.74 (2/27/2017)
 - CORE-7034: Fixed broken Teacher Lookup tests
+- CORE-7003: Fixed broken LinkedIn IDP test
 
 ## 2.2.73 (2/24/2017)
 - CORE-7013: Fixed broken DD214 tests

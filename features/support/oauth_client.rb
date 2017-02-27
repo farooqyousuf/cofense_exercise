@@ -63,7 +63,7 @@ class OAuthClient
   end
 
    def login_with_linkedin
-    find("img[alt='LinkedIn']").click
+    find("a[title='LinkedIn']").click
     fill_in "session_key", :with => FigNewton.oauth.linkedin_user
     fill_in "session_password", :with => FigNewton.oauth.linkedin_pw
     find(".allow").click
