@@ -26,8 +26,13 @@ class TeacherLookup < IDmeBase
         when "dupe"
           #populate_fields() #work in progress
         end
-
       end
+
+    if (page.has_css?("#teacher_number_available_yes"))
+      find("#teacher_number_available_no").click
+    end
+
+    sleep 2
     click_verify_button
   end
 
@@ -57,7 +62,6 @@ class TeacherLookup < IDmeBase
       fill_short_ssn
     when "Alabama"
       fill_teacher_license_number
-      fill_short_ssn
     end
 
     escape_google_address_autocomplete(%w(#teacher_city #district))
