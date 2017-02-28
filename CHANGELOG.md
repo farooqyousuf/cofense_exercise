@@ -5,7 +5,7 @@
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
 ## 2.2.75 (2/28/2017)
-IDME-3270: Extend and organize Wallet smoke tests
+- IDME-3270: Extend and organize Wallet smoke tests
 
 ## 2.2.74 (2/27/2017)
 - CORE-7034: Fixed broken Teacher Lookup tests
