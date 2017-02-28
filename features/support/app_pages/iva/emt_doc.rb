@@ -22,6 +22,8 @@ class DocEMT < IDmeBase
 
       click_verify_button
 
+      sleep 2
+
       if type == "unique"
         attach_doc(1)
         click_verify_button
