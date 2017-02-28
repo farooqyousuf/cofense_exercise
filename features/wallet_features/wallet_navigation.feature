@@ -1,4 +1,4 @@
-visible@regression @wallet @desktop
+@regression @wallet @desktop
 Feature: Test Wallet Navigation Features
 
 Background:
