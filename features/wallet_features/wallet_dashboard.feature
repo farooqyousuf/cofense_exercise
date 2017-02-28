@@ -10,7 +10,6 @@ Background:
 Scenario: Verify Wallet Shared Main Nav
   * I verify ID.me logo is present
   * I verify that all the main nav tab links are directing to correct pages
-  * I click on the Wallet Sign Up link
 
 @wip
 Scenario: Verify Wallet Sub-Nav bar
