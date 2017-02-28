@@ -77,7 +77,7 @@ include JavascriptAlerts
   end
 
   def delete_linkedin_user
-    search_for_user("idme.qa.automation@gmail.com")
+    search_for_user("bruce.wayne_test@yahoo.com")
     sleep 1
     open_newest
     delete_user

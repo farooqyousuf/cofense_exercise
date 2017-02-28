@@ -52,6 +52,8 @@ class MilitaryDoc < IDmeBase
       2.times {fill_in field, :with => data.fetch(field)}
     end
 
+    escape_google_address_autocomplete(%w(#street #city))
+
     populate_state(data.fetch("state"))
   end
 

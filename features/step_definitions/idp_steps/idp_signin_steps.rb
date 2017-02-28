@@ -19,7 +19,6 @@ end
 
 Given(/^I should be successfully authenticated(?: using "(.*)")?$/) do |method|
   @oauth_client.save_token(current_url)
-
   if method
     email = case method
              when "Facebook"      then FigNewton.oauth.facebook_user
@@ -50,6 +49,11 @@ Given(/^I complete the new Wallet account linking process$/) do
   @idp_new_wallet.click_joining_first_time
   @idp_new_wallet.check_tos_pp
   @idp_new_wallet.click_continue_button
+
+  if page.text.include? "Please create a password for your ID.me Wallet."
+    @idp_new_wallet.create_password
+    @idp_new_wallet.click_continue_button
+  end
 end
 
 Given(/^I login with Facebook$/) do

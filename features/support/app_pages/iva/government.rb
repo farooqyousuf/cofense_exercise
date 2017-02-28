@@ -20,7 +20,6 @@ class IVAGovernment < IDmeBase
           puts "No email type specified"
         end
     end
-
     click_verify_button
   end
 

@@ -11,4 +11,8 @@ class IDPNewWallet < IDmeBase
     first(".field.checkbox").native.find_element(:id, "user_accepts_terms").click
   end
 
+  def create_password
+    fill_in("user_password", :with => FigNewton.oauth.general_password)
+    fill_in("user_password_confirmation", :with => FigNewton.oauth.general_password)
+  end
 end

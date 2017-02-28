@@ -99,6 +99,7 @@ social_network:
 
 admin:
   base_url: https://admin-staging.idmeinc.net
+  user_quick_search: https://admin-staging.idmeinc.net/searches
 
 idp:
   base_url: https://api-staging.idmeinc.net
@@ -162,3 +163,6 @@ idme:
   about_page: https://wallet-staging.idmeinc.net/about
   business_page: https://business.id.me
 
+shop_admin:
+  base: https://shop-staging.idmeinc.net/admin
+  offers: https://shop-staging.idmeinc.net/admin/offers

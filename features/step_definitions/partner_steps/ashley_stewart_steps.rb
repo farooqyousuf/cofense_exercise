@@ -1,10 +1,18 @@
 Given(/^ASHLEY\- I visit the shop page$/) do
-	visit FigNewton.partners.ashley_stewart
+	visit FigNewton.partners.ashley_stewart.product_page1
 end
 
 Given(/^ASHLEY\- I add a item to the cart$/) do
-	find(".size li:nth-child(1)").click
-	find(".add-to-cart").click
+  begin
+    find(".size li:nth-child(1)").click
+  rescue
+    visit FigNewton.partners.ashley_stewart.product_page2
+    find(".size li:nth-child(1)").click
+  end
+
+  find(".size li:nth-child(1)").click
+  sleep 1
+  find(".add-to-cart").click
 end
 
 Given(/^ASHLEY\- I visit the checkout page$/) do
@@ -27,7 +35,7 @@ end
 
 Given(/^ASHLEY\- I verify my military discount was applied$/) do
 	expect(page).to have_css(".cart-promo",:text => "Order Discount: Extra 10% Discount for our Military! Thanks for all you do. ....... Ashley")
-	original_product_amt_string = find(".price-sales").text
+	original_product_amt_string = find(".order-subtotal td:nth-child(2)").text
 	actual_product_discount_amt_string = find(".order-discount td:nth-child(2)").text
 
 	discount_applied = verify_discount(original_product_amt_string, actual_product_discount_amt_string, ".10",:exact_match => true)
@@ -48,7 +56,7 @@ end
 Given(/^ASHLEY\- I verify my teacher discount was applied$/) do
 	expect(page).to have_css(".cart-promo",:text => "Order Discount: Extra 10% Discount for our Teachers! Thanks for all you do. ....... Ashley")
 
-	original_product_amt_string = find(".price-sales").text
+	original_product_amt_string = find(".order-subtotal td:nth-child(2)").text
 	actual_product_discount_amt_string = find(".order-discount td:nth-child(2)").text
 
 	discount_applied = verify_discount(original_product_amt_string, actual_product_discount_amt_string, ".10",:exact_match => true)

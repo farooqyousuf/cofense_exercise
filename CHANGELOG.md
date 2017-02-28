@@ -4,6 +4,37 @@
 
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
+## 2.2.74 (2/27/2017)
+- CORE-7034: Fixed broken Teacher Lookup tests
+- CORE-7004: Fixed broken PayPal IDP test
+- CORE-7003: Fixed broken LinkedIn IDP test
+- CORE-7018: Fixed broken SCRA tests
+- INT-1053: Shop admin ability to filter by active and inactive offers
+
+## 2.2.73 (2/24/2017)
+- CORE-7013: Fixed broken DD214 tests
+
+## 2.2.71 (2/23/2017)
+- CORE-7002: Fixed broken Google IDP test
+
+## 2.2.70 (2/22/2017)
+- CORE-7001: Fixed broken Facebook IDP test
+
+## 2.2.69 (2/22/2017)
+- INT-1033: Update Partner test Underarmour
+
+## 2.2.68 (2/22/2017)
+- CORE-7007: Added required parameters to local.yml to run tests against local env
+
+## 2.2.67 (2/21/2017)
+- INT-968: User Quick Search Email, Full Name, First Name, Tests
+
+## 2.2.66 (2/10/2017)
+- CORE-6972: Fix Google address autocomplete issue - Part 2
+
+## 2.2.65 (2/8/2017)
+- IDME-3269: Update Ashley Stewart test
+
 ## 2.2.65 (2/8/2017)
 - HOTFIX: Cleaned up Wallet tags for smoke tests on Jenkins
 

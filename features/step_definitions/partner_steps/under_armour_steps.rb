@@ -1,13 +1,19 @@
 Given(/^UA \- I add an item to the cart$/) do
-  visit FigNewton.partners.underarmour.product_page
-
+  visit FigNewton.partners.underarmour.product_page_1
   begin
     find(".modal-dialog")
     find(".close").click
   rescue
     puts "Promo Popup is not being displayed"
   end
-  select_product_size_for_partner("underarmour")
+  
+  begin 
+    select_product_size_for_partner("underarmour")
+  rescue 
+    visit FigNewton.partners.underarmour.product_page_2
+    select_product_size_for_partner("underarmour")
+  end 
+
   find(".addtocart-btn").click
   find(".cart-added-container").find(".checkout-btn").click #js div modal
   find(".checkout-btn",match: :first).click
@@ -20,8 +26,8 @@ Given(/^UA \- I apply the "([^"]*)" discount$/) do |type|
   when "First Responder"
     button = "Responder"
   end
-
-  page.execute_script "window.scrollBy(0,650)"
+  sleep 1
+  page.execute_script "window.scrollBy(0,950)"
   sleep 1
   find(".extras .panel-group .panel:nth-child(2)").click
 
@@ -44,7 +50,6 @@ Given(/^UA \- I verify the "([^"]*)" discount has been applied$/) do |type|
 
     original_product_amt_string = find("span[class='subtotal']").text
     actual_product_discounted_amt_string = find(".promo div[class='number']").text
-    discount_applied = verify_discount(original_product_amt_string,actual_product_discounted_amt_string,".10",:exact_match => true)
-
+    discount_applied = verify_discount(original_product_amt_string,actual_product_discounted_amt_string,".10")
     expect(discount_applied).to be(true)
 end
