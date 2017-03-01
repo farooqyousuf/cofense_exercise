@@ -20,7 +20,9 @@ Given(/^I visit the waves of honor "([^"]*)" Integration$/) do |park_partner|
 end
 
 Given(/^I log in with my Id\.me military account$/) do
-  click_link("See Offers")
+  if page.has_text? "See Offers"
+    click_link("See Offers")
+  end
   idp_signin = window_opened_by do
     find(".IDmeLoginButton").click
   end
@@ -39,7 +41,7 @@ Given(/^I verify that my "([^"]*)" service member Complimentary tickets are avai
     when "Seaworld San Diego Military"    then "_oi4450"
     when "Sesame Place Langhorne"         then "_oi26744"
     when "Aquatica San Diego"             then "_oi4452"
-    when "Adventure Island Tampa"         then "_oi30181"
+    when "Adventure Island Tampa"         then "_oi30179"
     when "Water Country USA Williamsburg" then "_oi26708"
     when "Seaworld Orlando Veteran"       then "_oi4883"
 
