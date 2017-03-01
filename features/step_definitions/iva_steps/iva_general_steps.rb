@@ -14,7 +14,7 @@ end
 Given(/^I verify using a duplicate "([^"]*)" record$/) do |affiliation|
   case affiliation
   when "DD214"
-    step 'I verify using DD214 information for "Veteran"'
+    step 'I verify using DD214 information for "Veteran" via "document"'
   when "SCRA"
     step 'I verify using SCRA for "Service Member"'
   when "Military Document"
