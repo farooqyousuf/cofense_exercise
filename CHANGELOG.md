@@ -4,6 +4,9 @@
 
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
+## 2.2.76 (3/1/2017)
+- CORE-7065: Fixed various failing IVA tests
+
 ## 2.2.75 (2/28/2017)
 - IDME-3270: Extend and organize Wallet smoke tests
 - HOTFIX: Added sleep to fix  emt doc test

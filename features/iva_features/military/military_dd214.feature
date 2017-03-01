@@ -38,7 +38,7 @@ Feature: Military verification using DD214 request
     * I "deny" the DD214 in IDme admin
     * I verify the attempt is marked as "DENIED"
 
- @wip @delete_dd214_dupe_user
+ @delete_dd214_dupe_user
  Scenario: Dupe attempt test for Military DD214
     * I verify using DD214 information for "Veteran" via "document"
     * I complete the verification process
