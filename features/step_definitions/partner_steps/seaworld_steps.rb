@@ -20,6 +20,7 @@ Given(/^I visit the waves of honor "([^"]*)" Integration$/) do |park_partner|
 end
 
 Given(/^I log in with my Id\.me military account$/) do
+  click_link("See Offers")
   idp_signin = window_opened_by do
     find(".IDmeLoginButton").click
   end
@@ -128,4 +129,3 @@ Given(/^I verify that my "([^"]*)" discount tickets are available$/) do |seaworl
     expect(page).to have_css(".cartSubTotal  td:nth-child(2)",:text =>"$49.50")
   end
 end
-
