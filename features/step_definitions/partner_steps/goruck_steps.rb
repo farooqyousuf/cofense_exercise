@@ -41,6 +41,7 @@ Given(/^GORUCK\- I verify that my "([^"]*)" discount was applied$/) do |group|
   end
 
   page.has_text? ("Earned Service Discount")
+  sleep 2
   original_product_amt_string = find(".is-crossedout").text
   actual_product_discounted_amt_string = find(".mz-item-discount").text
 
