@@ -90,6 +90,9 @@ Given(/^I verify that my san diego teacher discount tickets$/) do
 end
 
 Given(/^I log in with my Id\.me veteran account$/) do
+  if page.has_text? "See Offers"
+    click_link("See Offers")
+  end
   idp_signin = window_opened_by do
     find(".IDmeLoginButton").click
   end
