@@ -1,6 +1,6 @@
 Given(/^MLBTV \- I apply for a yearly premium subscription$/) do
   visit FigNewton.partners.mlb_tv_subscription_page
-  find(".button--yearly").click
+  first(".buy-button").click
   find_button("Buy Now!").click
 end
 
