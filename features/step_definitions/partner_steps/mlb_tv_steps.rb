@@ -5,9 +5,10 @@ Given(/^MLBTV \- I apply for a yearly premium subscription$/) do
 end
 
 Given(/^MLBTV \- I apply the Troop ID discount$/) do
+  sleep 1
   idme_window = window_opened_by { click_on("Troop ID") }
-
   within_window idme_window do
+    sleep 2
     sign_in_with_idme
   end
 end
@@ -24,5 +25,6 @@ Given(/^MLBTV \- I verify the Troop ID discount has been applied$/) do
   actual_product_discounted_amt_string = find("#discount").text
 
   discount_applied = verify_discount(original_product_amt_string, actual_product_discounted_amt_string, ".35")
+  binding.pry
   expect(discount_applied).to be(true)
 end
