@@ -4,6 +4,9 @@
 
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
+## 2.2.77 (3/3/2017)
+- HOTFIX: Added a quick sleep for social federations so the corrent url token is saved
+
 ## 2.2.76 (3/1/2017)
 - CORE-7065: Fixed various failing IVA tests
 

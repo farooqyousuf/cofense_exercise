@@ -18,6 +18,7 @@ Given(/^I login as a "([^"]*)" user$/) do |user_type|
 end
 
 Given(/^I should be successfully authenticated(?: using "(.*)")?$/) do |method|
+  sleep 2
   @oauth_client.save_token(current_url)
   if method
     email = case method
