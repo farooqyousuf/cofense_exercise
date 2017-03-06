@@ -6,6 +6,7 @@ All notable changes to this project will be documented in this file. This projec
 
 ## 2.2.78 (3/6/2017)
 - CORE-7081: Removed this step 'I complete the verification process' as it's not needed anymore
+- HOTFIX: Added Google address autocomplete fix for Government test
 
 ## 2.2.77 (3/3/2017)
 - HOTFIX: Added a quick sleep for social federations so the corrent url token is saved

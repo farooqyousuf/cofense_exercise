@@ -27,6 +27,7 @@ class IVAGovernment < IDmeBase
     %w(first_name last_name city county birth_date).each do |field|
       2.times {fill_in field, :with => data.fetch(field)} #twice b/c dob doesn't get filled first time occasionally
     end
+    escape_google_address_autocomplete(%w(#city #county))
 
     %w(email email_confirmation).each do |field|
       fill_in field, :with => email
