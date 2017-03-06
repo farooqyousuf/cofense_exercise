@@ -58,11 +58,6 @@ Given(/^I authorize the attribute release$/) do
   Consent.new.allow
 end
 
-Given(/^I complete the verification process$/) do
-  @iva_success = IVASuccess.new
-  @iva_success.continue
-end
-
 Given(/^I submit the verification code for "([^"]*)"$/) do |option|
   @admin_tool = AdminTool.new
   @admin_tool.login_in_new_window
@@ -117,5 +112,5 @@ Given(/^I create "([^"]*)" page objects$/) do |page_objects|
   page_objects_array = page_objects.split(",")
   page_objects_array.each do |d|
     instance_variable_set("@#{d}", Object.const_get(d).new )
-  end 
+  end
 end
