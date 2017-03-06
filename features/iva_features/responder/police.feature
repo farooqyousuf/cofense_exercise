@@ -12,7 +12,6 @@ Feature: Responder verification as a police officer
   Scenario: Successful verification as a police officer
     * I verify using police officer documentation
     * I approve the document in IDme admin
-    * I complete the verification process
     * I should be successfully verified as "Police Officer"
 
   Scenario: Denied attempt for police verification
@@ -24,7 +23,6 @@ Feature: Responder verification as a police officer
   Scenario: Dupe attempt test for police officer
     * I verify using police officer documentation
     * I approve the document in IDme admin
-    * I complete the verification process
     * I clear the session from Authority
     * I create a new account after clearing my old "responder" session
     * I verify using a duplicate "Police Officer" record

@@ -12,21 +12,18 @@ Feature: Military verification using .mil email
   Scenario: Successful verification with a military email as Service Member
     * I verify using military email information for "Service Member"
     * I submit the verification code for "Military Email Code"
-    * I complete the verification process
     * I should be successfully verified as "Service Member"
 
   @delete_user
   Scenario: Successful verification with a military email as Military Spouse
     * I verify using military email information for "Military Spouse"
     * I submit the verification code for "Military Email Code"
-    * I complete the verification process
     * I should be successfully verified as "Military Spouse"
 
   @delete_user
   Scenario: Successful verification as Military Family
     * I verify using military email information for "Military Family"
     * I submit the verification code for "Military Email Code"
-    * I complete the verification process
     * I should be successfully verified as "Military Family"
 
   Scenario: Denied attempt for military email verification

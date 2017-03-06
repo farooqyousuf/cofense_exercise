@@ -12,7 +12,6 @@ Feature: Teacher verification using document upload
   Scenario: Successful verification
     * I verify using teacher documentation
     * I approve the document in IDme admin
-    * I complete the verification process
     * I should be successfully verified
 
   Scenario: Denied attempt for teacher doc upload verification
@@ -25,7 +24,6 @@ Feature: Teacher verification using document upload
  Scenario: Dupe attempt test for teacher doc upload
     * I verify using teacher documentation
     * I approve the document in IDme admin
-    * I complete the verification process
     * I clear the session from Authority
     * I create a new account after clearing my old "teacher" session
     * I verify using a duplicate "Teacher Doc Upload" record

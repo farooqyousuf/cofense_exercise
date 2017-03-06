@@ -12,7 +12,6 @@ Feature: Student verification using student credentials
   # TODO Ticket# INT-862
   Scenario: Successful verification
     * I verify using student credentials
-    * I complete the verification process
     * I should be successfully verified
 
   Scenario: Denied attempt for student credentials verification

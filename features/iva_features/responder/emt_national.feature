@@ -10,7 +10,6 @@ Feature: Responder verification as an nationally certified EMT
   @smoke @delete_natl_emt
   Scenario: Successful verification
     * I verify using nationally certified EMT credentials
-    * I complete the verification process
     * I should be successfully verified as "EMT"
 
   Scenario: Denied attempt for emt national verification
@@ -21,7 +20,6 @@ Feature: Responder verification as an nationally certified EMT
   @delete_natl_emt_dupe
   Scenario: Dupe attempt test for emt national
     * I verify using nationally certified EMT credentials
-    * I complete the verification process
     * I clear the session from Authority
     * I create a new account after clearing my old "responder" session
     * I verify using a duplicate "EMT National" record
