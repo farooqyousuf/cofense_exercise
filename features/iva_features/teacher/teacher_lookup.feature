@@ -12,25 +12,21 @@ Feature: Teacher verification using state lookup
   Scenario: Successful verification with no license and no ssn
     * I verify using teacher credentials with "no license and no ssn"
     * I "approve" the teacher verification in IDme admin
-    * I complete the verification process
     * I should be successfully verified
 
   Scenario: Successful verification with no license and short ssn
     * I verify using teacher credentials with "no license and short ssn"
     * I "approve" the teacher verification in IDme admin
-    * I complete the verification process
     * I should be successfully verified
 
   Scenario: Successful verification with license and no ssn
     * I verify using teacher credentials with "license and no ssn"
     * I "approve" the teacher verification in IDme admin
-    * I complete the verification process
     * I should be successfully verified
 
   Scenario: Successful verification with license and short ssn
     * I verify using teacher credentials with "license and short ssn"
     * I "approve" the teacher verification in IDme admin
-    * I complete the verification process
     * I should be successfully verified
 
   Scenario: Denied attempt for teacher lookup verification

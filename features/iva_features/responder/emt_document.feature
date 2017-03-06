@@ -12,5 +12,4 @@ Feature: Responder verification as an EMT using document upload
     * I generate a unique doc
     * I verify using EMT doc upload
     * I approve the document in IDme admin
-    * I complete the verification process
     * I should be successfully verified as "EMT"

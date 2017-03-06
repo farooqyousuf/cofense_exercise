@@ -10,7 +10,6 @@ Feature: Responder verification as a ProBoard Firefighter
   @smoke @delete_pb_fireman_user
   Scenario: Successful verification as a ProBoard Firefighter
     * I verify using a ProBoard Firefighter
-    * I complete the verification process
     * I should be successfully verified as "Firefighter"
 
   Scenario: Denied attempt for proboard firefighter verification
@@ -21,7 +20,6 @@ Feature: Responder verification as a ProBoard Firefighter
  @delete_pb_fireman_user
  Scenario: Dupe attempt test for proboard fireman
     * I verify using a ProBoard Firefighter
-    * I complete the verification process
     * I clear the session from Authority
     * I create a new account after clearing my old "responder" session
     * I verify using a duplicate "Proboard Fireman" record

@@ -1,5 +1,7 @@
 Given(/^I should be successfully verified(?: as "(.*)")?$/) do |group|
   flag = ["LOA1", "LOA2", "LOA3"].include?(group)
+  page.has_content?("ID.me TestDrive")
+
   #save oauth client token for idp and iva tests
   @oauth_client.save_token(current_url)
 
@@ -47,7 +49,6 @@ Given(/^Multi\-spouse: I verify "([^"]*)" spouse via "([^"]*)"(?: is not allowed
     case number
     when "first" then
       step 'I verify using SCRA for "Military Spouse"'
-      step 'I complete the verification process'
       step 'I clear the session from Authority'
     when "second" then
       step 'I verify using SCRA for "Military Spouse"'
@@ -60,7 +61,6 @@ Given(/^Multi\-spouse: I verify "([^"]*)" spouse via "([^"]*)"(?: is not allowed
      when "first" then
         step 'I verify using military documentation for "Military Spouse"'
         step 'I approve the document in IDme admin'
-        step 'I complete the verification process'
         step 'I clear the session from Authority'
      when "second" then
         step 'I verify using military documentation for "Military Spouse"'
@@ -81,7 +81,6 @@ Given(/^Multi\-family: I verify "([^"]*)" family via "([^"]*)"(?: is not allowed
     case number
     when "first", "second", "third" then
       step 'I verify using SCRA for "Military Multi Family"'
-      step 'I complete the verification process'
       step 'I clear the session from Authority'
     when "fourth" then
       step 'I verify using SCRA for "Military Multi Family"'
@@ -94,7 +93,6 @@ Given(/^Multi\-family: I verify "([^"]*)" family via "([^"]*)"(?: is not allowed
     when "first", "second", "third" then
       step 'I verify using military documentation for "Military Family"'
       step 'I approve the document in IDme admin'
-      step 'I complete the verification process'
       step 'I clear the session from Authority'
     when "fourth" then
       step 'I verify using military documentation for "Military Family"'

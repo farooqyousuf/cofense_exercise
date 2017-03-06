@@ -12,42 +12,36 @@ Feature: Military verification using document upload
   Scenario: Successful verification as a Service Member
     * I verify using military documentation for "Service Member"
     * I approve the document in IDme admin
-    * I complete the verification process
     * I should be successfully verified as "Service Member"
 
   @delete_experian_user1
   Scenario: Successful verification as a Veteran
     * I verify using military documentation for "Veteran"
     * I approve the document in IDme admin
-    * I complete the verification process
     * I should be successfully verified as "Veteran"
 
   @delete_experian_user1
   Scenario: Successful verification as a Retiree
     * I verify using military documentation for "Retiree"
     * I approve the document in IDme admin
-    * I complete the verification process
     * I should be successfully verified as "Retiree"
 
   @delete_experian_user3
   Scenario: Successful verification as a Military Spouse
     * I verify using military documentation for "Military Spouse"
     * I approve the document in IDme admin
-    * I complete the verification process
     * I should be successfully verified as "Military Spouse"
 
   @delete_experian_user3
   Scenario: Successful verification as a Military Family
     * I verify using military documentation for "Military Family"
     * I approve the document in IDme admin
-    * I complete the verification process
     * I should be successfully verified as "Military Family"
 
   @wip @delete_mil_doc_multi_family_users
   Scenario: Disallow second spouse and fourth family member to verify
     * I verify using military documentation for "Service Member"
     * I approve the document in IDme admin
-    * I complete the verification process
     * I clear the session from Authority
     * Multi-spouse: I verify "first" spouse via "mil doc"
     * Multi-family: I verify "first" family via "mil doc"
@@ -65,7 +59,6 @@ Feature: Military verification using document upload
  Scenario: Dupe attempt test for Military Document
     * I verify using military documentation for "Service Member"
     * I approve the document in IDme admin
-    * I complete the verification process
     * I clear the session from Authority
     * I create a new account after clearing my old "military" session
     * I verify using a duplicate "Military Document" record
@@ -102,5 +95,4 @@ Scenario: Successfully prompt for all required fields for Military Family
   # Scenario: Successful verification as a Military Supporter
   #   * I verify using military documentation for "Military Supporter"
   #   * I approve the document in IDme admin
-  #   * I complete the verification process
   #   * I should be successfully verified as "Military Supporter"

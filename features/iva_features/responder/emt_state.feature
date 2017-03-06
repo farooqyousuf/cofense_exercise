@@ -11,7 +11,6 @@ Feature: Responder verification as an EMT using state lookup
   Scenario: Successful verification with EMT state lookup
     * I verify using EMT state lookup
     * I approve the EMT verification in IDme admin
-    * I complete the verification process
     * I should be successfully verified as "EMT"
 
   Scenario: Denied attempt for emt state lookup verification
@@ -23,7 +22,7 @@ Feature: Responder verification as an EMT using state lookup
   Scenario: Dupe attempt test for emt state lookup
     * I verify using EMT state lookup
     * I approve the EMT verification in IDme admin
-    * I complete the verification process
+    *
     * I clear the session from Authority
     * I create a new account after clearing my old "responder" session
     * I verify using a duplicate "EMT State Lookup" record
@@ -40,7 +39,6 @@ Feature: Responder verification as an EMT using state lookup
     * I generate a unique doc
     * I verify using state EMT doc upload
     * I approve the document in IDme admin
-    * I complete the verification process
     * I should be successfully verified as "EMT"
 
   Scenario: Denied attempt for EMT state doc upload verification
@@ -53,7 +51,6 @@ Feature: Responder verification as an EMT using state lookup
     * I generate a unique doc
     * I verify using state EMT doc upload
     * I approve the document in IDme admin
-    * I complete the verification process
     * I clear the session from Authority
     * I create a new account after clearing my old "responder" session
     * I verify using a duplicate "EMT Document Upload" record

@@ -11,25 +11,21 @@ Feature: Military verification using DD214 request
   #unique dob/ssn to pass verification
   Scenario: Successful DD214 verification as a Veteran
     * I verify using DD214 information for "Veteran" via "document"
-    * I complete the verification process
     * I should be successfully verified as "Veteran"
 
   @delete_scra_user2
   Scenario: Successful DD214 verification via SCRA
     * I verify using DD214 information for "Veteran" via "SCRA"
-    * I complete the verification process
     * I should be successfully verified as "Veteran"
 
   @delete_dd214_user2
   Scenario: Successful DD214 verification as a Next of Kin Deceased Veteran
     * I verify using DD214 information for "Next of kin deceased veteran" via "document"
-    * I complete the verification process
     * I should be successfully verified as "Military Family"
 
   @delete_dd214_user2
   Scenario: Successful DD214 verification as a Legal Guardian
     * I verify using DD214 information for "Legal guardian" via "document"
-    * I complete the verification process
     * I should be successfully verified as "Military Family"
 
   @wip @delete_dd214_user
@@ -41,7 +37,6 @@ Feature: Military verification using DD214 request
  @delete_dd214_dupe_user
  Scenario: Dupe attempt test for Military DD214
     * I verify using DD214 information for "Veteran" via "document"
-    * I complete the verification process
     * I clear the session from Authority
     * I create a new account after clearing my old "military" session
     * I verify using a duplicate "DD214" record

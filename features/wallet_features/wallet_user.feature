@@ -46,7 +46,6 @@ Scenario: User verifies a Military Group Affiliation
   * I click to verify a military group affiliation
   * I verify using military documentation for "Veteran"
   * I approve the document in IDme admin
-  * I complete the verification process
   * I verify my military group affiliation has been added
   * I should see my military group addition on the activity feed
 

@@ -12,37 +12,31 @@ Feature: Military verification using SCRA credentials
   #Unique dob and ssn pair
   Scenario: Successful verification as Service Member
     * I verify using SCRA for "Service Member"
-    * I complete the verification process
     * I should be successfully verified as "Service Member"
 
   @delete_scra_user2
   Scenario: Successful verification as Veteran
     * I verify using SCRA for "Veteran"
-    * I complete the verification process
     * I should be successfully verified as "Veteran"
 
   @delete_scra_user3
   Scenario: Successful verification as Military Spouse
     * I verify using SCRA for "Military Spouse"
-    * I complete the verification process
     * I should be successfully verified as "Military Spouse"
 
   @delete_scra_user4
   Scenario: Successful verification as Military Family
     * I verify using SCRA for "Military Family"
-    * I complete the verification process
     * I should be successfully verified as "Military Family"
 
   @delete_scra_user2
   Scenario: Successful verification as Retiree
     * I verify using SCRA for "Retiree"
-    * I complete the verification process
     * I should be successfully verified as "Retiree"
 
   @delete_scra_multi_family_users @wip
   Scenario: Disallow second spouse and fourth family member to verify
     * I verify using SCRA for "Service Member"
-    * I complete the verification process
     * I clear the session from Authority
     * Multi-spouse: I verify "first" spouse via "scra"
     * Multi-family: I verify "first" family via "scra"
@@ -60,7 +54,6 @@ Feature: Military verification using SCRA credentials
  @delete_scra_dupe_user @wip
  Scenario: Dupe attempt test for Military SCRA
     * I verify using SCRA for "Service Member"
-    * I complete the verification process
     * I clear the session from Authority
     * I create a new account after clearing my old "military" session
     * I verify using a duplicate "SCRA" record
@@ -96,5 +89,4 @@ Feature: Military verification using SCRA credentials
   # @delete_scra_user5
   # Scenario: Successful verification as Military Supporter
   #   * I verify using SCRA for "Military Supporter"
-  #   * I complete the verification process
   #   * I should be successfully verified as "Retiree"
