@@ -22,7 +22,6 @@ Feature: Responder verification as an EMT using state lookup
   Scenario: Dupe attempt test for emt state lookup
     * I verify using EMT state lookup
     * I approve the EMT verification in IDme admin
-    *
     * I clear the session from Authority
     * I create a new account after clearing my old "responder" session
     * I verify using a duplicate "EMT State Lookup" record
