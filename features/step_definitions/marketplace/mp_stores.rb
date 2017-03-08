@@ -31,7 +31,7 @@ end
 Given(/^I check to sort stores by newest$/) do
 	select("newest", :from => "filters")
 
-	['DISH Network','GlobeIn','Fairway Styles'].each.with_index(offset=1) do |title,index|
+	['Bodybuilding.com', 'DISH Network','GlobeIn'].each.with_index(offset=1) do |title,index|
 		expect(page).to have_css(".stores-list-static li:nth-child(#{index}) .merchant-card figure a[title='#{title}']")
 	end
 end
