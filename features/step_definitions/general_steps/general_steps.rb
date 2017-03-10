@@ -15,6 +15,7 @@ end
 
 Given(/^I clear the session from Authority$/) do
   @authority = Authority.new
+  sleep 2
   @authority.auth_login
   OAuthClient.new.logout
 end

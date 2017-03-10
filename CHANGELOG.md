@@ -4,7 +4,10 @@
 
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
-##2.2.79 (3/8/2017)
+## 2.2.79 (3/10/2017)
+- IDME-3441: Update wallet user activity feed sign in copy
+- IDME-3431: Remove click continue form IDP signin
+- CORE-7005: IDP Signin Test Failure
 - IDME-3370: Fixed 'Shop Stores' tests that were failing
 
 ## 2.2.78 (3/6/2017)

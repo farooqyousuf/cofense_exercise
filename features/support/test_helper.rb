@@ -9,8 +9,6 @@ module HelperMethods
       fill_in "user_password", :with => FigNewton.partners.password
       click_button "Sign in"
     end
-
-    click_link "Continue"
   end
 
   def sign_in_with_idme_account(group_type)
@@ -34,8 +32,6 @@ module HelperMethods
       page.execute_script "window.scrollBy(0,1000)"
       click_button "Sign in"
     end
-
-    click_link "Continue"
   end
 
   #TODO - Refactor the duplicate sign_in options we have right now to single
@@ -54,9 +50,6 @@ module HelperMethods
 
     elsif page.has_text? "Authorize"
       click_button "Authorize"
-
-    elsif page.has_text? "Continue"
-      click_link "Continue"
     end
   end
 
