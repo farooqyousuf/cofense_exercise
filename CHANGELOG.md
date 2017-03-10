@@ -3,6 +3,8 @@
 ### Released
 
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
+## 2.2.79 (3/10/2017)
+- IDME-3441: Update wallet user activity feed sign in copy
 
 ## 2.2.78 (3/6/2017)
 - CORE-7081: Removed this step 'I complete the verification process' as it's not needed anymore
