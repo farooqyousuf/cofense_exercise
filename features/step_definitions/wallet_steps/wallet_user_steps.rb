@@ -14,7 +14,7 @@ Given(/^I should be on the marketplace landing page$/) do
 end
 
 Given(/^I click on the Wallet shared nav link$/) do
-  find(".shared-nav a",:text =>"Wallet")
+  find(".shared-nav a",:text =>"Wallet").click 
 end
 
 Given(/^I should be on the Wallet dashboard page$/) do
@@ -24,7 +24,7 @@ Given(/^I should be on the Wallet dashboard page$/) do
 end
 
 Given(/^I should see my sign up on the activity feed$/) do
-  expect(page).to have_css(".wallet-events li:nth-child(1)",:text =>"You signed in on")
+  expect(page).to have_css(".wallet-events li:nth-child(1)",:text =>"You signed in to your ID.me Wallet")
   expect(page).to have_css(".wallet-events li:nth-child(2)",:text =>"You signed up for ID.me Wallet on")
 end
 
@@ -37,7 +37,7 @@ Given(/^I login to wallet as a "([^"]*)" user$/) do |affinity_group|
 end
 
 Given(/^I should see my sign in on the activity feed$/) do
-  expect(page).to have_css(".wallet-events li:nth-child(1)",:text =>"You signed in on")
+  expect(page).to have_css(".wallet-events li:nth-child(1)",:text =>"You signed in to your ID.me Wallet")
 end
 
 
@@ -46,7 +46,7 @@ Given(/^I should see a IDP failed attempt sign in error$/) do
 end
 
 Given(/^I should see my failed sign in on the activity feed$/) do
-  expect(page).to have_css(".wallet-events li:nth-child(1)",:text =>"You signed in on")
+  expect(page).to have_css(".wallet-events li:nth-child(1)",:text =>"You signed in to your ID.me Wallet")
   expect(page).to have_css(".wallet-events li:nth-child(2)",:text =>"You had an unsuccessful sign in attempt on")
 end
 
@@ -102,7 +102,7 @@ Given(/^I log out of Wallet user account$/) do
 end 
 
 Given(/^I verify my Wallet lock and unlock on the Wallet activity feed$/) do
-  expect(page).to have_css(".wallet-events li:nth-child(1)",:text =>"You signed in on")
+  expect(page).to have_css(".wallet-events li:nth-child(1)",:text =>"You signed in to your ID.me Wallet")
   expect(page).to have_css(".wallet-events li:nth-child(2)",:text =>"Your ID.me Wallet was unlocked on")
   expect(page).to have_css(".wallet-events li:nth-child(3)",:text =>"Your ID.me Wallet was locked due to too many failed sign in attempts on")
 end 
@@ -127,6 +127,6 @@ end
 
 Given(/^I verify my Wallet Linkedin Social Federation signin$/) do 
   step 'I should be on the Wallet dashboard page'
-  expect(page).to have_css(".wallet-events li:nth-child(1)",:text =>"You signed in on")
+  expect(page).to have_css(".wallet-events li:nth-child(1)",:text =>"You signed in to your ID.me Wallet")
   expect(page).to have_css(".wallet-events li:nth-child(2)",:text =>"You signed in with your Linkedin login on")
 end 
