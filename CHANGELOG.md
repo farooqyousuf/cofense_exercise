@@ -10,6 +10,9 @@ All notable changes to this project will be documented in this file. This projec
 ## 2.2.79 (3/10/2017)
 - IDME-3431: Remove click continue form IDP signin
 
+## 2.2.79 (3/10/2017)
+- CORE-7005: IDP Signin Test Failure
+
 ## 2.2.78 (3/6/2017)
 - CORE-7081: Removed this step 'I complete the verification process' as it's not needed anymore
 - HOTFIX: Added Google address autocomplete fix for Government test
