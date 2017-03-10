@@ -20,6 +20,6 @@ class IDPSignIn < IDmeBase
    fill_in_email_by_id(email)
    fill_in_password(FigNewton.oauth.weak_password)
    click_sign_in
-end
+  end
 
 end
