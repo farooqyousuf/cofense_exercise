@@ -70,7 +70,7 @@ class HlpEditPage < IDmeBase
   end
 
   def click_idp_sign_in_button
-    click_link "Verify with ID.me Troop ID"
+    click_link "Verify with Troop ID"
   end
 
   def switch_to_idp_sign_in_window
