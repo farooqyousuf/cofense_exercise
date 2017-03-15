@@ -49,20 +49,20 @@ Given(/^I expect to see the Favorite Stores tab$/) do
 end
 
 Given(/^I add a favorite store$/) do
-  visit "https://marketplace-staging.idmeinc.net/stores"
+  visit "https://shop-staging.idmeinc.net/stores"
   @mp_favorites.add_favorite_store
   @favorite_offer_header = find(".store-details__grid").find(".heading").text
-  
+
   expect(page).to have_css("div.unfavorite-merchant")
 end
 
 Given(/^I confirm that the store has been saved$/) do
-  visit "https://marketplace-staging.idmeinc.net/favorites"
+  visit "https://shop-staging.idmeinc.net/favorites"
   expect(first(".offer-card").find(".heading").text).to eql(@favorite_offer_header)
 end
 
 Given(/^I remove a favorite store from the favorite stores page$/) do
-  visit "https://marketplace-staging.idmeinc.net/favorites"
+  visit "https://shop-staging.idmeinc.net/favorites"
   @mp_favorites.click_save_offer_icon
 end
 
