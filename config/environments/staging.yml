@@ -67,27 +67,27 @@ mp_users:
 
 marketplace:
   shop_homepage: https://shop-staging.idmeinc.net/shop
-  cashback_purchases_homepage: https://marketplace-staging.idmeinc.net/cash-back/purchases
-  user_cashback_profile_url: https://marketplace-staging.idmeinc.net/cash-back
-  demographic_survey: https://marketplace-staging.idmeinc.net/cash-back/survey/new
-  invite_store: https://marketplace-staging.idmeinc.net/cash-back/store-suggestions/new
-  email_invitation_providers: https://marketplace-staging.idmeinc.net/invitation-providers/new
-  email_batch_invitations: https://marketplace-staging.idmeinc.net/batch-invitations/new
+  cashback_purchases_homepage: https://shop-staging.idmeinc.net/cash-back/purchases
+  user_cashback_profile_url: https://shop-staging.idmeinc.net/cash-back
+  demographic_survey: https://shop-staging.idmeinc.net/cash-back/survey/new
+  invite_store: https://shop-staging.idmeinc.net/cash-back/store-suggestions/new
+  email_invitation_providers: https://shop-staging.idmeinc.net/invitation-providers/new
+  email_batch_invitations: https://shop-staging.idmeinc.net/batch-invitations/new
   refer_friend_email: rich.purnell.rocketman@gmail.com, test+be2@id.me, eddie.park.tester@gmail.com
   refer_25_friends_email: <%= 25.times.map {|n| "test#{n}@id.me"}.join(",") %>
-  user_settings_homepage: https://marketplace-staging.idmeinc.net/profile/edit
+  user_settings_homepage: https://shop-staging.idmeinc.net/profile/edit
   user_fname: Jack
   user_lname: Sparrow
-  user_account_edit: https://marketplace-staging.idmeinc.net/account/edit
+  user_account_edit: https://shop-staging.idmeinc.net/account/edit
   new_password: JollyRoger123
-  favorites_page: https://marketplace-staging.idmeinc.net/favorites
-  group_affiliations_page: https://marketplace-staging.idmeinc.net/cash-back/group-affiliations
-  merchant_page: https://marketplace-staging.idmeinc.net/stores/175-fanatics
+  favorites_page: https://shop-staging.idmeinc.net/favorites
+  group_affiliations_page: https://shop-staging.idmeinc.net/cash-back/group-affiliations
+  merchant_page: https://shop-staging.idmeinc.net/stores/175-fanatics
   merchant_review_text: Review for Fanatics By William Wallace on July 05, 2016 I just got a discount at Fanatics and earned $6.60 in cash back.
   stores_index_page: https://shop-staging.idmeinc.net/stores
-  offers_index_page: https://marketplace-staging.idmeinc.net/offers
-  offers_promo_code_index_page: https://marketplace-staging.idmeinc.net/offers?type=code
-  offers_coupon_index_page: https://marketplace-staging.idmeinc.net/offers?type=coupon
+  offers_index_page: https://shop-staging.idmeinc.net/offers
+  offers_promo_code_index_page: https://shop-staging.idmeinc.net/offers?type=code
+  offers_coupon_index_page: https://shop-staging.idmeinc.net/offers?type=coupon
 
 social_network:
   facebook_email: eddie.park.tester@gmail.com
