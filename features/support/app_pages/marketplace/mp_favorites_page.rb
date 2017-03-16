@@ -6,7 +6,7 @@ class FavoritesPage < IDmeBase
   end
 
   def navigate_from_side_menu_bar
-    find(".user-menu").find(:link,:href => "/favorites").click
+    click_on("Favorites")
   end
 
   def navigate_from_user_menu_nav
@@ -28,7 +28,7 @@ class FavoritesPage < IDmeBase
   end
 
   def add_favorite_store
-    find(".stores-list").first(".table__row").first(".table__cell").find("a").click 
+    find(".stores-list").first(".table__row").first(".table__cell").find("a").click
     click_button "Add to Favorites"
   end
 end
