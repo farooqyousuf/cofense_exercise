@@ -106,8 +106,8 @@ idp:
   new_session_url: https://api-staging.idmeinc.net/session/new
   new_registration_url: https://api-staging.idmeinc.net/registration/new
 hlp:
-  homepage: https://hosted-pages-staging.idmeinc.net/admin/partners/1/pages
-  partner_number: 1
+  homepage: https://hosted-pages-staging.idmeinc.net/admin/partners/26/pages
+  partner_number: 26
 
 hlp_page_test_data:
   body_copy: Mauris eget ornare enim. Quisque sagittis velit ut dui mollis eleifend. Quisque vel interdum risus. Praesent sit amet cursus ex. Mauris suscipit posuere nibh. Phasellus maximus bibendum lectus eget auctor. Curabitur semper placerat lacus ac tincidunt.
