@@ -3,12 +3,12 @@ Given(/^I login the admin tool$/) do
   step 'I visit "VerifyWithScra"'
 end
 
-Given(/^I verify with SCRA for "([^"]*)"$/) do |group|
+Given(/^I verify with SCRA for "([^"]*)"$/) do |affiliation|
   username = @username
-  VerifyWithScra.new.verify(@username, affiliation: group, type: "unique")
+  VerifyWithScra.new.scra_verify(@username, affiliation: affiliation)
 end
 
-Given(/^I should be successfully verified as a "([^"]*)"$/) do |type|
+Given(/^I should be successfully verified as a "([^"]*)"$/) do |affiliation|
   username = @username
-  VerifyWithScra.new.verify(@username, type: type, populate: false, affiliation: "Service Member")
+  VerifyWithScra.new.verify(@username, affiliation: affiliation)
 end
