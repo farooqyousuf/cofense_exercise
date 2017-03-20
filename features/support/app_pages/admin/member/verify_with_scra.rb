@@ -19,11 +19,20 @@ class VerifyWithScra < IDmeBase
     click_link("capybara+")
     click_link("Verify with SCRA")
 
+    case affiliation
+    when "Service Member"   then data_set = :dd214_via_scra
+    when "Veteran"          then data_set = :dd214_via_scra
+    when "Retiree"          then data_set = :dd214_via_scra
+    else puts "Affiliation not found :P "
+    end
+
+    data = data_for(data_set)
+
     case type
     when "unique"
       select affiliation
       puts "Selected #{affiliation} affilation"
-      populate_veteran
+      populate_fields(data: data)
     end
 
     click_button("Submit to SCRA")
@@ -31,10 +40,39 @@ class VerifyWithScra < IDmeBase
 
 
   def verify(username, affiliation: "none")
+
     def select_veteran
       data = data_for(:dd214_via_scra)
       find("td", text: data.fetch("service_member_first_name") + " " + data.fetch("service_member_last_name")).click
     end
+
+    case affiliation
+    when affiliation
+      data = data_for(:dd214_via_scra)
+      select_veteran
+    end
+
+    # case affiliation
+    # when "Service Member"
+    #   data = data_for(:dd214_via_scra)
+    #   select_veteran
+    # when "Veteran"
+    #   data = data_for(:dd214_via_scra)
+    #   select_veteran
+    # when "Retiree"
+    #   data = data_for(:dd214_via_scra)
+    #   select_veteran
+    # when "Military Spouse"
+    #   data = data_for(:scra_mil_spouse)
+    #   select_mil_spouse
+    # when "Military Family"
+    #   data = data_for(:scra_mil_family)
+    #   select_mil_family
+    # end
+
+    sleep 1
+    page.assert_text username
+
 
     def select_mil_spouse
       data = data_for(:scra_mil_spouse)
@@ -45,30 +83,17 @@ class VerifyWithScra < IDmeBase
       data = data_for(:scra_mil_family)
       find("td", text: data.fetch("first_name") + " " + data.fetch("last_name")).click
     end
-
-    case affiliation
-    when "Service Member"
-      data = data_for(:dd214_via_scra)
-      select_veteran
-    when "Veteran"
-      data = data_for(:dd214_via_scra)
-      select_veteran
-    when "Retiree"
-      data = data_for(:dd214_via_scra)
-      select_veteran
-    when "Military Spouse"
-      data = data_for(:scra_mil_spouse)
-      select_mil_spouse
-    when "Military Family"
-      data = data_for(:scra_mil_family)
-      select_mil_family
-    end
-    sleep 1
-    page.assert_text username
   end
 
   def populate_field(search_box:)
     fill_in("query", :with => search_box)
+  end
+
+  def populate_fields(data:)
+    %w(service_member_first_name service_member_last_name service_member_birth_date social).each do |field|
+      fill_in field, :with => data.fetch(field)
+      fill_in("service_date", :with => data.fetch("date_entered"))
+    end
   end
 
   def populate_veteran
