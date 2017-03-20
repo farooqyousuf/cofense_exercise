@@ -20,16 +20,11 @@ class FavoritesPage < IDmeBase
   end
 
   def add_saved_offer
-    click_link "Shop"
-    sleep 1
-    find(:link,:href =>"offers").native.send_keys(:enter)
-    sleep 1
-    first(".offer-card").find(".fa-heart").click
+    find("ul.resources-list-static li:nth-child(1) i.fa-heart").click
   end
 
   def add_favorite_store
     find(:xpath, ".//div[@class='layout-row']/div/ul/li[1]/div/figure/a").click
-    # click_button "Save for Later"
   end
 
   def favorite_offer_header
