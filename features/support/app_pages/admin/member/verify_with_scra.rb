@@ -23,6 +23,8 @@ class VerifyWithScra < IDmeBase
     when "Service Member"   then data_set = :dd214_via_scra
     when "Veteran"          then data_set = :dd214_via_scra
     when "Retiree"          then data_set = :dd214_via_scra
+    when "Military Spouse"  then data_set = :scra_mil_spouse
+    when "Military Family"  then data_set = :scra_mil_family
     else puts "Affiliation not found :P "
     end
 
@@ -35,9 +37,17 @@ class VerifyWithScra < IDmeBase
       populate_fields(data: data)
     end
 
+    if["Military Spouse", "Military Family"].include?(affiliation)
+      %w(first_name last_name birth_date).each do |field|
+        fill_in field, :with => data.fetch(field)
+        fill_in("service_date", :with => data.fetch("service_date"))
+      end
+    else
+      fill_in("service_date", :with => data.fetch("date_entered"))
+    end
+
     click_button("Submit to SCRA")
   end
-
 
   def verify(username, affiliation: "none")
 
@@ -45,34 +55,6 @@ class VerifyWithScra < IDmeBase
       data = data_for(:dd214_via_scra)
       find("td", text: data.fetch("service_member_first_name") + " " + data.fetch("service_member_last_name")).click
     end
-
-    case affiliation
-    when "Service Member" || "Veteran" || "Retiree"
-      data = data_for(:dd214_via_scra)
-      select_veteran
-    end
-
-    # case affiliation
-    # when "Service Member"
-    #   data = data_for(:dd214_via_scra)
-    #   select_veteran
-    # when "Veteran"
-    #   data = data_for(:dd214_via_scra)
-    #   select_veteran
-    # when "Retiree"
-    #   data = data_for(:dd214_via_scra)
-    #   select_veteran
-    # when "Military Spouse"
-    #   data = data_for(:scra_mil_spouse)
-    #   select_mil_spouse
-    # when "Military Family"
-    #   data = data_for(:scra_mil_family)
-    #   select_mil_family
-    # end
-
-    sleep 1
-    page.assert_text username
-
 
     def select_mil_spouse
       data = data_for(:scra_mil_spouse)
@@ -83,6 +65,21 @@ class VerifyWithScra < IDmeBase
       data = data_for(:scra_mil_family)
       find("td", text: data.fetch("first_name") + " " + data.fetch("last_name")).click
     end
+
+    case affiliation
+    when "Service Member" || "Veteran" || "Retiree"
+      data = data_for(:dd214_via_scra)
+      select_veteran
+    when "Military Spouse"
+      data = data_for(:scra_mil_spouse)
+      select_mil_spouse
+    when "Military Family"
+      data = data_for(:scra_mil_family)
+      select_mil_family
+    end
+
+    sleep 1
+    page.assert_text username
   end
 
   def populate_field(search_box:)
@@ -90,35 +87,8 @@ class VerifyWithScra < IDmeBase
   end
 
   def populate_fields(data:)
-    %w(service_member_first_name service_member_last_name service_member_birth_date social).each do |field|
-      fill_in field, :with => data.fetch(field)
-      fill_in("service_date", :with => data.fetch("date_entered"))
-    end
+      %w(service_member_first_name service_member_last_name service_member_birth_date social).each do |field|
+        fill_in field, :with => data.fetch(field)
+      end
   end
-
-
-  def populate_mil_spouse
-    data = data_for(:scra_mil_spouse)
-    fill_in("first_name", :with => data.fetch("first_name"))
-    fill_in("last_name", :with => data.fetch("last_name"))
-    fill_in("birth_date", :with => data.fetch("birth_date"))
-    fill_in("service_member_first_name", :with => data.fetch("service_member_first_name"))
-    fill_in("service_member_last_name", :with => data.fetch("service_member_last_name"))
-    fill_in("service_member_birth_date", :with => data.fetch("service_member_birth_date"))
-    fill_in("social", :with => data.fetch("social"))
-    fill_in("service_date", :with => data.fetch("service_date"))
-  end
-
-  def populate_mil_family
-    data = data_for(:scra_mil_family)
-    fill_in("first_name", :with => data.fetch("first_name"))
-    fill_in("last_name", :with => data.fetch("last_name"))
-    fill_in("birth_date", :with => data.fetch("birth_date"))
-    fill_in("service_member_first_name", :with => data.fetch("service_member_first_name"))
-    fill_in("service_member_last_name", :with => data.fetch("service_member_last_name"))
-    fill_in("service_member_birth_date", :with => data.fetch("service_member_birth_date"))
-    fill_in("social", :with => data.fetch("social"))
-    fill_in("service_date", :with => data.fetch("service_date"))
-  end
-
 end
