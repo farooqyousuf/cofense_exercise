@@ -47,7 +47,7 @@ class VerifyWithScra < IDmeBase
     end
 
     case affiliation
-    when affiliation
+    when "Service Member" || "Veteran" || "Retiree"
       data = data_for(:dd214_via_scra)
       select_veteran
     end
@@ -96,14 +96,6 @@ class VerifyWithScra < IDmeBase
     end
   end
 
-  def populate_veteran
-    data = data_for(:dd214_via_scra)
-    fill_in("service_member_first_name", :with => data.fetch("service_member_first_name"))
-    fill_in("service_member_last_name", :with => data.fetch("service_member_last_name"))
-    fill_in("service_member_birth_date", :with => data.fetch("service_member_birth_date"))
-    fill_in("social", :with => data.fetch("social"))
-    fill_in("service_date", :with => data.fetch("date_entered"))
-  end
 
   def populate_mil_spouse
     data = data_for(:scra_mil_spouse)
