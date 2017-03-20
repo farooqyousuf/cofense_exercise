@@ -23,6 +23,10 @@ class FavoritesPage < IDmeBase
     find("ul.resources-list-static li:nth-child(1) i.fa-heart").click
   end
 
+  def view_favorite_offer
+    click_link("Offers")
+  end
+
   def add_favorite_store
     find(:xpath, ".//div[@class='layout-row']/div/ul/li[1]/div/figure/a").click
   end
