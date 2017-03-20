@@ -12,13 +12,6 @@ class VerifyWithScra < IDmeBase
   end
 
   def scra_verify(username, affiliation:, populate: true, type: nil)
-    if populate
-        populate_field(search_box: username)
-    end
-    click_button("Search")
-    click_link("capybara+")
-    click_link("Verify with SCRA")
-
     case affiliation
     when "Service Member"   then data_set = :dd214_via_scra
     when "Veteran"          then data_set = :dd214_via_scra
@@ -30,55 +23,48 @@ class VerifyWithScra < IDmeBase
 
     data = data_for(data_set)
 
-    case type
-    when "unique"
-      select affiliation
-      puts "Selected #{affiliation} affilation"
-      populate_fields(data: data)
-    end
+    if populate
+      populate_field(search_box: username)
+      click_button("Search")
+      click_link("capybara+")
+      click_link("Verify with SCRA")
 
-    if["Military Spouse", "Military Family"].include?(affiliation)
-      %w(first_name last_name birth_date).each do |field|
-        fill_in field, :with => data.fetch(field)
-        fill_in("service_date", :with => data.fetch("service_date"))
+      case type
+      when "unique"
+        select affiliation
+        puts "Selected #{affiliation} affilation"
+        populate_fields(data: data)
       end
-    else
-      fill_in("service_date", :with => data.fetch("date_entered"))
-    end
 
-    click_button("Submit to SCRA")
-  end
+      if["Military Spouse", "Military Family"].include?(affiliation)
+        %w(first_name last_name birth_date).each do |field|
+          fill_in field, :with => data.fetch(field)
+          fill_in("service_date", :with => data.fetch("service_date"))
+        end
+      else
+        fill_in("service_date", :with => data.fetch("date_entered"))
+      end
 
-  def verify(username, affiliation: "none")
-
-    def select_veteran
-      data = data_for(:dd214_via_scra)
-      find("td", text: data.fetch("service_member_first_name") + " " + data.fetch("service_member_last_name")).click
-    end
-
-    def select_mil_spouse
-      data = data_for(:scra_mil_spouse)
-      find("td", text: data.fetch("first_name") + " " + data.fetch("last_name")).click
-    end
-
-    def select_mil_family
-      data = data_for(:scra_mil_family)
-      find("td", text: data.fetch("first_name") + " " + data.fetch("last_name")).click
+      click_button("Submit to SCRA")
     end
 
     case affiliation
-    when "Service Member" || "Veteran" || "Retiree"
+    when "Service Member"
       data = data_for(:dd214_via_scra)
-      select_veteran
-    when "Military Spouse"
-      data = data_for(:scra_mil_spouse)
-      select_mil_spouse
+      find("td", text: data.fetch("service_member_first_name") + " " + data.fetch("service_member_last_name")).click
+    when "Veteran"
+      find("td", text: data.fetch("service_member_first_name") + " " + data.fetch("service_member_last_name")).click
+    when "Retiree"
+      data = data_for(:dd214_via_scra)
+      find("td", text: data.fetch("service_member_first_name") + " " + data.fetch("service_member_last_name")).click
     when "Military Family"
       data = data_for(:scra_mil_family)
-      select_mil_family
-    end
+      within(".dataTable") do
+        click_link("a", text: data.fetch("first_name") + " " + data.fetch("last_name"))
+      end
 
-    sleep 1
+    end
+    sleep 2
     page.assert_text username
   end
 

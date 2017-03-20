@@ -8,7 +8,7 @@ Given(/^I verify with SCRA for "([^"]*)"$/) do |affiliation|
   VerifyWithScra.new.scra_verify(@username, affiliation: affiliation, type: "unique")
 end
 
-Given(/^I should be successfully verified as a "([^"]*)"$/) do |affiliation|
+Given(/^I should be successfully verified as a "([^"]*)"$/) do |group|
   username = @username
-  VerifyWithScra.new.verify(@username, affiliation: affiliation)
+  VerifyWithScra.new.scra_verify(@username, affiliation: group, populate: false)
 end
