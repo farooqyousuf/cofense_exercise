@@ -51,7 +51,7 @@ end
 Given(/^I add a favorite store$/) do
   visit "https://shop-staging.idmeinc.net/stores"
   @mp_favorites.add_favorite_store
-  @favorite_offer_header = @mp_favorites.favorite_offer_header
+  @favorite_store_header = @mp_favorites.favorite_store_header
 
   expect(page).to have_css("div.unfavorite-merchant")
 end
