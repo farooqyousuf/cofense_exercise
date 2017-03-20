@@ -3,7 +3,6 @@ Given(/^I create a Marketplace Favorites page object$/) do
 end
 
 Given(/^I visit Favorites from side menu navigation page$/) do
-  # step 'I visit "MarketplaceUserAccountEditPage"'
   @mp_favorites.navigate_from_side_menu_bar
 end
 
