@@ -16,10 +16,12 @@ Feature: Test Marketplace Users Favorite Stores & Offers Features
     * I expect to see the Favorite Stores tab
 
   Scenario: User adds a favorite offer
+    * I visit "MarketplaceOffersPage"
     * I add a offer to Saved Offers
     * I confirm that offer has been saved
 
   Scenario: User removes a favorite offer
+    * I visit "MarketplaceOffersPage"
     * I remove a offer from Saved Offers
     * I confirm that the offer has been removed from Saved Offers
 
