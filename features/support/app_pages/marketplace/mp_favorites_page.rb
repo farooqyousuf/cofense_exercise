@@ -28,7 +28,11 @@ class FavoritesPage < IDmeBase
   end
 
   def add_favorite_store
-    find(".stores-list").first(".table__row").first(".table__cell").find("a").click
-    click_button "Add to Favorites"
+    find(:xpath, ".//div[@class='layout-row']/div/ul/li[1]/div/figure/a").click
+    # click_button "Save for Later"
+  end
+
+  def favorite_offer_header
+    find(:xpath,".//section[1]/div/div[2]/h1").text
   end
 end
