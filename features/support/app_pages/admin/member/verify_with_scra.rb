@@ -27,12 +27,10 @@ class VerifyWithScra < IDmeBase
       click_button("Search")
       click_link("capybara+")
       click_link("Verify with SCRA")
-      case type
-      when "unique"
-        select affiliation
-        puts "Selected #{affiliation} affilation"
-        populate_fields(data: data)
-      end
+      select affiliation
+      puts "Selected #{affiliation} affilation"
+      populate_fields(data: data)
+
       if["Military Spouse", "Military Family"].include?(affiliation)
         %w(first_name last_name birth_date).each do |field|
           fill_in field, :with => data.fetch(field)
