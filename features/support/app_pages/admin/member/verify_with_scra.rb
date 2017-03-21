@@ -23,12 +23,12 @@ class VerifyWithScra < IDmeBase
     data = data_for(data_set)
 
     if populate
-      populate_field(search_box: username)
+      populate_search_field(search_box: username)
       click_button("Search")
       click_link("capybara+")
       click_link("Verify with SCRA")
       select affiliation
-      populate_fields(data: data)
+      populate_form_fields(data: data)
 
       if["Military Spouse", "Military Family"].include?(affiliation)
         %w(first_name last_name birth_date).each do |field|
@@ -64,11 +64,11 @@ class VerifyWithScra < IDmeBase
     page.assert_text username
   end
 
-  def populate_field(search_box:)
+  def populate_search_field(search_box:)
     fill_in("query", :with => search_box)
   end
 
-  def populate_fields(data:)
+  def populate_form_fields(data:)
       %w(service_member_first_name service_member_last_name service_member_birth_date social).each do |field|
         fill_in field, :with => data.fetch(field)
       end
