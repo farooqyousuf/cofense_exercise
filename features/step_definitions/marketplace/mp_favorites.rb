@@ -28,7 +28,7 @@ end
 
 Given(/^I remove a offer from Saved Offers$/) do
   @mp_favorites.navigate_from_user_menu_nav
-  @mp_favorites.click_save_offer_icon
+  @mp_favorites.add_saved_offer
   sleep 1
 end
 
