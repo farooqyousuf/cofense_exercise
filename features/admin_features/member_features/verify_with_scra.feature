@@ -7,6 +7,7 @@ Feature: Verify users with SCRA using admin tool
   * I sign up as a new user
   * I should be on the military verification screen
   * I login the admin tool
+  * I visit "VerifyWithScra"
 
   @delete_user
   Scenario: Successful Verification as a Service Member through the Admin Tool
