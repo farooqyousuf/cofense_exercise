@@ -27,14 +27,15 @@ Given(/^I confirm that offer has been saved$/) do
 end
 
 Given(/^I remove a offer from Saved Offers$/) do
-  @mp_favorites.navigate_from_user_menu_nav
   @mp_favorites.add_saved_offer
+  @mp_favorites.navigate_from_user_menu_nav
   sleep 1
 end
 
 Given(/^I confirm that the offer has been removed from Saved Offers$/) do
   page.driver.browser.navigate.refresh
-  expect(page.has_css?(".offer-card")).to be(false)
+  @mp_favorites.view_favorite_offer
+  expect(page).not_to have_css(".offers-list-static")
 end
 
 Given(/^I expect to see the Favorite Offers tab$/) do
