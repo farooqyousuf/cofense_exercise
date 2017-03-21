@@ -22,7 +22,8 @@ Given(/^I confirm that offer has been saved$/) do
   @check_saved_offer_text = @mp_favorites.saved_offer_header
   @mp_favorites.navigate_from_user_menu_nav
   @mp_favorites.view_favorite_offer
-  expect(find(:xpath, '//*[@id="store-offers"]/div/div[3]/ul/li/div/a[2]/div').text).to eql(@check_saved_offer_text)
+  @favorite_header_text = @mp_favorites.favorite_offer_header
+  expect(@favorite_header_text).to eql(@check_saved_offer_text)
 end
 
 Given(/^I remove a offer from Saved Offers$/) do
