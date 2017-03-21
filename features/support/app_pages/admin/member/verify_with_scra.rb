@@ -1,7 +1,6 @@
 require_relative '../../base_classes/base_idp.rb'
 
 class VerifyWithScra < IDmeBase
-  attr_accessor :username
 
   include Capybara::DSL
   include IDPBase
