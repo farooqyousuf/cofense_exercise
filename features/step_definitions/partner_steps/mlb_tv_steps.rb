@@ -1,13 +1,14 @@
 Given(/^MLBTV \- I apply for a yearly premium subscription$/) do
   visit FigNewton.partners.mlb_tv_subscription_page
-  find(".button--yearly").click
+  first(".buy-button").click
   find_button("Buy Now!").click
 end
 
 Given(/^MLBTV \- I apply the Troop ID discount$/) do
+  sleep 1
   idme_window = window_opened_by { click_on("Troop ID") }
-
   within_window idme_window do
+    sleep 2
     sign_in_with_idme
   end
 end
@@ -23,6 +24,6 @@ Given(/^MLBTV \- I verify the Troop ID discount has been applied$/) do
   original_product_amt_string = find("#subtotalAmount").text
   actual_product_discounted_amt_string = find("#discount").text
 
-  discount_applied = verify_discount(original_product_amt_string, actual_product_discounted_amt_string, ".35")
+  discount_applied = verify_discount(original_product_amt_string, actual_product_discounted_amt_string, ".35", :exact_match => true)
   expect(discount_applied).to be(true)
 end

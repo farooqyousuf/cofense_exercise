@@ -1,4 +1,4 @@
-@partners @mlb_tv @version2 @desktop
+@partners @mlb_tv @version2 @desktop @top_partner
 Feature: Test the ID.me MLB.tv Integration
 
   Background:
