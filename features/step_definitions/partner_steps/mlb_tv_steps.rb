@@ -24,7 +24,6 @@ Given(/^MLBTV \- I verify the Troop ID discount has been applied$/) do
   original_product_amt_string = find("#subtotalAmount").text
   actual_product_discounted_amt_string = find("#discount").text
 
-  discount_applied = verify_discount(original_product_amt_string, actual_product_discounted_amt_string, ".35")
-  binding.pry
+  discount_applied = verify_discount(original_product_amt_string, actual_product_discounted_amt_string, ".35", :exact_match => true)
   expect(discount_applied).to be(true)
 end
