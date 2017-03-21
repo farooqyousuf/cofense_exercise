@@ -21,7 +21,6 @@ end
 Given(/^I confirm that offer has been saved$/) do
   @check_saved_offer_text = @mp_favorites.favorite_offer_header
   @mp_favorites.navigate_from_user_menu_nav
-  expect(first(".offer-card").find(".fa-heart").parent.has_css?(".unsave")).to be(true)
   @mp_favorites.view_favorite_offer
   expect(find(:xpath, '//*[@id="store-offers"]/div/div[3]/ul/li/div/a[2]/div').text).to eql(@check_saved_offer_text)
 end
