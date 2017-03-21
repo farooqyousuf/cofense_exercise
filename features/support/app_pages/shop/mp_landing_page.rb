@@ -10,6 +10,7 @@ class MarketplaceLandingPage < IDmeBase
   def sign_in(user,password)
     fill_in_email_by_id(user)
     fill_in_password(password)
+    sleep 1
     click_sign_in
     sleep 3
   end
