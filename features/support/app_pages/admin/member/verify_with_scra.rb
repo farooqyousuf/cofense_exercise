@@ -11,6 +11,7 @@ class VerifyWithScra < IDmeBase
   end
 
   def scra_verify(username, affiliation:, populate: true, type: nil)
+
     case affiliation
     when "Service Member"   then data_set = :dd214_via_scra
     when "Veteran"          then data_set = :dd214_via_scra
@@ -23,6 +24,7 @@ class VerifyWithScra < IDmeBase
     data = data_for(data_set)
 
     if populate
+
       populate_search_field(search_box: username)
       click_button("Search")
       click_link("capybara+")
@@ -38,11 +40,13 @@ class VerifyWithScra < IDmeBase
       else
         fill_in("service_date", :with => data.fetch("date_entered"))
       end
+
       click_button("Submit to SCRA")
     end
   end
 
   def verify(username, affiliation:)
+    
     case affiliation
     when "Service Member"
       data = data_for(:dd214_via_scra)
@@ -60,6 +64,7 @@ class VerifyWithScra < IDmeBase
       data = data_for(:scra_mil_family)
       find("td", text: data.fetch("first_name") + " " + data.fetch("last_name")).click
     end
+
     sleep 2
     page.assert_text username
   end
@@ -73,4 +78,5 @@ class VerifyWithScra < IDmeBase
         fill_in field, :with => data.fetch(field)
       end
   end
+
 end
