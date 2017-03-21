@@ -11,5 +11,6 @@ class MarketplaceLandingPage < IDmeBase
     fill_in_email_by_id(user)
     fill_in_password(password)
     click_sign_in
+    sleep 3
   end
 end
