@@ -19,11 +19,10 @@ Given(/^I add a offer to Saved Offers$/) do
 end
 
 Given(/^I confirm that offer has been saved$/) do
-  @check_saved_offer_text = @mp_favorites.favorite_offer_header
+  @check_saved_offer_text = @mp_favorites.saved_offer_header
   @mp_favorites.navigate_from_user_menu_nav
   @mp_favorites.view_favorite_offer
-  favorite_card_header = find(:xpath, '//*[@id="store-offers"]/div/div[3]/ul/li/div/a[2]/div').text
-  expect(favorite_card_header).to eql(@check_saved_offer_text)
+  expect(find(:xpath, '//*[@id="store-offers"]/div/div[3]/ul/li/div/a[2]/div').text).to eql(@check_saved_offer_text)
 end
 
 Given(/^I remove a offer from Saved Offers$/) do
@@ -58,7 +57,7 @@ end
 
 Given(/^I confirm that the store has been saved$/) do
   visit "https://shop-staging.idmeinc.net/favorites"
-  expect(first(".offer-card").find(".heading").text).to eql(@favorite_offer_header)
+  expect(first(".offer-card").find(".heading").text).to eql(@saved_offer_header)
 end
 
 Given(/^I remove a favorite store from the favorite stores page$/) do
