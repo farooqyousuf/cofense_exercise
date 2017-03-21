@@ -33,7 +33,6 @@ Given(/^I remove a offer from Saved Offers$/) do
 end
 
 Given(/^I confirm that the offer has been removed from Saved Offers$/) do
-  expect(first(".offer-card").find(".fa-heart").parent.has_css?(".unsave")).to be(false)
   page.driver.browser.navigate.refresh
   expect(page.has_css?(".offer-card")).to be(false)
 end
