@@ -10,5 +10,5 @@ end
 
 Given(/^I should be successfully verified as a "([^"]*)"$/) do |group|
   username = @username
-  VerifyWithScra.new.scra_verify(@username, affiliation: group, populate: false)
+  VerifyWithScra.new.verify(@username, affiliation: group)
 end

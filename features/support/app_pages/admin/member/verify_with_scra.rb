@@ -18,7 +18,7 @@ class VerifyWithScra < IDmeBase
     when "Retiree"          then data_set = :dd214_via_scra
     when "Military Spouse"  then data_set = :scra_mil_spouse
     when "Military Family"  then data_set = :scra_mil_family
-    else puts "Affiliation not found :P "
+    else puts "Affiliation not found"
     end
 
     data = data_for(data_set)
@@ -28,14 +28,12 @@ class VerifyWithScra < IDmeBase
       click_button("Search")
       click_link("capybara+")
       click_link("Verify with SCRA")
-
       case type
       when "unique"
         select affiliation
         puts "Selected #{affiliation} affilation"
         populate_fields(data: data)
       end
-
       if["Military Spouse", "Military Family"].include?(affiliation)
         %w(first_name last_name birth_date).each do |field|
           fill_in field, :with => data.fetch(field)
@@ -44,25 +42,27 @@ class VerifyWithScra < IDmeBase
       else
         fill_in("service_date", :with => data.fetch("date_entered"))
       end
-
       click_button("Submit to SCRA")
     end
+  end
 
+  def verify(username, affiliation:)
     case affiliation
     when "Service Member"
       data = data_for(:dd214_via_scra)
       find("td", text: data.fetch("service_member_first_name") + " " + data.fetch("service_member_last_name")).click
     when "Veteran"
+      data = data_for(:dd214_via_scra)
       find("td", text: data.fetch("service_member_first_name") + " " + data.fetch("service_member_last_name")).click
     when "Retiree"
       data = data_for(:dd214_via_scra)
       find("td", text: data.fetch("service_member_first_name") + " " + data.fetch("service_member_last_name")).click
+    when "Military Spouse"
+      data = data_for(:scra_mil_spouse)
+      find("td", text: data.fetch("first_name") + " " + data.fetch("last_name")).click
     when "Military Family"
       data = data_for(:scra_mil_family)
-      within(".dataTable") do
-        click_link("a", text: data.fetch("first_name") + " " + data.fetch("last_name"))
-      end
-
+      find("td", text: data.fetch("first_name") + " " + data.fetch("last_name")).click
     end
     sleep 2
     page.assert_text username
