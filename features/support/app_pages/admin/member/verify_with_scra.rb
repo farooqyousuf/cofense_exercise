@@ -10,7 +10,7 @@ class VerifyWithScra < IDmeBase
     super("#{FigNewton.admin.user_quick_search}")
   end
 
-  def scra_verify(username, affiliation:, populate: true, type: nil)
+  def verify_via_scra(username, affiliation:, populate: true, type: nil)
     case affiliation
     when "Service Member"   then data_set = :dd214_via_scra
     when "Veteran"          then data_set = :dd214_via_scra
@@ -39,7 +39,7 @@ class VerifyWithScra < IDmeBase
     end
   end
 
-  def verify(username, affiliation:)
+  def verify_scra_applied(username, affiliation:)
     sleep 1
     all('tr')[1].all('a')[0].click
     sleep 2
