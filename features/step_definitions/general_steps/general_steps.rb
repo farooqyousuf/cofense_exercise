@@ -67,6 +67,7 @@ Given(/^I submit the verification code for "([^"]*)"$/) do |option|
   @admin_verif_attempts = AdminVerificationAttempts.new
 
   # open and view the latest record
+  sleep 2
   find('#s2id_option').click
   find("#select2-results-5").find("div", :text => "#{option}").click
 
