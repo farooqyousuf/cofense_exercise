@@ -3,6 +3,9 @@
 ### Released
 
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
+##2.2.82 (3/22/17)
+- CORE-7159: Fixed various IVA smoke tests
+
 ##2.2.81 (3/21/17)
 - IDME-3413: Fixed MLB TV Partner Test
 - HOTFIX: Added a sleep to the verification code step in admin tool to fix some tests

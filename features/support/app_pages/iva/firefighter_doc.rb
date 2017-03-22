@@ -37,13 +37,13 @@ class DocFirefighter < IDmeBase
       fill_in field, with: data.fetch(field)
     end
 
-    populate_second_state(data_for(:experian_user).fetch("state"), index=1)
+    escape_google_address_autocomplete(%w(#street #city))
 
     %w(birth_date zip).each do |field|
       2.times { fill_in field, with: data.fetch(field) }
     end
 
-    escape_google_address_autocomplete(%w(#street #city))
+    populate_second_state(data_for(:experian_user).fetch("state"), index=1)
   end
 
   def container_attribute

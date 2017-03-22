@@ -26,7 +26,7 @@ include DataMagic
     all("#{element}")[index].click
     sleep 2
     # pick an option
-    find("#select2-drop .select2-results").find("div", :text => /^#{value}$/i).click
+    find("#select2-drop .select2-results").find("div", :text => value).click
   end
 
   def search_option(container, element, value)
