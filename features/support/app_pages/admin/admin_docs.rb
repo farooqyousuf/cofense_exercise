@@ -10,7 +10,7 @@ include JavascriptAlerts
   end
 
   def approve_doc
-    sort_newest_to_top
+    #sort_newest_to_top
     open_newest
     find("#verification_attempt_status_event_accept").click
     click_button("Update")
