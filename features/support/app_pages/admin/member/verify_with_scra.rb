@@ -31,7 +31,7 @@ class VerifyWithScra < IDmeBase
       populate_form_fields(data: data)
       if["Military Spouse", "Military Family"].include?(affiliation)
         %w(first_name last_name birth_date).each do |field|
-          fill_in field, :with => data.fetch(field)
+          2.times {fill_in field, :with => data_for(data_set).fetch(field)}
           fill_in("service_date", :with => data.fetch("service_date"))
         end
       else
@@ -42,6 +42,7 @@ class VerifyWithScra < IDmeBase
   end
 
   def verify(username, affiliation:)
+    sleep 1
     case affiliation
     when "Service Member"
       data = data_for(:dd214_via_scra)
@@ -57,7 +58,7 @@ class VerifyWithScra < IDmeBase
       find("td", text: data.fetch("first_name") + " " + data.fetch("last_name")).click
     when "Military Family"
       data = data_for(:scra_mil_family)
-      find("td", text: data.fetch("first_name") + " " + data.fetch("last_name")).click
+      all("a", text: data.fetch("first_name") + " " + data.fetch("last_name"))[1].click
     end
 
     sleep 2
