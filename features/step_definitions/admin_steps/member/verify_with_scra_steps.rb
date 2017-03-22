@@ -1,6 +1,5 @@
 Given(/^I login the admin tool$/) do
   @admin = AdminTool.new.login
-  # step 'I visit "VerifyWithScra"'
 end
 
 Given(/^I verify with SCRA for "([^"]*)"$/) do |affiliation|
