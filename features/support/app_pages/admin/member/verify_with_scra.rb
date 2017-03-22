@@ -12,9 +12,9 @@ class VerifyWithScra < IDmeBase
 
   def verify_via_scra(username, affiliation:, populate: true, type: nil)
     case affiliation
-    when "Service Member"   then data_set = :dd214_via_scra
-    when "Veteran"          then data_set = :dd214_via_scra
-    when "Retiree"          then data_set = :dd214_via_scra
+    when "Service Member"   then data_set = :scra_veteran
+    when "Veteran"          then data_set = :scra_veteran
+    when "Retiree"          then data_set = :scra_veteran
     when "Military Spouse"  then data_set = :scra_mil_spouse
     when "Military Family"  then data_set = :scra_mil_family
     else puts "Affiliation not found"
@@ -28,9 +28,8 @@ class VerifyWithScra < IDmeBase
       select affiliation
       populate_form_fields(data: data)
       if["Military Spouse", "Military Family"].include?(affiliation)
-        %w(first_name last_name birth_date).each do |field|
+        %w(first_name last_name birth_date service_date).each do |field|
           2.times {fill_in field, :with => data_for(data_set).fetch(field)}
-          fill_in("service_date", :with => data.fetch("service_date"))
         end
       end
       click_button("Submit to SCRA")
@@ -56,7 +55,7 @@ class VerifyWithScra < IDmeBase
   end
 
   def populate_form_fields(data:)
-    %w(service_member_first_name service_member_last_name service_member_birth_date social).each do |field|
+    %w(service_member_first_name service_member_last_name service_member_birth_date social service_date).each do |field|
       fill_in field, :with => data.fetch(field)
     end
   end
