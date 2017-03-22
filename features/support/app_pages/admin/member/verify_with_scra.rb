@@ -32,8 +32,6 @@ class VerifyWithScra < IDmeBase
           2.times {fill_in field, :with => data_for(data_set).fetch(field)}
           fill_in("service_date", :with => data.fetch("service_date"))
         end
-      else
-        fill_in("service_date", :with => data.fetch("date_entered"))
       end
       click_button("Submit to SCRA")
     end
