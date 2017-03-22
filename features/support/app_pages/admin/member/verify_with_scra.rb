@@ -43,24 +43,7 @@ class VerifyWithScra < IDmeBase
 
   def verify(username, affiliation:)
     sleep 1
-    case affiliation
-    when "Service Member"
-      data = data_for(:dd214_via_scra)
-      find("td", text: data.fetch("service_member_first_name") + " " + data.fetch("service_member_last_name")).click
-    when "Veteran"
-      data = data_for(:dd214_via_scra)
-      find("td", text: data.fetch("service_member_first_name") + " " + data.fetch("service_member_last_name")).click
-    when "Retiree"
-      data = data_for(:dd214_via_scra)
-      find("td", text: data.fetch("service_member_first_name") + " " + data.fetch("service_member_last_name")).click
-    when "Military Spouse"
-      data = data_for(:scra_mil_spouse)
-      find("td", text: data.fetch("first_name") + " " + data.fetch("last_name")).click
-    when "Military Family"
-      data = data_for(:scra_mil_family)
-      all("a", text: data.fetch("first_name") + " " + data.fetch("last_name"))[1].click
-    end
-
+    all('tr')[1].all('a')[0].click
     sleep 2
     page.assert_text username
   end
