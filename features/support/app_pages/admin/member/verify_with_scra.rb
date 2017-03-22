@@ -23,10 +23,8 @@ class VerifyWithScra < IDmeBase
     data = data_for(data_set)
 
     if populate
-      populate_search_field(search_box: username)
-      click_button("Search")
-      click_link("capybara+")
-      click_link("Verify with SCRA")
+
+      search_for_user(username)
       select affiliation
       populate_form_fields(data: data)
       if["Military Spouse", "Military Family"].include?(affiliation)
@@ -46,6 +44,13 @@ class VerifyWithScra < IDmeBase
     all('tr')[1].all('a')[0].click
     sleep 2
     page.assert_text username
+  end
+
+  def search_for_user(username)
+    populate_search_field(search_box: username)
+    click_button("Search")
+    click_link("capybara+")
+    click_link("Verify with SCRA")
   end
 
   def populate_search_field(search_box:)
