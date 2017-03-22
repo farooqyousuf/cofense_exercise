@@ -39,7 +39,6 @@ class VerifyWithScra < IDmeBase
       end
       click_button("Submit to SCRA")
     end
-
   end
 
   def verify(username, affiliation:)
@@ -74,5 +73,4 @@ class VerifyWithScra < IDmeBase
       fill_in field, :with => data.fetch(field)
     end
   end
-
 end
