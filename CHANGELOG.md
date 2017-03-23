@@ -4,7 +4,7 @@
 
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 ##2.2.83 (3/23/17)
-- CORE-71761: Fix DD214 and Gov smoke tests
+- CORE-7161: Fix DD214 and Gov smoke tests
 
 ##2.2.82 (3/22/17)
 - CORE-7159: Fixed various IVA smoke tests
