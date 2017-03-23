@@ -9,6 +9,7 @@ require "data_magic"
 require "fig_newton"
 require "rspec/expectations"
 require "capybara/cucumber"
+require "selenium/webdriver"
 require_relative "test_helper"
 require_relative "app_pages/base_classes/page_mgmt"
 
