@@ -2,10 +2,10 @@
 Feature: Basic Smoke Tests for IDP and IVA
 
   Background:
-    * I visit "MarketplaceLandingPage"
+    * I visit IDP through the "marketplace" policy
 
   Scenario: Successful login
-    * I click on SignIn link
+    * I click on the Sign Up link
     * I scroll to the bottom of the page
     * I login as a "Unverified" user
     * I should be on the Shop Homepage
