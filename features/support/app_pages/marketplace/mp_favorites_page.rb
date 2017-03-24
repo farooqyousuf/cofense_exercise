@@ -28,7 +28,9 @@ class FavoritesPage < IDmeBase
   end
 
   def add_favorite_store
-    find(:xpath, ".//div[@class='layout-row']/div/ul/li[1]/div/figure/a").click
+    find(:xpath, ".//section/div/div/ul/li[1]/div/div[2]/a").click
+    sleep 5
+    find("button.-favorite").click
   end
 
   def saved_offer_header
@@ -36,10 +38,6 @@ class FavoritesPage < IDmeBase
   end
 
   def favorite_offer_header
-      find(:xpath, '//*[@id="store-offers"]/div/div[3]/ul/li/div/a[2]/div').text
-  end
-
-  def favorite_store_header
-    find(:xpath,".//section[1]/div/div[2]/h1").text
+    find(:xpath, "//*[@id='store-offers']/div/div[3]/ul/li/div/a[2]/div").text
   end
 end
