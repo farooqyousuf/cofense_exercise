@@ -40,4 +40,8 @@ class FavoritesPage < IDmeBase
   def favorite_offer_header
     find(:xpath, "//*[@id='store-offers']/div/div[3]/ul/li/div/a[2]/div").text
   end
+
+  def click_favorite_store_heart_icon
+    find(:xpath,'//*[@id="store-offers"]/div/div[1]/ul/li/div/div[1]/div/div[1]/a/i').click
+  end
 end
