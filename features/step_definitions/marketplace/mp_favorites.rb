@@ -60,9 +60,9 @@ end
 
 Given(/^I remove a favorite store from the favorite stores page$/) do
   visit "https://shop-staging.idmeinc.net/favorites"
-  @mp_favorites.click_save_offer_icon
+  @mp_favorites.click_favorite_store_heart_icon
 end
 
 Given(/^I confirm that the store has been unfavorited from the store page$/) do
-  expect(first(".offer-card").find(".fa-heart").parent.has_css?(".unsave")).to be(false)
+  expect(page).to have_css("#store-offers > div > div.stores-tab > ul > li > div > div.offer-tools > div > div.favorite-merchant.hidden")
 end
