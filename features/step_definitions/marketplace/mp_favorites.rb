@@ -64,5 +64,6 @@ Given(/^I remove a favorite store from the favorite stores page$/) do
 end
 
 Given(/^I confirm that the store has been unfavorited from the store page$/) do
-  expect(page).to have_css("#store-offers > div > div.stores-tab > ul > li > div > div.offer-tools > div > div.favorite-merchant.hidden")
+  expect(page).not_to have_css("#store-offers > div > div.stores-tab > ul > li > div
+div.merchant-card")
 end
