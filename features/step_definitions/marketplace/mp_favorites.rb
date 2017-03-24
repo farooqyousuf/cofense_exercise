@@ -49,16 +49,13 @@ Given(/^I expect to see the Favorite Stores tab$/) do
 end
 
 Given(/^I add a favorite store$/) do
-  visit "https://shop-staging.idmeinc.net/stores"
   @mp_favorites.add_favorite_store
-  @favorite_store_header = @mp_favorites.favorite_store_header
-
-  expect(page).to have_css("div.unfavorite-merchant")
+  expect(page).to have_selector(:xpath,".//div[@class='site-content-wrapper']/section[1]/div/div[1]/figure/img[contains(@alt,'123Greetings')]")
 end
 
 Given(/^I confirm that the store has been saved$/) do
   visit "https://shop-staging.idmeinc.net/favorites"
-  expect(first(".offer-card").find(".heading").text).to eql(@saved_offer_header)
+  expect(page).to have_selector(:xpath, ".//*[@id='store-offers']/div/div[1]/ul/li/div/figure/img[contains(@alt,'123Greetings')]")
 end
 
 Given(/^I remove a favorite store from the favorite stores page$/) do
