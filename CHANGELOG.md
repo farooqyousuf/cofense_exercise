@@ -3,9 +3,16 @@
 ### Released
 
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
+##2.2.83 (3/23/17)
+- CORE-7161: Fix DD214 and Gov smoke tests
+
+##2.2.82 (3/22/17)
+- CORE-7159: Fixed various IVA smoke tests
+
 ##2.2.81 (3/21/17)
 - IDME-3413: Fixed MLB TV Partner Test
 - IDME-3414: Fixed Seaworld Partner Test
+- HOTFIX: Added a sleep to the verification code step in admin tool to fix some tests
 
 ##2.2.80 (3/14/17)
 - IDME-3442: Fixed HLP Gated Page Tests
