@@ -14,6 +14,7 @@ All notable changes to this project will be documented in this file. This projec
 
 ##2.2.81 (3/21/17)
 - IDME-3413: Fixed MLB TV Partner Test
+- IDME-3414: Fixed Seaworld Partner Test
 - INT-1021: Verify User with SCRA Cucumber Test
 - HOTFIX: Added a sleep to the verification code step in admin tool to fix some tests
 
