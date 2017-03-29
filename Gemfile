@@ -2,7 +2,7 @@ source "https://rubygems.org"
 
 gem "rspec"
 gem "thor"
-gem "selenium-webdriver"
+gem "selenium-webdriver", "~> 2.53.0"
 gem "rspec-expectations"
 gem "gherkin"
 gem "allure-cucumber"

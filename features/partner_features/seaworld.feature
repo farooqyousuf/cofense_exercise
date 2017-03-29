@@ -21,7 +21,7 @@ Feature: Test the ID.me Seaworld Waves of Honor Partner Integrations
     * I visit the waves of honor "Busch Gardens Tampa" Integration
     * I log in with my Id.me military account
     * I verify that my "Busch Gardens Tampa" service member Complimentary tickets are available
-  @top_partners @wip 
+  @top_partners @wip
   Scenario: Test Busch Gardens Williamsburg Active Military Integration #01-30-17: taken off top partners due to changing promotion
     * I visit the waves of honor "Busch Gardens Williamsburg" Integration
     * I log in with my Id.me military account
@@ -32,6 +32,7 @@ Feature: Test the ID.me Seaworld Waves of Honor Partner Integrations
     * I log in with my Id.me military account
     * I verify that my "Sesame Place Langhorne" service member Complimentary tickets are available
 
+  #There are no offers for Sandiego Active Military at the moment as of 3/1/2017
   Scenario: Test Aquatica San Diego Active Military Integration
     * I visit the waves of honor "Aquatica San Diego" Integration
     * I log in with my Id.me military account
@@ -73,4 +74,3 @@ Feature: Test the ID.me Seaworld Waves of Honor Partner Integrations
     * I visit the waves of honor "Seaworld Orlando Teacher" Integration
     * I log in with my Id.me teacher account
     * I verify that my orlando teacher discount tickets
-
