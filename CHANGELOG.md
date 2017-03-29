@@ -3,6 +3,9 @@
 ### Released
 
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
+##2.2.84 (3/29/17)
+- HOTFIX: Added version number to selenium-webdriver gem in gemfile
+
 ##2.2.83 (3/23/17)
 - CORE-7161: Fix DD214 and Gov smoke tests
 
