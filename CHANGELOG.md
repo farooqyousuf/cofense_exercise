@@ -3,6 +3,9 @@
 ### Released
 
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
+##2.2.84 (3/29/17)
+- HOTFIX: Added version number to selenium-webdriver gem in gemfile
+
 ##2.2.83 (3/23/17)
 - CORE-7161: Fix DD214 and Gov smoke tests
 
@@ -12,6 +15,7 @@ All notable changes to this project will be documented in this file. This projec
 ##2.2.81 (3/21/17)
 - IDME-3413: Fixed MLB TV Partner Test
 - IDME-3414: Fixed Seaworld Partner Test
+- INT-1021: Verify User with SCRA Cucumber Test
 - HOTFIX: Added a sleep to the verification code step in admin tool to fix some tests
 
 ##2.2.80 (3/14/17)
