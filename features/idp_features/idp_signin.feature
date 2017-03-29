@@ -2,7 +2,7 @@
 Feature: User sign in with an existing account
 
   Background:
-    * I visit IDP through the "marketplace" policy
+    * I visit IDP through the "shop" policy
 
   @smoke
   Scenario: Successful login

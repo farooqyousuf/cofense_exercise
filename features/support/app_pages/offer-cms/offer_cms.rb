@@ -1,11 +1,11 @@
 require_relative "../base_classes/base_idme.rb"
 
 class OfferCMSTool < IDmeBase
-  attr_reader :user_uid 
+  attr_reader :user_uid
 
-	def initialize 
+	def initialize
 		super(FigNewton.offer_cms.base_url)
-	end 
+	end
 
   def login_in_new_window
     self.create_new_window
@@ -24,11 +24,11 @@ class OfferCMSTool < IDmeBase
   end
 
   def find_user_uid(username)
-    2.times { find(:link, :href =>"/marketplace_users").click }
+    2.times { find(:link, :href =>"/shop_users").click }
     sleep 1
     fill_in("query2", :with => username)
     click_link "Search"
 
     @user_uid = find("#DataTables_Table_0 tbody td:nth-child(3)").text
   end
-end 	
+end

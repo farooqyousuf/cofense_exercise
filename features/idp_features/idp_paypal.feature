@@ -2,7 +2,7 @@
 Feature: IDP Paypal Login
 
   Background:
-    * I visit IDP through the "marketplace" policy
+    * I visit IDP through the "shop" policy
 
   @delete_paypal_user
   Scenario: Create and login with a new Paypal account

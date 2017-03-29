@@ -3,7 +3,7 @@
 Feature: IDP LinkedIn Login
 
   Background:
-    * I visit IDP through the "marketplace" policy
+    * I visit IDP through the "shop" policy
 
   @delete_linkedin_user
   Scenario: Create and login with a new LinkedIn account
