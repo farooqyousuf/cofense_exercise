@@ -24,6 +24,7 @@ Feature: Test Shop Users Favorite Stores & Offers Features
     * I confirm that the offer has been removed from Saved Offers
 
   Scenario: User adds a favorite store
+    * I visit "ShopStoreIndexPage"
     * I add a favorite store
     * I confirm that the store has been saved
 
