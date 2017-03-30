@@ -37,11 +37,11 @@ class FavoritesPage < IDmeBase
     find(:xpath, ".//section/div/div/section/ul/li[1]/div/a/div[@class='resource-card__description']").text
   end
 
-  def favorite_offer_header
-    find(:xpath, "//*[@id='store-offers']/div/div[3]/ul/li/div/a[2]/div").text
+  def add_favorite_store
+    find(:xpath, ".//div[@class='layout-row']/div/ul/li[1]/div/figure/a").click
   end
 
-  def click_favorite_store_heart_icon
-    find(:xpath,'//*[@id="store-offers"]/div/div[1]/ul/li/div/div[1]/div/div[1]/a/i').click
+  def favorite_offer_header
+    find(:xpath,".//section[1]/div/div[2]/h1").text
   end
 end
