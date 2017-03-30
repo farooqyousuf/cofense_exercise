@@ -2,7 +2,7 @@ class FavoritesPage < IDmeBase
   include IDPBase
 
   def initialize
-    super(FigNewton.marketplace.favorites_page)
+    super(FigNewton.shop.favorites_page)
   end
 
   def navigate_from_side_menu_bar
@@ -28,7 +28,7 @@ class FavoritesPage < IDmeBase
   end
 
   def add_favorite_store
-    find(".stores-list").first(".table__row").first(".table__cell").find("a").click 
+    find(".stores-list").first(".table__row").first(".table__cell").find("a").click
     click_button "Add to Favorites"
   end
 end

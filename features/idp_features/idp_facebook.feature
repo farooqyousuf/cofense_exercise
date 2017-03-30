@@ -2,7 +2,7 @@
 Feature: IDP Facebook Login
 
   Background:
-    * I visit IDP through the "marketplace" policy
+    * I visit IDP through the "shop" policy
 
   @delete_facebook_user
   Scenario: Create and login with a new Facebook account

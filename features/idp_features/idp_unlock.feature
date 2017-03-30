@@ -2,12 +2,12 @@
 Feature: User account lock and unlock
 
   Background:
-    * I visit IDP through the "marketplace" policy
+    * I visit IDP through the "shop" policy
     * I click on the Sign Up link
     * I sign up as a new user
     * I logout of the OAuth Client
     * I clear the session from Authority
-    * I visit IDP through the "marketplace" policy
+    * I visit IDP through the "shop" policy
 
   Scenario: User Account locked due to failed logins
     * I lockout my account

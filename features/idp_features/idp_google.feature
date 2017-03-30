@@ -2,7 +2,7 @@
 Feature: IDP Google Login
 
   Background:
-    * I visit IDP through the "marketplace" policy
+    * I visit IDP through the "shop" policy
 
   @delete_google_user
   Scenario: Create and login with a new Google account

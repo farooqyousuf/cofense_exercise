@@ -2,7 +2,7 @@ class CashBack_PurchasesPage < IDmeBase
   include IDPBase
 
   def initialize
-    super(FigNewton.marketplace.cashback_purchases_homepage)
+    super(FigNewton.shop.cashback_purchases_homepage)
   end
 
   def cash_back_activity_tab_selected
@@ -28,22 +28,22 @@ class CashBack_PurchasesPage < IDmeBase
   end
 
   def click_update_payment_settings_dashboard_button
-    find(".dashboard__payment-info .button").click 
-  end 
+    find(".dashboard__payment-info .button").click
+  end
 
-  def select_amazon_payment_method 
-    find(".payment-option-radios span:nth-child(2)").click 
-  end 
+  def select_amazon_payment_method
+    find(".payment-option-radios span:nth-child(2)").click
+  end
 
   def select_paypal_payment_method
-    find(".payment-option-radios span:nth-child(1)").click 
-  end 
+    find(".payment-option-radios span:nth-child(1)").click
+  end
 
   def click_update_payment_settings_modal_button
-    find(".modal-block input[value='Update Payment Settings']").click 
-  end 
+    find(".modal-block input[value='Update Payment Settings']").click
+  end
 
   def enter_paypal_email
     find("#core_user_paypal_account").set(FigNewton.oauth.paypal_user)
-  end 
+  end
 end

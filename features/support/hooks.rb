@@ -164,8 +164,8 @@ After("@delete_user") do
   @admin_tool.logout_in_new_window
 end
 
-After("@marketplace_cash_back") do
- @marketplace_shop.sign_out
+After("@shop_cash_back") do
+ @shop_shop.sign_out
 end
 
 After("@delete_natl_emt") do
@@ -176,36 +176,36 @@ end
 
 After("@mp_user_group_affiliations") do
   visit_admin_users_in_new_window
-  @admin_user_marketplace.delete_marketplace_test_user
+  @admin_user_shop.delete_shop_test_user
   @admin_tool.logout_in_new_window
 end
 
-After("@marketplace_cash_back") do
+After("@shop_cash_back") do
   visit_admin_users_in_new_window
-  @admin_users.delete_marketplace_test_user
+  @admin_users.delete_shop_test_user
   @admin_tool.logout_in_new_window
 end
 
 After("@wallet_signup") do
   visit_admin_users_in_new_window
-  @admin_users.delete_marketplace_test_user
+  @admin_users.delete_shop_test_user
   @admin_tool.logout_in_new_window
 end
 
 After("@wallet_military_verify") do
   visit_admin_users_in_new_window
-  @admin_users.delete_marketplace_test_user
+  @admin_users.delete_shop_test_user
   @admin_tool.logout_in_new_window
 end
 
 After("@wallet_account_locked") do
   visit_admin_users_in_new_window
-  @admin_users.delete_marketplace_test_user
+  @admin_users.delete_shop_test_user
   @admin_tool.logout_in_new_window
 end
 
 After("@wallet_account_sign_up_social_federation") do
   visit_admin_users_in_new_window
-  @admin_users.delete_marketplace_test_user
+  @admin_users.delete_shop_test_user
   @admin_tool.logout_in_new_window
 end
