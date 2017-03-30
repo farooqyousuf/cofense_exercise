@@ -40,8 +40,8 @@ oauth:
     ficam_loa_1       : http://idmanagement.gov/ns/assurance/loa/1
     ficam_loa_2       : http://idmanagement.gov/ns/assurance/loa/2
     ficam_loa_3       : http://idmanagement.gov/ns/assurance/loa/3
-    marketplace       : marketplace
-    marketplace_edit  : marketplace_edit
+    shop              : shop
+    shop_edit         : shop_edit
     military          : military
     military_enforced : military-enforced
     military_scra     : military_scra
@@ -52,8 +52,8 @@ oauth:
     wallet            : wallet
     general_password  : Password123
 
-mp_users:
-  mp_homepage: https://marketplace-users-staging.idmeinc.net
+shop_users:
+  shop_homepage: https://shop-users-staging.idmeinc.net
   basic: test+basic@id.me
   basic_uid: 7371fb3356d7a3d01026
   preferred: test+preferred@id.me #test+c@id.me
@@ -65,7 +65,7 @@ mp_users:
   incorrect_password: 2legit2quit
   vip_uid: 551dee265b914ad2a0af7eebf872d502
 
-marketplace:
+shop:
   shop_homepage: https://shop-staging.idmeinc.net/shop
   cashback_purchases_homepage: https://shop-staging.idmeinc.net/cash-back/purchases
   user_cashback_profile_url: https://shop-staging.idmeinc.net/cash-back

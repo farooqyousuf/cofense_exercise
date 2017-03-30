@@ -1,16 +1,16 @@
-Given(/^I create Marketplace Store Index Page object$/) do
-  @marketplace_stores_page = MarketplaceStoreIndexPage.new
+Given(/^I create Shop Store Index Page object$/) do
+  @shop_stores_page = ShopStoreIndexPage.new
 end
 
-Given(/^I expect to be at the Marketplace Stores Index Page$/) do
-  expect(page.current_url).to eql(FigNewton.marketplace.stores_index_page)
+Given(/^I expect to be at the Shop Stores Index Page$/) do
+  expect(page.current_url).to eql(FigNewton.shop.stores_index_page)
 end
 
 Given(/^I check that the filter is visible$/) do
   expect(page).to have_css(".sort-filter",:visible => true)
 end
 
-Given(/^I check that the Stores index is visible$/) do
+Given(/^I checkmar that the Stores index is visible$/) do
   expect(page).to have_css(".stores-list-static",:visible => true)
 end
 

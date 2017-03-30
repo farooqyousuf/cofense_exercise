@@ -1,13 +1,24 @@
+<<<<<<< HEAD:features/marketplace_users_features/mp_favorites.feature
 @regression @marketplace @mp_favorites @desktop
 Feature: Test Marketplace Users Favorite Stores & Offers Features
+=======
+@regression @shop @shop_favorites @desktop
+Feature: Test Shop Users Favorite Stores & Offers Features
+>>>>>>> b0d83ffdccc2013101f4de3a831dae5cedf792f5:features/shop/shop_users_features/shop_favorites.feature
 
   Background:
-    * I visit "MarketplaceLandingPage"
+    * I visit "ShopLandingPage"
     * I click on SignIn link
-    * I login to marketplace as a "Military" user
-    * I create a Marketplace Favorites page object
+    * I login to Shop as a "Military" user
+    * I create a Shop Favorites page object
 
+<<<<<<< HEAD:features/marketplace_users_features/mp_favorites.feature
   Scenario: Check Marketplace Favorites page and tabs
+=======
+  Scenario: Check Shop Favorites page and tabs
+    * I visit Favorites from side menu navigation page
+    * I expect to be at the Favorites page
+>>>>>>> b0d83ffdccc2013101f4de3a831dae5cedf792f5:features/shop/shop_users_features/shop_favorites.feature
     * I visit Favorites from user menu navigation page
     * I expect to be at the Favorites page
     * I visit Favorites from side menu navigation page

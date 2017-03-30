@@ -160,7 +160,7 @@ include JavascriptAlerts
     delete_user
   end
 
-  def delete_marketplace_test_user
+  def delete_shop_test_user
     search_for_user(@user_identifier)
     sleep 2
     open_newest

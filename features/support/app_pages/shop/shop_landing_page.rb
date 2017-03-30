@@ -1,10 +1,9 @@
-class MarketplaceLandingPage < IDmeBase
-
+class ShopLandingPage < IDmeBase
   include IDPBase
   include RSpec::Matchers
 
   def initialize
-    super(FigNewton.marketplace.shop_homepage)
+    super(FigNewton.shop.shop_homepage)
   end
 
   def sign_in(user,password)
@@ -13,5 +12,10 @@ class MarketplaceLandingPage < IDmeBase
     sleep 1
     click_sign_in
     sleep 3
+  end
+
+  def sign_up
+    sleep 1
+    click_sign_up
   end
 end

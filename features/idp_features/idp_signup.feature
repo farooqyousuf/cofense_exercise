@@ -2,7 +2,7 @@
 Feature: User account creation
 
   Background:
-    * I visit IDP through the "marketplace" policy
+    * I visit IDP through the "shop" policy
     * I click on the Sign Up link
 
   @smoke

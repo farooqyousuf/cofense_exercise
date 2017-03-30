@@ -1,24 +1,24 @@
 Given(/^I click on the Wallet Sign Up link$/) do
-	click_link "Sign Up"
+  click_link "Sign Up"
 end
 
 Given(/^I click on the Wallet Sign in link$/) do
-  first(:link ,:text =>"Sign In").click 
+  first(:link ,:text =>"Sign In").click
 end
 
-Given(/^I should be on the marketplace landing page$/) do
-  find(".hero--store-grid") #holder allow page to load 
-  expect(page.current_url).to eql(FigNewton.marketplace.shop_homepage)
+Given(/^I should be on the Shop landing page$/) do
+  find(".hero--store-grid") #holder allow page to load
+  expect(page.current_url).to eql(FigNewton.shop.shop_homepage)
   expect(page).to have_css(".site-header__extra-links",:text =>"About Business Wallet")
   expect(page).to have_css(".hero--store-grid .heading",:text =>"Shop Exclusive Deals and Cash Back")
 end
 
 Given(/^I click on the Wallet shared nav link$/) do
-  find(".shared-nav a",:text =>"Wallet").click 
+  find(".shared-nav a",:text =>"Wallet").click
 end
 
 Given(/^I should be on the Wallet dashboard page$/) do
-  find(".wallet-dashboard-module") #holder allow page to load 
+  find(".wallet-dashboard-module") #holder allow page to load
   expect(page).to have_current_path(FigNewton.wallet.homepage.url, :url => true)
   expect(page).to have_css(".wallet-content-main .heading",:text =>"Dashboard")
 end
@@ -31,7 +31,7 @@ end
 Given(/^I login to wallet as a "([^"]*)" user$/) do |affinity_group|
   user_email = case affinity_group
     when "Military" then FigNewton.mp_users.military
-  end 
+  end
 
   @WalletHomepage.sign_in(user_email)
 end
@@ -67,17 +67,17 @@ Given(/^I should see my military group addition on the activity feed$/) do
   expect(page).to have_css(".wallet-events li:nth-child(1)",:text =>"You added Military to your ID.me Wallet on")
 end
 
-Given(/^I record the wallet user email$/) do 
-  @WalletDashboard.open_shared_side_navigation 
-  @user_identifier = find(".shared-nav-user-menu-details li:nth-child(2)").text 
+Given(/^I record the wallet user email$/) do
+  @WalletDashboard.open_shared_side_navigation
+  @user_identifier = find(".shared-nav-user-menu-details li:nth-child(2)").text
   @WalletDashboard.close_shared_side_navigation
-  @username = @user_identifier #required for lockout feature to work TODO: refactor lockout so all use same instance variable  
+  @username = @user_identifier #required for lockout feature to work TODO: refactor lockout so all use same instance variable
   sleep 1
-end 
+end
 
 Given(/^I deactivate my Wallet account$/) do
   step 'I visit "WalletSettings"'
-  
+
   @WalletSettings.switch_to_security_tab
   @WalletSettings.deactivate_wallet_user_account
 
@@ -87,32 +87,32 @@ end
 Given(/^I confirm that my Wallet session has been terminated$/) do
   page.driver.browser.navigate.refresh
   expect(page).to have_text "500: Internal Server Error Our server has gone off to play foosball..."
-end 
+end
 
 Given(/^I verify my Wallet account has been deactived$/) do
   click_link "Sign In"
-  @WalletHomepage.sign_in(@user_identifier) 
+  @WalletHomepage.sign_in(@user_identifier)
 
   expect(page).to have_css(".alert-error",:text =>"We're sorry, this account has been revoked. Please contact our Member Support team for assistance.")
 end
 
 Given(/^I log out of Wallet user account$/) do
   @WalletDashboard.open_shared_side_navigation
-  @WalletDashboard.click_shared_side_navigation_sign_out 
-end 
+  @WalletDashboard.click_shared_side_navigation_sign_out
+end
 
 Given(/^I verify my Wallet lock and unlock on the Wallet activity feed$/) do
   expect(page).to have_css(".wallet-events li:nth-child(1)",:text =>"You signed in to your ID.me Wallet")
   expect(page).to have_css(".wallet-events li:nth-child(2)",:text =>"Your ID.me Wallet was unlocked on")
   expect(page).to have_css(".wallet-events li:nth-child(3)",:text =>"Your ID.me Wallet was locked due to too many failed sign in attempts on")
-end 
+end
 
 
-Given(/^I signup with LinkedIn social federation$/) do 
-  @oauth_client = OAuthClient.new 
+Given(/^I signup with LinkedIn social federation$/) do
+  @oauth_client = OAuthClient.new
   step 'I login with LinkedIn'
   step 'I complete the new Wallet account linking process'
-end 
+end
 
 Given(/^I verify my Wallet LinkedIn Social Federation login$/) do
   step 'I should be on the Wallet dashboard page'
@@ -121,12 +121,12 @@ Given(/^I verify my Wallet LinkedIn Social Federation login$/) do
 end
 
 Given(/^I signin with LinkedIn social federation$/) do
-  @oauth_client = OAuthClient.new 
+  @oauth_client = OAuthClient.new
   step 'I login with LinkedIn'
-end 
+end
 
-Given(/^I verify my Wallet Linkedin Social Federation signin$/) do 
+Given(/^I verify my Wallet Linkedin Social Federation signin$/) do
   step 'I should be on the Wallet dashboard page'
   expect(page).to have_css(".wallet-events li:nth-child(1)",:text =>"You signed in to your ID.me Wallet")
   expect(page).to have_css(".wallet-events li:nth-child(2)",:text =>"You signed in with your Linkedin login on")
-end 
+end

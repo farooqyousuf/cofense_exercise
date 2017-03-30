@@ -2,7 +2,7 @@
 Feature: User password reset
 
   Background:
-    * I visit IDP through the "marketplace" policy
+    * I visit IDP through the "shop" policy
     * I click on Forgot password
 
   Scenario: Forgot Your Password

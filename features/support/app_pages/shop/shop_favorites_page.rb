@@ -2,7 +2,7 @@ class FavoritesPage < IDmeBase
   include IDPBase
 
   def initialize
-    super(FigNewton.marketplace.favorites_page)
+    super(FigNewton.shop.favorites_page)
   end
 
   def navigate_from_side_menu_bar

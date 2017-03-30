@@ -30,6 +30,10 @@ include Capybara::DSL
     click_button("Sign in")
   end
 
+  def click_sign_up
+    first(:link, "Sign Up").click
+  end
+
   def unlock_link
     click_link("here")
   end

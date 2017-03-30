@@ -41,8 +41,8 @@ oauth:
     ficam_loa_1       : http://idmanagement.gov/ns/assurance/loa/1
     ficam_loa_2       : http://idmanagement.gov/ns/assurance/loa/2
     ficam_loa_3       : http://idmanagement.gov/ns/assurance/loa/3
-    marketplace       : marketplace
-    marketplace_edit  : marketplace_edit
+    shop              : shop
+    shop_edit         : shop_edit
     military          : military
     military_enforced : military-enforced
     military_scra     : military_scra
