@@ -6,7 +6,7 @@ class FavoritesPage < IDmeBase
   end
 
   def navigate_from_side_menu_bar
-    click_on("Favorites")
+    find("ul.user-menu__links li:nth-child(2)").click_link("Favorites")
   end
 
   def navigate_from_user_menu_nav
