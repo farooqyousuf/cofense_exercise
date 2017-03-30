@@ -16,17 +16,14 @@ Feature: Test Shop Users Favorite Stores & Offers Features
     * I expect to see the Favorite Stores tab
 
   Scenario: User adds a favorite offer
-    * I visit "ShopOffersPage"
     * I add a offer to Saved Offers
     * I confirm that offer has been saved
 
   Scenario: User removes a favorite offer
-    * I visit "ShopOffersPage"
     * I remove a offer from Saved Offers
     * I confirm that the offer has been removed from Saved Offers
 
   Scenario: User adds a favorite store
-    * I visit "ShopStoreIndexPage"
     * I add a favorite store
     * I confirm that the store has been saved
 
