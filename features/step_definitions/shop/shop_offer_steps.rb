@@ -1,18 +1,9 @@
-<<<<<<< HEAD:features/step_definitions/marketplace/mp_offer_steps.rb
-Given(/^I create a Marketplace Offers index page object$/) do
-  @marketplace_offers = MarketplaceOffersPage.new
-end
-
-Given(/^I expect the page url to be for Marketplace Offers Page$/) do
-  expect(page.current_url).to eql(FigNewton.marketplace.offers_index_page)
-=======
 Given(/^I create a Shop Offers index page object$/) do
-	@shop_offers = ShopOffersPage.new
+  @shop_offers = ShopOffersPage.new
 end
 
 Given(/^I expect the page url to be for Shop Offers Page$/) do
-	expect(page.current_url).to eql(FigNewton.shop.offers_index_page)
->>>>>>> b0d83ffdccc2013101f4de3a831dae5cedf792f5:features/step_definitions/shop/shop_offer_steps.rb
+  expect(page.current_url).to eql(FigNewton.shop.offers_index_page)
 end
 
 Given(/^I check that the Offers Index is available$/) do
@@ -21,7 +12,6 @@ Given(/^I check that the Offers Index is available$/) do
 end
 
 Given(/^I check that store offer index card is visible$/) do
-<<<<<<< HEAD:features/step_definitions/marketplace/mp_offer_steps.rb
   expect(page).to have_css(".offers-list-static .resource-card",:match => :first)
 end
 
@@ -31,17 +21,6 @@ Given(/^I check the store offer card links for "([^"]*)" User$/) do |user_type|
   elsif user_type == "Logged In"
     expect(page).to have_css(".resource-card .button", :match => :first ,:text =>"Shop Now")
   end
-=======
-	expect(page).to have_css(".offers-list-static .resource-card",:match => :first)
-end
-
-Given(/^I check the store offer card links for "([^"]*)" User$/) do |user_type|
-	if user_type == "Logged Out"
-		expect(page).to have_css(".resource-card .button", :match => :first , :text =>"Sign Up & Save")
-	elsif user_type == "Logged In"
-		expect(page).to have_css(".resource-card .button", :match => :first ,:text =>"Shop Now")
-	end
->>>>>>> b0d83ffdccc2013101f4de3a831dae5cedf792f5:features/step_definitions/shop/shop_offer_steps.rb
 
   expect(page).to have_css(".resource-card .offer-card__share-alt",:match => :first , :text =>"Share with Friends")
 end
@@ -57,46 +36,26 @@ Given(/^I check that the store offer card favorite and report bug is visible$/) 
 end
 
 Given(/^I click to see all promo code offers$/) do
-<<<<<<< HEAD:features/step_definitions/marketplace/mp_offer_steps.rb
-  @marketplace_offers.click_promocodes_sidebar_link
+  @shop_offers.click_promocodes_sidebar_link
 
-  expect(page.current_url).to eql(FigNewton.marketplace.offers_promo_code_index_page)
+  expect(page.current_url).to eql(FigNewton.shop.offers_promo_code_index_page)
   expect(page).to have_css(".listing__header .breadcrumbs",:text =>"Shop › Offers › Codes")
-=======
-	@shop_offers.click_promocodes_sidebar_link
-
-	expect(page.current_url).to eql(FigNewton.shop.offers_promo_code_index_page)
-	expect(page).to have_css(".listing__header .breadcrumbs",:text =>"Shop › Offers › Codes")
->>>>>>> b0d83ffdccc2013101f4de3a831dae5cedf792f5:features/step_definitions/shop/shop_offer_steps.rb
 end
 
 Given(/^I check that the table index are promo code offers$/) do
   expect(page).to have_css(".offers-list-static li:nth-child(1) .button",:match => :first, :text =>"Claim Code")
   expect(page).to have_css(".offer-card__share-alt",:match =>:first, :text =>"Share with Friends")
 
-<<<<<<< HEAD:features/step_definitions/marketplace/mp_offer_steps.rb
   (2..10).each do |card_number|
     expect(page).to have_css(".offers-list-static li:nth-child(#{ card_number }) .button",:match =>:first, :text =>"Claim Code")
   end
 end
 
 Given(/^I click to see all Coupon offers$/) do
-  @marketplace_offers.click_coupons_sidebar_link
+  @shop_offers.click_coupons_sidebar_link
 
-  expect(page.current_url).to eql(FigNewton.marketplace.offers_coupon_index_page)
+  expect(page.current_url).to eql(FigNewton.shop.offers_coupon_index_page)
   expect(page).to have_css(".listing__header .breadcrumbs",:text =>"Shop › Offers › Coupons")
-=======
-	(2..10).each do |card_number|
-		expect(page).to have_css(".offers-list-static li:nth-child(#{ card_number }) .button",:match =>:first, :text =>"Claim Code")
-	end
-end
-
-Given(/^I click to see all Coupon offers$/) do
-	@shop_offers.click_coupons_sidebar_link
-
-	expect(page.current_url).to eql(FigNewton.shop.offers_coupon_index_page)
-	expect(page).to have_css(".listing__header .breadcrumbs",:text =>"Shop › Offers › Coupons")
->>>>>>> b0d83ffdccc2013101f4de3a831dae5cedf792f5:features/step_definitions/shop/shop_offer_steps.rb
 end
 
 Given(/^I check that the table index are coupon offers$/) do
@@ -109,7 +68,6 @@ Given(/^I check that the table index are coupon offers$/) do
 end
 
 Given(/^I click to see all Offer Categories$/) do
-<<<<<<< HEAD:features/step_definitions/marketplace/mp_offer_steps.rb
   find(".filters .categories-filter").click
   expect(page).to have_css(".categories-filter .filter__links",:visible => true)
 end
@@ -121,37 +79,21 @@ Given(/^I check the "([^"]*)" categories link$/) do |category|
 end
 
 Given(/^I click to see Group Military offers$/) do
-  @marketplace_offers.click_offer_groups_filter_sidebar_link
-  @marketplace_offers.click_groups_military_sidebar_link
-=======
-	find(".filters .categories-filter").click
-	expect(page).to have_css(".categories-filter .filter__links",:visible => true)
-end
-
-Given(/^I check the "([^"]*)" categories link$/) do |category|
-	find(:link,:href =>"/offers?categories=#{category.downcase}").click
-	expect(page.current_url).to eql("https://shop-staging.idmeinc.net/offers?categories=#{category.downcase}")
-	expect(page).to have_css(".listing__header .breadcrumbs",:text =>"Shop › Offers › #{category}")
-end
-
-Given(/^I click to see Group Military offers$/) do
-	@shop_offers.click_offer_groups_filter_sidebar_link
-	@shop_offers.click_groups_military_sidebar_link
->>>>>>> b0d83ffdccc2013101f4de3a831dae5cedf792f5:features/step_definitions/shop/shop_offer_steps.rb
+  @shop_offers.click_offer_groups_filter_sidebar_link
+  @shop_offers.click_groups_military_sidebar_link
 
   expect(".filter__links:nth-child(1)",:visible => true)
 end
 
 Given(/^I check that the table index shows all military specific$/) do
-	(2..10).each do |card_number|
-		expect(page).to have_css(".offers-list-static li:nth-child(#{ card_number }) .offer-card__tags .-military")
-	end
+  (2..10).each do |card_number|
+    expect(page).to have_css(".offers-list-static li:nth-child(#{ card_number }) .offer-card__tags .-military")
+  end
 end
 
 Given(/^I click to see Group First Responder offers$/) do
-<<<<<<< HEAD:features/step_definitions/marketplace/mp_offer_steps.rb
-  @marketplace_offers.click_offer_groups_filter_sidebar_link
-  @marketplace_offers.click_groups_first_responder_sidebar_link
+  @shop_offers.click_offer_groups_filter_sidebar_link
+  @shop_offers.click_groups_first_responder_sidebar_link
 
   expect(".filter__links:nth-child(2)",:visible => true)
 end
@@ -159,89 +101,42 @@ end
 Given(/^I check that the table index shows all first responder specific offers$/) do
   (2..10).each do |card_number|
     expect(page).to have_css(".offers-list-static li:nth-child(#{ card_number }) .offer-card__tags .-responder")
-   end
+  end
 end
 
 Given(/^I click to see Group Student offers$/) do
-  @marketplace_offers.click_offer_groups_filter_sidebar_link
-  @marketplace_offers.click_groups_student_sidebar_link
-=======
-	@shop_offers.click_offer_groups_filter_sidebar_link
-	@shop_offers.click_groups_first_responder_sidebar_link
-
-	expect(".filter__links:nth-child(2)",:visible => true)
-end
-
-Given(/^I check that the table index shows all first responder specific offers$/) do
-	(2..10).each do |card_number|
-		expect(page).to have_css(".offers-list-static li:nth-child(#{ card_number }) .offer-card__tags .-responder")
-	end
-end
-
-Given(/^I click to see Group Student offers$/) do
-	@shop_offers.click_offer_groups_filter_sidebar_link
-	@shop_offers.click_groups_student_sidebar_link
->>>>>>> b0d83ffdccc2013101f4de3a831dae5cedf792f5:features/step_definitions/shop/shop_offer_steps.rb
+  @shop_offers.click_offer_groups_filter_sidebar_link
+  @shop_offers.click_groups_student_sidebar_link
 
   expect(".filter__links:nth-child(3)",:visible => true)
 end
 
 Given(/^I check that the table index shows all student specific offers$/) do
-<<<<<<< HEAD:features/step_definitions/marketplace/mp_offer_steps.rb
   (2..10).each do |card_number|
     expect(page).to have_css(".offers-list-static li:nth-child(#{ card_number }) .offer-card__tags .-student")
-   end
+  end
 end
 
-Given(/^I click to see Group Government Employees Offers$/) do
-  @marketplace_offers.click_offer_groups_filter_sidebar_link
-  @marketplace_offers.click_groups_government_sidebar_link
+Given(/^I click to see Group Government Eshoployees Offers$/) do
+  @shop_offers.click_offer_groups_filter_sidebar_link
+  @shop_offers.click_groups_government_sidebar_link
   expect(".filter__links:nth-child(4)",:visible => true)
 end
 
-Given(/^I check that the table index shows all government employee specific offers$/) do
+Given(/^I check that the table index shows all government eshoployee specific offers$/) do
   expect(page).to not_have_selector(".offers-list-static .resource-card")
-  #Currently there are no listed government specific deals on marketplace staging
+  #Currently there are no listed government specific deals on shop staging
   #TODO: Add a couple test gov specific offers
 end
 
 Given(/^I click to see Group Teacher offers$/) do
-  @marketplace_offers.click_offer_groups_filter_sidebar_link
-  @marketplace_offers.click_groups_teacher_sidebar_link
+  @shop_offers.click_offer_groups_filter_sidebar_link
+  @shop_offers.click_groups_teacher_sidebar_link
   expect(".filter__links:nth-child(5)",:visible => true)
 end
 
 Given(/^I check that the table index shows all teacher specific offers$/) do
   (2..10).each do |card_number|
     expect(page).to have_css(".offers-list-static li:nth-child(#{ card_number }) .offer-card__tags .-teacher")
-   end
-=======
-	(2..10).each do |card_number|
-		expect(page).to have_css(".offers-list-static li:nth-child(#{ card_number }) .offer-card__tags .-student")
-	end
-end
-
-Given(/^I click to see Group Government Employees Offers$/) do
-	@shop_offers.click_offer_groups_filter_sidebar_link
-	@shop_offers.click_groups_government_sidebar_link
-	expect(".filter__links:nth-child(4)",:visible => true)
-end
-
-Given(/^I check that the table index shows all government employee specific offers$/) do
-		expect(page).to not_have_selector(".offers-list-static .resource-card")
-		#Currently there are no listed government specific deals on shop staging
-		#TODO: Add a couple test gov specific offers
-end
-
-Given(/^I click to see Group Teacher offers$/) do
-	@shop_offers.click_offer_groups_filter_sidebar_link
-	@shop_offers.click_groups_teacher_sidebar_link
-	expect(".filter__links:nth-child(5)",:visible => true)
-end
-
-Given(/^I check that the table index shows all teacher specific offers$/) do
-	(2..10).each do |card_number|
-		expect(page).to have_css(".offers-list-static li:nth-child(#{ card_number }) .offer-card__tags .-teacher")
-	end
->>>>>>> b0d83ffdccc2013101f4de3a831dae5cedf792f5:features/step_definitions/shop/shop_offer_steps.rb
+  end
 end
