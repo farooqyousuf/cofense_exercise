@@ -3,6 +3,9 @@
 ### Released
 
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
+##2.2.87 (3/31/17)
+- CORE-7202: Error codes for Government IVA flows
+
 ##2.2.86 (3/30/17)
 - IDME-3368: Fixed "Shop Favorites" tests that were failing
 

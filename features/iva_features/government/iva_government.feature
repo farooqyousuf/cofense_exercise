@@ -19,12 +19,18 @@ Feature: Government verification using .gov email
     * I submit the empty government form
     * I should see error messages on required fields for "Government"
 
-  Scenario: Dupe check attempt for Government verification
+  Scenario: Dupe check attempt for Government verification (Error code 79)
     * I submit the government verification form as a "dupe" record
     * I should see the red alert box error message "We’re sorry, but we are unable to verify your credentials with the information you provided."
     * I verify the attempt is marked as "DUPLICATE"
 
-  Scenario: Denied attempt for Government verification
+  Scenario: Denied attempt for Government verification (Error code 23)
     * I submit the government verification form as a "denied" record
     * I should see the red alert box error message "Please provide a valid government email address."
     * I verify the attempt is marked as "DENIED"
+
+  Scenario: Prompt Error Code 24
+    * I submit the government verification form as a "unique" record
+    * I submit an invalid verification code
+    * I should see the red alert box error message "We’re sorry, but the code you entered didn’t match the last code we sent you. If you have requested multiple codes, please be sure to enter the most recent code we sent."
+
