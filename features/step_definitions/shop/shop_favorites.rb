@@ -1,4 +1,4 @@
-Given(/^I create a shop Favorites page object$/) do
+Given(/^I create a Shop Favorites page object$/) do
   @shop_favorites = FavoritesPage.new
 end
 
