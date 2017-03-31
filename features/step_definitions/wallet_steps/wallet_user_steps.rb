@@ -1,5 +1,5 @@
 Given(/^I click on the Wallet Sign Up link$/) do
-	click_link "Sign Up"
+  click_link "Sign Up"
 end
 
 Given(/^I click on the Wallet Sign in link$/) do

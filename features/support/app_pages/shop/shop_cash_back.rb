@@ -1,9 +1,9 @@
 class ShopCashBackPage < IDmeBase
 
-    include IDPBase
-    require "HTTParty"
+  include IDPBase
+  require "HTTParty"
 
-    def initialize
-      super(FigNewton.shop_users.shop_homepage)
-    end
+  def initialize
+    super(FigNewton.shop_users.shop_homepage)
+  end
 end

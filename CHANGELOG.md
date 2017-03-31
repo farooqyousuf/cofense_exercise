@@ -3,6 +3,9 @@
 ### Released
 
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
+##2.2.86 (3/30/17)
+- IDME-3368: Fixed "Shop Favorites" tests that were failing
+
 ##2.2.85 (3/30/17)
 - CORE-7191: Fixed the env file for running Firefox on OSX on Saucelabs
 

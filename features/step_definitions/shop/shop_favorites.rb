@@ -3,7 +3,6 @@ Given(/^I create a Shop Favorites page object$/) do
 end
 
 Given(/^I visit Favorites from side menu navigation page$/) do
-  step 'I visit "ShopUserAccountEditPage"'
   @shop_favorites.navigate_from_side_menu_bar
 end
 
@@ -20,22 +19,23 @@ Given(/^I add a offer to Saved Offers$/) do
 end
 
 Given(/^I confirm that offer has been saved$/) do
-  @check_saved_offer_text = first(".offer-card").text
-  expect(first(".offer-card").find(".fa-heart").parent.has_css?(".unsave")).to be(true)
+  @check_saved_offer_text = @shop_favorites.saved_offer_header
   @shop_favorites.navigate_from_user_menu_nav
-  expect(first(".offer-card").text).to eql(@check_saved_offer_text)
+  @shop_favorites.view_favorite_offer
+  @favorite_header_text = @shop_favorites.favorite_offer_header
+  expect(@favorite_header_text).to eql(@check_saved_offer_text)
 end
 
 Given(/^I remove a offer from Saved Offers$/) do
+  @shop_favorites.add_saved_offer
   @shop_favorites.navigate_from_user_menu_nav
-  @shop_favorites.click_save_offer_icon
   sleep 1
 end
 
 Given(/^I confirm that the offer has been removed from Saved Offers$/) do
-  expect(first(".offer-card").find(".fa-heart").parent.has_css?(".unsave")).to be(false)
   page.driver.browser.navigate.refresh
-  expect(page.has_css?(".offer-card")).to be(false)
+  @shop_favorites.view_favorite_offer
+  expect(page).not_to have_css(".offers-list-static")
 end
 
 Given(/^I expect to see the Favorite Offers tab$/) do
@@ -49,23 +49,21 @@ Given(/^I expect to see the Favorite Stores tab$/) do
 end
 
 Given(/^I add a favorite store$/) do
-  visit "https://shop-staging.idmeinc.net/stores"
   @shop_favorites.add_favorite_store
-  @favorite_offer_header = find(".store-details__grid").find(".heading").text
-
-  expect(page).to have_css("div.unfavorite-merchant")
+  expect(page).to have_selector(:xpath,".//div[@class='site-content-wrapper']/section[1]/div/div[1]/figure/img[contains(@alt,'123Greetings')]")
 end
 
 Given(/^I confirm that the store has been saved$/) do
   visit "https://shop-staging.idmeinc.net/favorites"
-  expect(first(".offer-card").find(".heading").text).to eql(@favorite_offer_header)
+  expect(page).to have_selector(:xpath, ".//*[@id='store-offers']/div/div[1]/ul/li/div/figure/img[contains(@alt,'123Greetings')]")
 end
 
 Given(/^I remove a favorite store from the favorite stores page$/) do
   visit "https://shop-staging.idmeinc.net/favorites"
-  @shop_favorites.click_save_offer_icon
+  @shop_favorites.click_favorite_store_heart_icon
 end
 
 Given(/^I confirm that the store has been unfavorited from the store page$/) do
-  expect(first(".offer-card").find(".fa-heart").parent.has_css?(".unsave")).to be(false)
+  expect(page).not_to have_css("#store-offers > div > div.stores-tab > ul > li > div
+div.merchant-card")
 end

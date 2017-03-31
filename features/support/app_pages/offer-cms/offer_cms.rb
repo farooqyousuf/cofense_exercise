@@ -3,9 +3,9 @@ require_relative "../base_classes/base_idme.rb"
 class OfferCMSTool < IDmeBase
   attr_reader :user_uid
 
-	def initialize
-		super(FigNewton.offer_cms.base_url)
-	end
+  def initialize
+    super(FigNewton.offer_cms.base_url)
+  end
 
   def login_in_new_window
     self.create_new_window

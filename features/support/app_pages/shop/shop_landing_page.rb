@@ -1,5 +1,4 @@
 class ShopLandingPage < IDmeBase
-
   include IDPBase
   include RSpec::Matchers
 
@@ -19,5 +18,4 @@ class ShopLandingPage < IDmeBase
     sleep 1
     click_sign_up
   end
-
 end

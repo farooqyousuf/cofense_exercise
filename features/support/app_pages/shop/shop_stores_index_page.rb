@@ -1,7 +1,7 @@
 class ShopStoreIndexPage < IDmeBase
-	include IDPBase
+  include IDPBase
 
-	def initialize
-		super(FigNewton.shop.stores_index_page)
-	end
+  def initialize
+    super(FigNewton.shop.stores_index_page)
+  end
 end
