@@ -59,6 +59,12 @@ Given(/^I authorize the attribute release$/) do
   Consent.new.allow
 end
 
+Given(/^I submit an invalid verification code$/) do
+  @IDmeBase = IDmeBase.new
+  @IDmeBase.fill_in_verification_code("000000")
+end
+
+
 Given(/^I submit the verification code for "([^"]*)"$/) do |option|
   @admin_tool = AdminTool.new
   @admin_tool.login_in_new_window
