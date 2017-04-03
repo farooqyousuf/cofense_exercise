@@ -45,7 +45,6 @@ class OAuthClient
 
   def logout
     click_link("Log out")
-    # visit("https://test-drive-staging.idmeinc.net/oauths/6/logout")
   end
 
   def login_with_facebook
