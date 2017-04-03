@@ -96,8 +96,8 @@ experian_user:
   emt_number: FJDL2
 
 experian_user2:
-  fname: Erin
-  lname: Rashid
+  first_name: Erin
+  last_name: Rashid
   birth_date: 04/30/1942
   social: 666024882
   social_confirm: 666024882
