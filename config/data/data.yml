@@ -96,6 +96,7 @@ experian_user:
   emt_number: FJDL2
 
 experian_user2:
+  school: George Mason University
   first_name: Erin
   last_name: Rashid
   birth_date: 04/30/1942
