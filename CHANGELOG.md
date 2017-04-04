@@ -5,6 +5,7 @@
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 ##2.2.89 (4/4/17)
 - IDME-3469: Fix HLP Promo Page Failing Tests
+- CORE-7205: Student Error Codes Tests
 
 ##2.2.88 (4/3/17)
 - CORE-7204: Teacher Error Codes Tests and fix session clearing logic
