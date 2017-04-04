@@ -62,8 +62,9 @@ Given(/^I check if page name has been already taken for the "([^"]*)"$/) do |hlp
 end
 
 Given(/^I preview the selected HLP page$/) do
+  @hlp_selected_partner_edit_page.click_and_open_new_preview_page
   @new_preview_window = window_opened_by do
-    @hlp_selected_partner_edit_page.click_and_open_new_preview_page
+    @hlp_selected_partner_edit_page.accept_js_alert
   end
 end
 
