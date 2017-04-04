@@ -13,20 +13,23 @@ class TeacherDoc < IDmeBase
 
         unique_data = data_for(:experian_user) #info used for unique and dupliate users
         denied_data = data_for(:fail_experian) #info used for denied user
+        second_unique_data = data_for(:experian_user2)
 
         case type
         when "unique", "duplicate"
           populate_fields(data: unique_data)
         when "denied"
           populate_fields(data: denied_data)
+        when "second unique user"
+          populate_fields(data: second_unique_data)
         end
 
       end
 
       click_verify_button
 
-      if type == "unique"
-        sleep 5
+      if (type == "unique") || (type == "second unique user")
+        sleep 2
         attach_doc
         click_verify_button
       end

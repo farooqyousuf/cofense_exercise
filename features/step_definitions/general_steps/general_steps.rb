@@ -9,15 +9,14 @@ Given(/^I create a new account after clearing my old "([^"]*)" session$/) do |gr
   when "teacher"
     step 'I visit IDP through the "teacher" policy'
   end
+  sleep 2
   step 'I click on the Sign Up link'
+  sleep 2
   step 'I sign up as a new user'
 end
 
 Given(/^I clear the session from Authority$/) do
-  @authority = Authority.new
-  sleep 2
-  @authority.auth_login
-  OAuthClient.new.logout
+  sign_out_of_idme
 end
 
 Given(/^I verify the attempt is marked as "([^"]*)"$/) do |status|
