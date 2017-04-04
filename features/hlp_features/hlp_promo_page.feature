@@ -2,11 +2,11 @@
 
 Feature: Test the HLP DocumentPage functionality
 
-Background:
-  * I visit "HlpPartnerIndexPage"
-  * I login with Authority
-  * I check if page name has been already taken for the "PromoCodePage"
-  * I visit the Add PromoCodePage
+  Background:
+    * I visit "HlpPartnerIndexPage"
+    * I login with Authority
+    * I check if page name has been already taken for the "PromoCodePage"
+    * I visit the Add PromoCodePage
 
   @smoke
   Scenario: Add a new PromoCodePage
@@ -38,7 +38,7 @@ Background:
     * I preview the selected HLP page
     * I verify all the elements on the preview PromoCodePage
     * I delete the selected hlp page
-
+    
  @refactor
   Scenario: Launch an PromoCodePage
     * I create a new PromoCodePage
