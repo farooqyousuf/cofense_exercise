@@ -27,151 +27,107 @@ include JavascriptAlerts
     first('.odd > td > a').click
   end
 
-  def delete_scra_family_member
-    search_for_user("Mike Doe")
-    sleep 1
-    open_newest
-    delete_user
-  end
-
-  def delete_pb_fireman_user
-    search_for_user("Anika Smith")
-    sleep 1
-    open_newest
-    delete_user
-  end
-
-  def delete_dd214_user
-    search_for_user("Benny Washington")
-    sleep 1
-    open_newest
-    delete_user
-  end
-
-  def delete_dd214_user2
-    search_for_user("Joel Smith")
-    sleep 1
-    open_newest
-    delete_user
-  end
-
-  def delete_paypal_user
-    search_for_user("test@id.me")
-    sleep 1
-    open_newest
-    delete_user
-  end
-
-  def delete_facebook_user
-    search_for_user("Sadanberg")
-    sleep 1
-    open_newest
-    delete_user
-  end
-
-  def delete_google_user
-    search_for_user("Capybara Tester")
-    sleep 1
-    open_newest
-    delete_user
-  end
-
-  def delete_linkedin_user
-    search_for_user("bruce.wayne_test@yahoo.com")
-    sleep 1
-    open_newest
-    delete_user
-  end
-
-  def delete_scra_denied_user
-    search_for_user("Johnn Joness")
-    sleep 1
-    open_newest
-    delete_user
-  end
-
-  def delete_scra_user1
-    search_for_user("John Jones")
-    sleep 1
-    open_newest
-    delete_user
-  end
-
-  def delete_scra_user2
-    search_for_user("Harry Dune")
-    sleep 1
-    open_newest
-    delete_user
-  end
-
-  def delete_scra_user3
-    search_for_user("Erin Doe")
-    sleep 1
-    open_newest
-    delete_user
-  end
-
-  def delete_scra_user4
-    search_for_user("Tiffany Killian")
-    sleep 1
-    open_newest
-    delete_user
-  end
-
-  def delete_scra_user5
-    search_for_user("Jane Doe")
-    sleep 1
-    open_newest
-    delete_user
-  end
-
   def delete_user
     click_link("Delete")
     sleep 1
     js_accept
   end
 
-  def delete_experian_user1
-    search_for_user("sue gentz")
+  def open_user_and_delete(user)
+    search_for_user(user)
     sleep 2
     open_newest
     delete_user
   end
 
+  def search_for_user(string)
+    find("input[type='search']").set string
+    find("input[type='search']").native.send_keys(:return)
+  end
+
+  def delete_scra_family_member
+    open_user_and_delete("Mike Doe")
+  end
+
+  def delete_pb_fireman_user
+    open_user_and_delete("Anika Smith")
+  end
+
+  def delete_dd214_user
+    open_user_and_delete("Benny Washington")
+  end
+
+  def delete_dd214_user2
+    open_user_and_delete("Joel Smith")
+  end
+
+  def delete_paypal_user
+    open_user_and_delete("test@id.me")
+  end
+
+  def delete_facebook_user
+    open_user_and_delete("Sadanberg")
+  end
+
+  def delete_google_user
+    open_user_and_delete("Capybara Tester")
+  end
+
+  def delete_linkedin_user
+    open_user_and_delete("bruce.wayne_test@yahoo.com")
+  end
+
+  def delete_scra_denied_user
+    open_user_and_delete("Johnn Joness")
+  end
+
+  def delete_scra_user1
+    open_user_and_delete("John Jones")
+  end
+
+  def delete_scra_user2
+    open_user_and_delete("Harry Dune")
+  end
+
+  def delete_scra_user3
+    open_user_and_delete("Erin Doe")
+  end
+
+  def delete_scra_user4
+    open_user_and_delete("Tiffany Killian")
+  end
+
+  def delete_scra_user5
+    open_user_and_delete("Jane Doe")
+  end
+
+  def delete_experian_user1
+    open_user_and_delete("sue gentz")
+  end
+
   def delete_experian_user2
-    search_for_user("erin rashid")
-    sleep 2
-    open_newest
-    delete_user
+    open_user_and_delete("erin rashid")
   end
 
   def delete_experian_user3
     #CapybaraTester is the name for Mil Doc Family/Spouse, to search and delete from Admin Tool
-    search_for_user("CapybaraTester")
-    sleep 2
-    open_newest
-    delete_user
+    open_user_and_delete("CapybaraTester")
   end
 
   def delete_natl_emt
-    search_for_user("paucar")
-    sleep 2
-    open_newest
-    delete_user
+    open_user_and_delete("paucar")
   end
 
   def delete_shop_test_user
-    search_for_user(@user_identifier)
-    sleep 2
-    open_newest
-    delete_user
+    open_user_and_delete(@user_identifier)
+  end
+
+  def delete_current_username
+    open_user_and_delete(@username)
   end
 
   def record_test_user_email
     @user_identifier = find(".user-menu__header").text
   end
 
-  def search_for_user(string)
-    find("input[type='search']").set string
-  end
 end
