@@ -19,16 +19,19 @@ Feature: Government verification using .gov email
     * I submit the empty government form
     * I should see error messages on required fields for "Government"
 
+  @delete_current_username
   Scenario: Dupe check attempt for Government verification (Error code 79)
     * I submit the government verification form as a "dupe" record
     * I should see the red alert box error message "We’re sorry, but we are unable to verify your credentials with the information you provided."
     * I verify the attempt is marked as "DUPLICATE"
 
+  @delete_current_username
   Scenario: Denied attempt for Government verification (Error code 23)
     * I submit the government verification form as a "denied" record
     * I should see the red alert box error message "Please provide a valid government email address."
     * I verify the attempt is marked as "DENIED"
 
+  @delete_current_username
   Scenario: Prompt Error Code 24
     * I submit the government verification form as a "unique" record
     * I submit an invalid verification code
