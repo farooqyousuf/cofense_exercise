@@ -3,6 +3,9 @@
 ### Released
 
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
+##2.2.90 (4/5/17)
+- HOTFIX: Fixed small typo, 'Shop' to 'shop' in idp_signin_steps.rb
+
 ##2.2.89 (4/4/17)
 - IDME-3469: Fix HLP Promo Page Failing Tests
 - CORE-7205: Student Error Codes Tests
