@@ -8,7 +8,7 @@ Feature: Government verification using .gov email
     * I should be on the government verification screen
 
   # TODO: break this out into the initial email step, admin step, code step
-  @smoke @delete_user
+  @smoke @delete_current_username
   #unique email address
   Scenario: Successful verification with a Government email
     * I submit the government verification form as a "unique" record

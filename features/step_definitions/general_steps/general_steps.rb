@@ -16,6 +16,7 @@ Given(/^I create a new account after clearing my old "([^"]*)" session$/) do |gr
 end
 
 Given(/^I clear the session from Authority$/) do
+  binding.pry
   sign_out_of_idme
 end
 
