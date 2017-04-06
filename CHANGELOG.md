@@ -3,6 +3,9 @@
 ### Released
 
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
+#2.2.91 (4/6/17)
+- CORE-7228: Fix logic for clearing out the old test data after dupe tests
+
 ##2.2.90 (4/5/17)
 - HOTFIX: Fixed small typo, 'Shop' to 'shop' in idp_signin_steps.rb
 
