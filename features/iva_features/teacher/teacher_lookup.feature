@@ -7,28 +7,32 @@ Feature: Teacher verification using state lookup
     * I sign up as a new user
     * I should be on the teacher verification screen
 
-  @smoke
+  @smoke @delete_current_username
   #unique combo of ssn/dob
   Scenario: Successful verification with no license and no ssn
     * I verify using teacher credentials with "no license and no ssn"
     * I "approve" the teacher verification in IDme admin
     * I should be successfully verified
 
+  @delete_current_username
   Scenario: Successful verification with no license and short ssn
     * I verify using teacher credentials with "no license and short ssn"
     * I "approve" the teacher verification in IDme admin
     * I should be successfully verified
 
+  @delete_current_username
   Scenario: Successful verification with license and no ssn
     * I verify using teacher credentials with "license and no ssn"
     * I "approve" the teacher verification in IDme admin
     * I should be successfully verified
 
+  @delete_current_username
   Scenario: Successful verification with license and short ssn
     * I verify using teacher credentials with "license and short ssn"
     * I "approve" the teacher verification in IDme admin
     * I should be successfully verified
 
+  @delete_current_username
   Scenario: Denied attempt for teacher lookup verification (Error code 112)
     * I submit the teacher lookup verification form as a "denied" record
     * I "deny" the teacher verification in IDme admin
