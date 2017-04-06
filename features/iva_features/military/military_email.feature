@@ -7,20 +7,20 @@ Feature: Military verification using .mil email
     * I sign up as a new user
     * I should be on the military verification screen
 
-  @smoke @delete_user
+  @smoke @delete_current_username
   #unique last name/email to pass verification
   Scenario: Successful verification with a military email as Service Member
     * I verify using military email information for "Service Member"
     * I submit the verification code for "Military Email Code"
     * I should be successfully verified as "Service Member"
 
-  @delete_user
+  @delete_current_username
   Scenario: Successful verification with a military email as Military Spouse
     * I verify using military email information for "Military Spouse"
     * I submit the verification code for "Military Email Code"
     * I should be successfully verified as "Military Spouse"
 
-  @delete_user
+  @delete_current_username
   Scenario: Successful verification as Military Family
     * I verify using military email information for "Military Family"
     * I submit the verification code for "Military Email Code"
