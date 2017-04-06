@@ -38,7 +38,10 @@ class StateLookupEMT < IDmeBase
 
     escape_google_address_autocomplete(%w(#street #emt_city))
 
-    populate_second_state("Kansas", index=0)
+    #Added the 2 lines above populate_second_state to deal with the random dropdown not working on occasion
+    all("#s2id_state")[0].click
+    find("#s2id_autogen2_search").native.send_keys :escape
+    2.times {populate_second_state("Kansas", index=0)}
   end
 
   def container_attribute
