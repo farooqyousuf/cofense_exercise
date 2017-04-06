@@ -15,12 +15,13 @@ Feature: Responder verification as a firefighter using document upload
     * I approve the document in IDme admin
     * I should be successfully verified as "Firefighter"
 
+  @delete_current_username
   Scenario: Denied attempt for firefighter doc upload verification
     * I submit the firefighter doc upload verification form as a "denied" record
     * I should see the red alert box error message "We're sorry, but we were unable to verify the information you provided. The information entered must match the information on official records. Note: If you've recently had a name change, try your maiden or prior name."
     * I verify the attempt is marked as "DENIED"
 
-  @delete_experian_user1
+  @delete_experian_user1 @delete_current_username
   Scenario: Dupe attempt test for fireman doc upload
     * I generate a unique doc
     * I verify using firefighter documentation

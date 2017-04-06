@@ -14,12 +14,13 @@ Background:
     * I approve the document in IDme admin
     * I should be successfully verified
 
+  @delete_current_username
   Scenario: Denied attempt for student doc upload verification (Error code 56)
     * I submit the student doc upload verification form as a "denied" record
     * I should see the red alert box error message "We're sorry, but we were unable to verify the information you provided. The information entered must match the information on official records. Note: If you've recently had a name change, try your maiden or prior name."
     * I verify the attempt is marked as "DENIED"
 
-  @delete_experian_user1
+  @delete_experian_user1 @delete_current_username
   Scenario: Dupe attempt test for student doc upload (Error code 88)
     * I verify using student documentation
     * I approve the document in IDme admin
@@ -33,7 +34,7 @@ Background:
     * I submit the empty Student form using "Student Document"
     * I should see error messages on required fields for "Student Document"
 
-  @delete_experian_user1 @delete_experian_user2
+  @delete_experian_user1 @delete_current_username
   Scenario: Prompt Error Code 89
     * I verify using student documentation
     * I approve the document in IDme admin

@@ -133,6 +133,19 @@ After("@delete_scra_user5") do
   @admin_tool.logout_in_new_window
 end
 
+After("@delete_current_username") do
+  visit_admin_users_in_new_window
+  @admin_users.delete_current_username
+  @admin_tool.logout_in_new_window
+end
+
+After("@delete_user") do
+  visit_admin_users_in_new_window
+  @admin_users.open_newest(true)
+  @admin_users.delete_user
+  @admin_tool.logout_in_new_window
+end
+
 After("@delete_experian_user1") do
   visit_admin_users_in_new_window
   @admin_users.delete_experian_user1
@@ -154,13 +167,6 @@ end
 After("@delete_pb_fireman_user") do
   visit_admin_users_in_new_window
   @admin_users.delete_pb_fireman_user
-  @admin_tool.logout_in_new_window
-end
-
-After("@delete_user") do
-  visit_admin_users_in_new_window
-  @admin_users.open_newest(true)
-  @admin_users.delete_user
   @admin_tool.logout_in_new_window
 end
 
