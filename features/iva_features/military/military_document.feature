@@ -50,6 +50,7 @@ Feature: Military verification using document upload
     * Multi-spouse: I verify "second" spouse via "mil doc" is not allowed to verify
     * Multi-family: I verify "fourth" family via "mil doc" is not allowed to verify
 
+ @delete_current_username
  Scenario: Denied attempt for Military Document verification
     * I submit the military document verification form as a "denied" record
     * I should see the red alert box error message "We're sorry, but we were unable to verify the information you provided. The information entered must match the information on official records. Note: If you've recently had a name change, try your maiden or prior name."

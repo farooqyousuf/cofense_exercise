@@ -13,6 +13,7 @@ Feature: Responder verification as an EMT using state lookup
     * I approve the EMT verification in IDme admin
     * I should be successfully verified as "EMT"
 
+  @delete_current_username
   Scenario: Denied attempt for emt state lookup verification
     * I submit the emt state lookup verification form as a "denied" record
     * I should see the red alert box error message "We're sorry, but we were unable to verify the information you provided. The information entered must match the information on official records. Note: If you've recently had a name change, try your maiden or prior name."
@@ -40,6 +41,7 @@ Feature: Responder verification as an EMT using state lookup
     * I approve the document in IDme admin
     * I should be successfully verified as "EMT"
 
+  @delete_current_username
   Scenario: Denied attempt for EMT state doc upload verification
     * I submit the state EMT Document Upload form as a "denied" record
     * I should see the red alert box error message "We're sorry, but we were unable to verify the information you provided. The information entered must match the information on official records. Note: If you've recently had a name change, try your maiden or prior name."

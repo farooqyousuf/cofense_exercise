@@ -26,6 +26,7 @@ Feature: Military verification using .mil email
     * I submit the verification code for "Military Email Code"
     * I should be successfully verified as "Military Family"
 
+  @delete_current_username
   Scenario: Denied attempt for military email verification
     * I submit the military email verification form as a "denied" record
     * I should see the red alert box error message "We're sorry, but the name you entered does not match the name specified by the email address. Please try a different verification option."
