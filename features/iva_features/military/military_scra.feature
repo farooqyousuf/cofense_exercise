@@ -46,13 +46,13 @@ Feature: Military verification using SCRA credentials
     * Multi-family: I verify "fourth" family via "scra" is not allowed to verify
 
   @delete_scra_denied_user
-  Scenario: Denied attempt for military scra verification
+  Scenario: Denied attempt for military scra verification (Error code 1)
     * I submit the military scra verification form as a "denied" record
     * I should see the red alert box error message "We're sorry, but we were unable to verify your military status with the information you provided. Please utilize the name you held when discharged, and be sure to use an active duty date from the middle of your period of service. Note that Reservists, National Guardsmen, and all pre-1985 Veterans, must verify by uploading documentation. For additional information, please see our Support page."
     * I verify the attempt is marked as "DENIED"
 
  @delete_scra_dupe_user @wip
- Scenario: Dupe attempt test for Military SCRA
+ Scenario: Dupe attempt test for Military SCRA (Error code 73)
     * I verify using SCRA for "Service Member"
     * I clear the session from Authority
     * I create a new account after clearing my old "military" session
