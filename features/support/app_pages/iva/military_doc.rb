@@ -15,12 +15,15 @@ class MilitaryDoc < IDmeBase
 
       unique_data = data_for(:mil_doc) #info used for unique and dupe users
       denied_data = data_for(:fail_experian) #info used for denied users
+      second_unique_data = data_for(:experian_user2)
 
       case type
       when "unique", "duplicate"
         populate_fields(data: unique_data)
       when "denied"
         populate_fields(data: denied_data)
+      when "second unique user"
+        populate_fields(data: second_unique_data)
       end
 
       if ["Military Family", "Military Spouse"].include?(affiliation)
@@ -34,7 +37,8 @@ class MilitaryDoc < IDmeBase
     click_verify_button
     sleep 3
 
-    if ((type == "unique") && (!page.text.include?("We’re sorry, but we are unable to verify your credentials with the information you provided.")))
+    if (type == "unique") || (type == "second unique user")
+    # if ((type == "unique") && (!page.text.include?("We’re sorry, but we are unable to verify your credentials with the information you provided.")))
       #attach dd214 doc
       populate_dd214_type("DD214 - Other")
       attach_doc
