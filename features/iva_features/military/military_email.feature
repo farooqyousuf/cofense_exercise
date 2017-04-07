@@ -27,16 +27,22 @@ Feature: Military verification using .mil email
     * I should be successfully verified as "Military Family"
 
   @delete_current_username
-  Scenario: Denied attempt for military email verification
+  Scenario: Denied attempt for military email verification (Error code 13)
     * I submit the military email verification form as a "denied" record
     * I should see the red alert box error message "We're sorry, but the name you entered does not match the name specified by the email address. Please try a different verification option."
     * I verify the attempt is marked as "DENIED"
 
   @delete_current_username
-  Scenario: Duplicate attempt for military email verification
+  Scenario: Duplicate attempt for military email verification (Error code 76)
     * I submit the military email verification form as a "duplicate" record
     * I should see the red alert box error message "We’re sorry, but we are unable to verify your military status with the information you provided."
     * I verify the attempt is marked as "DUPLICATE"
+
+  @delete_current_username
+  Scenario: Prompt Error Code 14
+    * I submit the military email verification form as a "unique" record
+    * I submit an invalid verification code
+    * I should see the red alert box error message "We’re sorry, but the code you entered didn’t match the last code we sent you. If you have requested multiple codes, please be sure to enter the most recent code we sent."
 
   Scenario: Successfully prompt for all required fields for Service Member
     * I submit the empty military email form for "Service Member"
