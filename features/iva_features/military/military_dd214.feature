@@ -35,7 +35,7 @@ Feature: Military verification using DD214 request
     * I verify the attempt is marked as "DENIED"
 
  @delete_dd214_dupe_user
- Scenario: Dupe attempt test for Military DD214
+ Scenario: Dupe attempt test for Military DD214 (Error code 75)
     * I verify using DD214 information for "Veteran" via "document"
     * I clear the session from Authority
     * I create a new account after clearing my old "military" session
