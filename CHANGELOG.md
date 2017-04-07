@@ -11,6 +11,7 @@ All notable changes to this project will be documented in this file. This projec
 
 ##2.2.92 (4/7/17)
 - CORE-7203: Military Error Codes Tests
+- IDME-3536: Fix HLP broken tests
 
 ##2.2.91 (4/6/17)
 - CORE-7228: Fix logic for clearing out the old test data after dupe tests
