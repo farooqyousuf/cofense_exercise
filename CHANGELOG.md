@@ -5,6 +5,7 @@
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 ##2.2.93 (4/10/17)
 - CORE-7246: Fixed IDP Unlock Test
+- CORE-7206: Responder Error Code Tests
 
 ##2.2.92 (4/7/17)
 - CORE-7203: Military Error Codes Tests
