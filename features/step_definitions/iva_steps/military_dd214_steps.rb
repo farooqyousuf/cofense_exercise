@@ -4,6 +4,9 @@ Given(/^I verify using DD214 information for "(.*)" via "(.*)"$/) do |affiliatio
   else
     DD214.new.verify(affiliation: affiliation, type: "unique", method: method)
   end
+  if page.has_text? "ID.me Staging would like to access some of your data"
+    step 'I authorize the attribute release'
+  end
 end
 
 Given(/^I submit the empty DD214 form for "([^"]*)"$/) do |group|
