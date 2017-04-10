@@ -158,6 +158,12 @@ emt_national:
   birth_date: 01/01/1924
   registry_number: M8037059
 
+expired_emt_national:
+  first_name: Aaron
+  last_name: Johnson
+  birth_date: 01/01/1924
+  registry_number: M8037099
+
 denied_emt_national:
   first_name: Farooq
   last_name: Yousuf
