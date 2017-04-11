@@ -3,6 +3,9 @@
 ### Released
 
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
+##2.2.94 (4/10/17)
+- CORE-7263: Fixed IVA Military DD214 Test
+
 ##2.2.93 (4/10/17)
 - CORE-7246: Fixed IDP Unlock Test
 
