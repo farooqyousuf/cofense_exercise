@@ -35,10 +35,10 @@ Feature: Test the HLP DocumentPage functionality
   Scenario: Preview an PromoCodePage
     * I create a new PromoCodePage
     * I add new promo codes to the page
-    * I preview the selected HLP page
+    * I preview the promo HLP page
     * I verify all the elements on the preview PromoCodePage
     * I delete the selected hlp page
-    
+
  @refactor
   Scenario: Launch an PromoCodePage
     * I create a new PromoCodePage
