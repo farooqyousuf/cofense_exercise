@@ -28,10 +28,6 @@ Feature: Test Shop Offers Page
    * I click to see all promo code offers
    * I check that the table index are promo code offers
 
- Scenario: Check Offers Side Bar - Coupons
-   * I click to see all Coupon offers
-   * I check that the table index are coupon offers
-
  Scenario: Check Offers Side Bar - Categories
    * I click to see all Offer Categories
    * I check the "Accessories" categories link

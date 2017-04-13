@@ -9,10 +9,6 @@ class ShopOffersPage < IDmeBase
     find(:link ,:text =>"Promo Codes").click
   end
 
-  def click_coupons_sidebar_link
-    find(:link, :text =>"Coupons").click
-  end
-
   def click_groups_military_sidebar_link
     find(".filter__links:nth-child(1)").click
   end

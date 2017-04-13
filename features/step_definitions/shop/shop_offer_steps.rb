@@ -56,22 +56,6 @@ Given(/^I check that the table index are promo code offers$/) do
   end
 end
 
-Given(/^I click to see all Coupon offers$/) do
-  @shop_offers.click_coupons_sidebar_link
-
-  expect(page.current_url).to eql(FigNewton.shop.offers_coupon_index_page)
-  expect(page).to have_css(".listing__header .breadcrumbs",:text =>"Shop › Offers › Coupons")
-end
-
-Given(/^I check that the table index are coupon offers$/) do
-  expect(page).to have_css(".offers-list-static")
-
-  #Currently Matcher for coupon page are hard coded to offers because unable to differentiate coupon specific offers but be aware that very brittle
-  expect(page).to have_css(".offers-list-static li:nth-child(1)",:text =>"PLUS UP TO 1.3% CASH BACK Up to 50% off electronics and more! Shop Now Share with Friends")
-  expect(page).to have_css(".offers-list-static li:nth-child(2)",:text =>"PLUS UP TO 4.0% CASH BACK Up to 50% off Daily Deals. Shop Now Share with Friends")
-  expect(page).to have_css(".offers-list-static li:nth-child(3)",:text =>"PLUS UP TO 4.0% CASH BACK 10% Off Orders for the Military Community Sign Up & Save Share with Friends")
-end
-
 Given(/^I click to see all Offer Categories$/) do
   find(".filters .categories-filter").click
   expect(page).to have_css(".categories-filter .filter__links",:visible => true)
