@@ -83,13 +83,11 @@ end
 Given(/^I click to see Group First Responder offers$/) do
   @shop_offers.click_offer_groups_filter_sidebar_link
   @shop_offers.click_groups_first_responder_sidebar_link
-
-  expect(".filter__links:nth-child(2)",:visible => true)
 end
 
 Given(/^I check that the table index shows all first responder specific offers$/) do
   (2..10).each do |card_number|
-    expect(page).to have_css(".offers-list-static li:nth-child(#{ card_number }) .offer-card__tags .-responder")
+    expect(page).to have_css(".offers-list-static li:nth-child(#{ card_number }) .offer-card__tags .idme-wallet-button-responder")
   end
 end
 

@@ -14,7 +14,7 @@ class ShopOffersPage < IDmeBase
   end
 
   def click_groups_first_responder_sidebar_link
-    find(".filter__links:nth-child(2)").click
+    find(".filter__links li:nth-child(2)").click
   end
 
   def click_groups_student_sidebar_link
