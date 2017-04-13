@@ -43,11 +43,16 @@ Given(/^I click to see all promo code offers$/) do
 end
 
 Given(/^I check that the table index are promo code offers$/) do
-  expect(page).to have_css(".offers-list-static li:nth-child(1) .button",:match => :first, :text =>"Claim Code")
+  if find(".offers-list-static li .button",:match => :first, :text =>"Unlock to Save")
+    expect(page).to have_css(".offers-list-static li .button",:match => :first, :text =>"Unlock to Save")
+  else
+    expect(page).to have_css(".offers-list-static li .button",:match => :first, :text =>"Claim Code")
+  end
+
   expect(page).to have_css(".offer-card__share-alt",:match =>:first, :text =>"Share with Friends")
 
-  (2..10).each do |card_number|
-    expect(page).to have_css(".offers-list-static li:nth-child(#{ card_number }) .button",:match =>:first, :text =>"Claim Code")
+  within find("ul.resources-list-static.offers-list-static") do
+    expect(page).to have_content("Claim Code", minimum: 1)
   end
 end
 
