@@ -100,16 +100,15 @@ Given(/^I check that the table index shows all student specific offers$/) do
   end
 end
 
-Given(/^I click to see Group Government Eshoployees Offers$/) do
+Given(/^I click to see Group Government Employees offers$/) do
   @shop_offers.click_offer_groups_filter_sidebar_link
   @shop_offers.click_groups_government_sidebar_link
-  expect(".filter__links:nth-child(4)",:visible => true)
 end
 
-Given(/^I check that the table index shows all government eshoployee specific offers$/) do
-  expect(page).to not_have_selector(".offers-list-static .resource-card")
-  #Currently there are no listed government specific deals on shop staging
-  #TODO: Add a couple test gov specific offers
+Given(/^I check that the table index shows all government employee specific offers$/) do
+  (1..2).each do |card_number|
+    expect(page).to have_css(".offers-list-static li:nth-child(#{ card_number }) .offer-card__tags .idme-wallet-button-government")
+  end
 end
 
 Given(/^I click to see Group Teacher offers$/) do

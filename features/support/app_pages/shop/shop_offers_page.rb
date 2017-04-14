@@ -22,7 +22,7 @@ class ShopOffersPage < IDmeBase
   end
 
   def click_groups_government_sidebar_link
-    find(".filter__links:nth-child(4)").click
+    find(".filter__links li:nth-child(4)").click
   end
 
   def click_groups_teacher_sidebar_link
