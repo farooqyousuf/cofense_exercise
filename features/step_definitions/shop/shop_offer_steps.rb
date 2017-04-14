@@ -70,13 +70,11 @@ end
 Given(/^I click to see Group Military offers$/) do
   @shop_offers.click_offer_groups_filter_sidebar_link
   @shop_offers.click_groups_military_sidebar_link
-
-  expect(".filter__links:nth-child(1)",:visible => true)
 end
 
-Given(/^I check that the table index shows all military specific$/) do
+Given(/^I check that the table index shows all military specific offers$/) do
   (2..10).each do |card_number|
-    expect(page).to have_css(".offers-list-static li:nth-child(#{ card_number }) .offer-card__tags .-military")
+    expect(page).to have_css(".offers-list-static li:nth-child(#{ card_number }) .offer-card__tags .idme-wallet-button-military")
   end
 end
 
@@ -94,13 +92,11 @@ end
 Given(/^I click to see Group Student offers$/) do
   @shop_offers.click_offer_groups_filter_sidebar_link
   @shop_offers.click_groups_student_sidebar_link
-
-  expect(".filter__links:nth-child(3)",:visible => true)
 end
 
 Given(/^I check that the table index shows all student specific offers$/) do
   (2..10).each do |card_number|
-    expect(page).to have_css(".offers-list-static li:nth-child(#{ card_number }) .offer-card__tags .-student")
+    expect(page).to have_css(".offers-list-static li:nth-child(#{ card_number }) .offer-card__tags .idme-wallet-button-student")
   end
 end
 
@@ -119,11 +115,10 @@ end
 Given(/^I click to see Group Teacher offers$/) do
   @shop_offers.click_offer_groups_filter_sidebar_link
   @shop_offers.click_groups_teacher_sidebar_link
-  expect(".filter__links:nth-child(5)",:visible => true)
 end
 
 Given(/^I check that the table index shows all teacher specific offers$/) do
   (2..10).each do |card_number|
-    expect(page).to have_css(".offers-list-static li:nth-child(#{ card_number }) .offer-card__tags .-teacher")
+    expect(page).to have_css(".offers-list-static li:nth-child(#{ card_number }) .offer-card__tags .idme-wallet-button-teacher")
   end
 end
