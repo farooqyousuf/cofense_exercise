@@ -23,6 +23,7 @@ include DataMagic
 
   def select_option(container, element, value, index)
     # click the dropdown
+    sleep 1
     all("#{element}")[index].click
     sleep 2
     # pick an option
