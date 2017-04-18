@@ -43,7 +43,9 @@ Given(/^I click to see all promo code offers$/) do
 end
 
 Given(/^I check that the table index are promo code offers$/) do
-  if find(".offers-list-static li .button",:match => :first, :text =>"Unlock to Save")
+  @unlock_to_save = @shop_offers.find_unlock_to_save
+
+  if @unlock_to_save
     expect(page).to have_css(".offers-list-static li .button",:match => :first, :text =>"Unlock to Save")
   else
     expect(page).to have_css(".offers-list-static li .button",:match => :first, :text =>"Claim Code")

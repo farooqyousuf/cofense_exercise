@@ -32,4 +32,8 @@ class ShopOffersPage < IDmeBase
   def click_offer_groups_filter_sidebar_link
     find(".filters .groups-filter").click
   end
+
+  def find_unlock_to_save
+    find(".offers-list-static li .button",:match => :first, :text =>"Unlock to Save")
+  end
 end
