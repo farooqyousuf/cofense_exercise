@@ -34,6 +34,6 @@ class ShopOffersPage < IDmeBase
   end
 
   def find_unlock_to_save
-    find(".offers-list-static li .button",:match => :first, :text =>"Unlock to Save")
+    find(".offers-list-static li .button", :match => :first, :text => "Unlock to Save")
   end
 end

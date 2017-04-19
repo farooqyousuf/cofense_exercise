@@ -46,15 +46,15 @@ Given(/^I check that the table index are promo code offers$/) do
   @unlock_to_save = @shop_offers.find_unlock_to_save
 
   if @unlock_to_save
-    expect(page).to have_css(".offers-list-static li .button",:match => :first, :text =>"Unlock to Save")
+    expect(page).to have_css(".offers-list-static li .button", :match => :first, :text => "Unlock to Save")
   else
-    expect(page).to have_css(".offers-list-static li .button",:match => :first, :text =>"Claim Code")
+    expect(page).to have_css(".offers-list-static li .button", :match => :first, :text => "Claim Code")
   end
 
-  expect(page).to have_css(".offer-card__share-alt",:match =>:first, :text =>"Share with Friends")
+  expect(page).to have_css(".offer-card__share-alt", :match => :first, :text => "Share with Friends")
 
   within find("ul.resources-list-static.offers-list-static") do
-    expect(page).to have_content("Claim Code", minimum: 1)
+    expect(page).to have_content("Claim Code", :minimum => 1)
   end
 end
 
@@ -76,7 +76,7 @@ end
 
 Given(/^I check that the table index shows all military specific offers$/) do
   (2..10).each do |card_number|
-    expect(page).to have_css(".offers-list-static li:nth-child(#{ card_number }) .offer-card__tags .idme-wallet-button-military")
+    expect(page).to have_css(".offers-list-static li:nth-child(#{card_number}) .idme-wallet-button-military")
   end
 end
 
@@ -87,7 +87,7 @@ end
 
 Given(/^I check that the table index shows all first responder specific offers$/) do
   (2..10).each do |card_number|
-    expect(page).to have_css(".offers-list-static li:nth-child(#{ card_number }) .offer-card__tags .idme-wallet-button-responder")
+    expect(page).to have_css(".offers-list-static li:nth-child(#{card_number}) .idme-wallet-button-responder")
   end
 end
 
@@ -98,7 +98,7 @@ end
 
 Given(/^I check that the table index shows all student specific offers$/) do
   (2..10).each do |card_number|
-    expect(page).to have_css(".offers-list-static li:nth-child(#{ card_number }) .offer-card__tags .idme-wallet-button-student")
+    expect(page).to have_css(".offers-list-static li:nth-child(#{card_number}) .idme-wallet-button-student")
   end
 end
 
@@ -109,7 +109,7 @@ end
 
 Given(/^I check that the table index shows all government employee specific offers$/) do
   (1..2).each do |card_number|
-    expect(page).to have_css(".offers-list-static li:nth-child(#{ card_number }) .offer-card__tags .idme-wallet-button-government")
+    expect(page).to have_css(".offers-list-static li:nth-child(#{card_number}) .idme-wallet-button-government")
   end
 end
 
@@ -120,6 +120,6 @@ end
 
 Given(/^I check that the table index shows all teacher specific offers$/) do
   (2..10).each do |card_number|
-    expect(page).to have_css(".offers-list-static li:nth-child(#{ card_number }) .offer-card__tags .idme-wallet-button-teacher")
+    expect(page).to have_css(".offers-list-static li:nth-child(#{card_number}) .idme-wallet-button-teacher")
   end
 end
