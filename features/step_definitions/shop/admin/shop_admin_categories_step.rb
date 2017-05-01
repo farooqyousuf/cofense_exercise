@@ -1,9 +1,9 @@
 Given(/^I navigate to the create a new category page$/) do
-  pending
+  visit FigNewton.shop_admin.categories
 end
 
 Given(/^I sumbit a valid new category$/) do
-    pending # Write code here that turns the phrase above into concrete actions
+  @ShopAdminCategories.create_new_valid_category
 end
 
 Given(/^I verify the category has been created$/) do
