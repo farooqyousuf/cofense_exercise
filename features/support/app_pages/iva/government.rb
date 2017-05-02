@@ -40,10 +40,6 @@ class IVAGovernment < IDmeBase
     populate_agency(data.fetch("agency"))
   end
 
-  # def container_attribute
-  #   'government-email'
-  # end
-
   def populate_affiliation(affiliation)
     select_option("#s2id_verification_subgroup_id", affiliation)
   end
