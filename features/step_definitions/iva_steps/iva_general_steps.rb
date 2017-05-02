@@ -1,5 +1,18 @@
+Given(/^I click on the Begin link$/) do
+  click_link("Begin")
+end
+
+# Given(/^I should be on the "([^"]*)" verification screen$/) do |group|
+#   @page = Object.const_get(group).new # converts a string text into a class name
+#   binding.pry
+#   find(@page.h1_title).visible?
+#   find(@page.heading_image).visible?
+#   bindng.pry
+# end
+
 Given(/^I should be successfully verified(?: as "(.*)")?$/) do |group|
   flag = ["LOA1", "LOA2", "LOA3"].include?(group)
+  click_continue_link
   page.has_content?("ID.me TestDrive")
 
   #save oauth client token for idp and iva tests
