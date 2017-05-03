@@ -1,5 +1,6 @@
 class ShopAdminCategories < IDmeBase
   include IDPBase
+  include JavascriptAlerts
 
   def initialize
     super(FigNewton.shop_admin.categories)
@@ -14,5 +15,16 @@ class ShopAdminCategories < IDmeBase
 
   def click_button_for_new_category_page
     click_link "Create New Category"
+  end
+
+  def filter_datatable_for_category
+    find("input[type='search']").set("fitness-diet")
+  end
+
+  def delete_test_category
+    filter_datatable_for_category
+    find(:link, :text => "fitness-diet").click
+    click_link "Delete"
+    js_accept
   end
 end

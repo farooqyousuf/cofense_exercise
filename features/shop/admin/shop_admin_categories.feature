@@ -13,9 +13,6 @@ Feature: Shop Admin Categories page
     * I verify the category has been created
 
   Scenario: Create new Category with invalid name
-    * I navigate to the create a new category page
-    * I attempt to submit a invalid new category
-    * I verify a error is returned and no new category is created
 
   Scenario: Update a Category
 
