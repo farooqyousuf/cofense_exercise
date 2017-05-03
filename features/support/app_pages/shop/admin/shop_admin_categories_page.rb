@@ -28,5 +28,5 @@ class ShopAdminCategories < IDmeBase
     click_link "Delete"
     js_accept
   end
-end
 
+end
