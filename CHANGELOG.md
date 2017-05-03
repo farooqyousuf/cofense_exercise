@@ -3,8 +3,11 @@
 ### Released
 
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
+##2.2.96 (5/2/17)
+- CORE-7286: Fixed Government happy path test
+
 ##2.2.95 (4/19/17)
-- IDME-3369: Fix Shop Offers Tests 
+- IDME-3369: Fix Shop Offers Tests
 
 ##2.2.94 (4/11/17)
 - IDME-3536: Fix HLP broken tests

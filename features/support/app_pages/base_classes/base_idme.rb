@@ -23,8 +23,8 @@ class IDmeBase
   end
 
   def fill_in_verification_code(code)
-    fill_in("verification_code", :with => code)
-    click_verify_button
+    fill_in("verification_verification_code", :with => code)
+    click_continue
   end
 
   def save_screenshot_in_dir

@@ -11,10 +11,6 @@ end
 Given(/^I submit the government verification form as a "([^"]*)" record$/) do |type|
   @iva_govt = IVAGovernment.new
   @iva_govt.verify(email_type: type)
-
-  if type == "unique"
-    @iva_govt.click_verify_button
-  end
 end
 
 Given(/^I clear the current Government session$/) do

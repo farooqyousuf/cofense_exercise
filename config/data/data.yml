@@ -21,9 +21,9 @@ student_creds:
   dupe_ssn: 2221
 
 government:
-  first_name: Farooq
-  last_name: Yousuf
-  birth_date: 01/05/1985
+  verification_first_name: Farooq
+  verification_last_name: Yousuf
+  verification_birth_date: 01/05/1985
   city: Ashburn
   county: Loudoun
   state: California

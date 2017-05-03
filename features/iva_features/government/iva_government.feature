@@ -5,7 +5,7 @@ Feature: Government verification using .gov email
     * I visit IDP through the "government" policy
     * I click on the Sign Up link
     * I sign up as a new user
-    * I should be on the government verification screen
+    * I click on the Begin link
 
   # TODO: break this out into the initial email step, admin step, code step
   @smoke @delete_current_username

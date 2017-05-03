@@ -1,6 +1,10 @@
 # general module helpers for step definitions
 module HelperMethods
 
+  def click_continue_link
+    click_link("Continue")
+  end
+
   def sign_in_with_idme
     #TODO figure out why you alotted two identical sign_in_with_idme in manual_helper.rb too
     #TODO once convert everything over the sign_in_with_idme_account method then delete this method

@@ -21,40 +21,44 @@ include DataMagic
     select_option(container_attribute, "#s2id_state", value, index)
   end
 
-  def select_option(container, element, value, index)
+  def pick_result(value)
+    find("#select2-drop .select2-results").find("div", :text => /^#{value}$/i).click
+  end
+
+  def select_option(element, value)
     # click the dropdown
     sleep 1
-    all("#{element}")[index].click
-    sleep 2
-    # pick an option
-    find("#select2-drop .select2-results").find("div", :text => /^#{value}$/i).click
+    find(element.to_s).click
+    sleep 1
+    # pick result
+    pick_result(value)
   end
 
   def search_option(container, element, value)
     # click the dropdown
-    find("[data-option='#{container}'] #{element}").click
+    find(element.to_s).click
 
     #set the search value
     find(".select2-input").set(value)
 
     #pick a result
-    find('#select2-drop .select2-results').find("div", :text => /^#{value}$/i).click
+    pick_result(value)
   end
 
   def select_filter(id, value)
     # click the dropdown
     find(".select2-container#s2#{id} > a.select2-choice").click
 
-    # pick an options
-    find("#select2-drop .select2-results").find("div", :text => /^#{value}$/i).click
+    # pick result
+    pick_result(value)
   end
 
   def select_filter2(id, value)
     # click the dropdown
     find(".select2-container#{id} > a.select2-choice").click
 
-    # pick an option
-    find("#select2-drop .select2-results").find("div", :text => /^#{value}$/i).click
+    # pick result
+    pick_result(value)
   end
 
   def header_css
