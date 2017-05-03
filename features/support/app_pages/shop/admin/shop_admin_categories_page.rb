@@ -1,4 +1,5 @@
 class ShopAdminCategories < IDmeBase
+
   include IDPBase
   include JavascriptAlerts
 
@@ -28,3 +29,4 @@ class ShopAdminCategories < IDmeBase
     js_accept
   end
 end
+
