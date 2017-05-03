@@ -22,13 +22,13 @@ include DataMagic
   end
 
   def pick_result(value)
-    find('#select2-drop .select2-results').find("div", :text => /^#{value}$/i).click
+    find("#select2-drop .select2-results").find("div", :text => /^#{value}$/i).click
   end
 
   def select_option(element, value)
     # click the dropdown
     sleep 1
-    find("#{element}").click
+    find(element.to_s).click
     sleep 1
     # pick result
     pick_result(value)
@@ -36,7 +36,7 @@ include DataMagic
 
   def search_option(container, element, value)
     # click the dropdown
-    find("#{element}").click
+    find(element.to_s).click
 
     #set the search value
     find(".select2-input").set(value)
