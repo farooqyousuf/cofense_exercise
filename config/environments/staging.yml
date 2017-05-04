@@ -166,3 +166,4 @@ idme:
 shop_admin:
   base: https://shop-staging.idmeinc.net/admin
   offers: https://shop-staging.idmeinc.net/admin/offers
+  categories: https://shop-staging.idmeinc.net/admin/categories
