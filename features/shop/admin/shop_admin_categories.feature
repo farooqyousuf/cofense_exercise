@@ -13,6 +13,11 @@ Feature: Shop Admin Categories page
     * I verify the category has been created
 
   Scenario: Create new Category with invalid name
+    * I navigate to the create a new category page
+    * I submit a new category with invalid label
+    * I verify the category returns a error
+
+  Scenario: Create a new Category with duplicate name
 
   Scenario: Update a Category
 
