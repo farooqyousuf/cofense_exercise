@@ -29,4 +29,17 @@ class ShopAdminCategories < IDmeBase
     js_accept
   end
 
+  def click_on_new_category
+    find("#DataTables_Table_0 tbody td:first-child").click
+  end
+
+  def update_new_category
+    fill_in("category_description", :with => "Getting super swole")
+    click_button "Update"
+  end
+
+  def click_cancel_button
+    click_link "Cancel"
+  end
+
 end
