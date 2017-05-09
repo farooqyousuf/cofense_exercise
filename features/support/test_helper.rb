@@ -81,6 +81,10 @@ module HelperMethods
     page.find('p').text
   end
 
+  def red_error_under_textfield
+    page.find(".formError").text
+  end
+
   # def red_alert_box_message
   #   page.find(".alert-error").text
   # end
@@ -93,9 +97,9 @@ module HelperMethods
     ".error"
   end
 
-  def red_error_below_field
-    page.find(".label-error").text
-  end
+  # def red_error_below_field
+  #   page.find(".label-error").text
+  # end
 
   def visit_admin_users_in_new_window
     @admin_tool = AdminTool.new
