@@ -55,8 +55,10 @@ class VerifyWithScra < IDmeBase
   end
 
   def populate_form_fields(data:)
-    %w(service_member_first_name service_member_last_name service_member_birth_date social service_date).each do |field|
-      fill_in field, :with => data.fetch(field)
-    end
+    fill_in "scra_request_service_member_first_name", :with => data.fetch("service_member_first_name")
+    fill_in "scra_request_service_member_last_name", :with => data.fetch("service_member_last_name")
+    fill_in "scra_request_service_member_birth_date", :with => data.fetch("service_member_birth_date")
+    fill_in "scra_request_social", :with => data.fetch("social")
+    fill_in "scra_request_service_date", :with => data.fetch("service_date")
   end
 end
