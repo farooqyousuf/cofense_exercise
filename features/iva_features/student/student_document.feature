@@ -5,14 +5,15 @@ Background:
     * I visit IDP through the "student" policy
     * I click on the Sign Up link
     * I sign up as a new user
-    * I should be on the student verification screen
+    * I click on the Verify by uploading documentation link
+    * I click on the Begin link
 
   @smoke @delete_experian_user1 @doc
   #unique dob/ssn and vetted by Experian/PreciseID, have to use their test data
   Scenario: Successful verification
     * I verify using student documentation
     * I approve the document in IDme admin
-    * I should be successfully verified
+    * I should be successfully verif1ied
 
   @delete_current_username
   Scenario: Denied attempt for student doc upload verification (Error code 56)

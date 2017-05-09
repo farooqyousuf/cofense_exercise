@@ -69,6 +69,10 @@ class StudentDoc < IDmeBase
      select_filter("id_document_type_id", "Student ID")
   end
 
+  def click_verify_by_doc
+    click_link("Verify by uploading documentation")
+  end
+
   def required_fields
     [0,2,3,4,5,6,7,8,9,11]
   end
