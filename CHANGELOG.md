@@ -3,6 +3,9 @@
 ### Released
 
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
+##2.2.98 (5/9/17)
+- INT-1274: Fix Verify with SCRA test
+
 ##2.2.97 (5/4/17)
 - IDME-3563: Shop admin creates new category
 - CORE-7355: Fix Govt Required Fields test
