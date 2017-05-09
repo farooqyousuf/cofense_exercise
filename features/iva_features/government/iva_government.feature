@@ -35,5 +35,4 @@ Feature: Government verification using .gov email
   Scenario: Prompt Error Code 24
     * I submit the government verification form as a "unique" record
     * I submit an invalid verification code
-    * I should see the red alert box error message "We’re sorry, but the code you entered didn’t match the last code we sent you. If you have requested multiple codes, please be sure to enter the most recent code we sent."
-
+    * I should see the red error "The code you entered does not match." under the textfield
