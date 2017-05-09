@@ -29,4 +29,9 @@ class ShopAdminCategories < IDmeBase
     js_accept
   end
 
+  def submit_invalid_category
+    click_button_for_new_category_page
+    fill_in("category_label", :with =>"")
+    click_button "Create"
+  end
 end
