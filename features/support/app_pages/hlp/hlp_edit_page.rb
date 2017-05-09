@@ -10,20 +10,12 @@ class HlpEditPage < IDmeBase
     js_accept
   end
 
-  def enter_ungated_page_name
-    fill_in("ungated_page[name]", :with => FigNewton.hlp_page_test_data.ungated_page.name)
-  end
-
   def enter_gated_page_name
     fill_in("gated_page[name]", :with => FigNewton.hlp_page_test_data.gated_page.name)
   end
 
   def enter_document_page_name
     fill_in("document_page[name]", :with => FigNewton.hlp_page_test_data.document_page.name)
-  end
-
-  def enter_redirect_url #only for ungated
-    fill_in("ungated_page[redirect_url]", :with => FigNewton.idp.new_session_url)
   end
 
   def enter_gated_page_redirect_url #only for ungated
