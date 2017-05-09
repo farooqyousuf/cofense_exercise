@@ -32,7 +32,7 @@ class VerifyWithScra < IDmeBase
           2.times {fill_in field, :with => data_for(data_set).fetch(field)}
         end
       end
-      click_button("Submit to SCRA")
+      click_button("Submit")
     end
   end
 
