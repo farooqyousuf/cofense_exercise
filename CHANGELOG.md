@@ -6,6 +6,7 @@ All notable changes to this project will be documented in this file. This projec
 ##2.2.98 (5/9/17)
 - CORE-7406: Fix Govt Dupe and Denied check attempt test
 - CORE-7412: Govt: Prompt Error Code 24
+- IDME-3618: Remove HLP Ungated Page automations
 
 ##2.2.97 (5/4/17)
 - IDME-3563: Shop admin creates new category
