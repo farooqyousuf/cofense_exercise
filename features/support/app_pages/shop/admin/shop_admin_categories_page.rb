@@ -47,5 +47,8 @@ class ShopAdminCategories < IDmeBase
     fill_in("category_label", :with =>"")
     click_button "Create"
   end
-  
+
+  def submit_duplicate_category
+    create_new_valid_category
+  end
 end

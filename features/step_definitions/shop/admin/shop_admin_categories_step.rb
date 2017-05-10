@@ -41,3 +41,14 @@ Given(/^I verify the category has been updated$/) do
   expect(page).to have_css("#DataTables_Table_0 tbody td:nth-child(3)",:text =>"Getting super swole")
   @ShopAdminCategories.delete_test_category
 end
+
+Given(/^I attempt to submit a duplicate category$/) do
+  @ShopAdminCategories.submit_duplicate_category
+end
+
+Given(/^I verify a error is returned and no duplicate category is created$/) do
+  @ShopAdminCategories.click_cancel_button
+  @ShopAdminCategories.filter_datatable_for_category
+  expect(page).to have_css("#DataTables_Table_0 tbody a", :text => "fitness-diet", :count => 1)
+  @ShopAdminCategories.delete_test_category
+end
