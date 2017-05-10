@@ -6,6 +6,7 @@ All notable changes to this project will be documented in this file. This projec
 ##2.2.99 (05/10/17)
 - IDME-3623: Shop Admin update new category
 - IDME-3618: Remove HLP Ungated Page automations
+- IDME-3577: Body Building Partner Test Fix
 
 ##2.2.98 (5/9/17)
 - CORE-7406: Fix Govt Dupe and Denied check attempt test
