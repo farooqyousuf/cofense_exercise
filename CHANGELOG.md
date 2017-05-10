@@ -5,6 +5,7 @@
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 ##2.2.99 (05/10/17)
 - IDME-3623: Shop Admin update new category
+- IDME-3618: Remove HLP Ungated Page automations
 
 ##2.2.98 (5/9/17)
 - CORE-7406: Fix Govt Dupe and Denied check attempt test
