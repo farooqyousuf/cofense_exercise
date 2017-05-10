@@ -81,11 +81,11 @@ fail_experian:
 
 experian_user:
   school: George Mason University
-  first_name: Sue
-  last_name: Gentz
-  birth_date: 09/03/1962
-  social: 666360453
-  social_confirm: 666360453
+  verification_first_name: Sue
+  verification_last_name: Gentz
+  verification_birth_date: 09/03/1962
+  verification_social: 666360453
+  verification_social_confirm: 666360453
   street: 406 S Market St
   city: Emporia
   state: Kansas
