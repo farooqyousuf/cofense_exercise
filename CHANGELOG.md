@@ -5,6 +5,8 @@
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 ##2.2.98 (5/9/17)
 - INT-1274: Fix Verify with SCRA test
+- CORE-7406: Fix Govt Dupe and Denied check attempt test
+- CORE-7412: Govt: Prompt Error Code 24
 
 ##2.2.97 (5/4/17)
 - IDME-3563: Shop admin creates new category

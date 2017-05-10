@@ -1,3 +1,7 @@
+Given(/^I should see the error message "(.*?)"$/) do |expected_text|
+  (p_tag_message.should eq(expected_text)).should == true
+end
+
 Given(/^I should see the red alert box error message "(.*?)"$/) do |expected_text|
   (red_alert_box_message.should eq(expected_text)).should == true
 end
@@ -45,23 +49,23 @@ Given(/^I should see error messages on required fields for "([^"]*)"$/) do |meth
   end
 end
 
-Given(/^I should see the red error "(.*?)" below the textfield$/) do |expected_text|
-  (red_error_below_field.should eq(expected_text)).should == true
+Given(/^I should see the red error "(.*?)" under the textfield$/) do |expected_text|
+  (red_error_under_textfield.should eq(expected_text)).should == true
 end
 
-Given(/^I should see a red highlighted error on the (.*?)"$/) do |fields|
-  case fields
-  when "password, confirm password and tos fields"
-    page.has_css?(".field-group div:nth-child(2).error")
-    page.has_css?(".field-group div:nth-child(3).error")
-    page.has_css?(".check-group .error")
-  when "confirm password and tos fields"
-    page.has_css?(".field-group div:nth-child(3).error")
-    page.has_css?(".check-group .error")
-  when "tos field"
-    page.has_css?(".check-group .error")
-  end
-end
+# Given(/^I should see a red highlighted error on the (.*?)"$/) do |fields|
+#   case fields
+#   when "password, confirm password and tos fields"
+#     page.has_css?(".field-group div:nth-child(2).error")
+#     page.has_css?(".field-group div:nth-child(3).error")
+#     page.has_css?(".check-group .error")
+#   when "confirm password and tos fields"
+#     page.has_css?(".field-group div:nth-child(3).error")
+#     page.has_css?(".check-group .error")
+#   when "tos field"
+#     page.has_css?(".check-group .error")
+#   end
+# end
 
 
 
