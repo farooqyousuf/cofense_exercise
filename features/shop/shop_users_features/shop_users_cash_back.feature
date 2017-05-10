@@ -11,12 +11,10 @@ Feature: Test the shop_users Cash Back - My Cash
    Scenario: Purchases - Summary Info Card Check
    * Cash Back Activity Tab should be selected
    * I check Summary Info Card existence
-   * I check Summary Info Card content
 
    Scenario: Purchases - Next Payment Info Card Check
    * Cash Back Activity Tab should be selected
    * I check Next Payment Info Card existence
-   * I check Next Payment Info Card content
 
    Scenario: Purchases - Purchases Table Check
    * Cash Back Activity Tab should be selected
