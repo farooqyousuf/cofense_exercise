@@ -28,9 +28,12 @@ class VerifyWithScra < IDmeBase
       select affiliation
       populate_form_fields(data: data)
       if["Military Spouse", "Military Family"].include?(affiliation)
-        %w(first_name last_name birth_date service_date).each do |field|
-          2.times {fill_in field, :with => data_for(data_set).fetch(field)}
-        end
+        2.times {
+          fill_in "scra_request_first_name", :with => data.fetch("first_name")
+          fill_in "scra_request_last_name", :with => data.fetch("last_name")
+          fill_in "scra_request_service_member_birth_date", :with => data.fetch("service_member_birth_date")
+          fill_in "scra_request_service_date", :with => data.fetch("service_date")
+        }
       end
       click_button("Submit")
     end
