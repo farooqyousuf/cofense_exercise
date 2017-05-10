@@ -11,7 +11,6 @@ Given(/^BODYBUILDING \- I add a item to my cart$/) do
 
   find("#OPT2620006-right-submit").click
   find(".add2cart__footer a:nth-child(2)").click
-  find("#promo-code-toggler").click
   find(".qa-automation-var-couponcode").set(@coupon_code)
 end
 
