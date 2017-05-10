@@ -18,9 +18,8 @@ Given(/^BODYBUILDING \- I apply the discount code and verify discount applied$/)
   page.execute_script("window.scrollBy(0,-100)")
   find(".qa-automation-var-claimcoupon").click
   expect(page).to have_text "The Promo Code #{ @coupon_code } was entered correctly and applied to your cart."
-
-  original_product_amt_string = first(".actual").text
-  actual_product_discounted_amt_string = find(".store-discount").find("strong").text
+  original_product_amt_string = first(".cart-sku__total-sale-price").text
+  actual_product_discounted_amt_string = find(".order-subtotal__discount").text
 
   discount_applied = verify_discount(original_product_amt_string, actual_product_discounted_amt_string, ".10",:exact_match => true)
   expect(discount_applied).to be(true)
