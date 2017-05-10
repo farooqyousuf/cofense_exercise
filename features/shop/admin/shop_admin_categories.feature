@@ -20,6 +20,10 @@ Feature: Shop Admin Categories page
   Scenario: Create a new Category with duplicate name
 
   Scenario: Update a Category
+    * I navigate to the create a new category page
+    * I sumbit a valid new category
+    * I update the new category
+    * I verify the category has been updated
 
   Scenario: Delete a Category
 

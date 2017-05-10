@@ -3,9 +3,13 @@
 ### Released
 
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
+##2.2.99 (05/10/17)
+- IDME-3623: Shop Admin update new category
+
 ##2.2.98 (5/9/17)
 - CORE-7406: Fix Govt Dupe and Denied check attempt test
 - CORE-7412: Govt: Prompt Error Code 24
+- IDME-3622: Shop admin attempts to create new blank category
 
 ##2.2.97 (5/4/17)
 - IDME-3563: Shop admin creates new category
