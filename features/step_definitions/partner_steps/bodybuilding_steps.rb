@@ -17,7 +17,7 @@ end
 Given(/^BODYBUILDING \- I apply the discount code and verify discount applied$/) do
   page.execute_script("window.scrollBy(0,-100)")
   find(".qa-automation-var-claimcoupon").click
-  expect(page).to have_text "The Promotional Code #{ @coupon_code } was entered successfully and applied to your cart subtotal."
+  expect(page).to have_text "The Promo Code #{ @coupon_code } was entered correctly and applied to your cart."
 
   original_product_amt_string = first(".actual").text
   actual_product_discounted_amt_string = find(".store-discount").find("strong").text
