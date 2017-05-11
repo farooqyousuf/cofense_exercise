@@ -27,6 +27,7 @@ class StudentDoc < IDmeBase
 
     if (type == "unique") || (type == "second unique user")
       sleep 3
+      binding.pry
       populate_doc
       attach_doc
       click_continue
