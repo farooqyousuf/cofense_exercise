@@ -52,3 +52,12 @@ Given(/^I verify a error is returned and no duplicate category is created$/) do
   expect(page).to have_css("#DataTables_Table_0 tbody a", :text => "fitness-diet", :count => 1)
   @ShopAdminCategories.delete_test_category
 end
+
+Given(/^I delete the new category$/) do
+  @ShopAdminCategories.delete_test_category
+end
+
+Given(/^I verify the new category has been deleted$/) do
+  @ShopAdminCategories.filter_datatable_for_category
+  expect(page).to_not have_css("#DataTables_Table_0 tbody a",:text =>"fitness-diet")
+end
