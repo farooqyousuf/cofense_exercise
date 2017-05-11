@@ -31,7 +31,7 @@ class VerifyWithScra < IDmeBase
         2.times {
           fill_in "scra_request_first_name", :with => data.fetch("first_name")
           fill_in "scra_request_last_name", :with => data.fetch("last_name")
-          fill_in "scra_request_service_member_birth_date", :with => data.fetch("service_member_birth_date")
+          fill_in "scra_request_birth_date", :with => data.fetch("service_member_birth_date")
           fill_in "scra_request_service_date", :with => data.fetch("service_date")
         }
       end
