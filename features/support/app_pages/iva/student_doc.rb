@@ -27,7 +27,6 @@ class StudentDoc < IDmeBase
 
     if (type == "unique") || (type == "second unique user")
       sleep 3
-      binding.pry
       populate_doc
       attach_doc
       click_continue
@@ -64,7 +63,7 @@ class StudentDoc < IDmeBase
   end
 
   def populate_doc
-     select_filter("id_document_type_id", "Student ID")
+     select_filter(".select2-arrow", "Student ID")
   end
 
   def click_verify_by_doc
