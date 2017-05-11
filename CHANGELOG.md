@@ -5,6 +5,7 @@
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 ##2.2.100 (05/11/17)
 - IDME-3624: Shop admin deletes a category
+- CORE-7413: Fixed student doc happy path test
 
 ##2.2.99 (05/10/17)
 - IDME-3623: Shop Admin update new category
