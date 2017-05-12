@@ -28,3 +28,7 @@ end
 Given(/^I submit the student doc upload verification form as a "([^"]*)" record$/) do |type|
   StudentDoc.new.verify(type: type)
 end
+
+Given(/^I click on the Verify by uploading documentation link$/) do
+  StudentDoc.new.click_verify_by_doc
+end
