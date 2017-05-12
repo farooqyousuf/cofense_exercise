@@ -45,9 +45,9 @@ include DataMagic
     pick_result(value)
   end
 
-  def select_filter(id, value)
+  def select_filter(element, value)
     # click the dropdown
-    find(".select2-container#s2#{id} > a.select2-choice").click
+    find(element).click
 
     # pick result
     pick_result(value)

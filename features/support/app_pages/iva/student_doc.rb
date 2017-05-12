@@ -7,8 +7,6 @@ class StudentDoc < IDmeBase
   include ErrorMessages
 
   def verify(populate: true, type: "none")
-    find("[data-option=#{container_attribute}]").find(".verification-header").click
-
       if populate
 
         unique_data = data_for(:experian_user) #info for unique and duplicate users
@@ -25,25 +23,24 @@ class StudentDoc < IDmeBase
         end
 
       end
-
-    click_verify_button
+    click_continue
 
     if (type == "unique") || (type == "second unique user")
       sleep 3
       populate_doc
       attach_doc
-      click_verify_button
+      click_continue
     end
   end
 
   def populate_fields(data:)
     populate_school(data.fetch("school"))
 
-    %w(first_name last_name social social_confirm street city).each do |field|
+    %w(verification_first_name verification_last_name verification_social verification_social_confirm street city).each do |field|
       fill_in field, :with => data.fetch(field)
     end
 
-    %w(birth_date zip).each do |field|
+    %w(verification_birth_date zip).each do |field|
       2.times {fill_in field, :with => data.fetch(field)}
     end
 
@@ -61,12 +58,16 @@ class StudentDoc < IDmeBase
     search_option(container_attribute, ".schools", school)
   end
 
-  def populate_state(value)
-    select_option(container_attribute, "#s2id_state", value, index=0)
+  def populate_state(state)
+    select_option("#s2id_state", state)
   end
 
   def populate_doc
-     select_filter("id_document_type_id", "Student ID")
+     select_filter(".select2-arrow", "Student ID")
+  end
+
+  def click_verify_by_doc
+    click_link("Verify by uploading documentation")
   end
 
   def required_fields
