@@ -14,6 +14,7 @@ All notable changes to this project will be documented in this file. This projec
 - IDME-3625: Shop admin attempts to submit duplicate category
 
 ##2.2.98 (5/9/17)
+- INT-1274: Fix Verify with SCRA test
 - CORE-7406: Fix Govt Dupe and Denied check attempt test
 - CORE-7412: Govt: Prompt Error Code 24
 - IDME-3622: Shop admin attempts to create new blank category
