@@ -8,7 +8,7 @@ class MilitaryDoc < IDmeBase
 
   def verify(affiliation:, populate: true, type: "none")
     click_link("Verify by uploading documentation")
-    
+    click_link("Begin")
     populate_affiliation(affiliation)
 
     if populate
