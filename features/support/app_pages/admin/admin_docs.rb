@@ -27,4 +27,7 @@ include JavascriptAlerts
     first('.odd > td > a').click
   end
 
+  def verify_doc
+    binding.pry
+  end
 end
