@@ -8,6 +8,7 @@ All notable changes to this project will be documented in this file. This projec
 
 ##2.3.2 (5/12/17)
 - IDME-3372: Fix Shop Cash Back Tests
+-
 
 ##2.3.1 (05/11/17)
 - IDME-3624: Shop admin deletes a category
