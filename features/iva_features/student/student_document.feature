@@ -27,8 +27,10 @@ Background:
     * I approve the document in IDme admin
     * I clear the session from Authority
     * I create a new account after clearing my old "student" session
+    * I click on the Verify by uploading documentation link
+    * I click on the Begin link
     * I verify using a duplicate "Student Doc Upload" record
-    * I should see the red alert box error message "We’re sorry, but we are unable to verify your credentials with the information you provided."
+    * I should see the error message "We’re sorry, but we are unable to verify your credentials with the information you provided."
     * I verify the attempt is marked as "DUPLICATE"
 
   Scenario: Successfully prompt for all required fields

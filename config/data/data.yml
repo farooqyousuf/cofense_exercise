@@ -99,12 +99,12 @@ experian_user2:
   school: George Mason University
   first_name: Erin
   last_name: Rashid
-  service_member_first_name: Erin
-  service_member_last_name: Rashid
-  service_member_birth_date: 04/30/1942
+  verification__first_name: Erin
+  verification__last_name: Rashid
+  verification__birth_date: 04/30/1942
   birth_date: 04/30/1942
-  social: 666024882
-  social_confirm: 666024882
+  verification_social: 666024882
+  verification_social_confirm: 666024882
   phone: 6202318771
   credit_card: 4888603132346941
   street: 302 E Adams St
