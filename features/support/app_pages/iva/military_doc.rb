@@ -34,14 +34,14 @@ class MilitaryDoc < IDmeBase
       end
     end
 
-    click_verify_button
+    click_continue
     sleep 3
 
     if (type == "unique") || (type == "second unique user")
       #attach dd214 doc
       populate_dd214_type("DD214 - Other")
       attach_doc
-      click_verify_button
+      click_continue
     end
   end
 
@@ -75,7 +75,7 @@ class MilitaryDoc < IDmeBase
   def populate_dd214_type(value)
     wait_for_ajax
     sleep 2
-    select_option(container_attribute, "#s2id_document_type_id", value, index=0)
+    select_option("#s2id_verification_document_type_id", value)
   end
 
   def required_fields
