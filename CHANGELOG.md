@@ -5,6 +5,7 @@
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 ## 2.3.3 (5/15/17)
 - CORE-7447: Fix Student Doc Dupe/Denied check attempt test
+- CORE-7447: Fix Student Doc prompt for all required fields test
 
 ##2.3.2 (5/12/17)
 - IDME-3372: Fix Shop Cash Back Tests
