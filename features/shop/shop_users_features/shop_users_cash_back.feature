@@ -11,12 +11,10 @@ Feature: Test the shop_users Cash Back - My Cash
    Scenario: Purchases - Summary Info Card Check
    * Cash Back Activity Tab should be selected
    * I check Summary Info Card existence
-   * I check Summary Info Card content
 
    Scenario: Purchases - Next Payment Info Card Check
    * Cash Back Activity Tab should be selected
    * I check Next Payment Info Card existence
-   * I check Next Payment Info Card content
 
    Scenario: Purchases - Purchases Table Check
    * Cash Back Activity Tab should be selected
@@ -27,6 +25,5 @@ Feature: Test the shop_users Cash Back - My Cash
    Scenario: Purchase - Payment Settings
    * I check that payment settings dashboard is visible
    * I check the payment settings modal
-   * I incorrectly update my paypal account information and see a error message
-   * I update my payment information to receive via Amazon gift card
    * I update my payment information to receive via Paypal
+   * I incorrectly update my paypal account information and see a error message
