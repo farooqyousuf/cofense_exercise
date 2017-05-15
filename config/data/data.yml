@@ -63,14 +63,14 @@ dd214_via_scra:
 
 fail_experian:
   school: George Mason University
-  service_member_first_name: James
-  service_member_last_name: Smith
+  verification_first_name: James
+  verification_last_name: Smith
   service_member_birth_date: 01/04/1994
   first_name: Maurice
   last_name: Ruiz
-  birth_date: 06/04/1974
-  social: 222222222
-  social_confirm: 222222222
+  verification_birth_date: 06/04/1974
+  verification_social: 222222222
+  verification_social_confirm: 222222222
   street: 3929 Main Road
   city: Richmond
   state: Virginia
@@ -99,12 +99,12 @@ experian_user2:
   school: George Mason University
   first_name: Erin
   last_name: Rashid
-  service_member_first_name: Erin
-  service_member_last_name: Rashid
-  service_member_birth_date: 04/30/1942
+  verification__first_name: Erin
+  verification__last_name: Rashid
+  verification__birth_date: 04/30/1942
   birth_date: 04/30/1942
-  social: 666024882
-  social_confirm: 666024882
+  verification_social: 666024882
+  verification_social_confirm: 666024882
   phone: 6202318771
   credit_card: 4888603132346941
   street: 302 E Adams St
