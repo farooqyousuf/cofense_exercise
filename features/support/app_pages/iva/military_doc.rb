@@ -7,8 +7,8 @@ class MilitaryDoc < IDmeBase
   include ErrorMessages
 
   def verify(affiliation:, populate: true, type: "none")
-    find("[data-option=#{container_attribute}]").find(".verification-header").click
-
+    click_link("Verify by uploading documentation")
+    
     populate_affiliation(affiliation)
 
     if populate
