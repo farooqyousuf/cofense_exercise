@@ -15,6 +15,10 @@ Given(/^I fill out the required data for the DocumentPage$/) do
   @hlp_selected_partner_edit_page.attach_document_file
 end
 
+Given(/^I should be on the HLP_Test_Partner_Pages page$/) do
+    expect(page.current_url).to eql(FigNewton.hlp.homepage)
+end
+
 Given(/^I delete the original temp_hlp_document_page$/) do
   @hlp_selected_partner_page.select_original_document_page
   @hlp_selected_partner_edit_page.delete_hlp_page
