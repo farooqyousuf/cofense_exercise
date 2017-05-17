@@ -170,10 +170,6 @@ After("@delete_pb_fireman_user") do
   @admin_tool.logout_in_new_window
 end
 
-After("@shop_cash_back") do
- @shop_shop.sign_out
-end
-
 After("@delete_natl_emt") do
   visit_admin_users_in_new_window
   @admin_users.delete_natl_emt

@@ -45,5 +45,4 @@ include Capybara::DSL
   def click_submit_button
     click_button("Submit")
   end
-
 end
