@@ -3,7 +3,19 @@
 ### Released
 
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
-##2.2.100 (05/11/17)
+## 2.3.4 (5/17/17)
+- CORE-7438: Doc Upload Happy Path Test
+
+## 2.3.3 (5/15/17)
+- CORE-7447: Fix Student Doc Dupe/Denied check attempt test
+- CORE-7452: Fix Student Doc prompt for all required fields test
+- CORE-7453: Fix Student Doc test: Prompt Error Code 89
+
+##2.3.2 (5/12/17)
+- IDME-3372: Fix Shop Cash Back Tests
+-
+
+##2.3.1 (05/11/17)
 - IDME-3624: Shop admin deletes a category
 - CORE-7413: Fixed student doc happy path test
 
