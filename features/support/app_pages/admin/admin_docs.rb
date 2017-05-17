@@ -30,6 +30,6 @@ include JavascriptAlerts
   def verify_doc_upload(username)
     open_newest
     page.assert_text username
-    find("tr:nth-child(12)").text.should == "Document Type .png" # Determine if the document type is present
+    find("tr:nth-child(12)").text.should == "Document Type .png" # Determines if document type ".png" is present
   end
 end
