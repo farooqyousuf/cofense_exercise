@@ -1,4 +1,4 @@
-Given(/^I should have successfully verified that a document was uploaded$/) do
+Given(/^I verify that a document was successfully uploaded$/) do
   @admin_tool = AdminTool.new
   @admin_tool.login_in_new_window
 
