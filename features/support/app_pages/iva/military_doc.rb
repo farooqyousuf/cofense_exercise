@@ -18,7 +18,7 @@ class MilitaryDoc < IDmeBase
       second_unique_data = data_for(:experian_user2)
 
       case type
-      when "unique", "duplicate"
+      when "unique", "duplicate", "no_doc"
         populate_fields(data: unique_data)
       when "denied"
         populate_fields(data: denied_data)
@@ -36,6 +36,11 @@ class MilitaryDoc < IDmeBase
 
     click_continue
     sleep 3
+
+    if (type == "no_doc")
+      populate_dd214_type("DD214 - Other")
+      click_continue
+    end
 
     if (type == "unique") || (type == "second unique user")
       #attach dd214 doc

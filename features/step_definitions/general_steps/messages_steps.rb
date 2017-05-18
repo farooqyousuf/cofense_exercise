@@ -53,6 +53,9 @@ Given(/^I should see the red error "(.*?)" under the textfield$/) do |expected_t
   (red_error_under_textfield.should eq(expected_text)).should == true
 end
 
+Given(/^I should see the red error "([^"]*)" under the file upload field$/) do |expected_text|
+  (red_error_under_file_upload.should eq(expected_text)).should == true
+end
 # Given(/^I should see a red highlighted error on the (.*?)"$/) do |fields|
 #   case fields
 #   when "password, confirm password and tos fields"
@@ -66,6 +69,3 @@ end
 #     page.has_css?(".check-group .error")
 #   end
 # end
-
-
-

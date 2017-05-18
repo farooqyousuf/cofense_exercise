@@ -11,3 +11,8 @@ Feature: IVA verification using document upload
   Scenario: Successful document upload
     * I verify using military documentation for "Service Member"
     * I verify that a document was successfully uploaded
+
+  @delete_current_username
+  Scenario: Successfully prompt for required document upload
+    * I submit the military document form for "Service Member"
+    * I should see the red error "Please select a file to upload" under the file upload field
