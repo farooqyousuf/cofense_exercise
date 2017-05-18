@@ -3,6 +3,9 @@
 ### Released
 
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
+## 2.3.4 (5/17/17)
+- CORE-7438: Doc Upload Happy Path Test
+
 ## 2.3.3 (5/15/17)
 - CORE-7447: Fix Student Doc Dupe/Denied check attempt test
 - CORE-7452: Fix Student Doc prompt for all required fields test
