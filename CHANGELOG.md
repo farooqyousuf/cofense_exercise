@@ -8,6 +8,7 @@ All notable changes to this project will be documented in this file. This projec
 
 ## 2.3.4 (5/17/17)
 - CORE-7438: Doc Upload Happy Path Test
+- IDME-3656: Add missing step to HLP document test that verifies being on the HLP page
 
 ## 2.3.3 (5/15/17)
 - CORE-7447: Fix Student Doc Dupe/Denied check attempt test
