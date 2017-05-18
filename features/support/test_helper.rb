@@ -85,6 +85,10 @@ module HelperMethods
     page.find(".formError").text
   end
 
+  def red_error_under_file_upload
+    page.find("#fileupload-error").text
+  end
+
   # def red_alert_box_message
   #   page.find(".alert-error").text
   # end
