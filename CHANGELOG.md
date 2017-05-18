@@ -3,6 +3,9 @@
 ### Released
 
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
+## 2.3.5 (5/18/17)
+- CORE-7439: No Document Test
+
 ## 2.3.4 (5/17/17)
 - CORE-7438: Doc Upload Happy Path Test
 
