@@ -10,7 +10,3 @@ end
 Given(/^I submit the military document form for "([^"]*)"$/) do |affiliation|
   MilitaryDoc.new.verify(affiliation: affiliation, type: "no_doc")
 end
-
-Given(/^I should see the error message for required document upload$/) do
-  pending # Write code here that turns the phrase above into concrete actions
-end
