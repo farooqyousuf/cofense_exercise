@@ -11,6 +11,10 @@ Given(/^I submit the military document form for "([^"]*)"$/) do |affiliation|
   MilitaryDoc.new.verify(affiliation: affiliation, type: "no_doc")
 end
 
+Given(/^I verify using military "([^"]*)" documentation for Service Member$/) do |document|
+  step 'I generate a unique "jpeg" doc'
+end
+
 Given(/^I verify that a "([^"]*)" document was successfully uploaded$/) do |arg1|
   pending # Write code here that turns the phrase above into concrete actions
 end
