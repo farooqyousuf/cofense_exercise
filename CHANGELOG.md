@@ -3,6 +3,8 @@
 ### Released
 
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
+## 2.3.6 (5/22/17)
+- IDME-3659: Shop cash back test failing
 ## 2.3.5 (5/18/17)
 - CORE-7439: No Document Test
 
