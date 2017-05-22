@@ -12,6 +12,10 @@ Feature: IVA verification using document upload
     * I verify using military documentation for "Service Member"
     * I verify that a document was successfully uploaded
 
+  Scenario: Successful document upload for jpeg document
+    * I verify using military documentation for "Service Member"
+    * I verify that a "jpeg" document was successfully uploaded
+
   @delete_current_username
   Scenario: Successfully prompt for required document upload
     * I submit the military document form for "Service Member"
