@@ -32,6 +32,16 @@ class IDmeBase
     page.save_screenshot("#{Dir.pwd}/screenshots/screenshot.png")
   end
 
+  def save_unique_screenshot_in_dir(document: "none")
+    Dir.mkdir("./screenshots") unless Dir.exists?("./screenshots")
+
+    document_type = case document
+                    when "jpeg" then "screenshot.jpeg"
+                    when "docx" then "screenshot.docx"
+                    end
+
+    page.save_screenshot("#{Dir.pwd}/screenshots/#{document_type}")
+  end
   def wait_for_ajax
   Timeout.timeout(Capybara.default_max_wait_time) do
     active = page.evaluate_script('jQuery.active')
