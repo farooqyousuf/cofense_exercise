@@ -15,6 +15,11 @@ Given(/^I verify using military "([^"]*)" documentation for Service Member$/) do
   MilitaryDoc.new.verify(affiliation: "Service Member", document: document, type: "unique_doc")
 end
 
-Given(/^I verify that a "([^"]*)" document was successfully uploaded$/) do |arg1|
-  pending # Write code here that turns the phrase above into concrete actions
+Given(/^I verify that a "([^"]*)" document was successfully uploaded$/) do |document|
+  @admin_tool = AdminTool.new
+  @admin_tool.login_in_new_window
+
+  step 'I visit "AdminDocs"'
+  @admin_docs = AdminDocs.new
+  @admin_docs.verify_unique_doc_upload(@username, document: document)
 end
