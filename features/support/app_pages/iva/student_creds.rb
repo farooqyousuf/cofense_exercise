@@ -48,17 +48,12 @@ class StudentCreds < IDmeBase
 
   def populate_fields(data:)
     populate_school(data.fetch("school"))
-    %w(verification_first_name verification_last_name).each do |field|
+    %w(verification_first_name verification_last_name verification_social verification_social_confirm).each do |field|
       fill_in field, :with => data.fetch(field)
     end
 
     %w(verification_birth_date).each do |field|
       2.times {fill_in field, :with => data.fetch(field)}
-    end
-
-
-    %w(verification_social verification_social_confirm).each do |field|
-      fill_in field, :with => data.fetch(field)
     end
   end
 
