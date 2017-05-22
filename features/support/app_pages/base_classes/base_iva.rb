@@ -82,4 +82,15 @@ include DataMagic
     page.driver.browser.all(:xpath, '//input[@type="file"]')[number].send_keys("#{Dir.pwd}/screenshots/screenshot.png")
   end
 
+  def attach_unique_doc(number = 0, document: "none")
+    page.has_css?(".file-upload")
+
+    document_type = case document
+                    when "jpeg" then "screenshot.jpeg"
+                    when "docx" then "screenshot.docx"
+                    end
+
+    page.driver.browser.all(:xpath, '//input[@type="file"]')[number].send_keys("#{Dir.pwd}/screenshots/#{document_type}")
+  end
+
 end

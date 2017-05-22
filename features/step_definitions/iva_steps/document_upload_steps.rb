@@ -12,7 +12,7 @@ Given(/^I submit the military document form for "([^"]*)"$/) do |affiliation|
 end
 
 Given(/^I verify using military "([^"]*)" documentation for Service Member$/) do |document|
-  step 'I generate a unique "jpeg" doc'
+  MilitaryDoc.new.verify(affiliation: "Service Member", document: document, type: "unique_doc")
 end
 
 Given(/^I verify that a "([^"]*)" document was successfully uploaded$/) do |arg1|

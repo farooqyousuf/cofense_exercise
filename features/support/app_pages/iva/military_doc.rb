@@ -6,7 +6,7 @@ class MilitaryDoc < IDmeBase
   include Capybara::DSL
   include ErrorMessages
 
-  def verify(affiliation:, populate: true, type: "none")
+  def verify(affiliation:, populate: true, type: "none", document: "none")
     click_link("Verify by uploading documentation")
     click_link("Begin")
     populate_affiliation(affiliation)
@@ -18,7 +18,7 @@ class MilitaryDoc < IDmeBase
       second_unique_data = data_for(:experian_user2)
 
       case type
-      when "unique", "duplicate", "no_doc"
+      when "unique", "duplicate", "no_doc", "unique_doc"
         populate_fields(data: unique_data)
       when "denied"
         populate_fields(data: denied_data)
@@ -46,6 +46,13 @@ class MilitaryDoc < IDmeBase
       #attach dd214 doc
       populate_dd214_type("DD214 - Other")
       attach_doc
+      click_continue
+    end
+
+    if (type == "unique_doc")
+      #attach unique doc
+      populate_dd214_type("DD214 - Other")
+      attach_unique_doc(document: document)
       click_continue
     end
   end
