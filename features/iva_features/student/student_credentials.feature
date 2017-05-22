@@ -5,7 +5,8 @@ Feature: Student verification using student credentials
     * I visit IDP through the "student" policy
     * I click on the Sign Up link
     * I sign up as a new user
-    * I should be on the student verification screen
+    * I click on the Verify using your student credentials link
+    * I click on the Begin link
 
   @smoke @delete_current_username
   #Unique combo of ssn and dob to verify

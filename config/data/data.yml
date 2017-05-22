@@ -12,9 +12,11 @@ mil_email:
 
 student_creds:
   school: George Mason University
-  fname: Farooq
-  lname: Yousuf
-  dob: 01/05/1985
+  verification_first_name: John
+  verification_last_name: Smithereens
+  verification_birth_date: 01/05/1985
+  verification_social: 3331
+  verification_social_confirm: 3331
   denied_ssn: 1234
   dupe_fname: Capybara
   dupe_lname: DoNotDelete
