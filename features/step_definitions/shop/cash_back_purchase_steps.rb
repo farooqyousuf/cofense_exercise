@@ -105,5 +105,6 @@ Given(/^I incorrectly update my paypal account information and see a error messa
   @shop_my_cash_page.click_update_payment_settings_modal_button
   sleep 1
   expect(page).to have_content "Please enter a valid email"
+  sleep 2
   find("button.js-close-modal").click
 end
