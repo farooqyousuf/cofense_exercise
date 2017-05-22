@@ -7,20 +7,16 @@ class StudentCreds < IDmeBase
   include ErrorMessages
 
   def verify(populate: true, type: "none")
-    find("[data-option=#{container_attribute}]").find(".verification-header").click
 
       if populate
 
         build_unique_info #info for unique and denied users
-        data = data_for(:student_creds) #info for denied and dupe users
+        unique_data = data_for(:student_creds) #info for unique and duplicate users
+
 
         case type
         when "unique"
-          populate_fields(school: data.fetch("school"),
-                          fname:  @unique_first_name,
-                          lname:  @unique_last_name,
-                          dob:    @dob,
-                          ssn:    @random_ssn)
+          populate_fields(data: unique_data)
         when "denied"
           populate_fields(school: data.fetch("school"),
                           fname:  data.fetch("fname"),
@@ -35,7 +31,7 @@ class StudentCreds < IDmeBase
                           ssn:    data.fetch("dupe_ssn"))
         end
       end
-    click_verify_button
+    click_continue
   end
 
   def container_attribute
@@ -50,14 +46,24 @@ class StudentCreds < IDmeBase
     @random_ssn = "#{Faker::Number.number(3)}1"
   end
 
-  def populate_fields(school:, fname:, lname:, dob:, ssn:)
-    populate_school(school)
-    fill_in "first_name", :with => fname
-    fill_in "last_name", :with => lname
-    2.times {fill_in "birth_date", :with => dob}
-    %w(social social_confirm).each do |field|
-      fill_in field, :with => ssn
+  def populate_fields(data:)
+    populate_school(data.fetch("school"))
+    %w(verification_first_name verification_last_name).each do |field|
+      fill_in field, :with => data.fetch(field)
     end
+
+    %w(verification_birth_date).each do |field|
+      2.times {fill_in field, :with => data.fetch(field)}
+    end
+
+
+    %w(verification_social verification_social_confirm).each do |field|
+      fill_in field, :with => data.fetch(field)
+    end
+  end
+
+  def click_verify_by_creds
+    click_link("Verify using your student credentials")
   end
 
   def populate_school(school)

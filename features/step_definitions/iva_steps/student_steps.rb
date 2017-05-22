@@ -32,3 +32,7 @@ end
 Given(/^I click on the Verify by uploading documentation link$/) do
   StudentDoc.new.click_verify_by_doc
 end
+
+Given(/^I click on the Verify using your student credentials link$/) do
+  StudentCreds.new.click_verify_by_creds
+end
