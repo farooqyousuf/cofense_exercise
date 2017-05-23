@@ -36,12 +36,6 @@ include JavascriptAlerts
   def verify_unique_doc_upload(username, document: "none")
     open_newest
     page.assert_text username
-
-    document_type = case document
-                    when "jpeg" then "Document Type .jpeg"
-                    when "docx" then "Document Type .docx"
-                    end
-
-    find("tr:nth-child(12)").text.should == "#{document_type}" # Determines if document type is present
+    find("tr:nth-child(12)").text.should == "Document Type .#{document}" # Determines if document type is present
   end
 end
