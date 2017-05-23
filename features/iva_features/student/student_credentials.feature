@@ -17,7 +17,7 @@ Feature: Student verification using student credentials
 
   Scenario: Denied attempt for student credentials verification (Error code 54)
     * I submit the student credentials verification form as a "denied" record
-    * I should see the red alert box error message "We're sorry, but our records indicate that you are no longer enrolled in this school. This sometimes occurs to students in a period of transition. If available, please try another verification option, or visit our Support page for more information."
+    * I should see the error message "We're sorry, but we were unable to confirm your enrollment in the school you selected. If available, please try another verification option, or visit our Support page for more information."
     * I verify the attempt is marked as "DENIED"
 
   @delete_current_username
