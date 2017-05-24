@@ -23,7 +23,7 @@ Feature: Student verification using student credentials
   @delete_current_username
   Scenario: Duplicate attempt for student credentials verification (Error code 55)
     * I submit the student credentials verification form as a "duplicate" record
-    * I should see the red alert box error message "We're sorry, but we were unable to confirm your enrollment in the school you selected. If available, please try another verification option, or visit our Support page for more information."
+    * I should see the error message "We're sorry, but we were unable to confirm your enrollment in the school you selected. If available, please try another verification option, or visit our Support page for more information."
     * I verify the attempt is marked as "DUPLICATE"
 
   Scenario: Successfully prompt for all required fields

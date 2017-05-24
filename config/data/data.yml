@@ -22,6 +22,14 @@ student_creds:
   dupe_lname: DoNotDelete
   dupe_ssn: 2221
 
+student_creds_dupe:
+  school: George Mason University
+  verification_first_name: Capybara
+  verification_last_name: DoNotDelete
+  verification_birth_date: 01/05/1985
+  verification_social: 2221
+  verification_social_confirm: 2221
+
 student_creds_denied:
   school: George Mason University
   verification_first_name: Farooq

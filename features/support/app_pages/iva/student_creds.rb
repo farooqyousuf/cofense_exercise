@@ -10,10 +10,9 @@ class StudentCreds < IDmeBase
 
       if populate
 
-        build_unique_info #info for unique and denied users
-        unique_data = data_for(:student_creds) #info for unique and duplicate users
+        unique_data = data_for(:student_creds) #info for unique user
         denied_data = data_for(:student_creds_denied) #info for denied user
-
+        dupe_data   = data_for(:student_creds_dupe) #info for dupe user
 
         case type
         when "unique"
@@ -21,11 +20,7 @@ class StudentCreds < IDmeBase
         when "denied"
           populate_fields(data: denied_data)
         when "duplicate"
-          populate_fields(school: data.fetch("school"),
-                          fname:  data.fetch("dupe_fname"),
-                          lname:  data.fetch("dupe_lname"),
-                          dob:    data.fetch("dob"),
-                          ssn:    data.fetch("dupe_ssn"))
+          populate_fields(data: dupe_data)
         end
       end
     click_continue
@@ -33,14 +28,6 @@ class StudentCreds < IDmeBase
 
   def container_attribute
     "clearinghouse"
-  end
-
-  def build_unique_info
-    #NSC requires a valid ssn to end with a 1 in their test env
-    @unique_first_name = Faker::Name.first_name
-    @unique_last_name = Faker::Name.last_name
-    @dob = Faker::Date.birthday.strftime("%m%d%Y")
-    @random_ssn = "#{Faker::Number.number(3)}1"
   end
 
   def populate_fields(data:)
