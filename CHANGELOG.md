@@ -6,6 +6,7 @@ All notable changes to this project will be documented in this file. This projec
 
 ## 2.3.8 (5/24/17)
 - CORE-7500: Fix Dupe Student NSC IVA test
+- CORE-7501: Fix Student NSC prompt reqd fields IVA test
 
 ## 2.3.7 (5/23/17)
 - CORE-7490: Fix Denied Path Student NSC IVA test
