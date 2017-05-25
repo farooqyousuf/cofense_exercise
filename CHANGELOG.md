@@ -4,6 +4,9 @@
 
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
+## 2.3.9 (5/25/17)
+- CORE-7504: Fix Happy Path Teacher Doc IVA test
+
 ## 2.3.8 (5/24/17)
 - CORE-7500: Fix Dupe Student NSC IVA test
 - CORE-7501: Fix Student NSC prompt reqd fields IVA test

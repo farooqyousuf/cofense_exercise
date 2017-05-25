@@ -17,10 +17,6 @@ include DataMagic
     search_option(container_attribute, unique_id, value)
   end
 
-  def populate_second_state(value, index)
-    select_option(container_attribute, "#s2id_state", value, index)
-  end
-
   def pick_result(value)
     find("#select2-drop .select2-results").find("div", :text => /^#{value}$/i).click
   end

@@ -98,7 +98,7 @@ fail_experian:
   emt_zip: 12345
 
 experian_user:
-  school: George Mason University
+  verification_school: George Mason University
   verification_first_name: Sue
   verification_last_name: Gentz
   verification_birth_date: 09/03/1962
