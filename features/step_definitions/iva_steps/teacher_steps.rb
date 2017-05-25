@@ -1,3 +1,11 @@
+Given(/^I click on the teacher verify using documentation link$/) do
+  TeacherDoc.new.click_verify_by_doc
+end
+
+Given(/^I select the teacher state$/) do
+  TeacherDoc.new.populate_teacher_first_state("Maryland")
+end
+
 Given(/^I should be on the teacher verification screen$/) do
   @teacher_doc = TeacherDoc.new
   find(@teacher_doc.header_css).visible?

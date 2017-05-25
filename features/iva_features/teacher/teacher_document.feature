@@ -5,7 +5,9 @@ Feature: Teacher verification using document upload
     * I visit IDP through the "teacher" policy
     * I click on the Sign Up link
     * I sign up as a new user
-    * I should be on the teacher verification screen
+    * I click on the teacher verify using documentation link
+    * I select the teacher state
+    * I click on the Begin link
 
   @smoke @delete_experian_user1 @doc
   #experian/precise id check
