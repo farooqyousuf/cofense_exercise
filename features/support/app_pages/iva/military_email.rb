@@ -7,7 +7,8 @@ class MilitaryEmail < IDmeBase
   include ErrorMessages
 
   def verify(affiliation:, populate: true, type: nil)
-    find("[data-option=#{container_attribute}]").find(".verification-header").click
+    click_link("Verify using a .mil e-mail address")
+    click_link("Begin")
     populate_affiliation(affiliation)
 
     if populate
@@ -79,4 +80,3 @@ class MilitaryEmail < IDmeBase
   end
 
 end
-
