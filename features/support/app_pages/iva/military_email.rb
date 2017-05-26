@@ -34,7 +34,7 @@ class MilitaryEmail < IDmeBase
                           dob: data.fetch("dupe_dob"))
       end
 
-      if ["Service Member", "Military Supporter"].include?(affiliation)
+      if ["Service Member", "Military Supporter"].include?(affiliation) && page.has_selector?(".checkbox")
         find(".checkbox").click
       end
 
@@ -48,7 +48,7 @@ class MilitaryEmail < IDmeBase
 
     end
 
-    click_verify_button
+    click_continue
   end
 
   def populate_affiliation(value)
@@ -63,10 +63,10 @@ class MilitaryEmail < IDmeBase
   end
 
   def populate_fields(email:, fname:, lname:, dob:)
-    fill_in "service_member_first_name", with: fname
-    fill_in "service_member_last_name", with: lname
-    2.times {fill_in "service_member_birth_date", with: dob}
-    %w(email email_confirmation).each do |field|
+    fill_in "verification_service_member_first_name", with: fname
+    fill_in "verification_service_member_last_name", with: lname
+    2.times {fill_in "verification_service_member_birth_date", with: dob}
+    %w(email verification_email_confirmation).each do |field|
       fill_in field, :with => email
     end
   end
