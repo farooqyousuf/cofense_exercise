@@ -34,10 +34,6 @@ class MilitaryEmail < IDmeBase
                           dob: data.fetch("dupe_dob"))
       end
 
-      if ["Service Member", "Military Supporter"].include?(affiliation) && page.has_selector?(".checkbox")
-        find(".checkbox").click
-      end
-
       if ["Military Family", "Military Spouse"].include?(affiliation)
         fill_in "verification_first_name", :with => Faker::Name.first_name
         fill_in "verification_last_name", :with => Faker::Name.last_name
