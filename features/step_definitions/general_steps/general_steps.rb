@@ -91,11 +91,10 @@ Given(/^I submit the verification code for "([^"]*)"$/) do |option|
   @admin_verif_attempts.use_last_browser_created
   @IDmeBase = IDmeBase.new
   @IDmeBase.fill_in_verification_code(code)
+  click_link("Continue")
   if page.has_text? "ID.me Staging would like to access some of your data"
     step 'I authorize the attribute release'
   end
-  click_link("Continue")
-  click_button("Allow")
 end
 
 Given(/^I generate a unique doc$/) do
