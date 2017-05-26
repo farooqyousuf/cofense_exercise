@@ -94,6 +94,8 @@ Given(/^I submit the verification code for "([^"]*)"$/) do |option|
   if page.has_text? "ID.me Staging would like to access some of your data"
     step 'I authorize the attribute release'
   end
+  click_link("Continue")
+  click_button("Allow")
 end
 
 Given(/^I generate a unique doc$/) do
