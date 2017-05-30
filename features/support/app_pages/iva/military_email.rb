@@ -38,7 +38,7 @@ class MilitaryEmail < IDmeBase
         fill_in "verification_first_name", :with => Faker::Name.first_name
         fill_in "verification_last_name", :with => Faker::Name.last_name
         2.times { fill_in "verification_birth_date", :with => @dob }
-        select_option(container_attribute, "#select2-chosen-3", "Veteran", index=0)
+        select_option("#select2-chosen-3", "Veteran")
       end
 
     end
