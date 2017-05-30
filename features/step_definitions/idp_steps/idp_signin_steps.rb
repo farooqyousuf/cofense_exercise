@@ -55,6 +55,7 @@ Given(/^I complete the new Wallet account linking process$/) do
     @idp_new_wallet.create_password
     @idp_new_wallet.click_continue_button
   end
+  step 'I verify using an ID.me military passcode'
 end
 
 Given(/^I login with Facebook$/) do
