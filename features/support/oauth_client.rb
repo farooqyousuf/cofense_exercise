@@ -60,6 +60,10 @@ class OAuthClient
     find("#identifierNext").click
     fill_in "password", :with => FigNewton.oauth.google_pw
     find("#passwordNext").click
+
+    if page.has_text? "This device isn't recognized"
+      close_current_browser
+    end
   end
 
    def login_with_linkedin
