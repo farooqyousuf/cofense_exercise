@@ -14,12 +14,15 @@ class NationalEMT < IDmeBase
 
         data = data_for(:emt_national) #info for unique and duplicate user
         denied_data = data_for(:denied_emt_national) #info for denied user
+        expired_data = data_for(:expired_emt_national)
 
         case type
         when "unique", "duplicate"
           populate_fields(data: data)
         when "denied"
           populate_fields(data: denied_data)
+        when "expired"
+          populate_fields(data: expired_data)
         end
       end
 

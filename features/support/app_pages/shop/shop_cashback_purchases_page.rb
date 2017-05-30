@@ -44,6 +44,6 @@ class CashBack_PurchasesPage < IDmeBase
   end
 
   def enter_paypal_email
-    find("#core_user_paypal_account").set(FigNewton.oauth.paypal_user)
+    find(:xpath, "//*[@id='user_paypal_account']").set(FigNewton.oauth.paypal_user)
   end
 end

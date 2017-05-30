@@ -20,18 +20,18 @@ class IVAGovernment < IDmeBase
           puts "No email type specified"
         end
     end
-    click_verify_button
+    click_continue
   end
 
   def populate_fields(data:, email:)
-    %w(first_name last_name city county birth_date).each do |field|
+    %w[verification_first_name verification_last_name city county verification_birth_date].each do |field|
       2.times {fill_in field, :with => data.fetch(field)} #twice b/c dob doesn't get filled first time occasionally
     end
 
     escape_google_address_autocomplete(%w(#city #county))
     populate_state(data.fetch("state"))
 
-    %w(email email_confirmation).each do |field|
+    %w[email verification_email_confirmation].each do |field|
       fill_in field, :with => email
     end
 
@@ -40,24 +40,20 @@ class IVAGovernment < IDmeBase
     populate_agency(data.fetch("agency"))
   end
 
-  def container_attribute
-    'government-email'
-  end
-
   def populate_affiliation(affiliation)
-    select_option(container_attribute, ".government-affiliation", affiliation, index=0)
+    select_option("#s2id_verification_subgroup_id", affiliation)
   end
 
   def populate_agency(agency)
-    search_option(container_attribute, ".government-agency", agency)
+    select_option("#s2id_verification_department_id", agency)
   end
 
   def populate_state(state)
-    select_option(container_attribute, ".state-select", state, index=0)
+    select_option("#s2id_state", state)
   end
 
   def required_fields
-    [0, 1, 2, 3, 5, 6, 7, 9, 10]
+    [0, 1, 2, 3, 4, 5, 6, 7, 8]
   end
 
 end

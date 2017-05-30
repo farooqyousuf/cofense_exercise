@@ -13,7 +13,7 @@ Feature: Responder verification as a ProBoard Firefighter
     * I should be successfully verified as "Firefighter"
 
   @delete_current_username
-  Scenario: Denied attempt for proboard firefighter verification
+  Scenario: Denied attempt for proboard firefighter verification (Error code 28)
     * I submit the proboard firefighter verification form as a "denied" record
     * I should see the red alert box error message "We're sorry, but we were unable to verify your firefighter status with the information you provided. Please ensure your name and SSN are entered correctly and try again. For additional information, please see our Support page."
     * I verify the attempt is marked as "DENIED"

@@ -3,11 +3,73 @@
 ### Released
 
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
+## 2.3.10 (5/29/17)
+- CORE-7269: Fix Happy Path Military Email IVA test
+
+## 2.3.9 (5/25/17)
+- CORE-7504: Fix Happy Path Teacher Doc IVA test
+
+## 2.3.8 (5/24/17)
+- CORE-7500: Fix Dupe Student NSC IVA test
+- CORE-7501: Fix Student NSC prompt reqd fields IVA test
+
+## 2.3.7 (5/23/17)
+- CORE-7490: Fix Denied Path Student NSC IVA test
+
+## 2.3.6 (5/22/17)
+- IDME-3659: Shop cash back test failing
+- CORE-7486: Fix happy path Student NSC IVA test
+- HOTFIX: Refactored small piece of code for previous merged branch CORE-7486
+
+## 2.3.5 (5/18/17)
+- CORE-7439: No Document Test
+
+## 2.3.4 (5/17/17)
+- CORE-7438: Doc Upload Happy Path Test
+- IDME-3656: Add missing step to HLP document test that verifies being on the HLP page
+
+## 2.3.3 (5/15/17)
+- CORE-7447: Fix Student Doc Dupe/Denied check attempt test
+- CORE-7452: Fix Student Doc prompt for all required fields test
+- CORE-7453: Fix Student Doc test: Prompt Error Code 89
+
+##2.3.2 (5/12/17)
+- IDME-3372: Fix Shop Cash Back Tests
+-
+
+##2.3.1 (05/11/17)
+- IDME-3624: Shop admin deletes a category
+- CORE-7413: Fixed student doc happy path test
+
+##2.2.99 (05/10/17)
+- IDME-3623: Shop Admin update new category
+- IDME-3618: Remove HLP Ungated Page automations
+- IDME-3577: Body Building Partner Test Fix
+- IDME-3625: Shop admin attempts to submit duplicate category
+
+##2.2.98 (5/9/17)
+- INT-1274: Fix Verify with SCRA test
+- CORE-7406: Fix Govt Dupe and Denied check attempt test
+- CORE-7412: Govt: Prompt Error Code 24
+- IDME-3622: Shop admin attempts to create new blank category
+
+##2.2.97 (5/4/17)
+- IDME-3563: Shop admin creates new category
+- CORE-7355: Fix Govt Required Fields test
+
+##2.2.96 (5/2/17)
+- CORE-7286: Fixed Government happy path test
+
+##2.2.95 (4/19/17)
+- IDME-3369: Fix Shop Offers Tests
+
 ##2.2.94 (4/11/17)
+- IDME-3536: Fix HLP broken tests
 - CORE-7263: Fixed IVA Military DD214 Test
 
 ##2.2.93 (4/10/17)
 - CORE-7246: Fixed IDP Unlock Test
+- CORE-7206: Responder Error Code Tests
 
 ##2.2.92 (4/7/17)
 - CORE-7203: Military Error Codes Tests
