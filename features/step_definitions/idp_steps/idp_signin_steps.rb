@@ -47,14 +47,18 @@ end
 
 Given(/^I complete the new Wallet account linking process$/) do
   @idp_new_wallet = IDPNewWallet.new
-  @idp_new_wallet.click_joining_first_time
-  @idp_new_wallet.check_tos_pp
-  @idp_new_wallet.click_continue_button
+
+  if page.text.include? "I am joining ID.me for the first time"
+    @idp_new_wallet.click_joining_first_time
+    @idp_new_wallet.check_tos_pp
+    @idp_new_wallet.click_continue_button
+  end
 
   if page.text.include? "Please create a password for your ID.me Wallet."
     @idp_new_wallet.create_password
     @idp_new_wallet.click_continue_button
   end
+
   step 'I verify using an ID.me military passcode'
 end
 
