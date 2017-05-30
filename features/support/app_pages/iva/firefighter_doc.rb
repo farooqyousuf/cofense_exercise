@@ -15,18 +15,21 @@ class DocFirefighter < IDmeBase
 
       unique_data = data_for(:experian_user) #info for unique and duplicate users
       denied_data = data_for(:fail_experian) #info for denied user
+      second_unique_data = data_for(:experian_user2)
 
       case type
       when "unique", "duplicate"
         populate_fields(data: unique_data)
       when "denied"
         populate_fields(data: denied_data)
+      when "second unique user"
+        populate_fields(data: second_unique_data)
       end
     end
 
     click_verify_button
 
-    if type == "unique"
+    if (type == "unique") || (type == "second unique user")
       attach_doc(2)
       click_verify_button
     end
@@ -43,7 +46,10 @@ class DocFirefighter < IDmeBase
       2.times { fill_in field, with: data.fetch(field) }
     end
 
-    populate_second_state(data_for(:experian_user).fetch("state"), index=1)
+    #Added the 2 lines above populate_second_state to deal with the random dropdown not working on occasion
+    all("#s2id_state")[1].click
+    find("#s2id_autogen6_search").native.send_keys :escape
+    2.times {populate_second_state("Kansas", index=1)}
   end
 
   def container_attribute

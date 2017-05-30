@@ -7,8 +7,8 @@ class MilitaryDoc < IDmeBase
   include ErrorMessages
 
   def verify(affiliation:, populate: true, type: "none")
-    find("[data-option=#{container_attribute}]").find(".verification-header").click
-
+    click_link("Verify by uploading documentation")
+    click_link("Begin")
     populate_affiliation(affiliation)
 
     if populate
@@ -18,7 +18,7 @@ class MilitaryDoc < IDmeBase
       second_unique_data = data_for(:experian_user2)
 
       case type
-      when "unique", "duplicate"
+      when "unique", "duplicate", "no_doc"
         populate_fields(data: unique_data)
       when "denied"
         populate_fields(data: denied_data)
@@ -34,24 +34,29 @@ class MilitaryDoc < IDmeBase
       end
     end
 
-    click_verify_button
+    click_continue
     sleep 3
+
+    if (type == "no_doc")
+      populate_dd214_type("DD214 - Other")
+      click_continue
+    end
 
     if (type == "unique") || (type == "second unique user")
       #attach dd214 doc
       populate_dd214_type("DD214 - Other")
       attach_doc
-      click_verify_button
+      click_continue
     end
   end
 
   def populate_fields(data:)
     #fill reqd fields
-    %w(service_member_first_name service_member_last_name social social_confirm street city).each do |field|
+    %w(verification_service_member_first_name verification_service_member_last_name verification_social verification_social_confirm street city).each do |field|
       fill_in field, :with => data.fetch(field)
     end
 
-    %w(service_member_birth_date zip).each do |field|
+    %w(verification_service_member_birth_date zip).each do |field|
       2.times {fill_in field, :with => data.fetch(field)}
     end
 
@@ -64,18 +69,18 @@ class MilitaryDoc < IDmeBase
     "military-document"
   end
 
-  def populate_affiliation(value)
-    select_option(container_attribute, ".military-affiliation", value, index=0)
+  def populate_affiliation(affiliation)
+    select_option("#s2id_verification_subgroup_id", affiliation)
   end
 
-  def populate_state(value)
-    select_option(container_attribute, "#s2id_state", value, index=0)
+  def populate_state(state)
+    select_option("#s2id_state", state)
   end
 
   def populate_dd214_type(value)
     wait_for_ajax
     sleep 2
-    select_option(container_attribute, "#s2id_document_type_id", value, index=0)
+    select_option("#s2id_verification_document_type_id", value)
   end
 
   def required_fields

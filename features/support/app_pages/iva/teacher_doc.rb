@@ -7,8 +7,6 @@ class TeacherDoc < IDmeBase
   include ErrorMessages
 
   def verify(populate: true, type: "none")
-    populate_teacher_first_state("Maryland")
-
       if populate
 
         unique_data = data_for(:experian_user) #info used for unique and dupliate users
@@ -26,41 +24,40 @@ class TeacherDoc < IDmeBase
 
       end
 
-      click_verify_button
+      click_continue
 
       if (type == "unique") || (type == "second unique user")
         sleep 2
         attach_doc
-        click_verify_button
+        click_continue
       end
   end
 
   def populate_fields(data:)
-    %w(first_name last_name social social_confirm street city).each do |field|
+    %w(verification_first_name verification_last_name verification_social verification_social_confirm street city).each do |field|
       fill_in field, :with => data.fetch(field)
     end
 
-    %w(birth_date zip).each do |field|
+    %w(verification_birth_date zip).each do |field|
       2.times {fill_in field, :with => data.fetch(field)}
     end
 
-    %w(teacher_city district school).each do |field|
+    %w(teacher_city district verification_school).each do |field|
       fill_in field, :with => Faker::Address.city
     end
 
-    fill_in "teacher_number", with: Faker::Number.number(10)
+    fill_in "verification_teacher_number", with: Faker::Number.number(10)
 
     escape_google_address_autocomplete(%w(#street #city))
-
-    populate_second_state(data.fetch("state"), index=0)
+    select_option("#s2id_state", data.fetch("state"))
   end
 
-  def container_attribute
-    'teacher-state'
+  def click_verify_by_doc
+    click_link("I do not have my state license number, but I can verify using documentation.")
   end
 
   def populate_teacher_first_state(value)
-    select_filter("id_teacher_state", value)
+    select_filter(".select2-arrow", value)
   end
 
   def required_fields

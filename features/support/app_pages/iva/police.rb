@@ -14,18 +14,21 @@ class Police < IDmeBase
 
       data = data_for(:experian_user) #info for unique and duplicate users
       denied_data = data_for(:fail_experian) #info for denied user
+      second_unique_data = data_for(:experian_user2)
 
       case type
       when "unique", "duplicate"
         populate_fields(data: data)
       when "denied"
         populate_fields(data: denied_data)
+      when "second unique user"
+        populate_fields(data: second_unique_data)
       end
     end
 
     click_verify_button
 
-    if type == "unique"
+    if (type == "unique") || (type == "second unique user")
       sleep 2
       attach_doc(3)
       click_verify_button

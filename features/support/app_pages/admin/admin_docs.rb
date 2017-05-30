@@ -27,4 +27,9 @@ include JavascriptAlerts
     first('.odd > td > a').click
   end
 
+  def verify_doc_upload(username)
+    open_newest
+    page.assert_text username
+    find("tr:nth-child(12)").text.should == "Document Type .png" # Determines if document type ".png" is present
+  end
 end

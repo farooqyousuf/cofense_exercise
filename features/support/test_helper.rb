@@ -1,6 +1,10 @@
 # general module helpers for step definitions
 module HelperMethods
 
+  def click_continue_link
+    click_link("Continue")
+  end
+
   def sign_in_with_idme
     #TODO figure out why you alotted two identical sign_in_with_idme in manual_helper.rb too
     #TODO once convert everything over the sign_in_with_idme_account method then delete this method
@@ -73,21 +77,33 @@ module HelperMethods
     end
   end
 
-  def red_alert_box_message
-    page.find(".alert-error").text
+  def p_tag_message
+    page.find('p').text
   end
 
-  def green_alert_box_message
-    page.find(".alert-success").text
+  def red_error_under_textfield
+    page.find(".formError").text
   end
+
+  def red_error_under_file_upload
+    page.find("#fileupload-error").text
+  end
+
+  # def red_alert_box_message
+  #   page.find(".alert-error").text
+  # end
+
+  # def green_alert_box_message
+  #   page.find(".alert-success").text
+  # end
 
   def error_label_css
     ".error"
   end
 
-  def red_error_below_field
-    page.find(".label-error").text
-  end
+  # def red_error_below_field
+  #   page.find(".label-error").text
+  # end
 
   def visit_admin_users_in_new_window
     @admin_tool = AdminTool.new

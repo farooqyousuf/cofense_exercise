@@ -43,28 +43,19 @@ Given(/^I click to see all promo code offers$/) do
 end
 
 Given(/^I check that the table index are promo code offers$/) do
-  expect(page).to have_css(".offers-list-static li:nth-child(1) .button",:match => :first, :text =>"Claim Code")
-  expect(page).to have_css(".offer-card__share-alt",:match =>:first, :text =>"Share with Friends")
+  @unlock_to_save = @shop_offers.find_unlock_to_save
 
-  (2..10).each do |card_number|
-    expect(page).to have_css(".offers-list-static li:nth-child(#{ card_number }) .button",:match =>:first, :text =>"Claim Code")
+  if @unlock_to_save
+    expect(page).to have_css(".offers-list-static li .button", :match => :first, :text => "Unlock to Save")
+  else
+    expect(page).to have_css(".offers-list-static li .button", :match => :first, :text => "Claim Code")
   end
-end
 
-Given(/^I click to see all Coupon offers$/) do
-  @shop_offers.click_coupons_sidebar_link
+  expect(page).to have_css(".offer-card__share-alt", :match => :first, :text => "Share with Friends")
 
-  expect(page.current_url).to eql(FigNewton.shop.offers_coupon_index_page)
-  expect(page).to have_css(".listing__header .breadcrumbs",:text =>"Shop › Offers › Coupons")
-end
-
-Given(/^I check that the table index are coupon offers$/) do
-  expect(page).to have_css(".offers-list-static")
-
-  #Currently Matcher for coupon page are hard coded to offers because unable to differentiate coupon specific offers but be aware that very brittle
-  expect(page).to have_css(".offers-list-static li:nth-child(1)",:text =>"PLUS UP TO 1.3% CASH BACK Up to 50% off electronics and more! Shop Now Share with Friends")
-  expect(page).to have_css(".offers-list-static li:nth-child(2)",:text =>"PLUS UP TO 4.0% CASH BACK Up to 50% off Daily Deals. Shop Now Share with Friends")
-  expect(page).to have_css(".offers-list-static li:nth-child(3)",:text =>"PLUS UP TO 4.0% CASH BACK 10% Off Orders for the Military Community Sign Up & Save Share with Friends")
+  within find("ul.resources-list-static.offers-list-static") do
+    expect(page).to have_content("Claim Code", :minimum => 1)
+  end
 end
 
 Given(/^I click to see all Offer Categories$/) do
@@ -81,62 +72,54 @@ end
 Given(/^I click to see Group Military offers$/) do
   @shop_offers.click_offer_groups_filter_sidebar_link
   @shop_offers.click_groups_military_sidebar_link
-
-  expect(".filter__links:nth-child(1)",:visible => true)
 end
 
-Given(/^I check that the table index shows all military specific$/) do
+Given(/^I check that the table index shows all military specific offers$/) do
   (2..10).each do |card_number|
-    expect(page).to have_css(".offers-list-static li:nth-child(#{ card_number }) .offer-card__tags .-military")
+    expect(page).to have_css(".offers-list-static li:nth-child(#{card_number}) .idme-wallet-button-military")
   end
 end
 
 Given(/^I click to see Group First Responder offers$/) do
   @shop_offers.click_offer_groups_filter_sidebar_link
   @shop_offers.click_groups_first_responder_sidebar_link
-
-  expect(".filter__links:nth-child(2)",:visible => true)
 end
 
 Given(/^I check that the table index shows all first responder specific offers$/) do
   (2..10).each do |card_number|
-    expect(page).to have_css(".offers-list-static li:nth-child(#{ card_number }) .offer-card__tags .-responder")
+    expect(page).to have_css(".offers-list-static li:nth-child(#{card_number}) .idme-wallet-button-responder")
   end
 end
 
 Given(/^I click to see Group Student offers$/) do
   @shop_offers.click_offer_groups_filter_sidebar_link
   @shop_offers.click_groups_student_sidebar_link
-
-  expect(".filter__links:nth-child(3)",:visible => true)
 end
 
 Given(/^I check that the table index shows all student specific offers$/) do
   (2..10).each do |card_number|
-    expect(page).to have_css(".offers-list-static li:nth-child(#{ card_number }) .offer-card__tags .-student")
+    expect(page).to have_css(".offers-list-static li:nth-child(#{card_number}) .idme-wallet-button-student")
   end
 end
 
-Given(/^I click to see Group Government Eshoployees Offers$/) do
+Given(/^I click to see Group Government Employees offers$/) do
   @shop_offers.click_offer_groups_filter_sidebar_link
   @shop_offers.click_groups_government_sidebar_link
-  expect(".filter__links:nth-child(4)",:visible => true)
 end
 
-Given(/^I check that the table index shows all government eshoployee specific offers$/) do
-  expect(page).to not_have_selector(".offers-list-static .resource-card")
-  #Currently there are no listed government specific deals on shop staging
-  #TODO: Add a couple test gov specific offers
+Given(/^I check that the table index shows all government employee specific offers$/) do
+  (1..2).each do |card_number|
+    expect(page).to have_css(".offers-list-static li:nth-child(#{card_number}) .idme-wallet-button-government")
+  end
 end
 
 Given(/^I click to see Group Teacher offers$/) do
   @shop_offers.click_offer_groups_filter_sidebar_link
   @shop_offers.click_groups_teacher_sidebar_link
-  expect(".filter__links:nth-child(5)",:visible => true)
 end
 
 Given(/^I check that the table index shows all teacher specific offers$/) do
   (2..10).each do |card_number|
-    expect(page).to have_css(".offers-list-static li:nth-child(#{ card_number }) .offer-card__tags .-teacher")
+    expect(page).to have_css(".offers-list-static li:nth-child(#{card_number}) .idme-wallet-button-teacher")
   end
 end

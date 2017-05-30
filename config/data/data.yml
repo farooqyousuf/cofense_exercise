@@ -12,18 +12,36 @@ mil_email:
 
 student_creds:
   school: George Mason University
-  fname: Farooq
-  lname: Yousuf
-  dob: 01/05/1985
+  verification_first_name: John
+  verification_last_name: Smithereens
+  verification_birth_date: 01/05/1985
+  verification_social: 3331
+  verification_social_confirm: 3331
   denied_ssn: 1234
   dupe_fname: Capybara
   dupe_lname: DoNotDelete
   dupe_ssn: 2221
 
+student_creds_dupe:
+  school: George Mason University
+  verification_first_name: Capybara
+  verification_last_name: DoNotDelete
+  verification_birth_date: 01/05/1985
+  verification_social: 2221
+  verification_social_confirm: 2221
+
+student_creds_denied:
+  school: George Mason University
+  verification_first_name: Farooq
+  verification_last_name: Yousuf
+  verification_birth_date: 01/05/1985
+  verification_social: 3331
+  verification_social_confirm: 3331
+
 government:
-  first_name: Farooq
-  last_name: Yousuf
-  birth_date: 01/05/1985
+  verification_first_name: Farooq
+  verification_last_name: Yousuf
+  verification_birth_date: 01/05/1985
   city: Ashburn
   county: Loudoun
   state: California
@@ -63,14 +81,14 @@ dd214_via_scra:
 
 fail_experian:
   school: George Mason University
-  service_member_first_name: James
-  service_member_last_name: Smith
+  verification_first_name: James
+  verification_last_name: Smith
   service_member_birth_date: 01/04/1994
   first_name: Maurice
   last_name: Ruiz
-  birth_date: 06/04/1974
-  social: 222222222
-  social_confirm: 222222222
+  verification_birth_date: 06/04/1974
+  verification_social: 222222222
+  verification_social_confirm: 222222222
   street: 3929 Main Road
   city: Richmond
   state: Virginia
@@ -80,12 +98,12 @@ fail_experian:
   emt_zip: 12345
 
 experian_user:
-  school: George Mason University
-  first_name: Sue
-  last_name: Gentz
-  birth_date: 09/03/1962
-  social: 666360453
-  social_confirm: 666360453
+  verification_school: George Mason University
+  verification_first_name: Sue
+  verification_last_name: Gentz
+  verification_birth_date: 09/03/1962
+  verification_social: 666360453
+  verification_social_confirm: 666360453
   street: 406 S Market St
   city: Emporia
   state: Kansas
@@ -99,12 +117,12 @@ experian_user2:
   school: George Mason University
   first_name: Erin
   last_name: Rashid
-  service_member_first_name: Erin
-  service_member_last_name: Rashid
-  service_member_birth_date: 04/30/1942
+  verification_first_name: Erin
+  verification_last_name: Rashid
+  verification_birth_date: 04/30/1942
   birth_date: 04/30/1942
-  social: 666024882
-  social_confirm: 666024882
+  verification_social: 666024882
+  verification_social_confirm: 666024882
   phone: 6202318771
   credit_card: 4888603132346941
   street: 302 E Adams St
@@ -142,11 +160,11 @@ mil_doc:
   first_name: CapybaraTester
   last_name: CapybaraTester
   birth_date: 01/05/1985
-  service_member_first_name: Sue
-  service_member_last_name: Gentz
-  service_member_birth_date: 09/03/1962
-  social: 666360453
-  social_confirm: 666360453
+  verification_service_member_first_name: Sue
+  verification_service_member_last_name: Gentz
+  verification_service_member_birth_date: 09/03/1962
+  verification_social: 666360453
+  verification_social_confirm: 666360453
   street: 406 S Market St
   city: Emporia
   zip: 66801
@@ -157,6 +175,12 @@ emt_national:
   last_name: Paucar
   birth_date: 01/01/1924
   registry_number: M8037059
+
+expired_emt_national:
+  first_name: Aaron
+  last_name: Johnson
+  birth_date: 01/01/1924
+  registry_number: M8037099
 
 denied_emt_national:
   first_name: Farooq
