@@ -4,7 +4,9 @@ end
 
 Given(/^I should be successfully verified(?: as "(.*)")?$/) do |group|
   flag = ["LOA1", "LOA2", "LOA3"].include?(group)
-  click_continue_link
+  if page.has_link? "Continue"
+    click_continue_link
+  end
   page.has_content?("ID.me TestDrive")
 
   #save oauth client token for idp and iva tests

@@ -58,7 +58,7 @@ include DataMagic
   end
 
   def header_css
-    ".form-title"
+    ".heading"
   end
 
   def click_verify_button

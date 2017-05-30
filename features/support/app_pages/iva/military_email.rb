@@ -7,7 +7,8 @@ class MilitaryEmail < IDmeBase
   include ErrorMessages
 
   def verify(affiliation:, populate: true, type: nil)
-    find("[data-option=#{container_attribute}]").find(".verification-header").click
+    click_link("Verify using a .mil e-mail address")
+    click_link("Begin")
     populate_affiliation(affiliation)
 
     if populate
@@ -33,25 +34,20 @@ class MilitaryEmail < IDmeBase
                           dob: data.fetch("dupe_dob"))
       end
 
-      if ["Service Member", "Military Supporter"].include?(affiliation)
-        find(".checkbox").click
-      end
-
       if ["Military Family", "Military Spouse"].include?(affiliation)
-        %w(first_name last_name).each do |field|
-          fill_in field, :with => Faker::Name.send(field)
-        end
-        2.times {fill_in "birth_date", :with => @dob}
-        select_option(container_attribute, "#s2id_service_subgroup_id", "Veteran", index=0)
+        fill_in "verification_first_name", :with => Faker::Name.first_name
+        fill_in "verification_last_name", :with => Faker::Name.last_name
+        2.times { fill_in "verification_birth_date", :with => @dob }
+        select_option("#select2-chosen-3", "Veteran")
       end
 
     end
 
-    click_verify_button
+    click_continue
   end
 
-  def populate_affiliation(value)
-    select_option(container_attribute, ".military-affiliation", value, index=0)
+  def populate_affiliation(affiliation)
+    select_option("#s2id_verification_subgroup_id", affiliation)
   end
 
   def build_unique_info
@@ -62,10 +58,10 @@ class MilitaryEmail < IDmeBase
   end
 
   def populate_fields(email:, fname:, lname:, dob:)
-    fill_in "service_member_first_name", with: fname
-    fill_in "service_member_last_name", with: lname
-    2.times {fill_in "service_member_birth_date", with: dob}
-    %w(email email_confirmation).each do |field|
+    fill_in "verification_service_member_first_name", :with => fname
+    fill_in "verification_service_member_last_name", :with => lname
+    2.times {fill_in "verification_service_member_birth_date", :with => dob}
+    %w(email verification_email_confirmation).each do |field|
       fill_in field, :with => email
     end
   end
@@ -79,4 +75,3 @@ class MilitaryEmail < IDmeBase
   end
 
 end
-
