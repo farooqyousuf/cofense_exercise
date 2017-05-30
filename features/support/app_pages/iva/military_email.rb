@@ -58,9 +58,9 @@ class MilitaryEmail < IDmeBase
   end
 
   def populate_fields(email:, fname:, lname:, dob:)
-    fill_in "verification_service_member_first_name", with: fname
-    fill_in "verification_service_member_last_name", with: lname
-    2.times {fill_in "verification_service_member_birth_date", with: dob}
+    fill_in "verification_service_member_first_name", :with => fname
+    fill_in "verification_service_member_last_name", :with => lname
+    2.times {fill_in "verification_service_member_birth_date", :with => dob}
     %w(email verification_email_confirmation).each do |field|
       fill_in field, :with => email
     end
