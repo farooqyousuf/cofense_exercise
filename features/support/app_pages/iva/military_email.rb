@@ -46,8 +46,8 @@ class MilitaryEmail < IDmeBase
     click_continue
   end
 
-  def populate_affiliation(value)
-    select_option(container_attribute, ".field-group", value, index=0)
+  def populate_affiliation(affiliation)
+    select_option("#s2id_verification_subgroup_id", affiliation)
   end
 
   def build_unique_info
