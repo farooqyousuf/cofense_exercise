@@ -48,7 +48,7 @@ end
 Given(/^I complete the new Wallet account linking process$/) do
   @idp_new_wallet = IDPNewWallet.new
 
-  if page.text.include? "I am joining ID.me for the first time"
+  if page.has_link? "I am joining ID.me for the first time"
     @idp_new_wallet.click_joining_first_time
     @idp_new_wallet.check_tos_pp
     @idp_new_wallet.click_continue_button
