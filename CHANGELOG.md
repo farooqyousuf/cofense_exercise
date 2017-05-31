@@ -6,6 +6,7 @@ All notable changes to this project will be documented in this file. This projec
 
 ## 2.3.12 (5/31/17)
 - CORE-7210: Fix IDP Password test
+- CORE-7212: Fix IDP Signin test
 
 ## 2.3.11 (5/30/17)
 - CORE-7527: Fix Teacher Doc Denied IVA test
