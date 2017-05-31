@@ -3,6 +3,7 @@
 ### Released
 
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
+
 ## 2.3.12 (5/31/17)
 - CORE-7210: Fix IDP Password test
 - CORE-7212: Fix IDP Signin test
