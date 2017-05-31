@@ -7,6 +7,8 @@ All notable changes to this project will be documented in this file. This projec
 - CORE-7527: Fix Teacher Doc Denied IVA test
 - CORE-7208: Fix IDP Google test
 - CORE-7207: Fix IDP Facebook test
+- CORE-7528: Fix Teacher Doc Dupe IVA test
+
 
 ## 2.3.10 (5/29/17)
 - CORE-7269: Fix Happy Path Military Email IVA test
