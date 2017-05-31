@@ -7,6 +7,7 @@ Feature: User sign in with an existing account
   @smoke
   Scenario: Successful login
     * I login as a "Unverified" user
+    * I verify using an ID.me military passcode
     * I should be successfully authenticated
 
   Scenario: Login with invalid password
