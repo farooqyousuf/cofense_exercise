@@ -89,13 +89,13 @@ module HelperMethods
     page.find("#fileupload-error").text
   end
 
-  # def red_alert_box_message
-  #   page.find(".alert-error").text
-  # end
+  def red_alert_box_message
+    page.find(".alert-error").text
+  end
 
-  # def green_alert_box_message
-  #   page.find(".alert-success").text
-  # end
+  def green_alert_box_message
+    page.find(".alert-success").text
+  end
 
   def error_label_css
     ".error"
