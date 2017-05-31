@@ -69,4 +69,8 @@ Given(/^I should see a red highlighted error on the (.*?)"$/) do |fields|
   when "tos field"
     page.has_css?(".check-group .error")
   end
+
+  password_field = page.find("#user_password").native.css_value('border-bottom-color')
+  (password_field.should eq("rgba(194, 58, 39, 1)")).should == true
+  puts "The password field border color is: #{password_field}"
 end
