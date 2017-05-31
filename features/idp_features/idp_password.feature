@@ -5,7 +5,6 @@ Feature: User password reset
     * I visit IDP through the "shop" policy
     * I click on Forgot password
 
-  @delete_current_user
   Scenario: Forgot Your Password
     * I send the forgot password code to a "valid" email account
     * I reset my password

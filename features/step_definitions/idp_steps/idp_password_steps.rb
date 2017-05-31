@@ -23,7 +23,6 @@ end
 
 Given(/^I verify I can login with the newly reset password$/) do
   step 'I login as a "valid" user'
-  step 'I verify using an ID.me military passcode'
 end
 
 Given(/^I enter a wrong reset password code (\d+) times?/) do |number|
