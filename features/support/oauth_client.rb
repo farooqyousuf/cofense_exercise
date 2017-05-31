@@ -56,10 +56,10 @@ class OAuthClient
 
   def login_with_google
     find("a[title='Google']").click
-    fill_in "Email", :with => FigNewton.oauth.google_user
-    find("#next").click
-    fill_in "Passwd", :with => FigNewton.oauth.google_pw
-    find("#signIn").click
+    fill_in "identifier", :with => FigNewton.oauth.google_user
+    find("#identifierNext").click
+    fill_in "password", :with => FigNewton.oauth.google_pw
+    find("#passwordNext").click
   end
 
    def login_with_linkedin
