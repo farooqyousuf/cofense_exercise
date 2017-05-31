@@ -3,8 +3,13 @@
 ### Released
 
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
-- 2.3.11 (5/30/17)
+## 2.3.12 (5/31/17)
+- CORE-7210: Fix IDP Password test
+
+## 2.3.11 (5/30/17)
 - CORE-7527: Fix Teacher Doc Denied IVA test
+- CORE-7208: Fix IDP Google test
+- CORE-7207: Fix IDP Facebook test
 - CORE-7528: Fix Teacher Doc Dupe IVA test
 
 ## 2.3.10 (5/29/17)
