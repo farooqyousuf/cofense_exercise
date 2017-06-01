@@ -24,6 +24,7 @@ Feature: User account lock and unlock
     * I click on the unlock account link
     * I unlock my account
     * I login as a "current_username" user
+    * I verify using an ID.me military passcode
     * I should be successfully authenticated
 
   Scenario: Unlock code can be used no more than 5 times
