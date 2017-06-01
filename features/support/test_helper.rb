@@ -110,7 +110,7 @@ module HelperMethods
 
   %w(border-top-color border-right-color border-bottom-color border-left-color).each do |border|
       red_highlighted_field = page.find(field).native.css_value(border)
-      (red_highlighted_field.should eq(red)).should == true
+      expect(red_highlighted_field).to eql(red)
     end
   end
 
