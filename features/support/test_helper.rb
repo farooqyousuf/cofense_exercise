@@ -105,6 +105,16 @@ module HelperMethods
   #   page.find(".label-error").text
   # end
 
+  def check_red_highlighted_error(field)
+    red = "rgba(194, 58, 39, 1)"
+
+    border_color = ["border-top-color", "border-right-color", "border-bottom-color", "border-left-color"]
+    border_color.each do |border|
+      red_highlighted_field = page.find(field).native.css_value(border)
+      (red_highlighted_field.should eq(red)).should == true
+    end
+  end
+
   def visit_admin_users_in_new_window
     @admin_tool = AdminTool.new
     @admin_tool.login_in_new_window

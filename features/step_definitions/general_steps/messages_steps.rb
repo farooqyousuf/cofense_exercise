@@ -57,39 +57,22 @@ Given(/^I should see the red error "([^"]*)" under the file upload field$/) do |
   (red_error_under_file_upload.should eq(expected_text)).should == true
 end
 
-Given(/^I should see a red highlighted error on the (.*?)"$/) do |fields|
+Given(/^I should see a red highlighted error on the "([^"]*)"$/) do |fields|
+  user_password = "#user_password"
+  confirm_password = "#user_password_confirmation"
+  tos_field = ".checkbox.error span"
+
   case fields
   when "password, confirm password and tos fields"
-    page.has_css?(".field-group div:nth-child(2).error")
-    page.has_css?(".field-group div:nth-child(3).error")
-    page.has_css?(".check-group .error")
+    check_red_highlighted_error(user_password)
+    check_red_highlighted_error(confirm_password)
+    check_red_highlighted_error(tos_field)
   when "confirm password and tos fields"
-    page.has_css?(".field-group div:nth-child(3).error")
-    page.has_css?(".check-group .error")
+    check_red_highlighted_error(confirm_password)
+    check_red_highlighted_error(tos_field)
   when "tos field"
-    page.has_css?(".check-group .error")
+    check_red_highlighted_error(tos_field)
+  else fail("Field or selection not found")
   end
 
-  red = "rgba(194, 58, 39, 1)"
-  # binding.pry
-
-  border_color = ["border-top-color", "border-right-color", "border-bottom-color", "border-left-color"]
-  border_color.each do |border|
-    password_field = page.find("#user_password").native.css_value(border)
-    (password_field.should eq(red)).should == true
-    puts "The password field #{border.upcase} color is: #{password_field}"
-  end
-
-  # password_field1 = page.find("#user_password").native.css_value('border-top-color')
-  # password_field2 = page.find("#user_password").native.css_value('border-right-color')
-  # password_field3 = page.find("#user_password").native.css_value('border-bottom-color')
-  # password_field4 = page.find("#user_password").native.css_value('border-left-color')
-  #
-  # (password_field1.should eq(red)).should == true
-  # (password_field2.should eq(red)).should == true
-  # (password_field3.should eq(red)).should == true
-  # (password_field4.should eq(red)).should == true
-  # puts "The password field border right color is: #{password_field2}"
-  # puts "The password field border bottom color is: #{password_field3}"
-  # puts "The password field border left color is: #{password_field4}"
 end
