@@ -9,7 +9,7 @@ The following must be installed
 * Cucumber
 * Firefox v.45
 
-###Installing Thor
+### Installing Thor
 Check if thor is already installed
 ```
 $ thor -v
