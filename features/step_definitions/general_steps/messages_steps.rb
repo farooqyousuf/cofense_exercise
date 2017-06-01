@@ -74,5 +74,4 @@ Given(/^I should see a red highlighted error on the "([^"]*)"$/) do |fields|
     check_red_highlighted_error(tos_field)
   else fail("Field or selection not found")
   end
-
 end
