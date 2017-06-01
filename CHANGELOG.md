@@ -3,9 +3,14 @@
 ### Released
 
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
+## 2.3.13 (6/1/17)
+- CORE-7396: Fix IDP Signup test
+
 ## 2.3.12 (5/31/17)
 - CORE-7210: Fix IDP Password test
 - CORE-7212: Fix IDP Signin test
+- CORE-7542: Fix Teacher prompt for reqd fields IVA test
+- CORE-7545: Fix Teacher Doc Prompt Error Code 92 IVA test
 
 ## 2.3.11 (5/30/17)
 - CORE-7527: Fix Teacher Doc Denied IVA test
