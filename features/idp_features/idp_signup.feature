@@ -8,6 +8,7 @@ Feature: User account creation
   @smoke
   Scenario: Successful sign up
     * I sign up as a new user
+    * I verify using an ID.me military passcode
     * I should be successfully authenticated
 
   Scenario: Attempt to sign up with only email
