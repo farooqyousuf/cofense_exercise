@@ -1,9 +1,13 @@
+Given(/^I click on the teacher verify using state lookup link$/) do
+  TeacherLookup.new.click_verify_by_state_lookup
+end
+
 Given(/^I click on the teacher verify using documentation link$/) do
   TeacherDoc.new.click_verify_by_doc
 end
 
-Given(/^I select the teacher state$/) do
-  TeacherDoc.new.populate_teacher_first_state("Maryland")
+Given(/^I select the teacher state "([^"]*)"$/) do |state|
+  TeacherDoc.new.populate_teacher_first_state(state)
 end
 
 Given(/^I should be on the teacher verification screen$/) do
