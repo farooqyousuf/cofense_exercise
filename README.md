@@ -27,8 +27,8 @@ $ /Applications/Firefox.app/Contents/MacOS/firefox -v
 ```
 
 The version must be less than or equal to version 45.0.1.  If it is not then do the following.
-First [uninstall Firefox](http://kb.mozillazine.org/Uninstalling_Firefox target="_blank")
-Next [install Firefox v.45.0.1](https://ftp.mozilla.org/pub/firefox/releases/45.0.1/mac/en-US/ target="_blank")
+First [uninstall Firefox](http://kb.mozillazine.org/Uninstalling_Firefox)
+Next [install Firefox v.45.0.1](https://ftp.mozilla.org/pub/firefox/releases/45.0.1/mac/en-US/)
 
 ## Running Revelator
 
