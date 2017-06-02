@@ -8,6 +8,7 @@ All notable changes to this project will be documented in this file. This projec
 - INT-1419: Add more README information in revelator
 - CORE-7546: Fixed successful path tests for teacher lookup method
 - CORE-7583: Fix Teacher Lookup Denied Path IVA test
+- CORE-7585: Fix Teacher Lookup Reqd Fields IVA test
 
 ## 2.3.13 (6/1/17)
 - CORE-7396: Fix IDP Signup test
