@@ -1,4 +1,4 @@
-Given(/^I click on the teacher verify using state lookup link$/) do
+Given(/^I click on the verify using teacher state lookup link$/) do
   TeacherLookup.new.click_verify_by_state_lookup
 end
 
