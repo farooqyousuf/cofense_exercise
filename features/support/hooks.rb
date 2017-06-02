@@ -133,17 +133,8 @@ After("@delete_scra_user5") do
   @admin_tool.logout_in_new_window
 end
 
-After("@delete_current_username") do
-  visit_admin_users_in_new_window
-  @admin_users.delete_current_username
-  @admin_tool.logout_in_new_window
-end
-
-After("@delete_user") do
-  visit_admin_users_in_new_window
-  @admin_users.open_newest(true)
-  @admin_users.delete_user
-  @admin_tool.logout_in_new_window
+After("@delete_current_user_email") do
+  delete_user(@user_email)
 end
 
 After("@delete_experian_user1") do
@@ -210,4 +201,13 @@ After("@wallet_account_sign_up_social_federation") do
   visit_admin_users_in_new_window
   @admin_users.delete_shop_test_user
   @admin_tool.logout_in_new_window
+end
+
+def delete_user(email)
+  # TODO: Extract to own class
+  url   = FigNewton.admin.user_api
+  query = { "email" => CGI.escape(@user_email) }
+  auth  = { :username => FigNewton.admin.basic_auth_username, :password => FigNewton.admin.basic_auth_password }
+
+  HTTParty.delete(url, :query => query, :basic_auth => auth)
 end

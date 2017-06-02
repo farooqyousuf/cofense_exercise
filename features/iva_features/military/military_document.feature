@@ -50,13 +50,13 @@ Feature: Military verification using document upload
     * Multi-spouse: I verify "second" spouse via "mil doc" is not allowed to verify
     * Multi-family: I verify "fourth" family via "mil doc" is not allowed to verify
 
- @delete_current_username
+ @delete_current_user_email
  Scenario: Denied attempt for Military Document verification (Error code 15)
     * I submit the military document verification form as a "denied" record
     * I should see the red alert box error message "We're sorry, but we were unable to verify the information you provided. The information entered must match the information on official records. Note: If you've recently had a name change, try your maiden or prior name."
     * I verify the attempt is marked as "DENIED"
 
- @delete_experian_user1 @delete_current_username
+ @delete_experian_user1 @delete_current_user_email
  Scenario: Dupe attempt test for Military Document (Error code 77)
     * I verify using military documentation for "Service Member"
     * I approve the document in IDme admin
@@ -66,7 +66,7 @@ Feature: Military verification using document upload
     * I should see the red alert box error message "We’re sorry, but we are unable to verify your credentials with the information you provided."
     * I verify the attempt is marked as "DUPLICATE"
 
- @delete_experian_user1 @delete_current_username
+ @delete_experian_user1 @delete_current_user_email
  Scenario: Prompt Error Code 78
     * I verify using military documentation for "Service Member"
     * I approve the document in IDme admin

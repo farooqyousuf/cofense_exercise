@@ -40,7 +40,7 @@ Given(/^I request a new reset password code and unlock my account "([^"]*)"$/) d
                when "valid"    then FigNewton.oauth.valid
                when "valid1"   then FigNewton.oauth.valid1
                when "valid2"   then FigNewton.oauth.valid2
-               else  user_email = @username
+               else  user_email = @user_email
                end
   @idp_pw_reset.fill_in_email_by_name(user_email)
   @idp_pw_reset.click_continue_button

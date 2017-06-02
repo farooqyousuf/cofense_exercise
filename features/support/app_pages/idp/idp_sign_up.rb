@@ -3,8 +3,9 @@ class IDPSignUp < IDmeBase
   include IDPBase
 
   #Readable attributes
-  #Allows the username attribute to be read/accessed outside of this class
-  attr_reader :username
+  #Allows the user_email attribute to be read/accessed outside of this class
+
+  attr_reader :user_email
 
   def initialize
     super("#{FigNewton.idp.base_url}/registration/new")
@@ -14,9 +15,9 @@ class IDPSignUp < IDmeBase
     "user_email"
   end
 
-  def unique_username
-    @username = "capybara+"+"#{rand(6 ** 8)}"+"@id.me"
-    fill_in(user_email_css, :with => @username)
+  def unique_user_email
+    @user_email = "capybara+"+"#{rand(6 ** 8)}"+"@id.me"
+    fill_in(user_email_css, :with => @user_email)
   end
 
   def pw_tos
@@ -30,9 +31,9 @@ class IDPSignUp < IDmeBase
   end
 
   def sign_up
-    unique_username
+    unique_user_email
     pw_tos
-    puts "username: #{@username}"
+    puts "username: #{@user_email}"
   end
 
   def click_sign_up_button

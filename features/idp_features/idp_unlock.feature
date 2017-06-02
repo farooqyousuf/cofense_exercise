@@ -19,7 +19,7 @@ Feature: User account lock and unlock
     * I login as a "current_username" user
     * I should see the red alert box error message "Your ID.me Wallet has been locked due to a high number of failed sign-in attempts. Please click here to unlock it."
 
- @delete_current_username
+ @delete_current_user_email
  Scenario: Verify if account can be used after unlocking it
     * I lockout my account
     * I click on the unlock account link

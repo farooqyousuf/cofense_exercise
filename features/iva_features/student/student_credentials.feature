@@ -8,7 +8,7 @@ Feature: Student verification using student credentials
     * I click on the Verify using your student credentials link
     * I click on the Begin link
 
-  @smoke @delete_current_username
+  @smoke @delete_current_user_email
   #Unique combo of ssn and dob to verify
   # TODO Ticket# INT-862
   Scenario: Successful verification
@@ -20,7 +20,7 @@ Feature: Student verification using student credentials
     * I should see the error message "We're sorry, but we were unable to confirm your enrollment in the school you selected. If available, please try another verification option, or visit our Support page for more information."
     * I verify the attempt is marked as "DENIED"
 
-  @delete_current_username
+  @delete_current_user_email
   Scenario: Duplicate attempt for student credentials verification (Error code 55)
     * I submit the student credentials verification form as a "duplicate" record
     * I should see the error message "We're sorry, but we were unable to confirm your enrollment in the school you selected. If available, please try another verification option, or visit our Support page for more information."

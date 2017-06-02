@@ -7,7 +7,7 @@ Feature: Teacher verification using state lookup
     * I sign up as a new user
     * I click on the verify using teacher state lookup link
 
-  @smoke @delete_current_username
+  @smoke @delete_current_user_email
   #unique combo of ssn/dob
   Scenario: Successful verification with no license and no ssn
     * I select the teacher state "Delaware"
@@ -16,7 +16,7 @@ Feature: Teacher verification using state lookup
     * I "approve" the teacher verification in IDme admin
     * I should be successfully verified
 
-  @delete_current_username
+  @delete_current_user_email
   Scenario: Successful verification with no license and short ssn
     * I select the teacher state "New Mexico"
     * I click on the Begin link
@@ -24,7 +24,7 @@ Feature: Teacher verification using state lookup
     * I "approve" the teacher verification in IDme admin
     * I should be successfully verified
 
-  @delete_current_username
+  @delete_current_user_email
   Scenario: Successful verification with license and no ssn
     * I select the teacher state "Michigan"
     * I click on the Begin link
@@ -32,7 +32,7 @@ Feature: Teacher verification using state lookup
     * I "approve" the teacher verification in IDme admin
     * I should be successfully verified
 
-  @delete_current_username
+  @delete_current_user_email
   Scenario: Successful verification with license and short ssn
     * I select the teacher state "Alabama"
     * I click on the Begin link
@@ -40,7 +40,7 @@ Feature: Teacher verification using state lookup
     * I "approve" the teacher verification in IDme admin
     * I should be successfully verified
 
-  @delete_current_username
+  @delete_current_user_email
   Scenario: Denied attempt for teacher lookup verification (Error code 112)
     * I select the teacher state "Delaware"
     * I click on the Begin link

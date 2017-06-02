@@ -4,7 +4,7 @@ Given(/^I login as a "([^"]*)" user$/) do |user_type|
          when "Unverified"              then FigNewton.oauth.unverified
          when "nonexistent email"       then FigNewton.oauth.nonexistent
          when "valid"                   then FigNewton.oauth.valid
-         when "current_username"        then @username
+         when "current_username"        then @user_email
          when "LOA1"                    then FigNewton.oauth.loa1
          when "LOA2"                    then FigNewton.oauth.loa2
          when "LOA3"                    then FigNewton.oauth.loa3
@@ -35,7 +35,7 @@ Given(/^I should be successfully authenticated(?: using "(.*)")?$/) do |method|
 end
 
 Given(/^I login with an invalid password$/) do
-  @idp_signin.invalid_pw(@username)
+  @idp_signin.invalid_pw(@user_email)
 end
 
 Given(/^I create the test conditions for Login with invalid password$/) do
