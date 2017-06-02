@@ -21,6 +21,10 @@ then [install Firefox v.45.0.1](https://ftp.mozilla.org/pub/firefox/releases/45.
 ## Running Revelator
 
 ### 1) Set up the environment
+Set the env.rb file depending on the environment. IDme uses the
+[Thor Ruby Gem](http://whatisthor.com/) to manage this.
+
+
 Review the list of environments
 ```bash
 thor list
