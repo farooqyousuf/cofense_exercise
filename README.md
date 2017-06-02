@@ -1,6 +1,6 @@
 # ID.me Revelator
 
-Revelator is a repository that contains ID.me's automated regression tests.  It is used to verify that the newly built and updated features dos not break the primary features within there respective applications.
+Revelator is a repository that contains ID.me's automated regression tests.  It is used to verify that the newly built and updated features do not break the primary features within there respective applications.
 
 ## Setup Instructions
 The following must be installed
@@ -27,8 +27,8 @@ $ /Applications/Firefox.app/Contents/MacOS/firefox -v
 ```
 
 The version must be less than or equal to version 45.0.1.  If it is not then do the following.
-First [!uninstall Firefox](http://kb.mozillazine.org/Uninstalling_Firefox)
-Next [!install Firefox v.45.0.1](https://ftp.mozilla.org/pub/firefox/releases/45.0.1/mac/en-US/)
+First [uninstall Firefox](http://kb.mozillazine.org/Uninstalling_Firefox target="_blank")
+Next [install Firefox v.45.0.1](https://ftp.mozilla.org/pub/firefox/releases/45.0.1/mac/en-US/ target="_blank")
 
 ## Running Revelator
 
@@ -39,7 +39,7 @@ thor list
 ```
 
 It will print
-```
+```bash
 thor set:android_saucelabs       # Use Android on Sauce Labs on Production
 thor set:chrome_osx              # Use Chrome on OSX on Sauce Labs on Production
 thor set:chrome_windows          # Use Chrome on Windows on Sauce Labs on Production
@@ -76,7 +76,7 @@ run  cp features/support/environments/env.rb.firefox_osx_staging features/suppor
 First view the feature file you would like to test
 
 `features/feature_directory/test_file.feature`
-```
+```ruby
 1 @test @desktop
 2 Feature: Testing a Test
 3
