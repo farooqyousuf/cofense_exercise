@@ -10,20 +10,19 @@ Revelator is a repository that contains ID.me's automated tests.  It is used to 
 
 ### Installing Firefox v.45
 Check what version of firefox is currently installed
-```
+```bash
 $ /Applications/Firefox.app/Contents/MacOS/firefox -v
 => Mozilla Firefox 45.0.1
 ```
 
 If the Firefox version is greater than 45.0.1, [uninstall Firefox](http://kb.mozillazine.org/Uninstalling_Firefox)
-then [install Firefox v.45.0.1](https://ftp.mozilla.org/pub/firefox/releases/45.0.1/mac/en-US/)
-. Be sure to disable Firefox updates.
+then [install Firefox v.45.0.1](https://ftp.mozilla.org/pub/firefox/releases/45.0.1/mac/en-US/).  Be sure to disable Firefox updates.
 
 ## Running Revelator
 
 ### 1) Set up the environment
 Review the list of environments
-```
+```bash
 thor list
 ```
 
@@ -42,17 +41,17 @@ thor set:ios_saucelabs           # Use iOS on Sauce Labs on Production
 
 ### Run the appropriate thor command to set the environment
 For **INT** tests with Firefox Browser
-```
+```bash
 thor set:firefox_osx_staging
 ```
 
 For **CORE** tests with Firefox Browser
-```
+```bash
 thor set:firefox_osx_staging
 ```
 
 For **USER** tests with Firefox Browser
-```
+```bash
 thor set:firefox_osx_production
 ```
 
@@ -62,7 +61,7 @@ run  cp features/support/environments/env.rb.firefox_osx_staging features/suppor
 ```
 ### 2) Run tests using cucumber
 
-First view the feature file to be tested
+Review the feature file to be tested
 
 `features/feature_directory/test_file.feature`
 ```ruby
@@ -96,7 +95,7 @@ To test a specific scenario within a feature, add a colon and the line number of
 cucumber features/feature_directory/test_file.feature:16
 ```
 
-The tags tests all files and scenarios where the tag is listed.  To test all files and/or scenarios with the @test tag, add `--tags` plus the `@test` tag afterward.
+Tags tests all files and scenarios where the tag is listed.  To test all files and/or scenarios with the @test tag, add `--tags` plus the `@test` tag afterwards.
 ```
 cucumber --tags @test
 ```
