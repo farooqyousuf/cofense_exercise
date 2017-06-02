@@ -5,7 +5,7 @@ Feature: Teacher verification using state lookup
     * I visit IDP through the "teacher" policy
     * I click on the Sign Up link
     * I sign up as a new user
-    * I click on the teacher verify using state lookup link
+    * I click on the verify using teacher state lookup link
 
   @smoke @delete_current_username
   #unique combo of ssn/dob
