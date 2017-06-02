@@ -89,7 +89,7 @@ Review the feature file to be tested
 18    * I approve the test
 19    * I should be successfully verified as "Scenario 2"
 ```
-To test a feature, enter **cucumber** in the CLI and append the feature file you would like to run afterwards.  See the following example.
+To test a feature, enter [cucumber](https://github.com/cucumber/cucumber/wiki/Running-Features) in the CLI and append the feature file you would like to run afterwards.  See the following example.
 ```
 cucumber features/feature_directory/test_file.feature
 ```
@@ -99,7 +99,7 @@ To test a specific scenario within a feature, add a colon and the line number of
 cucumber features/feature_directory/test_file.feature:16
 ```
 
-Tags tests all files and scenarios where the tag is listed.  To test all files and/or scenarios with the @test tag, add `--tags` plus the `@test` tag afterwards.
+[Tags](https://github.com/cucumber/cucumber/wiki/Tags) tests all files and scenarios where the tag is listed.  To test all files and/or scenarios with the @test tag, add `--tags` plus the `@test` tag afterwards.
 ```
 cucumber --tags @test
 ```
