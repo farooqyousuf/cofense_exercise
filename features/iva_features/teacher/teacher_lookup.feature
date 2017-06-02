@@ -42,9 +42,11 @@ Feature: Teacher verification using state lookup
 
   @delete_current_username
   Scenario: Denied attempt for teacher lookup verification (Error code 112)
+    * I select the teacher state "Delaware"
+    * I click on the Begin link
     * I submit the teacher lookup verification form as a "denied" record
     * I "deny" the teacher verification in IDme admin
-    * I should see the red alert box error message "We’re sorry, but we were unable to confirm your status as a teacher using the information you provided. Please double-check your information for errors and try again. Also note that only licensed, classroom teachers are eligible. For additional help, please visit our Support page. Thank you."
+    * I should see the error message "We’re sorry, but we were unable to confirm your status as a teacher using the information you provided. Please double-check your information for errors and try again. Also note that only licensed, classroom teachers are eligible. For additional help, please visit our Support page. Thank you."
     * I verify the attempt is marked as "DENIED"
 
   Scenario: Successfully prompt for all required fields for license and short ssn
