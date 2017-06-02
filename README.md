@@ -1,6 +1,6 @@
 # ID.me Revelator
 
-Revelator is a repository that contains ID.me's automated regression tests.  It is used to verify that the newly built and updated features do not break the primary features within there respective applications.
+Revelator is a repository that contains ID.me's automated tests.  It is used to verify that the newly built and updated features do not break the primary features within there respective applications.
 
 ## Setup Instructions
 
@@ -14,7 +14,8 @@ Check what version of firefox is currently installed
 $ /Applications/Firefox.app/Contents/MacOS/firefox -v
 => Mozilla Firefox 45.0.1
 ```
-First [uninstall Firefox](http://kb.mozillazine.org/Uninstalling_Firefox)
+
+If the Firefox version is greater than 45.0.1, [uninstall Firefox](http://kb.mozillazine.org/Uninstalling_Firefox)
 then [install Firefox v.45.0.1](https://ftp.mozilla.org/pub/firefox/releases/45.0.1/mac/en-US/)
 . Be sure to disable Firefox updates.
 
