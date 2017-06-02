@@ -56,16 +56,22 @@ end
 Given(/^I should see the red error "([^"]*)" under the file upload field$/) do |expected_text|
   (red_error_under_file_upload.should eq(expected_text)).should == true
 end
-# Given(/^I should see a red highlighted error on the (.*?)"$/) do |fields|
-#   case fields
-#   when "password, confirm password and tos fields"
-#     page.has_css?(".field-group div:nth-child(2).error")
-#     page.has_css?(".field-group div:nth-child(3).error")
-#     page.has_css?(".check-group .error")
-#   when "confirm password and tos fields"
-#     page.has_css?(".field-group div:nth-child(3).error")
-#     page.has_css?(".check-group .error")
-#   when "tos field"
-#     page.has_css?(".check-group .error")
-#   end
-# end
+
+Given(/^I should see a red highlighted error on the "([^"]*)"$/) do |fields|
+  user_password = "#user_password"
+  confirm_password = "#user_password_confirmation"
+  tos_field = ".checkbox.error span"
+
+  case fields
+  when "password, confirm password and tos fields"
+    check_red_highlighted_error(user_password)
+    check_red_highlighted_error(confirm_password)
+    check_red_highlighted_error(tos_field)
+  when "confirm password and tos fields"
+    check_red_highlighted_error(confirm_password)
+    check_red_highlighted_error(tos_field)
+  when "tos field"
+    check_red_highlighted_error(tos_field)
+  else fail("Field or selection not found")
+  end
+end
