@@ -8,8 +8,6 @@ class TeacherLookup < IDmeBase
 
   def verify(state: "Delaware", populate: true, type: "unique")
     #Delaware is randomly used as a default state
-    populate_teacher_first_state(state)
-
       if populate
 
         build_unique_info #info for unique and denied users
@@ -33,7 +31,7 @@ class TeacherLookup < IDmeBase
     end
 
     sleep 2
-    click_verify_button
+    click_continue
   end
 
   def build_unique_info
@@ -48,12 +46,12 @@ class TeacherLookup < IDmeBase
   end
 
   def populate_fields(state:, fname:, lname:, dob:, teacher_city:, district:, school:)
-    fill_in "first_name", :with => fname
-    fill_in "last_name", :with => lname
+    fill_in "verification_first_name", :with => fname
+    fill_in "verification_last_name", :with => lname
     fill_in "teacher_city", :with => teacher_city
     fill_in "district", :with => district
-    fill_in "school", :with => school
-    2.times {fill_in "birth_date", :with => dob}
+    fill_in "verification_school", :with => school
+    2.times {fill_in "verification_birth_date", :with => dob}
 
     case state
     when "Michigan"
@@ -68,17 +66,21 @@ class TeacherLookup < IDmeBase
   end
 
   def fill_teacher_license_number
-    fill_in "teacher_number", :with => @teacher_number #teacher license number
+    fill_in "verification_teacher_number", :with => @teacher_number #teacher license number
   end
 
   def fill_short_ssn
-    %w(social social_confirm).each do |field|
+    %w(verification_social verification_social_confirm).each do |field|
       fill_in field, :with => @ssn
     end
   end
 
   def populate_teacher_first_state(value)
     select_filter("id_teacher_state", value)
+  end
+
+  def click_verify_by_state_lookup
+    click_link("I am licensed by my state.")
   end
 
 end
