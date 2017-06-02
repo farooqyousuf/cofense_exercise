@@ -58,7 +58,7 @@ admin:
   user_quick_search: http://admin.idme.dev/searches
   basic_auth_username: idme_admin
   basic_auth_password: idme_admin
-  users_api_endpoint: http://admin.idme.dev/api/users
+  user_api: http://admin.idme.dev/api/users
 
 idp:
   base_url: http://api.idme.dev

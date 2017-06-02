@@ -205,7 +205,7 @@ end
 
 def delete_user(email)
   # TODO: Extract to own class
-  url   = FigNewton.admin.users_api_endpoint
+  url   = FigNewton.admin.user_api
   query = { "email" => CGI.escape(@user_email) }
   auth  = { :username => FigNewton.admin.basic_auth_username, :password => FigNewton.admin.basic_auth_password }
 
