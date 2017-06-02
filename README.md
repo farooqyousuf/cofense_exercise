@@ -20,8 +20,8 @@ Be sure to disable Firefox updates.
 
 ## Running Revelator
 
-### 1) Set up your environment using thor
-To see the list of the environments, run
+### 1) Set up the environment
+Review the list of environments
 ```
 thor list
 ```
@@ -40,23 +40,23 @@ thor set:ios_saucelabs           # Use iOS on Sauce Labs on Production
 ```
 
 ### Run the appropriate thor command to set the environment
-For **INT** tests with Firefox Browser, run
+For **INT** tests with Firefox Browser
 ```
 thor set:firefox_osx_staging
 ```
 
-For **CORE** tests with Firefox Browser, run
+For **CORE** tests with Firefox Browser
 ```
 thor set:firefox_osx_staging
 ```
 
-For **Partner** tests with Firefox Browser, run
+For **Partner** tests with Firefox Browser
 ```
 thor set:firefox_osx_production
 ```
 
 It will print something like this
-```
+```bash
 run  cp features/support/environments/env.rb.firefox_osx_staging features/support/env.rb from "."
 ```
 ### 2) Run tests using cucumber
@@ -85,17 +85,17 @@ First view the feature file to be tested
 18    * I approve the test
 19    * I should be successfully verified as "Scenario 2"
 ```
-To run a feature enter **cucumber** in the CLI and append the feature file you would like to run afterwards.  See the following example.
+To test a feature enter **cucumber** in the CLI and append the feature file you would like to run afterwards.  See the following example.
 ```
 cucumber features/feature_directory/test_file.feature
 ```
 
-To run a scenario, add a colon and the line number of that scenario.  The example below runs Scenario 2.
+To test a specific scenario within a feature, add a colon and the line number of that scenario.  The example below runs Scenario 2.
 ```
 cucumber features/feature_directory/test_file.feature:16
 ```
 
-Tags will run all files and scenarios where the tag is listed.  To run all files and/or scenarios with the @test tag, add `--tags` plus the `@test` tag afterward.
+The tags tests all files and scenarios where the tag is listed.  To test all files and/or scenarios with the @test tag, add `--tags` plus the `@test` tag afterward.
 ```
 cucumber --tags @test
 ```
