@@ -50,17 +50,25 @@ Feature: Teacher verification using state lookup
     * I verify the attempt is marked as "DENIED"
 
   Scenario: Successfully prompt for all required fields for license and short ssn
+    * I select the teacher state "Alabama"
+    * I click on the Begin link
     * I submit the empty Teacher form using "Teacher Lookup Alabama"
     * I should see error messages on required fields for "Teacher Lookup Alabama"
 
   Scenario: Successfully prompt for all required fields for no license and no ssn form
+    * I select the teacher state "Delaware"
+    * I click on the Begin link
     * I submit the empty Teacher form using "Teacher Lookup Delaware"
     * I should see error messages on required fields for "Teacher Lookup Delaware"
 
   Scenario: Successfully prompt for all required fields for license and no ssn form
+    * I select the teacher state "Michigan"
+    * I click on the Begin link
     * I submit the empty Teacher form using "Teacher Lookup Michigan"
     * I should see error messages on required fields for "Teacher Lookup Michigan"
 
   Scenario: Successfully prompt for all required fields for no license and short ssn form
+    * I select the teacher state "New Mexico"
+    * I click on the Begin link
     * I submit the empty Teacher form using "Teacher Lookup New Mexico"
     * I should see error messages on required fields for "Teacher Lookup New Mexico"
