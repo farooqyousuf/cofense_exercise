@@ -1,6 +1,6 @@
 # ID.me Revelator
 
-Revelator is a repository that contains ID.me's automated tests.  It is used to verify that the newly built and updated features do not break the primary features within there respective applications.
+Revelator is a repository that contains ID.me's automated tests.  It is used to verify that the newly built and/or updated features do not break the primary features within there respective applications.
 
 ## Setup Instructions
 
@@ -85,12 +85,12 @@ Review the feature file to be tested
 18    * I approve the test
 19    * I should be successfully verified as "Scenario 2"
 ```
-To test a feature enter **cucumber** in the CLI and append the feature file you would like to run afterwards.  See the following example.
+To test a feature, enter **cucumber** in the CLI and append the feature file you would like to run afterwards.  See the following example.
 ```
 cucumber features/feature_directory/test_file.feature
 ```
 
-To test a specific scenario within a feature, add a colon and the line number of that scenario.  The example below runs Scenario 2.
+To test a specific scenario within a feature, add a colon and the line number of that scenario.  The example below runs **Scenario 2**.
 ```
 cucumber features/feature_directory/test_file.feature:16
 ```
