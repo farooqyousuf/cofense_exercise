@@ -15,8 +15,8 @@ $ /Applications/Firefox.app/Contents/MacOS/firefox -v
 => Mozilla Firefox 45.0.1
 ```
 First [uninstall Firefox](http://kb.mozillazine.org/Uninstalling_Firefox)
-Then [install Firefox v.45.0.1](https://ftp.mozilla.org/pub/firefox/releases/45.0.1/mac/en-US/)
-Be sure to disable Firefox updates.
+then [install Firefox v.45.0.1](https://ftp.mozilla.org/pub/firefox/releases/45.0.1/mac/en-US/)
+. Be sure to disable Firefox updates.
 
 ## Running Revelator
 
@@ -50,7 +50,7 @@ For **CORE** tests with Firefox Browser
 thor set:firefox_osx_staging
 ```
 
-For **Partner** tests with Firefox Browser
+For **USER** tests with Firefox Browser
 ```
 thor set:firefox_osx_production
 ```
