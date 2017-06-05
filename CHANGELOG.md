@@ -4,6 +4,9 @@
 
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
+## 2.3.15 (6/5/17)
+- CORE-7592: Fix EMT Doc Happy Path IVA Test
+
 ## 2.3.14 (6/2/17)
 - INT-1419: Add more README information in revelator
 - CORE-7546: Fixed successful path tests for teacher lookup method

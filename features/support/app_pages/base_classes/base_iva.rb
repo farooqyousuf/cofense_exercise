@@ -74,7 +74,7 @@ include DataMagic
   end
 
   def attach_doc(number = 0)
-    page.has_css?(".file-upload") #will wait until this is true which means the file upload page has loaded, and the bottom command will not fail.
+    page.has_css?("#file-upload") #will wait until this is true which means the file upload page has loaded, and the bottom command will not fail.
     page.driver.browser.all(:xpath, '//input[@type="file"]')[number].send_keys("#{Dir.pwd}/screenshots/screenshot.png")
   end
 

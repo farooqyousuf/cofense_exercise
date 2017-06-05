@@ -7,9 +7,6 @@ class DocEMT < IDmeBase
   include ErrorMessages
 
   def verify(populate: true, type:)
-    find("[data-option=#{container_attribute}]").find(".verification-header").click
-    choose("emt_level_document")
-
     if populate
       unique_data = data_for(:experian_user) #info for unique and duplicate users
       denied_data = data_for(:fail_experian)
@@ -24,13 +21,13 @@ class DocEMT < IDmeBase
         populate_fields(data: second_unique_data)
       end
 
-      click_verify_button
+      click_continue
 
       sleep 2
 
       if (type == "unique")|| (type == "second unique user")
-        attach_doc(1)
-        click_verify_button
+        attach_doc
+        click_continue
       end
     end
   end
@@ -40,17 +37,18 @@ class DocEMT < IDmeBase
   end
 
   def populate_fields(data:)
-    %w(first_name last_name birth_date social social_confirm street city zip).each do |field|
+    %w(verification_first_name verification_last_name verification_birth_date verification_social verification_social_confirm street city zip).each do |field|
       2.times {fill_in field, :with => data.fetch(field)}
     end
     sleep 2
 
     escape_google_address_autocomplete(%w(#street #city))
+    select_option("#s2id_state", "Kansas")
+  end
 
-    #Added the 2 lines above populate_second_state to deal with the random dropdown not working on occasion
-    all("#s2id_state")[0].click
-    find("#s2id_autogen4_search").native.send_keys :escape
-    2.times {populate_second_state("Kansas", index=0)}
+  def click_verify_emt_doc_link
+    click_link("Verify as a certified EMT / Paramedic")
+    click_link("I am neither of the above - OR - I have documentation proving my certification")
   end
 
 end
