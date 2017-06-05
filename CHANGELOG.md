@@ -8,6 +8,7 @@ All notable changes to this project will be documented in this file. This projec
 - CORE-7592: Fix EMT Doc Happy Path IVA Test
 - CORE-7594: Fix EMT Doc Denied IVA Test
 - CORE-7595: Fix EMT Doc Dupe IVA Test
+- CORE-7586: Fix EMT Doc Error Code 84 IVA Test
 
 ## 2.3.14 (6/2/17)
 - INT-1419: Add more README information in revelator

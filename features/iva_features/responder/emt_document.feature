@@ -39,6 +39,8 @@ Feature: Responder verification as an EMT using document upload
     * I approve the document in IDme admin
     * I clear the session from Authority
     * I create a new account after clearing my old "responder" session
+    * I click on the Verify using EMT Doc link
+    * I click on the Begin link
     * I submit the EMT document verification form as a "second unique user" record
-    * I should see the red alert box error message "We’re sorry, but we were unable to verify your credentials with the document you provided. Please see our Support page for document specifications, or try another verification option."
+    * I should see the error message "We’re sorry, but we were unable to verify your credentials with the document you provided. Please see our Support page for document specifications, or try another verification option."
 
