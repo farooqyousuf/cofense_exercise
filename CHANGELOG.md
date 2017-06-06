@@ -4,6 +4,9 @@
 
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
+## 2.3.16 (6/6/17)
+- CORE-7607: Fixed all EMT National tests
+
 ## 2.3.15 (6/5/17)
 - CORE-7592: Fix EMT Doc Happy Path IVA Test
 - CORE-7594: Fix EMT Doc Denied IVA Test
