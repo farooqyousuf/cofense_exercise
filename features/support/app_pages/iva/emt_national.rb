@@ -7,8 +7,8 @@ class NationalEMT < IDmeBase
   include ErrorMessages
 
    def verify(populate: true, type: nil)
-      find("[data-option=#{container_attribute}]").find(".verification-header").click
-      choose("emt_level_national")
+      # find("[data-option=#{container_attribute}]").find(".verification-header").click
+      # choose("emt_level_national")
 
       if populate
 
@@ -26,11 +26,11 @@ class NationalEMT < IDmeBase
         end
       end
 
-      click_verify_button
+      click_continue
    end
 
   def populate_fields(data:)
-      %w(first_name last_name birth_date registry_number).each do |field|
+      %w(verification_first_name verification_last_name verification_birth_date verification_registry_number).each do |field|
         2.times {fill_in field, :with => data.fetch(field)}
       end
   end
@@ -42,4 +42,10 @@ class NationalEMT < IDmeBase
   def required_fields
       [0,1,2,3]
   end
+
+  def click_verify_emt_national_link
+    click_link("Verify as a certified EMT / Paramedic")
+    click_link("I am nationally certified")
+  end
+
 end

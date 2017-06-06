@@ -171,10 +171,10 @@ mil_doc:
   state: Kansas
 
 emt_national:
-  first_name: Jorge
-  last_name: Paucar
-  birth_date: 01/01/1924
-  registry_number: M8037059
+  verification_first_name: Jorge
+  verification_last_name: Paucar
+  verification_birth_date: 01/01/1924
+  verification_registry_number: M8037059
 
 expired_emt_national:
   first_name: Aaron
