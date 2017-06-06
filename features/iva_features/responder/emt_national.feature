@@ -33,7 +33,7 @@ Feature: Responder verification as an nationally certified EMT
  @delete_current_username
  Scenario: Prompt Error Code 26
     * I submit the emt national verification form as a "expired" record
-    * I should see the red alert box error message "We're sorry, but it appears that your NREMT registration has expired. Please update your national registration and try again, or visit our Support page for additional information."
+    * I should see the error message "We're sorry, but it appears that your NREMT registration has expired. Please update your national registration and try again, or visit our Support page for additional information."
 
   Scenario: Successfully prompt for all required fields
     * I submit the empty National EMT form
