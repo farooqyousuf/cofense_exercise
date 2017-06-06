@@ -7,9 +7,6 @@ class NationalEMT < IDmeBase
   include ErrorMessages
 
    def verify(populate: true, type: nil)
-      # find("[data-option=#{container_attribute}]").find(".verification-header").click
-      # choose("emt_level_national")
-
       if populate
 
         data = data_for(:emt_national) #info for unique and duplicate user
