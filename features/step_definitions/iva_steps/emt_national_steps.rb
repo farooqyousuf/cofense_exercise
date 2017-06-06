@@ -1,3 +1,7 @@
+Given(/^I click on the Verify using EMT National link$/) do
+  NationalEMT.new.click_verify_emt_national_link
+end
+
 Given(/^I verify using nationally certified EMT credentials$/) do
   NationalEMT.new.verify(type: "unique")
 end
