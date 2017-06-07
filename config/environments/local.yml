@@ -8,8 +8,8 @@ authority:
  password: Password123
 
 oauth:
-  client_id     : <insert your local ID.me TestDrive consumer's client_id here>
-  client_secret : <insert your local ID.me TestDrive consumer's client_secret here>
+  client_id     : cf3fbeb9d6c01cf47813d9bd1939b64f
+  client_secret : i794df75d6424cc0b01f7ec06669da4b1
   idp_endpoint  : http://api.idme.dev
   redirect_uri  : http://testdrive.idme.dev
   general_password: Changeme123
@@ -58,7 +58,7 @@ admin:
   user_quick_search: http://admin.idme.dev/searches
   basic_auth_username: idme_admin
   basic_auth_password: idme_admin
-  user_api: http://admin.idme.dev/api/users
+  users_api_endpoint: http://admin.idme.dev/api/users
 
 idp:
   base_url: http://api.idme.dev
