@@ -17,10 +17,8 @@ end
 
 Given(/^I check the store offer card links for "([^"]*)" User$/) do |user_type|
   if user_type == "Logged Out"
-    # expect(page).to have_css(".resource-card .button", :match => :first , :text =>"Sign Up & Save")
     expect(page).not_to have_content("Unlock to Save")
   elsif user_type == "Logged In"
-    # expect(page).to have_css(".resource-card .button", :match => :first ,:text =>"Shop Now")
     expect(page).not_to have_content("Sign Up & Save")
   end
 
