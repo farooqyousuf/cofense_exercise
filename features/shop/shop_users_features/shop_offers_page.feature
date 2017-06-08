@@ -12,7 +12,6 @@ Feature: Test Shop Offers Page
     * I check that the Offers Index is available
     * I check that store offer index card is visible
     * I check the store offer card links for "Logged Out" User
-    * I check that the store offer card favorite and report bug is not visible
 
  Scenario: Check Offers Index Table - Logged in
     * I click on SignIn link
