@@ -17,17 +17,14 @@ end
 
 Given(/^I check the store offer card links for "([^"]*)" User$/) do |user_type|
   if user_type == "Logged Out"
-    expect(page).to have_css(".resource-card .button", :match => :first , :text =>"Sign Up & Save")
+    # expect(page).to have_css(".resource-card .button", :match => :first , :text =>"Sign Up & Save")
+    expect(page).not_to have_content("Unlock to Save")
   elsif user_type == "Logged In"
-    expect(page).to have_css(".resource-card .button", :match => :first ,:text =>"Shop Now")
+    # expect(page).to have_css(".resource-card .button", :match => :first ,:text =>"Shop Now")
+    expect(page).not_to have_content("Sign Up & Save")
   end
 
   expect(page).to have_css(".resource-card .offer-card__share-alt",:match => :first , :text =>"Share with Friends")
-end
-
-Given(/^I check that the store offer card favorite and report bug is not visible$/) do
-  expect(page).to have_no_selector(".save-offer")
-  expect(page).to have_no_selector(".report-offer")
 end
 
 Given(/^I check that the store offer card favorite and report bug is visible$/) do
@@ -37,7 +34,6 @@ end
 
 Given(/^I click to see all promo code offers$/) do
   @shop_offers.click_promocodes_sidebar_link
-
   expect(page.current_url).to eql(FigNewton.shop.offers_promo_code_index_page)
   expect(page).to have_css(".listing__header .breadcrumbs",:text =>"Shop › Offers › Codes")
 end
@@ -59,7 +55,7 @@ Given(/^I check that the table index are promo code offers$/) do
 end
 
 Given(/^I click to see all Offer Categories$/) do
-  find(".filters .categories-filter").click
+  @shop_offers.click_categories_filter
   expect(page).to have_css(".categories-filter .filter__links",:visible => true)
 end
 
@@ -67,6 +63,7 @@ Given(/^I check the "([^"]*)" categories link$/) do |category|
   find(:link,:href =>"/offers?categories=#{category.downcase}").click
   expect(page.current_url).to eql("https://shop-staging.idmeinc.net/offers?categories=#{category.downcase}")
   expect(page).to have_css(".listing__header .breadcrumbs",:text =>"Shop › Offers › #{category}")
+  @shop_offers.click_categories_filter
 end
 
 Given(/^I click to see Group Military offers$/) do
