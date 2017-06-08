@@ -3,6 +3,8 @@
 ### Released
 
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
+## 2.3.17 (6/8/17)
+- IDME-3619: Fix shop offer tests that were failing
 
 ## 2.3.16 (6/6/17)
 - CORE-7607: Fixed all EMT National tests
