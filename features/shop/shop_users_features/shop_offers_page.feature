@@ -20,7 +20,6 @@ Feature: Test Shop Offers Page
     * I expect the page url to be for Shop Offers Page
     * I check that the Offers Index is available
     * I check the store offer card links for "Logged In" User
-    * I check that the store offer card favorite and report bug is visible
 
  Scenario: Check Offers Side Bar - Promo Codes
     * I click on SignIn link
@@ -32,23 +31,15 @@ Feature: Test Shop Offers Page
     * I click to see all Offer Categories
     * I check the "Accessories" categories link
     * I check the "Amazon" categories link
+    * I check the "Apparel" categories link
+    * I check the "Appliances" categories link
+    * I check the "Auctions" categories link
+    * I check the "Automotive" categories link
+    * I check the "B2b" categories link
+    * I check the "Batteries" categories link
     * I check the "Books" categories link
     * I check the "Business" categories link
-    * I check the "Clothing" categories link
-    * I check the "Electronics" categories link
-    * I check the "Entertainment" categories link
-    * I check the "Food-cooking" categories link
-    * I check the "Gifts" categories link
-    * I check the "Health-beauty" categories link
-    * I check the "Hobby-collectibles" categories link
-    * I check the "Holiday" categories link
-    * I check the "House-home" categories link
-    * I check the "Kids" categories link
-    * I check the "Local" categories link
-    * I check the "Services" categories link
-    * I check the "Shopping" categories link
-    * I check the "Sports" categories link
-    * I check the "Travel" categories link
+    * I check the "Christmas" categories link
 
  Scenario: Check Offer Groups - Military Specific Offers
     * I click to see Group Military offers
