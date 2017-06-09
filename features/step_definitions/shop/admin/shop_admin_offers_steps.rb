@@ -5,7 +5,7 @@ Given(/^I select to filter for only active offers$/) do
 Given(/^I verify that all displayed offers are active$/) do
   (1..5).each do |number|
     expect(page).to have_css("#DataTables_Table_0 tr:nth-child(#{number}) td:nth-child(2)",:text => "Yes")
-  end 
+  end
 end
 
 Given(/^I select to filter for only inactive offers$/) do
@@ -15,5 +15,11 @@ end
 Given(/^I verify that all displayed offers are inactive$/) do
   (1..5).each do |number|
     expect(page).to have_css("#DataTables_Table_0 tr:nth-child(#{number}) td:nth-child(2)",:text => "No")
-  end 
+  end
 end
+
+Given(/^I navigate to the create a new offer page$/) do
+  click_link "Create New Offer"
+end
+
+
