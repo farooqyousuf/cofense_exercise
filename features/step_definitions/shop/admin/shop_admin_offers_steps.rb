@@ -27,7 +27,17 @@ Given(/^I submit a valid new offer$/) do
   @ShopAdminOffers.fill_in_affiliate_url_field
   @ShopAdminOffers.click_create_sidebar_button
 end
-
 Given(/^I verify the offer has been created$/) do
   expect(page).to have_css(".alert-success", :text =>"Offer successfully created.")
+end
+
+Given(/^I delete the offer$/) do
+  step 'I visit "ShopAdminOffers"'
+  @ShopAdminOffers.filter_datatable_for_offer
+  @ShopAdminOffers.click_on_offer
+  @ShopAdminOffers.delete_offer
+end
+
+Given(/^I verify the offer has been deleted$/) do
+  expect(page).to have_css(".alert-success", :text => "Offer successfully destroyed")
 end

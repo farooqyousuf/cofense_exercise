@@ -11,6 +11,8 @@ Feature: Shop Admin Offers page
     * I navigate to the create a new offer page
     * I submit a valid new offer
     * I verify the offer has been created
+    * I delete the offer
+    * I verify the offer has been deleted
 
   Scenario: Filter for all active offers
     * I select to filter for only active offers
