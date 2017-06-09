@@ -100,6 +100,8 @@ social_network:
 admin:
   base_url: https://admin-staging.idmeinc.net
   user_quick_search: https://admin-staging.idmeinc.net/searches
+  api_username: revelator
+  api_password: 8419400ef9b3b5f468caba8bbade41aa
 
 idp:
   base_url: https://api-staging.idmeinc.net
