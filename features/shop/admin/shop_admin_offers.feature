@@ -9,6 +9,8 @@ Feature: Shop Admin Offers page
 
   Scenario: Create a new Offer
     * I navigate to the create a new offer page
+    * I submit a valid new offer
+    * I verify the offer has been created
 
   Scenario: Filter for all active offers
     * I select to filter for only active offers
