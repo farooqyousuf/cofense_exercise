@@ -26,8 +26,10 @@ Feature: Responder verification as an EMT using state lookup
     * I approve the EMT verification in IDme admin
     * I clear the session from Authority
     * I create a new account after clearing my old "responder" session
+    * I click on the Verify using EMT State link
+    * I click on the Begin link
     * I verify using a duplicate "EMT State Lookup" record
-    * I should see the red alert box error message "We’re sorry, but we are unable to verify your EMT status with the information you provided."
+    * I should see the error message "We’re sorry, but we are unable to verify your EMT status with the information you provided."
     * I verify the attempt is marked as "DUPLICATE"
 
   Scenario: Successful prompt for all required fields for EMT state lookup
