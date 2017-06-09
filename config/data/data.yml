@@ -96,6 +96,8 @@ fail_experian:
   emt_city: McLean
   emt_county: Fairfax
   emt_zip: 12345
+  verification_emt_number: FJDL2
+
 
 experian_user:
   verification_school: George Mason University
