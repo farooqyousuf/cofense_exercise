@@ -13,7 +13,7 @@ include PageManagement
   end
 
   def get_code
-    find("[data-key='verification_code_generated']").text
+    find("[data-key='code']").text
   end
 
 end
