@@ -1,3 +1,7 @@
+Given(/^I click on the Verify using EMT State Doc link$/) do
+  StateDocEMT.new.click_verify_emt_state_doc_link
+end
+
 Given(/^I verify using state EMT doc upload$/) do
   StateDocEMT.new.verify(type: "unique")
 end
@@ -22,6 +26,6 @@ Given(/^I submit the emt state lookup verification form as a "([^"]*)" record$/)
   StateLookupEMT.new.verify(type: type)
 end
 
-Given(/^I click on the Verify using EMT State link$/) do
+Given(/^I click on the Verify using EMT State Lookup link$/) do
   StateLookupEMT.new.click_verify_emt_state_link
 end

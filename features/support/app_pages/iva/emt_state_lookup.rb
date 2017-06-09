@@ -38,14 +38,6 @@ class StateLookupEMT < IDmeBase
     pick_result("Kansas")
   end
 
-  # def container_attribute
-  #   "emt"
-  # end
-
-  # def unique_id
-  #   "#s2id_emt_state"
-  # end
-
   def required_fields
     [0,1,2,3,4,5,6,7,9,10,11,12]
   end
