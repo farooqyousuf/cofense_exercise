@@ -102,6 +102,7 @@ admin:
   user_quick_search: https://admin-staging.idmeinc.net/searches
   api_username: revelator
   api_password: 8419400ef9b3b5f468caba8bbade41aa
+  users_endpoint: https://admin-staging.idmeinc.net/api/users
 
 idp:
   base_url: https://api-staging.idmeinc.net

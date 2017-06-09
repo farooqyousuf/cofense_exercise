@@ -56,8 +56,8 @@ oauth:
 admin:
   base_url: http://admin.idme.dev
   user_quick_search: http://admin.idme.dev/searches
-  api_username: idme_admin
-  api_password: idme_admin
+  api_username: idme
+  api_password: idme
   users_endpoint: http://admin.idme.dev/api/users
 
 idp:
