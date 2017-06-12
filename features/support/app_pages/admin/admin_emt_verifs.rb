@@ -11,7 +11,7 @@ include JavascriptAlerts
 
   def approve_doc
     open_newest
-    find("#verification_attempt_status_event_accept").click
+    find("#decision_accept").click
     click_button("Update")
   end
 
