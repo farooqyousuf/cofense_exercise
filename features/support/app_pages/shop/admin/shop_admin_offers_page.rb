@@ -42,4 +42,18 @@ class ShopAdminOffers < IDmeBase
     click_link "Delete"
     js_accept
   end
+
+  def select_category_result_return
+    sleep 1
+    find(".select2-results").click
+    sleep 1
+  end
+
+  def update_offer_page
+    click_button "Update"
+  end
+
+  def search_for_offer_category
+    find(".select2-search__field").set("fitness-diet")
+  end
 end

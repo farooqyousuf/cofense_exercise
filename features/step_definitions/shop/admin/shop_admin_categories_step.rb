@@ -20,14 +20,6 @@ Given(/^I verify a error is returned and no new category is created$/) do
   expect(page).to have_css(".alert", :text =>"× An error has occured, please check the form below")
 end
 
-Given(/^I delete a category$/) do
-  pending # Write code here that turns the phrase above into concrete actions
-end
-
-Given(/^I verify the category has been deleted$/) do
-  pending # Write code here that turns the phrase above into concrete actions
-end
-
 Given(/^I update the new category$/) do
   @ShopAdminCategories.filter_datatable_for_category
   @ShopAdminCategories.click_on_new_category

@@ -41,3 +41,23 @@ end
 Given(/^I verify the offer has been deleted$/) do
   expect(page).to have_css(".alert-success", :text => "Offer successfully destroyed")
 end
+
+
+Given(/^I add the new category to the offer$/) do
+  @ShopAdminOffers.search_for_offer_category
+  @ShopAdminOffers.select_category_result_return
+  @ShopAdminOffers.update_offer_page
+end
+
+Given(/^I verify the category has been added to the offer$/) do
+  expect(page).to have_css("#offer_categories_attributes_0_label[value='Fitness & Diet']")
+end
+
+Given(/^I verify the offer has been updated$/) do
+  expect(page).to have_css(".alert-success", :text => "× Offer successfully updated.")
+end
+
+Given(/^I delete the offer category$/) do
+  step 'I visit "ShopAdminCategories"'
+  @ShopAdminCategories.delete_test_category
+end
