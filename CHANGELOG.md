@@ -3,6 +3,9 @@
 ### Released
 
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
+## 2.3.18 (6/9/17)
+- IDME-3710: Add shop admin create a new offer
+
 ## 2.3.17 (6/8/17)
 - IDME-3619: Fix shop offer tests that were failing
 
