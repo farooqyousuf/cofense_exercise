@@ -6,6 +6,9 @@ All notable changes to this project will be documented in this file. This projec
 ## 2.3.17 (6/8/17)
 - IDME-3619: Fix shop offer tests that were failing
 
+## 2.3.17 (6/7/17)
+- CORE-7621: Fixed EMT State Lookup and Doc Tests
+
 ## 2.3.16 (6/6/17)
 - CORE-7607: Fixed all EMT National tests
 

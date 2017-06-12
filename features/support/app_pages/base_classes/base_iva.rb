@@ -18,6 +18,7 @@ include DataMagic
   end
 
   def pick_result(value)
+    sleep 2
     find("#select2-drop .select2-results").find("div", :text => /^#{value}$/i).click
   end
 
