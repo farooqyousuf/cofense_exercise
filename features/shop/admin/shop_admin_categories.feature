@@ -35,4 +35,4 @@ Feature: Shop Admin Categories page
     * I delete the new category
     * I verify the new category has been deleted
 
-  Scenario: Categories index page is visible
+
