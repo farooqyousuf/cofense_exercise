@@ -34,11 +34,10 @@ class StateLookupEMT < IDmeBase
 
     escape_google_address_autocomplete(%w(#street #emt_city))
 
-    binding.pry
+    #the 4 lines (2 repeated) below help to manipulate the drop down, otherwise it give's an error.
     all("#s2id_state")[0].click
-    find("#s2id_autogen1_search").native.send_keys :escape
+    pick_result("Kansas")
     all("#s2id_state")[0].click
-    #3 lines above required to deal with dropdown sometimes not functioning properly
     pick_result("Kansas")
   end
 
