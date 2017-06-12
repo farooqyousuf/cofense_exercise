@@ -206,7 +206,7 @@ end
 def delete_user(email)
   # TODO: Extract to own class
   url   = FigNewton.admin.users_endpoint
-  query = { "email" => CGI.escape(@user_email) }
+  query = { "email" => ERB::Util.url_encode(@user_email) }
   auth  = { :username => FigNewton.admin.api_username, :password => FigNewton.admin.api_password }
 
   HTTParty.delete(url, :query => query, :basic_auth => auth)
