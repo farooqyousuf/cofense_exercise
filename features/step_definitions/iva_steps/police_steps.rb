@@ -1,3 +1,7 @@
+Given(/^I click on the Verify as a state certified Police Officer$/) do
+  Police.new.click_verify_police_link
+end
+
 Given(/^I verify using police officer documentation$/) do
   step 'I generate a unique doc'
   Police.new.verify(type: "unique")

@@ -5,7 +5,8 @@ Feature: Responder verification as a police officer
     * I visit IDP through the "responder" policy
     * I click on the Sign Up link
     * I sign up as a new user
-    * I should be on the responder verification screen
+    * I click on the Verify as a state certified Police Officer
+    * I click on the Begin link
 
   #experian check and also need a unique doc for police
   @smoke @delete_experian_user1 @doc
