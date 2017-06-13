@@ -24,8 +24,10 @@ Feature: Responder verification as a ProBoard Firefighter
     * I verify using a ProBoard Firefighter
     * I clear the session from Authority
     * I create a new account after clearing my old "responder" session
+    * I click on the Yes I am ProBoard certified link
+    * I click on the Begin link
     * I verify using a duplicate "Proboard Fireman" record
-    * I should see the red alert box error message "We're sorry, but we were unable to verify your firefighter status with the information you provided. Please ensure your name and SSN are entered correctly and try again. For additional information, please see our Support page."
+    * I should see the error message "We're sorry, but we were unable to verify your firefighter status with the information you provided. Please ensure your name and SSN are entered correctly and try again. For additional information, please see our Support page."
     * I verify the attempt is marked as "DUPLICATE"
 
   Scenario: Successful prompt for all required fields for ProBoard Firefighter
