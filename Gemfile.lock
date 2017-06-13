@@ -105,7 +105,6 @@ GEM
     rack-test (0.6.3)
       rack (>= 1.0)
     rainbow (2.2.1)
-    rb-readline (0.5.4)
     rspec (3.5.0)
       rspec-core (~> 3.5.0)
       rspec-expectations (~> 3.5.0)
@@ -169,7 +168,6 @@ DEPENDENCIES
   phantomjs
   pry
   pry-rails
-  rb-readline
   rspec
   rspec-expectations
   rubocop
