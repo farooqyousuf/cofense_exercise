@@ -7,10 +7,6 @@ class PBFirefighter < IDmeBase
   include ErrorMessages
 
   def verify(populate: true, type: "none")
-    # find("[data-option=#{container_attribute}]").find(".verification-header").click
-    # populate_first_state(data_for(:firefighter_proboard).fetch("state"), unique_id)
-    # choose("proboard_status_certified")
-
     if populate
 
       unique_data = data_for(:firefighter_proboard)

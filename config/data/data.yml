@@ -151,11 +151,11 @@ firefighter_proboard:
   state: Virginia
 
 denied_pb_fireman:
-  first_name: Farooq
-  last_name: Yousuf
-  birth_date: 01/01/1984
-  social: 1234
-  social_confirm: 1234
+  verification_first_name: Farooq
+  verification_last_name: Yousuf
+  verification_birth_date: 01/01/1984
+  verification_social: 1234
+  verification_social_confirm: 1234
   state: Virginia
 
 mil_doc:
