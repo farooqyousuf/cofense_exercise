@@ -3,6 +3,10 @@
 ### Released
 
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
+
+## 2.3.19 (6/13/17)
+- CORE-7643: Fix Fireman Doc IVA Tests
+
 ## 2.3.18 (6/9/17)
 - IDME-3710: Add shop admin create a new offer
 
