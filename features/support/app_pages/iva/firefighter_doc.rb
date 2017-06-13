@@ -56,7 +56,7 @@ class DocFirefighter < IDmeBase
   end
 
   def required_fields
-    [0,1,2,3,4,5,6,7,9]
+    [0,1,2,3,4,5,6,7,8]
   end
 
   def click_verify_firefighter_doc_link
