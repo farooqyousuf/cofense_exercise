@@ -5,7 +5,8 @@ Feature: Responder verification as a firefighter using document upload
     * I visit IDP through the "responder" policy
     * I click on the Sign Up link
     * I sign up as a new user
-    * I should be on the responder verification screen
+    * I click on the No I am not ProBoard certified link
+    * I click on the Begin link
 
   @smoke @delete_experian_user1 @doc
   # combo of experian/precise id check and unique doc
