@@ -42,8 +42,10 @@ Feature: Responder verification as a firefighter using document upload
     * I approve the document in IDme admin
     * I clear the session from Authority
     * I create a new account after clearing my old "responder" session
+    * I click on the No I am not ProBoard certified link
+    * I click on the Begin link
     * I submit the firefighter doc upload verification form as a "second unique user" record
-    * I should see the red alert box error message "We’re sorry, but we were unable to verify your credentials with the document you provided. Please see our Support page for document specifications, or try another verification option."
+    * I should see the error message "We’re sorry, but we were unable to verify your credentials with the document you provided. Please see our Support page for document specifications, or try another verification option."
 
   Scenario: Successful prompt for all required fields for Firefighter Doc Upload
     * I submit the empty Firefighter doc upload form
