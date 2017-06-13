@@ -1,5 +1,9 @@
 ###Firefighter ProBoard Steps###
 
+Given(/^I click on the Yes I am ProBoard certified link$/) do
+  PBFirefighter.new.click_verify_firefighter_pb_link
+end
+
 Given(/^I verify using a ProBoard Firefighter$/) do
   PBFirefighter.new.verify(type: "unique")
 end
