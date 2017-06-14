@@ -18,4 +18,30 @@ class ShopAdminStores < IDmeBase
   def click_create_sidebar_button
     click_button "Create"
   end
+
+  def search_for_store
+    find("input[type='search']").set("Test Store Title")
+  end
+
+  def select_first_matching_store
+    find("#DataTables_Table_0 tbody a",:match => :first).click
+  end
+
+  def search_for_store_category
+    find("div[data-component='Shared.Select2Category'] .select2-search__field").set("fitness-diet")
+  end
+
+  def select_category_result_return
+    sleep 1
+    find(".select2-results").click
+    sleep 1
+  end
+
+  def update_store_page
+    click_button "Update"
+  end
+
+  def remove_store_category
+    click_link "Remove Category"
+  end
 end
