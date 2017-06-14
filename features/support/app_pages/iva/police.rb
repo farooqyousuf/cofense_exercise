@@ -7,10 +7,6 @@ class Police < IDmeBase
   include ErrorMessages
 
   def verify(populate: true, type: nil)
-
-    select_option("#s2id_state","Kansas")
-    #find("[data-option=#{container_attribute}]").find(".verification-header").click
-
     if populate
 
       data = data_for(:experian_user) #info for unique and duplicate users
@@ -37,7 +33,7 @@ class Police < IDmeBase
   end
 
   def populate_fields(data:)
-    populate_first_state(data.fetch("state"), unique_id)
+    search_option(container_attribute, "#s2id_verification_police_state", data.fetch("state"))
 
     %w(verification_first_name verification_last_name verification_social verification_social_confirm street city zip).each do |field|
       fill_in field, :with => data.fetch(field)
