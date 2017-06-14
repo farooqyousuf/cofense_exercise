@@ -4,6 +4,9 @@
 
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
+## 2.3.20 (6/14/17)
+- CORE-7644: Fixed Police IVA tests
+
 ## 2.3.19 (6/13/17)
 - CORE-7641: Fix Fireman Doc IVA Tests
 - CORE-7643: Fix Fireman ProBoard IVA Tests
