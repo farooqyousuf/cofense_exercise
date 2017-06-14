@@ -27,7 +27,7 @@ class Police < IDmeBase
 
     if (type == "unique") || (type == "second unique user")
       sleep 2
-      attach_doc(3)
+      attach_doc
       click_continue
     end
   end
@@ -59,7 +59,7 @@ class Police < IDmeBase
   end
 
   def required_fields
-    [0,2,3,4,5,6,7,8,9,11]
+    [0,1,2,3,4,5,6,7,8,9]
   end
 
   def click_verify_police_link
