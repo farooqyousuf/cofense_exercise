@@ -1,5 +1,9 @@
 ###Firefighter ProBoard Steps###
 
+Given(/^I click on the Yes I am ProBoard certified link$/) do
+  PBFirefighter.new.click_verify_firefighter_pb_link
+end
+
 Given(/^I verify using a ProBoard Firefighter$/) do
   PBFirefighter.new.verify(type: "unique")
 end
@@ -25,4 +29,8 @@ end
 
 Given(/^I submit the firefighter doc upload verification form as a "([^"]*)" record$/) do |type|
   DocFirefighter.new.verify(type: type)
+end
+
+Given(/^I click on the No I am not ProBoard certified link$/) do
+  DocFirefighter.new.click_verify_firefighter_doc_link
 end

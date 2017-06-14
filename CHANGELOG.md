@@ -3,8 +3,13 @@
 ### Released
 
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
+
 ## 2.3.20 (6/14/17)
 - IDME-3714: Add category to shop admin stores
+
+## 2.3.19 (6/13/17)
+- CORE-7641: Fix Fireman Doc IVA Tests
+- CORE-7643: Fix Fireman ProBoard IVA Tests
 
 ## 2.3.19 (6/12/17)
 - IDME-3711: Shop admin create a new store

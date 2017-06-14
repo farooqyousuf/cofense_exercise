@@ -7,10 +7,6 @@ class PBFirefighter < IDmeBase
   include ErrorMessages
 
   def verify(populate: true, type: "none")
-    find("[data-option=#{container_attribute}]").find(".verification-header").click
-    populate_first_state(data_for(:firefighter_proboard).fetch("state"), unique_id)
-    choose("proboard_status_certified")
-
     if populate
 
       unique_data = data_for(:firefighter_proboard)
@@ -24,15 +20,15 @@ class PBFirefighter < IDmeBase
       end
     end
 
-    click_verify_button
+    click_continue
   end
 
   def populate_fields(data:)
-    %w(first_name last_name social social_confirm).each do |field|
+    %w(verification_first_name verification_last_name verification_social verification_social_confirm).each do |field|
       fill_in field, :with => data.fetch(field)
     end
 
-    2.times {fill_in :birth_date, :with => data.fetch("birth_date")}
+    2.times {fill_in :verification_birth_date, :with => data.fetch("verification_birth_date")}
   end
 
   def container_attribute
@@ -47,4 +43,9 @@ class PBFirefighter < IDmeBase
     [0,1,2,3,4]
   end
 
+  def click_verify_firefighter_pb_link
+    click_link("Verify as a state certified Firefighter")
+    select_option("#s2id_state","Virginia")
+    click_link("Yes, I am ProBoard certified")
+  end
 end
