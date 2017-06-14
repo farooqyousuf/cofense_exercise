@@ -3,6 +3,14 @@
 ### Released
 
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
+## 2.3.20 (6/14/17)
+- IDME-3714: Add category to shop admin stores
+
+## 2.3.19 (6/12/17)
+- IDME-3711: Shop admin create a new store
+- IDME-3673: Shop admin add category to offer
+- IDME-3710: Shop admin to create a new offer
+
 ## 2.3.18 (6/9/17)
 - IDME-3710: Add shop admin create a new offer
 
