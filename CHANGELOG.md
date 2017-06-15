@@ -6,6 +6,7 @@ All notable changes to this project will be documented in this file. This projec
 
 ## 2.3.20 (6/14/17)
 - IDME-3714: Add category to shop admin stores
+- CORE-7644: Fixed Police IVA tests
 
 ## 2.3.19 (6/13/17)
 - CORE-7641: Fix Fireman Doc IVA Tests

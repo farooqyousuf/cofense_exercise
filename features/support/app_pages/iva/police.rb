@@ -7,9 +7,6 @@ class Police < IDmeBase
   include ErrorMessages
 
   def verify(populate: true, type: nil)
-
-    find("[data-option=#{container_attribute}]").find(".verification-header").click
-
     if populate
 
       data = data_for(:experian_user) #info for unique and duplicate users
@@ -26,29 +23,31 @@ class Police < IDmeBase
       end
     end
 
-    click_verify_button
+    click_continue
 
     if (type == "unique") || (type == "second unique user")
       sleep 2
-      attach_doc(3)
-      click_verify_button
+      attach_doc
+      click_continue
     end
   end
 
   def populate_fields(data:)
-    populate_first_state(data.fetch("state"), unique_id)
+    search_option(container_attribute, "#s2id_verification_police_state", data.fetch("state"))
 
-    %w(first_name last_name social social_confirm street city zip).each do |field|
+    %w(verification_first_name verification_last_name verification_social verification_social_confirm street city zip).each do |field|
       fill_in field, :with => data.fetch(field)
     end
 
-    %w(birth_date zip).each do |field|
+    %w(verification_birth_date zip).each do |field|
       2.times {fill_in field, :with => data.fetch(field)}
     end
 
     escape_google_address_autocomplete(%w(#street #city))
 
-    populate_second_state(data.fetch("state"), index=0)
+    #populate_second_state(data.fetch("state"), index=0)
+    all("#s2id_state")[0].click
+    pick_result("Kansas")
   end
 
   def container_attribute
@@ -60,7 +59,11 @@ class Police < IDmeBase
   end
 
   def required_fields
-    [0,2,3,4,5,6,7,8,9,11]
+    [0,1,2,3,4,5,6,7,8,9]
+  end
+
+  def click_verify_police_link
+    click_link("Verify as a state certified Police Officer")
   end
 
 end
