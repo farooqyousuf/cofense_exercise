@@ -42,7 +42,7 @@ Feature: Military verification using .mil email
   Scenario: Prompt Error Code 14
     * I submit the military email verification form as a "unique" record
     * I submit an invalid verification code
-    * I should see the error message "We’re sorry, but the code you entered didn’t match the last code we sent you. If you have requested multiple codes, please be sure to enter the most recent code we sent."
+    * I should see the red error "The code you entered does not match." under the textfield
 
   Scenario: Successfully prompt for all required fields for Service Member
     * I submit the empty military email form for "Service Member"
