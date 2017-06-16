@@ -64,7 +64,7 @@ class DD214 < IDmeBase
 
   def populate_signature
     binding.pry
-    page.execute_script("document.getElementsByClassName('jSignature').value = '#{data_for(:military_dd214)["jjSignature"]}';")
+    page.execute_script("document.getElementsByClassName('jSignature').value = '#{data_for(:military_dd214)["jSignature"]}';")
   end
 
   def populate_branch
