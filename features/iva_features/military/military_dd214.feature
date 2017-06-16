@@ -5,7 +5,8 @@ Feature: Military verification using DD214 request
     * I visit IDP through the "military" policy
     * I click on the Sign Up link
     * I sign up as a new user
-    * I should be on the military verification screen
+    * I click on the Verify by requesting DD214 link
+    * I click on the Begin link
 
   @smoke @delete_dd214_user
   #unique dob/ssn to pass verification

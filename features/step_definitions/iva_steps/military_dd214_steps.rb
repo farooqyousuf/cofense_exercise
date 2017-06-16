@@ -1,3 +1,7 @@
+Given(/^I click on the Verify by requesting DD214 link$/) do
+  DD214.new.click_verify_by_dd214_link
+end
+
 Given(/^I verify using DD214 information for "(.*)" via "(.*)"$/) do |affiliation, method|
   if method == "SCRA"
     DD214.new.verify(affiliation: affiliation, type: "unique", method: method)
