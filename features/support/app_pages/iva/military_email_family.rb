@@ -7,7 +7,7 @@ class MilitaryEmailFamily < IDmeBase
   include ErrorMessages
 
   def required_fields
-    [0, 1, 2, 3, 5, 6, 7, 8, 9]
+    [0, 1, 2, 3, 5, 6, 7, 8]
   end
 
 end

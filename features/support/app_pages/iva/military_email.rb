@@ -71,7 +71,7 @@ class MilitaryEmail < IDmeBase
   end
 
   def required_fields
-    [0, 1, 2, 3, 4, 5]
+    [0, 1, 2, 3, 4]
   end
 
 end

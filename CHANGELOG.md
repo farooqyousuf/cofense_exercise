@@ -4,6 +4,9 @@
 
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
+## 2.3.21 (6/15/17)
+- CORE-7664: Fixed Military Email IVA Tests
+
 ## 2.3.20 (6/14/17)
 - IDME-3714: Add category to shop admin stores
 - CORE-7644: Fixed Police IVA tests
