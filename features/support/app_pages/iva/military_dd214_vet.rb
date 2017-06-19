@@ -19,7 +19,7 @@ class DD214 < IDmeBase
     if populate
 
       case type
-      when "unique", "denied"
+      when "unique", "denied", "dupe"
         sleep 2
         populate_branch
         populate_officer
@@ -27,8 +27,7 @@ class DD214 < IDmeBase
         populate_checkboxes
         populate_fields(data_for(data_set))
         populate_signature
-      when "dupe"
-        #work in progress
+      else fail("User type not found")
       end
 
       #first and last name for user
