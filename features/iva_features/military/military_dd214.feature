@@ -40,8 +40,10 @@ Feature: Military verification using DD214 request
     * I verify using DD214 information for "Veteran" via "document"
     * I clear the session from Authority
     * I create a new account after clearing my old "military" session
-    * I verify using a duplicate "DD214" record
-    * I should see the red alert box error message "We’re sorry, but we are unable to verify your military status with the information you provided."
+    * I click on the Verify by requesting DD214 link
+    * I click on the Begin link
+    * I verify using duplicate DD214 information for "Veteran" via "document"
+    * I should see the error message "We’re sorry, but we are unable to verify your military status with the information you provided."
     * I verify the attempt is marked as "DUPLICATE"
 
  Scenario: Successfully prompt for all DD214 required fields for Veteran
