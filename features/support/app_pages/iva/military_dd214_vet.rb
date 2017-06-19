@@ -97,7 +97,7 @@ class DD214 < IDmeBase
   end
 
   def required_fields
-    [0, 1, 2, 3, 4, 5, 6, 8, 10, 11, 12, 14, 15, 16, 17]
+    [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
   end
 
   def click_verify_by_dd214_link
