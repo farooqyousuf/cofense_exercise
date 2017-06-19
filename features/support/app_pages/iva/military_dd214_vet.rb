@@ -27,6 +27,7 @@ class DD214 < IDmeBase
         populate_checkboxes
         populate_fields(data_for(data_set))
         populate_signature
+        click_continue
       when "dupe"
         #work in progress
       end
@@ -39,7 +40,7 @@ class DD214 < IDmeBase
       end
     end
 
-    click_continue
+    click_link("Continue")
   end
 
   def populate_fields(data)
