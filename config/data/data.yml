@@ -51,33 +51,33 @@ government:
   denied_email: fake@email.com
 
 military_dd214:
-  first_name: Joel
-  last_name: Smith
-  birth_date: 01/05/1985
-  service_member_first_name: Benny
-  service_member_last_name: Washington
-  social: 222222222
-  social_confirm: 222222222
-  service_member_birth_date: 02/02/1945
-  birth_place: USA
-  date_entered: 01/01/2000
-  date_released: 01/01/2003
-  service_number: FSJA23
-  entry_location: Virginia
-  discharge_location: Maryland
-  last_unit_assignment: New York
-  signature: "image/jsignature;base30,6QZ12221111_2V88b5c444_5W5bifmmc_2J3367452_awZ9rb84Y269cinoib43_3FZ120Y13c786420Z6533_9xacm1Kg6_3D123100_9yahmsc_3I34331_fIZ577aa60Y7b93Zbhpje7_3JZ210Y2128cb533Z25745_gQZ20201_3N688b4_fW6adjikf94_3JZ1Y11133001"
+  verification_first_name: Joel
+  verification_last_name: Smith
+  verification_birth_date: 01/05/1985
+  verification_service_member_first_name: Benny
+  verification_service_member_last_name: Washington
+  verification_social: 222222222
+  verification_social_confirm: 222222222
+  verification_service_member_birth_date: 02/02/1945
+  verification_birth_place: USA
+  verification_date_entered: 01/01/2000
+  verification_date_released: 01/01/2003
+  verification_service_number: FSJA23
+  verification_entry_location: Virginia
+  verification_discharge_location: Maryland
+  verification_last_unit_assignment: New York
+  jSignature: "image/jsignature;base30,6QZ12221111_2V88b5c444_5W5bifmmc_2J3367452_awZ9rb84Y269cinoib43_3FZ120Y13c786420Z6533_9xacm1Kg6_3D123100_9yahmsc_3I34331_fIZ577aa60Y7b93Zbhpje7_3JZ210Y2128cb533Z25745_gQZ20201_3N688b4_fW6adjikf94_3JZ1Y11133001"
 
 dd214_via_scra:
-  service_member_first_name: Harry
-  service_member_last_name: Dune
-  service_member_birth_date: 10/25/1963
-  social: 000905188
-  social_confirm: 000905188
-  birth_place: USA
-  date_entered: 01/01/2000
-  date_released: 01/01/2003
-  signature: "image/jsignature;base30,6QZ12221111_2V88b5c444_5W5bifmmc_2J3367452_awZ9rb84Y269cinoib43_3FZ120Y13c786420Z6533_9xacm1Kg6_3D123100_9yahmsc_3I34331_fIZ577aa60Y7b93Zbhpje7_3JZ210Y2128cb533Z25745_gQZ20201_3N688b4_fW6adjikf94_3JZ1Y11133001"
+  verification_service_member_first_name: Harry
+  verification_service_member_last_name: Dune
+  verification_service_member_birth_date: 10/25/1963
+  verification_social: 000905188
+  verification_social_confirm: 000905188
+  verification_birth_place: USA
+  verification_date_entered: 01/01/2000
+  verification_date_released: 01/01/2003
+  jSignature: "image/jsignature;base30,6QZ12221111_2V88b5c444_5W5bifmmc_2J3367452_awZ9rb84Y269cinoib43_3FZ120Y13c786420Z6533_9xacm1Kg6_3D123100_9yahmsc_3I34331_fIZ577aa60Y7b93Zbhpje7_3JZ210Y2128cb533Z25745_gQZ20201_3N688b4_fW6adjikf94_3JZ1Y11133001"
 
 fail_experian:
   school: George Mason University

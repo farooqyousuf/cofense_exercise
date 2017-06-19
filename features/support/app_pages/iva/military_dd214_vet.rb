@@ -7,7 +7,7 @@ class DD214 < IDmeBase
   include ErrorMessages
 
   def verify(affiliation: "Veteran", populate: true, type: "none", method: "none")
-    find("[data-option='dd214-request']").find(".verification-header").click
+    #find("[data-option='dd214-request']").find(".verification-header").click
     populate_affiliation(affiliation)
 
     if method == "SCRA"
@@ -21,60 +21,62 @@ class DD214 < IDmeBase
       case type
       when "unique", "denied"
         sleep 2
-        populate_signature
         populate_branch
         populate_officer
         populate_component
         populate_checkboxes
         populate_fields(data_for(data_set))
+        populate_signature
       when "dupe"
         #work in progress
       end
 
       #first and last name for user
       if ["Next of kin deceased veteran", "Legal guardian"].include?(affiliation)
-        %w(first_name last_name birth_date).each do |field|
+        %w(verification_first_name verification_last_name verification_birth_date).each do |field|
           2.times {fill_in field, :with => (data_for(:military_dd214).fetch(field))}
         end
       end
     end
 
-    click_verify_button
+    click_continue
   end
 
   def populate_fields(data)
     #information for service member
-    %w(service_member_first_name service_member_last_name social social_confirm birth_place).each do |field|
+    %w(verification_service_member_first_name verification_service_member_last_name
+      verification_social verification_social_confirm verification_birth_place).each do |field|
       fill_in field, :with => data.fetch(field)
     end
 
-    %w(service_member_birth_date date_entered date_released).each do |field|
+    %w(verification_service_member_birth_date verification_date_entered verification_date_released).each do |field|
       2.times {fill_in field, :with => data.fetch(field)}
     end
   end
 
-   def container_attribute
+  def container_attribute
     'dd214-request'
   end
 
   def populate_affiliation(value)
-    select_option(container_attribute, ".dd214-affiliation", value, index=0)
+    select_option("#s2id_verification_affiliation", value)
   end
 
   def populate_signature
-    page.execute_script("document.getElementById('signature').value = '#{data_for(:military_dd214)["signature"]}';")
+    binding.pry
+    page.execute_script("document.getElementsByClassName('jSignature').value = '#{data_for(:military_dd214)["jSignature"]}';")
   end
 
   def populate_branch
-    select_option(container_attribute, ".dd214-branch", "Air Force", index=0)
+    select_option("#s2id_verification_service_branch_id", "Air Force")
   end
 
   def populate_officer
-    select_option(container_attribute, ".dd214-officer", "Officer", index=0)
+    select_option("#s2id_verification_officer_or_enlisted", "Officer")
   end
 
   def populate_component
-    select_option(container_attribute, ".dd214-component", "Active Duty", index=0)
+    select_option("#s2id_verification_service_component", "Active Duty")
   end
 
   def release_checkbox
@@ -97,6 +99,10 @@ class DD214 < IDmeBase
 
   def required_fields
     [0, 1, 2, 3, 4, 5, 6, 8, 10, 11, 12, 14, 15, 16, 17]
+  end
+
+  def click_verify_by_dd214_link
+    click_link("Verify by requesting your DD214")
   end
 
 end
