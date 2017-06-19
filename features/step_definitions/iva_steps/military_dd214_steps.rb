@@ -8,6 +8,7 @@ Given(/^I verify using DD214 information for "(.*)" via "(.*)"$/) do |affiliatio
   else
     DD214.new.verify(affiliation: affiliation, type: "unique", method: method)
   end
+  click_link("Continue")
   if page.has_text? "ID.me Staging would like to access some of your data"
     step 'I authorize the attribute release'
   end
