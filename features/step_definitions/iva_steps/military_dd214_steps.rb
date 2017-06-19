@@ -14,6 +14,10 @@ Given(/^I verify using DD214 information for "(.*)" via "(.*)"$/) do |affiliatio
   end
 end
 
+Given(/^I verify using duplicate DD214 information for "(.*)" via "(.*)"$/) do |affiliation, method|
+  DD214.new.verify(affiliation: affiliation, type: "dupe", method: method)
+end
+
 Given(/^I submit the empty DD214 form for "([^"]*)"$/) do |group|
   DD214.new.verify(affiliation: group, populate: false)
 end
