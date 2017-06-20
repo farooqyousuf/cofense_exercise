@@ -27,7 +27,6 @@ Given(/^I verify the attempt is marked as "([^"]*)"$/) do |status|
   step 'I visit "AdminVerificationAttempts"'
   @admin_verif_attempts = AdminVerificationAttempts.new
   sleep 1
-  binding.pry
   all(".#{status}".downcase)[0].text.should == status
   click_link("Logout")
 end
