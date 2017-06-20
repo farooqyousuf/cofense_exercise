@@ -1,12 +1,21 @@
+Given(/^I click on the Verify by requesting DD214 link$/) do
+  DD214.new.click_verify_by_dd214_link
+end
+
 Given(/^I verify using DD214 information for "(.*)" via "(.*)"$/) do |affiliation, method|
   if method == "SCRA"
     DD214.new.verify(affiliation: affiliation, type: "unique", method: method)
   else
     DD214.new.verify(affiliation: affiliation, type: "unique", method: method)
   end
+  click_link("Continue")
   if page.has_text? "ID.me Staging would like to access some of your data"
     step 'I authorize the attribute release'
   end
+end
+
+Given(/^I verify using duplicate DD214 information for "(.*)" via "(.*)"$/) do |affiliation, method|
+  DD214.new.verify(affiliation: affiliation, type: "dupe", method: method)
 end
 
 Given(/^I submit the empty DD214 form for "([^"]*)"$/) do |group|
