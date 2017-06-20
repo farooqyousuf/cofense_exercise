@@ -1,3 +1,7 @@
+Given(/^I click on the Verify using a government service record link$/) do
+  MilitarySCRA.new.click_verify_scra_link
+end
+
 Given(/^I verify using SCRA for "([^"]*)"$/) do |affiliation|
   MilitarySCRA.new.verify(affiliation: affiliation, type: "unique")
 end

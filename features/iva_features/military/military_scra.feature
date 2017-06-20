@@ -6,7 +6,8 @@ Feature: Military verification using SCRA credentials
     * I visit IDP through the "military" policy
     * I click on the Sign Up link
     * I sign up as a new user
-    * I should be on the military verification screen
+    * I click on the Verify using a government service record link
+    * I click on the Begin link
 
   @delete_scra_user1 @smoke
   #Unique dob and ssn pair
@@ -48,7 +49,7 @@ Feature: Military verification using SCRA credentials
   @delete_scra_denied_user
   Scenario: Denied attempt for military scra verification (Error code 1)
     * I submit the military scra verification form as a "denied" record
-    * I should see the red alert box error message "We're sorry, but we were unable to verify your military status with the information you provided. Please utilize the name you held when discharged, and be sure to use an active duty date from the middle of your period of service. Note that Reservists, National Guardsmen, and all pre-1985 Veterans, must verify by uploading documentation. For additional information, please see our Support page."
+    * I should see the error message "We're sorry, but we were unable to verify your military status with the information you provided. Please utilize the name you held when discharged, and be sure to use an active duty date from the middle of your period of service. Note that Reservists, National Guardsmen, and all pre-1985 Veterans, must verify by uploading documentation. For additional information, please see our Support page."
     * I verify the attempt is marked as "DENIED"
 
  @delete_scra_dupe_user @wip
@@ -56,8 +57,10 @@ Feature: Military verification using SCRA credentials
     * I verify using SCRA for "Service Member"
     * I clear the session from Authority
     * I create a new account after clearing my old "military" session
+    * I click on the Verify using a government service record link
+    * I click on the Begin link
     * I verify using a duplicate "SCRA" record
-    * I should see the red alert box error message "We're sorry, but we were unable to verify your military status with the information you provided. Please utilize the name you held when discharged, and be sure to use an active duty date from the middle of your period of service. Note that Reservists, National Guardsmen, and all pre-1985 Veterans, must verify by uploading documentation. For additional information, please see our Support page."
+    * I should see the  error message "We're sorry, but we were unable to verify your military status with the information you provided. Please utilize the name you held when discharged, and be sure to use an active duty date from the middle of your period of service. Note that Reservists, National Guardsmen, and all pre-1985 Veterans, must verify by uploading documentation. For additional information, please see our Support page."
     * I verify the attempt is marked as "DUPLICATE"
 
   Scenario: Successfully prompt for all required fields for Service Member
