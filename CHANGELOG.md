@@ -3,6 +3,8 @@
 ### Released
 
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
+## 2.3.22 (6/20/17)
+- IDME-3744: Fix wallet failed user sign in test
 
 ## 2.3.21 (6/15/17)
 - CORE-7664: Fixed Military Email IVA Tests
