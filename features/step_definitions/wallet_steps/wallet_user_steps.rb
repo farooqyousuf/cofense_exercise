@@ -30,7 +30,7 @@ end
 
 Given(/^I login to wallet as a "([^"]*)" user$/) do |affinity_group|
   user_email = case affinity_group
-    when "Military" then FigNewton.mp_users.military
+    when "Military" then FigNewton.shop_users.military
   end
 
   @WalletHomepage.sign_in(user_email)

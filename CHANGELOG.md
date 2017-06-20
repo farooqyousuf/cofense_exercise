@@ -3,6 +3,8 @@
 ### Released
 
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
+## 2.3.22 (6/20/17)
+- IDME-3743: Fix wallet user sign in test
 
 ## 2.3.22 (6/19/17)
 - CORE-7669: Fixed Military DD214 IVA Tests
