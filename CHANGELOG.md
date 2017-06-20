@@ -7,6 +7,7 @@ All notable changes to this project will be documented in this file. This projec
 ## 2.3.23 (6/20/17)
 - IDME-3744: Fix wallet failed user sign in test
 - IDME-3743: Fix wallet user sign in test
+- CORE-7678: Fix successful verification as service member test
 
 ## 2.3.22 (6/19/17)
 - CORE-7669: Fixed Military DD214 IVA Tests
