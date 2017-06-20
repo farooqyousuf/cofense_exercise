@@ -191,62 +191,62 @@ denied_emt_national:
   verification_registry_number: FJAL1234
 
 scra_service_member:
-  affiliation: service member
-  service_member_first_name: John
-  service_member_last_name: Jones
-  service_member_birth_date: 05/25/1989
-  social: 000149876
-  social_confirm: 000149876
-  service_date: 04/05/2016
+  affiliation: Service Member
+  verification_service_member_first_name: John
+  verification_service_member_last_name: Jones
+  verification_service_member_birth_date: 05/25/1989
+  verification_social: 000149876
+  verification_social_confirm: 000149876
+  verification_service_date: 04/05/2016
 
 scra_denied_data:
-  service_member_first_name: Johnn
-  service_member_last_name: Joness
-  service_member_birth_date: 05/25/1989
-  social: 000149876
-  social_confirm: 000149876
-  service_date: 04/05/2016
+  verification_service_member_first_name: Johnn
+  verification_service_member_last_name: Joness
+  verification_service_member_birth_date: 05/25/1989
+  verification_social: 000149876
+  verification_social_confirm: 000149876
+  verification_service_date: 04/05/2016
 
 scra_veteran:
-  affiliation: veteran
-  service_member_first_name: Harry
-  service_member_last_name: Dune
-  service_member_birth_date: 10/25/1963
-  social: 000905188
-  social_confirm: 000905188
-  service_date: 04/05/2016
+  affiliation: Veteran
+  verification_service_member_first_name: Harry
+  verification_service_member_last_name: Dune
+  verification_service_member_birth_date: 10/25/1963
+  verification_social: 000905188
+  verification_social_confirm: 000905188
+  verification_service_date: 04/05/2016
 
 scra_mil_spouse:
-  affiliation: spouse
-  first_name: Erin
-  last_name: Doe
-  birth_date: 01/05/1985
-  service_member_first_name: Jane
-  service_member_last_name: Doe
-  service_member_birth_date: 08/05/1959
-  social: 000489552
-  social_confirm: 000489552
-  service_date: 04/05/2016
+  affiliation: Spouse
+  verification_first_name: Erin
+  verification_last_name: Doe
+  verification_birth_date: 01/05/1985
+  verification_service_member_first_name: Jane
+  verification_service_member_last_name: Doe
+  verification_service_member_birth_date: 08/05/1959
+  verification_social: 000489552
+  verification_social_confirm: 000489552
+  verification_service_date: 04/05/2016
 
 scra_multi_family:
-  first_name: Mike
-  last_name: Doe
-  birth_date: 01/05/1985
-  service_member_first_name: Jane
-  service_member_last_name: Doe
-  service_member_birth_date: 08/05/1959
-  social: 000489552
-  social_confirm: 000489552
-  service_date: 04/05/2016
+  verification_first_name: Mike
+  verification_last_name: Doe
+  verification_birth_date: 01/05/1985
+  verification_service_member_first_name: Jane
+  verification_service_member_last_name: Doe
+  verification_service_member_birth_date: 08/05/1959
+  verification_social: 000489552
+  verification_social_confirm: 000489552
+  verification_service_date: 04/05/2016
 
 scra_mil_family:
-  affiliation: family
-  first_name: Tiffany
-  last_name: Killian
-  birth_date: 01/05/1985
-  service_member_first_name: George
-  service_member_last_name: Killian
-  service_member_birth_date: 06/26/1980
-  social: 000196548
-  social_confirm: 000196548
-  service_date: 04/05/2016
+  affiliation: Family
+  verification_first_name: Tiffany
+  verification_last_name: Killian
+  verification_birth_date: 01/05/1985
+  verification_service_member_first_name: George
+  verification_service_member_last_name: Killian
+  verification_service_member_birth_date: 06/26/1980
+  verification_social: 000196548
+  verification_social_confirm: 000196548
+  verification_service_date: 04/05/2016

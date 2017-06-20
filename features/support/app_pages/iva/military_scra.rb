@@ -7,7 +7,6 @@ class MilitarySCRA < IDmeBase
   include ErrorMessages
 
   def verify(affiliation:, populate: true, type: nil)
-    find("[data-option='service-record']").find(".verification-header").click
     populate_affiliation(affiliation)
 
     case affiliation
@@ -34,27 +33,26 @@ class MilitarySCRA < IDmeBase
       end
 
       if ["Military Spouse", "Military Family", "Military Multi Family"].include?(affiliation)
-        %w(first_name last_name birth_date).each do |field|
+        %w(verification_first_name verification_last_name verification_birth_date).each do |field|
           2.times {fill_in field, :with => data_for(data_set).fetch(field)}
         end
         populate_affiliation_2("Service Member")
       end
-
     end
 
     sleep 1
-    click_verify_button
+    click_continue
   end
 
   def populate_fields(data:)
-    %w(service_member_first_name service_member_last_name social social_confirm).each do |field|
+    %w(verification_service_member_first_name verification_service_member_last_name verification_social verification_social_confirm).each do |field|
       fill_in field, :with => data.fetch(field)
     end
 
-    2.times {fill_in "service_member_birth_date", :with => data.fetch("service_member_birth_date")}
+    2.times {fill_in "verification_service_member_birth_date", :with => data.fetch("verification_service_member_birth_date")}
 
-    if ["veteran"].include?(data["affiliation"])
-      2.times {fill_in "service_date", :with => data.fetch("service_date")}
+    if ["Veteran", "Spouse", "Family"].include?(data["affiliation"])
+      2.times {fill_in "verification_service_date", :with => data.fetch("verification_service_date")}
     end
   end
 
@@ -62,11 +60,11 @@ class MilitarySCRA < IDmeBase
     if value == "Military Multi Family"
       value = "Military Family"
     end
-    select_option(container_attribute, ".military-affiliation", value, index=0)
+    select_option('#s2id_verification_subgroup_id', value)
   end
 
   def populate_affiliation_2(value)
-    select_option(container_attribute, ".service-affiliation", value, index=0)
+    select_option("#s2id_verification_service_subgroup_id", value)
   end
 
   def container_attribute
@@ -74,7 +72,11 @@ class MilitarySCRA < IDmeBase
   end
 
   def required_fields
-    [0,1,2,3,4,5]
+    [0,1,2,3,4]
+  end
+
+  def click_verify_scra_link
+    click_link("Verify using a government service record")
   end
 
 end
