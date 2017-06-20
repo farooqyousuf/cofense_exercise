@@ -118,6 +118,11 @@ Given(/^I approve the document in IDme admin$/) do
 
   @admin_docs.approve_doc
   @admin_tool.logout_in_new_window
+
+  if page.has_text? "Congratulations!"
+    VerificationSuccess.new.click_continue
+  end
+
   if page.has_text? "ID.me Staging would like to access some of your data"
     step 'I authorize the attribute release'
   end
