@@ -7,7 +7,6 @@ class DD214 < IDmeBase
   include ErrorMessages
 
   def verify(affiliation: "Veteran", populate: true, type: "none", method: "none")
-    #find("[data-option='dd214-request']").find(".verification-header").click
     populate_affiliation(affiliation)
 
     if method == "SCRA"
