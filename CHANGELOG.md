@@ -4,6 +4,9 @@
 
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
+## 2.3.24 (6/21/17)
+- CORE-7690: Fix Military SCRA Mil Spouse IVA Tests
+
 ## 2.3.23 (6/20/17)
 - IDME-3744: Fix wallet failed user sign in test
 - IDME-3743: Fix wallet user sign in test
