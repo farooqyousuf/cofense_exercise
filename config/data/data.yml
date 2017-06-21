@@ -81,9 +81,9 @@ dd214_via_scra:
 
 fail_experian:
   school: George Mason University
-  verification_first_name: James
-  verification_last_name: Smith
-  service_member_birth_date: 01/04/1994
+  verification_service_member_first_name: James
+  verification_service_member_last_name: Smith
+  verification_service_member_birth_date: 01/04/1994
   first_name: Maurice
   last_name: Ruiz
   verification_birth_date: 06/04/1974
@@ -117,11 +117,11 @@ experian_user:
 
 experian_user2:
   school: George Mason University
-  first_name: Erin
-  last_name: Rashid
   verification_first_name: Erin
   verification_last_name: Rashid
-  verification_birth_date: 04/30/1942
+  verification_service_member_first_name: Erin
+  verification_service_member_last_name: Rashid
+  verification_service_member_birth_date: 04/30/1942
   birth_date: 04/30/1942
   verification_social: 666024882
   verification_social_confirm: 666024882
@@ -159,9 +159,9 @@ denied_pb_fireman:
   state: Virginia
 
 mil_doc:
-  first_name: CapybaraTester
-  last_name: CapybaraTester
-  birth_date: 01/05/1985
+  verification_first_name: CapybaraTester
+  verification_last_name: CapybaraTester
+  verification_birth_date: 01/05/1985
   verification_service_member_first_name: Sue
   verification_service_member_last_name: Gentz
   verification_service_member_birth_date: 09/03/1962

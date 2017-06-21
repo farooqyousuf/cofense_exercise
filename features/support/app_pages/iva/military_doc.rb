@@ -7,8 +7,6 @@ class MilitaryDoc < IDmeBase
   include ErrorMessages
 
   def verify(affiliation:, populate: true, type: "none")
-    click_link("Verify by uploading documentation")
-    click_link("Begin")
     populate_affiliation(affiliation)
 
     if populate
@@ -27,10 +25,10 @@ class MilitaryDoc < IDmeBase
       end
 
       if ["Military Family", "Military Spouse"].include?(affiliation)
-        %w(first_name last_name birth_date).each do |field|
+        %w(verification_first_name verification_last_name verification_birth_date).each do |field|
           2.times {fill_in field, :with => (data_for(:mil_doc).fetch(field))}
         end
-        select_option(container_attribute, "#s2id_service_subgroup_id", "Veteran", index=0)
+        select_option("#s2id_verification_service_subgroup_id", "Veteran")
       end
     end
 
@@ -79,12 +77,17 @@ class MilitaryDoc < IDmeBase
 
   def populate_dd214_type(value)
     wait_for_ajax
-    sleep 2
+    sleep 3
     select_option("#s2id_verification_document_type_id", value)
   end
 
   def required_fields
-    [0,1,2,3,4,5,6,7,9]
+    [0,1,2,3,4,5,6,7,8]
   end
+
+  def click_verify_mildoc_link
+    click_link("Verify by uploading documentation")
+  end
+
 
 end

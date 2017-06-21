@@ -1,3 +1,7 @@
+Given(/^I click on the Military Verify by uploading documentation link$/) do
+  MilitaryDoc.new.click_verify_mildoc_link
+end
+
 Given(/^I verify using military documentation for "([^"]*)"$/) do |affiliation|
   step 'I generate a unique doc'
   MilitaryDoc.new.verify(affiliation: affiliation, type: "unique")
