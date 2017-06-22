@@ -1,10 +1,10 @@
-require_relative '../../base_classes/base_idp.rb'
+require_relative '../../base_classes/error_messages.rb'
 
 class VerifyWithScra < IDmeBase
 
+  include IVABase
   include Capybara::DSL
-  include IDPBase
-  include DataMagic
+  include ErrorMessages
 
   def initialize
     super("#{FigNewton.admin.user_quick_search}")
@@ -22,10 +22,11 @@ class VerifyWithScra < IDmeBase
 
     data = data_for(data_set)
 
+    search_for_user(username)
+    select affiliation
+
     if populate
 
-      search_for_user(username)
-      select affiliation
       populate_form_fields(data: data)
       if["Military Spouse", "Military Family"].include?(affiliation)
         2.times {
@@ -35,8 +36,9 @@ class VerifyWithScra < IDmeBase
           fill_in "scra_request_service_date", :with => data.fetch("service_date")
         }
       end
-      click_button("Submit")
     end
+
+    click_button("Submit")
   end
 
   def verify_scra_applied(username, affiliation:)
@@ -63,5 +65,26 @@ class VerifyWithScra < IDmeBase
     fill_in "scra_request_service_member_birth_date", :with => data.fetch("service_member_birth_date")
     fill_in "scra_request_social", :with => data.fetch("social")
     fill_in "scra_request_service_date", :with => data.fetch("service_date")
+  end
+
+  def check_admin_scra_form_error(fields, affiliation:)
+    check_admin_scra_form_error_messages(fields, affiliation: affiliation)
+    check_admin_scra_form_red_highlighted_errors(fields, affiliation: affiliation)
+  end
+
+  def check_admin_scra_form_error_messages(fields, affiliation:)
+    form_error_messages_count = all(".formError").count
+    form_error_messages_count.should == fields.count
+  end
+
+  def check_admin_scra_form_red_highlighted_errors(fields, affiliation:)
+    admin_red = "rgba(185, 74, 72, 1)"
+
+    fields.each do |field|
+      %w(top right bottom left).each do |border_side|
+        red_highlighted_field = page.find("#scra_request_#{field}").native.css_value("border-#{border_side}-color")
+        red_highlighted_field.should == admin_red
+      end
+    end
   end
 end
