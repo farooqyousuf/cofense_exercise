@@ -11,3 +11,7 @@ Given(/^I should be successfully verified as a "([^"]*)"$/) do |group|
   username = @username
   VerifyWithScra.new.verify_scra_applied(@username, affiliation: group)
 end
+
+Given(/^I submit the SCRA verification form through the admin tool as a "([^"]*)" record$/) do |type|
+  VerifyWithScra.new.verify_scra_applied(@username, affiliation: "Service Member", type: type)
+end
