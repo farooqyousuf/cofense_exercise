@@ -105,12 +105,12 @@ module HelperMethods
   #   page.find(".label-error").text
   # end
 
-  def check_red_highlighted_error(field)
-    red = "rgba(194, 58, 39, 1)"
+  def check_idp_red_highlighted_error(field)
+    idp_red = "rgba(194, 58, 39, 1)"
 
-  %w(border-top-color border-right-color border-bottom-color border-left-color).each do |border|
-      red_highlighted_field = page.find(field).native.css_value(border)
-      expect(red_highlighted_field).to eql(red)
+  %w(top right bottom left).each do |border_side|
+      red_highlighted_field = page.find(field).native.css_value("border-#{border_side}-color")
+      expect(red_highlighted_field).to eql(idp_red)
     end
   end
 
