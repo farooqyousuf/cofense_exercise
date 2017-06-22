@@ -33,3 +33,28 @@ Feature: Verify users with SCRA using admin tool
   Scenario: Successful Verification as a Military Family through the Admin tool
     * I verify with SCRA for "Military Family"
     * I should be successfully verified as a "Military Family"
+
+  @delete_user
+  Scenario: Successful prompt for all required fields for Service Member
+    * I submit the empty SCRA form for "Service Member" in Admin tool
+    * I should see errors on required fields for "Service Member" in Admin tool
+
+  @delete_user
+  Scenario: Successful prompt for all required fields for Veteran
+    * I submit the empty SCRA form for "Veteran" in Admin tool
+    * I should see errors on required fields for "Veteran" in Admin tool
+
+  @delete_user
+  Scenario: Successful prompt for all required fields for Retiree
+    * I submit the empty SCRA form for "Retiree" in Admin tool
+    * I should see errors on required fields for "Retiree" in Admin tool
+
+  @delete_user
+  Scenario: Successful prompt for all required fields for Military Spouse
+    * I submit the empty SCRA form for "Military Spouse" in Admin tool
+    * I should see errors on required fields for "Military Spouse" in Admin tool
+
+  @delete_user
+  Scenario: Successful prompt for all required fields for Military Family
+    * I submit the empty SCRA form for "Military Family" in Admin tool
+    * I should see errors on required fields for "Military Family" in Admin tool
