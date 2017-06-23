@@ -71,7 +71,7 @@ Given(/^I record the wallet user email$/) do
   @WalletDashboard.open_shared_side_navigation
   @user_identifier = find(".shared-nav-user-menu-details li:nth-child(2)").text
   @WalletDashboard.close_shared_side_navigation
-  @username = @user_identifier #required for lockout feature to work TODO: refactor lockout so all use same instance variable
+  @user_email = @user_identifier #required for lockout feature to work TODO: refactor lockout so all use same instance variable
   sleep 1
 end
 
