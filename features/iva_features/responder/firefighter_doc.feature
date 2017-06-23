@@ -16,13 +16,13 @@ Feature: Responder verification as a firefighter using document upload
     * I approve the document in IDme admin
     * I should be successfully verified as "Firefighter"
 
-  @delete_current_username
+  @delete_current_user_email
   Scenario: Denied attempt for firefighter doc upload verification (Error code 45)
     * I submit the firefighter doc upload verification form as a "denied" record
     * I should see the error message "We're sorry, but we were unable to verify the information you provided. The information entered must match the information on official records. Note: If you've recently had a name change, try your maiden or prior name."
     * I verify the attempt is marked as "DENIED"
 
-  @delete_experian_user1 @delete_current_username
+  @delete_experian_user1 @delete_current_user_email
   Scenario: Dupe attempt test for fireman doc upload (Error code 85)
     * I generate a unique doc
     * I verify using firefighter documentation
@@ -35,7 +35,7 @@ Feature: Responder verification as a firefighter using document upload
     * I should see the error message "We’re sorry, but we are unable to verify your credentials with the information you provided."
     * I verify the attempt is marked as "DUPLICATE"
 
- @delete_experian_user1 @delete_current_username
+ @delete_experian_user1 @delete_current_user_email
  Scenario: Prompt Error Code 86
     * I generate a unique doc
     * I verify using firefighter documentation
