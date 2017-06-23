@@ -37,5 +37,6 @@ Feature: Verify users with SCRA using admin tool
   @delete_user
   Scenario: Denied attempt for for SCRA verification through the Admin tool (Error code 01)
     * I submit the SCRA verification form through the admin tool as a "denied" record
+    * I pry
     * I should see the error message "SCRA unable to verify military status (01)"
-    * I verify the attempt is marked as "DUPLICATE"
+    * I verify the attempt is marked as "DENIED"

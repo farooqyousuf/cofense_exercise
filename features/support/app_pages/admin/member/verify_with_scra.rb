@@ -19,20 +19,29 @@ class VerifyWithScra < IDmeBase
     when "Military Family"  then data_set = :scra_mil_family
     else puts "Affiliation not found"
     end
-
     data = data_for(data_set)
+    data_denied = data_for(:scra_denied_data)
 
     if populate
 
+
       search_for_user(username)
-      select affiliation
-      populate_form_fields(data: data)
+
+      case type
+      when "unique"
+        select affiliation
+        populate_form_fields(data: data)
+      when "denied"
+        select "Service Member"
+        populate_form_fields(data: data_denied)
+      end
+
       if["Military Spouse", "Military Family"].include?(affiliation)
         2.times {
-          fill_in "scra_request_first_name", :with => data.fetch("first_name")
-          fill_in "scra_request_last_name", :with => data.fetch("last_name")
-          fill_in "scra_request_birth_date", :with => data.fetch("service_member_birth_date")
-          fill_in "scra_request_service_date", :with => data.fetch("service_date")
+          fill_in "scra_request_first_name", :with => data.fetch("verification_first_name")
+          fill_in "scra_request_last_name", :with => data.fetch("verification_last_name")
+          fill_in "scra_request_birth_date", :with => data.fetch("verification_service_member_birth_date")
+          fill_in "scra_request_service_date", :with => data.fetch("verification_service_date")
         }
       end
       click_button("Submit")
@@ -58,10 +67,10 @@ class VerifyWithScra < IDmeBase
   end
 
   def populate_form_fields(data:)
-    fill_in "scra_request_service_member_first_name", :with => data.fetch("service_member_first_name")
-    fill_in "scra_request_service_member_last_name", :with => data.fetch("service_member_last_name")
-    fill_in "scra_request_service_member_birth_date", :with => data.fetch("service_member_birth_date")
-    fill_in "scra_request_social", :with => data.fetch("social")
-    fill_in "scra_request_service_date", :with => data.fetch("service_date")
+    fill_in "scra_request_service_member_first_name", :with => data.fetch("verification_service_member_first_name")
+    fill_in "scra_request_service_member_last_name", :with => data.fetch("verification_service_member_last_name")
+    fill_in "scra_request_service_member_birth_date", :with => data.fetch("verification_service_member_birth_date")
+    fill_in "scra_request_social", :with => data.fetch("verification_social")
+    fill_in "scra_request_service_date", :with => data.fetch("verification_service_date")
   end
 end
