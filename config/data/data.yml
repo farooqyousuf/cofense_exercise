@@ -224,8 +224,8 @@ scra_mil_spouse:
   verification_service_member_first_name: Jane
   verification_service_member_last_name: Doe
   verification_service_member_birth_date: 08/05/1959
-  verification_social: 000489522
-  verification_social_confirm: 000489522
+  verification_social: 000489552
+  verification_social_confirm: 000489552
   verification_service_date: 04/05/2016
 
 scra_multi_family:

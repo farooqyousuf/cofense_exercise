@@ -4,6 +4,9 @@
 
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
+## 2.3.25 (6/22/17)
+- INT-1552: Fix Verify with SCRA Admin tests
+
 ## 2.3.24 (6/21/17)
 - CORE-7690: Fix Military SCRA Mil Spouse IVA Tests
 - CORE-7685: Fix Mil Doc IVA Tests
