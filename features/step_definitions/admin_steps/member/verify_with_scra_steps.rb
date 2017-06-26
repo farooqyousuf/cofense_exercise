@@ -11,7 +11,7 @@ Given(/^I should be successfully verified as a "([^"]*)"$/) do |group|
 end
 
 Given(/^I submit the empty SCRA form for "([^"]*)" in the Admin tool$/) do |group|
-  VerifyWithScra.new.verify_via_scra(@username, affiliation: group, populate: false)
+  VerifyWithScra.new.verify_via_scra(@user_email, affiliation: group, populate: false)
 end
 
 Given(/^I should see error messages on required fields for "([^"]*)" in the Admin tool$/) do |affiliation|
