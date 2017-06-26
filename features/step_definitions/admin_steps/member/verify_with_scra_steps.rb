@@ -12,19 +12,14 @@ Given(/^I should be successfully verified as a "([^"]*)"$/) do |group|
   VerifyWithScra.new.verify_scra_applied(@username, affiliation: group)
 end
 
-Given(/^I submit the empty SCRA form for "([^"]*)" in Admin tool$/) do |group|
+Given(/^I submit the empty SCRA form for "([^"]*)" in the Admin tool$/) do |group|
   VerifyWithScra.new.verify_via_scra(@username, affiliation: group, populate: false)
 end
 
-Given(/^I should see errors on required fields for "([^"]*)" in Admin tool$/) do |affiliation|
-  form_field = %w[service_member_first_name service_member_last_name service_member_birth_date social service_date]
-  form_field_family = %w[first_name last_name birth_date]
+Given(/^I should see error messages on required fields for "([^"]*)" in the Admin tool$/) do |affiliation|
+  VerifyWithScra.new.verify_admin_scra_form_error_messages(affiliation: affiliation)
+end
 
-  fields = case affiliation
-           when "Service Member", "Veteran", "Retiree"    then form_field
-           when "Military Family", "Military Spouse"      then form_field.push(*form_field_family)
-           else fail("Affiliation not found")
-           end
-
-  VerifyWithScra.new.check_admin_scra_form_error(fields, affiliation: affiliation)
+Given(/^I should see red highlighted errors for "([^"]*)" in the Admin tool$/) do |affiliation|
+  VerifyWithScra.new.verify_admin_scra_form_red_highlighted_errors(affiliation: affiliation)
 end

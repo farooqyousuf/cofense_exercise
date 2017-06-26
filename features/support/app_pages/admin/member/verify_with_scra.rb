@@ -67,18 +67,28 @@ class VerifyWithScra < IDmeBase
     fill_in "scra_request_service_date", :with => data.fetch("service_date")
   end
 
-  def check_admin_scra_form_error(fields, affiliation:)
-    check_admin_scra_form_error_messages(fields, affiliation: affiliation)
-    check_admin_scra_form_red_highlighted_errors(fields, affiliation: affiliation)
+  def verify_admin_scra_form_error_messages(affiliation:)
+    form_field = %w[service_member_first_name service_member_last_name service_member_birth_date social service_date]
+    form_field_family = %w[first_name last_name birth_date]
+
+    fields = case affiliation
+             when "Service Member", "Veteran", "Retiree"    then form_field
+             when "Military Family", "Military Spouse"      then form_field.push(*form_field_family)
+             else fail("Affiliation not found")
+             end
+
+   form_error_messages_count.should == fields.count
   end
 
-  def check_admin_scra_form_error_messages(fields, affiliation:)
-    form_error_messages_count = all(".formError").count
-    form_error_messages_count.should == fields.count
-  end
+  def verify_admin_scra_form_red_highlighted_errors(affiliation:)
+    form_field = %w[service_member_first_name service_member_last_name service_member_birth_date social service_date]
+    form_field_family = %w[first_name last_name birth_date]
 
-  def check_admin_scra_form_red_highlighted_errors(fields, affiliation:)
-    admin_red = "rgba(185, 74, 72, 1)"
+    fields = case affiliation
+             when "Service Member", "Veteran", "Retiree"    then form_field
+             when "Military Family", "Military Spouse"      then form_field.push(*form_field_family)
+             else fail("Affiliation not found")
+             end
 
     fields.each do |field|
       %w(top right bottom left).each do |border_side|
@@ -86,5 +96,13 @@ class VerifyWithScra < IDmeBase
         red_highlighted_field.should == admin_red
       end
     end
+  end
+
+  def form_error_messages_count
+    all(".formError").count
+  end
+
+  def admin_red
+    "rgba(185, 74, 72, 1)"
   end
 end
