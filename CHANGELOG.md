@@ -4,8 +4,17 @@
 
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
-## 2.3.25 (6/22/17)
+## 2.3.26 (6/26/17)
+- INT-1571: Updated Revelator README hyperlinks
 - INT-1432: Prompt required fields SCRA form Cucumber Test (Admin)
+
+## 2.3.25 (6/22/17)
+- CORE-7698: Update IDP Signup Error Method
+- INT-1552: Fix Verify with SCRA Admin tests
+
+## 2.3.24 (6/21/17)
+- CORE-7690: Fix Military SCRA Mil Spouse IVA Tests
+- CORE-7685: Fix Mil Doc IVA Tests
 
 ## 2.3.23 (6/20/17)
 - IDME-3744: Fix wallet failed user sign in test

@@ -3,13 +3,11 @@ Given(/^I login the admin tool$/) do
 end
 
 Given(/^I verify with SCRA for "([^"]*)"$/) do |affiliation|
-  username = @username
-  VerifyWithScra.new.verify_via_scra(@username, affiliation: affiliation)
+  VerifyWithScra.new.verify_via_scra(@user_email, affiliation: affiliation)
 end
 
 Given(/^I should be successfully verified as a "([^"]*)"$/) do |group|
-  username = @username
-  VerifyWithScra.new.verify_scra_applied(@username, affiliation: group)
+  VerifyWithScra.new.verify_scra_applied(@user_email, affiliation: group)
 end
 
 Given(/^I submit the empty SCRA form for "([^"]*)" in the Admin tool$/) do |group|

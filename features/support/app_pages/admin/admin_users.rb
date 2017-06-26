@@ -123,7 +123,7 @@ include JavascriptAlerts
   end
 
   def delete_current_username
-    open_user_and_delete(@username)
+    open_user_and_delete(@user_email)
   end
 
   def record_test_user_email

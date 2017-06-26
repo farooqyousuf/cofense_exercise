@@ -6,13 +6,13 @@ end
 Given(/^I sign up as a new user$/) do
   @idp_sign_up = IDPSignUp.new
   @idp_sign_up.sign_up
-  @username = @idp_sign_up.username
+  @user_email = @idp_sign_up.user_email
   @idp_sign_up.click_sign_up_button
 end
 
 Given(/^I fill in the Sign Up textfield$/) do
   @idp_sign_up = IDPSignUp.new
-  @idp_sign_up.unique_username
+  @idp_sign_up.unique_user_email
 end
 
 Given(/^I click on the Sign Up button$/) do

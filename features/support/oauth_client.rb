@@ -40,7 +40,7 @@ class OAuthClient
   end
 
   def payload
-    @payload ||= JSON.parse@token.get(api_endpoint).body
+    @payload ||= JSON.parse(@token.get(api_endpoint).body)
   end
 
   def logout
