@@ -4,6 +4,9 @@
 
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
+## 2.3.26 (6/26/17)
+- INT-1571: Updated Revelator README hyperlinks
+
 ## 2.3.25 (6/22/17)
 - CORE-7698: Update IDP Signup Error Method
 - INT-1552: Fix Verify with SCRA Admin tests

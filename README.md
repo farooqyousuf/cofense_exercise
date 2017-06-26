@@ -104,4 +104,4 @@ cucumber features/feature_directory/test_file.feature:16
 cucumber --tags @test
 ```
 
-## For more information on revelator, please review the [QA Docs](https://github.com/IDme/docs/blob/master/quality_assurance/qa_resource_guide/revelator.md)
+## For more information on revelator, please review the [QA Docs](https://github.com/IDme/docs/blob/master/03_Quality_Assurance/01_QA_Resource_Guide/revelator.md)
