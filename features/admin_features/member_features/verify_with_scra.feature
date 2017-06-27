@@ -9,27 +9,27 @@ Feature: Verify users with SCRA using admin tool
     * I login the admin tool
     * I visit "VerifyWithScra"
 
-  @delete_user
+  @delete_current_user_email
   Scenario: Successful Verification as a Service Member through the Admin Tool
     * I verify with SCRA for "Service Member"
     * I should be successfully verified as a "Service Member"
 
-  @delete_user
+  @delete_current_user_email
   Scenario: Successful Verification as a Veteran through the Admin Tool
     * I verify with SCRA for "Veteran"
     * I should be successfully verified as a "Veteran"
 
-  @delete_user
+  @delete_current_user_email
   Scenario: Successful Verification as a Retiree through the Admin Tool
     * I verify with SCRA for "Retiree"
     * I should be successfully verified as a "Retiree"
 
-  @delete_user
+  @delete_current_user_email
   Scenario: Successful Verification as a Military Spouse through the Admin tool
     * I verify with SCRA for "Military Spouse"
     * I should be successfully verified as a "Military Spouse"
 
-  @delete_user
+  @delete_current_user_email
   Scenario: Successful Verification as a Military Family through the Admin tool
     * I verify with SCRA for "Military Family"
     * I should be successfully verified as a "Military Family"

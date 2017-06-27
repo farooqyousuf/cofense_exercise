@@ -4,7 +4,7 @@ Given(/^I verify that a document was successfully uploaded$/) do
 
   step 'I visit "AdminDocs"'
   @admin_docs = AdminDocs.new
-  @admin_docs.verify_doc_upload(@username)
+  @admin_docs.verify_doc_upload(@user_email)
 end
 
 Given(/^I submit the military document form for "([^"]*)"$/) do |affiliation|

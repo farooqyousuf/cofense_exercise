@@ -1,6 +1,6 @@
 Given(/^I lockout my account$/) do
   @idp_unlock = IDPUnlock.new
-  @idp_unlock.lockout_account(@username)
+  @idp_unlock.lockout_account(@user_email)
   step 'I should see the red alert box error message "Your ID.me Wallet has been locked due to a high number of failed sign-in attempts. Please click here to unlock it."'
 end
 
@@ -9,7 +9,7 @@ Given(/^I click on the unlock account link$/) do
 end
 
 Given(/^I unlock my account$/) do
-  @idp_unlock.unlock_account(@username)
+  @idp_unlock.unlock_account(@user_email)
   step 'I should see the green alert box error message "Your ID.me Wallet was successfully unlocked."'
 end
 
