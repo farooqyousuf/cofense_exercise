@@ -6,6 +6,7 @@ All notable changes to this project will be documented in this file. This projec
 
 ## 2.3.26 (6/26/17)
 - INT-1571: Updated Revelator README hyperlinks
+- INT-1432: Prompt required fields SCRA form Cucumber Test (Admin)
 
 ## 2.3.25 (6/22/17)
 - CORE-7698: Update IDP Signup Error Method
