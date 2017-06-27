@@ -11,7 +11,7 @@ Given(/^I should be successfully verified as a "([^"]*)"$/) do |group|
 end
 
 Given(/^I submit the SCRA verification form through the admin tool as a "([^"]*)" record$/) do |type|
-  VerifyWithScra.new.verify_via_scra(@username, affiliation: "Service Member", type: type)
+  VerifyWithScra.new.verify_via_scra(@user_email, affiliation: "Service Member", type: type)
 end
 
 Given(/^I should see the red alert flash message$/) do
