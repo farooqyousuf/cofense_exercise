@@ -76,6 +76,6 @@ class VerifyWithScra < IDmeBase
   end
 
   def verify_denied_scra_error_message
-    page.assert_selector ".flash-container"
+    page.assert_selector ".alert"
   end
 end

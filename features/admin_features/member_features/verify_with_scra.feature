@@ -37,5 +37,5 @@ Feature: Verify users with SCRA using admin tool
   @delete_user
   Scenario: Denied attempt for SCRA verification through the Admin tool (Error code 01)
     * I submit the SCRA verification form through the admin tool as a "denied" record
-    * I should see the red error flash message 
+    * I should see the red alert flash message 
     * I verify the attempt is marked as "DENIED"
