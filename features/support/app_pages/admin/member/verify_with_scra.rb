@@ -28,8 +28,6 @@ class VerifyWithScra < IDmeBase
 
     if populate
 
-      search_for_user(username)
-
       case type
       when "unique"
         select affiliation
@@ -47,8 +45,8 @@ class VerifyWithScra < IDmeBase
           fill_in "scra_request_service_date", :with => data.fetch("verification_service_date")
         }
       end
-      click_button("Submit")
     end
+    click_button("Submit")
   end
 
   def verify_scra_applied(user_email, affiliation:)

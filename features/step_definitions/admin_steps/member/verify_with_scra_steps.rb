@@ -3,7 +3,7 @@ Given(/^I login the admin tool$/) do
 end
 
 Given(/^I verify with SCRA for "([^"]*)"$/) do |affiliation|
-  VerifyWithScra.new.verify_via_scra(@user_email, affiliation: affiliation)
+  VerifyWithScra.new.verify_via_scra(@user_email, affiliation: affiliation, type: "unique")
 end
 
 Given(/^I should be successfully verified as a "([^"]*)"$/) do |group|
@@ -16,6 +16,7 @@ end
 
 Given(/^I should see the red alert flash message$/) do
   VerifyWithScra.new.verify_denied_scra_error_message
+end
 
 Given(/^I submit the empty SCRA form for "([^"]*)" in the Admin tool$/) do |group|
   VerifyWithScra.new.verify_via_scra(@user_email, affiliation: group, populate: false)
