@@ -19,6 +19,7 @@ class VerifyWithScra < IDmeBase
     when "Military Family"  then data_set = :scra_mil_family
     else puts "Affiliation not found"
     end
+    
     data = data_for(data_set)
     data_denied = data_for(:scra_denied_data)
 
