@@ -13,3 +13,7 @@ end
 Given(/^I submit the SCRA verification form through the admin tool as a "([^"]*)" record$/) do |type|
   VerifyWithScra.new.verify_via_scra(@username, affiliation: "Service Member", type: type)
 end
+
+Given(/^I should see the red error flash message$/) do
+  VerifyWithScra.new.verify_denied_scra_error_message
+end

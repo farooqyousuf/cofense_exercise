@@ -19,7 +19,7 @@ class VerifyWithScra < IDmeBase
     when "Military Family"  then data_set = :scra_mil_family
     else puts "Affiliation not found"
     end
-    
+
     data = data_for(data_set)
     data_denied = data_for(:scra_denied_data)
 
@@ -73,5 +73,9 @@ class VerifyWithScra < IDmeBase
     fill_in "scra_request_service_member_birth_date", :with => data.fetch("verification_service_member_birth_date")
     fill_in "scra_request_social", :with => data.fetch("verification_social")
     fill_in "scra_request_service_date", :with => data.fetch("verification_service_date")
+  end
+
+  def verify_denied_scra_error_message
+    page.assert_selector ".flash-container"
   end
 end
