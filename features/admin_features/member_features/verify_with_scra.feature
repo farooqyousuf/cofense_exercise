@@ -34,7 +34,13 @@ Feature: Verify users with SCRA using admin tool
     * I verify with SCRA for "Military Family"
     * I should be successfully verified as a "Military Family"
 
-  @delete_user
+  @delete_current_user_email
+  Scenario: Denied attempt for SCRA verification through the Admin tool (Error code 01)
+    * I submit the SCRA verification form through the admin tool as a "denied" record
+    * I should see the red alert flash message
+    * I verify the attempt is marked as "DENIED"
+
+@delete_user
   Scenario: Successful prompt for all required fields for Service Member
     * I submit the empty SCRA form for "Service Member" in the Admin tool
     * I should see error messages on required fields for "Service Member" in the Admin tool

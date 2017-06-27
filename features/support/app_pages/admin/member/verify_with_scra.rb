@@ -21,13 +21,24 @@ class VerifyWithScra < IDmeBase
     end
 
     data = data_for(data_set)
+    data_denied = data_for(:scra_denied_data)
 
     search_for_user(user_email)
     select affiliation
 
     if populate
 
-      populate_form_fields(data: data)
+      search_for_user(username)
+
+      case type
+      when "unique"
+        select affiliation
+        populate_form_fields(data: data)
+      when "denied"
+        select "Service Member"
+        populate_form_fields(data: data_denied)
+      end
+
       if["Military Spouse", "Military Family"].include?(affiliation)
         2.times {
           fill_in "scra_request_first_name", :with => data.fetch("verification_first_name")
@@ -36,9 +47,8 @@ class VerifyWithScra < IDmeBase
           fill_in "scra_request_service_date", :with => data.fetch("verification_service_date")
         }
       end
+      click_button("Submit")
     end
-
-    click_button("Submit")
   end
 
   def verify_scra_applied(user_email, affiliation:)
@@ -65,6 +75,10 @@ class VerifyWithScra < IDmeBase
     fill_in "scra_request_service_member_birth_date", :with => data.fetch("verification_service_member_birth_date")
     fill_in "scra_request_social", :with => data.fetch("verification_social")
     fill_in "scra_request_service_date", :with => data.fetch("verification_service_date")
+  end
+
+  def verify_denied_scra_error_message
+    page.assert_selector ".alert"
   end
 
   def verify_admin_scra_form_error_messages(affiliation:)

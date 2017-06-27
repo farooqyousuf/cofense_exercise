@@ -4,6 +4,9 @@
 
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
+## 2.3.27 (6/27/17)
+- INT-1433: Denied user SCRA form (Admin) Cucumber Test
+
 ## 2.3.26 (6/26/17)
 - INT-1571: Updated Revelator README hyperlinks
 - INT-1432: Prompt required fields SCRA form Cucumber Test (Admin)
