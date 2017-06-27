@@ -14,6 +14,6 @@ Given(/^I submit the SCRA verification form through the admin tool as a "([^"]*)
   VerifyWithScra.new.verify_via_scra(@username, affiliation: "Service Member", type: type)
 end
 
-Given(/^I should see the red error flash message$/) do
+Given(/^I should see the red alert flash message$/) do
   VerifyWithScra.new.verify_denied_scra_error_message
 end
