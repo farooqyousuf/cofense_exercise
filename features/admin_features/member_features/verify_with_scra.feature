@@ -33,3 +33,13 @@ Feature: Verify users with SCRA using admin tool
   Scenario: Successful Verification as a Military Family through the Admin tool
     * I verify with SCRA for "Military Family"
     * I should be successfully verified as a "Military Family"
+
+  Scenario: Duplicate attempt for SCRA verification through the Admin tool
+    * I verify with SCRA for "Service Member"
+    * I should be successfully verified as a "Service Member"
+    * I clear the session from Authority
+    * I login the admin tool
+    * I visit "VerifyWithScra"
+    * I submit the SCRA verification form through the admin tool as a "duplicate" record
+    * I should see the red alert flash message
+    * I verify the attempt is marked as "DUPLICATE"

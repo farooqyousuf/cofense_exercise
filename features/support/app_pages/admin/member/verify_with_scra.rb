@@ -10,7 +10,7 @@ class VerifyWithScra < IDmeBase
     super("#{FigNewton.admin.user_quick_search}")
   end
 
-  def verify_via_scra(username, affiliation:, populate: true, type: nil)
+  def verify_via_scra(user_email, affiliation:, populate: true, type: nil)
     case affiliation
     when "Service Member"   then data_set = :scra_veteran
     when "Veteran"          then data_set = :scra_veteran
@@ -24,9 +24,14 @@ class VerifyWithScra < IDmeBase
 
     if populate
 
-      search_for_user(username)
-      select affiliation
-      populate_form_fields(data: data)
+      search_for_user(user_email)
+
+      case type
+      when "unique", "duplicate"
+        select affiliation
+        populate_form_fields(data: data)
+      end
+
       if["Military Spouse", "Military Family"].include?(affiliation)
         2.times {
           fill_in "scra_request_first_name", :with => data.fetch("verification_first_name")
@@ -39,15 +44,15 @@ class VerifyWithScra < IDmeBase
     end
   end
 
-  def verify_scra_applied(username, affiliation:)
+  def verify_scra_applied(user_email, affiliation:)
     sleep 1
     all('tr')[1].all('a')[0].click
     sleep 2
-    page.assert_text username
+    page.assert_text user_email
   end
 
-  def search_for_user(username)
-    populate_search_field(search_box: username)
+  def search_for_user(user_email)
+    populate_search_field(search_box: user_email)
     click_button("Search")
     click_link("capybara+")
     click_link("Verify with SCRA")
