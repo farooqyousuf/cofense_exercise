@@ -16,6 +16,7 @@ end
 
 Given(/^I should see the red alert flash message$/) do
   VerifyWithScra.new.verify_denied_scra_error_message
+end
 
 Given(/^I submit the empty SCRA form for "([^"]*)" in the Admin tool$/) do |group|
   VerifyWithScra.new.verify_via_scra(@user_email, affiliation: group, populate: false)
