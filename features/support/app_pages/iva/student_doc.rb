@@ -34,7 +34,7 @@ class StudentDoc < IDmeBase
   end
 
   def populate_fields(data:)
-    populate_school(data.fetch("school"))
+    populate_school(data.fetch("verification_school"))
 
     %w(verification_first_name verification_last_name verification_social verification_social_confirm street city).each do |field|
       fill_in field, :with => data.fetch(field)

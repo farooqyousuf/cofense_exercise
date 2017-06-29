@@ -25,7 +25,7 @@ class StateLookupEMT < IDmeBase
 
   def populate_fields(data:)
     %w(verification_first_name verification_last_name verification_social verification_social_confirm street city emt_city emt_county verification_emt_number).each do |field|
-        fill_in field, :with => data.fetch(field)
+        fill_in field, :with => data.fetch(field), :match => :prefer_exact
     end
 
     %w(verification_birth_date zip emt_zip).each do |field|

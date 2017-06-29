@@ -153,11 +153,11 @@ wallet:
   settings: https://wallet-staging.idmeinc.net/settings
   myids: https://wallet-staging.idmeinc.net/ids
   activity: https://wallet-staging.idmeinc.net/activity
-  shop: https://shop-staging.idmeinc.net/
+  shop: https://shop-staging.idmeinc.net/?m=%2Fmodals%2Fsubscription_new
 
 idme:
   about_page: https://wallet-staging.idmeinc.net/about
-  business_page: https://business.id.me
+  business_page: https://business.id.me/
 
 shop_admin:
   base: https://shop-staging.idmeinc.net/admin

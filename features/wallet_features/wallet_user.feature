@@ -15,7 +15,7 @@ Scenario: Successful User Wallet Sign up
   * I should be on the Wallet dashboard page
   * I should see my sign up on the activity feed
 
-@wallet_signin @smoke
+@wallet_signin @smoke @lightning
 Scenario: Succesful User Wallet Sign In
   * I visit "WalletHomepage"
   * I click on the Wallet Sign in link

@@ -4,7 +4,7 @@ Given(/^I verify I am on the wallet homepage$/) do
 end
 
 Given(/^I verify that the wallet home hero is displayed$/) do
-  expect(page).to have_css(".content-container",:text => "One Identity. One Wallet. ID.me Wallet empowers you to manage all of the moving parts of your digital identity. With one login, you'll be able to easily access benefits and discounts from hundreds of partners. Start taking control of your digital identity today.")
+  expect(page).to have_css(".content-container",:text => "ID.me Wallet empowers you to manage all of the moving parts of your digital identity. With one login, you'll be able to easily access benefits and discounts from hundreds of partners. Start taking control of your digital identity today.")
   expect(page).to have_css(".wallet-home-hero-cta a",:visible => true)
 end
 
@@ -28,17 +28,26 @@ Given(/^I verify the Wallet shared navigation tab "([^"]*)" successfully links$/
               when "Business" then FigNewton.idme.business_page
               when "Shop"     then FigNewton.wallet.shop
               when "Wallet"   then FigNewton.wallet.homepage.url
-              end
-  find(".wallet-header-nav a",:text => nav_tab ).click
+                 end
 
   if nav_tab == "Business"
-    use_last_browser_created
+    business_window = window_opened_by do
+      find(".wallet-header-nav a",:text => nav_tab ).click
+    end
+    switch_to_window(business_window)
     expect(page).to have_current_path(nav_link_url, :url => true)
     close_current_browser
     use_last_browser_created
   else
+    find(".wallet-header-nav a",:text => nav_tab ).click
     expect(page).to have_current_path(nav_link_url, :url => true)
-    return_to_previous_page
+
+    if nav_tab == "Shop"
+      find(:xpath, "//a[@href='/subscription/not_now']").click
+      visit FigNewton.wallet.homepage.url
+    else
+      return_to_previous_page
+    end
   end
 end
 
