@@ -3,7 +3,7 @@ Given(/^I login the admin tool$/) do
 end
 
 Given(/^I verify with SCRA for "([^"]*)"$/) do |affiliation|
-  VerifyWithScra.new.verify_via_scra(@user_email, affiliation: affiliation)
+  VerifyWithScra.new.verify_via_scra(@user_email, affiliation: affiliation, type: "unique")
 end
 
 Given(/^I should be successfully verified as a "([^"]*)"$/) do |group|
