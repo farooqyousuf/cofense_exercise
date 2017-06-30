@@ -11,13 +11,14 @@ include JavascriptAlerts
 
   def approve_doc
     open_newest
-    find("#verification_attempt_status_event_accept").click
+    find("#decision_accept").click
     click_button("Update")
   end
 
   def deny_doc
     open_newest
-    find("#verification_attempt_status_event_deny").click
+    find("#decision_deny").click
+    select('Other', :from => 'verification_attempt_reason_id')
     click_button("Update")
   end
 
