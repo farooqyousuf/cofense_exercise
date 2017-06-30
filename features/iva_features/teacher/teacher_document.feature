@@ -29,7 +29,7 @@ Feature: Teacher verification using document upload
     * I clear the session from Authority
     * I create a new account after clearing my old "teacher" session
     * I click on the teacher verify using documentation link
-    * I select the teacher state
+    * I select the teacher state "Maryland"
     * I click on the Begin link
     * I verify using a duplicate "Teacher Doc Upload" record
     * I should see the error message "We’re sorry, but we are unable to verify your credentials with the information you provided."
@@ -46,7 +46,7 @@ Feature: Teacher verification using document upload
     * I clear the session from Authority
     * I create a new account after clearing my old "teacher" session
     * I click on the teacher verify using documentation link
-    * I select the teacher state
+    * I select the teacher state "Maryland"
     * I click on the Begin link
     * I submit the teacher doc upload verification form as a "second unique user" record
     * I should see the error message "We’re sorry, but we were unable to verify your credentials with the document you provided. Please see our Support page for document specifications, or try another verification option."
