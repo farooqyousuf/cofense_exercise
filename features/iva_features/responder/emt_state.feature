@@ -5,7 +5,8 @@ Feature: Responder verification as an EMT using state lookup
     * I visit IDP through the "responder" policy
     * I click on the Sign Up link
     * I sign up as a new user
-    * I should be on the responder verification screen
+    * I click on the Verify using EMT State Lookup link
+    * I click on the Begin link
 
   @smoke @delete_experian_user1
   Scenario: Successful verification with EMT state lookup

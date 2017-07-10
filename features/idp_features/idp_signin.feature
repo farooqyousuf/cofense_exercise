@@ -4,7 +4,7 @@ Feature: User sign in with an existing account
   Background:
     * I visit IDP through the "shop" policy
 
-  @smoke
+  @smoke @lightning
   Scenario: Successful login
     * I login as a "Unverified" user
     * I should be successfully authenticated

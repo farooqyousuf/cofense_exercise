@@ -32,7 +32,7 @@ class IVAGovernment < IDmeBase
     populate_state(data.fetch("state"))
 
     %w[email verification_email_confirmation].each do |field|
-      fill_in field, :with => email
+      fill_in field, :with => email, :match => :prefer_exact
     end
 
     populate_affiliation(data.fetch("affiliation"))
