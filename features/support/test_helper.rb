@@ -78,7 +78,8 @@ module HelperMethods
   end
 
   def p_tag_message
-    page.find('p').text
+    #page.find('p').text
+    all('p').first.text
   end
 
   def red_error_under_textfield
