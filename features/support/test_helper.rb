@@ -106,7 +106,7 @@ module HelperMethods
   # end
 
   def check_idp_red_highlighted_error(field)
-    idp_red = "rgba(194, 58, 39, 1)"
+    idp_red = "rgb(194, 58, 39)"
 
   %w(top right bottom left).each do |border_side|
       red_highlighted_field = page.find(field).native.css_value("border-#{border_side}-color")
