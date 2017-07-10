@@ -5,12 +5,11 @@ Feature: Responder verification as an EMT using state lookup
     * I visit IDP through the "responder" policy
     * I click on the Sign Up link
     * I sign up as a new user
-    * I should be on the responder verification screen
+    * I click on the Verify using EMT State Lookup link
+    * I click on the Begin link
 
   @smoke @delete_experian_user1
   Scenario: Successful verification with EMT state lookup
-    * I click on the Verify using EMT State Lookup link
-    * I click on the Begin link
     * I verify using EMT state lookup
     * I approve the EMT verification in IDme admin
     * I should be successfully verified as "EMT"
@@ -38,8 +37,6 @@ Feature: Responder verification as an EMT using state lookup
   @smoke @delete_experian_user1
   #unique doc and user must pass experian check
   Scenario: Successful verification with EMT state doc upload
-    * I click on the Verify using EMT State Doc link
-    * I click on the Begin link
     * I generate a unique doc
     * I verify using state EMT doc upload
     * I approve the document in IDme admin
