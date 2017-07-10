@@ -37,8 +37,6 @@ Feature: Responder verification as an EMT using state lookup
   @smoke @delete_experian_user1
   #unique doc and user must pass experian check
   Scenario: Successful verification with EMT state doc upload
-    * I click on the Verify using EMT State Doc link
-    * I click on the Begin link
     * I generate a unique doc
     * I verify using state EMT doc upload
     * I approve the document in IDme admin
