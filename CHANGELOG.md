@@ -4,6 +4,9 @@
 
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
+# 2.4.1 (7/10/2017)
+- CORE-7784: Fixed IDP Signup tests
+
 # 2.4.0 (6/29/2017)
 - CORE-7745: Upgrade Revelator to use Firefox 54
 
