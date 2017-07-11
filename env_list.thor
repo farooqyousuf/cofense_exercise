@@ -6,6 +6,11 @@ class Set < Thor
       run("cp features/support/environments/env.rb.#{new_environment} features/support/env.rb")
     end
   end
+  
+  desc "firefox_54_osx_saucelabs", "Use Firefox v54 on OSX on Sauce Labs"
+  def firefox_54_osx_saucelabs
+    copy_environment("firefox_54_osx_saucelabs")
+  end
 
   desc "firefox_osx_saucelabs", "Use Firefox on OSX on Sauce Labs"
   def firefox_osx_saucelabs
