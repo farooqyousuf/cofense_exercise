@@ -4,7 +4,7 @@
 
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
-# 2.4.1 (7/11/2017)
+# 2.4.2 (7/11/2017)
 - INT-1651: Fixed Verify with SCRA Admin tests: Successful verification happy path
 
 # 2.4.1 (7/10/2017)
