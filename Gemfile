@@ -23,4 +23,4 @@ gem "oauth2"
 gem "httparty"
 gem 'page-object'
 gem 'require_all'
-gem 'sauce_whisk'
+gem 'sauce_whisk', '0.1.0'
