@@ -21,3 +21,6 @@ gem "cucumber"
 gem "rubocop"
 gem "oauth2"
 gem "httparty"
+gem 'page-object'
+gem 'require_all'
+gem 'sauce_whisk'
