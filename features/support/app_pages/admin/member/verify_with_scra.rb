@@ -41,9 +41,9 @@ class VerifyWithScra < IDmeBase
         2.times {
           fill_in "scra_request_first_name", :with => data.fetch("verification_first_name")
           fill_in "scra_request_last_name", :with => data.fetch("verification_last_name")
-          fill_in "scra_request_birth_date", :with => data.fetch("verification_service_member_birth_date")
           fill_in "scra_request_service_date", :with => data.fetch("verification_service_date")
         }
+        2.times {fill_in "scra_request_birth_date", :with => data.fetch("verification_service_member_birth_date")}
       end
     end
     click_button("Submit")
@@ -70,8 +70,8 @@ class VerifyWithScra < IDmeBase
   def populate_form_fields(data:)
     fill_in "scra_request_service_member_first_name", :with => data.fetch("verification_service_member_first_name")
     fill_in "scra_request_service_member_last_name", :with => data.fetch("verification_service_member_last_name")
-    fill_in "scra_request_service_member_birth_date", :with => data.fetch("verification_service_member_birth_date")
-    fill_in "scra_request_social", :with => data.fetch("verification_social")
+    2.times {fill_in "scra_request_service_member_birth_date", :with => data.fetch("verification_service_member_birth_date")}
+    2.times {fill_in "scra_request_social", :with => data.fetch("verification_social")}
     fill_in "scra_request_service_date", :with => data.fetch("verification_service_date")
   end
 
