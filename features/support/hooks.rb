@@ -2,7 +2,6 @@
 
 #Actions performed before/after each scenario
 Before("@desktop") do
-  #page.driver.browser.manage.window.maximize
 end
 
 After do
