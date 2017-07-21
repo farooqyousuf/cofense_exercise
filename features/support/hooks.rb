@@ -1,9 +1,5 @@
 # NOTE: order matters here, hooks defined last will be ran first
 
-#Actions performed before/after each scenario
-Before("@desktop") do
-end
-
 After do
   Capybara.current_session.driver.quit
 end
