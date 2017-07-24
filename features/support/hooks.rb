@@ -1,4 +1,5 @@
 # NOTE: order matters here, hooks defined last will be ran first
+require 'httparty'
 
 #Actions performed before/after each scenario
 Before("@desktop") do
