@@ -39,7 +39,7 @@ $ /Applications/Firefox.app/Contents/MacOS/firefox -v
 => Mozilla Firefox 54.0.1
 ```
 
-[Link](https://support.mozilla.org/en-US/kb/update-firefox-latest-version) to update Firefox to the latest version.
+Review this [link](https://support.mozilla.org/en-US/kb/update-firefox-latest-version) for instructions on how to update Firefox to the latest version.
 
 ## Running Revelator
 
