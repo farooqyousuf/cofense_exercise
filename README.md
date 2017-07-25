@@ -30,8 +30,7 @@ One way is to install GeckoDriver using [brew](https://brewinstall.org/Install-g
 brew install geckodriver
 ```
 
-Another way is to manually install [GeckoDriver](https://github.com/mozilla/geckodriver)
-[GeckoDriver Releases](https://github.com/mozilla/geckodriver/releases)
+Another way is to manually install [GeckoDriver](https://github.com/mozilla/geckodriver) with the latest [GeckoDriver Releases](https://github.com/mozilla/geckodriver/releases)
 
 ### Updating Firefox
 Check what version of firefox is currently installed
