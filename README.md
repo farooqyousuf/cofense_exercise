@@ -33,13 +33,13 @@ brew install geckodriver
 Another way is to manually install [GeckoDriver](https://github.com/mozilla/geckodriver) with the latest [GeckoDriver Release](https://github.com/mozilla/geckodriver/releases)
 
 ### Updating Firefox
-Check what version of firefox is currently installed
+Check which version of firefox is currently installed
 ```bash
 $ /Applications/Firefox.app/Contents/MacOS/firefox -v
 => Mozilla Firefox 54.0.1
 ```
 
-Review this [link](https://support.mozilla.org/en-US/kb/update-firefox-latest-version) for instructions on how to update Firefox to the latest version.
+Visit this [link](https://support.mozilla.org/en-US/kb/update-firefox-latest-version) for instructions on how to update Firefox to the latest version.
 
 ## Running Revelator
 
