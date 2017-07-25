@@ -7,6 +7,11 @@ class Set < Thor
     end
   end
 
+  desc "firefox_osx_accept_certs", "Use Firefox on OSX and accept all certs"
+  def firefox_osx_accept_certs
+    copy_environment("firefox_osx_accept_certs")
+  end
+
   desc "firefox_osx_saucelabs", "Use Firefox on OSX on Sauce Labs"
   def firefox_osx_saucelabs
     copy_environment("firefox_osx_saucelabs")
