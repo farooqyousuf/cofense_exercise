@@ -3,7 +3,6 @@ require 'httparty'
 
 #Actions performed before/after each scenario
 Before("@desktop") do
-  binding.pry
   page.driver.browser.manage.window.maximize
 end
 
