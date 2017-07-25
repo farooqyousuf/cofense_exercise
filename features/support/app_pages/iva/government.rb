@@ -57,7 +57,8 @@ class IVAGovernment < IDmeBase
   end
 
   def user_property_levels
-    [1, 1, 1]
+    user_property_levels_array = [1, 1, 1]
+    return user_property_levels_array
   end
 
 end

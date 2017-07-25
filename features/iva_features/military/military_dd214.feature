@@ -17,7 +17,8 @@ Feature: Military verification using DD214 request
   @delete_scra_user2
   Scenario: Successful DD214 verification via SCRA
     * I verify using DD214 information for "Veteran" via "SCRA"
-    * I should be successfully verified as "Veteran"
+    # * I should be successfully verified as "Veteran"
+    * I verify user level properties for "DD214"
 
   @delete_dd214_user2
   Scenario: Successful DD214 verification as a Next of Kin Deceased Veteran
