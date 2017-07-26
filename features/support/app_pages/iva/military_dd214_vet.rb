@@ -99,19 +99,19 @@ class DD214 < IDmeBase
   end
 
   def vet_scra_user_property_levels
-    [2,2,2,2,2]
+    [2, 2, 2, 2, 2]
   end
 
   def vet_doc_user_property_levels
-    [1,1,1,1,1]
+    [1, 1, 1, 1, 1]
   end
 
-  def next_of_kin_deceased_vet
-    [1,1,1]
+  def next_of_kin_deceased_vet_property_levels
+    [1, 1, 1]
   end
 
-  def legal_guardian
-    [1,1,1]
+  def legal_guardian_property_levels
+    [1, 1, 1]
   end
 
   def click_verify_by_dd214_link

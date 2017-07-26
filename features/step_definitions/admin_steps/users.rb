@@ -5,38 +5,32 @@ Given(/^I verify user level properties for "([^"]*)"$/) do |affiliation|
   all('td')[0].click #click on the very first user in the table
 
   elements = all("td.center.short")
-  actual_levels = Array.new
+  actual_levels = []
 
   case affiliation
-  when "IVAGovernment"
+  when "Government"
     indexes = [0,3,6]
-    method = "user_property_levels"
+    expected_levels = IVAGovernment.new.user_property_levels
   when "DD214 Vet via SCRA"
-    affiliation = "DD214"
     indexes = [0,3,6,9,12]
-    method = "vet_scra_user_property_levels"
+    expected_levels = DD214.new.vet_scra_user_property_levels
   when "DD214 Vet via document"
-    affiliation = "DD214"
     indexes = [0,3,6,9,12]
-    method = "vet_doc_user_property_levels"
+    expected_levels = DD214.new.vet_doc_user_property_levels
   when "DD214 Next of Kin Deceased Vet"
-    affiliation = "DD214"
     indexes = [0,3,6]
-    method = "next_of_kin_deceased_vet"
+    expected_levels = DD214.new.next_of_kin_deceased_vet_property_levels
   when "DD214 Legal Guardian"
-    affiliation = "DD214"
     indexes = [0,3,6]
-    method = "legal_guardian"
+    expected_levels = DD214.new.legal_guardian_property_levels
   end
 
   #builds the actual_levels array according to whichever numbers array is selected in the case statement above
-  indexes.each do |index|
-    actual_levels.push(elements[index].text.to_i)
+  indexes.each do |i|
+    actual_levels << elements[i].text.to_i
   end
-  affiliation_class = Object.const_get(affiliation).new #converts a string text into a class name
-  expected_levels = affiliation_class.send(method)
 
-  expect(actual_levels.should == expected_levels).to be_truthy
+  expect(expected_levels).to eq(actual_levels)
   puts "Expected User Property Levels: #{expected_levels}"
   puts "Actual User Property Levels: #{actual_levels}"
 end
