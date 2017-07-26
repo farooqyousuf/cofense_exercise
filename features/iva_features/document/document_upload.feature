@@ -9,6 +9,8 @@ Feature: IVA verification using document upload
 
   @delete_current_user_email
   Scenario: Successful document upload
+    * I click on the Military Verify by uploading documentation link
+    * I click on the Begin link
     * I verify using military documentation for "Service Member"
     * I verify that a document was successfully uploaded
 
