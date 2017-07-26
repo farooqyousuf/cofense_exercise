@@ -4,6 +4,9 @@
 
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
+# 2.4.3 (7/25/2017)
+- INT-1649: Upgrade Revelator README instructions to include Firefox 54
+
 # 2.4.2 (7/11/2017)
 - INT-1651: Fixed Verify with SCRA Admin tests: Successful verification happy path
 

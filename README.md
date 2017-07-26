@@ -5,18 +5,41 @@ Revelator is a repository that contains ID.me's automated tests.  It is used to 
 ## Setup Instructions
 
 1. Clone the repositiory `git clone git@github.com:IDme/idme-revelator.git`
-2. `bundle install`
-3. Install Firefox version less than or equal to 45.0.1
+2. Install GeckoDriver
+3. `bundle update`
+4. `bundle install`
+5. Update Firefox to the latest version
 
-### Installing Firefox v.45
-Check what version of firefox is currently installed
+### Installing GeckoDriver
+
+Check to see if GeckoDriver is currently installed
 ```bash
-$ /Applications/Firefox.app/Contents/MacOS/firefox -v
-=> Mozilla Firefox 45.0.1
+$ geckodriver --version
+=> geckodriver 0.18.0
+
+The source code of this program is available from
+testing/geckodriver in https://hg.mozilla.org/mozilla-central.
+
+This program is subject to the terms of the Mozilla Public License 2.0.
+You can obtain a copy of the license at https://mozilla.org/MPL/2.0/.
+```
+There are multiple ways to install GeckoDriver
+
+One way is to install GeckoDriver using [brew](https://brewinstall.org/Install-geckodriver-on-Mac-with-Brew/)
+```bash
+brew install geckodriver
 ```
 
-If the Firefox version is greater than 45.0.1, [uninstall Firefox](http://kb.mozillazine.org/Uninstalling_Firefox)
-then [install Firefox v.45.0.1](https://ftp.mozilla.org/pub/firefox/releases/45.0.1/mac/en-US/).  Be sure to disable Firefox updates.
+Another way is to manually install [GeckoDriver](https://github.com/mozilla/geckodriver) with the latest [GeckoDriver Release](https://github.com/mozilla/geckodriver/releases)
+
+### Updating Firefox
+Check which version of firefox is currently installed
+```bash
+$ /Applications/Firefox.app/Contents/MacOS/firefox -v
+=> Mozilla Firefox 54.0.1
+```
+
+Visit this [link](https://support.mozilla.org/en-US/kb/update-firefox-latest-version) for instructions on how to update Firefox to the latest version.
 
 ## Running Revelator
 
@@ -32,15 +55,20 @@ thor list
 
 It will print
 ```bash
-thor set:android_saucelabs       # Use Android on Sauce Labs on Production
-thor set:chrome_osx              # Use Chrome on OSX on Sauce Labs on Production
-thor set:chrome_windows          # Use Chrome on Windows on Sauce Labs on Production
-thor set:firefox_osx_production  # Use Firefox on OSX on Production
-thor set:firefox_osx_staging     # Use Firefox on OSX on Staging
-thor set:firefox_windows         # Use Firefox on Windows on Sauce Labs on Production
-thor set:ie_windows              # Use Internet Explorer on Windows on Sauce Labs on Production
-thor set:ios_local               # Use iOS locally on Production
-thor set:ios_saucelabs           # Use iOS on Sauce Labs on Production
+thor set:android_saucelabs         # Use Android on Sauce Labs on Staging
+thor set:chrome_osx                # Use Chrome on OSX locally on staging
+thor set:chrome_windows            # Use Chrome on Windows on Sauce Labs on P...
+thor set:firefox_osx_accept_certs  # Use Firefox on OSX and accept all certs
+thor set:firefox_osx_local         # Use Firefox on OSX on Local
+thor set:firefox_osx_production    # Use Firefox on OSX on Production
+thor set:firefox_osx_saucelabs     # Use Firefox on OSX on Sauce Labs
+thor set:firefox_osx_staging       # Use Firefox on OSX on Staging
+thor set:firefox_windows           # Use Firefox on Windows on Sauce Labs on ...
+thor set:ie_windows                # Use Internet Explorer on Windows on Sauc...
+thor set:ios_local                 # Use iOS locally on Staging
+thor set:ios_saucelabs             # Use iOS on Sauce Labs on Staging
+thor set:safari_local              # User Safari locally on Staging
+thor set:safari_saucelabs          # Use Safari on SauceLabs on Staging
 ```
 
 ### Run the appropriate thor command to set the environment
@@ -104,4 +132,4 @@ cucumber features/feature_directory/test_file.feature:16
 cucumber --tags @test
 ```
 
-## For more information on revelator, please review the [QA Docs](https://github.com/IDme/docs/blob/master/03_Quality_Assurance/01_QA_Resource_Guide/revelator.md)
+## For more information on revelator, please review the [QA Docs](https://github.com/IDme/docs/blob/master/04_Quality_Assurance/01_QA_Resource_Guide/revelator.md)
