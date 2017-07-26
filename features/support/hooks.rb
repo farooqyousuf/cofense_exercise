@@ -1,4 +1,5 @@
 # NOTE: order matters here, hooks defined last will be ran first
+require 'httparty'
 
 After do
   Capybara.current_session.driver.quit
