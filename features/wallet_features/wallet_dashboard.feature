@@ -4,7 +4,7 @@ Feature: Test Wallet Dashboard Page Feature
 Background:
   * I create "WalletHomepage,WalletDashboard,WalletMyids" page objects
   * I visit "WalletHomepage"
-  * I sign in to Wallet
+  * I login to wallet as a "Military" user
 
 Scenario: Verify Wallet Shared Main Nav
   * I verify ID.me logo is present
