@@ -18,22 +18,18 @@ class WalletDashboard < IDmeBase
   end
 
   def click_on_about_shared_nav_tab
-    # find("ul.shared-nav-tabs li:nth-child(1)").click
     find("ul.shared-nav-tabs").click_link("About")
   end
 
   def click_on_business_shared_nav_tab
-    # find("ul.shared-nav-tabs li:nth-child(2)").click
     find("ul.shared-nav-tabs").click_link("Business")
   end
 
   def click_on_shop_shared_nav_tab
-    # find("ul.shared-nav-tabs li:nth-child(3)").click
     find("ul.shared-nav-tabs").click_link("Shop")
   end
 
   def click_on_wallet_shared_nav_tab_from_about_page
-    # find("nav.wallet-header-nav li:nth-child(4)").click
     find("nav.wallet-header-nav ").click_link("Wallet")
   end
 end
