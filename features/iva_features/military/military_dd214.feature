@@ -10,24 +10,28 @@ Feature: Military verification using DD214 request
 
   @smoke @delete_dd214_user
   #unique dob/ssn to pass verification
-  Scenario: Successful DD214 verification as a Veteran
+  Scenario: Successful DD214 verification as a Veteran via document
     * I verify using DD214 information for "Veteran" via "document"
-    * I should be successfully verified as "Veteran"
+    # * I should be successfully verified as "Veteran"
+    * I verify user level properties for "DD214 Vet via document"
 
   @delete_scra_user2
-  Scenario: Successful DD214 verification via SCRA
+  Scenario: Successful DD214 verification as a Veteran via SCRA
     * I verify using DD214 information for "Veteran" via "SCRA"
-    * I should be successfully verified as "Veteran"
+    # * I should be successfully verified as "Veteran"
+    * I verify user level properties for "DD214 Vet via SCRA"
 
   @delete_dd214_user2
   Scenario: Successful DD214 verification as a Next of Kin Deceased Veteran
     * I verify using DD214 information for "Next of kin deceased veteran" via "document"
-    * I should be successfully verified as "Military Family"
+    #* I should be successfully verified as "Military Family"
+    * I verify user level properties for "DD214 Next of Kin Deceased Vet"
 
   @delete_dd214_user2
   Scenario: Successful DD214 verification as a Legal Guardian
     * I verify using DD214 information for "Legal guardian" via "document"
-    * I should be successfully verified as "Military Family"
+    # * I should be successfully verified as "Military Family"
+    * I verify user level properties for "DD214 Legal Guardian"
 
   @wip @delete_dd214_user
   Scenario: Denied attempt for DD214 verification
