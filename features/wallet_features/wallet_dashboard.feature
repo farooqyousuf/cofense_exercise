@@ -1,14 +1,16 @@
-@regression @wallet @desktop
+@regression @wallet @desktop @wallet_dashboard
 Feature: Test Wallet Dashboard Page Feature
 
 Background:
   * I create "WalletHomepage,WalletDashboard,WalletMyids" page objects
   * I visit "WalletHomepage"
-  * I sign in to Wallet
+  * I login to wallet as a "Military" user
 
-@wip
 Scenario: Verify Wallet Shared Main Nav
   * I verify ID.me logo is present
+  * I verify that the main nav Shop link takes me to the correct page
+  * I verify that the main nav About link takes me to the correct page
+  * I verify that the main nav Wallet link takes me to the correct page
   * I verify that all the main nav tab links are directing to correct pages
 
 @wip

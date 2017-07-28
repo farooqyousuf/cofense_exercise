@@ -4,6 +4,9 @@
 
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
+# 2.4.4 (7/26/2017)
+- IDME-3746: Wallet Dashboard: Verify Shared Main Nav
+
 # 2.4.3 (7/25/2017)
 - INT-1649: Upgrade Revelator README instructions to include Firefox 54
 - INT-1694: User Properties Levels check for DD214 IVA tests
