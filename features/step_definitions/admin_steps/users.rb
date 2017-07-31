@@ -9,20 +9,23 @@ Given(/^I verify user level properties for "([^"]*)"$/) do |affiliation|
 
   case affiliation
   when "Government"
-    indexes = [0,3,6]
+    indexes = [0, 3, 6]
     expected_levels = IVAGovernment.new.user_property_levels
   when "DD214 Vet via SCRA"
-    indexes = [0,3,6,9,12]
+    indexes = [0, 3, 6, 9, 12]
     expected_levels = DD214.new.vet_scra_user_property_levels
   when "DD214 Vet via document"
-    indexes = [0,3,6,9,12]
+    indexes = [0, 3, 6, 9, 12]
     expected_levels = DD214.new.vet_doc_user_property_levels
-  when "DD214 Next of Kin Deceased Vet"
-    indexes = [0,3,6]
-    expected_levels = DD214.new.next_of_kin_deceased_vet_property_levels
-  when "DD214 Legal Guardian"
-    indexes = [0,3,6]
-    expected_levels = DD214.new.legal_guardian_property_levels
+  when "DD214 Next of Kin Deceased Vet", "DD214 Legal Guardian"
+    indexes = [0, 3, 6]
+    expected_levels = DD214.new.dd214_family_user_property_levels
+  when "Mil Doc Service Member", "Mil Doc Veteran", "Mil Doc Retiree"
+    indexes = [0, 3, 6, 9, 12, 15, 18, 21, 24]
+    expected_levels = MilitaryDoc.new.mil_doc_service_member_user_property_levels
+  when "Mil Doc Mil Spouse", "Mil Doc Mil Family"
+    indexes = [0, 3, 6]
+    expected_levels = MilitaryDoc.new.mil_doc_mil_family_user_property_levels
   end
 
   #builds the actual_levels array according to whichever numbers array is selected in the case statement above

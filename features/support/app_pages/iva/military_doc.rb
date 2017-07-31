@@ -85,6 +85,14 @@ class MilitaryDoc < IDmeBase
     [0,1,2,3,4,5,6,7,8]
   end
 
+  def mil_doc_service_member_user_property_levels
+    [1, 1, 1, 1, 1, 1, 1, 1, 1]
+  end
+
+  def mil_doc_mil_family_user_property_levels
+    [1, 1, 1]
+  end
+
   def click_verify_mildoc_link
     click_link("Verify by uploading documentation")
   end
