@@ -106,11 +106,7 @@ class DD214 < IDmeBase
     [1, 1, 1, 1, 1]
   end
 
-  def next_of_kin_deceased_vet_property_levels
-    [1, 1, 1]
-  end
-
-  def legal_guardian_property_levels
+  def dd214_family_user_property_levels
     [1, 1, 1]
   end
 
