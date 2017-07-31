@@ -4,6 +4,9 @@
 
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
+# 2.4.5 (7/31/2017)
+- INT-1705: Add properties check in Admin Tool for Mil Doc IVA tests
+
 # 2.4.4 (7/26/2017)
 - IDME-3746: Wallet Dashboard: Verify Shared Main Nav
 
