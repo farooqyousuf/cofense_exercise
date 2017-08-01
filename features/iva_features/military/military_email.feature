@@ -12,7 +12,8 @@ Feature: Military verification using .mil email
   Scenario: Successful verification with a military email as Service Member
     * I verify using military email information for "Service Member"
     * I submit the verification code for "Military Email Code"
-    * I should be successfully verified as "Service Member"
+    # * I should be successfully verified as "Service Member"
+    * I verify user level properties for "Mil Email Service Member"
 
   @delete_current_user_email
   Scenario: Successful verification with a military email as Military Spouse

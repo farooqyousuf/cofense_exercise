@@ -74,4 +74,8 @@ class MilitaryEmail < IDmeBase
     [0, 1, 2, 3, 4]
   end
 
+  def mil_email_service_member_user_property_levels
+    [1, 2, 1]
+  end
+
 end
