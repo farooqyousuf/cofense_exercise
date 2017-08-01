@@ -115,6 +115,6 @@ class VerifyWithScra < IDmeBase
   end
 
   def admin_red
-    "rgba(185, 74, 72, 1)"
+    "rgb(185, 74, 72)"
   end
 end
