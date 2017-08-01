@@ -40,6 +40,16 @@ Feature: Verify users with SCRA using admin tool
     * I should see the red alert flash message
     * I verify the attempt is marked as "DENIED"
 
+  Scenario: Duplicate attempt for SCRA verification through the Admin tool
+    * I verify with SCRA for "Service Member"
+    * I should be successfully verified as a "Service Member"
+    * I clear the session from Authority
+    * I login the admin tool
+    * I visit "VerifyWithScra"
+    * I submit the SCRA verification form through the admin tool as a "duplicate" record
+    * I should see the red alert flash message
+    * I verify the attempt is marked as "DUPLICATE"
+
 @delete_user
   Scenario: Successful prompt for all required fields for Service Member
     * I submit the empty SCRA form for "Service Member" in the Admin tool
