@@ -44,26 +44,25 @@ include PageManagement
       expected_levels = MilitaryDoc.new.mil_doc_service_member_user_property_levels
 
     when "Mil Doc Mil Spouse", "Mil Doc Mil Family"
-      indexes = [0, 3, 6]
-      expected_levels = MilitaryDoc.new.mil_doc_mil_family_user_property_levels
+      expand_verification_properties
+      indexes = [0, 3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33]
+      expected_levels = MilitaryDoc.new.mil_doc_mil_family_user_and_verif_properties
 
     when "Mil Email Service Member"
       expand_verification_properties
       indexes = [0, 3, 6, 9]
-      expected_levels = MilitaryEmail.new.mil_email_service_member_user_property_levels
+      expected_levels = MilitaryEmail.new.mil_email_service_member_user_and_verif_properties
 
     when "Mil Email Mil Family"
       expand_verification_properties
       indexes = [0, 3, 6, 9, 12, 15, 18, 21]
-      expected_levels = MilitaryEmail.new.mil_email_mil_family_user_property_levels
+      expected_levels = MilitaryEmail.new.mil_email_mil_family_user_and_verif_properties
     end
 
     #builds the actual_levels array according to whichever numbers array is selected in the case statement above
     indexes.each do |i|
       actual_levels << @elements[i].text.to_i
     end
-
-    binding.pry
 
     actual_levels.should == expected_levels
     puts "Expected User Property Levels: #{expected_levels}"

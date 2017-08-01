@@ -74,11 +74,11 @@ class MilitaryEmail < IDmeBase
     [0, 1, 2, 3, 4]
   end
 
-  def mil_email_service_member_user_property_levels
+  def mil_email_service_member_user_and_verif_properties
     [1, 2, 1, 2]
   end
 
-  def mil_email_mil_family_user_property_levels
+  def mil_email_mil_family_user_and_verif_properties
     [1, 1, 1, 1, 2, 1, 2, 2]
   end
 
