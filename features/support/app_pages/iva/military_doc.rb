@@ -89,8 +89,8 @@ class MilitaryDoc < IDmeBase
     [1, 1, 1, 1, 1, 1, 1, 1, 1]
   end
 
-  def mil_doc_mil_family_user_property_levels
-    [1, 1, 1]
+  def mil_doc_mil_family_user_and_verif_properties
+    [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
   end
 
   def click_verify_mildoc_link
