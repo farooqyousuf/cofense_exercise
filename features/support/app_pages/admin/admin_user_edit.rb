@@ -57,6 +57,21 @@ include PageManagement
       expand_verification_properties
       indexes = [0, 3, 6, 9, 12, 15, 18, 21]
       expected_levels = MilitaryEmail.new.mil_email_mil_family_user_and_verif_properties
+
+    when "SCRA Service Member"
+      expand_verification_properties
+      indexes = [0, 3, 6, 9, 12, 15, 18, 21]
+      expected_levels = MilitarySCRA.new.scra_service_member_user_and_verif_properties
+
+    when "SCRA Veteran", "SCRA Retiree"
+      expand_verification_properties
+      indexes = [0, 3, 6, 9, 12, 15, 18, 21, 24]
+      expected_levels = MilitarySCRA.new.scra_vet_user_and_verif_properties
+
+    when "SCRA Mil Spouse", "SCRA Mil Family"
+      expand_verification_properties
+      indexes = [0, 3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33]
+      expected_levels = MilitarySCRA.new.scra_mil_family_user_and_verif_properties
     end
 
     #builds the actual_levels array according to whichever numbers array is selected in the case statement above

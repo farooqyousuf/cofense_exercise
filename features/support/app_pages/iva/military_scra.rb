@@ -75,6 +75,18 @@ class MilitarySCRA < IDmeBase
     [0,1,2,3,4]
   end
 
+  def scra_service_member_user_and_verif_properties
+    [2, 2, 2, 2, 2, 2, 2, 2]
+  end
+
+  def scra_vet_user_and_verif_properties
+    [2, 2, 2, 2, 2, 2, 2, 2, 2]
+  end
+
+  def scra_mil_family_user_and_verif_properties
+    [1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+  end
+
   def click_verify_scra_link
     click_link("Verify using a government service record")
   end
