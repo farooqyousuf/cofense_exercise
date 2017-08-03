@@ -29,7 +29,7 @@ class VerifyWithScra < IDmeBase
     if populate
 
       case type
-      when "unique"
+      when "unique", "duplicate"
         select affiliation
         populate_form_fields(data: data)
       when "denied"
