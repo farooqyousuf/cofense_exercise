@@ -4,10 +4,14 @@
 
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
-# 2.4.7 (8/3/2017)
+# 2.4.8 (8/3/2017)
 - INT-1434: Duplicate user SCRA form (Admin) Cucumber Test
 
+# 2.4.7 (8/2/2017)
+- INT-1717: Add properties check in Admin Tool for Mil SCRA IVA tests
+
 # 2.4.6 (8/1/2017)
+- INT-1711: Add properties check in Admin Tool for Mil Email IVA tests
 - INT-1653: Fixed Verify with SCRA Admin tests: Successful prompt for all required fields
 
 # 2.4.5 (7/31/2017)
