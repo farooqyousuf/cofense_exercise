@@ -5,6 +5,7 @@
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
 # 2.4.8 (8/3/2017)
+- INT-1726: Add properties check in Admin Tool for Teacher Lookup IVA tests
 - INT-1434: Duplicate user SCRA form (Admin) Cucumber Test
 - INT-1725: Add properties check in Admin Tool for Teacher Document IVA tests
 

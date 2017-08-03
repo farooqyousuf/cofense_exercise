@@ -77,6 +77,26 @@ include PageManagement
       expand_verification_properties
       indexes = [0, 3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39]
       expected_levels = TeacherDoc.new.teacher_doc_user_and_verif_properties
+
+    when "Teacher State Lookup - No License/No SSN"
+      expand_verification_properties
+      indexes =[0, 3, 6, 9, 12, 15, 18]
+      expected_levels = TeacherLookup.new.no_license_no_ssn_properties
+
+    when "Teacher State Lookup - No License/Short SSN"
+      expand_verification_properties
+      indexes =[0, 3, 6, 9, 12, 15, 18, 21]
+      expected_levels = TeacherLookup.new.ssn_no_license_properties
+
+    when "Teacher State Lookup - License/No SSN"
+      expand_verification_properties
+      indexes = [0, 3, 6, 9, 12, 15, 18, 21]
+      expected_levels = TeacherLookup.new.license_and_no_ssn_properties
+
+    when "Teacher State Lookup - License/Short SSN"
+      expand_verification_properties
+      indexes = [0, 3, 6, 9, 12, 15, 18, 21]
+      expected_levels = TeacherLookup.new.license_and_ssn_properties
     end
 
     #builds the actual_levels array according to whichever numbers array is selected in the case statement above

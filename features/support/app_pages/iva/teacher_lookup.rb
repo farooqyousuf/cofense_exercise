@@ -83,5 +83,21 @@ class TeacherLookup < IDmeBase
     click_link("I am licensed by my state.")
   end
 
+  def no_license_no_ssn_properties
+    [1, 1, 1, 1, 1, 1, 1]
+  end
+
+  def ssn_no_license_properties
+    [1, 1, 1, 1, 1, 1, 1, 1]
+  end
+
+  def license_and_no_ssn_properties
+    [1, 1, 1, 1, 1, 1, 1, 1]
+  end
+
+  def license_and_ssn_properties
+    [1, 1, 1, 1, 1, 1, 1, 1]
+  end
+
 end
 

@@ -14,7 +14,8 @@ Feature: Teacher verification using state lookup
     * I click on the Begin link
     * I verify using teacher credentials with "no license and no ssn"
     * I "approve" the teacher verification in IDme admin
-    * I should be successfully verified
+    # * I should be successfully verified
+    * I verify user level properties for "Teacher State Lookup - No License/No SSN"
 
   @delete_current_user_email
   Scenario: Successful verification with no license and short ssn
@@ -22,7 +23,8 @@ Feature: Teacher verification using state lookup
     * I click on the Begin link
     * I verify using teacher credentials with "no license and short ssn"
     * I "approve" the teacher verification in IDme admin
-    * I should be successfully verified
+    # * I should be successfully verified
+    * I verify user level properties for "Teacher State Lookup - No License/Short SSN"
 
   @delete_current_user_email
   Scenario: Successful verification with license and no ssn
@@ -30,7 +32,8 @@ Feature: Teacher verification using state lookup
     * I click on the Begin link
     * I verify using teacher credentials with "license and no ssn"
     * I "approve" the teacher verification in IDme admin
-    * I should be successfully verified
+    # * I should be successfully verified
+    * I verify user level properties for "Teacher State Lookup - License/No SSN"
 
   @delete_current_user_email
   Scenario: Successful verification with license and short ssn
@@ -38,7 +41,8 @@ Feature: Teacher verification using state lookup
     * I click on the Begin link
     * I verify using teacher credentials with "license and short ssn"
     * I "approve" the teacher verification in IDme admin
-    * I should be successfully verified
+    # * I should be successfully verified
+    * I verify user level properties for "Teacher State Lookup - License/Short SSN"
 
   @delete_current_user_email
   Scenario: Denied attempt for teacher lookup verification (Error code 112)
