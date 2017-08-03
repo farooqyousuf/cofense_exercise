@@ -23,9 +23,10 @@ class VerifyWithScra < IDmeBase
     data = data_for(data_set)
     data_denied = data_for(:scra_denied_data)
 
+    search_for_user(user_email)
+    select affiliation
+    
     if populate
-
-      search_for_user(user_email)
 
       case type
       when "unique", "duplicate"
