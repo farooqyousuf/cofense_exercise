@@ -72,6 +72,11 @@ include PageManagement
       expand_verification_properties
       indexes = [0, 3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33]
       expected_levels = MilitarySCRA.new.scra_mil_family_user_and_verif_properties
+
+    when "Teacher Doc Upload"
+      expand_verification_properties
+      indexes = [0, 3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39]
+      expected_levels = TeacherDoc.new.teacher_doc_user_and_verif_properties
     end
 
     #builds the actual_levels array according to whichever numbers array is selected in the case statement above

@@ -6,6 +6,7 @@ All notable changes to this project will be documented in this file. This projec
 
 # 2.4.8 (8/3/2017)
 - INT-1434: Duplicate user SCRA form (Admin) Cucumber Test
+- INT-1725: Add properties check in Admin Tool for Teacher Document IVA tests
 
 # 2.4.7 (8/2/2017)
 - INT-1717: Add properties check in Admin Tool for Mil SCRA IVA tests
