@@ -40,7 +40,22 @@ Feature: Verify users with SCRA using admin tool
     * I should see the red alert flash message
     * I verify the attempt is marked as "DENIED"
 
-@delete_user
+  @delete_current_user_email @delete_scra_user2
+  Scenario: Duplicate attempt for SCRA verification through the Admin tool
+    * I verify with SCRA for "Service Member"
+    * I should be successfully verified as a "Service Member"
+    * I clear the session from Authority
+    * I visit IDP through the "military" policy
+    * I click on the Sign Up link
+    * I sign up as a new user
+    * I should be on the military verification screen
+    * I login the admin tool
+    * I visit "VerifyWithScra"
+    * I submit the SCRA verification form through the admin tool as a "duplicate" record
+    * I should see the red alert flash message
+    * I verify the attempt is marked as "DUPLICATE"
+
+  @delete_user
   Scenario: Successful prompt for all required fields for Service Member
     * I submit the empty SCRA form for "Service Member" in the Admin tool
     * I should see error messages on required fields for "Service Member" in the Admin tool

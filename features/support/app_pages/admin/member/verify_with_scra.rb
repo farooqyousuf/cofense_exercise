@@ -25,11 +25,11 @@ class VerifyWithScra < IDmeBase
 
     search_for_user(user_email)
     select affiliation
-
+    
     if populate
 
       case type
-      when "unique"
+      when "unique", "duplicate"
         select affiliation
         populate_form_fields(data: data)
       when "denied"
