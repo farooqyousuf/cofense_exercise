@@ -44,6 +44,10 @@ Feature: Verify users with SCRA using admin tool
     * I verify with SCRA for "Service Member"
     * I should be successfully verified as a "Service Member"
     * I clear the session from Authority
+    * I visit IDP through the "military" policy
+    * I click on the Sign Up link
+    * I sign up as a new user
+    * I should be on the military verification screen
     * I login the admin tool
     * I visit "VerifyWithScra"
     * I submit the SCRA verification form through the admin tool as a "duplicate" record
