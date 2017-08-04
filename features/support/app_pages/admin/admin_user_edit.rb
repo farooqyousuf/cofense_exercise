@@ -22,61 +22,61 @@ include PageManagement
     when "Government"
       expand_verification_properties
       indexes = [0, 3, 6, 9, 12, 15, 18, 21]
-      expected_levels = IVAGovernment.new.govt_user_and_verif_properties
+      expected_levels = IVAGovernment.new.govt_properties
 
     when "DD214 Vet via document"
       expand_verification_properties
       indexes = [0, 3, 6, 9, 12, 15, 18, 21, 24]
-      expected_levels = DD214.new.dd214_vet_doc_user_and_verif_properties
+      expected_levels = DD214.new.vet_document_properties
 
     when "DD214 Vet via SCRA"
       expand_verification_properties
       indexes = [0, 3, 6, 9, 12, 15, 18, 21, 24]
-      expected_levels = DD214.new.dd214_vet_scra_user_and_verif_properties
+      expected_levels = DD214.new.vet_scra_properties
 
     when "DD214 Next of Kin Deceased Vet", "DD214 Legal Guardian"
       expand_verification_properties
       indexes = [0, 3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33]
-      expected_levels = DD214.new.dd214_family_user_and_verif_properties
+      expected_levels = DD214.new.family_properties
 
     when "Mil Doc Service Member", "Mil Doc Veteran", "Mil Doc Retiree"
       indexes = [0, 3, 6, 9, 12, 15, 18, 21, 24]
-      expected_levels = MilitaryDoc.new.mil_doc_service_member_user_property_levels
+      expected_levels = MilitaryDoc.new.service_member_properties
 
     when "Mil Doc Mil Spouse", "Mil Doc Mil Family"
       expand_verification_properties
       indexes = [0, 3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33]
-      expected_levels = MilitaryDoc.new.mil_doc_mil_family_user_and_verif_properties
+      expected_levels = MilitaryDoc.new.family_properties
 
     when "Mil Email Service Member"
       expand_verification_properties
       indexes = [0, 3, 6, 9]
-      expected_levels = MilitaryEmail.new.mil_email_service_member_user_and_verif_properties
+      expected_levels = MilitaryEmail.new.service_member_properties
 
     when "Mil Email Mil Family"
       expand_verification_properties
       indexes = [0, 3, 6, 9, 12, 15, 18, 21]
-      expected_levels = MilitaryEmail.new.mil_email_mil_family_user_and_verif_properties
+      expected_levels = MilitaryEmail.new.family_properties
 
     when "SCRA Service Member"
       expand_verification_properties
       indexes = [0, 3, 6, 9, 12, 15, 18, 21]
-      expected_levels = MilitarySCRA.new.scra_service_member_user_and_verif_properties
+      expected_levels = MilitarySCRA.new.service_member_properties
 
     when "SCRA Veteran", "SCRA Retiree"
       expand_verification_properties
       indexes = [0, 3, 6, 9, 12, 15, 18, 21, 24]
-      expected_levels = MilitarySCRA.new.scra_vet_user_and_verif_properties
+      expected_levels = MilitarySCRA.new.vet_properties
 
     when "SCRA Mil Spouse", "SCRA Mil Family"
       expand_verification_properties
       indexes = [0, 3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33]
-      expected_levels = MilitarySCRA.new.scra_mil_family_user_and_verif_properties
+      expected_levels = MilitarySCRA.new.family_properties
 
     when "Teacher Doc Upload"
       expand_verification_properties
       indexes = [0, 3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39]
-      expected_levels = TeacherDoc.new.teacher_doc_user_and_verif_properties
+      expected_levels = TeacherDoc.new.property_levels
 
     when "Teacher State Lookup - No License/No SSN"
       expand_verification_properties

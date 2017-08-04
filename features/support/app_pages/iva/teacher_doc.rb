@@ -64,7 +64,7 @@ class TeacherDoc < IDmeBase
     [0,1,2,3,4,5,6,7,8,9,10]
   end
 
-  def teacher_doc_user_and_verif_properties
+  def property_levels
     [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
   end
 
