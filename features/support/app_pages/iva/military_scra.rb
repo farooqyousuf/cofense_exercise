@@ -75,15 +75,15 @@ class MilitarySCRA < IDmeBase
     [0,1,2,3,4]
   end
 
-  def scra_service_member_user_and_verif_properties
+  def service_member_properties
     [2, 2, 2, 2, 2, 2, 2, 2]
   end
 
-  def scra_vet_user_and_verif_properties
+  def vet_properties
     [2, 2, 2, 2, 2, 2, 2, 2, 2]
   end
 
-  def scra_mil_family_user_and_verif_properties
+  def family_properties
     [1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2]
   end
 
