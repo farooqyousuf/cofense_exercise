@@ -13,7 +13,8 @@ Background:
   Scenario: Successful verification
     * I verify using student documentation
     * I approve the document in IDme admin
-    * I should be successfully verified
+    # * I should be successfully verified
+    * I verify user level properties for "Student Doc Upload"
 
   @delete_current_user_email
   Scenario: Denied attempt for student doc upload verification (Error code 56)
