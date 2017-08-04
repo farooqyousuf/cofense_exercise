@@ -13,7 +13,8 @@ Feature: Student verification using student credentials
   # TODO Ticket# INT-862
   Scenario: Successful verification
     * I verify using student credentials
-    * I should be successfully verified
+    # * I should be successfully verified
+    * I verify user level properties for "Student Credentials"
 
   Scenario: Denied attempt for student credentials verification (Error code 54)
     * I submit the student credentials verification form as a "denied" record
