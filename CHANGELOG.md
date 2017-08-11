@@ -4,6 +4,9 @@
 
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
+# 2.4.10 (8/11/2017)
+- CORE-7918: Removed duplicate emt state feature file
+
 # 2.4.9 (8/4/2017)
 - INT-1727: Add properties check in Admin Tool for Students IVA tests
 
