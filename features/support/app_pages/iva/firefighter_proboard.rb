@@ -43,6 +43,10 @@ class PBFirefighter < IDmeBase
     [0,1,2,3,4]
   end
 
+  def user_properties_levels
+    [1, 1, 1, 1, 1, 1, 1, 1]
+  end
+
   def click_verify_firefighter_pb_link
     click_link("Verify as a state certified Firefighter")
     select_option("#s2id_state","Virginia")

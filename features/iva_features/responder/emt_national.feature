@@ -12,6 +12,7 @@ Feature: Responder verification as an nationally certified EMT
   Scenario: Successful verification
     * I verify using nationally certified EMT credentials
     * I should be successfully verified as "EMT"
+    * I verify user level properties for "EMT National"
 
   @delete_current_user_email
   Scenario: Denied attempt for emt national verification (Error code 25)

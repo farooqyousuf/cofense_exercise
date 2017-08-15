@@ -15,6 +15,7 @@ Feature: Responder verification as an EMT using state doc upload
     * I verify using state EMT doc upload
     * I approve the document in IDme admin
     * I should be successfully verified as "EMT"
+    * I verify user level properties for "EMT State Doc"
 
   @delete_current_username
   Scenario: Denied attempt for EMT state doc upload verification

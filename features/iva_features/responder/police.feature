@@ -14,6 +14,7 @@ Feature: Responder verification as a police officer
     * I verify using police officer documentation
     * I approve the document in IDme admin
     * I should be successfully verified as "Police Officer"
+    * I verify user level properties for "Police"
 
   @delete_current_user_email
   Scenario: Denied attempt for police verification (Error code 29)

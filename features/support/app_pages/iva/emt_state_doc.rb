@@ -52,6 +52,10 @@ class StateDocEMT < IDmeBase
     [0,1,2,3,4,5,6,7]
   end
 
+  def user_properties_levels
+    [1, 1, 1, 1, 1, 1, 1, 1, 1]
+  end
+
   def click_verify_emt_state_doc_link
     click_link("Verify as a certified EMT / Paramedic")
     click_link("I am state certified")
