@@ -16,5 +16,7 @@ Feature: IVA verification using document upload
 
   @delete_current_user_email
   Scenario: Successfully prompt for required document upload
+    * I click on the Military Verify by uploading documentation link
+    * I click on the Begin link
     * I submit the military document form for "Service Member"
     * I should see the red error "Please select a file to upload" under the file upload field
