@@ -13,7 +13,7 @@ Feature: Government verification using .gov email
   Scenario: Successful verification with a Government email
     * I submit the government verification form as a "unique" record
     * I submit the verification code for "Government Email"
-    # * I should be successfully verified as "Federal"
+    * I should be successfully verified as "Federal"
     * I verify user level properties for "Government"
 
   Scenario: Successfully prompt for all required fields

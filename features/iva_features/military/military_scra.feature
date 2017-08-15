@@ -13,31 +13,31 @@ Feature: Military verification using SCRA credentials
   #Unique dob and ssn pair
   Scenario: Successful verification as Service Member
     * I verify using SCRA for "Service Member"
-    # * I should be successfully verified as "Service Member"
+    * I should be successfully verified as "Service Member"
     * I verify user level properties for "SCRA Service Member"
 
   @delete_scra_user2
   Scenario: Successful verification as Veteran
     * I verify using SCRA for "Veteran"
-    # * I should be successfully verified as "Veteran"
+    * I should be successfully verified as "Veteran"
     * I verify user level properties for "SCRA Veteran"
 
   @delete_scra_user3
   Scenario: Successful verification as Military Spouse
     * I verify using SCRA for "Military Spouse"
-    # * I should be successfully verified as "Military Spouse"
+    * I should be successfully verified as "Military Spouse"
     * I verify user level properties for "SCRA Mil Spouse"
 
   @delete_scra_user4
   Scenario: Successful verification as Military Family
     * I verify using SCRA for "Military Family"
-    # * I should be successfully verified as "Military Family"
+    * I should be successfully verified as "Military Family"
     * I verify user level properties for "SCRA Mil Family"
 
   @delete_scra_user2
   Scenario: Successful verification as Retiree
     * I verify using SCRA for "Retiree"
-    #* I should be successfully verified as "Retiree"
+    * I should be successfully verified as "Retiree"
     * I verify user level properties for "SCRA Retiree"
 
   @delete_scra_multi_family_users @wip
