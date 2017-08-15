@@ -4,6 +4,9 @@
 
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
+# 2.4.11 (8/15/17)
+- CORE-7856: Uncomment Cuke steps that require SNI to be resolved
+
 # 2.4.10 (8/9/17)
 - IDME-3906: Wallet homepage tests failing
 - CORE-7918: Removed duplicate emt state feature file
