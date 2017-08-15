@@ -1,4 +1,4 @@
-@regression @wallet @desktop
+@regression @wallet @desktop @wallet_homepage
 Feature: Test Wallet Landing Page Feature
 
 Background:
