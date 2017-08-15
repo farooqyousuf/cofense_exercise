@@ -53,7 +53,7 @@ class StudentCreds < IDmeBase
     [0,1,2,3,4,5]
   end
 
-  def student_cred_properties
+  def user_properties_levels
     [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
   end
 end

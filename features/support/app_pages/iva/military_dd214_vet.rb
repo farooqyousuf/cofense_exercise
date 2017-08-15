@@ -98,15 +98,15 @@ class DD214 < IDmeBase
     [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
   end
 
-  def vet_scra_properties
+  def vet_scra_user_properties_levels
     [2, 2, 2, 2, 2, 2, 2, 2, 2]
   end
 
-  def vet_document_properties
+  def vet_doc_user_properties_levels
     [1, 1, 1, 1, 1, 1, 1, 1, 1]
   end
 
-  def family_properties
+  def family_user_properties_levels
     [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
   end
 
