@@ -14,6 +14,7 @@ Feature: Responder verification as an EMT using document upload
     * I verify using EMT doc upload
     * I approve the document in IDme admin
     * I should be successfully verified as "EMT"
+    * I verify user level properties for "EMT Doc"
 
   @delete_current_user_email
   Scenario: Denied attempt for emt document verification (Error code 37)

@@ -108,6 +108,37 @@ include PageManagement
       indexes = [0, 3, 6, 9, 12, 15, 18, 21, 24, 27]
       expected_levels = StudentDoc.new.student_doc_properties
 
+    when "EMT Doc"
+      indexes = [0, 3, 6, 9, 12, 15, 18, 21, 24]
+      expected_levels = DocEMT.new.user_properties_levels
+
+    when "EMT National"
+      expand_verification_properties
+      indexes = [0, 3, 6, 9, 12, 15]
+      expected_levels = NationalEMT.new.user_properties_levels
+
+    when "EMT State Doc"
+      indexes = [0, 3, 6, 9, 12, 15, 18, 21, 24]
+      expected_levels = StateDocEMT.new.user_properties_levels
+
+    when "EMT State Lookup"
+      expand_verification_properties
+      indexes = [0, 3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 36, 39]
+      expected_levels = StateLookupEMT.new.user_properties_levels
+
+    when "Firefighter Doc"
+      indexes = [0, 3, 6, 9, 12, 15, 18, 21, 24]
+      expected_levels = DocFirefighter.new.user_properties_levels
+
+    when "Firefighter ProBoard"
+      expand_verification_properties
+      indexes = [0, 3, 6, 9, 12, 15, 18, 21]
+      expected_levels = PBFirefighter.new.user_properties_levels
+
+    when "Police"
+      indexes = [0, 3, 6, 9, 12, 15, 18, 21, 24]
+      expected_levels = Police.new.user_properties_levels
+
     end
 
     #builds the actual_levels array according to whichever numbers array is selected in the case statement above

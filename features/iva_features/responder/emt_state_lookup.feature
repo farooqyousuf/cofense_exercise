@@ -13,6 +13,7 @@ Feature: Responder verification as an EMT using state lookup
     * I verify using EMT state lookup
     * I approve the EMT verification in IDme admin
     * I should be successfully verified as "EMT"
+    * I verify user level properties for "EMT State Lookup"
 
   @delete_current_username
   Scenario: Denied attempt for emt state lookup verification (Error code 103)

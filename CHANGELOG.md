@@ -7,6 +7,7 @@ All notable changes to this project will be documented in this file. This projec
 # 2.4.11 (8/15/17)
 - CORE-7856: Uncomment Cuke steps that require SNI to be resolved
 - CORE-7914: Fix IVA Document tests
+- INT-1791: Add properties check in Admin Tool for Responders IVA tests
 
 # 2.4.10 (8/9/17)
 - IDME-3906: Wallet homepage tests failing

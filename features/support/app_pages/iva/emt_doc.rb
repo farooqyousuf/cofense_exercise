@@ -51,4 +51,8 @@ class DocEMT < IDmeBase
     click_link("I am neither of the above - OR - I have documentation proving my certification")
   end
 
+  def user_properties_levels
+    [1, 1, 1, 1, 1, 1, 1, 1, 1]
+  end
+
 end
