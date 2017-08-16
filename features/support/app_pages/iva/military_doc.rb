@@ -85,11 +85,11 @@ class MilitaryDoc < IDmeBase
     [0,1,2,3,4,5,6,7,8]
   end
 
-  def service_member_properties
+  def service_member_user_properties_levels
     [1, 1, 1, 1, 1, 1, 1, 1, 1]
   end
 
-  def family_properties
+  def family_user_properties_levels
     [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
   end
 
