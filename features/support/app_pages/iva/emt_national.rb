@@ -45,4 +45,8 @@ class NationalEMT < IDmeBase
     click_link("I am nationally certified")
   end
 
+  def user_properties_levels
+    [1, 1, 1, 1, 1, 1]
+  end
+
 end

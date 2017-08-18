@@ -51,6 +51,10 @@ class StateLookupEMT < IDmeBase
     select_option("#s2id_state","Alaska")
   end
 
+  def user_properties_levels
+    [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+  end
+
 end
 
 

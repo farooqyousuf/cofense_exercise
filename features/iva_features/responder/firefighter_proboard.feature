@@ -12,6 +12,7 @@ Feature: Responder verification as a ProBoard Firefighter
   Scenario: Successful verification as a ProBoard Firefighter
     * I verify using a ProBoard Firefighter
     * I should be successfully verified as "Firefighter"
+    * I verify user level properties for "Firefighter ProBoard"
 
   @delete_current_user_email
   Scenario: Denied attempt for proboard firefighter verification (Error code 28)

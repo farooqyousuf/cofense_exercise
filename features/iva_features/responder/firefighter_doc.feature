@@ -15,6 +15,7 @@ Feature: Responder verification as a firefighter using document upload
     * I verify using firefighter documentation
     * I approve the document in IDme admin
     * I should be successfully verified as "Firefighter"
+    * I verify user level properties for "Firefighter Doc"
 
   @delete_current_user_email
   Scenario: Denied attempt for firefighter doc upload verification (Error code 45)
