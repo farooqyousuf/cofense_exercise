@@ -12,17 +12,16 @@ Given(/^I send a POST request with valid Client Credential attributes to ARCS st
 end
 
 Given(/^I verify that the response is valid$/) do
-  # @expected_value = FigNewton.direct_api
-  expect(@response.success?).to be(true)
-  expect(@response["code"].should eq(nil)).to be(true)
+  expect(@response.success?).to be(true)                # verifies status is 200
+  expect(@response["code"].should eq(nil)).to be(true)  # verifies the code attribute key is nil
 
+  @expected_values = FigNewton.direct_api.to_hash
+  @response_values = @response.to_hash
 
-  @actual_values = @response.values_at("first_name", "last_name", "birth_date", "ssn")
-  @actual_values.each do |value|
-    binding.pry
-    expect(value).should equal(FigNewton.direct_api.fetch(value))
+  fields = %w[first_name last_name birth_date ssn]
+
+  fields.each do |field|                                # verifies response values match up with the yml file
+    expect(@response_values.values_at(field)).to match_array(@expected_values.values_at(field))
   end
-  binding.pry
-  expect(@expected_value)
   puts @response
 end
