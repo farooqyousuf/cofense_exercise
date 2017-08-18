@@ -1,27 +1,15 @@
 Given(/^I send a POST request with valid Client Credential attributes to ARCS staging$/) do
   @response = HTTParty.post("#{FigNewton.oauth.idp_endpoint}/api/direct/v2/verify",
-                            :query =>
-                            {
-                              :client_id     => FigNewton.direct_api.client_id,
-                              :client_secret => FigNewton.direct_api.client_secret,
-                              :first_name    => FigNewton.direct_api.first_name,
-                              :last_name     => FigNewton.direct_api.last_name,
-                              :birth_date    => FigNewton.direct_api.birth_date,
-                              :ssn           => FigNewton.direct_api.ssn
-                            })
+                            :query => FigNewton.direct_api.to_hash)
 end
 
 Given(/^I verify that the response is valid$/) do
-  expect(@response.success?).to be(true)                # verifies status is 200
-  expect(@response["code"]).to be(nil)  # verifies the code attribute key is nil
+  expect(@response.success?).to be(true)  # verifies status is 200
+  expect(@response["code"]).to be(nil)    # verifies the code attribute key is nil
 
-  @expected_values = FigNewton.direct_api.to_hash
-  @response_values = @response.to_hash
+  expected_values = FigNewton.direct_api.to_hash.except("client_id", "client_secret")
+  response_values = @response.to_hash.except("service_branch", "service_name", "service_component", "service_end_date", "service_start_date", "verified", "affiliation", "external")
 
-  fields = %w[first_name last_name birth_date ssn]
-
-  fields.each do |field|                                # verifies response values match up with the yml file
-    expect(@response_values.values_at(field)).to match_array(@expected_values.values_at(field))
-  end
+  expect(response_values).to eq(expected_values)  # verifies response values match up with the yml file
   puts @response
 end
