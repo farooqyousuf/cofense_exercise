@@ -13,7 +13,7 @@ end
 
 Given(/^I verify that the response is valid$/) do
   expect(@response.success?).to be(true)                # verifies status is 200
-  expect(@response["code"].should eq(nil)).to be(true)  # verifies the code attribute key is nil
+  expect(@response["code"]).to be(nil)  # verifies the code attribute key is nil
 
   @expected_values = FigNewton.direct_api.to_hash
   @response_values = @response.to_hash
