@@ -4,6 +4,21 @@
 
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
+# 2.4.13 (8/18/17)
+- INT-1776: Successful Client Credential POST request sent to ARCS staging
+
+# 2.4.12 (8/16/17)
+- CORE-7982: Clean user properties levels method names
+
+# 2.4.11 (8/15/17)
+- CORE-7856: Uncomment Cuke steps that require SNI to be resolved
+- CORE-7914: Fix IVA Document tests
+- INT-1791: Add properties check in Admin Tool for Responders IVA tests
+
+# 2.4.10 (8/9/17)
+- IDME-3906: Wallet homepage tests failing
+- CORE-7918: Removed duplicate emt state feature file
+
 # 2.4.9 (8/4/2017)
 - INT-1727: Add properties check in Admin Tool for Students IVA tests
 
