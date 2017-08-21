@@ -4,6 +4,9 @@
 
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
+# 2.4.13 (8/18/17)
+- INT-1776: Successful Client Credential POST request sent to ARCS staging
+
 # 2.4.12 (8/16/17)
 - CORE-7982: Clean user properties levels method names
 

@@ -52,6 +52,14 @@ oauth:
     wallet            : wallet
     general_password  : Password123
 
+direct_api:
+  client_id           : a8a8ab3174466f3bbecca8c546439796
+  client_secret       : fb77531f394fbb3495b724f7215120c5
+  first_name          : john
+  last_name           : jones
+  birth_date          : "1989-05-25"
+  ssn                 : 000149876
+
 shop_users:
   shop_homepage: https://shop-users-staging.idmeinc.net
   basic: test+basic@id.me

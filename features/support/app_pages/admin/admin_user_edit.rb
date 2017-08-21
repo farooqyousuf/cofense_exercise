@@ -138,7 +138,6 @@ include PageManagement
     when "Police"
       indexes = [0, 3, 6, 9, 12, 15, 18, 21, 24]
       expected_levels = Police.new.user_properties_levels
-
     end
 
     #builds the actual_levels array according to whichever numbers array is selected in the case statement above
