@@ -1,4 +1,5 @@
-@regression @shop @desktop @shop_stores
+
+@regression @shop @desktop @shop_admin_stores
 
 Feature: Test Shop Admin Stores page
 
