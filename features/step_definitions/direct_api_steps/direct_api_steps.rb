@@ -12,10 +12,10 @@ end
 
 Given(/^I verify that I authenticated with "([^"]*)" attributes$/) do |method|
   case method
-  when "valid"
+  when "valid Client Credential"
     expect(@response.success?).to eq(true)
     expect(@response["code"]).to eq(nil)
-  when "missing"
+  when "missing Client Credential"
     expect(@response.success?).to eq(false)
     expect(@response["code"]).to eq("122")
   else fail ("Method not found")
@@ -36,8 +36,8 @@ Given(/^I verify the user's "([^"]*)" military attributes$/) do |request|
                                               "code")
 
   expected_values = case request
-                    when "valid Client Credential"    then FigNewton.direct_api.to_hash.except("client_id", "client_secret")
-                    when "missing Client Credential"  then {}
+                    when "valid"    then FigNewton.direct_api.to_hash.except("client_id", "client_secret")
+                    when "missing"  then {}
                     else fail ("Failed authentication with #{request} attribute.")
                     end
   expect(response_values).to eq(expected_values)
