@@ -3,6 +3,8 @@
 ### Released
 
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
+# 2.4.14 (8/21/17)
+- IDME-3903: Fix shop stores' tests that are failing
 
 # 2.4.13 (8/18/17)
 - INT-1776: Successful Client Credential POST request sent to ARCS staging
