@@ -10,7 +10,7 @@ Given(/^I check that the filter is visible$/) do
   expect(page).to have_css(".sort-filter",:visible => true)
 end
 
-Given(/^I checkmar that the Stores index is visible$/) do
+Given(/^I check that the Stores index is visible$/) do
   expect(page).to have_css(".stores-list-static",:visible => true)
 end
 
