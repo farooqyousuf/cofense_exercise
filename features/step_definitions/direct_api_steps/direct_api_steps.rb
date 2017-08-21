@@ -10,7 +10,7 @@ Given(/^I send a POST request with "([^"]*)" attributes to ARCS staging$/) do |r
   puts @response
 end
 
-Given(/^I verify the user's "([^"]*)" military attributes$/) do |method|
+Given(/^I verify that I authenticated with "([^"]*)" attributes$/) do |method|
   case method
   when "valid"
     expect(@response.success?).to eq(true)
@@ -22,7 +22,7 @@ Given(/^I verify the user's "([^"]*)" military attributes$/) do |method|
   end
 end
 
-Given(/^I verify that I authenticated with "([^"]*)" attributes$/) do |request|
+Given(/^I verify the user's "([^"]*)" military attributes$/) do |request|
 # response_values incldue client_id, client_secret, first_name, last_name, birth_date and ssn
   response_values = @response.to_hash.except("service_branch",
                                               "service_name",
