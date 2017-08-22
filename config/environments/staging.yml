@@ -53,12 +53,34 @@ oauth:
     general_password  : Password123
 
 direct_api:
-  client_id           : a8a8ab3174466f3bbecca8c546439796
-  client_secret       : fb77531f394fbb3495b724f7215120c5
-  first_name          : john
-  last_name           : jones
-  birth_date          : "1989-05-25"
-  ssn                 : 000149876
+  client_id             : a8a8ab3174466f3bbecca8c546439796
+  client_secret         : fb77531f394fbb3495b724f7215120c5
+  first_name            : john
+  last_name             : jones
+  birth_date            : "1989-05-25"
+  ssn                   : 000149876
+  service_branch        : Army
+  service_component     : active
+  service_end_date      : null
+  service_start_date    : "2016-01-01"
+  verified              : true
+  affiliation           : Service Member
+  external              : true
+
+invalid_id_secret_direct_api:
+  invalid_client_id     : 1238ab3174466f3bbecca8c546439796
+  invalid_client_secret : ab377531f394fbb3495b724f7215120c5
+  first_name            : john
+  last_name             : jones
+  birth_date            : "1989-05-25"
+  ssn                   : 000149876
+  service_branch        : Army
+  service_component     : active
+  service_end_date      : null
+  service_start_date    : "2016-01-01"
+  verified              : true
+  affiliation           : Service Member
+  external              : true
 
 shop_users:
   shop_homepage: https://shop-users-staging.idmeinc.net
