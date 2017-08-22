@@ -13,13 +13,16 @@ end
 Given(/^I verify that I authenticated with "([^"]*)" attributes$/) do |method|
   case method
   when "valid Client Credential"
-    expect(@response.success?).to eq(true)
-    expect(@response["code"]).to eq(nil)
+    expected_status = true
+    expected_code = nil
   when "missing Client Credential"
-    expect(@response.success?).to eq(false)
-    expect(@response["code"]).to eq("122")
+    expected_status = false
+    expected_code = "122"
   else fail ("Method not found")
   end
+
+  expect(@response.success?).to eq(expected_status)
+  expect(@response["code"]).to eq(expected_code)
 end
 
 Given(/^I verify the user's "([^"]*)" military attributes$/) do |request|
