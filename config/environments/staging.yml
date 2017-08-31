@@ -53,20 +53,20 @@ oauth:
     general_password  : Password123
 
 direct_api_client_cred:
-    valid_attributes:
-      client_id           : a8a8ab3174466f3bbecca8c546439796
-      client_secret       : fb77531f394fbb3495b724f7215120c5
-      first_name          : john
-      last_name           : jones
-      birth_date          : "1989-05-25"
-      ssn                 : 000149876
-    invalid_attributes:
-      client_id           : a8a8ab3174466f3bbecca8c546439796
-      client_secret       : fb77531f394fbb3495b724f7215120c5
-      first_name          : star
-      last_name           : fire
-      birth_date          : "1989-08-28"
-      ssn                 : 000678914
+  client_id              : a8a8ab3174466f3bbecca8c546439796
+  client_secret          : fb77531f394fbb3495b724f7215120c5
+  invalid_client_id      : invalid_client_id
+  invalid_client_secret  : invalid_client_secret
+  valid_attributes:
+    first_name         : john
+    last_name          : jones
+    birth_date         : "1989-05-25"
+    ssn                : 000149876
+  invalid_attributes:
+    first_name         : star
+    last_name          : fire
+    birth_date         : "1989-08-28"
+    ssn                : 000678914
 
 shop_users:
   shop_homepage: https://shop-users-staging.idmeinc.net
