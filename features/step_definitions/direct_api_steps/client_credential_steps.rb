@@ -1,22 +1,21 @@
-Given(/^I used valid client credentials$/) do
-  @request_params =  {"client_id"     => FigNewton.direct_api_client_cred.client_id,
-                      "client_secret" => FigNewton.direct_api_client_cred.client_secret}
+Given(/^I set valid client credentials$/) do
+  @request_params = { "client_id"      => FigNewton.direct_api_client_cred.client_id,
+                       "client_secret" => FigNewton.direct_api_client_cred.client_secret }
 end
 
-Given(/^I used "([^"]*)" user attributes$/) do |credentials|
+Given(/^I set "([^"]*)" user attributes$/) do |credentials|
   credential_hash = case credentials
-  when "valid"    then FigNewton.direct_api_client_cred.valid_attributes.to_hash
-  when "invalid"  then FigNewton.direct_api_client_cred.invalid_attributes.to_hash
-  when "missing"  then { }
-  end
+                    when "valid"   then FigNewton.direct_api_client_cred.valid_attributes.to_hash
+                    when "invalid" then FigNewton.direct_api_client_cred.invalid_attributes.to_hash
+                    when "missing" then {}
+                    end
 
   @request_params.merge!(credential_hash)
 end
 
 
 Given(/^I send a POST request to ARCS$/) do
-  @response = HTTParty.post("#{FigNewton.oauth.idp_endpoint}/api/direct/v2/verify",
-                            :query => @request_params)
+  @response = HTTParty.post("#{FigNewton.oauth.idp_endpoint}/api/direct/v2/verify", :query => @request_params)
 end
 
 Given(/^I verify the user's "([^"]*)" military attributes is received$/) do |request|
@@ -65,12 +64,15 @@ Given(/^I verify that I authenticated with "([^"]*)" attributes$/) do |method|
   when "valid"
     expect(@response.code).to eq(200)             # verifies HTTP status code
     expect(@response["code"]).not_to eq("122")    # verifies response code attribute
+
   when "invalid"
     expect(@response.code).to eq(200)
     expect(@response["code"]).to eq(1001)
+
   when "missing"
     expect(@response.code).to eq(400)
     expect(@response["code"]).to eq(1002)
+
   else fail ("Method for #{method} not found")
   end
 end
