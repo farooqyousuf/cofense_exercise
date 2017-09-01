@@ -3,12 +3,11 @@
 ### Released
 
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
+# 2.4.15 (9/01/17)
+- INT-1778: Successfully receive attributes of the user verified against SCRA with the Direct API
+
 # 2.4.14 (8/21/17)
 - IDME-3903: Fix shop stores' tests that are failing
-
-# 2.4.15 (8/25/17)
-- INT-1823: Successfully receive attributes of the user verified against SCRA with the Direct API
-- INT-1778: Denied access to the API with invalid Client ID and invalid Client Secret Value
 
 # 2.4.14 (8/21/17)
 - INT-1777: Successful Client Credential error response for missing attributes
