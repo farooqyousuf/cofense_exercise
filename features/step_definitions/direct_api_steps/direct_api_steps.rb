@@ -1,23 +1,22 @@
-Given(/^I used "([^"]*)" client credentials$/) do |credentials|
-  @request_params = case credentials
-                    when "valid" then { "client_id"     => FigNewton.direct_api_client_cred.client_id,
-                                        "client_secret" => FigNewton.direct_api_client_cred.client_secret}
-                    end
+Given(/^I used valid client credentials$/) do
+  @request_params =  {"client_id"     => FigNewton.direct_api_client_cred.client_id,
+                      "client_secret" => FigNewton.direct_api_client_cred.client_secret}
 end
 
 Given(/^I used "([^"]*)" user attributes$/) do |credentials|
-  case credentials
-  when "valid"    then @request_params.merge!(FigNewton.direct_api_client_cred.valid_attributes.to_hash)
-  when "invalid"  then @request_params.merge!(FigNewton.direct_api_client_cred.invalid_attributes.to_hash)
-  when "missing"  then @request_params.merge!({ }.to_hash)
+  credential_hash = case credentials
+  when "valid"    then FigNewton.direct_api_client_cred.valid_attributes.to_hash
+  when "invalid"  then FigNewton.direct_api_client_cred.invalid_attributes.to_hash
+  when "missing"  then { }
   end
+
+  @request_params.merge!(credential_hash)
 end
 
 
 Given(/^I send a POST request to ARCS$/) do
   @response = HTTParty.post("#{FigNewton.oauth.idp_endpoint}/api/direct/v2/verify",
                             :query => @request_params)
-  puts @response
 end
 
 Given(/^I verify the user's "([^"]*)" military attributes is received$/) do |request|
