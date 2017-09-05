@@ -2,7 +2,7 @@ source "https://rubygems.org"
 
 gem "rspec"
 gem "thor"
-gem "selenium-webdriver", "~> 3.4.3"
+gem "selenium-webdriver", "3.4.0"
 gem "rspec-expectations"
 gem "gherkin"
 gem "allure-cucumber"
@@ -24,3 +24,6 @@ gem "httparty"
 gem 'page-object'
 gem 'require_all'
 gem 'sauce_whisk', '0.1.0'
+gem 'appium_lib'
+gem 'appium_console'
+gem 'appium_capybara'
