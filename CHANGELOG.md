@@ -3,6 +3,10 @@
 ### Released
 
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
+
+# 2.4.16 (9/05/17)
+- MOB-963: Android Native Mobile setup complete
+
 # 2.4.15 (9/01/17)
 - INT-1778: Successfully receive attributes of the user verified against SCRA with the Direct API
 
