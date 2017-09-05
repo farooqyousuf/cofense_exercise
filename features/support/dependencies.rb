@@ -11,6 +11,8 @@ require "rspec/expectations"
 require "capybara/cucumber"
 require "selenium/webdriver"
 require 'sauce_whisk'
+require "appium_lib"
+require "appium_capybara"
 require_relative "test_helper"
 require_relative "app_pages/base_classes/page_mgmt"
 

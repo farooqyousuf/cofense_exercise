@@ -1,0 +1,30 @@
+require_relative "dependencies"
+require "selenium/webdriver"
+require "selenium/webdriver/remote/http/persistent"
+
+FigNewton.load("staging.yml")
+
+caps = {
+  :platformName => "Android",
+  :deviceName => "Samsung Galaxy",
+  :app => "/Users/farooqyousuf/workspace/idme_apps/idme-android/app-lollipopAndAbove-sandbox-universal-release.apk",
+  :appWaitPackage => "me.id.wallet.sandbox",
+  :appWaitActivity => "me.id.wallet.ui.StartActivity, me.id.wallet.ui.onboarding.OnboardingActivity",
+  :noReset => false
+}
+
+opts = {
+    server_url: "http://127.0.0.1:4723/wd/hub"
+}
+
+# Actions performed before/after each scenario
+Before do
+  @driver = Appium::Driver.new({caps: caps, appium_lib: opts}).start_driver
+end
+
+# After do
+#   @driver.quit
+# end
+
+# Include helper methods module in each 'World' instance
+World(HelperMethods)
