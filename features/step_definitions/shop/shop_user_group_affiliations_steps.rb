@@ -29,6 +29,7 @@ Given(/^I click on the Shop Sign Up link$/) do
 end
 
 Given(/^I verify user "([^"]*)" Group Affiliation is approved on Shop$/) do |group_affiliation|
+  @shop_group_affiliations_page.navigate_to_group_affiliation_page_from_shop_homepage
 	@admin_user_shop = AdminUsers.new
 	@admin_user_shop.record_test_user_email
 	expect(page).to have_css(".-verified", :text => group_affiliation)
