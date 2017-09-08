@@ -7,10 +7,7 @@ class ShopGroupAffiliationsPage < IDmeBase
   end
 
   def navigate_to_group_affiliation_page_from_shop_homepage
-    find(".user-nav").click
-    find(".js-close-modal").click
-    find(:link, :href =>"/cash-back/activities/verify-group-affinity").click
-    find(:link, :href =>"/cash-back/group-affiliations").click
+    click_link("Verify to Save")
   end
 
   def click_verify_military_affiliation_link
