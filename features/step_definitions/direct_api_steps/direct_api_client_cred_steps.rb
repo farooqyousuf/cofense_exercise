@@ -1,24 +1,28 @@
 Given(/^I set valid client credentials$/) do
-  @request_params = { "client_id"      => FigNewton.direct_api_client_cred.client_id,
-                      "client_secret"  => FigNewton.direct_api_client_cred.client_secret }
+  @request_params = { "client_id"      => FigNewton.direct_api.client_id,
+                      "client_secret"  => FigNewton.direct_api.client_secret }
 end
 
 Given(/^I set "([^"]*)" user attributes$/) do |credentials|
   credential_hash = case credentials
-                    when "valid"   then FigNewton.direct_api_client_cred.valid_attributes.to_hash
-                    when "invalid" then FigNewton.direct_api_client_cred.invalid_attributes.to_hash
+                    when "valid"   then FigNewton.direct_api.valid_attributes.to_hash
+                    when "invalid" then FigNewton.direct_api.invalid_attributes.to_hash
                     when "missing" then {}
                     when "incorrect format"
                       {
-                        "first_name" => FigNewton.direct_api_client_cred.valid_attributes.first_name,
-                        "last_name"  => FigNewton.direct_api_client_cred.valid_attributes.last_name,
+                        "first_name" => FigNewton.direct_api.valid_attributes.first_name,
+                        "last_name"  => FigNewton.direct_api.valid_attributes.last_name,
                         "birth_date" => "05-25-1989",
                         "ssn"        => "OOO149876d"
                       }
                     else fail ("Unable to find #{credentials} user attributes")
                     end
 
-  @request_params.merge!(credential_hash)
+  if (@request_params == nil) == false
+    @request_params.merge!(credential_hash)
+  else
+    @request_params = credential_hash
+  end
 end
 
 
@@ -30,10 +34,10 @@ Given(/^I verify the user's "([^"]*)" military attributes is received$/) do |req
   expected_response = case request
                       when "valid"
                         {
-                          "first_name"         => FigNewton.direct_api_client_cred.valid_attributes.first_name,
-                          "last_name"          => FigNewton.direct_api_client_cred.valid_attributes.last_name,
-                          "birth_date"         => FigNewton.direct_api_client_cred.valid_attributes.birth_date,
-                          "ssn"                => FigNewton.direct_api_client_cred.valid_attributes.ssn,
+                          "first_name"         => FigNewton.direct_api.valid_attributes.first_name,
+                          "last_name"          => FigNewton.direct_api.valid_attributes.last_name,
+                          "birth_date"         => FigNewton.direct_api.valid_attributes.birth_date,
+                          "ssn"                => FigNewton.direct_api.valid_attributes.ssn,
                           "service_branch"     => "Army",
                           "service_component"  => "active",
                           "service_end_date"   => nil,

@@ -6,6 +6,7 @@ All notable changes to this project will be documented in this file. This projec
 
 # 2.4.17 (9/11/17)
 - INT-1779: Successful Client Credential error response for incorrect format
+- INT-1783: Successful Header Auth POST request sent to ARCS staging
 
 # 2.4.16 (9/05/17)
 - MOB-963: Android Native Mobile setup complete
