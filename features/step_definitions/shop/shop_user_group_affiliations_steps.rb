@@ -1,5 +1,4 @@
 Given(/^I visit group affiliations from the Shop homepage$/) do
-	step 'I visit "ShopLandingPage"'
 	@shop_group_affiliations_page = ShopGroupAffiliationsPage.new
 	@shop_group_affiliations_page.navigate_to_group_affiliation_page_from_shop_homepage
 end

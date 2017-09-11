@@ -4,8 +4,11 @@
 
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
-# 2.4.17 (9/11/17)
+# 2.4.18 (9/11/17)
 - INT-1779: Successful Client Credential error response for incorrect format
+
+# 2.4.17 (9/8/17)
+- IDME-3904: Shop User Group Affiliations Fix Check Page and Tabs
 
 # 2.4.16 (9/05/17)
 - MOB-963: Android Native Mobile setup complete
