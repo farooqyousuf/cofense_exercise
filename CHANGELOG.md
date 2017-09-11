@@ -4,6 +4,9 @@
 
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
+# 2.4.17 (9/11/17)
+- INT-1779: Successful Client Credential error response for incorrect format
+
 # 2.4.16 (9/05/17)
 - MOB-963: Android Native Mobile setup complete
 
