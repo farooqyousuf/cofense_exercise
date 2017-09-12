@@ -1,6 +1,6 @@
 Given(/^I visit group affiliations from the Shop homepage$/) do
-	@shop_group_affiliations_page = ShopGroupAffiliationsPage.new
-	@shop_group_affiliations_page.navigate_to_group_affiliation_page_from_shop_homepage
+  @shop_group_affiliations_page = ShopGroupAffiliationsPage.new
+  @shop_group_affiliations_page.navigate_to_group_affiliation_page_from_shop_homepage
 end
 
 Given(/^I select to verify the Military Group Affiliation$/) do
@@ -24,19 +24,20 @@ Given(/^I select to verify the First Responder Group Affiliation$/) do
 end
 
 Given(/^I click on the Shop Sign Up link$/) do
-	@shop_landing_page = ShopLandingPage.new
-	@shop_landing_page.sign_up
+  @shop_landing_page = ShopLandingPage.new
+  @shop_landing_page.sign_up
 end
 
 Given(/^I verify user "([^"]*)" Group Affiliation is approved on Shop$/) do |group_affiliation|
-	@admin_user_shop = AdminUsers.new
-	@admin_user_shop.record_test_user_email
-	expect(page).to have_css(".-verified", :text => group_affiliation)
-	expect(page).to have_css(".-verified .-checkmark-square",:visible => true)
+  @shop_group_affiliations_page.navigate_to_group_affiliation_page_from_shop_homepage
+  @admin_user_shop = AdminUsers.new
+  @admin_user_shop.record_test_user_email
+  expect(page).to have_css(".-verified", :text => group_affiliation)
+  expect(page).to have_css(".-verified .-checkmark-square",:visible => true)
 end
 
 Given(/^I expect to be at the group affiliations page$/) do
-	page.assert_current_path(FigNewton.shop.group_affiliations_page, :url => true)
+  page.assert_current_path(FigNewton.shop.group_affiliations_page, :url => true)
 end
 
 Given(/^I expect to see the verify group affiliations dashboard$/) do
@@ -45,11 +46,11 @@ Given(/^I expect to see the verify group affiliations dashboard$/) do
 end
 
 Given(/^I expect that all groups are marked as Instant VIP$/) do
-	@admin_user_shop = AdminUsers.new
-	@admin_user_shop.record_test_user_email
-	expect(page).to have_css(".select-group li:nth-child(1)",:text => "Military Instant VIP")
-	expect(page).to have_css(".select-group li:nth-child(2)",:text => "First Responders Instant VIP")
-	expect(page).to have_css(".select-group li:nth-child(3)",:text => "Students Instant VIP")
-	expect(page).to have_css(".select-group li:nth-child(4)",:text => "Government Employees Instant VIP")
-	expect(page).to have_css(".select-group li:nth-child(5)",:text => "Teachers Instant VIP")
+  @admin_user_shop = AdminUsers.new
+  @admin_user_shop.record_test_user_email
+  expect(page).to have_css(".select-group li:nth-child(1)",:text => "Military Instant VIP")
+  expect(page).to have_css(".select-group li:nth-child(2)",:text => "First Responders Instant VIP")
+  expect(page).to have_css(".select-group li:nth-child(3)",:text => "Students Instant VIP")
+  expect(page).to have_css(".select-group li:nth-child(4)",:text => "Government Employees Instant VIP")
+  expect(page).to have_css(".select-group li:nth-child(5)",:text => "Teachers Instant VIP")
 end
