@@ -6,6 +6,7 @@ All notable changes to this project will be documented in this file. This projec
 
 # 2.4.18 (9/11/17)
 - INT-1779: Successful Client Credential error response for incorrect format
+- INT-1783: Successful Header Auth POST request sent to ARCS staging
 
 # 2.4.17 (9/8/17)
 - IDME-3904: Shop User Group Affiliations Fix Check Page and Tabs
