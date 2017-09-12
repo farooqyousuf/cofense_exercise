@@ -4,7 +4,10 @@ Given(/^I should be on the student verification screen$/) do
 end
 
 Given(/^I verify using student credentials$/) do
-  StudentCreds.new.verify(type: "unique")
+  @student_creds.click_verify_by_creds
+  @student_creds.click_begin
+  @student_creds.verify(type: "unique")
+  @student_creds.click_continue
 end
 
 Given(/^I submit the student credentials verification form as a "([^"]*)" record$/) do |type|

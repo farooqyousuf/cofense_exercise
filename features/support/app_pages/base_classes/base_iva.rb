@@ -59,7 +59,7 @@ include DataMagic
   end
 
   def header_css
-    ".heading"
+    ".heading-affinity"
   end
 
   def click_verify_button
@@ -71,7 +71,11 @@ include DataMagic
   end
 
   def click_continue
-    click_button("Continue")
+    find(".btn-primary").click
+  end
+
+  def click_begi
+    click_link("Begin")
   end
 
   def attach_doc(number = 0)
