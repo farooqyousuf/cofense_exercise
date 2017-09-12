@@ -3,6 +3,10 @@ Given(/^I set valid client credentials$/) do
                       "client_secret"  => FigNewton.direct_api.client_secret }
 end
 
+Given(/^I set valid authorization header$/) do
+  @header = { Authorization: FigNewton.direct_api.header_auth}
+end
+
 Given(/^I set "([^"]*)" user attributes$/) do |credentials|
   credential_hash = case credentials
                     when "valid"   then FigNewton.direct_api.valid_attributes.to_hash
@@ -18,16 +22,17 @@ Given(/^I set "([^"]*)" user attributes$/) do |credentials|
                     else fail ("Unable to find #{credentials} user attributes")
                     end
 
-  if (@request_params == nil) == false
-    @request_params.merge!(credential_hash)
-  else
+  if @request_params.nil?
     @request_params = credential_hash
+  else
+    @request_params.merge!(credential_hash)
   end
 end
 
-
 Given(/^I send a POST request to ARCS$/) do
-  @response = HTTParty.post("#{FigNewton.oauth.idp_endpoint}/api/direct/v2/verify", :query => @request_params)
+  @response = HTTParty.post("#{FigNewton.oauth.idp_endpoint}/api/direct/v2/verify",
+                            :query   => @request_params,
+                            :headers => @header)
 end
 
 Given(/^I verify the user's "([^"]*)" military attributes is received$/) do |request|
