@@ -4,6 +4,9 @@
 
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
+# 2.4.19 (9/13/17)
+- INT-1784: Successful Header Auth error response for missing attributes
+
 # 2.4.18 (9/11/17)
 - INT-1779: Successful Client Credential error response for incorrect format
 - IDME-3970: Shop User Group Affiliations Verify Military Group
