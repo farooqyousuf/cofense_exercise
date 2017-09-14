@@ -74,7 +74,7 @@ include DataMagic
     find(".btn-primary").click
   end
 
-  def click_begi
+  def click_begin
     click_link("Begin")
   end
 

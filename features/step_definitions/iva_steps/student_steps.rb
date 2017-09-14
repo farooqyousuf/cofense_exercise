@@ -7,7 +7,6 @@ Given(/^I verify using student credentials$/) do
   @student_creds.click_verify_by_creds
   @student_creds.click_begin
   @student_creds.verify(type: "unique")
-  @student_creds.click_continue
 end
 
 Given(/^I submit the student credentials verification form as a "([^"]*)" record$/) do |type|

@@ -22,6 +22,7 @@ class StudentCreds < IDmeBase
         when "duplicate"
           populate_fields(data: dupe_data)
         end
+        click_continue
       end
     click_continue
   end
@@ -57,4 +58,3 @@ class StudentCreds < IDmeBase
     [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
   end
 end
-
