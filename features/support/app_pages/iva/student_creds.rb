@@ -7,9 +7,10 @@ class StudentCreds < IDmeBase
   include ErrorMessages
 
   def verify(populate: true, type: "none")
+    click_verify_by_creds
+    click_begin
 
       if populate
-
         unique_data = data_for(:student_creds) #info for unique user
         denied_data = data_for(:student_creds_denied) #info for denied user
         dupe_data   = data_for(:student_creds_dupe) #info for dupe user
