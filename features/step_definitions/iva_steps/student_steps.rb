@@ -4,8 +4,6 @@ Given(/^I should be on the student verification screen$/) do
 end
 
 Given(/^I verify using student credentials$/) do
-  @student_creds.click_verify_by_creds
-  @student_creds.click_begin
   @student_creds.verify(type: "unique")
 end
 
