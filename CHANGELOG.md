@@ -6,6 +6,7 @@ All notable changes to this project will be documented in this file. This projec
 
 # 2.4.20 (9/14/17)
 - INT-1786: Successful Header Auth POST invalid attributes to ARCS staging
+- INT-1787: Successful Header Auth error response for incorrect format
 
 # 2.4.19 (9/13/17)
 - INT-1784: Successful Header Auth error response for missing attributes
