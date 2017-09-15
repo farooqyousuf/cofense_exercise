@@ -1,10 +1,23 @@
-Given(/^I set valid client credentials$/) do
-  @request_params = { "client_id"      => FigNewton.direct_api.client_id,
-                      "client_secret"  => FigNewton.direct_api.client_secret }
+Given(/^I set valid "([^"]*)" client credentials$/) do |authentication|
+  @request_params = case authentication
+                    when "storage enabled"
+                      { "client_id"      => FigNewton.direct_api.storage_enabled.client_id,
+                        "client_secret"  => FigNewton.direct_api.storage_enabled.client_secret }
+                    when "storage disabled"
+                      { "client_id"      => FigNewton.direct_api.storage_disabled.client_id,
+                        "client_secret"  => FigNewton.direct_api.storage_disabled.client_secret }
+                    else fail ("Unable to find #{authentication} client credential authentication")
+                    end
 end
 
-Given(/^I set valid authorization header$/) do
-  @header = { Authorization: FigNewton.direct_api.header_auth}
+Given(/^I set valid "([^"]*)" authorization header$/) do |authentication|
+  @header = case authentication
+            when "storage enabled"
+              { Authorization: FigNewton.direct_api.storage_enabled.header_auth}
+            when "storage disabled"
+              { Authorization: FigNewton.direct_api.storage_disabled.header_auth}
+            else fail ("Unable to find #{authentication} header authentication")
+            end
 end
 
 Given(/^I set "([^"]*)" user attributes$/) do |credentials|

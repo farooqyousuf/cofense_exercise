@@ -4,6 +4,9 @@
 
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
+# 2.4.21 (9/15/17)
+- INT-1903: Add storage_enabled = false to direct api tests
+
 # 2.4.20 (9/14/17)
 - INT-1786: Successful Header Auth POST invalid attributes to ARCS staging
 - INT-1787: Successful Header Auth error response for incorrect format
