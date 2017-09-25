@@ -4,6 +4,9 @@
 
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
+# 2.4.22 (9/25/17)
+- INT-1904: Remove Verify with SCRA Admin tests
+
 # 2.4.21 (9/15/17)
 - INT-1903: Add storage_enabled = false to direct api tests
 
