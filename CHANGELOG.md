@@ -4,6 +4,9 @@
 
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
+# 2.4.23 (9/29/17)
+- CORE-8243: Fix IDP Google test
+
 # 2.4.22 (9/25/17)
 - INT-1904: Remove Verify with SCRA Admin tests
 
