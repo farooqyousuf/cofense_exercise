@@ -185,3 +185,4 @@ shop_admin:
   categories: https://shop-staging.idmeinc.net/admin/categories
   stores:
     base_url: https://shop-staging.idmeinc.net/admin/stores
+  email_generator: https://shop-staging.idmeinc.net/admin/email_templates
