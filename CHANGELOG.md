@@ -6,6 +6,7 @@ All notable changes to this project will be documented in this file. This projec
 
 # 2.4.24 (10/4/17)
 - CORE-8263: Fix sign up link and admin tool step
+- IDME-3971: Shop User Group Affiliations Verify Student
 
 # 2.4.23 (9/29/17)
 - CORE-8243: Fix IDP Google test

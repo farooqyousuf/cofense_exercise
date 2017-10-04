@@ -1,10 +1,12 @@
 Given(/^I should be on the student verification screen$/) do
-  @student_creds = StudentCreds.new
-  find(@student_creds.header_css).visible?
+  expect(page).to have_content "Student ID"
 end
 
 Given(/^I verify using student credentials$/) do
-  StudentCreds.new.verify(type: "unique")
+  @StudentCreds.click_verify_by_creds
+  @StudentCreds.click_begin
+  @StudentCreds.verify(type: "unique")
+  @StudentCreds.click_continue
 end
 
 Given(/^I submit the student credentials verification form as a "([^"]*)" record$/) do |type|
