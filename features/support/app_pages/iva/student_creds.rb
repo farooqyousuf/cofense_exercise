@@ -2,14 +2,12 @@ require_relative '../base_classes/error_messages.rb'
 
 class StudentCreds < IDmeBase
 
+  include IDPBase
   include IVABase
   include Capybara::DSL
   include ErrorMessages
 
   def verify(populate: true, type: "none")
-    click_verify_by_creds
-    click_begin
-
       if populate
         unique_data = data_for(:student_creds) #info for unique user
         denied_data = data_for(:student_creds_denied) #info for denied user
@@ -23,7 +21,6 @@ class StudentCreds < IDmeBase
         when "duplicate"
           populate_fields(data: dupe_data)
         end
-        click_continue
       end
     click_continue
   end

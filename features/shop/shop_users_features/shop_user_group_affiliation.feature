@@ -2,6 +2,7 @@
 Feature: Test User Group Affiliation Page & Verification Features
 
   Background:
+    * I create "StudentCreds" page objects
     * I visit "ShopLandingPage"
     * I click on the Shop Sign Up link
     * I sign up as a new user
@@ -44,5 +45,3 @@ Feature: Test User Group Affiliation Page & Verification Features
     * I should be on the responder verification screen
     * I verify using a ProBoard Firefighter
     * I verify user "First Responders" Group Affiliation is approved on Shop
-
-
