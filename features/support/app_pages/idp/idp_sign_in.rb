@@ -13,7 +13,7 @@ class IDPSignIn < IDmeBase
   end
 
   def click_sign_up_link
-   click_link("Sign up")
+   click_link("sign up for an account")
   end
 
   def invalid_pw(email)

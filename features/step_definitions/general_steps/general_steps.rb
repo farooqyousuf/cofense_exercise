@@ -75,7 +75,7 @@ Given(/^I submit the verification code for "([^"]*)"$/) do |option|
   # open and view the latest record
   sleep 2
   find('#s2id_option').click
-  find("#select2-results-5").find("div", :text => "#{option}").click
+  find("#select2-results-6").find("div", :text => "#{option}").click
 
   #select("#{option}", :from => "option")
   @admin_verif_attempts.open_newest
