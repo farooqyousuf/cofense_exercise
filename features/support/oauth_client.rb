@@ -59,6 +59,7 @@ class OAuthClient
     fill_in "identifier", :with => FigNewton.oauth.google_user
     find("#identifierNext").click
     fill_in "password", :with => FigNewton.oauth.google_pw
+    sleep 2 # waits for "next" button to load
     find("#passwordNext").click
   end
 
