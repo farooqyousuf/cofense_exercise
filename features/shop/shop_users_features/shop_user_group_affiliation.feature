@@ -26,7 +26,7 @@ Feature: Test User Group Affiliation Page & Verification Features
     * I verify using student credentials
     * I verify user "Students" Group Affiliation is approved on Shop
 
-  Scenario: Verify a Teacher Group Affiliationgit
+  Scenario: Verify a Teacher Group Affiliation
     * I select to verify the Teacher Group Affiliation
     * I should be on the teacher verification screen
     * I verify using teacher credentials with "no license and no ssn"
