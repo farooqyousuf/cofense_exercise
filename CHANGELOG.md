@@ -3,6 +3,8 @@
 ### Released
 
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
+# 2.4.25 (10/6/17)
+- IDME-3972: Shop User Group Affiliations Verify Teacher
 
 # 2.4.24 (10/4/17)
 - CORE-8263: Fix sign up link and admin tool step
