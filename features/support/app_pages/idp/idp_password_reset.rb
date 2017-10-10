@@ -7,7 +7,6 @@ class IDPPasswordReset < IDmeBase
   end
 
   def reset_password
-    fill_in_code(code_css)
     fill_in_password
     fill_in_password_confirm
     click_submit_button

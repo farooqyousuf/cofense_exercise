@@ -4,6 +4,9 @@
 
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
+# 2.4.25 (10/10/17)
+- CORE-8270: Fix IDP Password Tests
+
 # 2.4.24 (10/4/17)
 - CORE-8263: Fix sign up link and admin tool step
 - IDME-3971: Shop User Group Affiliations Verify Student
