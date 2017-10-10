@@ -15,9 +15,9 @@ oauth:
   weak_password: Password1
   unverified: farooq+noverifications@id.me
   nonexistent: fake_email@id.me
-  valid: farooq@id.me
-  valid1: farooq+1@id.me
-  valid2: farooq+2@id.me
+  valid : password_test@id.me
+  valid1: password_test+1@id.me
+  valid2: password_test+2@id.me
   wrong_unlock_code: 123456
   loa1: farooq+loa1@id.me
   loa2: farooq+loa2@id.me
