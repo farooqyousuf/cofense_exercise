@@ -8,6 +8,7 @@ All notable changes to this project will be documented in this file. This projec
 # 2.4.25 (10/10/17)
 - CORE-8270: Fix IDP Password Tests
 - HOTFIX: Fixed student cred test happy path
+- HOTFIX: Small fix for a teacher lookup test
 
 # 2.4.24 (10/4/17)
 - CORE-8263: Fix sign up link and admin tool step

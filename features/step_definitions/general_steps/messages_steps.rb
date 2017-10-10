@@ -1,4 +1,5 @@
 Given(/^I should see the error message "(.*?)"$/) do |expected_text|
+  sleep 2
   (p_tag_message.should eq(expected_text)).should == true
 end
 
