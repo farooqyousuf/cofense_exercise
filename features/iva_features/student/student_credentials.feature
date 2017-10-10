@@ -12,7 +12,7 @@ Feature: Student verification using student credentials
   #Unique combo of ssn and dob to verify
   # TODO Ticket# INT-862
   Scenario: Successful verification
-    * I verify using student credentials
+    * I submit the student credentials verification form as a "unique" record
     * I should be successfully verified
     * I verify user level properties for "Student Credentials"
 
