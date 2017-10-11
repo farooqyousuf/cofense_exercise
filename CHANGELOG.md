@@ -5,6 +5,9 @@
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
 
+# 2.4.26 (10/11/17)
+- CORE-8301: Fix IDP Unlock Tests
+
 # 2.4.25 (10/10/17)
 - CORE-8270: Fix IDP Password Tests
 - HOTFIX: Fixed student cred test happy path

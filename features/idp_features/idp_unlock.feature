@@ -17,7 +17,7 @@ Feature: User account lock and unlock
     * I lockout my account
     * I visit "IDPSignIn"
     * I login as a "current_username" user
-    * I should see the red alert box error message "Your ID.me Wallet has been locked due to a high number of failed sign-in attempts. Please click here to unlock it."
+    * I should see the red alert box error message "Your ID.me account has been locked due to a high number of failed sign-in attempts. Please click here to unlock it."
 
  @delete_current_user_email
  Scenario: Verify if account can be used after unlocking it
@@ -42,4 +42,4 @@ Feature: User account lock and unlock
     * I lockout my account
     * I click on the unlock account link
     * I enter a non-existant account email to attempt to unlock my account
-    * I should see the red alert box error message "We couldn't find an ID.me Wallet with that email address. Please try again."
+    * I should see the red alert box error message "We couldn't find an ID.me account with that email address. Please try again."
