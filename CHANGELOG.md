@@ -3,6 +3,8 @@
 ### Released
 
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
+# 2.4.25 (10/6/17)
+- IDME-3972: Shop User Group Affiliations Verify Teacher
 
 
 # 2.4.25 (10/10/17)

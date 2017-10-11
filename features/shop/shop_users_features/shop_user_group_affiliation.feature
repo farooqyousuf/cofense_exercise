@@ -2,7 +2,7 @@
 Feature: Test User Group Affiliation Page & Verification Features
 
   Background:
-    * I create "StudentCreds" page objects
+    * I create "StudentCreds, ShopGroupAffiliationsPage, ShopLandingPage, AdminUsers, TeacherDoc, TeacherLookup, AdminTool, AdminTeacherVerifs" page objects
     * I visit "ShopLandingPage"
     * I click on the Shop Sign Up link
     * I sign up as a new user
@@ -30,7 +30,7 @@ Feature: Test User Group Affiliation Page & Verification Features
     * I select to verify the Teacher Group Affiliation
     * I should be on the teacher verification screen
     * I verify using teacher credentials with "no license and no ssn"
-    * I approve the teacher verification in IDme admin
+    * I "approve" the teacher verification in IDme admin
     * I verify user "Teachers" Group Affiliation is approved on Shop
 
   Scenario: Verify a Government Group Affiliation
