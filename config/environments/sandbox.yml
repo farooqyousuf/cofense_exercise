@@ -9,7 +9,7 @@ direct_api:
   storage_disabled:
     client_id     : a8a8ab3174466f3bbecca8c546439796
     client_secret : fb77531f394fbb3495b724f7215120c5
-    header_auth   : Basic ThhOGFiMzE3NDQ2NmYzYmJlY2NhOGM1NDY0Mzk3OTY6ZmI3NzUzMWYzOTRmYmIzNDk1YjcyNGY3MjE1MTIwYzUY=
+    header_auth   : Basic YThhOGFiMzE3NDQ2NmYzYmJlY2NhOGM1NDY0Mzk3OTY6ZmI3NzUzMWYzOTRmYmIzNDk1YjcyNGY3MjE1MTIwYzU=
   valid_attributes:
     first_name : john
     last_name  : jones
