@@ -3,9 +3,12 @@
 ### Released
 
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
+
+# 2.5.0 (10/12/17)
+- INT-2086: Add sandbox configuration
+
 # 2.4.25 (10/6/17)
 - IDME-3972: Shop User Group Affiliations Verify Teacher
-
 
 # 2.4.26 (10/11/17)
 - CORE-8301: Fix IDP Unlock Tests
