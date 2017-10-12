@@ -1,0 +1,22 @@
+oauth:
+  idp_endpoint : https://api.idmelabs.com
+
+direct_api:
+  storage_enabled:
+    client_id     : 19598f74dda0dae05ebc479164623353
+    client_secret : 78c25956bfd57997d0fa90097c206f25
+    header_auth   : Basic MTk1OThmNzRkZGEwZGFlMDVlYmM0NzkxNjQ2MjMzNTM6NzhjMjU5NTZiZmQ1Nzk5N2QwZmE5MDA5N2MyMDZmMjU=
+  storage_disabled:
+    client_id     : a8a8ab3174466f3bbecca8c546439796
+    client_secret : fb77531f394fbb3495b724f7215120c5
+    header_auth   : Basic ThhOGFiMzE3NDQ2NmYzYmJlY2NhOGM1NDY0Mzk3OTY6ZmI3NzUzMWYzOTRmYmIzNDk1YjcyNGY3MjE1MTIwYzUY=
+  valid_attributes:
+    first_name : john
+    last_name  : jones
+    birth_date : "1989-05-25"
+    ssn        : 000149876
+  invalid_attributes:
+    first_name : star
+    last_name  : fire
+    birth_date : "1989-08-28"
+    ssn        : 000678914
