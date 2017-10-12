@@ -109,6 +109,27 @@ Given(/^I generate a unique doc$/) do
   use_last_browser_created
 end
 
+Given(/^I generate a unique "([^"]*)" doc$/) do |document|
+  create_new_window
+  use_last_browser_created
+
+  if (document == "pdf")
+    visit 'https://convertio.co/png-pdf/'
+    sleep 3
+    page.driver.browser.navigate.refresh
+    find("#pc-upload-add").click
+    puts "!!!!!!!"
+  else
+    visit 'http://pastebin.com/'
+    fill_in "paste_code", with: Faker::Lorem.paragraph(50)
+
+    @IDmeBase = IDmeBase.new
+    @IDmeBase.save_unique_screenshot_in_dir(document: document)
+  end
+  close_current_browser
+  use_last_browser_created
+end
+
 Given(/^I approve the document in IDme admin$/) do
   @admin_tool = AdminTool.new
   @admin_tool.login_in_new_window
