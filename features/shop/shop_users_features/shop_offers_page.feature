@@ -20,6 +20,7 @@ Feature: Test Shop Offers Page
     * I check that the Offers Index is available
     * I check the store offer card links for "Logged In" User
 
+ @smoke
  Scenario: Check Offers Side Bar - Promo Codes
     * I click on SignIn link
     * I login to Shop as a "Military" user

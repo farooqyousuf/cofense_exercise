@@ -5,6 +5,7 @@ Feature: Test Stores Index page
     * I visit "ShopStoreIndexPage"
     * I create Shop Store Index Page object
 
+  @smoke
   Scenario: Check Stores Table listing
     * I expect to be at the Shop Stores Index Page
     * I check that the filter is visible

@@ -1,3 +1,4 @@
+@direct_api
 Feature: Test Direct API Client Credentials
 
   Scenario: Successfully receive valid attributes of the user
@@ -24,6 +25,7 @@ Feature: Test Direct API Client Credentials
     * I send a POST request to ARCS
     * I verify the user's "incorrect format" military attributes is received
 
+  @smoke
   Scenario: Successfully POST valid attributes to ARCS
     * I set valid "storage enabled" client credentials
     * I set "valid" user attributes

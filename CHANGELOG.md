@@ -4,6 +4,9 @@
 
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
+# 2.5.1 (10/16/17)
+- CORE-8331: Add smoke tests to Direct API and Shop
+
 # 2.5.0 (10/12/17)
 - INT-2086: Add sandbox configuration
 

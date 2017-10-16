@@ -1,3 +1,4 @@
+@direct_api
 Feature: Test Direct API Header Authorization
 
   Scenario: Successfully receive valid attributes of user
@@ -24,6 +25,7 @@ Feature: Test Direct API Header Authorization
     * I send a POST request to ARCS
     * I verify the user's "incorrect format" military attributes is received
 
+  @smoke
   Scenario: Successfully POST valid attributes to ARCS
     * I set valid "storage disabled" authorization header
     * I set "valid" user attributes
