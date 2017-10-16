@@ -2,6 +2,13 @@ Given(/^I should be on the student verification screen$/) do
   expect(page).to have_content "Student ID"
 end
 
+Given(/^I verify using student credentials$/) do
+  @StudentCreds.click_verify_by_creds
+  @StudentCreds.click_begin
+  @StudentCreds.verify(type: "unique")
+  @StudentCreds.click_continue
+ end
+
 Given(/^I submit the student credentials verification form as a "([^"]*)" record$/) do |type|
   StudentCreds.new.verify(type: type)
 end
