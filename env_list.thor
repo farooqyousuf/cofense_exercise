@@ -57,6 +57,11 @@ class Set < Thor
     copy_environment("firefox_osx_staging")
   end
 
+  desc "firefox_osx_sandbox", "Use Firefox on OSX on Sandbox"
+  def firefox_osx_sandbox
+    copy_environment("firefox_osx_sandbox")
+  end
+
   desc "firefox_osx_production", "Use Firefox on OSX on Production"
   def firefox_osx_production
     copy_environment("firefox_osx_production")
