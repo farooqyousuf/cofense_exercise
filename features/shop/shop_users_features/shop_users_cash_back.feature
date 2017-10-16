@@ -8,6 +8,7 @@ Feature: Test the shop_users Cash Back - My Cash
    * I visit "CashBack_PurchasesPage"
    * I save the new user email
 
+   @smoke
    Scenario: Purchases - Summary Info Card Check
    * Cash Back Activity Tab should be selected
    * I check Summary Info Card existence

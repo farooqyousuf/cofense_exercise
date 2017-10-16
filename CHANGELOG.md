@@ -7,6 +7,7 @@ All notable changes to this project will be documented in this file. This projec
 # 2.4.30 (10/16/17)
 - CORE-7440: IVA flow: Approved doc upload formats
 - IDME-4024: Fix Shop Group Affiliations Student
+- CORE-8331: Add smoke tests to Direct API and Shop
 
 # 2.4.29 (10/13/17)
 - IDME-3973: Shop User Group Affiliations Verify Government
