@@ -60,6 +60,7 @@ thor set:chrome_osx                # Use Chrome on OSX locally on staging
 thor set:chrome_windows            # Use Chrome on Windows on Sauce Labs on P...
 thor set:firefox_osx_accept_certs  # Use Firefox on OSX and accept all certs
 thor set:firefox_osx_local         # Use Firefox on OSX on Local
+thor set:firefox_osx_sandbox       # Use Firefox on OSX on Sandbox (currently only supports ARCS direct api tests)
 thor set:firefox_osx_production    # Use Firefox on OSX on Production
 thor set:firefox_osx_saucelabs     # Use Firefox on OSX on Sauce Labs
 thor set:firefox_osx_staging       # Use Firefox on OSX on Staging
