@@ -85,7 +85,12 @@ include DataMagic
 
   def attach_unique_doc(number = 0, document: "none")
     page.has_css?("#file-upload") #will wait until this is true which means the file upload page has loaded, and the bottom command will not fail.
-    page.driver.browser.all(:xpath, '//input[@type="file"]')[number].send_keys("#{Dir.pwd}/screenshots/screenshot_#{document}.#{document}")
+    if (document == "pdf") || (document == "docx")
+      Dir.mkdir("./test_documents") unless Dir.exists?("./test_documents")
+      page.driver.browser.all(:xpath, '//input[@type="file"]')[number].send_keys("#{Dir.pwd}/test_documents/test_#{document}.#{document}")
+    else
+      page.driver.browser.all(:xpath, '//input[@type="file"]')[number].send_keys("#{Dir.pwd}/screenshots/screenshot_#{document}.#{document}")
+    end
   end
 
 end

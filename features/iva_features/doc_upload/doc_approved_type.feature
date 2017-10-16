@@ -51,7 +51,6 @@ Feature: IVA verification using document upload
   Scenario: Successful document upload for pdf document type
     * I click on the Military Verify by uploading documentation link
     * I click on the Begin link
-    * I generate a unique "pdf" doc
     * I verify using military "pdf" documentation for Service Member
     * I verify that a "pdf" document was successfully uploaded
 
@@ -59,6 +58,5 @@ Feature: IVA verification using document upload
   Scenario: Successful document upload for docx document type
     * I click on the Military Verify by uploading documentation link
     * I click on the Begin link
-    * I generate a unique "docx" doc
     * I verify using military "docx" documentation for Service Member
     * I verify that a "docx" document was successfully uploaded

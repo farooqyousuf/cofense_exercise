@@ -113,19 +113,11 @@ Given(/^I generate a unique "([^"]*)" doc$/) do |document|
   create_new_window
   use_last_browser_created
 
-  if (document == "pdf")
-    visit 'https://convertio.co/png-pdf/'
-    sleep 3
-    page.driver.browser.navigate.refresh
-    find("#pc-upload-add").click
-    puts "!!!!!!!"
-  else
-    visit 'http://pastebin.com/'
-    fill_in "paste_code", with: Faker::Lorem.paragraph(50)
+  visit 'http://pastebin.com/'
+  fill_in "paste_code", with: Faker::Lorem.paragraph(50)
 
-    @IDmeBase = IDmeBase.new
-    @IDmeBase.save_unique_screenshot_in_dir(document: document)
-  end
+  @IDmeBase = IDmeBase.new
+  @IDmeBase.save_unique_screenshot_in_dir(document: document)
   close_current_browser
   use_last_browser_created
 end

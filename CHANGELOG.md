@@ -3,17 +3,20 @@
 ### Released
 
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
-# 2.4.25 (10/6/17)
-- IDME-3972: Shop User Group Affiliations Verify Teacher
 
+# 2.4.28 (10/6/17)
+- CORE-7440: IVA flow: Approved doc upload formats
 
-# 2.4.26 (10/11/17)
+# 2.4.27 (10/11/17)
 - CORE-8301: Fix IDP Unlock Tests
 
-# 2.4.25 (10/10/17)
+# 2.4.26 (10/10/17)
 - CORE-8270: Fix IDP Password Tests
 - HOTFIX: Fixed student cred test happy path
 - HOTFIX: Small fix for a teacher lookup test
+
+# 2.4.25 (10/6/17)
+- IDME-3972: Shop User Group Affiliations Verify Teacher
 
 # 2.4.24 (10/4/17)
 - CORE-8263: Fix sign up link and admin tool step
