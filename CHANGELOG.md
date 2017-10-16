@@ -10,6 +10,12 @@ All notable changes to this project will be documented in this file. This projec
 # 2.5.0 (10/12/17)
 - INT-2086: Add sandbox configuration
 
+# 2.4.28 (10/13/17)
+- IDME-3973: Shop User Group Affiliations Verify Government
+
+# 2.4.27 (10/11/17)
+- CORE-8301: Fix IDP Unlock Tests
+
 # 2.4.26 (10/10/17)
 - CORE-8270: Fix IDP Password Tests
 - HOTFIX: Fixed student cred test happy path
