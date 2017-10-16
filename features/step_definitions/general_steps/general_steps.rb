@@ -112,7 +112,6 @@ end
 Given(/^I generate a unique "([^"]*)" doc$/) do |document|
   create_new_window
   use_last_browser_created
-
   visit 'http://pastebin.com/'
   fill_in "paste_code", with: Faker::Lorem.paragraph(50)
 
