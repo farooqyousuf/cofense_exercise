@@ -4,14 +4,15 @@
 
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
-# 2.5.1 (10/16/17)
+# 2.4.30 (10/16/17)
 - CORE-7440: IVA flow: Approved doc upload formats
+- IDME-4024: Fix Shop Group Affiliations Student
 
-# 2.5.0 (10/12/17)
-- INT-2086: Add sandbox configuration
-
-# 2.4.28 (10/13/17)
+# 2.4.29 (10/13/17)
 - IDME-3973: Shop User Group Affiliations Verify Government
+
+# 2.4.28 (10/12/17)
+- INT-2086: Add sandbox configuration
 
 # 2.4.27 (10/11/17)
 - CORE-8301: Fix IDP Unlock Tests
