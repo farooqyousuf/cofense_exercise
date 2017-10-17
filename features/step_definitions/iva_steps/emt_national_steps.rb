@@ -1,15 +1,19 @@
+Given(/^I create a EMT National page object$/) do
+  @EMTNational = NationalEMT.new
+end
+
 Given(/^I click on the Verify using EMT National link$/) do
-  NationalEMT.new.click_verify_emt_national_link
+  @EMTNational.click_verify_emt_national_link
 end
 
 Given(/^I verify using nationally certified EMT credentials$/) do
-  NationalEMT.new.verify(type: "unique")
+  @EMTNational.verify(type: "unique")
 end
 
 Given(/^I submit the empty National EMT form$/) do
-  NationalEMT.new.verify(populate: false)
+  @EMTNational.verify(populate: false)
 end
 
 Given(/^I submit the emt national verification form as a "([^"]*)" record$/) do |type|
-  NationalEMT.new.verify(type: type)
+  @EMTNational.verify(type: type)
 end

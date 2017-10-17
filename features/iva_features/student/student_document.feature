@@ -6,6 +6,7 @@ Background:
     * I click on the Sign Up link
     * I sign up as a new user
     * I click on the Verify by uploading documentation link
+    * I create a Student Doc page object
     * I click on the Begin link
 
   @smoke @delete_experian_user1 @doc

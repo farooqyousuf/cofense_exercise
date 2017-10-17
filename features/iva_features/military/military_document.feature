@@ -3,6 +3,7 @@ Feature: Military verification using document upload
 
   Background:
     * I visit IDP through the "military" policy
+    * I create a Military Document page object
     * I click on the Sign Up link
     * I sign up as a new user
     * I click on the Military Verify by uploading documentation link

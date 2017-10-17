@@ -1,3 +1,7 @@
+Given(/^I create a Government page object$/) do
+  @IVAGovernment = IVAGovernment.new
+end
+
 Given(/^I should be on the government verification screen$/) do
   find(@IVAGovernment.header_css).visible?
   expect(page).to have_content "Government ID"
@@ -8,7 +12,6 @@ Given(/^I submit the empty government form$/) do
 end
 
 Given(/^I submit the government verification form as a "([^"]*)" record$/) do |type|
-  @IVAGovernment.click_begin
   @IVAGovernment.verify(email_type: type)
 end
 

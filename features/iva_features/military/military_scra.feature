@@ -4,6 +4,7 @@ Feature: Military verification using SCRA credentials
 
   Background:
     * I visit IDP through the "military" policy
+    * I create a Military SCRA page object
     * I click on the Sign Up link
     * I sign up as a new user
     * I click on the Verify using a government service record link

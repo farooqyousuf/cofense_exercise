@@ -6,6 +6,7 @@ Feature: Responder verification as an EMT using state lookup
     * I click on the Sign Up link
     * I sign up as a new user
     * I click on the Verify using EMT State Lookup link
+    * I create a EMT State Lookup page object
     * I click on the Begin link
 
   @smoke @delete_experian_user1

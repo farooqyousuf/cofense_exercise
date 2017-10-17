@@ -6,6 +6,7 @@ Feature: Teacher verification using state lookup
     * I click on the Sign Up link
     * I sign up as a new user
     * I click on the verify using teacher state lookup link
+    * I create a Teacher Lookup page object
 
   @smoke @delete_current_user_email
   #unique combo of ssn/dob

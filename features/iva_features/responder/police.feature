@@ -6,6 +6,7 @@ Feature: Responder verification as a police officer
     * I click on the Sign Up link
     * I sign up as a new user
     * I click on the Verify as a state certified Police Officer
+    * I create a Police page object
     * I click on the Begin link
 
   #experian check and also need a unique doc for police
