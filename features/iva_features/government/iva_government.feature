@@ -3,6 +3,7 @@ Feature: Government verification using .gov email
 
   Background:
     * I visit IDP through the "government" policy
+    * I create a Government page object
     * I click on the Sign Up link
     * I sign up as a new user
     * I click on the Begin link

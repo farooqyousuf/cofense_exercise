@@ -6,6 +6,7 @@ Feature: Responder verification as a ProBoard Firefighter
     * I click on the Sign Up link
     * I sign up as a new user
     * I click on the Yes I am ProBoard certified link
+    * I create a Fireman ProBoard page object
     * I click on the Begin link
 
   @smoke @delete_pb_fireman_user

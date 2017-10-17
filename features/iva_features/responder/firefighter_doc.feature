@@ -6,6 +6,7 @@ Feature: Responder verification as a firefighter using document upload
     * I click on the Sign Up link
     * I sign up as a new user
     * I click on the No I am not ProBoard certified link
+    * I create a Fireman Doc page object
     * I click on the Begin link
 
   @smoke @delete_experian_user1 @doc

@@ -1,12 +1,16 @@
+Given(/^I create a Military DD214 page object$/) do
+  @dd214 = DD214.new
+end
+
 Given(/^I click on the Verify by requesting DD214 link$/) do
-  DD214.new.click_verify_by_dd214_link
+  @dd214.click_verify_by_dd214_link
 end
 
 Given(/^I verify using DD214 information for "(.*)" via "(.*)"$/) do |affiliation, method|
   if method == "SCRA"
-    DD214.new.verify(affiliation: affiliation, type: "unique", method: method)
+    @dd214.verify(affiliation: affiliation, type: "unique", method: method)
   else
-    DD214.new.verify(affiliation: affiliation, type: "unique", method: method)
+    @dd214.verify(affiliation: affiliation, type: "unique", method: method)
   end
   click_link("Continue")
   if page.has_text? "ID.me Staging would like to access some of your data"
@@ -15,15 +19,15 @@ Given(/^I verify using DD214 information for "(.*)" via "(.*)"$/) do |affiliatio
 end
 
 Given(/^I verify using duplicate DD214 information for "(.*)" via "(.*)"$/) do |affiliation, method|
-  DD214.new.verify(affiliation: affiliation, type: "dupe", method: method)
+  @dd214.verify(affiliation: affiliation, type: "dupe", method: method)
 end
 
 Given(/^I submit the empty DD214 form for "([^"]*)"$/) do |group|
-  DD214.new.verify(affiliation: group, populate: false)
+  @dd214.verify(affiliation: group, populate: false)
 end
 
 Given(/^I submit the DD214 verification form as a "([^"]*)" record$/) do |status|
-  DD214.new.verify(type: status)
+  @dd214.verify(type: status)
 end
 
 Given(/^I "([^"]*)" the DD214 in IDme admin$/) do |action|

@@ -6,6 +6,7 @@ Feature: Responder verification as an nationally certified EMT
     * I click on the Sign Up link
     * I sign up as a new user
     * I click on the Verify using EMT National link
+    * I create a EMT National page object
     * I click on the Begin link
 
   @smoke @delete_natl_emt

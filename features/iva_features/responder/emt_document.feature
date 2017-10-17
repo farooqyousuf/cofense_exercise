@@ -6,6 +6,7 @@ Feature: Responder verification as an EMT using document upload
     * I click on the Sign Up link
     * I sign up as a new user
     * I click on the Verify using EMT Doc link
+    * I create a EMT Document page object
     * I click on the Begin link
 
   @delete_experian_user1 @smoke @doc

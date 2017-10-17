@@ -6,6 +6,7 @@ Feature: Teacher verification using document upload
     * I click on the Sign Up link
     * I sign up as a new user
     * I click on the teacher verify using documentation link
+    * I create a Teacher Doc page object
     * I select the teacher state "Maryland"
     * I click on the Begin link
 

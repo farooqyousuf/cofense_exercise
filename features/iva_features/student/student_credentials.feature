@@ -6,6 +6,7 @@ Feature: Student verification using student credentials
     * I click on the Sign Up link
     * I sign up as a new user
     * I click on the Verify using your student credentials link
+    * I create a Student Creds page object
     * I click on the Begin link
 
   @smoke @delete_current_user_email

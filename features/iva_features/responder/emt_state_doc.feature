@@ -6,6 +6,7 @@ Feature: Responder verification as an EMT using state doc upload
     * I click on the Sign Up link
     * I sign up as a new user
     * I click on the Verify using EMT State Doc link
+    * I create a EMT State Doc page object
     * I click on the Begin link
 
   @smoke @delete_experian_user1
