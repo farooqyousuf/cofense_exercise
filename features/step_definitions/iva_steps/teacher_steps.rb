@@ -40,10 +40,6 @@ Given(/^I submit the empty Teacher form using "([^"]*)"$/) do |method|
 end
 
 Given(/^I verify using teacher credentials with "([^"]*)"$/) do |method|
-  @TeacherLookup.click_licensed_by_state
-  @TeacherLookup.select_licensed_by_state_de
-  @TeacherLookup.click_begin
-
   case method
   when "no license and no ssn"
     @TeacherLookup.verify()

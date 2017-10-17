@@ -75,9 +75,7 @@ include DataMagic
   end
 
   def click_begin
-    if page.has_link? ("Begin")
       click_link("Begin")
-    end
   end
 
   def attach_doc(number = 0)

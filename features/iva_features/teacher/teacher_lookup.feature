@@ -2,6 +2,7 @@
 Feature: Teacher verification using state lookup
 
   Background:
+    * I create "AdminUsers, TeacherDoc, TeacherLookup, AdminTool, AdminTeacherVerifs" page objects
     * I visit IDP through the "teacher" policy
     * I click on the Sign Up link
     * I sign up as a new user
