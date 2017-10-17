@@ -2,6 +2,7 @@
 Feature: Government verification using .gov email
 
   Background:
+    * I create "AdminUsers, AdminTool, IVAGovernment" page objects
     * I visit IDP through the "government" policy
     * I create a Government page object
     * I click on the Sign Up link
