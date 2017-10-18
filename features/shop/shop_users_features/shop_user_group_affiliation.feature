@@ -30,6 +30,9 @@ Feature: Test User Group Affiliation Page & Verification Features
   Scenario: Verify a Teacher Group Affiliation
     * I select to verify the Teacher Group Affiliation
     * I should be on the teacher verification screen
+    * I click on the verify using teacher state lookup link
+    * I select the teacher state "Delaware"
+    * I click on the Begin link
     * I verify using teacher credentials with "no license and no ssn"
     * I "approve" the teacher verification in IDme admin
     * I verify user "Teachers" Group Affiliation is approved on Shop

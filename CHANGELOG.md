@@ -4,13 +4,15 @@
 
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
+# 2.4.32 (10/18/17)
+- CORE-8361: Fix Broken IVA Teacher Tests
+
 # 2.4.31 (10/17/17)
 - CORE-8353: Add create page object steps to all IVA tests
 
-# 2.4.30 (10/16/17)
+# 2.4.30 (10/12/17)
 - CORE-7440: IVA flow: Approved doc upload formats
 - IDME-4024: Fix Shop Group Affiliations Student
-- CORE-8331: Add smoke tests to Direct API and Shop
 
 # 2.4.29 (10/13/17)
 - IDME-3973: Shop User Group Affiliations Verify Government
@@ -699,4 +701,3 @@ All notable changes to this project will be documented in this file. This projec
 - New branch commits being restructured in Capybara / Selenium-Webdriver
 ### Removed
 - Removed earlier V1 to branch using Watir / Selenium-Webdriver
-
