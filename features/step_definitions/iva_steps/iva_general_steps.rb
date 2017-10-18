@@ -1,5 +1,5 @@
 Given(/^I click on the Begin link$/) do
-    click_link("Begin")
+  click_link("Begin")
 end
 
 Given(/^I should be successfully verified(?: as "(.*)")?$/) do |group|
