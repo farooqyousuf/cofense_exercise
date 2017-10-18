@@ -13,7 +13,7 @@ Feature: Military verification using document upload
   #unique doc upload and user creds have to pass experian/preciseID
   Scenario: Successful verification as a Service Member
     * I verify using military documentation for "Service Member"
-    * I approve the document in IDme admin
+    * I approve the document in the IDme support tool
     * I should be successfully verified as "Service Member"
     * I verify user level properties for "Mil Doc Service Member"
 

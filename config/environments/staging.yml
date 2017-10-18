@@ -124,6 +124,9 @@ admin:
   api_password: 8419400ef9b3b5f468caba8bbade41aa
   users_endpoint: https://admin-staging.idmeinc.net/api/users
 
+support_tool:
+  base_url: https://support-staging.idmeinc.net/
+
 idp:
   base_url: https://api-staging.idmeinc.net
   new_session_url: https://api-staging.idmeinc.net/session/new

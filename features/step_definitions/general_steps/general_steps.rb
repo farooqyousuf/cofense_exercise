@@ -140,6 +140,15 @@ Given(/^I approve the document in IDme admin$/) do
   end
 end
 
+Given(/^I approve the document in the IDme support tool$/) do
+  @support_tool = SupportTool.new
+  @support_tool.login_in_new_window
+
+  step 'I visit "SupportToolDocs"'
+  print "We got this!!!!!"
+  # @support_tool = SupportToolDocs.new
+end
+
 Given(/^I create "([^"]*)" page objects$/) do |page_objects|
   page_objects_array = page_objects.split(", ")
   page_objects_array.each do |d|
