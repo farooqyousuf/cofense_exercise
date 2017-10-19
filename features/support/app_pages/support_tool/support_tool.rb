@@ -19,4 +19,10 @@ class SupportTool < IDmeBase
     self.use_last_browser_created
     login
   end
+
+  def logout_in_new_window
+    click_link("Log out")
+    self.close_current_browser
+    self.use_last_browser_created
+  end
 end

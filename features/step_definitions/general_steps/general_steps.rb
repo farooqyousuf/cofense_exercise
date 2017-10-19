@@ -145,8 +145,17 @@ Given(/^I approve the document in the IDme support tool$/) do
   @support_tool.login_in_new_window
 
   step 'I visit "SupportToolDocs"'
-  print "We got this!!!!!"
-  # @support_tool = SupportToolDocs.new
+  @support_tool_docs = SupportToolDocs.new
+
+  @support_tool_docs.approve_doc
+  @support_tool.logout_in_new_window
+  if page.has_text? "Congratulations!"
+    VerificationSuccess.new.click_continue
+  end
+
+  if page.has_text? "ID.me Staging would like to access some of your data"
+    step 'I authorize the attribute release'
+  end
 end
 
 Given(/^I create "([^"]*)" page objects$/) do |page_objects|
