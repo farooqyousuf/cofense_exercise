@@ -9,6 +9,7 @@ All notable changes to this project will be documented in this file. This projec
 
 # 2.4.31 (10/17/17)
 - CORE-8353: Add create page object steps to all IVA tests
+- IDME-4039: Fix Object Dependencies for Shop Group Affiliation Objects Initiated in Cucumber Background Setup to fix IVA tests
 
 # 2.4.30 (10/12/17)
 - CORE-7440: IVA flow: Approved doc upload formats
