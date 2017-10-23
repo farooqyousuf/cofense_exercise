@@ -3,7 +3,7 @@ Feature: Military verification using .mil email
 
   Background:
     * I visit IDP through the "military" policy
-    * I create a Military Email page object
+    * I create "MilitaryEmail" page objects
     * I click on the Sign Up link
     * I sign up as a new user
     * I should be on the military verification screen
