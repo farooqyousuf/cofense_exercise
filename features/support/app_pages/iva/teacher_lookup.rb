@@ -6,17 +6,6 @@ class TeacherLookup < IDmeBase
   include Capybara::DSL
   include ErrorMessages
 
-  def click_licensed_by_state
-    find("li.verification-option.teacher.state").click
-  end
-
-  def select_licensed_by_state_de
-    #finds and selects Delaware from dropdown list
-    find("span.select2-arrow").click
-    find("#s2id_autogen1_search").set("d")
-    find("ul.select2-results li:nth-child(2)").click
-  end
-
   def verify(state: "Delaware", populate: true, type: "unique")
     #Delaware is randomly used as a default state
       if populate
@@ -37,8 +26,8 @@ class TeacherLookup < IDmeBase
         end
       end
 
-    if (page.has_css?("#teacher_number_available_yes"))
-      find("#teacher_number_available_no").click
+    if page.has_css?("#state_number_available_yes")
+      find("#state_number_available_no").click
     end
 
     sleep 2

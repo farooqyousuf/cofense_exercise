@@ -2,6 +2,7 @@
 Feature: Student verification using student credentials
 
   Background:
+    * I create "StudentCreds, AdminUsers, AdminTool, AdminTeacherVerifs" page objects
     * I visit IDP through the "student" policy
     * I click on the Sign Up link
     * I sign up as a new user
