@@ -2,11 +2,11 @@
 Feature: Teacher verification using document upload
 
   Background:
+    * I create a Teacher Doc page object
     * I visit IDP through the "teacher" policy
     * I click on the Sign Up link
     * I sign up as a new user
     * I click on the teacher verify using documentation link
-    * I create a Teacher Doc page object
     * I select the teacher state "Maryland"
     * I click on the Begin link
 
@@ -52,4 +52,3 @@ Feature: Teacher verification using document upload
     * I click on the Begin link
     * I submit the teacher doc upload verification form as a "second unique user" record
     * I should see the error message "We’re sorry, but we were unable to verify your credentials with the document you provided. Please see our Support page for document specifications, or try another verification option."
-

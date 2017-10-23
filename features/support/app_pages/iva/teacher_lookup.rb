@@ -6,15 +6,14 @@ class TeacherLookup < IDmeBase
   include Capybara::DSL
   include ErrorMessages
 
-  def verify(state: "Delaware", populate: true, type: "unique")
-    #Delaware is randomly used as a default state
+  def verify(state: "none", populate: true, type: "unique")
       if populate
 
         build_unique_info #info for unique and denied users
 
         case type
         when "unique", "denied"
-          populate_fields(state:          state,
+          populate_fields(state:          state,   # Delaware used as default state
                           fname:          @fname,
                           lname:          @lname,
                           dob:            @dob,

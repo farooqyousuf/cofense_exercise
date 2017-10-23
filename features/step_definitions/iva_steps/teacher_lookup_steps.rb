@@ -9,7 +9,7 @@ end
 Given(/^I verify using teacher credentials with "([^"]*)"$/) do |method|
   case method
   when "no license and no ssn"
-    @TeacherLookup.verify()
+    @TeacherLookup.verify(state: "Delaware")
   when "no license and short ssn"
     @TeacherLookup.verify(state: "New Mexico")
   when "license and no ssn"
@@ -29,10 +29,11 @@ Given(/^I "([^"]*)" the teacher verification in IDme admin$/) do |action|
   step 'I visit "AdminTeacherVerifs"'
   if action == "approve"
     @AdminTeacherVerifs.approve_doc
-  else
+    @AdminTool.logout_in_new_window
+    @TeacherLookup.click_continue
+  elsif action == "deny"
     @AdminTeacherVerifs.deny_doc
+    @AdminTool.logout_in_new_window
+  else fail('Action "#{action}" is not defined in step')
   end
-
-  @AdminTool.logout_in_new_window
-  @TeacherLookup.click_continue
 end
