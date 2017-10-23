@@ -4,6 +4,9 @@
 
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
+# 2.4.32 (10/23/17)
+- CORE-8338: Automate approving doc verification test attempts in support instead of admin
+
 # 2.4.31 (10/17/17)
 - CORE-8353: Add create page object steps to all IVA tests
 
@@ -699,4 +702,3 @@ All notable changes to this project will be documented in this file. This projec
 - New branch commits being restructured in Capybara / Selenium-Webdriver
 ### Removed
 - Removed earlier V1 to branch using Watir / Selenium-Webdriver
-
