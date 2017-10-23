@@ -28,12 +28,12 @@ Given(/^I submit the empty Teacher form using "([^"]*)"$/) do |method|
   when "Teacher Document"
     @TeacherDoc.verify(populate: false)
   when "Teacher Lookup Delaware"
-    @TeacherDoc.verify(state: "Delaware", populate: false)
+    @TeacherLookup.verify(state: "Delaware", populate: false)
   when "Teacher Lookup New Mexico"
-    @TeacherDoc.verify(state: "New Mexico", populate: false)
+    @TeacherLookup.verify(state: "New Mexico", populate: false)
   when "Teacher Lookup Michigan"
-    @TeacherDoc.verify(state: "Michigan", populate: false)
+    @TeacherLookup.verify(state: "Michigan", populate: false)
   when "Teacher Lookup Alabama"
-    @TeacherDoc.verify(state: "Alabama", populate: false)
+    @TeacherLookup.verify(state: "Alabama", populate: false)
   end
 end
