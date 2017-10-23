@@ -2,19 +2,19 @@
 Feature: Responder verification as a firefighter using document upload
 
   Background:
+    * I create a Fireman Doc page object
     * I visit IDP through the "responder" policy
     * I click on the Sign Up link
     * I sign up as a new user
     * I click on the No I am not ProBoard certified link
-    * I create a Fireman Doc page object
     * I click on the Begin link
 
-  @smoke @delete_experian_user1 @doc
+  @smoke @delete_current_user_email @doc
   # combo of experian/precise id check and unique doc
   Scenario: Successful verification as a Firefighter using doc upload
     * I generate a unique doc
     * I verify using firefighter documentation
-    * I approve the document in IDme admin
+    * I approve the document in the IDme support tool
     * I should be successfully verified as "Firefighter"
     * I verify user level properties for "Firefighter Doc"
 
@@ -28,7 +28,7 @@ Feature: Responder verification as a firefighter using document upload
   Scenario: Dupe attempt test for fireman doc upload (Error code 85)
     * I generate a unique doc
     * I verify using firefighter documentation
-    * I approve the document in IDme admin
+    * I approve the document in the IDme support tool
     * I clear the session from Authority
     * I create a new account after clearing my old "responder" session
     * I click on the No I am not ProBoard certified link
@@ -41,7 +41,7 @@ Feature: Responder verification as a firefighter using document upload
  Scenario: Prompt Error Code 86
     * I generate a unique doc
     * I verify using firefighter documentation
-    * I approve the document in IDme admin
+    * I approve the document in the IDme support tool
     * I clear the session from Authority
     * I create a new account after clearing my old "responder" session
     * I click on the No I am not ProBoard certified link
@@ -49,6 +49,7 @@ Feature: Responder verification as a firefighter using document upload
     * I submit the firefighter doc upload verification form as a "second unique user" record
     * I should see the error message "We’re sorry, but we were unable to verify your credentials with the document you provided. Please see our Support page for document specifications, or try another verification option."
 
+  @delete_current_user_email
   Scenario: Successful prompt for all required fields for Firefighter Doc Upload
     * I submit the empty Firefighter doc upload form
     * I should see error messages on required fields for "Firefighter doc upload"

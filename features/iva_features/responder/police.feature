@@ -2,18 +2,18 @@
 Feature: Responder verification as a police officer
 
   Background:
+    * I create a Police page object
     * I visit IDP through the "responder" policy
     * I click on the Sign Up link
     * I sign up as a new user
     * I click on the Verify as a state certified Police Officer
-    * I create a Police page object
     * I click on the Begin link
 
   #experian check and also need a unique doc for police
-  @smoke @delete_experian_user1 @doc
+  @smoke @delete_current_user_email @doc
   Scenario: Successful verification as a police officer
     * I verify using police officer documentation
-    * I approve the document in IDme admin
+    * I approve the document in the IDme support tool
     * I should be successfully verified as "Police Officer"
     * I verify user level properties for "Police"
 
@@ -26,7 +26,7 @@ Feature: Responder verification as a police officer
   @delete_experian_user1 @delete_current_user_email
   Scenario: Dupe attempt test for police officer (Error code 81)
     * I verify using police officer documentation
-    * I approve the document in IDme admin
+    * I approve the document in the IDme support tool
     * I clear the session from Authority
     * I create a new account after clearing my old "responder" session
     * I click on the Verify as a state certified Police Officer
@@ -38,7 +38,7 @@ Feature: Responder verification as a police officer
  @delete_experian_user1 @delete_current_user_email
  Scenario: Prompt Error Code 82
     * I verify using police officer documentation
-    * I approve the document in IDme admin
+    * I approve the document in the IDme support tool
     * I clear the session from Authority
     * I create a new account after clearing my old "responder" session
     * I click on the Verify as a state certified Police Officer
@@ -46,6 +46,7 @@ Feature: Responder verification as a police officer
     * I submit the police verification form as a "second unique user" record
     * I should see the error message "We’re sorry, but we were unable to verify your credentials with the document you provided. Please see our Support page for document specifications, or try another verification option."
 
+  @delete_current_user_emailß
   Scenario: Successful prompt for all required fields for Police Officer
     * I submit the empty Police form
     * I should see error messages on required fields for "Police"

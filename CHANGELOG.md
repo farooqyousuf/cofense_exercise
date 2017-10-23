@@ -4,6 +4,9 @@
 
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
+# 2.4.33 (10/23/17)
+- CORE-8338: Automate approving doc verification test attempts in support instead of admin
+
 # 2.4.32 (10/18/17)
 - CORE-8361: Fix Broken IVA Teacher Tests
 

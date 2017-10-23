@@ -1,5 +1,7 @@
 Given(/^I click on the Begin link$/) do
+  if page.has_link? "Begin"
     click_link("Begin")
+  end
 end
 
 Given(/^I should be successfully verified(?: as "(.*)")?$/) do |group|
