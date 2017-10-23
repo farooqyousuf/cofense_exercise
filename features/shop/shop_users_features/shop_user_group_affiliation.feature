@@ -2,7 +2,7 @@
 Feature: Test User Group Affiliation Page & Verification Features
 
   Background:
-    * I create "StudentCreds, ShopGroupAffiliationsPage, ShopLandingPage, AdminUsers, TeacherDoc, TeacherLookup, AdminTool, AdminTeacherVerifs, IVAGovernment" page objects
+    * I create "MilitaryEmail, StudentCreds, ShopGroupAffiliationsPage, ShopLandingPage, AdminUsers, TeacherDoc, TeacherLookup, AdminTool, AdminTeacherVerifs, IVAGovernment" page objects
     * I visit "ShopLandingPage"
     * I click on the Shop Sign Up link
     * I sign up as a new user
