@@ -3,6 +3,8 @@
 ### Released
 
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
+# 2.4.34 (10/24/17)
+-IDME-4043: Fix Shop Group Affiliation Verify Military
 
 # 2.4.34 (10/24/17)
 - HOTFIX: Fixed police feature test delete typo
