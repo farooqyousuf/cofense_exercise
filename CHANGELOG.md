@@ -5,6 +5,7 @@
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
 # 2.4.34 (10/24/17)
+- HOTFIX: Fixed police feature test delete typo
 - CORE-8394: Fix IDP Signin Test
 
 # 2.4.33 (10/23/17)
