@@ -42,8 +42,8 @@ government:
   verification_first_name: Farooq
   verification_last_name: Yousuf
   verification_birth_date: 01/05/1985
-  city: Ashburn
-  county: Loudoun
+  verification_city: Ashburn
+  verification_county: Loudoun
   state: California
   affiliation: Federal
   agency: CIA
