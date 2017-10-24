@@ -23,11 +23,11 @@ Given(/^I select to verify the First Responder Group Affiliation$/) do
 end
 
 Given(/^I click on the Shop Sign Up link$/) do
+  @ShopGroupAffiliationsPage.close_out_modal_if_present
   @ShopLandingPage.sign_up
 end
 
 Given(/^I verify user "([^"]*)" Group Affiliation is approved on Shop$/) do |group_affiliation|
-  @ShopGroupAffiliationsPage.navigate_to_group_affiliation_page_from_shop_homepage
   @AdminUsers.record_test_user_email
   expect(page).to have_css(".-verified", :text => group_affiliation)
   expect(page).to have_css(".-verified .-checkmark-square",:visible => true)

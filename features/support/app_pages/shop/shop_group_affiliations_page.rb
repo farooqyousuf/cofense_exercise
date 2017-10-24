@@ -29,4 +29,10 @@ class ShopGroupAffiliationsPage < IDmeBase
   def click_verify_student_affiliation_link
     find(:link, :text =>"Students").click
   end
+
+  def close_out_modal_if_present
+    if find("div.modal-body")
+      click_link("✕ Not now, just browsing")
+    end
+  end
 end
