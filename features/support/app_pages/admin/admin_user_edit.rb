@@ -60,17 +60,17 @@ include PageManagement
 
     when "SCRA Service Member"
       expand_verification_properties
-      indexes = [0, 3, 6, 9, 12, 15, 18, 21]
+      indexes = [15, 18, 21, 24, 27, 30, 33, 36]
       expected_levels = MilitarySCRA.new.service_member_user_properties_levels
 
     when "SCRA Veteran", "SCRA Retiree"
       expand_verification_properties
-      indexes = [0, 3, 6, 9, 12, 15, 18, 21, 24]
+      indexes = [15, 18, 21, 24, 27, 30, 33, 36, 39]
       expected_levels = MilitarySCRA.new.vet_user_properties_levels
 
     when "SCRA Mil Spouse", "SCRA Mil Family"
       expand_verification_properties
-      indexes = [0, 3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33]
+      indexes = [9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42]
       expected_levels = MilitarySCRA.new.family_user_properties_levels
 
     when "Teacher Doc Upload"
