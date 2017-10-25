@@ -10,32 +10,32 @@ Feature: Military verification using SCRA credentials
     * I click on the Verify using a government service record link
     * I click on the Begin link
 
-  @delete_scra_user1 @smoke
+  @delete_current_user_email @smoke
   #Unique dob and ssn pair
   Scenario: Successful verification as Service Member
     * I verify using SCRA for "Service Member"
     * I should be successfully verified as "Service Member"
     * I verify user level properties for "SCRA Service Member"
 
-  @delete_scra_user2
+  @delete_current_user_email
   Scenario: Successful verification as Veteran
     * I verify using SCRA for "Veteran"
     * I should be successfully verified as "Veteran"
     * I verify user level properties for "SCRA Veteran"
 
-  @delete_scra_user3
+  @delete_current_user_email
   Scenario: Successful verification as Military Spouse
     * I verify using SCRA for "Military Spouse"
     * I should be successfully verified as "Military Spouse"
     * I verify user level properties for "SCRA Mil Spouse"
 
-  @delete_scra_user4
+  @delete_current_user_email
   Scenario: Successful verification as Military Family
     * I verify using SCRA for "Military Family"
     * I should be successfully verified as "Military Family"
     * I verify user level properties for "SCRA Mil Family"
 
-  @delete_scra_user2
+  @delete_current_user_email
   Scenario: Successful verification as Retiree
     * I verify using SCRA for "Retiree"
     * I should be successfully verified as "Retiree"
