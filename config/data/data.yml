@@ -167,9 +167,9 @@ mil_doc:
   verification_service_member_birth_date: 09/03/1962
   verification_social: 666360453
   verification_social_confirm: 666360453
-  street: 406 S Market St
-  city: Emporia
-  zip: 66801
+  verification_street: 406 S Market St
+  verification_city: Emporia
+  verification_zip: 66801
   state: Kansas
 
 emt_national:

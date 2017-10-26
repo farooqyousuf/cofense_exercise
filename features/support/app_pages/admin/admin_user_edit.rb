@@ -50,7 +50,7 @@ include PageManagement
 
     when "Mil Email Service Member"
       expand_verification_properties
-      indexes = [0, 3, 6, 9]
+      indexes = [9, 12, 15, 18]
       expected_levels = MilitaryEmail.new.service_member_user_properties_levels
 
     when "Mil Email Mil Family"
