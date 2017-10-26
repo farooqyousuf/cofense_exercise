@@ -89,10 +89,10 @@ fail_experian:
   verification_birth_date: 06/04/1974
   verification_social: 222222222
   verification_social_confirm: 222222222
-  street: 3929 Main Road
-  city: Richmond
+  verification_street: 3929 Main Road
+  verification_city: Richmond
+  verification_zip: 23219
   state: Virginia
-  zip: 23219
   emt_city: McLean
   emt_county: Fairfax
   emt_zip: 12345
@@ -125,12 +125,12 @@ experian_user2:
   verification_birth_date: 04/30/1942
   verification_social: 666024882
   verification_social_confirm: 666024882
+  verification_street: 302 E Adams St
+  verification_city: Pittsburg
+  verification_zip: 66762
+  state: Kansas
   phone: 6202318771
   credit_card: 4888603132346941
-  street: 302 E Adams St
-  city: Pittsburg
-  state: Kansas
-  zip: 66762
 
 teacher_doc:
   first_name: Sue
@@ -167,9 +167,9 @@ mil_doc:
   verification_service_member_birth_date: 09/03/1962
   verification_social: 666360453
   verification_social_confirm: 666360453
-  street: 406 S Market St
-  city: Emporia
-  zip: 66801
+  verification_street: 406 S Market St
+  verification_city: Emporia
+  verification_zip: 66801
   state: Kansas
 
 emt_national:
