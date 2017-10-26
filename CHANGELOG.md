@@ -8,6 +8,7 @@ All notable changes to this project will be documented in this file. This projec
 - HOTIFX: Fixed Govt email happy path test
 - HOTIFX: Fixed Mil Doc happy path test
 - HOTIFX: Fixed EMT Doc happy path test
+- HOTFIX: Fixed Fireman Doc happy path test
 
 
 # 2.4.34 (10/24/17)
