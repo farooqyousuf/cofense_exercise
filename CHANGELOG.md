@@ -4,9 +4,9 @@
 
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
-# 2.4.34 (10/24/17)
-- HOTIFX: Fixed Govt email happy path test
-- IDME-4043: Fix Shop Group Affiliation Verify Military
+# 2.4.35 (10/26/17)
+- CORE-8414: Fix IVA Military Doc Tests
+- CORE-8404: Fix IVA Military SCRA Tests
 
 # 2.4.35 (10/26/17)
 - CORE-8414: Fix IVA Military Doc Tests
