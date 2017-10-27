@@ -30,15 +30,14 @@ Feature: Military verification using .mil email
     * I should be successfully verified as "Military Family"
     * I verify user level properties for "Mil Email Mil Family"
 
-
   @delete_current_user_email
-  Scenario: Denied attempt for military email verification (Error code 13)
+  Scenario: Denied attempt for military email verification (Error code A0506)
     * I submit the military email verification form as a "denied" record
     * I should see the error message "We're sorry, but the name you entered does not match the name specified by the email address. Please try a different verification option."
     * I verify the attempt is marked as "DENIED"
 
   @delete_current_user_email
-  Scenario: Duplicate attempt for military email verification (Error code 76)
+  Scenario: Dupe user attempt for military email verification (Error code A0500)
     * I submit the military email verification form as a "duplicate" record
     * I should see the error message "We’re sorry, but we are unable to verify your military status with the information you provided."
     * I verify the attempt is marked as "DUPLICATE"

@@ -11,14 +11,12 @@ All notable changes to this project will be documented in this file. This projec
 - HOTFIX: Fixed Fireman Doc happy path test
 - HOTFIX: Fixed Police happy path test
 
-
 # 2.4.34 (10/24/17)
 - HOTIFX: Fixed Govt email happy path test
-- IDME-4043: Fix Shop Group Affiliation Verify Military
-
-# 2.4.34 (10/24/17)
 - HOTFIX: Fixed police feature test delete typo
+- IDME-4043: Fix Shop Group Affiliation Verify Military
 - CORE-8394: Fix IDP Signin Test
+- CORE-8403: Fix IVA Military Email Tests
 
 # 2.4.33 (10/23/17)
 - CORE-8338: Automate approving doc verification test attempts in support instead of admin
