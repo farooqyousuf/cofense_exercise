@@ -37,13 +37,13 @@ class DocEMT < IDmeBase
   end
 
   def populate_fields(data:)
-    %w(verification_first_name verification_last_name verification_birth_date verification_social verification_social_confirm street city zip).each do |field|
+    %w(verification_first_name verification_last_name verification_birth_date verification_social verification_social_confirm verification_street verification_city verification_zip).each do |field|
       2.times {fill_in field, :with => data.fetch(field)}
     end
     sleep 2
 
-    escape_google_address_autocomplete(%w(#street #city))
-    select_option("#s2id_state", "Kansas")
+    escape_google_address_autocomplete(%w(#verification_street #verification_city))
+    select_option("#s2id_verification_state", "Kansas")
   end
 
   def click_verify_emt_doc_link

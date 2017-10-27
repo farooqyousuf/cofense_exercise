@@ -24,11 +24,11 @@ class IVAGovernment < IDmeBase
   end
 
   def populate_fields(data:, email:)
-    %w[verification_first_name verification_last_name city county verification_birth_date].each do |field|
+    %w[verification_first_name verification_last_name verification_city verification_county verification_birth_date].each do |field|
       2.times {fill_in field, :with => data.fetch(field)} #twice b/c dob doesn't get filled first time occasionally
     end
 
-    escape_google_address_autocomplete(%w(#city #county))
+    escape_google_address_autocomplete(%w(#verification_city #verification_county))
     populate_state(data.fetch("state"))
 
     %w[email verification_email_confirmation].each do |field|
@@ -49,7 +49,7 @@ class IVAGovernment < IDmeBase
   end
 
   def populate_state(state)
-    select_option("#s2id_state", state)
+    select_option("#s2id_verification_state", state)
   end
 
   def required_fields

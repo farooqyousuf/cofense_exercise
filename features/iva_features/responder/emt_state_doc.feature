@@ -13,6 +13,7 @@ Feature: Responder verification as an EMT using state doc upload
   #unique doc and user must pass experian check
   Scenario: Successful verification with EMT state doc upload
     * I generate a unique doc
+    * I pry
     * I verify using state EMT doc upload
     * I approve the document in IDme admin
     * I should be successfully verified as "EMT"

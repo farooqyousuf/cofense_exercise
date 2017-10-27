@@ -57,15 +57,15 @@ class MilitaryDoc < IDmeBase
 
   def populate_fields(data:)
     #fill reqd fields
-    %w(verification_service_member_first_name verification_service_member_last_name verification_social verification_social_confirm street city).each do |field|
+    %w(verification_service_member_first_name verification_service_member_last_name verification_social verification_social_confirm verification_street verification_city).each do |field|
       fill_in field, :with => data.fetch(field)
     end
 
-    %w(verification_service_member_birth_date zip).each do |field|
+    %w(verification_service_member_birth_date verification_zip).each do |field|
       2.times {fill_in field, :with => data.fetch(field)}
     end
 
-    escape_google_address_autocomplete(%w(#street #city))
+    escape_google_address_autocomplete(%w(#verification_street #verification_city))
 
     populate_state(data.fetch("state"))
   end
@@ -79,7 +79,7 @@ class MilitaryDoc < IDmeBase
   end
 
   def populate_state(state)
-    select_option("#s2id_state", state)
+    select_option("#s2id_verification_state", state)
   end
 
   def populate_dd214_type(value)

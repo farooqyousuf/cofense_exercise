@@ -42,8 +42,8 @@ government:
   verification_first_name: Farooq
   verification_last_name: Yousuf
   verification_birth_date: 01/05/1985
-  city: Ashburn
-  county: Loudoun
+  verification_city: Ashburn
+  verification_county: Loudoun
   state: California
   affiliation: Federal
   agency: CIA
@@ -106,10 +106,10 @@ experian_user:
   verification_birth_date: 09/03/1962
   verification_social: 666360453
   verification_social_confirm: 666360453
-  street: 406 S Market St
-  city: Emporia
+  verification_street: 406 S Market St
+  verification_city: Emporia
   state: Kansas
-  zip: 66801
+  verification_zip: 66801
   emt_city: Emporia
   emt_county: Loudoun
   emt_zip: 66801
@@ -167,9 +167,9 @@ mil_doc:
   verification_service_member_birth_date: 09/03/1962
   verification_social: 666360453
   verification_social_confirm: 666360453
-  street: 406 S Market St
-  city: Emporia
-  zip: 66801
+  verification_street: 406 S Market St
+  verification_city: Emporia
+  verification_zip: 66801
   state: Kansas
 
 emt_national:
