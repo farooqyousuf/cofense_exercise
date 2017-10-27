@@ -49,7 +49,7 @@ class IVAGovernment < IDmeBase
   end
 
   def populate_state(state)
-    select_option("#s2id_state", state)
+    select_option("#s2id_verification_state", state)
   end
 
   def required_fields

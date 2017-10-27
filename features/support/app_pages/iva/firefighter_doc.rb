@@ -32,18 +32,18 @@ class DocFirefighter < IDmeBase
   end
 
   def populate_fields(data:)
-    %w(verification_first_name verification_last_name verification_social verification_social_confirm street city).each do |field|
+    %w(verification_first_name verification_last_name verification_social verification_social_confirm verification_street verification_city).each do |field|
       fill_in field, with: data.fetch(field)
     end
 
-    escape_google_address_autocomplete(%w(#street #city))
+    escape_google_address_autocomplete(%w(#verification_street #verification_city))
 
-    %w(verification_birth_date zip).each do |field|
+    %w(verification_birth_date verification_zip).each do |field|
       2.times { fill_in field, with: data.fetch(field) }
     end
 
     #Added the 2 lines above populate_second_state to deal with the random dropdown not working on occasion
-    all("#s2id_state")[0].click
+    all("#s2id_verification_state")[0].click
     pick_result("Kansas")
   end
 
