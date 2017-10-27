@@ -58,13 +58,13 @@ Feature: Military verification using document upload
     * Multi-family: I verify "fourth" family via "mil doc" is not allowed to verify
 
   @delete_current_user_email
-  Scenario: Denied attempt for Military Document verification (Error code 15)
+  Scenario: Denied attempt for Military Document verification (Error code A0602)
     * I submit the military document verification form as a "denied" record
     * I should see the error message "We're sorry, but we were unable to verify the information you provided. The information entered must match the information on official records. Note: If you've recently had a name change, try your maiden or prior name."
     * I verify the attempt is marked as "DENIED"
 
   @delete_experian_user1 @delete_current_user_email
-  Scenario: Dupe attempt test for Military Document (Error code 77)
+  Scenario: Dupe user attempt test for Military Document (Error code A0600)
     * I verify using military documentation for "Service Member"
     * I approve the document in the IDme support tool
     * I clear the session from Authority
@@ -76,7 +76,7 @@ Feature: Military verification using document upload
     * I verify the attempt is marked as "DUPLICATE"
 
   @delete_experian_user1 @delete_current_user_email
-  Scenario: Prompt Error Code 78
+  Scenario: Dupe doc attempt test for Military Document (Error code A0601)
     * I verify using military documentation for "Service Member"
     * I approve the document in the IDme support tool
     * I clear the session from Authority
