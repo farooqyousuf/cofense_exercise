@@ -24,20 +24,20 @@ class StateLookupEMT < IDmeBase
   end
 
   def populate_fields(data:)
-    %w(verification_first_name verification_last_name verification_social verification_social_confirm street city emt_city emt_county verification_emt_number).each do |field|
+    %w(verification_first_name verification_last_name verification_social verification_social_confirm verification_street verification_city verification_emt_city verification_emt_county verification_emt_number).each do |field|
         fill_in field, :with => data.fetch(field), :match => :prefer_exact
     end
 
-    %w(verification_birth_date zip emt_zip).each do |field|
+    %w(verification_birth_date verification_zip verification_emt_zip).each do |field|
       2.times {fill_in field, :with => data.fetch(field)}
     end
 
-    escape_google_address_autocomplete(%w(#street #emt_city))
+    escape_google_address_autocomplete(%w(#verification_street #verification_emt_city))
 
     #the 4 lines (2 repeated) below help to manipulate the drop down, otherwise it give's an error.
-    all("#s2id_state")[0].click
+    all("#s2id_verification_state")[0].click
     pick_result("Kansas")
-    all("#s2id_state")[0].click
+    all("#s2id_verification_state")[0].click
     pick_result("Kansas")
   end
 
@@ -56,5 +56,3 @@ class StateLookupEMT < IDmeBase
   end
 
 end
-
-

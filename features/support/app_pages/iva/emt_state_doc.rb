@@ -30,13 +30,13 @@ class StateDocEMT < IDmeBase
 
   def populate_fields(data:)
     %w(verification_first_name verification_last_name verification_birth_date verification_social verification_social_confirm
-      street city zip).each do |field|
+      verification_street verification_city verification_zip).each do |field|
       2.times {fill_in field, :with => data.fetch(field), :match => :prefer_exact}
     end
 
-    escape_google_address_autocomplete(%w(#street))
+    escape_google_address_autocomplete(%w(#verification_street))
 
-    all("#s2id_state")[0].click
+    all("#s2id_verification_state")[0].click
     pick_result("Kansas")
   end
 
