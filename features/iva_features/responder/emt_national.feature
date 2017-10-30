@@ -2,11 +2,11 @@
 Feature: Responder verification as an nationally certified EMT
 
   Background:
+    * I create a EMT National page object
     * I visit IDP through the "responder" policy
     * I click on the Sign Up link
     * I sign up as a new user
     * I click on the Verify using EMT National link
-    * I create a EMT National page object
     * I click on the Begin link
 
   @smoke @delete_natl_emt
@@ -40,9 +40,3 @@ Feature: Responder verification as an nationally certified EMT
   Scenario: Successfully prompt for all required fields
     * I submit the empty National EMT form
     * I should see error messages on required fields for "National EMT"
-
-
-
-
-
-
