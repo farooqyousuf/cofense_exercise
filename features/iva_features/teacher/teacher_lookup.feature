@@ -2,12 +2,12 @@
 Feature: Teacher verification using state lookup
 
   Background:
-    * I create "AdminUsers, TeacherDoc, TeacherLookup, AdminTool, AdminTeacherVerifs" page objects
+    * I create "AdminUsers, TeacherDoc, AdminTool" page objects
+    * I create a Teacher Lookup page object
     * I visit IDP through the "teacher" policy
     * I click on the Sign Up link
     * I sign up as a new user
     * I click on the verify using teacher state lookup link
-    * I create a Teacher Lookup page object
 
   @smoke @delete_current_user_email
   #unique combo of ssn/dob
@@ -15,7 +15,7 @@ Feature: Teacher verification using state lookup
     * I select the teacher state "Delaware"
     * I click on the Begin link
     * I verify using teacher credentials with "no license and no ssn"
-    * I "approve" the teacher verification in IDme admin
+    * I approve the document in the IDme support tool
     * I should be successfully verified
     * I verify user level properties for "Teacher State Lookup - No License/No SSN"
 
@@ -24,7 +24,7 @@ Feature: Teacher verification using state lookup
     * I select the teacher state "New Mexico"
     * I click on the Begin link
     * I verify using teacher credentials with "no license and short ssn"
-    * I "approve" the teacher verification in IDme admin
+    * I approve the document in the IDme support tool
     * I should be successfully verified
     * I verify user level properties for "Teacher State Lookup - No License/Short SSN"
 
@@ -33,7 +33,7 @@ Feature: Teacher verification using state lookup
     * I select the teacher state "Michigan"
     * I click on the Begin link
     * I verify using teacher credentials with "license and no ssn"
-    * I "approve" the teacher verification in IDme admin
+    * I approve the document in the IDme support tool
     * I should be successfully verified
     * I verify user level properties for "Teacher State Lookup - License/No SSN"
 
@@ -42,7 +42,7 @@ Feature: Teacher verification using state lookup
     * I select the teacher state "Alabama"
     * I click on the Begin link
     * I verify using teacher credentials with "license and short ssn"
-    * I "approve" the teacher verification in IDme admin
+    * I approve the document in the IDme support tool
     * I should be successfully verified
     * I verify user level properties for "Teacher State Lookup - License/Short SSN"
 
@@ -51,7 +51,7 @@ Feature: Teacher verification using state lookup
     * I select the teacher state "Delaware"
     * I click on the Begin link
     * I submit the teacher lookup verification form as a "denied" record
-    * I "deny" the teacher verification in IDme admin
+    * I deny the document in the IDme support tool
     * I should see the error message "We’re sorry, but we were unable to confirm your status as a teacher using the information you provided. Please double-check your information for errors and try again. Also note that only licensed, classroom teachers are eligible. For additional help, please visit our Support page. Thank you."
     * I verify the attempt is marked as "DENIED"
 
