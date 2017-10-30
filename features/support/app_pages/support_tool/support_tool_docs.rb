@@ -15,6 +15,13 @@ include JavascriptAlerts
     click_button("Update")
   end
 
+  def deny_doc
+    open_newest
+    find("#verification_attempt_decision_deny").click
+    select('Other', :from => 'verification_attempt_reason_id')
+    click_button("Update")
+  end
+
   def open_newest
     sleep 1
     first(".odd > td > a").click

@@ -47,8 +47,8 @@ class TeacherLookup < IDmeBase
   def populate_fields(state:, fname:, lname:, dob:, teacher_city:, district:, school:)
     fill_in "verification_first_name", :with => fname
     fill_in "verification_last_name", :with => lname
-    fill_in "teacher_city", :with => teacher_city
-    fill_in "district", :with => district
+    fill_in "verification_teacher_city", :with => teacher_city
+    fill_in "verification_teacher_district", :with => district
     fill_in "verification_school", :with => school
     2.times {fill_in "verification_birth_date", :with => dob}
 
@@ -61,7 +61,7 @@ class TeacherLookup < IDmeBase
       fill_teacher_license_number
     end
 
-    escape_google_address_autocomplete(%w(#teacher_city #district))
+    escape_google_address_autocomplete(%w(#verification_teacher_city #verification_teacher_district))
   end
 
   def fill_teacher_license_number
