@@ -4,11 +4,10 @@
 
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
-# 2.4.36 (10/30/17)
+# 2.4.37 (10/30/17)
 - CORE-8405: Fix IVA Responder EMT Tests
 
-# 2.4.35 (10/26/17)
-- CORE-8414: Fix IVA Military Doc Tests
+# 2.4.36 (10/27/17)
 - CORE-8404: Fix IVA Military SCRA Tests
 
 # 2.4.35 (10/26/17)
