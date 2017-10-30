@@ -2,20 +2,19 @@
 Feature: Responder verification as an EMT using state doc upload
 
   Background:
+    * I create a EMT State Doc page object
     * I visit IDP through the "responder" policy
     * I click on the Sign Up link
     * I sign up as a new user
     * I click on the Verify using EMT State Doc link
-    * I create a EMT State Doc page object
     * I click on the Begin link
 
   @smoke @delete_experian_user1
   #unique doc and user must pass experian check
   Scenario: Successful verification with EMT state doc upload
     * I generate a unique doc
-    * I pry
     * I verify using state EMT doc upload
-    * I approve the document in IDme admin
+    * I approve the document in the IDme support tool
     * I should be successfully verified as "EMT"
     * I verify user level properties for "EMT State Doc"
 
@@ -29,7 +28,7 @@ Feature: Responder verification as an EMT using state doc upload
   Scenario: Dupe attempt for EMT state document upload
     * I generate a unique doc
     * I verify using state EMT doc upload
-    * I approve the document in IDme admin
+    * I approve the document in the IDme support tool
     * I clear the session from Authority
     * I create a new account after clearing my old "responder" session
     * I click on the Verify using EMT State Doc link
@@ -41,4 +40,3 @@ Feature: Responder verification as an EMT using state doc upload
   Scenario: Successful prompt for all required fields for EMT state doc upload
     * I submit the empty state EMT doc upload form
     * I should see error messages on required fields for "EMT state doc"
-

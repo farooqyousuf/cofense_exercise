@@ -92,11 +92,11 @@ fail_experian:
   verification_street: 3929 Main Road
   verification_city: Richmond
   verification_zip: 23219
-  state: Virginia
-  emt_city: McLean
-  emt_county: Fairfax
-  emt_zip: 12345
+  verification_emt_city: McLean
+  verification_emt_county: Fairfax
+  verification_emt_zip: 12345
   verification_emt_number: FJDL2
+  state: Virginia
 
 
 experian_user:
@@ -108,12 +108,12 @@ experian_user:
   verification_social_confirm: 666360453
   verification_street: 406 S Market St
   verification_city: Emporia
-  state: Kansas
   verification_zip: 66801
-  emt_city: Emporia
-  emt_county: Loudoun
-  emt_zip: 66801
+  verification_emt_city: Emporia
+  verification_emt_county: Loudoun
+  verification_emt_zip: 66801
   verification_emt_number: FJDL2
+  state: Kansas
 
 experian_user2:
   school: George Mason University
