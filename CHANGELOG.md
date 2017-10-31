@@ -4,6 +4,9 @@
 
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
+# 2.4.38 (10/31/17)
+- HOTFIX: Fixed Student Doc happy path test
+
 # 2.4.37 (10/30/17)
 - CORE-8338: Automate approving teacher lookup verification test attempts in support instead of admin
 - CORE-8406: Fix IVA Firefighter ProBoard Tests
