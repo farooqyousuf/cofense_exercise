@@ -6,6 +6,7 @@ All notable changes to this project will be documented in this file. This projec
 
 # 2.4.38 (10/31/17)
 - HOTFIX: Fixed Student Doc happy path test
+- HOTFIX: Fixed Teacher Doc happy path test
 
 # 2.4.37 (10/30/17)
 - CORE-8338: Automate approving teacher lookup verification test attempts in support instead of admin

@@ -34,22 +34,22 @@ class TeacherDoc < IDmeBase
   end
 
   def populate_fields(data:)
-    %w(verification_first_name verification_last_name verification_social verification_social_confirm street city).each do |field|
+    %w(verification_first_name verification_last_name verification_social verification_social_confirm verification_street verification_city).each do |field|
       fill_in field, :with => data.fetch(field)
     end
 
-    %w(verification_birth_date zip).each do |field|
+    %w(verification_birth_date verification_zip).each do |field|
       2.times {fill_in field, :with => data.fetch(field)}
     end
 
-    %w(teacher_city district verification_school).each do |field|
+    %w(verification_teacher_city verification_teacher_district verification_school).each do |field|
       fill_in field, :with => Faker::Address.city
     end
 
     fill_in "verification_teacher_number", with: Faker::Number.number(10)
 
-    escape_google_address_autocomplete(%w(#street #city))
-    select_option("#s2id_state", data.fetch("state"))
+    escape_google_address_autocomplete(%w(#verification_street #verification_city))
+    select_option("#s2id_verification_state", data.fetch("state"))
   end
 
   def click_verify_by_doc
