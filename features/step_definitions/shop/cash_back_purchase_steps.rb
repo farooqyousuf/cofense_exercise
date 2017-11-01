@@ -3,6 +3,7 @@ Given(/^I click on SignIn link$/) do
 end
 
 Given(/^I click on the Sign up link$/) do
+  @ShopGroupAffiliationsPage.close_out_modal_if_present
   first(:link, "Sign Up").click
 end
 
@@ -11,8 +12,7 @@ Given(/^I login to Shop as a "([^"]*)" user$/) do |user_type|
          when "Military"       then FigNewton.shop_users.military
          end
 
-  @shop = ShopLandingPage.new
-  @shop.sign_in(user, FigNewton.shop_users.general_password)
+  @ShopLandingPage.sign_in(user, FigNewton.shop_users.general_password)
 end
 
 Given(/^Cash Back Activity Tab should be selected$/) do
@@ -51,10 +51,12 @@ Given(/^I check that the cash back is displayed on the Purchases Table$/) do
   expect(page).to have_css("#cash-back-purchases tbody td:nth-child(5)",:text =>"$6.60")
 end
 
-Given(/^I save the new user email$/) do
-  @admin_user = AdminUsers.new
-  @admin_tool = AdminTool.new
-  @admin_user.record_test_user_email
+Given(/^I click on link to view My Cash$/) do
+  @CashBack_PurchasesPage.click_on_my_cash
+end
+
+Given(/^I verify the new user email$/) do
+  @CashBack_PurchasesPage.record_new_user_email
 end
 
 Given(/^I create a review for the Cash Back purchase$/) do

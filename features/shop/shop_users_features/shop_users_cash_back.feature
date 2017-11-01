@@ -2,11 +2,12 @@
 Feature: Test the shop_users Cash Back - My Cash
 
   Background:
+   * I create "ShopLandingPage, ShopGroupAffiliationsPage, CashBack_PurchasesPage" page objects
    * I visit "ShopLandingPage"
    * I click on the Shop Sign Up link
    * I sign up as a new user
-   * I visit "CashBack_PurchasesPage"
-   * I save the new user email
+   * I click on link to view My Cash
+   * I verify the new user email
 
    @smoke
    Scenario: Purchases - Summary Info Card Check
