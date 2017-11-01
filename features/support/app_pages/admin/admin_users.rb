@@ -129,5 +129,4 @@ include JavascriptAlerts
   def record_test_user_email
     @user_identifier = find(".user-menu__header").text
   end
-
 end

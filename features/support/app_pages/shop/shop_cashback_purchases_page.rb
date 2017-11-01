@@ -46,4 +46,12 @@ class CashBack_PurchasesPage < IDmeBase
   def enter_paypal_email
     find(:xpath, "//*[@id='user_paypal_account']").set(FigNewton.oauth.paypal_user)
   end
+
+  def record_new_user_email
+    @user_identifier = find(".user-menu__header").text
+  end
+
+  def click_on_my_cash
+    click_link("My Cash")
+  end
 end
