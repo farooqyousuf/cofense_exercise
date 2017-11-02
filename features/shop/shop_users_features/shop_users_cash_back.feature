@@ -2,7 +2,7 @@
 Feature: Test the shop_users Cash Back - My Cash
 
   Background:
-   * I create "ShopLandingPage, ShopGroupAffiliationsPage, CashBack_PurchasesPage" page objects
+   * I create "ShopLandingPage, ShopGroupAffiliationsPage, CashBack_PurchasesPage, ShopCashBackPage" page objects
    * I visit "ShopLandingPage"
    * I click on the Shop Sign Up link
    * I sign up as a new user

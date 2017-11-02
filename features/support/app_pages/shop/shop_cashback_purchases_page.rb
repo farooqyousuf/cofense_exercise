@@ -40,7 +40,7 @@ class CashBack_PurchasesPage < IDmeBase
   end
 
   def click_update_payment_settings_modal_button
-    find(".modal-block input[value='Update Payment Settings']").click
+    find("div.col.span-4").native.send_keys :return
   end
 
   def enter_paypal_email
