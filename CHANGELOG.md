@@ -1,5 +1,7 @@
 # Change Log
 
+- IDME-4022: Delete shop favorites tests
+
 ### Released
 
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
