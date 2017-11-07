@@ -26,4 +26,16 @@ include JavascriptAlerts
     sleep 1
     first(".odd > td > a").click
   end
+
+  def verify_doc_upload(username)
+    open_newest
+    page.assert_text username
+    find("div.col-md-6.sidebar > a:nth-child(2)").text.should === "Download .png"
+  end
+
+  def verify_unique_doc_upload(username, document: "none")
+    open_newest
+    page.assert_text username
+    find("div.col-md-6.sidebar > a:nth-child(2)").text.should === "Download .#{document}"
+  end
 end

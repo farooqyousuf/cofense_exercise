@@ -6,6 +6,9 @@
 
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
+# 2.4.39 (11/1/17)
+- CORE-8446: Fix Doc Upload Revelator Tests
+
 # 2.4.38 (10/31/17)
 - HOTFIX: Fixed Student Doc happy path test
 - HOTFIX: Fixed Teacher Doc happy path test
