@@ -1,4 +1,4 @@
-@regression @iva @responder @desktop
+@regression @iva @responder @desktop @doc
 Feature: Responder verification as a police officer
 
   Background:
@@ -10,7 +10,7 @@ Feature: Responder verification as a police officer
     * I click on the Begin link
 
   #experian check and also need a unique doc for police
-  @smoke @delete_current_user_email @doc
+  @smoke @delete_current_user_email
   Scenario: Successful verification as a police officer
     * I verify using police officer documentation
     * I approve the document in the IDme support tool

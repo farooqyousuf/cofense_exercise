@@ -1,4 +1,4 @@
-@regression @iva @teacher @desktop
+@regression @iva @teacher @desktop @doc
 Feature: Teacher verification using document upload
 
   Background:
@@ -10,7 +10,7 @@ Feature: Teacher verification using document upload
     * I select the teacher state "Maryland"
     * I click on the Begin link
 
-  @smoke @delete_current_user_email @doc
+  @smoke @delete_current_user_email
   #experian/precise id check
   Scenario: Successful verification
     * I verify using teacher documentation

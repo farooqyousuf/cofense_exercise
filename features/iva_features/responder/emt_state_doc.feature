@@ -1,4 +1,4 @@
-@regression @iva @responder @desktop @emt
+@regression @iva @responder @desktop @emt @doc
 Feature: Responder verification as an EMT using state doc upload
 
   Background:

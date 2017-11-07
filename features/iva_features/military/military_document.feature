@@ -1,4 +1,4 @@
-@regression @iva @military @desktop
+@regression @iva @military @desktop @doc
 Feature: Military verification using document upload
 
   Background:
@@ -9,7 +9,7 @@ Feature: Military verification using document upload
     * I click on the Military Verify by uploading documentation link
     * I click on the Begin link
 
-  @smoke @delete_current_user_email @doc
+  @smoke @delete_current_user_email
   #unique doc upload and user creds have to pass experian/preciseID
   Scenario: Successful verification as a Service Member
     * I verify using military documentation for "Service Member"

@@ -1,4 +1,4 @@
-@regression @iva @responder @desktop @emt
+@regression @iva @responder @desktop @emt @doc
 Feature: Responder verification as an EMT using document upload
 
   Background:
@@ -9,7 +9,7 @@ Feature: Responder verification as an EMT using document upload
     * I click on the Verify using EMT Doc link
     * I click on the Begin link
 
-  @delete_current_user_email @smoke @doc
+  @delete_current_user_email @smoke
   Scenario: Successful verificaton with doc upload
     * I generate a unique doc
     * I verify using EMT doc upload

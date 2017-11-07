@@ -1,4 +1,4 @@
-@regression @iva @student @desktop
+@regression @iva @student @desktop @doc
 Feature: Student verification using document upload
 
 Background:
@@ -9,7 +9,7 @@ Background:
     * I click on the Verify by uploading documentation link
     * I click on the Begin link
 
-  @smoke @delete_current_user_email @doc
+  @smoke @delete_current_user_email
   #unique dob/ssn and vetted by Experian/PreciseID, have to use their test data
   Scenario: Successful verification
     * I verify using student documentation

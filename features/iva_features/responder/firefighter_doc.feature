@@ -1,4 +1,4 @@
-@regression @iva @responder @desktop
+@regression @iva @responder @desktop @doc
 Feature: Responder verification as a firefighter using document upload
 
   Background:
@@ -9,7 +9,7 @@ Feature: Responder verification as a firefighter using document upload
     * I click on the No I am not ProBoard certified link
     * I click on the Begin link
 
-  @smoke @delete_current_user_email @doc
+  @smoke @delete_current_user_email
   # combo of experian/precise id check and unique doc
   Scenario: Successful verification as a Firefighter using doc upload
     * I generate a unique doc
