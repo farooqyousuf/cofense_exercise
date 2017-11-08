@@ -27,6 +27,19 @@ include JavascriptAlerts
     first(".odd > td > a").click
   end
 
+  def search_user_by_email(email_address:)
+    find("input[type='text']").set email_address
+    find("input[type='text']").native.send_keys(:return)
+  end
+
+  def view_searched_user_verification_attempt
+    open_newest
+    click_link("View Verification Attempts (1)")
+    sleep 1
+    use_last_browser_created
+    open_newest
+  end
+
   def verify_doc_upload(username)
     open_newest
     page.assert_text username
@@ -37,5 +50,14 @@ include JavascriptAlerts
     open_newest
     page.assert_text username
     find("div.col-md-6.sidebar > a:nth-child(2)").text.should === "Download .#{document}"
+  end
+
+  def verify_doc_is_not_uploaded(username)
+    search_user_by_email(email_address: username)
+    view_searched_user_verification_attempt
+    
+    page.assert_text username
+    doc_upload = "Download ."
+    page.has_text?(doc_upload).should == false
   end
 end
