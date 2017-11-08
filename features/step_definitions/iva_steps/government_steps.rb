@@ -5,6 +5,7 @@ end
 Given(/^I should be on the government verification screen$/) do
   find(@IVAGovernment.header_css).visible?
   expect(page).to have_content "Government ID"
+  click_link("Begin")
 end
 
 Given(/^I submit the empty government form$/) do

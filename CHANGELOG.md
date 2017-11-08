@@ -1,10 +1,14 @@
 # Change Log
 
 - IDME-4022: Delete shop favorites tests
+- IDME-3974: Shop user group affiliations verify government
 
 ### Released
 
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
+
+# 2.4.40 (11/13/17)
+- CORE-7442: IVA flow: Denied doc upload formats
 
 # 2.4.39 (11/1/17)
 - CORE-8446: Fix Doc Upload Revelator Tests

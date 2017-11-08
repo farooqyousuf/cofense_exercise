@@ -1,6 +1,7 @@
 require_relative '../base_classes/base_idme.rb'
 
 class SupportTool < IDmeBase
+include PageManagement
 
   def initialize
     super(FigNewton.support_tool.base_url)
