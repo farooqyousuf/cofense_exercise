@@ -100,7 +100,6 @@ shop:
   user_lname: Sparrow
   user_account_edit: https://shop-staging.idmeinc.net/account/edit
   new_password: JollyRoger123
-  favorites_page: https://shop-staging.idmeinc.net/favorites
   group_affiliations_page: https://shop-staging.idmeinc.net/cash-back/group-affiliations
   merchant_page: https://shop-staging.idmeinc.net/stores/175-fanatics
   merchant_review_text: Review for Fanatics By William Wallace on July 05, 2016 I just got a discount at Fanatics and earned $6.60 in cash back.

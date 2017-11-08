@@ -25,11 +25,6 @@ Given(/^I check the store offer card links for "([^"]*)" User$/) do |user_type|
   expect(page).to have_css(".resource-card .offer-card__share-alt",:match => :first , :text =>"Share with Friends")
 end
 
-Given(/^I check that the store offer card favorite and report bug is visible$/) do
-  expect(page).to have_css(".resource-card .save-offer", :match =>:first)
-  expect(page).to have_css(".resource-card .report-offer", :match =>:first)
-end
-
 Given(/^I click to see all promo code offers$/) do
   @shop_offers.click_promocodes_sidebar_link
   expect(page.current_url).to eql(FigNewton.shop.offers_promo_code_index_page)
