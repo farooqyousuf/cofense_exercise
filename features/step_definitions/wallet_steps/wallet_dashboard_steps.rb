@@ -35,3 +35,7 @@ Given(/^I verify that all the main nav tab links are directing to correct pages$
   @WalletDashboard.click_on_business_shared_nav_tab
   expect(page).to have_current_path(FigNewton.idme.business_page, :url => true)
 end
+
+Given(/^I verify that all the sub\-nav tab links are directing to correct pages$/) do
+  pending # Write code here that turns the phrase above into concrete actions
+end

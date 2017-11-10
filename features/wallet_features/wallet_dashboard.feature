@@ -13,7 +13,6 @@ Scenario: Verify Wallet Shared Main Nav
   * I verify that the main nav Wallet link takes me to the correct page
   * I verify that all the main nav tab links are directing to correct pages
 
-@wip
 Scenario: Verify Wallet Sub-Nav bar
   * I verify that all the sub-nav tab links are directing to correct pages
 
