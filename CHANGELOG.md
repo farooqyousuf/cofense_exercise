@@ -2,6 +2,7 @@
 
 - IDME-4022: Delete shop favorites tests
 - IDME-3974: Shop user group affiliations verify government
+- IDME-4128: Fix shop user group affiliations first responder
 
 ### Released
 
