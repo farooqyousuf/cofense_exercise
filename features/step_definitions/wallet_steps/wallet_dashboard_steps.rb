@@ -31,11 +31,27 @@ Given(/^I verify that the main nav Wallet link takes me to the correct page$/) d
   expect(page).to have_current_path(FigNewton.wallet.homepage.url, :url => true)
 end
 
-Given(/^I verify that all the main nav tab links are directing to correct pages$/) do
+Given(/^I verify that the main nav Business link takes me to the correct page$/) do
   @WalletDashboard.click_on_business_shared_nav_tab
   expect(page).to have_current_path(FigNewton.idme.business_page, :url => true)
 end
 
-Given(/^I verify that all the sub\-nav tab links are directing to correct pages$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+Given(/^I verify that the sub\-nav Dashboard link directs me to the correct page$/) do
+  @WalletDashboard.click_wallet_subnav_dashboard_tab
+  expect(page).to have_current_path("/")
+end
+
+Given(/^I verify that the sub\-nav IDs and Logins link directs me to the correct page$/) do
+  @WalletDashboard.click_wallet_subnav_ids_logins_tab
+  expect(page).to have_current_path("/ids")
+end
+
+Given(/^I verify that the sub\-nav Settings link directs me to the correct page$/) do
+  @WalletDashboard.click_wallet_subnav_settings_tab
+  expect(page).to have_current_path("/settings")
+end
+
+Given(/^I verify that the sub\-nav Activity link directs me to the correct page$/) do
+  @WalletDashboard.click_wallet_subnav_activity_tab
+  expect(page).to have_current_path("/activity")
 end
