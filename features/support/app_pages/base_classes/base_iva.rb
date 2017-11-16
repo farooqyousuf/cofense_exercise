@@ -88,6 +88,9 @@ include DataMagic
     if (document == "pdf") || (document == "docx")
       Dir.mkdir("./test_documents") unless Dir.exists?("./test_documents")
       page.driver.browser.all(:xpath, '//input[@type="file"]')[number].send_keys("#{Dir.pwd}/test_documents/test_#{document}.#{document}")
+    elsif (document == "over_16MB")
+      Dir.mkdir("./test_documents") unless Dir.exists?("./test_documents")
+      page.driver.browser.all(:xpath, '//input[@type="file"]')[number].send_keys("#{Dir.pwd}/test_documents/test_#{document}.gif")
     else
       page.driver.browser.all(:xpath, '//input[@type="file"]')[number].send_keys("#{Dir.pwd}/screenshots/screenshot_#{document}.#{document}")
     end
