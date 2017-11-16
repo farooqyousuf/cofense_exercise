@@ -1,11 +1,13 @@
 # Change Log
+### Released
+All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
+# 2.4.41 (11/16/17)
+- IDME-3763: Wallet Dashboard: Verify Sub-Nav Bar
+
+# 2.4.40 (11/8/17)
 - IDME-4022: Delete shop favorites tests
 - IDME-3974: Shop user group affiliations verify government
-
-### Released
-
-All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
 # 2.4.39 (11/1/17)
 - CORE-8446: Fix Doc Upload Revelator Tests
