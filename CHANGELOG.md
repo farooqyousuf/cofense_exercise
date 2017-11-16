@@ -7,6 +7,9 @@
 
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
+# 2.4.41 (11/28/17)
+- CORE-7443: IVA flow: Greater than 16MB doc upload tests
+
 # 2.4.40 (11/13/17)
 - CORE-7442: IVA flow: Denied doc upload formats
 
