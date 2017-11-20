@@ -19,7 +19,6 @@ Scenario: Verify Wallet Sub-Nav bar
   * I verify that the sub-nav Settings link directs me to the correct page
   * I verify that the sub-nav Activity link directs me to the correct page
 
-@wip
 Scenario: Verify Wallet Shared Side Nav
   * I click on the shared side navigation
   * I verify user email is displayed

@@ -55,3 +55,16 @@ Given(/^I verify that the sub\-nav Activity link directs me to the correct page$
   @WalletDashboard.click_wallet_subnav_activity_tab
   expect(page).to have_current_path("/activity")
 end
+
+Given(/^I verify user email is displayed$/) do
+  sidebar_email = find("ul.shared-nav-user-menu-details li:nth-child(2)").text 
+  test_email = FigNewton.shop_users.military
+end
+
+Given(/^I verify membership date is displayed correctly$/) do
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+Given(/^I verify that "([^"]*)" link directs me to correct page$/) do |arg1|
+  pending # Write code here that turns the phrase above into concrete actions
+end
