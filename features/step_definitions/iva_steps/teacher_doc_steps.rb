@@ -8,6 +8,10 @@ end
 
 Given(/^I select the teacher state "([^"]*)"$/) do |state|
   @TeacherDoc.populate_teacher_first_state(state)
+  sleep 3
+  if (page.has_content?('Verify using your teacher credentials')) == false
+    @TeacherDoc.populate_teacher_first_state(state)
+  end
 end
 
 Given(/^I should be on the teacher verification screen$/) do
