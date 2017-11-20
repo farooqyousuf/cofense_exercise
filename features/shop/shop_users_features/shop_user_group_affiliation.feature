@@ -35,6 +35,7 @@ Feature: Test User Group Affiliation Page & Verification Features
     * I click on the Begin link
     * I verify using teacher credentials with "no license and no ssn"
     * I "approve" the teacher verification in IDme admin
+    * I reload the group affiliations page
     * I verify user "Teachers" Group Affiliation is approved on Shop
 
   Scenario: Verify a Government Group Affiliation
