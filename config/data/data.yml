@@ -145,7 +145,7 @@ teacher_doc:
 firefighter_proboard:
   verification_first_name: Anika
   verification_last_name: Smith
-  verification_birth_date: 01/01/1942
+  verification_birth_date: 01/01/1982
   verification_social: 9103
   verification_social_confirm: 9103
   state: Virginia
