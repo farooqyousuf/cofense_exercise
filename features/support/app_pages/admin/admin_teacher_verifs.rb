@@ -6,13 +6,16 @@ include PageManagement
 include JavascriptAlerts
 
   def initialize
-    super("#{FigNewton.admin.base_url}/verification/teachers")
+    super("#{FigNewton.admin.base_url}/users")
   end
 
   def approve_doc
     open_newest
-    find("#decision_accept").click
-    click_button("Update")
+    click_on("Verify user")
+    select("Teacher", :from => "affiliation_group_id")
+    uncheck("Sandbox")
+    fill_in "Comment", :with => "I am a teacher"
+    click_button("Verify")
   end
 
   def deny_doc
