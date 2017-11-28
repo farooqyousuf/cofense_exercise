@@ -18,12 +18,6 @@ All notable changes to this project will be documented in this file. This projec
 - IDME-4128: Fix shop user group affiliations first responder
 - IDME-4023: Fix shop user group affiliations teacher
 
-# 2.4.41 (11/28/17)
-- CORE-7443: IVA flow: Greater than 16MB doc upload tests
-
-# 2.4.40 (11/13/17)
-- CORE-7442: IVA flow: Denied doc upload formats
-
 # 2.4.39 (11/1/17)
 - CORE-8446: Fix Doc Upload Revelator Tests
 
