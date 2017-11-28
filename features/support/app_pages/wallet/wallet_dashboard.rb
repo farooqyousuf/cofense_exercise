@@ -32,4 +32,20 @@ class WalletDashboard < IDmeBase
   def click_on_wallet_shared_nav_tab_from_about_page
     find("nav.wallet-header-nav ").click_link("Wallet")
   end
+
+  def click_wallet_subnav_dashboard_tab
+    find("ul.shared-nav-sub-menu").click_link("Dashboard")
+  end
+
+  def click_wallet_subnav_ids_logins_tab
+    find("ul.shared-nav-sub-menu").click_link("IDs and Logins")
+  end
+
+  def click_wallet_subnav_settings_tab
+    find("ul.shared-nav-sub-menu").click_link("Settings")
+  end
+
+  def click_wallet_subnav_activity_tab
+    find("ul.shared-nav-sub-menu").click_link("Activity")
+  end
 end

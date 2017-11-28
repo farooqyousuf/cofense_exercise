@@ -48,7 +48,7 @@ class PBFirefighter < IDmeBase
   end
 
   def click_verify_firefighter_pb_link
-    click_link("Verify as a state certified Firefighter")
+    click_on("Verify as a state certified Firefighter")
     select_option("#s2id_state","Virginia")
     click_link("Yes, I am ProBoard certified")
   end
