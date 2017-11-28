@@ -57,14 +57,18 @@ Given(/^I verify that the sub\-nav Activity link directs me to the correct page$
 end
 
 Given(/^I verify user email is displayed$/) do
-  sidebar_email = find("ul.shared-nav-user-menu-details li:nth-child(2)").text 
-  test_email = FigNewton.shop_users.military
+  account_email = @WalletDashboard.user_account_email
+  test_email_used = FigNewton.shop_users.military
+  expect(account_email).to eq(test_email_used)
 end
 
 Given(/^I verify membership date is displayed correctly$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  membership_date = @WalletDashboard.account_membership_date
+  @WalletDashboard.valid_date?(membership_date)
 end
 
-Given(/^I verify that "([^"]*)" link directs me to correct page$/) do |arg1|
-  pending # Write code here that turns the phrase above into concrete actions
-end
+Given(/^I verify that View Full Profile link directs me to correct page$/) do
+  @WalletDashboard.click_view_profile
+  expect(page).to have_current_path("/settings")
+  expect(page).to have_css("div.wallet-settings-user")
+  end

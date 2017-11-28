@@ -23,7 +23,7 @@ Scenario: Verify Wallet Shared Side Nav
   * I click on the shared side navigation
   * I verify user email is displayed
   * I verify membership date is displayed correctly
-  * I verify that "View Profile" link directs me to correct page
+  * I verify that View Full Profile link directs me to correct page
 
 @wip
 Scenario: Verify Dashboard Components
