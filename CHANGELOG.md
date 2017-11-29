@@ -2,6 +2,9 @@
 ### Released
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
+#2.4.42 (11/29/17)
+- IDME-3764: Wallet Dashboard - Verify Shared Side Nav
+
 # 2.4.41 (11/16/17)
 - IDME-3763: Wallet Dashboard: Verify Sub-Nav Bar
 
