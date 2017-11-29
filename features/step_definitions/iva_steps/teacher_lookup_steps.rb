@@ -30,10 +30,16 @@ Given(/^I "([^"]*)" the teacher verification in IDme admin$/) do |action|
   if action == "approve"
     @AdminTeacherVerifs.approve_doc
     @AdminTool.logout_in_new_window
-    @TeacherLookup.click_continue
   elsif action == "deny"
     @AdminTeacherVerifs.deny_doc
     @AdminTool.logout_in_new_window
   else fail('Action "#{action}" is not defined in step')
   end
+end
+
+Given(/^I reload the group affiliations page$/) do
+  visit 'https://shop-staging.idmeinc.net/'
+  first('.nav-tabs').click_on('Wallet')
+  first('.nav-tabs').click_on('Shop')
+  click_on "Verify to Save"
 end

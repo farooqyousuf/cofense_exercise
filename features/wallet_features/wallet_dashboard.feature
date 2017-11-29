@@ -2,7 +2,7 @@
 Feature: Test Wallet Dashboard Page Feature
 
 Background:
-  * I create "WalletHomepage,WalletDashboard,WalletMyids" page objects
+  * I create "WalletHomepage, WalletDashboard, WalletMyids" page objects
   * I visit "WalletHomepage"
   * I login to wallet as a "Military" user
 
@@ -11,11 +11,13 @@ Scenario: Verify Wallet Shared Main Nav
   * I verify that the main nav Shop link takes me to the correct page
   * I verify that the main nav About link takes me to the correct page
   * I verify that the main nav Wallet link takes me to the correct page
-  * I verify that all the main nav tab links are directing to correct pages
+  * I verify that the main nav Business link takes me to the correct page
 
-@wip
 Scenario: Verify Wallet Sub-Nav bar
-  * I verify that all the sub-nav tab links are directing to correct pages
+  * I verify that the sub-nav Dashboard link directs me to the correct page
+  * I verify that the sub-nav IDs and Logins link directs me to the correct page
+  * I verify that the sub-nav Settings link directs me to the correct page
+  * I verify that the sub-nav Activity link directs me to the correct page
 
 @wip
 Scenario: Verify Wallet Shared Side Nav

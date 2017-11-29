@@ -2,7 +2,7 @@
 Feature: Test User Group Affiliation Page & Verification Features
 
   Background:
-    * I create "MilitaryEmail, StudentCreds, ShopGroupAffiliationsPage, ShopLandingPage, AdminUsers, TeacherDoc, TeacherLookup, AdminTool, AdminTeacherVerifs, IVAGovernment" page objects
+    * I create "MilitaryEmail, StudentCreds, ShopGroupAffiliationsPage, ShopLandingPage, AdminUsers, TeacherDoc, TeacherLookup, AdminTool, AdminTeacherVerifs, IVAGovernment, PBFirefighter" page objects
     * I visit "ShopLandingPage"
     * I click on the Shop Sign Up link
     * I sign up as a new user
@@ -35,6 +35,7 @@ Feature: Test User Group Affiliation Page & Verification Features
     * I click on the Begin link
     * I verify using teacher credentials with "no license and no ssn"
     * I "approve" the teacher verification in IDme admin
+    * I reload the group affiliations page
     * I verify user "Teachers" Group Affiliation is approved on Shop
 
   Scenario: Verify a Government Group Affiliation
@@ -43,7 +44,8 @@ Feature: Test User Group Affiliation Page & Verification Features
     * I submit the government verification form as a "unique" record
     * I submit the verification code for "Government Email"
     * I verify user "Government Employees" Group Affiliation is approved on Shop
-
+  
+  @delete_pb_fireman_user
   Scenario: Verify a First Responder Group Affiliation
     * I select to verify the First Responder Group Affiliation
     * I should be on the responder verification screen
