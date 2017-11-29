@@ -34,7 +34,7 @@ include JavascriptAlerts
 
   def view_searched_user_verification_attempt
     open_newest
-    click_link("View Verification Attempts (1)")
+    click_link("Verification attempts (1)")
     sleep 1
     use_last_browser_created
     open_newest
@@ -55,7 +55,7 @@ include JavascriptAlerts
   def verify_doc_is_not_uploaded(username)
     search_user_by_email(email_address: username)
     view_searched_user_verification_attempt
-    
+
     page.assert_text username
     doc_upload = "Download ."
     page.has_text?(doc_upload).should == false
