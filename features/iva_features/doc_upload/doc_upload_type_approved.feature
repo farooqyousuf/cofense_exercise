@@ -2,6 +2,7 @@
 Feature: IVA verification using document upload
 
   Background:
+    * I create "SupportTool, SupportToolDocs" page objects
     * I visit IDP through the "military" policy
     * I create a Military Document page object
     * I click on the Sign Up link
