@@ -3,6 +3,9 @@
 ### Released
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
+# 2.4.41 (11/29/17)
+- CORE-7441: IVA flow: Doc upload .txt to .jpg
+
 # 2.4.40 (11/13/17)
 - CORE-7442: IVA flow: Denied doc upload formats
 
