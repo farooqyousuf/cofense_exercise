@@ -56,11 +56,13 @@ Given(/^I fail a attempt to login to wallet$/) do
 end
 
 Given(/^I click to verify a military group affiliation$/) do
-  find(:link , :href =>"https://wallet-staging.idmeinc.net/ids/new?scope=military").click
+  2.times {find(:link , :href =>"https://wallet-staging.idmeinc.net/ids/new?scope=military").click}
+  close_current_browser
+  use_last_browser_created
 end
 
 Given(/^I verify my military group affiliation has been added$/) do
-  expect(page).to have_css(".wallet-card-group .wallet-card-military:nth-child(1)")
+  expect(page).to have_css(".card-group .card-military")
 end
 
 Given(/^I should see my military group addition on the activity feed$/) do

@@ -43,9 +43,12 @@ Scenario: User verifies a Military Group Affiliation
   * I sign up as a new user
   * I should be on the Wallet dashboard page
   * I record the wallet user email
+  * I create a Military Document page object
   * I click to verify a military group affiliation
+  * I click on the Military Verify by uploading documentation link
+  * I click on the Begin link
   * I verify using military documentation for "Veteran"
-  * I approve the document in IDme admin
+  * I approve the document in the IDme support tool
   * I verify my military group affiliation has been added
   * I should see my military group addition on the activity feed
 
