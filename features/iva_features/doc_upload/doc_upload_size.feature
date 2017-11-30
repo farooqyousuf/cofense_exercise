@@ -16,3 +16,10 @@ Feature: IVA verification using document upload of various sizes
     * I verify using military "over_16MB" documentation for Service Member
     * I should see the red error "File must be less than 16 MB" under the file upload field
     * I verify that a document was not uploaded
+
+  @delete_current_user_email
+  Scenario: Successful document upload for large file less than 16MB
+    * I click on the Military Verify by uploading documentation link
+    * I click on the Begin link
+    * I verify using military "large_file_under_16MB" documentation for Service Member
+    * I verify that a "pdf" document was successfully uploaded
