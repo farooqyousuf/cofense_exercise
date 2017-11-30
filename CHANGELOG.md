@@ -1,6 +1,10 @@
 # Change Log
+
 ### Released
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
+
+# 2.4.44 (11/28/17)
+- CORE-7443: IVA flow: Greater than 16MB doc upload tests
 
 # 2.4.43 (11/20/17)
 - IDME-4022: Delete shop favorites tests
