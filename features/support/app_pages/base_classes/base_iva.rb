@@ -91,6 +91,12 @@ include DataMagic
     elsif (document == "txt_to_jpg")
       Dir.mkdir("./test_documents") unless Dir.exists?("./test_documents")
       page.driver.browser.all(:xpath, '//input[@type="file"]')[number].send_keys("#{Dir.pwd}/test_documents/test_#{document}.jpg")
+    elsif (document == "over_16MB")
+      Dir.mkdir("./test_documents") unless Dir.exists?("./test_documents")
+      page.driver.browser.all(:xpath, '//input[@type="file"]')[number].send_keys("#{Dir.pwd}/test_documents/test_#{document}.gif")
+    elsif (document == "large_file_under_16MB")
+      Dir.mkdir("./test_documents") unless Dir.exists?("./test_documents")
+      page.driver.browser.all(:xpath, '//input[@type="file"]')[number].send_keys("#{Dir.pwd}/test_documents/test_#{document}.pdf")
     else
       page.driver.browser.all(:xpath, '//input[@type="file"]')[number].send_keys("#{Dir.pwd}/screenshots/screenshot_#{document}.#{document}")
     end
