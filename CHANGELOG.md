@@ -2,6 +2,9 @@
 ### Released
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
+# 2.4.42 (11/30/17)
+- IDME-4215: Fix Succesful User Wallet Sign In
+
 # 2.4.41 (11/16/17)
 - IDME-3763: Wallet Dashboard: Verify Sub-Nav Bar
 
