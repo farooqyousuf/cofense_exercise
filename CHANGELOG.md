@@ -7,6 +7,7 @@ All notable changes to this project will be documented in this file. This projec
 - CORE-7443: IVA flow: Greater than 16MB doc upload tests
 - CORE-7444: IVA flow: Less than 16MB doc upload tests
 - CORE-7442: IVA flow: Denied doc upload formats
+- CORE-7441: IVA flow: Doc upload .txt to .jpg
 
 # 2.4.42 (11/20/17)
 - IDME-4022: Delete shop favorites tests
@@ -16,11 +17,8 @@ All notable changes to this project will be documented in this file. This projec
 # 2.4.41 (11/16/17)
 - IDME-3763: Wallet Dashboard: Verify Sub-Nav Bar
 
-# 2.4.40 (11/8/17)
-- IDME-4022: Delete shop favorites tests
-- IDME-3974: Shop user group affiliations verify government
-- IDME-4128: Fix shop user group affiliations first responder
-- IDME-4023: Fix shop user group affiliations teacher
+# 2.4.40 (11/13/17)
+- CORE-7442: IVA flow: Denied doc upload formats
 
 # 2.4.39 (11/1/17)
 - CORE-8446: Fix Doc Upload Revelator Tests

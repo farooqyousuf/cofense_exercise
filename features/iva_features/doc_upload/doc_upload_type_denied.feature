@@ -35,3 +35,11 @@ Feature: IVA verification using document upload
     * I verify using military "odt" documentation for Service Member
     * I should see the red error "is not a valid document" under the textfield
     * I verify that a document was not uploaded
+
+  @delete_current_user_email
+  Scenario: Denied document upload for document type converted from txt to jpg
+    * I click on the Military Verify by uploading documentation link
+    * I click on the Begin link
+    * I verify using military "txt_to_jpg" documentation for Service Member
+    * I should see the red error "is not a valid document" under the textfield
+    * I verify that a document was not uploaded
