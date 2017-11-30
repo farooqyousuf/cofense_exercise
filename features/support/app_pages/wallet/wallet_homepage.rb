@@ -6,7 +6,6 @@ class WalletHomepage < IDmeBase
   end
 
   def sign_in(user_email)
-    click_link("Sign In")
     fill_in_email_by_id(user_email)
     fill_in_password(FigNewton.shop_users.general_password)
     click_sign_in
