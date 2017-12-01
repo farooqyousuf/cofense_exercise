@@ -5,6 +5,7 @@ All notable changes to this project will be documented in this file. This projec
 
 # 2.4.44 (12/1/17)
 - INT-2210: Update revelator to use ruby version 2.4.2
+- INT-2209: Replace pastebin within revelator
 
 # 2.4.43 (11/28/17)
 - CORE-7443: IVA flow: Greater than 16MB doc upload tests
