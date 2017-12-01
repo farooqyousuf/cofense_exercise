@@ -48,14 +48,14 @@ class OAuthClient
   end
 
   def login_with_facebook
-    find("a[title='Facebook']").click
+    click_link("Facebook")
     fill_in "email", :with => FigNewton.oauth.facebook_user
     fill_in "pass", :with => FigNewton.oauth.facebook_pw
     find("#loginbutton").click
   end
 
   def login_with_google
-    find("a[title='Google']").click
+    click_link("Google")
     fill_in "identifier", :with => FigNewton.oauth.google_user
     find("#identifierNext").click
     fill_in "password", :with => FigNewton.oauth.google_pw
@@ -64,14 +64,14 @@ class OAuthClient
   end
 
    def login_with_linkedin
-    find("a[title='LinkedIn']").click
+    click_link("LinkedIn")
     fill_in "session_key", :with => FigNewton.oauth.linkedin_user
     fill_in "session_password", :with => FigNewton.oauth.linkedin_pw
     find(".allow").click
   end
 
   def login_with_paypal
-    find("a[title='PayPal']").click
+    click_link("PayPal")
     fill_in "email", :with => FigNewton.oauth.paypal_user
     fill_in "password", :with => FigNewton.oauth.paypal_pw
     click_button("Log In")

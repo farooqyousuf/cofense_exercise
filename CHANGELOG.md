@@ -4,6 +4,7 @@
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
 # 2.4.44 (12/1/17)
+- CORE-8603: Update selecting IDP social affiliation links
 - INT-2209: Replace pastebin within revelator
 
 # 2.4.43 (11/28/17)
