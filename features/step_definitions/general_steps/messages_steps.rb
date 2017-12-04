@@ -11,6 +11,10 @@ Given(/^I should see the green alert box error message "(.*?)"$/) do |expected_t
   (green_alert_box_message.should eq(expected_text)).should == true
 end
 
+Given(/^I should see the blue alert box error message "([^"]*)"$/) do |expected_text|
+  (blue_alert_box_message.should eq(expected_text)).should == true
+end
+
 Given(/^I should see an error on the "(.*)" field$/) do |expected_text|
   sleep 1
   expect(all(error_label_css).map(&:text)).to include(expected_text)

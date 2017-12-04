@@ -77,3 +77,7 @@ end
 Given(/^I login with Paypal$/) do
   @oauth_client.login_with_paypal
 end
+
+Given(/^I click Paypal link$/) do
+  @oauth_client.click_paypal
+end
