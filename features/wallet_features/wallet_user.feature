@@ -2,7 +2,7 @@
 Feature: Test Wallet User Features
 
 Background:
-  * I create "WalletHomepage,WalletDashboard,WalletSettings" page objects
+  * I create "WalletHomepage, WalletDashboard, WalletSettings" page objects
 
 @wallet_signup @smoke
 Scenario: Successful User Wallet Sign up
@@ -93,6 +93,3 @@ Scenario: User Signs in Wallet via Social Federation
   * I click on the Wallet Sign in link
   * I signin with LinkedIn social federation
   * I verify my Wallet Linkedin Social Federation signin
-
-
-

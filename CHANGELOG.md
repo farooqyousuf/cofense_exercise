@@ -3,9 +3,14 @@
 ### Released
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
-# 2.4.44 (12/1/17)
-- CORE-8603: Update selecting IDP social affiliation links
+# 2.4.45 (12/1/17)
+- INT-2210: Update revelator to use ruby version 2.4.2
 - INT-2209: Replace pastebin within revelator
+- CORE-8603: Update selecting IDP social affiliation links
+
+# 2.4.44 (11/30/17)
+- IDME-4215: Fix Succesful User Wallet Sign In
+- IDME-4216: Fix Failed User Wallet Sign In test
 
 # 2.4.43 (11/28/17)
 - CORE-7443: IVA flow: Greater than 16MB doc upload tests
@@ -17,6 +22,7 @@ All notable changes to this project will be documented in this file. This projec
 - IDME-4022: Delete shop favorites tests
 - IDME-3974: Shop user group affiliations verify government
 - IDME-4128: Fix shop user group affiliations first responder
+- IDME-3764: Wallet Dashboard - Verify Shared Side Nav
 
 # 2.4.41 (11/16/17)
 - IDME-3763: Wallet Dashboard: Verify Sub-Nav Bar

@@ -42,7 +42,7 @@ end
 
 
 Given(/^I should see a IDP failed attempt sign in error$/) do
-  expect(page).to have_css(".alert",:text => "The email or password you entered is incorrect. Please try again.")
+  expect(page).to have_css(".alert",:text => "The email or password you entered is incorrect.")
 end
 
 Given(/^I should see my failed sign in on the activity feed$/) do
