@@ -7,8 +7,6 @@ Given(/^I click on the Yes I am ProBoard certified link$/) do
 end
 
 Given(/^I verify using a ProBoard Firefighter$/) do
-	@PBFirefighter.click_verify_firefighter_pb_link
-	click_link("Begin")
   @PBFirefighter.verify(type: "unique")
   click_link("Continue")
 end
