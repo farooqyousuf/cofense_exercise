@@ -16,6 +16,7 @@ All notable changes to this project will be documented in this file. This projec
 - IDME-4022: Delete shop favorites tests
 - IDME-3974: Shop user group affiliations verify government
 - IDME-4128: Fix shop user group affiliations first responder
+- IDME-3764: Wallet Dashboard - Verify Shared Side Nav
 
 # 2.4.41 (11/16/17)
 - IDME-3763: Wallet Dashboard: Verify Sub-Nav Bar

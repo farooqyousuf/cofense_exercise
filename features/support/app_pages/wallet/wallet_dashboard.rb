@@ -1,4 +1,5 @@
 class WalletDashboard < IDmeBase
+  require "date"
   include IDPBase
 
   def initialize
@@ -47,5 +48,21 @@ class WalletDashboard < IDmeBase
 
   def click_wallet_subnav_activity_tab
     find("ul.shared-nav-sub-menu").click_link("Activity")
+  end
+
+  def user_account_email
+    find("ul.shared-nav-user-menu-details li:nth-child(2)").text
+  end
+
+  def account_membership_date
+    find("ul.shared-nav-user-menu-details > li:nth-child(1)").text
+  end
+
+  def valid_date?(str, format="%m/%d/%Y")
+    Date.strptime(str,format) rescue false
+  end
+
+  def click_view_profile
+    click_link("View Full Profile")
   end
 end
