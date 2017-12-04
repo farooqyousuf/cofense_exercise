@@ -9,6 +9,7 @@ All notable changes to this project will be documented in this file. This projec
 
 # 2.4.44 (11/30/17)
 - IDME-4215: Fix Succesful User Wallet Sign In
+- IDME-4216: Fix Failed User Wallet Sign In test
 
 # 2.4.43 (11/28/17)
 - CORE-7443: IVA flow: Greater than 16MB doc upload tests
