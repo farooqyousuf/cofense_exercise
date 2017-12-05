@@ -9,7 +9,7 @@ end
 Given(/^I select the teacher state "([^"]*)"$/) do |state|
   @TeacherDoc.populate_teacher_first_state(state)
   sleep 3
-  if (page.has_content?('Verify using your teacher credentials')) == false
+  if (page.has_content?("Verify using your teacher credentials") || ("Verify by uploading documentation")) == false
     @TeacherDoc.populate_teacher_first_state(state)
   end
 end
