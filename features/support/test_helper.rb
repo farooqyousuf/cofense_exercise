@@ -98,6 +98,10 @@ module HelperMethods
     page.find(".alert-success").text
   end
 
+  def blue_alert_box_message
+    page.find(".alert").text
+  end
+
   def error_label_css
     ".error"
   end

@@ -4,6 +4,7 @@
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
 # 2.4.46 (12/4/17)
+- CORE-8605: Fix IDP PayPal test
 - HOTFIX: Fixed Fireman PB test, removal of two lines from steps file
 
 # 2.4.45 (12/1/17)
