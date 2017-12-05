@@ -77,6 +77,10 @@ class OAuthClient
     click_button("Log In")
   end
 
+  def click_paypal
+    click_link("PayPal")
+  end
+
   private
 
   def client
