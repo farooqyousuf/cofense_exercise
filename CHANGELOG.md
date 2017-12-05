@@ -3,6 +3,9 @@
 ### Released
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
+# 2.4.47 (12/5/17)
+- CORE-8628: Fix Teacher Doc Tests
+
 # 2.4.46 (12/4/17)
 - CORE-8606: Fix IDP Password Tests
 - CORE-8605: Fix IDP PayPal test
