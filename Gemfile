@@ -17,7 +17,7 @@ gem "phantomjs"
 gem "cucumber_statistics"
 gem "parallel_tests"
 gem "capybara"
-gem "cucumber"
+gem "cucumber", '3.1.0'
 gem "rubocop"
 gem "oauth2"
 gem "httparty"
