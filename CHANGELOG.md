@@ -3,6 +3,9 @@
 ### Released
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
+# 2.4.48 (12/6/17)
+- IDME-4253: Fix User deactivates Wallet account and revokes access test
+
 # 2.4.47 (12/5/17)
 - CORE-8628: Fix Teacher Doc Tests
 
