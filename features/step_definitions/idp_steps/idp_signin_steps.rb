@@ -59,7 +59,9 @@ Given(/^I complete the new Wallet account linking process$/) do
     @idp_new_wallet.click_continue_button
   end
 
-  step 'I verify using an ID.me military passcode'
+  if page.has_text? "Verify your military affiliation"
+    step 'I verify using an ID.me military passcode'
+  end
 end
 
 Given(/^I login with Facebook$/) do
