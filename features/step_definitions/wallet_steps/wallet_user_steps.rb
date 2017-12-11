@@ -93,14 +93,12 @@ end
 
 Given(/^I confirm that my Wallet session has been terminated$/) do
   page.driver.browser.navigate.refresh
-  expect(page).to have_text "500: Internal Server Error Our server has gone off to play foosball..."
+  step 'I should see the red alert box error message "You need to sign in or sign up before continuing."'
 end
 
 Given(/^I verify my Wallet account has been deactived$/) do
-  click_link "Sign In"
   @WalletHomepage.sign_in(@user_identifier)
-
-  expect(page).to have_css(".alert-error",:text =>"We're sorry, this account has been revoked. Please contact our Member Support team for assistance.")
+  step 'I should see the red alert box error message "The email or password you entered is incorrect."'
 end
 
 Given(/^I log out of Wallet user account$/) do
