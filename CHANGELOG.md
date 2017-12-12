@@ -4,6 +4,7 @@
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
 # 2.4.50 (12/12/17)
+- INT-2230: Update delete methods in revelator tests for Wallet
 - INT-2229: Update delete methods in revelator tests for IVA
 
 # 2.4.49 (12/7/17)

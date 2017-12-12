@@ -4,7 +4,7 @@ Feature: Test Wallet User Features
 Background:
   * I create "WalletHomepage, WalletDashboard, WalletSettings" page objects
 
-@wallet_signup @smoke
+@delete_current_user_email @smoke
 Scenario: Successful User Wallet Sign up
   * I visit "WalletHomepage"
   * I click on the Wallet Sign Up link
@@ -15,7 +15,7 @@ Scenario: Successful User Wallet Sign up
   * I should be on the Wallet dashboard page
   * I should see my sign up on the activity feed
 
-@wallet_signin @smoke @lightning
+@smoke @lightning
 Scenario: Succesful User Wallet Sign In
   * I visit "WalletHomepage"
   * I click on the Wallet Sign in link
@@ -26,7 +26,6 @@ Scenario: Succesful User Wallet Sign In
   * I should be on the Wallet dashboard page
   * I should see my sign in on the activity feed
 
-@wallet_signin_failure
 Scenario: Failed User Wallet Sign In
   * I visit "WalletHomepage"
   * I click on the Wallet Sign in link
@@ -36,7 +35,7 @@ Scenario: Failed User Wallet Sign In
   * I should be on the Wallet dashboard page
   * I should see my failed sign in on the activity feed
 
-@wallet_military_verify
+@delete_current_user_email
 Scenario: User verifies a Military Group Affiliation
   * I visit "WalletHomepage"
   * I click on the Wallet Sign Up link
@@ -52,7 +51,7 @@ Scenario: User verifies a Military Group Affiliation
   * I verify my military group affiliation has been added
   * I should see my military group addition on the activity feed
 
-@wallet_account_revoke
+@delete_current_user_email
 Scenario: User deactivates Wallet account and revokes access
   * I visit "WalletHomepage"
   * I click on the Wallet Sign Up link
@@ -63,7 +62,7 @@ Scenario: User deactivates Wallet account and revokes access
   * I confirm that my Wallet session has been terminated
   * I verify my Wallet account has been deactived
 
-@wallet_account_locked
+@delete_current_user_email
 Scenario: User Wallet account locked and unlocked via code
   * I visit "WalletHomepage"
   * I click on the Wallet Sign Up link
