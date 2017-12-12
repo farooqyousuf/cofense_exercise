@@ -4,7 +4,7 @@ Feature: Test the LOA2 (Level of Assurance 2) functionality
   Background:
     * I visit IDP through the "ficam_loa_2" policy
 
-  @delete_experian_user2
+  @delete_current_user_email
   Scenario: Successful LOA2 verification
     * I click on the Sign Up link
     * I sign up as a new user

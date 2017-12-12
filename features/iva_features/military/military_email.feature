@@ -48,14 +48,17 @@ Feature: Military verification using .mil email
     * I submit an invalid verification code
     * I should see the red error "The code you entered does not match." under the textfield
 
+  @delete_current_user_email
   Scenario: Successfully prompt for all required fields for Service Member
     * I submit the empty military email form for "Service Member"
     * I should see error messages on required fields for "Military Email"
 
+  @delete_current_user_email
   Scenario: Successfully prompt for all required fields for Military Spouse
     * I submit the empty military email form for "Military Spouse"
     * I should see error messages on required fields for "Military Email Family"
 
+  @delete_current_user_email
   Scenario: Successfully prompt for all required fields for Military Family
     * I submit the empty military email form for "Military Family"
     * I should see error messages on required fields for "Military Email Family"

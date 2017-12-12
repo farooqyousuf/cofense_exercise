@@ -9,7 +9,7 @@ Feature: Responder verification as a ProBoard Firefighter
     * I click on the Yes I am ProBoard certified link
     * I click on the Begin link
 
-  @smoke @delete_pb_fireman_user
+  @smoke @delete_current_user_email
   Scenario: Successful verification as a ProBoard Firefighter
     * I verify using a ProBoard Firefighter
     * I should be successfully verified as "Firefighter"
@@ -32,6 +32,7 @@ Feature: Responder verification as a ProBoard Firefighter
     * I should see the error message "We're sorry, but we were unable to verify your firefighter status with the information you provided. Please ensure your name and SSN are entered correctly and try again. For additional information, please see our Support page."
     * I verify the attempt is marked as "DUPLICATE"
 
+  @delete_current_user_email
   Scenario: Successful prompt for all required fields for ProBoard Firefighter
     * I submit the empty ProBoard Firefighter form
     * I should see error messages on required fields for "ProBoard Firefighter"
