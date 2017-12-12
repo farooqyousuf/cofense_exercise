@@ -52,7 +52,7 @@ Feature: Military verification using SCRA credentials
     * Multi-spouse: I verify "second" spouse via "scra" is not allowed to verify
     * Multi-family: I verify "fourth" family via "scra" is not allowed to verify
 
-  @delete_scra_denied_user @wip
+  @delete_current_user_email @wip
   Scenario: Denied attempt for military scra verification (Error code 1)
     * I submit the military scra verification form as a "denied" record
     * I should see the error message "We're sorry, but we were unable to verify your military status with the information you provided. Please utilize the name you held when discharged, and be sure to use an active duty date from the middle of your period of service. Note that Reservists, National Guardsmen, and all pre-1985 Veterans, must verify by uploading documentation. For additional information, please see our Support page."
@@ -69,22 +69,27 @@ Feature: Military verification using SCRA credentials
     * I should see the  error message "We're sorry, but we were unable to verify your military status with the information you provided. Please utilize the name you held when discharged, and be sure to use an active duty date from the middle of your period of service. Note that Reservists, National Guardsmen, and all pre-1985 Veterans, must verify by uploading documentation. For additional information, please see our Support page."
     * I verify the attempt is marked as "DUPLICATE"
 
+  @delete_current_user_email
   Scenario: Successfully prompt for all required fields for Service Member
     * I submit the empty SCRA form for "Service Member"
     * I should see error messages on required fields for "SCRA"
 
+  @delete_current_user_email
   Scenario: Successfully prompt for all required fields for Veteran
     * I submit the empty SCRA form for "Veteran"
     * I should see error messages on required fields for "SCRA"
 
+  @delete_current_user_email
   Scenario: Successfully prompt for all required fields for Retiree
     * I submit the empty SCRA form for "Retiree"
     * I should see error messages on required fields for "SCRA"
 
+  @delete_current_user_email
   Scenario: Successfully prompt for all required fields for Military Spouse
     * I submit the empty SCRA form for "Military Spouse"
     * I should see error messages on required fields for "SCRA Family"
 
+  @delete_current_user_email
   Scenario: Successfully prompt for all required fields for Military Family
     * I submit the empty SCRA form for "Military Spouse"
     * I should see error messages on required fields for "SCRA Family"

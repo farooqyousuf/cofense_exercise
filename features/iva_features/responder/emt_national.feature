@@ -9,7 +9,7 @@ Feature: Responder verification as an nationally certified EMT
     * I click on the Verify using EMT National link
     * I click on the Begin link
 
-  @smoke @delete_natl_emt
+  @smoke @delete_current_user_email
   Scenario: Successful verification
     * I verify using nationally certified EMT credentials
     * I should be successfully verified as "EMT"
@@ -21,7 +21,7 @@ Feature: Responder verification as an nationally certified EMT
     * I should see the error message "We're sorry, but we were unable to verify your EMT status with the information you provided. Please confirm your Registry Number by visiting the National Registry of Emergency Medical Technicians website. For additional information, please see our Support page."
     * I verify the attempt is marked as "DENIED"
 
-  @delete_current_username @delete_natl_emt
+  @delete_current_user_email @delete_natl_emt
   Scenario: Dupe attempt test for emt national
     * I verify using nationally certified EMT credentials
     * I clear the session from Authority
@@ -32,11 +32,12 @@ Feature: Responder verification as an nationally certified EMT
     * I should see the error message "We're sorry, but we were unable to verify your EMT status with the information you provided. Please confirm your Registry Number by visiting the National Registry of Emergency Medical Technicians website. For additional information, please see our Support page."
     * I verify the attempt is marked as "DUPLICATE"
 
- @delete_current_user_email
- Scenario: Prompt Error Code 26
+  @delete_current_user_email
+  Scenario: Prompt Error Code 26
     * I submit the emt national verification form as a "expired" record
     * I should see the error message "We're sorry, but it appears that your NREMT registration has expired. Please update your national registration and try again, or visit our Support page for additional information."
 
+  @delete_current_user_email
   Scenario: Successfully prompt for all required fields
     * I submit the empty National EMT form
     * I should see error messages on required fields for "National EMT"
