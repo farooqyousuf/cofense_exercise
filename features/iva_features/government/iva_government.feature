@@ -18,6 +18,7 @@ Feature: Government verification using .gov email
     * I should be successfully verified as "Federal"
     * I verify user level properties for "Government"
 
+  @delete_current_user_email
   Scenario: Successfully prompt for all required fields
     * I submit the empty government form
     * I should see error messages on required fields for "Government"

@@ -86,22 +86,27 @@ Feature: Military verification using document upload
     * I submit the military document verification form as a "second unique user" record
     * I should see the error message "We’re sorry, but we were unable to verify your credentials with the document you provided. Please see our Support page for document specifications, or try another verification option."
 
+  @delete_current_user_email
   Scenario: Successfully prompt for all required fields for Service Member
     * I submit the empty military document form for "Service Member"
     * I should see error messages on required fields for "Military Document"
 
+  @delete_current_user_email
   Scenario: Successfully prompt for all required fields for Veteran
     * I submit the empty military document form for "Veteran"
     * I should see error messages on required fields for "Military Document"
 
+  @delete_current_user_email
   Scenario: Successfully prompt for all required fields for Retiree
     * I submit the empty military document form for "Retiree"
     * I should see error messages on required fields for "Military Document"
 
+  @delete_current_user_email
   Scenario: Successfully prompt for all required fields for Military Spouse
     * I submit the empty military document form for "Military Spouse"
     * I should see error messages on required fields for "Military Document Family"
 
+  @delete_current_user_email
   Scenario: Successfully prompt for all required fields for Military Family
     * I submit the empty military document form for "Military Family"
     * I should see error messages on required fields for "Military Document Family"

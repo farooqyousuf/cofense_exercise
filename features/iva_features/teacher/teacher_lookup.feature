@@ -55,24 +55,28 @@ Feature: Teacher verification using state lookup
     * I should see the error message "We’re sorry, but we were unable to confirm your status as a teacher using the information you provided. Please double-check your information for errors and try again. Also note that only licensed, classroom teachers are eligible. For additional help, please visit our Support page. Thank you."
     * I verify the attempt is marked as "DENIED"
 
+  @delete_current_user_email
   Scenario: Successfully prompt for all required fields for license and short ssn
     * I select the teacher state "Alabama"
     * I click on the Begin link
     * I submit the empty Teacher form using "Teacher Lookup Alabama"
     * I should see error messages on required fields for "Teacher Lookup Alabama"
 
+  @delete_current_user_email
   Scenario: Successfully prompt for all required fields for no license and no ssn form
     * I select the teacher state "Delaware"
     * I click on the Begin link
     * I submit the empty Teacher form using "Teacher Lookup Delaware"
     * I should see error messages on required fields for "Teacher Lookup Delaware"
 
+  @delete_current_user_email
   Scenario: Successfully prompt for all required fields for license and no ssn form
     * I select the teacher state "Michigan"
     * I click on the Begin link
     * I submit the empty Teacher form using "Teacher Lookup Michigan"
     * I should see error messages on required fields for "Teacher Lookup Michigan"
 
+  @delete_current_user_email
   Scenario: Successfully prompt for all required fields for no license and short ssn form
     * I select the teacher state "New Mexico"
     * I click on the Begin link
