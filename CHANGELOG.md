@@ -3,6 +3,9 @@
 ### Released
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
+# 2.4.51 (12/13/17)
+- IDME-4268: Remove step to verify user is on wallet dashboard page for wallet user tests
+
 # 2.4.50 (12/12/17)
 - INT-2230: Update delete methods in revelator tests for Wallet
 - INT-2229: Update delete methods in revelator tests for IVA

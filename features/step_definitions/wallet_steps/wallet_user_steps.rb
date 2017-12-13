@@ -19,12 +19,7 @@ end
 
 Given(/^I should be on the Wallet dashboard page$/) do
   find(".wallet-dashboard-module") #holder allow page to load
-  if page.has_current_path? FigNewton.wallet.homepage.url
-    expect(page).to have_current_path(FigNewton.wallet.homepage.url)
-  else
-    expect(page).to have_current_path(FigNewton.wallet.homepage.social_federation_url)
-  end
-
+  expect(page).to have_current_path(FigNewton.wallet.homepage.url)
   expect(page).to have_css(".wallet-content-main .heading",:text =>"Dashboard")
 end
 
