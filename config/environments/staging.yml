@@ -170,7 +170,6 @@ offer_cms:
 wallet:
   homepage:
     url: https://wallet-staging.idmeinc.net/
-    social_federation_url: https://wallet-staging.idmeinc.net/#!
     title: One Identity. One Wallet. | ID.me
   dashboard: https://wallet-staging.idmeinc.net/dashboard
   settings: https://wallet-staging.idmeinc.net/settings
