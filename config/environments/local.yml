@@ -64,3 +64,47 @@ idp:
   base_url: http://api.idme.dev
   new_session_url: http://api.idme.dev/session/new
   new_registration_url: http://api.idme.dev/registration/new
+
+shop:
+  shop_homepage: http://marketplace.idme.dev/
+  cashback_purchases_homepage: http://marketplace.idme.dev/cash-back/purchases
+  user_cashback_profile_url: http://marketplace.idme.dev/cash-back
+  demographic_survey: http://marketplace.idme.dev/cash-back/survey/new
+  invite_store: http://marketplace.idme.dev/cash-back/store-suggestions/new
+  email_invitation_providers: http://marketplace.idme.dev/invitation-providers/new
+  email_batch_invitations: http://marketplace.idme.dev/batch-invitations/new
+  refer_friend_email: rich.purnell.rocketman@gmail.com, test+be2@id.me, eddie.park.tester@gmail.com
+  refer_25_friends_email: <%= 25.times.map {|n| "test#{n}@id.me"}.join(",") %>
+  user_settings_homepage: http://marketplace.idme.dev/profile/edit
+  user_fname: Jack
+  user_lname: Sparrow
+  user_account_edit: http://marketplace.idme.dev/account/edit
+  new_password: JollyRoger123
+  group_affiliations_page: http://marketplace.idme.dev/cash-back/group-affiliations
+  merchant_page: http://marketplace.idme.dev/stores/175-fanatics
+  merchant_review_text: Review for Fanatics By William Wallace on July 05, 2016 I just got a discount at Fanatics and earned $6.60 in cash back.
+  stores_index_page: http://marketplace.idme.dev/stores
+  offers_index_page: http://marketplace.idme.dev/offers
+  offers_promo_code_index_page: http://marketplace.idme.dev/offers?type=code
+  offers_coupon_index_page: http://marketplace.idme.dev/offers?type=coupon
+
+shop_admin:
+  base: http://marketplace.idme.dev/admin
+  offers: http://marketplace.idme.dev/admin/offers
+  categories: http://marketplace.idme.dev/admin/categories
+  stores:
+    base_url: http://marketplace.idme.dev/admin/stores
+  email_generator: http://marketplace.idme.dev/admin/email_templates
+
+wallet:
+  homepage:
+    url: http://wallet.idme.dev/
+    social_federation_url: http://wallet.idme.dev/#!
+    title: One Identity. One Wallet. | ID.me
+  dashboard: http://wallet.idme.dev/dashboard
+  settings: http://wallet.idme.dev/settings
+  myids: http://wallet.idme.dev/ids
+  activity: http://wallet.idme.dev/activity
+  shop: http://marketplace.idme.dev/
+
+

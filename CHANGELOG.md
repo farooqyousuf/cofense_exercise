@@ -1,5 +1,7 @@
 # Change Log
 
+- IDME-4270: Add local config for user services applications
+
 ### Released
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
