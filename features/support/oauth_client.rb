@@ -35,8 +35,12 @@ class OAuthClient
   end
 
   def has_affiliation?(group)
-    puts "Payload Affiliation Value: #{payload['affiliation']}"
-    payload["affiliation"] == group
+    puts "Payload Affiliation Value: #{affiliation_payload}"
+    affiliation_payload == group
+  end
+
+  def affiliation_payload
+    payload["affiliation"]
   end
 
   def payload

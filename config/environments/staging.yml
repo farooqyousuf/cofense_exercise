@@ -34,6 +34,7 @@ oauth:
   twitter_pw:
   experian_user: Erin Rashid
   policy:
+    au10tix_light     : au10tix-light
     developer         : developer
     farooq            : farooq
     government        : government
