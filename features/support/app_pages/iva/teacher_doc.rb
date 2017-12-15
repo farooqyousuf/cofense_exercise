@@ -57,7 +57,7 @@ class TeacherDoc < IDmeBase
   end
 
   def populate_teacher_first_state(value)
-    select_filter(".select2-arrow", value)
+    search_option("teacher_state",  ".select2-arrow", value)
   end
 
   def required_fields
