@@ -71,4 +71,32 @@ Given(/^I verify that View Full Profile link directs me to correct page$/) do
   @WalletDashboard.click_view_profile
   expect(page).to have_current_path("/settings")
   expect(page).to have_css("div.wallet-settings-user")
-  end
+end
+
+Given("I should be on the Wallet dashboard page url") do
+  expect(page).to have_current_path(FigNewton.wallet.homepage.url, :url => true)
+end
+
+Given("I verify that IDs and Logins toggle buttons direct me to corresponding page views #IDs or Logins") do
+  @WalletDashboard.find_id_toggle
+end
+
+Given("I verify required main header sections are visible #IDs and Logins, Activity Feed <h{int}>") do |int|
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+Given("I verify required sub header sections are visible #My IDs, Inactive IDs, My Logins, Inactive Logins <h{int}>") do |int|
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+Given("I verify that IDs and Logins page buttons are visible #Inactive IDs, Add ID, Inactive logins, Add Login") do
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+Given("I verify that Activity Feed is present") do
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+Given("I verify that {string} links direct me to corresponding page url") do |string|
+  pending # Write code here that turns the phrase above into concrete actions
+end
