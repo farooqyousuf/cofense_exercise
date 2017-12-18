@@ -4,6 +4,7 @@ Feature: Test Wallet Dashboard Page Feature
 Background:
   * I create "WalletHomepage, WalletDashboard, WalletMyids" page objects
   * I visit "WalletHomepage"
+  * I click on the Wallet Sign in link
   * I login to wallet as a "Military" user
 
 Scenario: Verify Wallet Shared Main Nav
@@ -25,9 +26,8 @@ Scenario: Verify Wallet Shared Side Nav
   * I verify membership date is displayed correctly
   * I verify that View Full Profile link directs me to correct page
 
-@wip
 Scenario: Verify Dashboard Components
-  * I should be on the Wallet dashboard page #url
+  * I should be on the Wallet dashboard page url
   * I verify that IDs and Logins toggle buttons direct me to corresponding page views #IDs or Logins
   * I verify required main header sections are visible #IDs and Logins, Activity Feed <h2>
   * I verify required sub header sections are visible #My IDs, Inactive IDs, My Logins, Inactive Logins <h4>
