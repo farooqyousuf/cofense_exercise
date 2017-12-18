@@ -65,4 +65,8 @@ class WalletDashboard < IDmeBase
   def click_view_profile
     click_link("View Full Profile")
   end
+
+  def find_id_toggle
+    find("div.wallet-toggle-option.js-toggle-group h4:nth-child(2)[0]").text 
+  end
 end
