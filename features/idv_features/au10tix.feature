@@ -3,7 +3,7 @@ Feature: Identity Verification using Au10tix
 
   Background:
     * I create "AdminTool, AdminSettings, IDV, Consent" page objects
-    * I set the External Vendor Environment within the Admin tool
+    * I set the External Vendor Environment to "successfully verify au10tix" within the Admin tool
     * I visit IDP through the "au10tix_light" policy
     * I click on the Sign Up link
     * I sign up as a new user

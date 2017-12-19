@@ -83,12 +83,6 @@ include DataMagic
     page.driver.browser.all(:xpath, '//input[@type="file"]')[number].send_keys("#{Dir.pwd}/screenshots/screenshot.png")
   end
 
-  def attach_idv_doc(number = 0, document: "none")
-    page.has_css?("#file-upload")
-    Dir.mkdir("./test_documents") unless Dir.exists?("./test_documents")
-    page.driver.browser.all(:xpath, '//input[@type="file"]')[number].send_keys("#{Dir.pwd}/test_documents/test_#{document}.jpg")
-  end
-
   def attach_unique_doc(number = 0, document: "none")
     page.has_css?("#file-upload") #will wait until this is true which means the file upload page has loaded, and the bottom command will not fail.
     if (document == "pdf") || (document == "docx")

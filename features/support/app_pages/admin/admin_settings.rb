@@ -8,9 +8,13 @@ include PageManagement
     super("#{FigNewton.admin.base_url}/settings")
   end
 
-  def set_vendor_env
+  def set_vendor_env(settings: "none")
     vendors = ["usaa_env", "experian_env", "au10tix_env", "confirmio_env", "plaid_env", "fraudnet_env", "phone_checks"]
-    env     = ["Mock", "Staging", "Mock", "Mock", "Mock", "Disable", "Disable"]
+
+    env = case settings
+          when "successfully verify au10tix"
+            ["Mock", "Staging", "Mock", "Mock", "Mock", "Disable", "Disable"]
+          end
 
     vendors.zip(env).each do |vendor, env|
       select(env, :from => vendor)

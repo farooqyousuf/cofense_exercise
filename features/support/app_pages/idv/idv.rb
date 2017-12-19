@@ -7,8 +7,10 @@ class IDV < IDmeBase
   include ErrorMessages
 
   def set_up_multifactor
+    data = data_for(:experian_user3)
+
     click_link("Voice or Text Message")
-    fill_in "multifactor_phone", :with => "6514581155"
+    fill_in "multifactor_phone", :with => data.fetch("mobile_phone")
 
     3.times {
       sleep 1
@@ -67,4 +69,9 @@ class IDV < IDmeBase
     [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
   end
 
+  def attach_idv_doc(number = 0, document: "none")
+    page.has_css?("#file-upload")
+    Dir.mkdir("./test_documents") unless Dir.exists?("./test_documents")
+    page.driver.browser.all(:xpath, '//input[@type="file"]')[number].send_keys("#{Dir.pwd}/test_documents/test_#{document}.jpg")
+  end
 end

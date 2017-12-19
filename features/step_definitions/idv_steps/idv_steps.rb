@@ -1,7 +1,7 @@
-Given(/^I set the External Vendor Environment within the Admin tool$/) do
+Given(/^I set the External Vendor Environment to "([^"]*)" within the Admin tool$/) do |settings|
   @AdminTool.login
   step 'I visit "AdminSettings"'
-  @AdminSettings.set_vendor_env
+  @AdminSettings.set_vendor_env(settings: settings)
   sleep 1
 end
 
