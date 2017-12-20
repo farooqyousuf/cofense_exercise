@@ -20,6 +20,7 @@ Given(/^I should be on the teacher verification screen$/) do
 end
 
 Given(/^I verify using teacher documentation$/) do
+  step 'I generate a unique doc'
   @TeacherDoc.verify(type: "unique")
 end
 
