@@ -3,6 +3,11 @@ admin_test_user:
   last_name: admintestlastname
   email: admintest_donotdelete@id.me
 
+search_apostrophe_test_user:
+  first_name: searchtestfirstname
+  last_name: searchtestapostrophe'lastname
+  email: searchtest_donotdelete@id.me
+
 mil_email:
   dupe_email: donotdelete@id.me
   dupe_fname: Capybara

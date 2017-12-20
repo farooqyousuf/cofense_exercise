@@ -5,6 +5,9 @@
 ### Released
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
+# 2.4.52 (12/20/17)
+- INT-2257: Support tool search user by name test
+
 # 2.4.51 (12/13/17)
 - IDME-4268: Remove step to verify user is on wallet dashboard page for wallet user tests
 
