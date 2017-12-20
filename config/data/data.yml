@@ -132,6 +132,11 @@ experian_user2:
   phone: 6202318771
   credit_card: 4888603132346941
 
+experian_user3:
+  mobile_phone: 6514581155
+  social: 666325086
+  social_confirm: 666325086
+
 teacher_doc:
   first_name: Sue
   last_name: Gentz
