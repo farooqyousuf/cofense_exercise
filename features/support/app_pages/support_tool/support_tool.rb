@@ -31,7 +31,7 @@ include PageManagement
             data = data_for(:admin_test_user)
     special_data = data_for(:search_apostrophe_test_user)
 
-    if type == "email" || "partial_email"
+    if type == "email" || type == "partial_email"
       click_link("Email")
     else
       click_link("Name")
