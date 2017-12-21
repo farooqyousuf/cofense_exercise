@@ -31,10 +31,6 @@ include PageManagement
             data = data_for(:admin_test_user)
     special_data = data_for(:search_apostrophe_test_user)
 
-       # full_name = data.fetch("first_name") + " " + data.fetch("last_name")
-    # partial_name = data.fetch("first_name").split("f")
-      # apostrophe = data.fetch("last_name")
-
     click_link("Name")
 
     case type
