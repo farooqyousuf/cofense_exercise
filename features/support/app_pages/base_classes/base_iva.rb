@@ -89,24 +89,20 @@ include DataMagic
     case document
       
     when "pdf", "docx"
-      Dir.mkdir("./test_documents") unless Dir.exists?("./test_documents")
-      page.driver.browser.all(:xpath, '//input[@type="file"]')[number].send_keys("#{Dir.pwd}/test_documents/test_#{document}.#{document}")
-
+      extension = document
     when "txt_to_jpg", "idv"
-      Dir.mkdir("./test_documents") unless Dir.exists?("./test_documents")
-      page.driver.browser.all(:xpath, '//input[@type="file"]')[number].send_keys("#{Dir.pwd}/test_documents/test_#{document}.jpg")
-
+      extension = "jpg"
     when "over_16MB" 
-      Dir.mkdir("./test_documents") unless Dir.exists?("./test_documents")
-      page.driver.browser.all(:xpath, '//input[@type="file"]')[number].send_keys("#{Dir.pwd}/test_documents/test_#{document}.gif")
-
+      extension = "gif"
     when "large_file_under_16MB"
-      Dir.mkdir("./test_documents") unless Dir.exists?("./test_documents")
-      page.driver.browser.all(:xpath, '//input[@type="file"]')[number].send_keys("#{Dir.pwd}/test_documents/test_#{document}.pdf")
-
+      extension = "pdf"
     else
-      page.driver.browser.all(:xpath, '//input[@type="file"]')[number].send_keys("#{Dir.pwd}/screenshots/screenshot_#{document}.#{document}")
+      extension = document
     end
+    
+     Dir.mkdir("./test_documents") unless Dir.exists?("./test_documents")
+     page.driver.browser.all(:xpath, '//input[@type="file"]')[number].send_keys("#{Dir.pwd}/test_documents/test_#{document}.#{extension}")
+    
   end
 
 end
