@@ -18,9 +18,9 @@ Feature: Identity Verification by uploading an ID from the computer
     * I verify user level properties for "Identity"
 
   @delete_current_user_email
-  Scenario: Successful verification with Au10tix
+  Scenario: Successful verification with AU10TIX
     * I generate a unique "png" doc
-    * I set the External Vendor Environment to "verify via au10tix"
-    * I "verify via au10tix" using a mocked driver's license
+    * I set the External Vendor Environment to "verify via AU10TIX"
+    * I "verify via AU10TIX" using a mocked driver's license
     * I should be successfully verified as "Identity"
     * I verify user level properties for "Identity"
