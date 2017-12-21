@@ -12,7 +12,7 @@ include PageManagement
     vendors = ["usaa_env", "experian_env", "au10tix_env", "confirmio_env", "plaid_env", "fraudnet_env", "phone_checks"]
 
     env = case settings
-          when "successfully verify confirm iO", "successfully verify au10tix"
+          when "verify via Confirm.io", "verify via AU10TIX"
             ["Mock", "Staging", "Mock", "Mock", "Mock", "Disable", "Disable"]
           end
 
