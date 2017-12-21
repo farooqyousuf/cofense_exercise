@@ -10,17 +10,17 @@ Feature: Identity Verification by uploading an ID from the computer
     * I click on the verify by uploading driver's license link
 
   @delete_current_user_email
-  Scenario: Successful verification with Confirm iO
+  Scenario: Successful verification with Confirm.io
     * I generate a unique "png" doc
-    * I set the External Vendor Environment to "successfully verify confirm iO" within the Admin tool
-    * I "successfully verify confirm iO" using a mocked driver's license
+    * I set the External Vendor Environment to "verify via Confirm.io"
+    * I "verify via Confirm.io" using a mocked driver's license
     * I should be successfully verified as "Identity"
     * I verify user level properties for "Identity"
 
   @delete_current_user_email
   Scenario: Successful verification with Au10tix
     * I generate a unique "png" doc
-    * I set the External Vendor Environment to "successfully verify au10tix" within the Admin tool
-    * I "successfully verify au10tix" using a mocked driver's license
+    * I set the External Vendor Environment to "verify via au10tix"
+    * I "verify via au10tix" using a mocked driver's license
     * I should be successfully verified as "Identity"
     * I verify user level properties for "Identity"
