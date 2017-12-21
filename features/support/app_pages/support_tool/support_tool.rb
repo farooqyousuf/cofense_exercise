@@ -31,11 +31,11 @@ include PageManagement
             data = data_for(:admin_test_user)
     special_data = data_for(:search_apostrophe_test_user)
 
-       # full_name = data.fetch("first_name") + " " + data.fetch("last_name")
-    # partial_name = data.fetch("first_name").split("f")
-      # apostrophe = data.fetch("last_name")
-
-    click_link("Name")
+    if type == "email" || "partial_email"
+      click_link("Email")
+    else
+      click_link("Name")
+    end
 
     case type
     when "first_name", "last_name"
@@ -45,9 +45,13 @@ include PageManagement
     when "partial_name"
       populate_partial_name(data: data)
     when "uppercase_characters"
-      populate__to_uppercase(data: data)
+      populate_to_uppercase(data: data)
     when "apostrophe"
       populate_name(data: special_data, name: "last_name")
+    when "email"
+      populate_email(data: data, email: "email")
+    when "partial_email"
+      populate_partial_email(data: data, email: "email")
     end
 
     sleep 1
@@ -58,7 +62,6 @@ include PageManagement
     else
       assert_full_name(data: data)
     end
-    # page.assert_text(full_name)
   end
 
   def populate_name(data:, name:)
@@ -73,8 +76,16 @@ include PageManagement
     fill_in("name", :with => data.fetch(first_name).split("f").first)
   end
 
-  def populate__to_uppercase(data:, first_name: "first_name", last_name: "last_name")
+  def populate_to_uppercase(data:, first_name: "first_name", last_name: "last_name")
     fill_in("name", :with => (data.fetch(first_name) + " " + data.fetch(last_name)).upcase)
+  end
+
+  def populate_email(data:, email:)
+    fill_in("email", :with => data.fetch(email))
+  end
+
+  def populate_partial_email(data:, email:)
+    fill_in("email", :with => data.fetch(email).split("_").first)
   end
 
   def assert_full_name(data:, first_name: "first_name", last_name: "last_name")
