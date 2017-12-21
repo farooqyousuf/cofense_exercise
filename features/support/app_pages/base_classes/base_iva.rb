@@ -97,7 +97,7 @@ include DataMagic
     when "large_file_under_16MB"
       extension = "pdf"
     else
-      extension = document
+      page.driver.browser.all(:xpath, '//input[@type="file"]')[number].send_keys("#{Dir.pwd}/screenshots/screenshot_#{document}.#{document}")		
     end
     
      Dir.mkdir("./test_documents") unless Dir.exists?("./test_documents")
