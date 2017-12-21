@@ -9,15 +9,19 @@ class IDV < IDmeBase
   def verify(action: "none", document: "none")
 
     case action
-    when "successfully verify confirm iO"
-      upload_ids(front_id: "png", back_id: "idv")
-      click_button("Look Good?")
-      confirm_io_callback(mocked_result: "Success")
-    when "successfully verify au10tix"
-      upload_ids(front_id: "idv", back_id: "png")
-      click_button("Look Good?")
-      confirm_io_callback(mocked_result: "Failure")
+    when "verify via Confirm.io"
+      front_id = "png"
+      back_id = "idv"
+      mocked_result = "Success"
+    when "verify via AU10TIX"
+      front_id = "idv"
+      back_id = "png"
+      mocked_result = "Failure"
     end
+    
+    upload_ids(front_id: front_id, back_id: back_id)
+    click_button("Look Good?")
+    confirm_io_callback(mocked_result: mocked_result)
 
     idv_user = data_for(:experian_user3)
     populate_fields(data: idv_user)
