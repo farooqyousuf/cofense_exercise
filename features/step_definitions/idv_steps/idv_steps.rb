@@ -1,8 +1,10 @@
 Given(/^I set the External Vendor Environment to "([^"]*)" within the Admin tool$/) do |settings|
-  @AdminTool.login
+  @AdminTool.login_in_new_window
   step 'I visit "AdminSettings"'
   @AdminSettings.set_vendor_env(settings: settings)
   sleep 1
+  close_current_browser
+  use_last_browser_created
 end
 
 Given(/^I set up multi\-factor authentication$/) do
@@ -13,7 +15,7 @@ Given(/^I click on the verify by uploading driver's license link$/) do
   @IDV.click_verify_drivers_license_link
 end
 
-Given(/^I verify using a mocked driver's license$/) do
-  @IDV.verify
+Given(/^I "([^"]*)" using a mocked driver's license$/) do |action|
+  @IDV.verify(action: action)
   @Consent.allow
 end
