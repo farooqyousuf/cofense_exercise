@@ -170,7 +170,12 @@ offer_cms:
 
 wallet:
   homepage:
+<<<<<<< HEAD
     url: https://wallet-staging.idmeinc.net/
+=======
+    url: https://wallet-staging.idmeinc.net
+    social_federation_url: https://wallet-staging.idmeinc.net/#!
+>>>>>>> IDME-3765: Remove back slash from url as it is not necessary
     title: One Identity. One Wallet. | ID.me
   dashboard: https://wallet-staging.idmeinc.net/dashboard
   settings: https://wallet-staging.idmeinc.net/settings
