@@ -116,7 +116,7 @@ Given(/^I generate a unique "([^"]*)" doc$/) do |document|
   fill_in "input_text", with: Faker::Lorem.paragraph(50)
 
   @IDmeBase = IDmeBase.new
-  @IDmeBase.save_unique_screenshot_in_dir(document: document)
+  @IDmeBase.save_screenshot_in_dir(document: document)
   close_current_browser
   use_last_browser_created
 end

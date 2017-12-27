@@ -1,3 +1,7 @@
+docs:
+  idv: test_idv.jpg
+  png: test_png.png
+
 admin_test_user:
   first_name: admintestfirstname
   last_name: admintestlastname

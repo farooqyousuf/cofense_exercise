@@ -8,17 +8,19 @@ class IDV < IDmeBase
 
   def verify(action: "none", document: "none")
 
+    data = data_for(:docs)
+
     case action
     when "verify via Confirm.io"
-      front_id = "png"
-      back_id = "idv"
+      front_id = data.fetch("png")
+      back_id = data.fetch("idv")
       mocked_result = "Success"
     when "verify via AU10TIX"
-      front_id = "idv"
-      back_id = "png"
+      front_id = data.fetch("idv")
+      back_id = data.fetch("png")
       mocked_result = "Failure"
     end
-    
+
     upload_ids(front_id: front_id, back_id: back_id)
     click_button("Look Good?")
     confirm_io_callback(mocked_result: mocked_result)
@@ -36,13 +38,16 @@ class IDV < IDmeBase
   end
 
   def upload_ids(front_id:, back_id:)
+    #Upload front id
     click_button("Upload from my computer")
     all(".photos-container")[0].click
-    attach_unique_doc(document: front_id)
+    attach_doc(document: front_id)
     sleep 2
+
+    #Upload back id
     click_button("Upload")
     all(".photos-container")[1].click
-    attach_unique_doc(document: back_id)
+    attach_doc(document: back_id)
     click_button("Upload")
   end
 
