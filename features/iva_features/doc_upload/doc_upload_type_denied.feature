@@ -14,7 +14,7 @@ Feature: IVA verification using document upload
     * I click on the Military Verify by uploading documentation link
     * I click on the Begin link
     * I generate a unique "html" doc
-    * I verify using military "html" documentation for Service Member
+    * I verify using military "test_html.html" documentation for Service Member
     * I should see the red error "is not a valid document" under the textfield
     * I verify that a document was not uploaded
 
@@ -23,7 +23,7 @@ Feature: IVA verification using document upload
     * I click on the Military Verify by uploading documentation link
     * I click on the Begin link
     * I generate a unique "wpd" doc
-    * I verify using military "wpd" documentation for Service Member
+    * I verify using military "test_wpd.wpd" documentation for Service Member
     * I should see the red error "is not a valid document" under the textfield
     * I verify that a document was not uploaded
 
@@ -32,7 +32,7 @@ Feature: IVA verification using document upload
     * I click on the Military Verify by uploading documentation link
     * I click on the Begin link
     * I generate a unique "odt" doc
-    * I verify using military "odt" documentation for Service Member
+    * I verify using military "test_odt.odt" documentation for Service Member
     * I should see the red error "is not a valid document" under the textfield
     * I verify that a document was not uploaded
 
