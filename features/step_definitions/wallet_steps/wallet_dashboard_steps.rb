@@ -71,4 +71,64 @@ Given(/^I verify that View Full Profile link directs me to correct page$/) do
   @WalletDashboard.click_view_profile
   expect(page).to have_current_path("/settings")
   expect(page).to have_css("div.wallet-settings-user")
-  end
+end
+
+Given("I should be on the Wallet dashboard page url") do
+  expect(page).to have_current_path(FigNewton.wallet.homepage.url, :url => true)
+end
+
+Given("I verify required main header sections are visible within home page") do
+  expect(@WalletDashboard.find_page_header).to have_content "Dashboard"
+  expect(@WalletDashboard.find_ids_and_logins_subheader).to have_content "IDs and Logins"
+  expect(@WalletDashboard.find_activity_feed_subheader).to have_content "Activity Feed"
+end
+
+Given("I verify that IDs toggle button directs me to corresponding view") do
+  expect(@WalletDashboard.find_my_ids_section).to have_content "My IDs"
+  expect(page).to have_css("div.card-military")
+end
+
+Given("I verify that Logins toggle button directs me to corresponding view") do
+  @WalletDashboard.click_logins_toggle_button
+  expect(@WalletDashboard.find_my_ids_section).to have_content "Active Logins"
+  expect(page).to have_text "You currently have no logins in your wallet."
+end
+
+Given("I verify that 'View All' links take me to the correct urls") do
+  @WalletDashboard.click_ids_and_logins_view_all
+  expect(page).to have_current_path("/ids")
+  @WalletDashboard.click_wallet_subnav_dashboard_tab
+  @WalletDashboard.click_activity_feed_view_all
+  expect(page).to have_current_path("/activity")
+end
+
+Given("I verify 'Add ID' button triggers affinity group modal") do
+  @WalletDashboard.click_wallet_subnav_dashboard_tab
+  @WalletDashboard.click_add_id_button
+  expect(@WalletDashboard.find_add_id_modal).to have_content "Adding an ID will give you access to benefits at ID.me partners that accept that ID."
+  @WalletDashboard.close_id_modal
+end
+
+Given("I verify Teacher ID button") do
+  @WalletDashboard.teacher_flow_view
+  expect(@WalletDashboard.find_flow_header).to have_content "Teacher ID"
+  @WalletDashboard.browser_cleanup
+end
+
+Given("I verify Responder ID button") do
+  @WalletDashboard.responder_flow_view
+  expect(@WalletDashboard.find_flow_header).to have_content "Responder ID"
+  @WalletDashboard.browser_cleanup
+end
+
+Given("I verify Government ID button") do
+  @WalletDashboard.government_flow_view
+  expect(@WalletDashboard.find_flow_header).to have_content "Government ID"
+  @WalletDashboard.browser_cleanup
+end
+
+Given("I verify Student ID button") do
+  @WalletDashboard.student_flow_view
+  expect(@WalletDashboard.find_flow_header).to have_content "Student ID"
+  @WalletDashboard.browser_cleanup
+end
