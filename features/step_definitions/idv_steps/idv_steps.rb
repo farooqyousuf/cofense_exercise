@@ -17,5 +17,13 @@ end
 
 Given(/^I "([^"]*)" using a mocked driver's license$/) do |action|
   @IDV.verify(action: action)
-  @Consent.allow
+end
+
+Given(/^I wait for the ID to be checked for authenticity$/) do
+  @IDV.check_for_authenticity
+end
+
+Given(/^I should see the error message for identity verification "(.*?)"$/) do |expected_text|
+  sleep 2
+  (idv_error_message.should eq(expected_text)).should == true
 end

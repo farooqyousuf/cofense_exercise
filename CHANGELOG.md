@@ -5,6 +5,9 @@
 ### Released
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
+# 2.4.55 (1/3/17)
+- CORE-8538: Failed Document Test
+
 # 2.4.54 (12/21/17)
 - CORE-8679: Confirm iO Successful Verification Test
 

@@ -6,17 +6,24 @@ class IDV < IDmeBase
   include Capybara::DSL
   include ErrorMessages
 
-  def verify(action: "none", document: "none")
+  def verify(action: "none", document: "none", populate: "none")
 
     data = data_for(:docs)
 
     case action
     when "verify via Confirm.io"
+      populate = true
       front_id = data.fetch("png")
       back_id = data.fetch("idv")
       mocked_result = "Success"
     when "verify via AU10TIX"
+      populate = true
       front_id = data.fetch("idv")
+      back_id = data.fetch("png")
+      mocked_result = "Failure"
+    when "fail documentation"
+      populate = false
+      front_id = data.fetch("png")
       back_id = data.fetch("png")
       mocked_result = "Failure"
     end
@@ -25,12 +32,14 @@ class IDV < IDmeBase
     click_button("Look Good?")
     confirm_io_callback(mocked_result: mocked_result)
 
-    idv_user = data_for(:experian_user3)
-    populate_fields(data: idv_user)
+    if populate == true
+      idv_user = data_for(:experian_user3)
+      populate_fields(data: idv_user)
 
-    check("idme_verification_identity_accepts_fcra")
-    click_button("Verify my information")
-    click_link("Verify")
+      check("idme_verification_identity_accepts_fcra")
+      click_button("Verify my information")
+      click_link("Verify")
+    end
   end
 
   def click_verify_drivers_license_link
@@ -55,9 +64,8 @@ class IDV < IDmeBase
     click_button("#{mocked_result} Callback")
   end
 
-  def accept_confirm_io_callback
-    binding.pry
-    # click_button("Confirmio Error Callback")
+  def check_for_authenticity
+    sleep 15
   end
 
   def populate_fields(data:)
