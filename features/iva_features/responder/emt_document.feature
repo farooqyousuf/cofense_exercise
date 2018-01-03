@@ -11,7 +11,6 @@ Feature: Responder verification as an EMT using document upload
 
   @delete_current_user_email @smoke
   Scenario: Successful verificaton with doc upload
-    * I generate a unique doc
     * I verify using EMT doc upload
     * I approve the document in the IDme support tool
     * I should be successfully verified as "EMT"
@@ -25,7 +24,6 @@ Feature: Responder verification as an EMT using document upload
 
   @delete_experian_user1 @delete_current_user_email
   Scenario: Dupe user attempt test for emt document (Error code B1500)
-    * I generate a unique doc
     * I verify using EMT doc upload
     * I approve the document in the IDme support tool
     * I clear the session from Authority
@@ -36,8 +34,8 @@ Feature: Responder verification as an EMT using document upload
     * I should see the error message "We’re sorry, but we are unable to verify your credentials with the information you provided."
     * I verify the attempt is marked as "DUPLICATE"
 
- @delete_experian_user1 @delete_current_user_email
- Scenario: Dupe document attempt test for emt document (Prompt Error Code B1501)
+  @delete_experian_user1 @delete_current_user_email
+  Scenario: Dupe document attempt test for emt document (Prompt Error Code B1501)
     * I verify using EMT doc upload
     * I approve the document in the IDme support tool
     * I clear the session from Authority

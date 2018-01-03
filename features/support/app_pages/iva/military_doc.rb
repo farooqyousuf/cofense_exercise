@@ -50,7 +50,7 @@ class MilitaryDoc < IDmeBase
     if (type == "unique_doc")
       #attach unique doc
       populate_dd214_type("DD214 - Other")
-      attach_unique_doc(document: document)
+      attach_doc(document: document)
       click_continue
     end
   end

@@ -5,6 +5,9 @@
 ### Released
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
+# 2.4.54 (12/21/17)
+- CORE-8679: Confirm iO Successful Verification Test
+
 # 2.4.53 (12/20/17)
 - INT-2257: Support tool search user by name test
 

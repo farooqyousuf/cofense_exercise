@@ -97,18 +97,6 @@ Given(/^I submit the verification code for "([^"]*)"$/) do |option|
   end
 end
 
-Given(/^I generate a unique doc$/) do
-  create_new_window
-  use_last_browser_created
-  visit 'http://pasted.co/'
-  fill_in "input_text", with: Faker::Lorem.paragraph(50)
-
-  @IDmeBase = IDmeBase.new
-  @IDmeBase.save_screenshot_in_dir
-  close_current_browser
-  use_last_browser_created
-end
-
 Given(/^I generate a unique "([^"]*)" doc$/) do |document|
   create_new_window
   use_last_browser_created
@@ -116,7 +104,7 @@ Given(/^I generate a unique "([^"]*)" doc$/) do |document|
   fill_in "input_text", with: Faker::Lorem.paragraph(50)
 
   @IDmeBase = IDmeBase.new
-  @IDmeBase.save_unique_screenshot_in_dir(document: document)
+  @IDmeBase.save_screenshot_in_dir(document: document)
   close_current_browser
   use_last_browser_created
 end
