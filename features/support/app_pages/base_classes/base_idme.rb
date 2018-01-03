@@ -27,11 +27,6 @@ class IDmeBase
     click_continue
   end
 
-  # def save_screenshot_in_dir
-  #   Dir.mkdir("./test_documents") unless Dir.exists?("./test_documents")
-  #   page.save_screenshot("#{Dir.pwd}/test_documents/test_.png")
-  # end
-
   def save_screenshot_in_dir(document: "none")
     Dir.mkdir("./test_documents") unless Dir.exists?("./test_documents")
     page.save_screenshot("#{Dir.pwd}/test_documents/test_#{document}.#{document}")

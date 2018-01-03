@@ -18,7 +18,6 @@ features/support/env.rb
 target/*
 test_report.html
 /*.html
-/screenshots
 /test_documents/test_gif.gif
 /test_documents/test_html.html
 /test_documents/test_jpeg.jpeg
