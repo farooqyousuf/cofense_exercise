@@ -5,8 +5,12 @@
 ### Released
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
-# 2.4.54 (12/26/17)
+# 2.4.55 (12/26/17)
 - IDME-3765: Wallet Dashboard > Verify Dashboard Components
+
+# 2.4.54 (12/21/17)
+- INT-2272: Support tool search for user by email test
+- CORE-8679: Confirm iO Successful Verification Test
 
 # 2.4.53 (12/20/17)
 - INT-2257: Support tool search user by name test

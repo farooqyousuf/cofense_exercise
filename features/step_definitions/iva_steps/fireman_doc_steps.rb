@@ -3,6 +3,7 @@ Given(/^I create a Fireman Doc page object$/) do
 end
 
 Given(/^I verify using firefighter documentation$/) do
+  step 'I generate a unique "png" doc'
   @FiremanDoc.verify(type: "unique")
 end
 

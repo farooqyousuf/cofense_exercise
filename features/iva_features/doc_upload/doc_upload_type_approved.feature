@@ -14,7 +14,7 @@ Feature: IVA verification using document upload
     * I click on the Military Verify by uploading documentation link
     * I click on the Begin link
     * I generate a unique "jpeg" doc
-    * I verify using military "jpeg" documentation for Service Member
+    * I verify using military "test_jpeg.jpeg" documentation for Service Member
     * I verify that a "jpeg" document was successfully uploaded
 
   @delete_current_user_email
@@ -22,7 +22,7 @@ Feature: IVA verification using document upload
     * I click on the Military Verify by uploading documentation link
     * I click on the Begin link
     * I generate a unique "png" doc
-    * I verify using military "png" documentation for Service Member
+    * I verify using military "test_png.png" documentation for Service Member
     * I verify that a "png" document was successfully uploaded
 
   @delete_current_user_email
@@ -30,7 +30,7 @@ Feature: IVA verification using document upload
     * I click on the Military Verify by uploading documentation link
     * I click on the Begin link
     * I generate a unique "jpg" doc
-    * I verify using military "jpg" documentation for Service Member
+    * I verify using military "test_jpg.jpg" documentation for Service Member
     * I verify that a "jpg" document was successfully uploaded
 
   @delete_current_user_email
@@ -38,7 +38,7 @@ Feature: IVA verification using document upload
     * I click on the Military Verify by uploading documentation link
     * I click on the Begin link
     * I generate a unique "tiff" doc
-    * I verify using military "tiff" documentation for Service Member
+    * I verify using military "test_tiff.tiff" documentation for Service Member
     * I verify that a "tiff" document was successfully uploaded
 
   @delete_current_user_email
@@ -46,19 +46,19 @@ Feature: IVA verification using document upload
     * I click on the Military Verify by uploading documentation link
     * I click on the Begin link
     * I generate a unique "gif" doc
-    * I verify using military "gif" documentation for Service Member
+    * I verify using military "test_gif.gif" documentation for Service Member
     * I verify that a "gif" document was successfully uploaded
 
   @delete_current_user_email
   Scenario: Successful document upload for pdf document type
     * I click on the Military Verify by uploading documentation link
     * I click on the Begin link
-    * I verify using military "pdf" documentation for Service Member
+    * I verify using military "test_pdf.pdf" documentation for Service Member
     * I verify that a "pdf" document was successfully uploaded
 
   @delete_current_user_email
   Scenario: Successful document upload for docx document type
     * I click on the Military Verify by uploading documentation link
     * I click on the Begin link
-    * I verify using military "docx" documentation for Service Member
+    * I verify using military "test_docx.docx" documentation for Service Member
     * I verify that a "docx" document was successfully uploaded

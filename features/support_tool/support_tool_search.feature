@@ -22,3 +22,9 @@ Feature: Search user by name within the Support tool
 
   Scenario: Successfully search user by last name with an apostrophe
     * I verify that the user was searched with "apostrophe" using the Support tool
+
+  Scenario: Successfully search user by email
+    * I verify that the user was searched with "email" using the Support tool
+
+  Scenario: Successfully search user by part of the email
+    * I verify that the user was searched with "partial_email" using the Support tool
