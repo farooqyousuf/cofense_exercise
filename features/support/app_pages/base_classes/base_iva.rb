@@ -78,28 +78,10 @@ include DataMagic
       click_link("Begin")
   end
 
-  def attach_doc(number = 0)
+  def attach_doc(number = 0, document: "test_png.png")
     page.has_css?("#file-upload") #will wait until this is true which means the file upload page has loaded, and the bottom command will not fail.
-    page.driver.browser.all(:xpath, '//input[@type="file"]')[number].send_keys("#{Dir.pwd}/screenshots/screenshot.png")
-  end
-
-  def attach_unique_doc(number = 0, document: "none")
-    page.has_css?("#file-upload") #will wait until this is true which means the file upload page has loaded, and the bottom command will not fail.
-    if (document == "pdf") || (document == "docx")
-      Dir.mkdir("./test_documents") unless Dir.exists?("./test_documents")
-      page.driver.browser.all(:xpath, '//input[@type="file"]')[number].send_keys("#{Dir.pwd}/test_documents/test_#{document}.#{document}")
-    elsif (document == "txt_to_jpg")
-      Dir.mkdir("./test_documents") unless Dir.exists?("./test_documents")
-      page.driver.browser.all(:xpath, '//input[@type="file"]')[number].send_keys("#{Dir.pwd}/test_documents/test_#{document}.jpg")
-    elsif (document == "over_16MB")
-      Dir.mkdir("./test_documents") unless Dir.exists?("./test_documents")
-      page.driver.browser.all(:xpath, '//input[@type="file"]')[number].send_keys("#{Dir.pwd}/test_documents/test_#{document}.gif")
-    elsif (document == "large_file_under_16MB")
-      Dir.mkdir("./test_documents") unless Dir.exists?("./test_documents")
-      page.driver.browser.all(:xpath, '//input[@type="file"]')[number].send_keys("#{Dir.pwd}/test_documents/test_#{document}.pdf")
-    else
-      page.driver.browser.all(:xpath, '//input[@type="file"]')[number].send_keys("#{Dir.pwd}/screenshots/screenshot_#{document}.#{document}")
-    end
+    Dir.mkdir("./test_documents") unless Dir.exists?("./test_documents")
+    page.driver.browser.all(:xpath, '//input[@type="file"]')[number].send_keys("#{Dir.pwd}/test_documents/#{document}")
   end
 
 end

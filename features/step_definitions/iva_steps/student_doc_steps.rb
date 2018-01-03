@@ -3,7 +3,7 @@ Given(/^I create a Student Doc page object$/) do
 end
 
 Given(/^I verify using student documentation$/) do
-  step 'I generate a unique doc'
+  step 'I generate a unique "png" doc'
   @StudentDoc.verify(type: "unique")
 end
 

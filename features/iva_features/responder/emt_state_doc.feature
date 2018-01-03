@@ -12,7 +12,6 @@ Feature: Responder verification as an EMT using state doc upload
   @smoke @delete_current_user_email
   #unique doc and user must pass experian check
   Scenario: Successful verification with EMT state doc upload
-    * I generate a unique doc
     * I verify using state EMT doc upload
     * I approve the document in the IDme support tool
     * I should be successfully verified as "EMT"
@@ -26,7 +25,6 @@ Feature: Responder verification as an EMT using state doc upload
 
   @delete_experian_user1 @delete_current_user_email
   Scenario: Dupe attempt for EMT state document upload
-    * I generate a unique doc
     * I verify using state EMT doc upload
     * I approve the document in the IDme support tool
     * I clear the session from Authority

@@ -27,14 +27,9 @@ class IDmeBase
     click_continue
   end
 
-  def save_screenshot_in_dir
-    Dir.mkdir("./screenshots") unless Dir.exists?("./screenshots")
-    page.save_screenshot("#{Dir.pwd}/screenshots/screenshot.png")
-  end
-
-  def save_unique_screenshot_in_dir(document: "none")
-    Dir.mkdir("./screenshots") unless Dir.exists?("./screenshots")
-    page.save_screenshot("#{Dir.pwd}/screenshots/screenshot_#{document}.#{document}")
+  def save_screenshot_in_dir(document: "none")
+    Dir.mkdir("./test_documents") unless Dir.exists?("./test_documents")
+    page.save_screenshot("#{Dir.pwd}/test_documents/test_#{document}.#{document}")
   end
 
   def wait_for_ajax

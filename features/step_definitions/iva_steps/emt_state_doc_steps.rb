@@ -7,6 +7,7 @@ Given(/^I click on the Verify using EMT State Doc link$/) do
 end
 
 Given(/^I verify using state EMT doc upload$/) do
+  step 'I generate a unique "png" doc'
   @EMTStateDoc.verify(type: "unique")
 end
 
