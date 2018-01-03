@@ -74,10 +74,6 @@ class TeacherLookup < IDmeBase
     end
   end
 
-  def populate_teacher_first_state(value)
-    select_filter("id_teacher_state", value)
-  end
-
   def click_verify_by_state_lookup
     click_link("I am licensed by my state.")
   end
