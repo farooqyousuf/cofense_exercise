@@ -7,7 +7,7 @@ Given(/^I click on the Verify as a state certified Police Officer$/) do
 end
 
 Given(/^I verify using police officer documentation$/) do
-  step 'I generate a unique doc'
+  step 'I generate a unique "png" doc'
   @police.verify(type: "unique")
 end
 

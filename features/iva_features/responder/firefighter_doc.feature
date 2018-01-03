@@ -12,7 +12,6 @@ Feature: Responder verification as a firefighter using document upload
   @smoke @delete_current_user_email
   # combo of experian/precise id check and unique doc
   Scenario: Successful verification as a Firefighter using doc upload
-    * I generate a unique doc
     * I verify using firefighter documentation
     * I approve the document in the IDme support tool
     * I should be successfully verified as "Firefighter"
@@ -26,7 +25,6 @@ Feature: Responder verification as a firefighter using document upload
 
   @delete_experian_user1 @delete_current_user_email
   Scenario: Dupe attempt test for fireman doc upload (Error code 85)
-    * I generate a unique doc
     * I verify using firefighter documentation
     * I approve the document in the IDme support tool
     * I clear the session from Authority
@@ -37,9 +35,8 @@ Feature: Responder verification as a firefighter using document upload
     * I should see the error message "We’re sorry, but we are unable to verify your credentials with the information you provided."
     * I verify the attempt is marked as "DUPLICATE"
 
- @delete_experian_user1 @delete_current_user_email
- Scenario: Prompt Error Code 86
-    * I generate a unique doc
+  @delete_experian_user1 @delete_current_user_email
+  Scenario: Prompt Error Code 86
     * I verify using firefighter documentation
     * I approve the document in the IDme support tool
     * I clear the session from Authority

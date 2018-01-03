@@ -19,5 +19,13 @@ target/*
 test_report.html
 /*.html
 /screenshots
+/test_documents/test_gif.gif
+/test_documents/test_html.html
+/test_documents/test_jpeg.jpeg
+/test_documents/test_none.none
+/test_documents/test_odt.odt
+/test_documents/test_tiff.tiff
+/test_documents/test_wpd.wpd
+/test_documents/test_jpg.jpg
 manual_helper.rb
 allure/*

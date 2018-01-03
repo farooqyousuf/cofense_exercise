@@ -7,7 +7,7 @@ Given(/^I click on the Military Verify by uploading documentation link$/) do
 end
 
 Given(/^I verify using military documentation for "([^"]*)"$/) do |affiliation|
-  step 'I generate a unique doc'
+  step 'I generate a unique "png" doc'
   @MilDoc.verify(affiliation: affiliation, type: "unique")
 end
 
