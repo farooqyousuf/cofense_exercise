@@ -64,10 +64,6 @@ class IDV < IDmeBase
     click_button("#{mocked_result} Callback")
   end
 
-  def check_for_authenticity
-    sleep 15
-  end
-
   def populate_fields(data:)
     populate_phone(data.fetch("mobile_phone"))
     fill_in("social", :with => data.fetch("social"))
