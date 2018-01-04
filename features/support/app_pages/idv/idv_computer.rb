@@ -1,6 +1,6 @@
 require_relative '../base_classes/error_messages.rb'
 
-class IDV < IDmeBase
+class IDVComputer < IDmeBase
 
   include IVABase
   include Capybara::DSL
@@ -11,7 +11,7 @@ class IDV < IDmeBase
     data = data_for(:docs)
 
     case action
-    when "verify via Confirm.io"
+    when "verify via Confirm.io via"
       populate = true
       front_id = data.fetch("png")
       back_id = data.fetch("idv")
@@ -28,7 +28,8 @@ class IDV < IDmeBase
       mocked_result = "Failure"
     end
 
-    upload_ids(front_id: front_id, back_id: back_id)
+    upload_front_id(front_id: front_id)
+    upload_back_id(back_id: back_id)
     click_button("Look Good?")
     confirm_io_callback(mocked_result: mocked_result)
 
@@ -46,13 +47,15 @@ class IDV < IDmeBase
     click_button("Verify using my driver's license")
   end
 
-  def upload_ids(front_id:, back_id:)
+  def upload_front_id(front_id:)
     #Upload front id
     click_button("Upload from my computer")
     all(".photos-container")[0].click
     attach_doc(document: front_id)
     sleep 2
+  end
 
+  def upload_back_id(:back_id:)
     #Upload back id
     click_button("Upload")
     all(".photos-container")[1].click
