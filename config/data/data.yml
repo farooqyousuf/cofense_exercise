@@ -106,6 +106,9 @@ fail_experian:
   verification_emt_zip: 12345
   verification_emt_number: FJDL2
   state: Virginia
+  mobile_phone: 1234567890
+  social: 222222222
+  social_confirm: 222222222
 
 
 experian_user:
