@@ -106,6 +106,10 @@ module HelperMethods
     ".error"
   end
 
+  def idv_error_message
+    all("p")[1].text
+  end
+
   # def red_error_below_field
   #   page.find(".label-error").text
   # end

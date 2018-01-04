@@ -7,6 +7,7 @@ All notable changes to this project will be documented in this file. This projec
 
 # 2.4.56 (1/4/18)
 - CORE-8701: Fix IDP Unlock Tests
+- CORE-8538: Failed Document Test
 
 # 2.4.55 (12/26/17)
 - IDME-3765: Wallet Dashboard > Verify Dashboard Components

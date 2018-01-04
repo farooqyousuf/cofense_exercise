@@ -14,6 +14,8 @@ include PageManagement
     env = case settings
           when "verify via Confirm.io", "verify via AU10TIX"
             ["Mock", "Staging", "Mock", "Mock", "Mock", "Disable", "Disable"]
+          when "fail documentation"
+            ["Mock", "Staging", "Mock Fail", "Mock", "Mock", "Disable", "Disable"]
           end
 
     vendors.zip(env).each do |vendor, env|
