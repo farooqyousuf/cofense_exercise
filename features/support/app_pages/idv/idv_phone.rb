@@ -8,14 +8,14 @@ class IDVPhone < IDmeBase
 
     def verify(action: "none", document: "none", populate: "none")
 
-    # data = data_for(:docs)
+    data = data_for(:docs)
 
-    # case action
-    # when "verify via Confirm.io via"
-    #   populate = true
-    #   front_id = data.fetch("png")
-    #   back_id = data.fetch("idv")
-    #   mocked_result = "Success"
+    case action
+    when "verify via Confirm.io"
+      populate = true
+      front_id = data.fetch("png")
+      back_id = data.fetch("idv")
+      mocked_result = "Success"
     # when "verify via AU10TIX"
     #   populate = true
     #   front_id = data.fetch("idv")
@@ -26,46 +26,46 @@ class IDVPhone < IDmeBase
     #   front_id = data.fetch("png")
     #   back_id = data.fetch("png")
     #   mocked_result = "Failure"
-    # end
+    end
 
-    # upload_front_id(front_id: front_id)
-    # upload_back_id(back_id: back_id)
-    # click_button("Look Good?")
-    # confirm_io_callback(mocked_result: mocked_result)
+    upload_front_id(front_id: front_id)
+    upload_back_id(back_id: back_id)
+    click_button("Look Good?")
+    confirm_io_callback(mocked_result: mocked_result)
 
-    # if populate == true
-    #   idv_user = data_for(:experian_user3)
-    #   populate_fields(data: idv_user)
+    if populate == true
+      idv_user = data_for(:experian_user3)
+      populate_fields(data: idv_user)
 
-    #   check("idme_verification_identity_accepts_fcra")
-    #   click_button("Verify my information")
-    #   click_link("Verify")
-    # end
+      check("idme_verification_identity_accepts_fcra")
+      click_button("Verify my information")
+      click_link("Verify")
+    end
   end
 
   # def click_verify_drivers_license_link
   #   click_button("Verify using my driver's license")
   # end
 
-  # def upload_front_id(front_id:)
-  #   #Upload front id
-  #   click_button("Upload from my computer")
-  #   all(".photos-container")[0].click
-  #   attach_doc(document: front_id)
-  #   sleep 2
-  # end
+  def upload_front_id(front_id:)
+    #Upload front id
+    click_button("Upload from my computer")
+    all(".photos-container")[0].click
+    attach_doc(document: front_id)
+    sleep 2
+  end
 
-  # def upload_back_id(:back_id:)
-  #   #Upload back id
-  #   click_button("Upload")
-  #   all(".photos-container")[1].click
-  #   attach_doc(document: back_id)
-  #   click_button("Upload")
-  # end
+  def upload_back_id(back_id:)
+    #Upload back id
+    click_button("Upload")
+    all(".photos-container")[1].click
+    attach_doc(document: back_id)
+    click_button("Upload")
+  end
 
-  # def confirm_io_callback(mocked_result: mocked_result)
-  #   click_button("#{mocked_result} Callback")
-  # end
+  def confirm_io_callback(mocked_result: mocked_result)
+    click_button("#{mocked_result} Callback")
+  end
 
   # def populate_fields(data:)
   #   populate_phone(data.fetch("mobile_phone"))

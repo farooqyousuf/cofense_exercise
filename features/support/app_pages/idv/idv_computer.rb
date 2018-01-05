@@ -11,7 +11,7 @@ class IDVComputer < IDmeBase
     data = data_for(:docs)
 
     case action
-    when "verify via Confirm.io via"
+    when "verify via Confirm.io"
       populate = true
       front_id = data.fetch("png")
       back_id = data.fetch("idv")
@@ -55,7 +55,7 @@ class IDVComputer < IDmeBase
     sleep 2
   end
 
-  def upload_back_id(:back_id:)
+  def upload_back_id(back_id:)
     #Upload back id
     click_button("Upload")
     all(".photos-container")[1].click
