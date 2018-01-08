@@ -2,7 +2,7 @@
 Feature: Identity Verification by taking a picture of your ID from a mobile device
 
   Background:
-    * I create "AdminTool, AdminSettings, IDVPhone, IDVComputer" page objects
+    * I create "AdminTool, AdminSettings, IDVPhone" page objects
     * I visit IDP through the "au10tix_light" policy
     * I click on the Sign Up link
     * I sign up as a new user
