@@ -2,7 +2,7 @@
 Feature: Identity Verification by taking a picture of your ID from a mobile device
 
   Background:
-    * I create "AdminTool, AdminSettings, IDVPhone" page objects
+    * I create "AdminTool, AdminSettings, IDV" page objects
     * I visit IDP through the "au10tix_light" policy
     * I click on the Sign Up link
     * I sign up as a new user
@@ -16,4 +16,4 @@ Feature: Identity Verification by taking a picture of your ID from a mobile devi
     * I "verify with Confirm.io" via phone using a mocked driver's license
     * I authorize the attribute release
     * I should be successfully verified as "Identity"
-    * I verify user level properties for "Identity via phone"
+    * I verify user level properties for "Identity"

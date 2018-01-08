@@ -29,10 +29,3 @@ test_report.html
 manual_helper.rb
 allure/*
 screenshots/*
-screenshots/screenshot.png
-screenshots/screenshot2.png
-screenshots/screenshot_gif.gif
-screenshots/screenshot_jpeg.jpeg
-screenshots/screenshot_jpg.jpg
-screenshots/screenshot_png.png
-screenshots/screenshot_tiff.tiff

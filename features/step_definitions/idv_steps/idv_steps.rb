@@ -8,15 +8,15 @@ Given(/^I set the External Vendor Environment to "([^"]*)"$/) do |settings|
 end
 
 Given(/^I set up multi\-factor authentication$/) do
-  @IDVComputer.set_up_multifactor
+  @IDV.set_up_multifactor
 end
 
 Given(/^I click on the verify by uploading driver's license link$/) do
-  @IDVComputer.click_verify_drivers_license_link
+  @IDV.click_verify_drivers_license_link
 end
 
 Given(/^I "([^"]*)" via computer using a mocked driver's license$/) do |action|
-  @IDVComputer.verify(action: action)
+  @IDV.verify_with_computer(action: action)
 end
 
 Given(/^I should see the error message for identity verification "(.*?)"$/) do |expected_text|
@@ -25,6 +25,6 @@ Given(/^I should see the error message for identity verification "(.*?)"$/) do |
 end
 
 Given("I {string} via phone using a mocked driver's license") do |action|
-  @IDVPhone.verify(action: action)
+  @IDV.verify_with_phone(action: action)
 end
 
