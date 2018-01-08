@@ -13,7 +13,7 @@ Feature: Identity Verification by uploading an ID from the computer
   Scenario: Successful verification with Confirm.io
     * I generate a unique "png" doc
     * I set the External Vendor Environment to "verify via Confirm.io"
-    * I "verify via Confirm.io" using a mocked driver's license
+    * I "verify via Confirm.io" via computer using a mocked driver's license
     * I authorize the attribute release
     * I should be successfully verified as "Identity"
     * I verify user level properties for "Identity via computer"
@@ -22,7 +22,7 @@ Feature: Identity Verification by uploading an ID from the computer
   Scenario: Successful verification with AU10TIX
     * I generate a unique "png" doc
     * I set the External Vendor Environment to "verify via AU10TIX"
-    * I "verify via AU10TIX" using a mocked driver's license
+    * I "verify via AU10TIX" via computer using a mocked driver's license
     * I authorize the attribute release
     * I should be successfully verified as "Identity"
     * I verify user level properties for "Identity via computer"
@@ -31,6 +31,6 @@ Feature: Identity Verification by uploading an ID from the computer
   Scenario: Failed documentation for Identity verification
     * I generate a unique "png" doc
     * I set the External Vendor Environment to "fail documentation"
-    * I "fail documentation" using a mocked driver's license
+    * I "fail documentation" via computer using a mocked driver's license
     * I should see the error message for identity verification "We're sorry, the driver's license you submitted could not be verified. Please try again. You'll now have the option to submit the back of your license, which should make the process easier."
     * I verify the attempt is marked as "PROCESSING"

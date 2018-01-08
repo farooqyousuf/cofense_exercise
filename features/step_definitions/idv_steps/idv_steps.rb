@@ -15,7 +15,7 @@ Given(/^I click on the verify by uploading driver's license link$/) do
   @IDVComputer.click_verify_drivers_license_link
 end
 
-Given(/^I "([^"]*)" using a mocked driver's license$/) do |action|
+Given(/^I "([^"]*)" via computer using a mocked driver's license$/) do |action|
   @IDVComputer.verify(action: action)
 end
 
