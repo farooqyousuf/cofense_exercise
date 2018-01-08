@@ -7,7 +7,6 @@ Feature: Identity Verification by taking a picture of your ID from a mobile devi
     * I click on the Sign Up link
     * I sign up as a new user
     * I set up multi-factor authentication
-    * I pry
     * I click on the verify by uploading driver's license link
 
   @delete_current_user_email
@@ -17,4 +16,4 @@ Feature: Identity Verification by taking a picture of your ID from a mobile devi
     * I "verify with Confirm.io" via phone using a mocked driver's license
     * I authorize the attribute release
     * I should be successfully verified as "Identity"
-    * I verify user level properties for "Identity"
+    * I verify user level properties for "Identity via phone"

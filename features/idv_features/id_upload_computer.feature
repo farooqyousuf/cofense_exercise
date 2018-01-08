@@ -16,7 +16,7 @@ Feature: Identity Verification by uploading an ID from the computer
     * I "verify via Confirm.io" using a mocked driver's license
     * I authorize the attribute release
     * I should be successfully verified as "Identity"
-    * I verify user level properties for "Identity"
+    * I verify user level properties for "Identity via computer"
 
   @delete_current_user_email
   Scenario: Successful verification with AU10TIX
@@ -25,7 +25,7 @@ Feature: Identity Verification by uploading an ID from the computer
     * I "verify via AU10TIX" using a mocked driver's license
     * I authorize the attribute release
     * I should be successfully verified as "Identity"
-    * I verify user level properties for "Identity"
+    * I verify user level properties for "Identity via computer"
 
   @delete_current_user_email
   Scenario: Failed documentation for Identity verification

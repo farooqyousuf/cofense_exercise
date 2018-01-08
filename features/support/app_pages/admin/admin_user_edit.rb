@@ -19,10 +19,15 @@ include PageManagement
     actual_levels = []
 
     case affiliation
-    when "Identity"
+    when "Identity via phone"
       expand_verification_properties
       indexes = [0, 3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42]
-      expected_levels = IDV.new.user_properties_levels
+      expected_levels = IDVPhone.new.user_properties_levels
+
+    when "Identity via computer"
+      expand_verification_properties
+      indexes = [0, 3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42]
+      expected_levels = IDVComputer.new.user_properties_levels
 
     when "Government"
       expand_verification_properties
