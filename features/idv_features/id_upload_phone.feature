@@ -8,6 +8,7 @@ Feature: Identity Verification by taking a picture of your ID from a mobile devi
     * I sign up as a new user
     * I set up multi-factor authentication
     * I click on the verify by uploading driver's license link
+    * I click on the Take a picture with my phone link
 
   @delete_current_user_email
   Scenario: Successful verification with Confirm.io

@@ -28,3 +28,14 @@ Given("I {string} via phone using a mocked driver's license") do |action|
   @IDV.verify_with_phone(action: action)
 end
 
+Given("I click on the Take a picture with my phone link") do
+  @IDV.click_take_pic_with_phone
+  @IDV.enter_phone_number
+  @IDV.click_send_me_link
+  sleep 1
+  @IDV.click_upload_form_link
+end
+
+Given("I click on the Upload from my computer link") do
+  @IDV.click_upload_from_computer
+end

@@ -8,13 +8,16 @@ Feature: Identity Verification by uploading an ID from the computer
     * I sign up as a new user
     * I set up multi-factor authentication
     * I click on the verify by uploading driver's license link
+    * I click on the Upload from my computer link
 
   @delete_current_user_email
   Scenario: Successful verification with Confirm.io
     * I generate a unique "png" doc
     * I set the External Vendor Environment to "verify via Confirm.io"
     * I "verify via Confirm.io" via computer using a mocked driver's license
+    * I pry
     * I authorize the attribute release
+    * I pry
     * I should be successfully verified as "Identity"
     * I verify user level properties for "Identity"
 

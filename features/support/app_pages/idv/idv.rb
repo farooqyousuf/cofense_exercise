@@ -7,7 +7,7 @@ class IDV < IDmeBase
   include Capybara::DSL
   include ErrorMessages
 
-  def verify_with_phone(action: "none", document: "none", populate: "none")
+  def verify_with_phone(action: "none", document: "none", populate: true)
 
     data = data_for(:docs)
 
@@ -21,12 +21,17 @@ class IDV < IDmeBase
 
     upload_front_id(front_id: front_id)
     upload_back_id(back_id: back_id)
+
     click_button("Look Good?")
+
+    close_current_browser
+    use_original_tab
+
     confirm_io_callback(mocked_result: mocked_result)
 
     if populate == true
       idv_user = data_for(:experian_user3)
-      populate_fields(data: idv_user)
+      populate_fields_phone(data: idv_user)
 
       check("idme_verification_identity_accepts_fcra")
       click_button("Verify my information")
@@ -63,7 +68,7 @@ class IDV < IDmeBase
 
     if populate == true
       idv_user = data_for(:experian_user3)
-      populate_fields(data: idv_user)
+      populate_fields_computer(data: idv_user)
 
       check("idme_verification_identity_accepts_fcra")
       click_button("Verify my information")

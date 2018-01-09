@@ -11,9 +11,29 @@ include DataMagic
     click_button("Verify using my driver's license")
   end
 
+  def click_upload_from_computer
+    click_button("Upload from my computer")
+  end
+
+  def click_take_pic_with_phone
+    click_button("Take a picture with my phone")
+  end
+
+  def enter_phone_number
+    data = data_for(:experian_user3)
+    fill_in("mobile_phone", :with => data.fetch("mobile_phone"))
+  end
+
+  def click_send_me_link
+    click_button("Send me the link")
+  end
+
+  def click_upload_form_link
+    click_link("Upload form")
+  end
+
   def upload_front_id(front_id:)
     #Upload front id
-    click_button("Upload from my computer")
     all(".photos-container")[0].click
     attach_doc(document: front_id)
     sleep 2
@@ -31,8 +51,17 @@ include DataMagic
     click_button("#{mocked_result} Callback")
   end
 
-  def populate_fields(data:)
+  def populate_fields_computer(data:)
     populate_phone(data.fetch("mobile_phone"))
+    populate_ssn(data)
+  end
+
+  def populate_fields_phone(data:)
+    populate_ssn(data)
+  end
+
+  def populate_ssn(data:)
+    binding.pry
     fill_in("social", :with => data.fetch("social"))
     fill_in("social_confirm", :with => data.fetch("social_confirm"))
     click_button("Submit SSN")
@@ -42,7 +71,8 @@ include DataMagic
     choose("phone_type_smart_phone")
     sleep 1
     find("#phone_type_smart_phone").click
-    fill_in("mobile_phone", :with => mobile_phone)
+    # fill_in("mobile_phone", :with => mobile_phone)
+    enter_phone_number
     click_button("Submit phone")
   end
 
