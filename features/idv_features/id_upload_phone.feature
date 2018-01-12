@@ -1,5 +1,5 @@
 @regression @idv
-Feature: Identity Verification by taking a picture of your ID from a mobile device
+Feature: Identity Verification by taking a picture of your ID from phone upload
 
   Background:
     * I create "AdminTool, AdminSettings, IDV" page objects
@@ -11,7 +11,7 @@ Feature: Identity Verification by taking a picture of your ID from a mobile devi
     * I click on the Take a picture with my phone link
 
   @delete_current_user_email
-  Scenario: Successful verification with Confirm.io
+  Scenario: Successful verification with Confirm.io via phone upload
     * I generate a unique "png" doc
     * I set the External Vendor Environment to "verify via Confirm.io"
     * I "verify with Confirm.io" via phone using a mocked driver's license
