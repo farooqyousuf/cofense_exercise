@@ -15,6 +15,5 @@ Feature: Identity Verification by taking a picture of your ID from a mobile devi
     * I generate a unique "png" doc
     * I set the External Vendor Environment to "verify via Confirm.io"
     * I "verify with Confirm.io" via phone using a mocked driver's license
-    * I authorize the attribute release
     * I should be successfully verified as "Identity"
     * I verify user level properties for "Identity"

@@ -35,7 +35,7 @@ class IDV < IDmeBase
 
       check("idme_verification_identity_accepts_fcra")
       click_button("Verify my information")
-      click_link("Verify")
+      click_button("Allow")
     end
   end
 

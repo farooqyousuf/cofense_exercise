@@ -53,15 +53,14 @@ include DataMagic
 
   def populate_fields_computer(data:)
     populate_phone(data.fetch("mobile_phone"))
-    populate_ssn(data)
+    populate_ssn(data: data)
   end
 
   def populate_fields_phone(data:)
-    populate_ssn(data)
+    populate_ssn(data: data)
   end
 
   def populate_ssn(data:)
-    binding.pry
     fill_in("social", :with => data.fetch("social"))
     fill_in("social_confirm", :with => data.fetch("social_confirm"))
     click_button("Submit SSN")
