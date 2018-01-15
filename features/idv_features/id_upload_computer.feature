@@ -37,3 +37,11 @@ Feature: Identity Verification by uploading an ID from the computer
     * I "fail documentation" via computer using a mocked driver's license
     * I should see the error message for identity verification "We're sorry, the driver's license you submitted could not be verified. Please try again. You'll now have the option to submit the back of your license, which should make the process easier."
     * I verify the attempt is marked as "PROCESSING"
+
+  @delete_current_user_email
+  Scenario: Failed experian for Identity verification
+    * I generate a unique "png" doc
+    * I set the External Vendor Environment to "fail experian"
+    * I "fail experian" using a mocked driver's license
+    * I should see the error message for identity verification "We're sorry, the driver's license you submitted could not be verified. Please try again. You'll now have the option to submit the back of your license, which should make the process easier."
+    * I verify the attempt is marked as "PROCESSING"

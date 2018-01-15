@@ -44,7 +44,7 @@ class IDV < IDmeBase
     data = data_for(:docs)
 
     case action
-    when "verify via Confirm.io"
+    when "verify via Confirm.io", "fail experian"
       populate = true
       front_id = data.fetch("png")
       back_id = data.fetch("idv")
