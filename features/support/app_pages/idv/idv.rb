@@ -42,23 +42,34 @@ class IDV < IDmeBase
    def verify_with_computer(action: "none", document: "none", populate: "none")
 
     data = data_for(:docs)
+    idv_user = data_for(:experian_user3)
+    fail_idv_user = data_for(:fail_experian)
 
     case action
-    when "verify via Confirm.io", "fail experian"
+    when "verify via Confirm.io"
       populate = true
       front_id = data.fetch("png")
       back_id = data.fetch("idv")
       mocked_result = "Success"
+      user = idv_user
     when "verify via AU10TIX"
       populate = true
       front_id = data.fetch("idv")
       back_id = data.fetch("png")
       mocked_result = "Failure"
+      user = idv_user
     when "fail documentation"
       populate = false
       front_id = data.fetch("png")
       back_id = data.fetch("png")
       mocked_result = "Failure"
+      user = idv_user
+    when "fail experian"
+      populate = true
+      front_id = data.fetch("idv")
+      back_id = data.fetch("idv")
+      mocked_result = "Success"
+      user = fail_idv_user
     end
 
     upload_front_id(front_id: front_id)
@@ -67,12 +78,14 @@ class IDV < IDmeBase
     confirm_io_callback(mocked_result: mocked_result)
 
     if populate == true
-      idv_user = data_for(:experian_user3)
-      populate_fields_computer(data: idv_user)
+      populate_fields_computer(data: user)
 
       check("idme_verification_identity_accepts_fcra")
       click_button("Verify my information")
-      click_link("Verify")
+
+      unless action == "fail experian"
+        click_link("Verify")
+      end
     end
   end
 

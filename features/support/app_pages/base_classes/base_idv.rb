@@ -34,15 +34,15 @@ include DataMagic
 
   def upload_front_id(front_id:)
     #Upload front id
-    all(".photos-container")[0].click
+    all(".photos-container-image")[0].click
     attach_doc(document: front_id)
+    click_button("Upload")
     sleep 2
   end
 
   def upload_back_id(back_id:)
     #Upload back id
-    click_button("Upload")
-    all(".photos-container")[1].click
+    all(".photos-container-image")[1].click
     attach_doc(document: back_id)
     click_button("Upload")
   end

@@ -5,6 +5,9 @@
 ### Released
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
+# 2.4.58 (1/16/18)
+- CORE-8537: IDV: Doc Flow (Upload ID from computer) Failed Experian Test
+
 # 2.4.57 (1/8/18)
 - CORE-8705: Successful verification with Confirm.io via phone upload
 
