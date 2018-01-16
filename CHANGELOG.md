@@ -1,5 +1,6 @@
 # Change Log
 
+- INT-2300: Update Seleium Webdriver; Documentation geckodriver
 - IDME-4270: Add local config for user services applications
 
 ### Released
