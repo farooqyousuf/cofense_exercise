@@ -3,6 +3,7 @@ Given(/^I set the External Vendor Environment to "([^"]*)"$/) do |settings|
   step 'I visit "AdminSettings"'
   @AdminSettings.set_vendor_env(settings: settings)
   sleep 1
+
   close_current_browser
   use_last_browser_created
 end
@@ -34,6 +35,8 @@ Given("I click on the Take a picture with my phone link") do
   @IDV.click_send_me_link
   sleep 1
   @IDV.click_upload_form_link
+  sleep 1
+  use_last_browser_created
 end
 
 Given("I click on the Upload from my computer link") do
