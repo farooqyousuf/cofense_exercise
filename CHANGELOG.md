@@ -5,6 +5,9 @@
 ### Released
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
+# 2.4.57 (1/17/18)
+- CORE-8730: Remove second booleans
+
 # 2.4.56 (1/4/18)
 - CORE-8701: Fix IDP Unlock Tests
 - CORE-8538: Failed Document Test
