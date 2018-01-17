@@ -28,3 +28,4 @@ test_report.html
 /test_documents/test_jpg.jpg
 manual_helper.rb
 allure/*
+screenshots/*

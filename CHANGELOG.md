@@ -5,6 +5,9 @@
 ### Released
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
+# 2.4.57 (1/8/18)
+- CORE-8705: Successful verification with Confirm.io via phone upload
+
 # 2.4.56 (1/4/18)
 - CORE-8701: Fix IDP Unlock Tests
 - CORE-8538: Failed Document Test
