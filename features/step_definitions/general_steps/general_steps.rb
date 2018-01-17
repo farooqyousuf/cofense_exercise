@@ -105,6 +105,7 @@ Given(/^I generate a unique "([^"]*)" doc$/) do |document|
 
   @IDmeBase = IDmeBase.new
   @IDmeBase.save_screenshot_in_dir(document: document)
+
   close_current_browser
   use_last_browser_created
 end

@@ -20,6 +20,10 @@ module PageManagement
     page.driver.browser.close
   end
 
+  def use_original_tab
+    page.driver.browser.switch_to.window(page.driver.browser.window_handles[0])
+  end
+
   def target_last_window
     @last_handle = page.driver.browser.window_handles.last
   end
