@@ -1,11 +1,13 @@
 require_relative 'page_mgmt'
 require_relative 'base_iva'
+require_relative 'base_idv'
 
 class IDmeBase
 
  include Capybara::DSL
  include PageManagement
  include IVABase
+ include IDVBase
 
  #Readable attributes
  #Allows the url attribute to be read/accessed outside of this class
