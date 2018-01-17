@@ -1,18 +1,18 @@
 Given(/^I should see the error message "(.*?)"$/) do |expected_text|
   sleep 2
-  (p_tag_message.should eq(expected_text)).should == true
+  p_tag_message.should eq(expected_text)
 end
 
 Given(/^I should see the red alert box error message "(.*?)"$/) do |expected_text|
-  (red_alert_box_message.should eq(expected_text)).should == true
+  red_alert_box_message.should eq(expected_text)
 end
 
 Given(/^I should see the green alert box error message "(.*?)"$/) do |expected_text|
-  (green_alert_box_message.should eq(expected_text)).should == true
+  green_alert_box_message.should eq(expected_text)
 end
 
 Given(/^I should see the blue alert box error message "([^"]*)"$/) do |expected_text|
-  (blue_alert_box_message.should eq(expected_text)).should == true
+  blue_alert_box_message.should eq(expected_text)
 end
 
 Given(/^I should see an error on the "(.*)" field$/) do |expected_text|
@@ -55,11 +55,11 @@ Given(/^I should see error messages on required fields for "([^"]*)"$/) do |meth
 end
 
 Given(/^I should see the red error "(.*?)" under the textfield$/) do |expected_text|
-  (red_error_under_textfield.should eq(expected_text)).should == true
+  red_error_under_textfield.should eq(expected_text)
 end
 
 Given(/^I should see the red error "([^"]*)" under the file upload field$/) do |expected_text|
-  (red_error_under_file_upload.should eq(expected_text)).should == true
+  red_error_under_file_upload.should eq(expected_text)
 end
 
 Given(/^I should see a red highlighted error on the "([^"]*)"$/) do |fields|
