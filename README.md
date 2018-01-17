@@ -7,9 +7,8 @@ Revelator is a repository that contains ID.me's automated tests.  It is used to 
 1. Clone the repositiory `git clone git@github.com:IDme/idme-revelator.git`
 2. Install GeckoDriver
 3. Install Chromedriver
-4. `bundle update`
-5. `bundle install`
-6. Update Browsers to the latest version
+4. `bundle install`
+5. Update Browsers to the latest version
 
 ### Installing GeckoDriver
 
