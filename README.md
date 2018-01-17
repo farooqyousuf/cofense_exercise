@@ -6,16 +6,17 @@ Revelator is a repository that contains ID.me's automated tests.  It is used to 
 
 1. Clone the repositiory `git clone git@github.com:IDme/idme-revelator.git`
 2. Install GeckoDriver
-3. `bundle update`
-4. `bundle install`
-5. Update Firefox to the latest version
+3. Install Chromedriver
+4. `bundle update`
+5. `bundle install`
+6. Update Browsers to the latest version
 
 ### Installing GeckoDriver
 
 Check to see if GeckoDriver is currently installed
 ```bash
 $ geckodriver --version
-=> geckodriver 0.18.0
+=> geckodriver 0.19.1
 
 The source code of this program is available from
 testing/geckodriver in https://hg.mozilla.org/mozilla-central.
@@ -32,15 +33,18 @@ brew install geckodriver
 
 Another way is to manually install [GeckoDriver](https://github.com/mozilla/geckodriver) with the latest [GeckoDriver Release](https://github.com/mozilla/geckodriver/releases)
 
-### Updating Firefox
-Check which version of firefox is currently installed
+### Installing Chromedriver
+
+Check to see if Chromedriver is currently installed
 ```bash
-$ /Applications/Firefox.app/Contents/MacOS/firefox -v
-=> Mozilla Firefox 54.0.1
+$ chromedriver --version
+=> ChromeDriver 2.35.528157 (4429ca2590d6988c0745c24c8858745aaaec01ef)
 ```
 
-Visit this [link](https://support.mozilla.org/en-US/kb/update-firefox-latest-version) for instructions on how to update Firefox to the latest version.
-
+Install using [brew](https://brewinstall.org/Install-geckodriver-on-Mac-with-Brew/)
+```bash
+brew install chromedriver
+```
 ## Running Revelator
 
 ### 1) Set up the environment
@@ -78,14 +82,9 @@ For **INT** tests with Firefox Browser
 thor set:firefox_osx_staging
 ```
 
-For **CORE** tests with Firefox Browser
+For **CORE** tests with Chrome Browser
 ```bash
-thor set:firefox_osx_staging
-```
-
-For **USER** tests with Firefox Browser
-```bash
-thor set:firefox_osx_production
+thor set:chrome_osx
 ```
 
 It will print something like this
