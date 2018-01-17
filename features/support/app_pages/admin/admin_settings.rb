@@ -9,13 +9,13 @@ include PageManagement
   end
 
   def set_vendor_env(settings: "none")
-    vendors = ["usaa_env", "experian_env", "au10tix_env", "confirmio_env", "plaid_env", "fraudnet_env", "phone_checks"]
+    vendors = ["experian_env", "confirmio_env", "au10tix_env", "plaid_env", "nsc_env", "npi_env", "scra_env", "usaa_env", "fraudnet_env", "phone_checks"]
 
     env = case settings
-          when "verify via Confirm.io", "verify via AU10TIX"
-            ["Mock", "Staging", "Mock", "Mock", "Mock", "Disable", "Disable"]
+    when "verify via Confirm.io", "verify via AU10TIX", "fail experian"
+            ["Staging", "Mock", "Mock", "Mock", "Production", "Production", "Production", "Mock", "Disable", "Disable"]
           when "fail documentation"
-            ["Mock", "Staging", "Mock Fail", "Mock", "Mock", "Disable", "Disable"]
+            ["Staging", "Mock", "Mock Fail", "Mock", "Production", "Production", "Production", "Mock", "Disable", "Disable"]
           end
 
     vendors.zip(env).each do |vendor, env|
