@@ -15,7 +15,7 @@ Revelator is a repository that contains ID.me's automated tests.  It is used to 
 Check to see if GeckoDriver is currently installed
 ```bash
 $ geckodriver --version
-=> geckodriver 0.18.0
+=> geckodriver 0.19.1
 
 The source code of this program is available from
 testing/geckodriver in https://hg.mozilla.org/mozilla-central.
