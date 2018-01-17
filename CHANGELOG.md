@@ -7,6 +7,7 @@
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
 # 2.4.58 (1/17/18)
+- INT-2306: Update READme docs for Revelator
 - CORE-8730: Remove second booleans
 
 # 2.4.57 (1/8/18)
