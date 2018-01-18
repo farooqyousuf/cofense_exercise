@@ -47,7 +47,10 @@ include DataMagic
     click_button("Upload")
   end
 
-  def confirm_io_callback(mocked_result: mocked_result)
+  def confirm_io_callback(mocked_result: "Failure")
+    if mocked_result == nil
+      mocked_result = "Failure"
+    end
     click_button("#{mocked_result} Callback")
   end
 

@@ -6,6 +6,9 @@
 ### Released
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
+# 2.4.60 (1/18/18)
+- CORE-8742: Au10tix Successful Verification Test (Take pic of ID)
+
 # 2.4.59 (1/17/18)
 - INT-2306: Update READme docs for Revelator
 - CORE-8730: Remove second booleans

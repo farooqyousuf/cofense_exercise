@@ -16,7 +16,11 @@ class IDV < IDmeBase
       populate = true
       front_id = data.fetch("png")
       back_id = data.fetch("idv")
-      mocked_result = "Success"
+      mocked_result_confirmio = "Success"
+    when "verify with AU10TIX"
+      populate = true
+      front_id = data.fetch("idv")
+      back_id = data.fetch("png")
     end
 
     upload_front_id(front_id: front_id)
@@ -27,7 +31,7 @@ class IDV < IDmeBase
     close_current_browser
     use_original_tab
 
-    confirm_io_callback(mocked_result: mocked_result)
+    confirm_io_callback(mocked_result: mocked_result_confirmio)
 
     if populate == true
       idv_user = data_for(:experian_user3)
@@ -50,32 +54,30 @@ class IDV < IDmeBase
       populate = true
       front_id = data.fetch("png")
       back_id = data.fetch("idv")
-      mocked_result = "Success"
+      mocked_result_confirmio = "Success"
       user = idv_user
     when "verify via AU10TIX"
       populate = true
       front_id = data.fetch("idv")
       back_id = data.fetch("png")
-      mocked_result = "Failure"
       user = idv_user
     when "fail documentation"
       populate = false
       front_id = data.fetch("png")
       back_id = data.fetch("png")
-      mocked_result = "Failure"
       user = idv_user
     when "fail experian"
       populate = true
       front_id = data.fetch("idv")
       back_id = data.fetch("idv")
-      mocked_result = "Success"
+      mocked_result_confirmio = "Success"
       user = fail_idv_user
     end
 
     upload_front_id(front_id: front_id)
     upload_back_id(back_id: back_id)
     click_button("Look Good?")
-    confirm_io_callback(mocked_result: mocked_result)
+    confirm_io_callback(mocked_result: mocked_result_confirmio)
 
     if populate == true
       populate_fields_computer(data: user)
