@@ -2,7 +2,7 @@
 Feature: Test Wallet Navigation Features
 
 Background:
-  * I create "WalletHomepage,WalletNavigation" page objects
+  * I create "WalletHomepage, WalletNavigation" page objects
   * I visit "WalletHomepage"
   * I sign in to Wallet
 
@@ -31,7 +31,7 @@ Scenario: Add a new Login to Wallet
   * I add a new Login
   * I verify new Login card and its corresponding text are displayed
 
-@wip
+
 Scenario: Verify Wallet Settings Page
   * I click on the Settings navigation link
   * I check the Wallet Settings page is visible

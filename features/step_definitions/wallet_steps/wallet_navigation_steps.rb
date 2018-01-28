@@ -33,3 +33,11 @@ Given(/^I check that Wallet Activity page is visible$/) do
   expect(page).to have_current_path(FigNewton.wallet.activity,:url => true)
   expect(page).to have_css(".wallet-content-main .heading",:text =>"Activity Feed")
 end
+
+Given("I sign in to Wallet") do
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+Given("I verify that Settings toggle button options direct me to corresponding page views #Profile, Account, Security, Privacy") do
+  pending # Write code here that turns the phrase above into concrete actions
+end
