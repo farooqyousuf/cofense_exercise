@@ -35,7 +35,9 @@ Given(/^I check that Wallet Activity page is visible$/) do
 end
 
 Given("I sign in to Wallet") do
-  pending # Write code here that turns the phrase above into concrete actions
+  @WalletHomepage.click_shared_nav_sign_in_button
+  step 'I login as a "Unverified" user'
+  binding.pry
 end
 
 Given("I verify that Settings toggle button options direct me to corresponding page views #Profile, Account, Security, Privacy") do
