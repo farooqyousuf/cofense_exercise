@@ -6,7 +6,7 @@ class WalletSettings < IDmeBase
   end
 
   def switch_to_security_tab
-    find(".wallet-toggle-btns li:nth-child(3)").click
+    find("li[data-option='js-toggle-profile']").click  
   end
 
   def deactivate_wallet_user_account
@@ -26,4 +26,13 @@ class WalletSettings < IDmeBase
   def click_close_account_button
     click_button("Close Account")
   end
+
+  def switch_to_account_tab
+    find("li[data-option='js-toggle-account']").click
+  end
+
+  def switch_to_privacy_tab
+    find("li[data-option='js-toggle-privacy']").click
+  end 
+
 end
