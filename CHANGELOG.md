@@ -6,6 +6,9 @@
 ### Released
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
+# 2.4.60 (1/29/18)
+- IDME-3780: Wallet Navigation: Verify Wallet Settings Page
+
 # 2.4.59 (1/17/18)
 - INT-2306: Update READme docs for Revelator
 - CORE-8730: Remove second booleans
