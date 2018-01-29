@@ -6,7 +6,7 @@ class WalletSettings < IDmeBase
   end
 
   def switch_to_security_tab
-    find("li[data-option='js-toggle-profile']").click  
+    find("li[data-option='js-toggle-security']").click  
   end
 
   def deactivate_wallet_user_account

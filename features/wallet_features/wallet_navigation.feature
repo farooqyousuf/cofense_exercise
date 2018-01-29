@@ -36,7 +36,7 @@ Scenario: Verify Wallet Settings Page
   * I visit "WalletSettings"
   * I click on the Settings navigation link
   * I check the Wallet Settings page is visible
-  * I verify that Settings toggle button options direct me to corresponding page views #Profile, Account, Security, Privacy
+  * I verify that Settings toggle button options direct me to corresponding page views Profile, Account, Security, Privacy
 
 @wip
 Scenario: Verify Wallet Settings Profile View
