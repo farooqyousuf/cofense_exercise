@@ -48,9 +48,9 @@ include DataMagic
   end
 
   def confirm_io_callback(mocked_result: "Failure")
-    if mocked_result == nil
-      mocked_result = "Failure"
-    end
+
+    mocked_result = "Failure" if mocked_result.nil?
+
     click_button("#{mocked_result} Callback")
   end
 
