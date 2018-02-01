@@ -33,3 +33,27 @@ Given(/^I check that Wallet Activity page is visible$/) do
   expect(page).to have_current_path(FigNewton.wallet.activity,:url => true)
   expect(page).to have_css(".wallet-content-main .heading",:text =>"Activity Feed")
 end
+
+Given(/^I sign in to Wallet$/) do
+  @WalletHomepage.click_shared_nav_sign_in_button
+  step 'I login as a "Unverified" user'
+end
+
+Given(/^I verify that Settings toggle button options direct me to "([^"]*)" page view$/) do |tab_view|
+  case tab_view
+  when "Profile"
+    @WalletSettings.switch_to_profile_tab
+    active_tab_class = "div.js-toggle-profile.is-active"
+  when "Security"
+    @WalletSettings.switch_to_security_tab
+    active_tab_class = "div.js-toggle-security.is-active"
+  when "Privacy"
+    @WalletSettings.switch_to_privacy_tab
+    active_tab_class = "div.js-toggle-privacy.is-active"
+  when "Account"
+    @WalletSettings.switch_to_account_tab
+    active_tab_class = "div.js-toggle-account.is-active"
+  end
+
+  expect(page).to have_css(active_tab_class)
+end

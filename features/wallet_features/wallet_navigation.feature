@@ -2,7 +2,7 @@
 Feature: Test Wallet Navigation Features
 
 Background:
-  * I create "WalletHomepage,WalletNavigation" page objects
+  * I create "WalletHomepage, WalletNavigation, WalletSettings" page objects
   * I visit "WalletHomepage"
   * I sign in to Wallet
 
@@ -31,11 +31,16 @@ Scenario: Add a new Login to Wallet
   * I add a new Login
   * I verify new Login card and its corresponding text are displayed
 
-@wip
+
 Scenario: Verify Wallet Settings Page
+  * I visit "WalletSettings"
   * I click on the Settings navigation link
   * I check the Wallet Settings page is visible
-  * I verify that Settings toggle button options direct me to corresponding page views #Profile, Account, Security, Privacy
+  * I verify that Settings toggle button options direct me to "Profile" page view
+  * I verify that Settings toggle button options direct me to "Security" page view
+  * I verify that Settings toggle button options direct me to "Privacy" page view
+  * I verify that Settings toggle button options direct me to "Account" page view
+
 
 @wip
 Scenario: Verify Wallet Settings Profile View

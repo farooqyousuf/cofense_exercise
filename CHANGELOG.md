@@ -6,6 +6,9 @@
 ### Released
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
+# 2.4.61 (1/29/18)
+- IDME-3780: Wallet Navigation: Verify Wallet Settings Page
+
 # 2.4.60 (1/18/18)
 - CORE-8742: Au10tix Successful Verification Test (Take pic of ID)
 
