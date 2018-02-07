@@ -21,11 +21,14 @@ class IDV < IDmeBase
       populate = true
       front_id = data.fetch("idv")
       back_id = data.fetch("png")
+    when "fail documentation"
+      populate = false
+      front_id = data.fetch("png")
+      back_id = data.fetch("png")
     end
 
     upload_front_id(front_id: front_id)
     upload_back_id(back_id: back_id)
-
     click_button("Look Good?")
 
     close_current_browser

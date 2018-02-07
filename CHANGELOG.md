@@ -6,6 +6,9 @@
 ### Released
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
+# 2.4.61 (2/7/18)
+- CORE-8818: Failed doc verification test via phone upload
+
 # 2.4.61 (1/29/18)
 - IDME-3780: Wallet Navigation: Verify Wallet Settings Page
 
