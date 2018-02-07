@@ -25,7 +25,6 @@ class IDV < IDmeBase
       populate = false
       front_id = data.fetch("png")
       back_id = data.fetch("png")
-      #user = idv_user
     end
 
     upload_front_id(front_id: front_id)
