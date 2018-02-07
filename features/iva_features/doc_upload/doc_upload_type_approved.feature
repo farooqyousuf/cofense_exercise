@@ -55,10 +55,3 @@ Feature: IVA verification using document upload
     * I click on the Begin link
     * I verify using military "test_pdf.pdf" documentation for Service Member
     * I verify that a "pdf" document was successfully uploaded
-
-  @delete_current_user_email
-  Scenario: Successful document upload for docx document type
-    * I click on the Military Verify by uploading documentation link
-    * I click on the Begin link
-    * I verify using military "test_docx.docx" documentation for Service Member
-    * I verify that a "docx" document was successfully uploaded
