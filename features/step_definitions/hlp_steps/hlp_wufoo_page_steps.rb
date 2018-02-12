@@ -24,6 +24,7 @@ end
 
 Given(/^I verify all the elements on the WufooPage$/) do
   within_window @new_preview_window do
+    sleep 1
     expect(page.current_url).to eql(FigNewton.hlp_page_test_data.wufoo_code_page.preview_page_url)
     expect(page.title).to eql(FigNewton.hlp_page_test_data.wufoo_code_page.live_page_title)
     expect(page).to have_text(FigNewton.hlp_page_test_data.body_copy)
@@ -32,6 +33,7 @@ end
 
 Given(/^I verify all the elements on the live Wufoo hlp page$/) do
   within_window @new_live_page_window do
+    sleep 1
     expect(page.current_url).to eql(FigNewton.hlp_page_test_data.wufoo_code_page.live_page_url)
     expect(page.title).to eql(FigNewton.hlp_page_test_data.wufoo_code_page.live_page_title)
     expect(page).to have_text(FigNewton.hlp_page_test_data.body_copy)

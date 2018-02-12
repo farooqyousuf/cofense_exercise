@@ -8,6 +8,7 @@ All notable changes to this project will be documented in this file. This projec
 
 # 2.4.63 (2/12/18)
 - IDME-4422: Fix HLP Promo Page tests
+- IDME-4423: Fix HLP Wufoo Page tests
 
 # 2.4.62 (2/7/18)
 - CORE-8820: Remove sucessful doc upload type: docx
