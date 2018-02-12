@@ -21,7 +21,7 @@ Feature: Student verification using student credentials
   @delete_current_user_email
   Scenario: Denied attempt for student credentials verification (Error code 54)
     * I submit the student credentials verification form as a "denied" record
-    * I should see the error message "We're sorry, but we were unable to confirm your enrollment in the school you selected. If available, please try another verification option, or visit our Support page for more information."
+    * I should see the error message "We are unable to process your request. We have been notified of the problem and will do our best to make sure it doesn't happen again!"
     * I verify the attempt is marked as "DENIED"
 
   @delete_current_user_email
