@@ -62,7 +62,7 @@ class HlpEditPage < IDmeBase
   end
 
   def click_idp_sign_in_button
-    click_link "Troop"
+    all(".idme-wallet-button-military")[0].click
   end
 
   def switch_to_idp_sign_in_window
