@@ -32,13 +32,13 @@ Feature: Test the HLP Wufoo page functionality
     * I delete the original Wufoo Page
 
 
-  Scenario: Preview an WufooPAGe
+  Scenario: Preview an WufooPage
     * I create a new Wufoo Page
     * I preview the selected HLP page
     * I verify all the elements on the WufooPage
     * I delete the selected hlp page
 
-@refactor
+  @refactor
   Scenario: Launch a WufooPage
     * I create a new Wufoo Page
     * I launch the HLP page
