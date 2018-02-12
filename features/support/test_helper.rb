@@ -132,6 +132,11 @@ module HelperMethods
     @admin_users.visit
   end
 
+  def visit_shop_categories_in_new_window
+    @ShopAdminCategories = ShopAdminCategories.new
+    @ShopAdminCategories.login_in_new_window
+  end
+
   def verify_discount(original_product_amt_string, actual_product_discounted_amt_string, discount_percentage, options={})
     #TODO : this whole method needs to be refactored and more semanticaly named
     exact_match = options[:exact_match]
