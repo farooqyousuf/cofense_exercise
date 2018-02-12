@@ -25,6 +25,7 @@ end
 Given(/^I submit a valid new offer$/) do
   @ShopAdminOffers.fill_in_title_field
   @ShopAdminOffers.fill_in_affiliate_url_field
+  @ShopAdminOffers.select_store
   @ShopAdminOffers.click_create_sidebar_button
 end
 Given(/^I verify the offer has been created$/) do

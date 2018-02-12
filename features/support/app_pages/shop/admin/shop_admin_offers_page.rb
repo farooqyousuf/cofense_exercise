@@ -26,6 +26,13 @@ class ShopAdminOffers < IDmeBase
     fill_in("offer_affiliate_url", :with => "https://www.avantlink.com/123123")
   end
 
+  def select_store
+    find("#select2-offer_merchant_id-container").click
+    all("input[type='search']")[1].set("test")
+    sleep 1
+    find("#select2-offer_merchant_id-results").all("li", :text => "Test")[0].click
+  end
+
   def click_create_sidebar_button
     click_button "Create"
   end
@@ -35,7 +42,7 @@ class ShopAdminOffers < IDmeBase
   end
 
   def click_on_offer
-    find("#DataTables_Table_0 tbody a").click
+    first("#DataTables_Table_0 tbody a").click
   end
 
   def delete_offer
