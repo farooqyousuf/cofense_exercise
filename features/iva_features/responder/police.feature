@@ -44,7 +44,7 @@ Feature: Responder verification as a police officer
     * I click on the Verify as a state certified Police Officer
     * I click on the Begin link
     * I submit the police verification form as a "second unique user" record
-    * I should see the error message "We’re sorry, but we were unable to verify your credentials with the document you provided. Please see our Support page for document specifications, or try another verification option."
+    * I should see the error message "We’re sorry, but we are unable to verify your credentials with the information you provided."
 
   @delete_current_user_email
   Scenario: Successful prompt for all required fields for Police Officer

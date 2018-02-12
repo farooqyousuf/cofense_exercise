@@ -50,4 +50,4 @@ Background:
     * I click on the Verify by uploading documentation link
     * I click on the Begin link
     * I submit the student doc upload verification form as a "second unique user" record
-    * I should see the error message "We’re sorry, but we were unable to verify your credentials with the document you provided. Please see our Support page for document specifications, or try another verification option."
+    * I should see the error message "We’re sorry, but we are unable to verify your credentials with the information you provided."
