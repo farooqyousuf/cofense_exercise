@@ -171,7 +171,7 @@ end
 
 After("@delete_shop_test_category") do
   visit_shop_categories_in_new_window
-  @ShopAdminCategories.delete_test_category
+  @ShopAdminCategories.delete_test_category(@category_label)
   @ShopAdminCategories.logout_in_new_window
 end
 

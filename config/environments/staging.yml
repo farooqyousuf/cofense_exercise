@@ -187,6 +187,8 @@ shop_admin:
   base: https://shop-staging.idmeinc.net/admin
   offers: https://shop-staging.idmeinc.net/admin/offers
   categories: https://shop-staging.idmeinc.net/admin/categories
+  email_generator: https://shop-staging.idmeinc.net/admin/email_templates
+  test_offer: 101377
   stores:
     base_url: https://shop-staging.idmeinc.net/admin/stores
-  email_generator: https://shop-staging.idmeinc.net/admin/email_templates
+    test_store: Test

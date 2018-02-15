@@ -11,7 +11,7 @@ class ShopAdminOffers < IDmeBase
   end
 
   def filter_for_inactive_offers
-    select("ll Inactive Offers",:from =>"offer")
+    select("All Inactive Offers",:from =>"offer")
   end
 
   def click_button_for_new_offer_page
@@ -30,7 +30,7 @@ class ShopAdminOffers < IDmeBase
     find("#select2-offer_merchant_id-container").click
     all("input[type='search']")[1].set("test")
     sleep 1
-    find("#select2-offer_merchant_id-results").all("li", :text => "Test")[0].click
+    find("#select2-offer_merchant_id-results").all("li", :text => FigNewton.shop_admin.stores.test_store)[0].click
   end
 
   def click_create_sidebar_button
