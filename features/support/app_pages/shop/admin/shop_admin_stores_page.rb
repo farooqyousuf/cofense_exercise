@@ -15,6 +15,10 @@ class ShopAdminStores < IDmeBase
     find("#store_name").set(@store_title)
   end
 
+  def fill_in_cash_back
+    find("#store_cash_back").set("0")
+  end
+
   def click_create_sidebar_button
     click_button "Create"
   end

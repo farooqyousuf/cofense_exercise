@@ -3,15 +3,20 @@ class ShopAdminCategories < IDmeBase
   include IDPBase
   include JavascriptAlerts
 
+  attr_reader :category_label
+
   def initialize
     super(FigNewton.shop_admin.categories)
+    @category = "Test Categories #{rand(6 ** 8)}"
+    @category_label = @category.gsub(" ", "-").downcase
   end
 
   def create_new_valid_category
     click_button_for_new_category_page
-    fill_in("category_label", :with => "Fitness & Diet")
+    fill_in("category_label", :with => @category)
     fill_in("category_description", :with => "Getting healthy everyday")
     click_button "Create"
+    puts "#{@category}"
   end
 
   def click_button_for_new_category_page
@@ -19,12 +24,16 @@ class ShopAdminCategories < IDmeBase
   end
 
   def filter_datatable_for_category
-    find("input[type='search']").set("fitness-diet")
+    find("input[type='search']").set(@category_label)
   end
 
-  def delete_test_category
+  def verify_created_category
     filter_datatable_for_category
-    find(:link, :text => "fitness-diet").click
+    page.assert_text @category_label
+  end
+
+  def delete_test_category(category)
+    find(:link, :text => category).click
     click_link "Delete"
     js_accept
   end
@@ -50,5 +59,23 @@ class ShopAdminCategories < IDmeBase
 
   def submit_duplicate_category
     create_new_valid_category
+  end
+
+  def login
+    self.visit
+    authority = Authority.new
+    authority.auth_login
+  end
+
+  def login_in_new_window
+    self.create_new_window
+    self.use_last_browser_created
+    login
+  end
+
+  def logout_in_new_window
+    click_link("Logout")
+    self.close_current_browser
+    self.use_last_browser_created
   end
 end

@@ -169,6 +169,12 @@ After("@delete_shop_test_user") do
   @admin_tool.logout_in_new_window
 end
 
+After("@delete_shop_test_category") do
+  visit_shop_categories_in_new_window
+  @ShopAdminCategories.delete_test_category(@category_label)
+  @ShopAdminCategories.logout_in_new_window
+end
+
 After("@mp_user_group_affiliations") do
   visit_admin_users_in_new_window
   @admin_user_shop.delete_shop_test_user

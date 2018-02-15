@@ -19,7 +19,7 @@ class ShopAdminEmailGenerator < IDmeBase
   def select_header_resource_offer
     #header resource offer
     find("#select2-header-one-resource-select-container").click
-    find(".select2-search__field").set("1027")
+    find(".select2-search__field").set(FigNewton.shop_admin.test_offer)
 
     sleep 1
 
@@ -36,5 +36,3 @@ class ShopAdminEmailGenerator < IDmeBase
     js_accept
   end
 end
-
-

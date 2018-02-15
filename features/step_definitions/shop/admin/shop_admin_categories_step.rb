@@ -4,12 +4,12 @@ end
 
 Given(/^I sumbit a valid new category$/) do
   @ShopAdminCategories.create_new_valid_category
+  @category_label = @ShopAdminCategories.category_label
 end
 
 Given(/^I verify the category has been created$/) do
-  @ShopAdminCategories.filter_datatable_for_category
-  expect(page).to have_css("#categories", :text => "Fitness & Diet")
-  @ShopAdminCategories.delete_test_category
+  @ShopAdminCategories.verify_created_category
+  expect(page).to have_css(".alert-success", :text => "Category successfully created.")
 end
 
 Given(/^I submit a new category with blank label$/) do
@@ -31,7 +31,6 @@ Given(/^I verify the category has been updated$/) do
   @ShopAdminCategories.click_cancel_button
   @ShopAdminCategories.filter_datatable_for_category
   expect(page).to have_css("#DataTables_Table_0 tbody td:nth-child(3)",:text =>"Getting super swole")
-  @ShopAdminCategories.delete_test_category
 end
 
 Given(/^I attempt to submit a duplicate category$/) do
@@ -41,15 +40,5 @@ end
 Given(/^I verify a error is returned and no duplicate category is created$/) do
   @ShopAdminCategories.click_cancel_button
   @ShopAdminCategories.filter_datatable_for_category
-  expect(page).to have_css("#DataTables_Table_0 tbody a", :text => "fitness-diet", :count => 1)
-  @ShopAdminCategories.delete_test_category
-end
-
-Given(/^I delete the new category$/) do
-  @ShopAdminCategories.delete_test_category
-end
-
-Given(/^I verify the new category has been deleted$/) do
-  @ShopAdminCategories.filter_datatable_for_category
-  expect(page).to_not have_css("#DataTables_Table_0 tbody a",:text =>"fitness-diet")
+  expect(page).to have_css("#DataTables_Table_0 tbody a", :text => @category_label, :count => 1)
 end

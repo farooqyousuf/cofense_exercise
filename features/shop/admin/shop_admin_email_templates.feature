@@ -3,7 +3,7 @@
 Feature: Shop admin email template generator
 
   Background:
-    * I create "ShopAdminDashboard,ShopAdminEmailGenerator" page objects
+    * I create "ShopAdminDashboard, ShopAdminEmailGenerator" page objects
     * I visit "ShopAdminDashboard"
     * I login with Authority
     * I visit "ShopAdminEmailGenerator"

@@ -2,7 +2,7 @@
 Feature: Shop Admin Offers page
 
   Background:
-    * I create "ShopAdminOffers,ShopAdminDashboard,ShopAdminCategories" page objects
+    * I create "ShopAdminOffers, ShopAdminDashboard, ShopAdminCategories" page objects
     * I visit "ShopAdminDashboard"
     * I login with Authority
     * I visit "ShopAdminOffers"

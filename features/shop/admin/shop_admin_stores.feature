@@ -4,7 +4,7 @@
 Feature: Test Shop Admin Stores page
 
   Background:
-    * I create "ShopAdminDashboard,ShopAdminStores,ShopAdminCategories" page objects
+    * I create "ShopAdminDashboard, ShopAdminStores, ShopAdminCategories" page objects
     * I visit "ShopAdminDashboard"
     * I login with Authority
     * I visit "ShopAdminStores"
