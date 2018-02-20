@@ -2,6 +2,7 @@
 Feature: Responder verification as a ProBoard Firefighter
 
   Background:
+    * I set the External Vendor Environment to "Staging"
     * I create a Fireman ProBoard page object
     * I visit IDP through the "responder" policy
     * I click on the Sign Up link

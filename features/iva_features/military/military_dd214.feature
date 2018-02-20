@@ -2,6 +2,7 @@
 Feature: Military verification using DD214 request
 
   Background:
+    * I set the External Vendor Environment to "Staging"
     * I visit IDP through the "military" policy
     * I create a Military DD214 page object
     * I click on the Sign Up link

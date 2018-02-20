@@ -2,6 +2,7 @@
 Feature: Student verification using document upload
 
 Background:
+    * I set the External Vendor Environment to "Staging"
     * I create a Student Doc page object
     * I visit IDP through the "student" policy
     * I click on the Sign Up link
