@@ -5,11 +5,15 @@ end
 Given(/^I sumbit a valid new category$/) do
   @ShopAdminCategories.create_new_valid_category
   @category_label = @ShopAdminCategories.category_label
+  @category = @ShopAdminCategories.category
 end
 
 Given(/^I verify the category has been created$/) do
   @ShopAdminCategories.verify_created_category
   expect(page).to have_css(".alert-success", :text => "Category successfully created.")
+  click_link(@category_label)
+  sleep 1
+  @category_url = page.current_url
 end
 
 Given(/^I submit a new category with blank label$/) do
@@ -21,6 +25,7 @@ Given(/^I verify a error is returned and no new category is created$/) do
 end
 
 Given(/^I update the new category$/) do
+  step 'I visit "ShopAdminCategories"'
   @ShopAdminCategories.filter_datatable_for_category
   @ShopAdminCategories.click_on_new_category
   @ShopAdminCategories.update_new_category
@@ -34,6 +39,7 @@ Given(/^I verify the category has been updated$/) do
 end
 
 Given(/^I attempt to submit a duplicate category$/) do
+  step 'I visit "ShopAdminCategories"'
   @ShopAdminCategories.submit_duplicate_category
 end
 

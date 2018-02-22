@@ -132,9 +132,16 @@ module HelperMethods
     @admin_users.visit
   end
 
-  def visit_shop_categories_in_new_window
+  def visit_shop_categories_in_new_window(category)
     @ShopAdminCategories = ShopAdminCategories.new
     @ShopAdminCategories.login_in_new_window
+    visit(category)
+  end
+
+  def visit_shop_offer_in_new_window(offer)
+    @ShopAdminCategories = ShopAdminCategories.new
+    @ShopAdminCategories.login_in_new_window
+    visit(offer)
   end
 
   def verify_discount(original_product_amt_string, actual_product_discounted_amt_string, discount_percentage, options={})

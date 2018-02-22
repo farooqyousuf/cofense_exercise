@@ -185,10 +185,12 @@ idme:
 
 shop_admin:
   base: https://shop-staging.idmeinc.net/admin
-  offers: https://shop-staging.idmeinc.net/admin/offers
   categories: https://shop-staging.idmeinc.net/admin/categories
   email_generator: https://shop-staging.idmeinc.net/admin/email_templates
-  test_offer: 101377
   stores:
     base_url: https://shop-staging.idmeinc.net/admin/stores
     test_store: Test
+  offers:
+    url: https://shop-staging.idmeinc.net/admin/offers
+    offer_merchant_id: 101377
+    offer_affiliate_url: https://www.avantlink.com/123123

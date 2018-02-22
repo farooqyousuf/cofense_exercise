@@ -31,16 +31,6 @@ class ShopAdminStores < IDmeBase
     find("#DataTables_Table_0 tbody a",:match => :first).click
   end
 
-  def search_for_store_category
-    find("div[data-component='Shared.Select2Category'] .select2-search__field").set("fitness-diet")
-  end
-
-  def select_category_result_return
-    sleep 1
-    find(".select2-results").click
-    sleep 1
-  end
-
   def update_store_page
     click_button "Update"
   end
