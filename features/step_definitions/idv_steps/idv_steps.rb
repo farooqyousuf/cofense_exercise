@@ -1,7 +1,7 @@
 Given(/^I set the External Vendor Environment to "([^"]*)"$/) do |settings|
-  @AdminTool.login_in_new_window
+  AdminTool.new.login_in_new_window
   step 'I visit "AdminSettings"'
-  @AdminSettings.set_vendor_env(settings: settings)
+  AdminSettings.new.set_vendor_env(settings: settings)
   sleep 1
 
   close_current_browser

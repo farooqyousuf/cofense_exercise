@@ -2,6 +2,7 @@
 Feature: Military verification using .mil email
 
   Background:
+    * I set the External Vendor Environment to "Staging"
     * I visit IDP through the "military" policy
     * I create "MilitaryEmail" page objects
     * I click on the Sign Up link
