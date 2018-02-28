@@ -2,7 +2,8 @@
 Feature: Government verification using .gov email
 
   Background:
-    * I create "AdminUsers, AdminTool, IVAGovernment" page objects
+    * I create "AdminUsers, AdminTool, IVAGovernment, AdminSettings" page objects
+    * I set the External Vendor Environment to "Staging"
     * I visit IDP through the "government" policy
     * I create a Government page object
     * I click on the Sign Up link

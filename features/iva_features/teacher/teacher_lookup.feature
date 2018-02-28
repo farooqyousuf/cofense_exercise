@@ -2,6 +2,7 @@
 Feature: Teacher verification using state lookup
 
   Background:
+    * I set the External Vendor Environment to "Staging"
     * I create "AdminUsers, TeacherDoc, AdminTool" page objects
     * I create a Teacher Lookup page object
     * I visit IDP through the "teacher" policy
