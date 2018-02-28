@@ -11,7 +11,7 @@ end
 Given(/^I verify the category has been created$/) do
   @ShopAdminCategories.verify_created_category
   expect(page).to have_css(".alert-success", :text => "Category successfully created.")
-  click_link(@category_label)
+  @ShopAdminCategories.click_category_label_link
   sleep 1
   @category_url = page.current_url
 end

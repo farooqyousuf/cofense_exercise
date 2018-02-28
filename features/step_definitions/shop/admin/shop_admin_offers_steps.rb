@@ -28,22 +28,11 @@ Given(/^I submit a valid new offer$/) do
   @ShopAdminOffers.select_store
   @ShopAdminOffers.click_create_sidebar_button
 end
+
 Given(/^I verify the offer has been created$/) do
   expect(page).to have_css(".alert-success", :text =>"Offer successfully created.")
   @offer_url = page.current_url
 end
-
-Given(/^I delete the offer$/) do
-  step 'I visit "ShopAdminOffers"'
-  @ShopAdminOffers.filter_datatable_for_offer
-  @ShopAdminOffers.click_on_offer
-  @ShopAdminOffers.delete_offer
-end
-
-Given(/^I verify the offer has been deleted$/) do
-  expect(page).to have_css(".alert-success", :text => "Offer successfully destroyed")
-end
-
 
 Given(/^I add the new category to the offer$/) do
   @ShopAdminOffers.search_for_offer_category(@category_label)
@@ -57,9 +46,4 @@ end
 
 Given(/^I verify the offer has been updated$/) do
   expect(page).to have_css(".alert-success", :text => "Offer successfully updated.")
-end
-
-Given(/^I delete the offer category$/) do
-  step 'I visit "ShopAdminCategories"'
-  @ShopAdminCategories.delete_test_category
 end

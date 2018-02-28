@@ -170,14 +170,14 @@ After("@delete_shop_test_user") do
 end
 
 After("@delete_shop_category") do
-  visit_shop_categories_in_new_window(@category_url)
-  @ShopAdminCategories.delete_test_category
+  visit_shop_admin_resource_datatable_in_new_window(@category_url)
+  delete_shop_admin_resource
   @ShopAdminCategories.logout_in_new_window
 end
 
 After("@delete_shop_offer") do
-  visit_shop_offer_in_new_window(@offer_url)
-  @ShopAdminOffers.delete_offer
+  visit_shop_admin_resource_datatable_in_new_window(@offer_url)
+  delete_shop_admin_resource
   @ShopAdminCategories.logout_in_new_window
 end
 

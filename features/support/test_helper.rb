@@ -132,16 +132,15 @@ module HelperMethods
     @admin_users.visit
   end
 
-  def visit_shop_categories_in_new_window(category)
+  def visit_shop_admin_resource_datatable_in_new_window(resource)
     @ShopAdminCategories = ShopAdminCategories.new
     @ShopAdminCategories.login_in_new_window
-    visit(category)
+    visit(resource)
   end
 
-  def visit_shop_offer_in_new_window(offer)
-    @ShopAdminCategories = ShopAdminCategories.new
-    @ShopAdminCategories.login_in_new_window
-    visit(offer)
+  def delete_shop_admin_resource
+    click_link "Delete"
+    page.driver.browser.switch_to.alert.accept
   end
 
   def verify_discount(original_product_amt_string, actual_product_discounted_amt_string, discount_percentage, options={})

@@ -30,8 +30,3 @@ end
 Given(/^I verify the category has been added to the store$/) do
   expect(page).to have_css("#store_categories_attributes_0_label[value='#{@category}']")
 end
-
-Given(/^I delete the store category$/) do
-  @ShopAdminStores.remove_store_category
-  @ShopAdminStores.update_store_page
-end

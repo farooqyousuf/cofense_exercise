@@ -6,7 +6,6 @@ class ShopAdminOffers < IDmeBase
 
   def initialize
     super(FigNewton.shop_admin.offers.url)
-    @offer = "Test Offer #{rand(6 ** 8)}"
   end
 
   def filter_for_active_offers
@@ -22,6 +21,7 @@ class ShopAdminOffers < IDmeBase
   end
 
   def fill_in_title_field
+    @offer = "Test Offer #{rand(6 ** 8)}"
     fill_in("offer_title", :with => @offer)
     puts "#{@offer}"
   end
@@ -47,11 +47,6 @@ class ShopAdminOffers < IDmeBase
 
   def click_on_offer
     first("#DataTables_Table_0 tbody a").click
-  end
-
-  def delete_offer
-    click_link "Delete"
-    js_accept
   end
 
   def select_category_result_return

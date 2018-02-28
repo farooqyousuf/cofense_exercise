@@ -34,8 +34,4 @@ class ShopAdminStores < IDmeBase
   def update_store_page
     click_button "Update"
   end
-
-  def remove_store_category
-    click_link "Remove Category"
-  end
 end
