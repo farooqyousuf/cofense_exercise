@@ -169,9 +169,15 @@ After("@delete_shop_test_user") do
   @admin_tool.logout_in_new_window
 end
 
-After("@delete_shop_test_category") do
-  visit_shop_categories_in_new_window
-  @ShopAdminCategories.delete_test_category(@category_label)
+After("@delete_shop_category") do
+  visit_shop_admin_resource_datatable_in_new_window(@category_url)
+  delete_shop_admin_resource
+  @ShopAdminCategories.logout_in_new_window
+end
+
+After("@delete_shop_offer") do
+  visit_shop_admin_resource_datatable_in_new_window(@offer_url)
+  delete_shop_admin_resource
   @ShopAdminCategories.logout_in_new_window
 end
 

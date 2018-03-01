@@ -6,7 +6,11 @@
 ### Released
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
-# 2.4.64 (2/15/18)
+# 2.4.65 (2/22/18)
+- IDME-4430: Fix Shop Admin Offers Tests
+
+# 2.4.64 (2/12/18)
+- IDME-4449: Fix Most Shop Admin Tests
 - CORE-8735: Admin Vendor Settings added to all IVA tests
 
 # 2.4.63 (2/12/18)

@@ -3,15 +3,15 @@ class ShopAdminCategories < IDmeBase
   include IDPBase
   include JavascriptAlerts
 
-  attr_reader :category_label
+  attr_reader :category_label, :category
 
   def initialize
     super(FigNewton.shop_admin.categories)
-    @category = "Test Categories #{rand(6 ** 8)}"
-    @category_label = @category.gsub(" ", "-").downcase
   end
 
   def create_new_valid_category
+    @category = "Test Categories #{rand(6 ** 8)}"
+    @category_label = @category.gsub(" ", "-").downcase
     click_button_for_new_category_page
     fill_in("category_label", :with => @category)
     fill_in("category_description", :with => "Getting healthy everyday")
@@ -32,12 +32,6 @@ class ShopAdminCategories < IDmeBase
     page.assert_text @category_label
   end
 
-  def delete_test_category(category)
-    find(:link, :text => category).click
-    click_link "Delete"
-    js_accept
-  end
-
   def click_on_new_category
     find("#DataTables_Table_0 tbody td:first-child").click
   end
@@ -51,6 +45,10 @@ class ShopAdminCategories < IDmeBase
     click_link "Cancel"
   end
 
+  def click_category_label_link
+    click_link(@category_label)
+  end
+
   def submit_invalid_category
     click_button_for_new_category_page
     fill_in("category_label", :with =>"")
@@ -59,6 +57,16 @@ class ShopAdminCategories < IDmeBase
 
   def submit_duplicate_category
     create_new_valid_category
+  end
+
+  def search_for_store_category
+    find("div[data-component='Shared.Select2Category'] .select2-search__field").set(@category_label)
+  end
+
+  def select_category_result_return
+    sleep 1
+    find(".select2-results").click
+    sleep 1
   end
 
   def login

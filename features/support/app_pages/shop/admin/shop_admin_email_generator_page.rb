@@ -19,7 +19,7 @@ class ShopAdminEmailGenerator < IDmeBase
   def select_header_resource_offer
     #header resource offer
     find("#select2-header-one-resource-select-container").click
-    find(".select2-search__field").set(FigNewton.shop_admin.test_offer)
+    find(".select2-search__field").set(FigNewton.shop_admin.offers.offer_merchant_id)
 
     sleep 1
 
