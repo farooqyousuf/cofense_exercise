@@ -6,6 +6,9 @@
 ### Released
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
+# 2.4.66 (3/1/18)
+- AWE-126: Update feature directories naming
+
 # 2.4.65 (2/22/18)
 - IDME-4430: Fix Shop Admin Offers Tests
 
