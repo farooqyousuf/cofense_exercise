@@ -61,10 +61,6 @@ include JavascriptAlerts
     open_user_and_delete("Joel Smith")
   end
 
-  def delete_paypal_user
-    open_user_and_delete("test@id.me")
-  end
-
   def delete_facebook_user
     open_user_and_delete("Sadanberg")
   end
