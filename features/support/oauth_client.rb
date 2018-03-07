@@ -74,17 +74,6 @@ class OAuthClient
     find(".allow").click
   end
 
-  def login_with_paypal
-    click_link("PayPal")
-    fill_in "email", :with => FigNewton.oauth.paypal_user
-    fill_in "password", :with => FigNewton.oauth.paypal_pw
-    click_button("Log In")
-  end
-
-  def click_paypal
-    click_link("PayPal")
-  end
-
   private
 
   def client
