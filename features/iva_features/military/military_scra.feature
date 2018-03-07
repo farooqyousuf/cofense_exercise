@@ -3,7 +3,7 @@
 Feature: Military verification using SCRA credentials
 
   Background:
-    * I set the External Vendor Environment to "SCRA Production"
+    * I set the External Vendor Environment to "Staging"
     * I visit IDP through the "military" policy
     * I create a Military SCRA page object
     * I click on the Sign Up link
