@@ -17,7 +17,7 @@ include PageManagement
           when "fail documentation"
             ["Staging", "Mock", "Mock Fail", "Mock", "Production", "Production", "Production", "Mock", "Disable", "Disable", "On"]
           when "Staging"
-            ["Staging", "Staging", "Staging", "Mock", "Production", "Production", "Mock", "Production", "Disable", "Disable", "On"]
+            ["Staging", "Staging", "Staging", "Mock", "Production", "Production", "Production", "Production", "Disable", "Disable", "On"]
           end
 
     vendors.zip(env).each do |vendor, env|
