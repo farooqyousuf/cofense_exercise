@@ -19,12 +19,11 @@ class DD214 < IDmeBase
 
       case type
       when "unique", "denied", "dupe"
-        sleep 2
+        populate_fields(data_for(data_set))
+        populate_component
         populate_branch
         populate_officer
-        populate_component
         populate_checkboxes
-        populate_fields(data_for(data_set))
         populate_signature
       else fail("User type not found")
       end
@@ -77,15 +76,15 @@ class DD214 < IDmeBase
   end
 
   def release_checkbox
-    all(".checkbox")[0].click
+    find("label[for=verification_auth_release]").click
   end
 
   def liable_checkbox
-    all(".checkbox")[1].click
+    find("label[for=verification_liable_ack]").click
   end
 
   def verify_checkbox
-    all(".checkbox")[2].click
+    find("label[for=verification_verify_info]").click
   end
 
   def populate_checkboxes
