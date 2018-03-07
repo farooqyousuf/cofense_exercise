@@ -6,6 +6,9 @@
 ### Released
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
+# 2.4.67 (3/6/18)
+- AWE-134: Remove paypal test
+
 # 2.4.66 (3/1/18)
 - AWE-126: Update feature directories naming
 
