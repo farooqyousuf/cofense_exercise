@@ -34,9 +34,6 @@ class StateLookupEMT < IDmeBase
 
     escape_google_address_autocomplete(%w(#verification_street #verification_emt_city))
 
-    #the 4 lines (2 repeated) below help to manipulate the drop down, otherwise it give's an error.
-    all("#s2id_verification_state")[0].click
-    pick_result("Kansas")
     all("#s2id_verification_state")[0].click
     pick_result("Kansas")
   end
