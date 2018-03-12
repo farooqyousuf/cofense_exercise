@@ -19,7 +19,7 @@ Feature: Responder verification as an nationally certified EMT
   @delete_current_user_email
   Scenario: Denied attempt for emt national verification (Error code 25)
     * I submit the emt national verification form as a "denied" record
-    * I should see the error message "We're sorry, but we were unable to verify your EMT status with the information you provided. Please confirm your Registry Number by visiting the National Registry of Emergency Medical Technicians website. For additional information, please see our Support page."
+    * I should see the error message "We're sorry, but we are unable to verify your EMT status with the information you provided. Please confirm your Registry Number by visiting the National Registry of Emergency Medical Technicians website. For additional information, please see our Support page."
     * I verify the attempt is marked as "DENIED"
 
   @delete_current_user_email @delete_natl_emt
@@ -30,7 +30,7 @@ Feature: Responder verification as an nationally certified EMT
     * I click on the Verify using EMT National link
     * I click on the Begin link
     * I verify using a duplicate "EMT National" record
-    * I should see the error message "We're sorry, but we were unable to verify your EMT status with the information you provided. Please confirm your Registry Number by visiting the National Registry of Emergency Medical Technicians website. For additional information, please see our Support page."
+    * I should see the error message "We’re sorry, it appears you have already verified your EMT status on a different account. Please sign in using your existing credentials."
     * I verify the attempt is marked as "DUPLICATE"
 
   @delete_current_user_email

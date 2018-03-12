@@ -6,6 +6,9 @@
 ### Released
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
+# 2.4.69 (3/9/18)
+- AWE-159: Fix IVA Responder EMT Tests
+
 # 2.4.68 (3/7/18)
 - AWE-157: Fix IVA Military tests
 

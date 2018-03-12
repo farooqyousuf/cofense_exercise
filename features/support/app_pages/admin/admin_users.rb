@@ -111,7 +111,7 @@ include JavascriptAlerts
   end
 
   def delete_natl_emt
-    open_user_and_delete("paucar")
+    open_user_and_delete("jorge paucar")
   end
 
   def delete_shop_test_user
