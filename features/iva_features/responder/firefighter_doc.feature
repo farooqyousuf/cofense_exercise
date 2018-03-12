@@ -37,7 +37,7 @@ Feature: Responder verification as a firefighter using document upload
     * I verify the attempt is marked as "DUPLICATE"
 
   @delete_experian_user1 @delete_current_user_email
-  Scenario: Prompt Error Code 86
+  Scenario: Prompt Error Code FRP0500
     * I verify using firefighter documentation
     * I approve the document in the IDme support tool
     * I clear the session from Authority
@@ -45,7 +45,7 @@ Feature: Responder verification as a firefighter using document upload
     * I click on the No I am not ProBoard certified link
     * I click on the Begin link
     * I submit the firefighter doc upload verification form as a "second unique user" record
-    * I should see the error message "We’re sorry, but we were unable to verify your credentials with the document you provided. Please see our Support page for document specifications, or try another verification option."
+    * I should see the error message "We’re sorry, it appears you have already verified your firefighter status on a different account. Please sign in using your existing credentials."
 
   @delete_current_user_email
   Scenario: Successful prompt for all required fields for Firefighter Doc Upload
