@@ -61,7 +61,7 @@ Feature: Military verification using document upload
   @delete_current_user_email
   Scenario: Denied attempt for Military Document verification (Error code A0602)
     * I submit the military document verification form as a "denied" record
-    * I should see the error message "We're sorry, but we were unable to verify the information you provided. The information entered must match the information on official records. Note: If you've recently had a name change, try your maiden or prior name."
+    * I should see the error message "We're sorry, but we are unable to verify the information you provided. The information entered must match the information on official records. Note: If you've recently had a name change, try your maiden or prior name."
     * I verify the attempt is marked as "DENIED"
 
   @delete_experian_user1 @delete_current_user_email
@@ -73,7 +73,7 @@ Feature: Military verification using document upload
     * I click on the Military Verify by uploading documentation link
     * I click on the Begin link
     * I verify using a duplicate "Military Document" record
-    * I should see the error message "We’re sorry, but we are unable to verify your credentials with the information you provided."
+    * I should see the error message "It appears that you may have already verified your military status with ID.me on a different account. Please sign in using your existing credentials."
     * I verify the attempt is marked as "DUPLICATE"
 
   @delete_experian_user1 @delete_current_user_email
@@ -85,7 +85,7 @@ Feature: Military verification using document upload
     * I click on the Military Verify by uploading documentation link
     * I click on the Begin link
     * I submit the military document verification form as a "second unique user" record
-    * I should see the error message "We’re sorry, but we are unable to verify your credentials with the information you provided."
+    * I should see the error message "It appears that you may have already verified your military status with ID.me on a different account. Please sign in using your existing credentials."
 
   @delete_current_user_email
   Scenario: Successfully prompt for all required fields for Service Member
