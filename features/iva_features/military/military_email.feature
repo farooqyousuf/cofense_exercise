@@ -40,7 +40,7 @@ Feature: Military verification using .mil email
   @delete_current_user_email
   Scenario: Dupe user attempt for military email verification (Error code A0500)
     * I submit the military email verification form as a "duplicate" record
-    * I should see the error message "We’re sorry, but we are unable to verify your military status with the information you provided."
+    * I should see the error message "It appears that you may have already verified your military status with ID.me on a different account. Please sign in using your existing credentials."
     * I verify the attempt is marked as "DUPLICATE"
 
   @delete_current_user_email
