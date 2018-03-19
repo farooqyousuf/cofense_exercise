@@ -27,7 +27,7 @@ Feature: Government verification using .gov email
   @delete_current_user_email
   Scenario: Dupe check attempt for Government verification (Error code 79)
     * I submit the government verification form as a "dupe" record
-    * I should see the error message "We’re sorry, but we are unable to verify your credentials with the information you provided."
+    * I should see the error message "We’re sorry, it appears you have already verified your government employee status on a different account. Please sign in using your existing credentials."
     * I verify the attempt is marked as "DUPLICATE"
 
   @delete_current_user_email

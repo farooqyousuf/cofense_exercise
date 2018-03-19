@@ -49,7 +49,7 @@ Feature: Military verification using DD214 request
     * I click on the Verify by requesting DD214 link
     * I click on the Begin link
     * I verify using duplicate DD214 information for "Veteran" via "document"
-    * I should see the error message "We’re sorry, but we are unable to verify your military status with the information you provided."
+    * I should see the error message "It appears that you may have already verified your military status with ID.me on a different account. Please sign in using your existing credentials."
     * I verify the attempt is marked as "DUPLICATE"
 
   @delete_current_user_email

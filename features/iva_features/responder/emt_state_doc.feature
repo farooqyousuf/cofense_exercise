@@ -21,7 +21,7 @@ Feature: Responder verification as an EMT using state doc upload
   @delete_current_user_email
   Scenario: Denied attempt for EMT state doc upload verification
     * I submit the state EMT Document Upload form as a "denied" record
-    * I should see the error message "We're sorry, but we were unable to verify the information you provided. The information entered must match the information on official records. Note: If you've recently had a name change, try your maiden or prior name."
+    * I should see the error message "We're sorry, but we are unable to verify the information you provided. The information entered must match the information on official records. Note: If you've recently had a name change, try your maiden or prior name."
     * I verify the attempt is marked as "DENIED"
 
   @delete_experian_user1 @delete_current_user_email
@@ -33,7 +33,7 @@ Feature: Responder verification as an EMT using state doc upload
     * I click on the Verify using EMT State Doc link
     * I click on the Begin link
     * I verify using a duplicate "EMT Document Upload" record
-    * I should see the error message "We’re sorry, but we are unable to verify your credentials with the information you provided."
+    * I should see the error message "We’re sorry, it appears you have already verified your EMT status on a different account. Please sign in using your existing credentials."
     * I verify the attempt is marked as "DUPLICATE"
 
   @delete_current_user_email
