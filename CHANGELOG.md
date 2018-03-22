@@ -6,6 +6,9 @@
 ### Released
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
+# 2.4.71 (3/22/18)
+- AWE-297: Fix IDP Sign up
+
 # 2.4.70 (3/12/18)
 - AWE-159: Fix IVA Responder firefighter Tests
 
