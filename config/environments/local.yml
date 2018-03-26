@@ -1,10 +1,6 @@
 # Local settings
-support_tool:
-  homepage:
-    url: http://support.idme.dev
-
 authority:
- userid: test@id.me
+ userid: testdev@id.me
  password: Password123
 
 oauth:
@@ -35,6 +31,7 @@ oauth:
   twitter_pw:
   experian_user: Erin Rashid
   policy:
+    au10tix_light     : http://idmanagement.gov/ns/assurance/loa/3
     developer         : developer
     farooq            : farooq
     government        : government
@@ -59,6 +56,11 @@ admin:
   api_username: idme
   api_password: idme
   users_endpoint: http://admin.idme.dev/api/users
+
+support_tool:
+  base_url: http://support.idme.dev
+  homepage:
+    url: http://support.idme.dev
 
 idp:
   base_url: http://api.idme.dev
@@ -106,5 +108,3 @@ wallet:
   myids: http://wallet.idme.dev/ids
   activity: http://wallet.idme.dev/activity
   shop: http://marketplace.idme.dev/
-
-

@@ -6,6 +6,9 @@
 ### Released
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
+# 2.4.72 (3/26/18)
+- CORE-8826: Fix IDV Tests
+
 # 2.4.71 (3/22/18)
 - AWE-297: Fix IDP Sign up
 
