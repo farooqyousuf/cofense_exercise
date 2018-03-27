@@ -70,7 +70,7 @@ include DataMagic
   end
 
   def populate_phone(mobile_phone)
-    2.times {find("label[for='phone_type_smart_phone']").click}
+    2.times { find("label[for='phone_type_smart_phone']").click }
     enter_phone_number
     click_button("Submit phone")
   end

@@ -9,17 +9,17 @@ include PageManagement
   end
 
   def set_vendor_env(settings: "none")
-    vendors = ["experian_env", "confirmio_env", "au10tix_env", "plaid_env", "nsc_env", "npi_env", "scra_env", "usaa_env", "fraudnet_env", "dupe_checks", "payfone_env", "telesign_env"]
+    vendors = %w(experian_env confirmio_env au10tix_env plaid_env nsc_env npi_env scra_env usaa_env fraudnet_env dupe_checks payfone_env telesign_env)
 
     env = case settings
           when "verify via Confirm.io", "verify via AU10TIX"
-            ["Mock", "Mock", "Mock", "Mock", "Production", "Production", "Production", "Mock", "Disable", "On", "Mock", "Mock"]
+            %w(Mock Mock Mock Mock Production Production Production Mock Disable On Mock Mock)
           when "fail experian"
-            ["Staging", "Mock", "Mock", "Mock", "Production", "Production", "Production", "Mock", "Disable", "On", "Mock", "Mock"]
+            %w(Staging Mock Mock Mock Production Production Production Mock Disable On Mock Mock)
           when "fail documentation"
-            ["Staging", "Mock", "Mock Fail", "Mock", "Production", "Production", "Production", "Mock", "Disable", "On", "Mock", "Mock"]
+            %w(Staging Mock Mock\ Fail Mock Production Production Production Mock Disable On Mock Mock)
           when "Staging"
-            ["Staging", "Staging", "Staging", "Mock", "Production", "Production", "Production", "Production", "Disable", "On", "Mock", "Mock"]
+            %w(Staging Staging Staging Mock Production Production Production Production Disable On Mock Mock)
           end
 
     vendors.zip(env).each do |vendor, env|
