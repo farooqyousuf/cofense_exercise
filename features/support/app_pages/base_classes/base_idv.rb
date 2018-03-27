@@ -70,10 +70,7 @@ include DataMagic
   end
 
   def populate_phone(mobile_phone)
-    choose("phone_type_smart_phone")
-    sleep 1
-    find("#phone_type_smart_phone").click
-    # fill_in("mobile_phone", :with => mobile_phone)
+    2.times { find("label[for='phone_type_smart_phone']").click }
     enter_phone_number
     click_button("Submit phone")
   end
