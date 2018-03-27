@@ -1,7 +1,7 @@
 class SupportToolHomepage < IDmeBase
 
   def initialize
-    super(FigNewton.support_tool.homepage.url)
+    super(FigNewton.support_tool.base_url)
   end
 
 end

@@ -6,7 +6,7 @@ include PageManagement
 include JavascriptAlerts
 
   def initialize
-    super("#{FigNewton.support_tool.base_url}/verification/attempts?waiting=true")
+    super("#{FigNewton.support_tool.waiting_attempts}")
   end
 
   def approve_doc

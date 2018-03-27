@@ -126,6 +126,7 @@ admin:
 
 support_tool:
   base_url: https://support-staging.idmeinc.net/
+  waiting_attempts: https://support-staging.idmeinc.net/verification/attempts?waiting=true
 
 idp:
   base_url: https://api-staging.idmeinc.net
