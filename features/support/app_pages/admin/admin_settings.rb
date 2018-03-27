@@ -12,7 +12,9 @@ include PageManagement
     vendors = ["experian_env", "confirmio_env", "au10tix_env", "plaid_env", "nsc_env", "npi_env", "scra_env", "usaa_env", "fraudnet_env", "dupe_checks", "payfone_env", "telesign_env"]
 
     env = case settings
-          when "verify via Confirm.io", "verify via AU10TIX", "fail experian"
+          when "verify via Confirm.io", "verify via AU10TIX"
+            ["Mock", "Mock", "Mock", "Mock", "Production", "Production", "Production", "Mock", "Disable", "On", "Mock", "Mock"]
+          when "fail experian"
             ["Staging", "Mock", "Mock", "Mock", "Production", "Production", "Production", "Mock", "Disable", "On", "Mock", "Mock"]
           when "fail documentation"
             ["Staging", "Mock", "Mock Fail", "Mock", "Production", "Production", "Production", "Mock", "Disable", "On", "Mock", "Mock"]
