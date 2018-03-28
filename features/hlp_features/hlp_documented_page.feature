@@ -1,12 +1,11 @@
 @regression @hlp @hlp_admin @hlp_document_page @desktop
-
 Feature: Test the HLP DocumentPage functionality
 
-Background:
-  * I visit "HlpPartnerIndexPage"
-  * I login with Authority
-  * I check if page name has been already taken for the "DocumentPage"
-  * I visit the Add DocumentPage page
+  Background:
+    * I visit "HlpPartnerIndexPage"
+    * I login with Authority
+    * I check if page name has been already taken for the "DocumentPage"
+    * I visit the Add DocumentPage page
 
   @smoke
   Scenario: Add a new DocumentPage page
@@ -37,7 +36,7 @@ Background:
     * I preview the selected HLP page
     * I verify all the elements on the Preview DocumentPage hosted landing page
     * I delete the selected hlp page
-@refactor
+
   Scenario: Launch an DocumentPage
     * I create a new DocumentPage
     * I launch the HLP page

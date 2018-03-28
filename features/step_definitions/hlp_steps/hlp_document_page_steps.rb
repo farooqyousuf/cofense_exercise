@@ -30,6 +30,7 @@ Given(/^The DocumentPage name should have copy appended at the end$/) do
 end
 
 Given(/^I verify all the elements on the Preview DocumentPage hosted landing page$/) do
+  sleep 2
   within_window @new_preview_window do
     expect(page.current_url).to eql(FigNewton.hlp_page_test_data.document_page.preview_page_url)
     expect(page.title).to eql(FigNewton.hlp_page_test_data.document_page.live_page_title)
@@ -38,6 +39,7 @@ Given(/^I verify all the elements on the Preview DocumentPage hosted landing pag
 end
 
 Given(/^I verify all the elements on the Live DocumentPage hosted landing page$/) do
+  sleep 2
   within_window @new_live_page_window do
     expect(page.current_url).to eql(FigNewton.hlp_page_test_data.document_page.live_page_url)
     expect(page.title).to eql(FigNewton.hlp_page_test_data.document_page.live_page_title)
