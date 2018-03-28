@@ -35,12 +35,13 @@ class IDV < IDmeBase
     use_original_tab
 
     confirm_io_callback(mocked_result: mocked_result_confirmio)
+    close_confirm_window
 
     if populate == true
       idv_user = data_for(:experian_user3)
       populate_fields_phone(data: idv_user)
 
-      check("idme_verification_identity_accepts_fcra")
+      check_fcra_box
       click_button("Verify my information")
       click_button("Allow")
     end
@@ -81,11 +82,11 @@ class IDV < IDmeBase
     upload_back_id(back_id: back_id)
     click_button("Look Good?")
     confirm_io_callback(mocked_result: mocked_result_confirmio)
+    close_confirm_window
 
     if populate == true
       populate_fields_computer(data: user)
-
-      check("idme_verification_identity_accepts_fcra")
+      check_fcra_box
       click_button("Verify my information")
 
       unless action == "fail experian"

@@ -1,13 +1,12 @@
 # Change Log
 
-- INT-2300: Update Seleium Webdriver; Documentation geckodriver
-- IDME-4270: Add local config for user services applications
-
 ### Released
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
-# 2.4.72 (3/27/18)
+# 2.4.72 (3/28/18)
 - IDME-4420: Fix HLP Document Page tests
+- CORE-8826: Fix IDV Tests
+- AWE-160:   Fix IVA Tests
 
 # 2.4.71 (3/22/18)
 - AWE-297: Fix IDP Sign up
@@ -50,6 +49,7 @@ All notable changes to this project will be documented in this file. This projec
 
 # 2.4.59 (1/17/18)
 - INT-2306: Update READme docs for Revelator
+- INT-2300: Update Seleium Webdriver; Documentation geckodriver
 - CORE-8730: Remove second booleans
 
 # 2.4.58 (1/16/18)
