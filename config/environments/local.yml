@@ -1,7 +1,7 @@
 # Local settings
 support_tool:
-  homepage:
-    url: http://support.idme.dev
+  base_url: http://support.idme.dev
+  waiting_attempts: http://support.idme.dev/verification/attempts?waiting=true
 
 authority:
  userid: test@id.me
@@ -106,5 +106,3 @@ wallet:
   myids: http://wallet.idme.dev/ids
   activity: http://wallet.idme.dev/activity
   shop: http://marketplace.idme.dev/
-
-
