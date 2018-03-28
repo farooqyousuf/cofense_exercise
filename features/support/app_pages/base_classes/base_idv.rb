@@ -78,12 +78,21 @@ include DataMagic
   def set_up_multifactor
     data = data_for(:experian_user3)
 
-    click_link("Voice or Text Message")
+    find(".m_phone").click
     fill_in "multifactor_phone", :with => data.fetch("mobile_phone")
 
     3.times {
       sleep 1
       click_continue
     }
+  end
+
+  def close_confirm_window
+    blank_confirmio_window = page.driver.window_handles[1]
+    page.driver.close_window(blank_confirmio_window)
+  end
+
+  def check_fcra_box
+    find(:css, "label[for='idme_verification_identity_accepts_fcra'] span").click
   end
 end
