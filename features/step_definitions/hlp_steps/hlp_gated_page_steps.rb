@@ -21,7 +21,7 @@ Given(/^I fill out the data for the GatedPage$/) do
 end
 
 Given(/^I verify the deleted GatedPage is deleted$/) do
-  expect(@hlp_selected_partner_page.partner_page_already_exists("GatedPage")).to be(false)
+  expect(@hlp_selected_partner_page.partner_page_already_exists(FigNewton.hlp_page_test_data.gated_page.name)).to be(false)
 end
 
 Given(/^The GatedPage name should have copy appended at the end$/) do
@@ -29,6 +29,7 @@ Given(/^The GatedPage name should have copy appended at the end$/) do
 end
 
 Given(/^I verify all the elements on the Preview GatedPage hosted landing page$/) do
+  sleep 2
   within_window @new_preview_window do
     expect(page.current_url).to eql(FigNewton.hlp_page_test_data.gated_page.preview_page_url)
     expect(page.title).to eql(FigNewton.hlp_page_test_data.gated_page.live_page_title)
@@ -37,6 +38,7 @@ Given(/^I verify all the elements on the Preview GatedPage hosted landing page$/
 end
 
 Given(/^I verify all the elements on the Live GatedPage hosted landing page$/) do
+  sleep 2
   within_window @new_live_page_window do
     expect(page.current_url).to eql(FigNewton.hlp_page_test_data.gated_page.live_page_url)
     expect(page.title).to eql(FigNewton.hlp_page_test_data.gated_page.live_page_title)

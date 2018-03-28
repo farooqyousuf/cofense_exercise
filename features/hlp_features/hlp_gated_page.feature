@@ -40,7 +40,7 @@ Feature: Test the HLP GatedPage functionality
     * I preview the selected HLP page
     * I verify all the elements on the Preview GatedPage hosted landing page
     * I delete the selected hlp page
- @refactor
+
   Scenario: Launch an GatedPage
     * I create a new GatedPage
     * I launch the HLP page

@@ -5,6 +5,7 @@ All notable changes to this project will be documented in this file. This projec
 
 # 2.4.72 (3/28/18)
 - IDME-4420: Fix HLP Document Page tests
+- IDME-4421: Fix HLP Gated Page tests
 - CORE-8826: Fix IDV Tests
 - AWE-160:   Fix IVA Tests
 
