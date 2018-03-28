@@ -12,11 +12,19 @@ class ShopAdminCategories < IDmeBase
   def create_new_valid_category
     @category = "Test Categories #{rand(6 ** 8)}"
     @category_label = @category.gsub(" ", "-").downcase
+    create_category(@category)
+  end
+
+  def create_category(category)
     click_button_for_new_category_page
-    fill_in("category_label", :with => @category)
+    fill_in("category_label", :with => category)
     fill_in("category_description", :with => "Getting healthy everyday")
     click_button "Create"
     puts "#{@category}"
+  end
+
+  def submit_duplicate_category
+    create_category(@category)
   end
 
   def click_button_for_new_category_page
@@ -53,10 +61,6 @@ class ShopAdminCategories < IDmeBase
     click_button_for_new_category_page
     fill_in("category_label", :with =>"")
     click_button "Create"
-  end
-
-  def submit_duplicate_category
-    create_new_valid_category
   end
 
   def search_for_store_category
