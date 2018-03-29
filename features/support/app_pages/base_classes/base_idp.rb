@@ -27,11 +27,11 @@ include Capybara::DSL
   end
 
   def click_sign_in
-    click_button("Sign In")
+    click_button("Sign in")
   end
 
   def click_sign_up
-    first(:link, "Sign Up").click
+    first(:link, "Sign up").click
   end
 
   def unlock_link
