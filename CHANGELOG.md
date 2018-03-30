@@ -3,6 +3,9 @@
 ### Released
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
+# 2.4.73 (3/29/18)
+- IDME-4432: Fix Shop Offers Tests
+
 # 2.4.72 (3/28/18)
 - IDME-4420: Fix HLP Document Page tests
 - CORE-8826: Fix IDV Tests
