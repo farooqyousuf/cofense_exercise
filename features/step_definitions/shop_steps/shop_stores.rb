@@ -1,7 +1,3 @@
-Given(/^I create Shop Store Index Page object$/) do
-  @shop_stores_page = ShopStoreIndexPage.new
-end
-
 Given(/^I expect to be at the Shop Stores Index Page$/) do
   expect(page.current_url).to eql(FigNewton.shop.stores_index_page)
 end
@@ -22,28 +18,35 @@ end
 
 Given(/^I check to sort stores by name$/) do
   select("name", :from => "filters")
-  ['123Greetings Store','123Print', '1800AnyLens'].each.with_index(offset=1) do |title,index|
+  ['123Inkjets','1800AnyLens', '1-800-Baskets'].each.with_index(offset=1) do |title,index|
     expect(page).to have_css(".stores-list-static li:nth-child(#{index}) .merchant-card figure a[title='#{title}']")
   end
 end
 
 Given(/^I check to sort stores by newest$/) do
+  step 'I visit "ShopAdminDashboard"'
+  step 'I login with Authority'
+  step 'I visit "ShopAdminStores"'
+  step 'I navigate to the create a new store page'
+  step 'I submit a valid new store'
+  step 'I visit "ShopStoreIndexPage"'
+  store_title = @store_title
+
   select("newest", :from => "filters")
-    ['Bodybuilding.com', 'DISH Network','GlobeIn'].each.with_index(offset=1) do |title,index|
-      expect(page).to have_css(".stores-list-static li:nth-child(#{index}) .merchant-card figure a[title='#{title}']")
-  end
+  expect(page).to have_css(".stores-list-static li:nth-child(1) .merchant-card figure a[title='#{store_title}']")
 end
+
 
 Given(/^I check to sort stores by highest cash back %$/) do
   select("Highest Cash Back %",:from => "filters")
-  ['Bigcommerce','The Shaw Academy','FreeTaxUSA'].each.with_index(offset=1) do |title,index|
+  ['Norton by Symantec','OpenSky','FreeTaxUSA'].each.with_index(offset=1) do |title,index|
     expect(page).to have_css(".stores-list-static li:nth-child(#{index}) .merchant-card figure a[title='#{title}']")
   end
 end
 
 Given(/^I check to sort stores by highest cash back \$$/) do
   select("Highest Cash Back $",:from => "filters")
-  ['DISH Network','KitchenAid','99designs'].each.with_index(offset=1) do |title,index|
+  ['Dish Network Subscriber Referral','Constant Contact','BlueHost'].each.with_index(offset=1) do |title,index|
     expect(page).to have_css(".stores-list-static li:nth-child(#{index}) .merchant-card figure a[title='#{title}']")
   end
 end
