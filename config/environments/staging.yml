@@ -145,11 +145,11 @@ hlp_page_test_data:
     live_page_url: https://hosted-pages-staging.idmeinc.net/sam-s-club-sam-s-club-military-special-document-page
     live_page_title: ID.me - Sam's Club Military Special Document Page
   gated_page:
-    name: Sam's Club Military Special Gated Page
-    duplicate_page_name: Sam's Club Military Special Gated Page copy
-    preview_page_url: https://hosted-pages-staging.idmeinc.net/sam-s-club-sam-s-club-military-special-gated-page?preview=true
-    live_page_url: https://hosted-pages-staging.idmeinc.net/sam-s-club-sam-s-club-military-special-gated-page
-    live_page_title: Sam's Club Military Special Gated Page - ID.me
+    name: Sam's Club Military Gated Page
+    duplicate_page_name: Sam's Club Military Gated Page copy
+    preview_page_url: https://hosted-pages-staging.idmeinc.net/sam-s-club-sam-s-club-military-gated-page?preview=true
+    live_page_url: https://hosted-pages-staging.idmeinc.net/sam-s-club-sam-s-club-military-gated-page
+    live_page_title: ID.me - Sam's Club Military Gated Page
   promo_code_page:
     name: Sam's Club Military Special Promo Code Page
     header: Honored to Serve Those Who Serve
