@@ -14,11 +14,6 @@ Given(/^I select the teacher state "([^"]*)"$/) do |state|
   end
 end
 
-Given(/^I should be on the teacher verification screen$/) do
-  find(@TeacherDoc.header_css).visible?
-  expect(page).to have_content "Teacher ID"
-end
-
 Given(/^I verify using teacher documentation$/) do
   step 'I generate a unique "png" doc'
   @TeacherDoc.verify(type: "unique")

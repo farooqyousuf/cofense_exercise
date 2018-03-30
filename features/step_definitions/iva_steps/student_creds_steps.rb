@@ -2,10 +2,6 @@ Given(/^I create a Student Creds page object$/) do
   @StudentCreds = StudentCreds.new
 end
 
-Given(/^I should be on the student verification screen$/) do
-  expect(page).to have_content "Student ID"
-end
-
 Given(/^I verify using student credentials$/) do
   @StudentCreds.click_verify_by_creds
   @StudentCreds.click_begin
