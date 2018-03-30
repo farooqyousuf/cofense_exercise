@@ -10,6 +10,7 @@ All notable changes to this project will be documented in this file. This projec
 - IDME-4420: Fix HLP Document Page tests
 - CORE-8826: Fix IDV Tests
 - AWE-160:   Fix IVA Tests
+- AWE-336:   Fix Shop Admin Categories  Tests
 
 # 2.4.71 (3/22/18)
 - AWE-297: Fix IDP Sign up
