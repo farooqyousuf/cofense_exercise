@@ -2,6 +2,8 @@ class ShopAdminStores < IDmeBase
   include IDPBase
   include JavascriptAlerts
 
+  attr_reader :store_title
+
   def initialize
     super(FigNewton.shop_admin.stores.base_url)
     @store_title = "Test Store Title #{rand(1..1000)}"

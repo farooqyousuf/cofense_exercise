@@ -6,6 +6,7 @@ Given(/^I submit a valid new store$/) do
   @ShopAdminStores.fill_in_title_field
   @ShopAdminStores.fill_in_cash_back
   @ShopAdminStores.click_create_sidebar_button
+  @store_title = @ShopAdminStores.store_title
 end
 
 Given(/^I verify the store has been created$/) do
