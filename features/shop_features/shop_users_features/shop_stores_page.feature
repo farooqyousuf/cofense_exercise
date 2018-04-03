@@ -2,8 +2,8 @@
 Feature: Test Stores Index page
 
   Background:
+    * I create "ShopStoreIndexPage, ShopAdminDashboard, ShopAdminStores" page objects
     * I visit "ShopStoreIndexPage"
-    * I create Shop Store Index Page object
 
   @smoke
   Scenario: Check Stores Table listing

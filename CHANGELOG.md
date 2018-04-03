@@ -3,6 +3,9 @@
 ### Released
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
+# 2.4.74 (3/30/18)
+- IDME-4434: Fix Shop Stores Tests
+
 # 2.4.73 (3/29/18)
 - IDME-4432: Fix Shop Offers Tests
 
