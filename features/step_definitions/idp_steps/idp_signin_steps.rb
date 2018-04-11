@@ -59,7 +59,7 @@ Given(/^I complete the new Wallet account linking process$/) do
   end
 
   if page.has_text? "Verify your military affiliation"
-    step 'I verify using an ID.me military passcode'
+    step 'I verify a military user for testing purposes'
   end
 end
 
