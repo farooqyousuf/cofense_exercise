@@ -165,7 +165,7 @@ Given(/^I create "([^"]*)" page objects$/) do |page_objects|
   end
 end
 
-Given("I verify a military user for testing purposes") do
+Given("I verify a military user") do
   step 'I create "MilitaryEmail" page objects'
   step 'I verify using military email information for "Service Member"'
   step 'I submit the verification code for "Military Email Code"'

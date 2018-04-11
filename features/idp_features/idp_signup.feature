@@ -8,7 +8,7 @@ Feature: User account creation
   @smoke @delete_current_user_email
   Scenario: Successful sign up
     * I sign up as a new user
-    * I verify a military user for testing purposes
+    * I verify a military user
     * I should be successfully authenticated
 
   Scenario: Attempt to sign up with only email

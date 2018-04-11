@@ -27,7 +27,7 @@ Feature: User account lock and unlock
     * I click on the unlock account link
     * I unlock my account
     * I login as a "current_username" user
-    * I verify a military user for testing purposes
+    * I verify a military user
     * I should be successfully authenticated
 
   @delete_current_user_email
