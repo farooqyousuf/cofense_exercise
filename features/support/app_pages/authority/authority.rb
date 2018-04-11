@@ -3,7 +3,7 @@ class Authority
 include Capybara::DSL
 
   def auth_login
-    if (page.text.include?  "Sign in with ID.me Authority") || (page.text.include?  "You need to sign in or sign up before continuing.")
+    if (page.text.include?  "Sign in with ID.me Authority")
       auth_click_sign_in
       sleep 1
       if page.text.include? "Authenticate"
