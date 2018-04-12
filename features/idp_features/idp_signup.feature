@@ -5,10 +5,10 @@ Feature: User account creation
     * I visit IDP through the "shop" policy
     * I click on the Sign Up link
 
-  @smoke
+  @smoke @delete_current_user_email
   Scenario: Successful sign up
     * I sign up as a new user
-    * I verify using an ID.me military passcode
+    * I verify a military user
     * I should be successfully authenticated
 
   Scenario: Attempt to sign up with only email

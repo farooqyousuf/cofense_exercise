@@ -71,19 +71,19 @@ end
 
 After("@delete_facebook_user") do
   visit_admin_users_in_new_window
-  @admin_users.delete_facebook_user
+  @admin_users.search_and_delete_user(FigNewton.oauth.facebook_user)
   @admin_tool.logout_in_new_window
 end
 
 After("@delete_google_user") do
   visit_admin_users_in_new_window
-  @admin_users.delete_google_user
+  @admin_users.search_and_delete_user(FigNewton.oauth.google_user)
   @admin_tool.logout_in_new_window
 end
 
 After("@delete_linkedin_user") do
   visit_admin_users_in_new_window
-  @admin_users.delete_linkedin_user
+  @admin_users.search_and_delete_user(FigNewton.oauth.linkedin_user)
   @admin_tool.logout_in_new_window
 end
 

@@ -3,9 +3,11 @@
 ### Released
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
+# 2.4.76 (4/12/18)
+- IDME-4436: Fix Shop Users Cash Back Tests
+
 # 2.4.75 (4/11/18)
 - AWE-443: Fix IDP Tests
-- IDME-4436: Fix Shop Users Cash Back Tests
 
 # 2.4.74 (3/30/18)
 - IDME-4435: Remove Shop User Group Affiliation Tests

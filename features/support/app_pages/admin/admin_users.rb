@@ -45,6 +45,10 @@ include JavascriptAlerts
     find("input[type='search']").native.send_keys(:return)
   end
 
+  def search_and_delete_user(name)
+    open_user_and_delete(name)
+  end
+
   def delete_scra_family_member
     open_user_and_delete("Mike Doe")
   end
@@ -59,18 +63,6 @@ include JavascriptAlerts
 
   def delete_dd214_user2
     open_user_and_delete("Joel Smith")
-  end
-
-  def delete_facebook_user
-    open_user_and_delete("Sadanberg")
-  end
-
-  def delete_google_user
-    open_user_and_delete("Capybara Tester")
-  end
-
-  def delete_linkedin_user
-    open_user_and_delete("bruce.wayne_test@yahoo.com")
   end
 
   def delete_scra_denied_user

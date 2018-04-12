@@ -164,3 +164,9 @@ Given(/^I create "([^"]*)" page objects$/) do |page_objects|
     instance_variable_set("@#{d}", Object.const_get(d).new)
   end
 end
+
+Given("I verify a military user") do
+  step 'I create "MilitaryEmail" page objects'
+  step 'I verify using military email information for "Service Member"'
+  step 'I submit the verification code for "Military Email Code"'
+end
