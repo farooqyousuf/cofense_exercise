@@ -1,5 +1,6 @@
 Given("I click on the Shop {string} navigation link") do |shop_link|
   @ShopCashBackPage.close_out_modal_if_present
+  sleep 1
   find(".shared-nav-login").click_link shop_link
 end
 

@@ -5,6 +5,7 @@ All notable changes to this project will be documented in this file. This projec
 
 # 2.4.76 (4/12/18)
 - AWE-457: Update ARCS Smoke tests
+- AWE-461: Fix Shop smoke jenkins test
 - IDME-4436: Fix Shop Users Cash Back Tests
 
 # 2.4.75 (4/11/18)
