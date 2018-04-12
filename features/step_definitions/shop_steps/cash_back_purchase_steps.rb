@@ -1,10 +1,6 @@
-Given(/^I click on SignIn link$/) do
-  click_link "Sign In"
-end
-
-Given(/^I click on the Sign up link$/) do
-  @ShopGroupAffiliationsPage.close_out_modal_if_present
-  first(:link, "Sign Up").click
+Given("I click on the Shop {string} navigation link") do |shop_link|
+  @ShopCashBackPage.close_out_modal_if_present
+  find(".shared-nav-login").click_link shop_link
 end
 
 Given(/^I login to Shop as a "([^"]*)" user$/) do |user_type|
@@ -82,16 +78,18 @@ end
 
 Given(/^I check the payment settings modal$/) do
   @CashBack_PurchasesPage.click_update_payment_settings_dashboard_button
-  expect(page).to have_css(".modal-header",:text => "Update Your Payment Information Confirm your information below for future cash back payments!")
-  expect(page).to have_content "Update Payment Settings"
-  click_button("Update Payment Settings")
+  expect(page).to have_css(".modal-title",:text => "Update Your Payment Information")
+  expect(page).to have_css(".modal-body",:text => "Receive Payment Through PayPal To receive your cash back payments you will need a PayPal account. Please enter your PayPal email below: PayPal Email")
+  @CashBack_PurchasesPage.update_paypal_email
+  expect(page).to have_css("#user_paypal_account-error",:text => "This field is required.")
+  find(".close").click
 end
 
 Given(/^I update my payment information to receive via Paypal$/) do
   @CashBack_PurchasesPage.click_update_payment_settings_dashboard_button
   expect(page).to have_css(".heading.-smallest.-snug",:text =>"Receive Payment Through PayPal")
   @CashBack_PurchasesPage.enter_paypal_email
-  @CashBack_PurchasesPage.click_update_payment_settings_modal_button
+  @CashBack_PurchasesPage.update_paypal_email
 
   expect(page).to have_css("div.-notice.alert",:text =>"Successfully updated payment information")
   expect(page).to have_css(".dashboard__payment-info img[alt='PayPal']")
@@ -101,5 +99,5 @@ Given(/^I incorrectly update my paypal account information and see a error messa
   @CashBack_PurchasesPage.click_update_payment_settings_dashboard_button
   fill_in("user_paypal_account", with: "test@")
   expect(page).to have_content "Please enter a valid email"
-  @CashBack_PurchasesPage.click_update_payment_settings_modal_button
+  @CashBack_PurchasesPage.update_paypal_email
 end

@@ -2,30 +2,32 @@
 Feature: Test the shop_users Cash Back - My Cash
 
   Background:
-   * I create "ShopLandingPage, ShopGroupAffiliationsPage, CashBack_PurchasesPage, ShopCashBackPage" page objects
+   * I create "ShopLandingPage, CashBack_PurchasesPage, ShopCashBackPage" page objects
    * I visit "ShopLandingPage"
-   * I click on the Shop Sign Up link
+   * I click on the Shop "Sign Up" navigation link
    * I sign up as a new user
    * I click on link to view My Cash
    * I verify the new user email
 
-   @smoke
+   @smoke @delete_current_user_email
    Scenario: Purchases - Summary Info Card Check
-   * Cash Back Activity Tab should be selected
-   * I check Summary Info Card existence
+     * Cash Back Activity Tab should be selected
+     * I check Summary Info Card existence
 
+   @delete_current_user_email
    Scenario: Purchases - Next Payment Info Card Check
-   * Cash Back Activity Tab should be selected
-   * I check Next Payment Info Card existence
+     * Cash Back Activity Tab should be selected
+     * I check Next Payment Info Card existence
 
+   @delete_current_user_email
    Scenario: Purchases - Purchases Table Check
-   * Cash Back Activity Tab should be selected
-   * I check Purchases Table existence
-   * I check Purchases Table content
+     * Cash Back Activity Tab should be selected
+     * I check Purchases Table existence
+     * I check Purchases Table content
 
-   @raichu
+   @delete_current_user_email
    Scenario: Purchase - Payment Settings
-   * I check that payment settings dashboard is visible
-   * I check the payment settings modal
-   * I update my payment information to receive via Paypal
-   * I incorrectly update my paypal account information and see a error message
+     * I check that payment settings dashboard is visible
+     * I check the payment settings modal
+     * I update my payment information to receive via Paypal
+     * I incorrectly update my paypal account information and see a error message
