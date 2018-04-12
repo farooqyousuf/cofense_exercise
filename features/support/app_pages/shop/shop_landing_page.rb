@@ -16,6 +16,6 @@ class ShopLandingPage < IDmeBase
 
   def sign_up
     sleep 1
-    click_sign_up
+    click_link("Sign Up")
   end
 end

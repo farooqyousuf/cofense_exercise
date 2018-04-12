@@ -39,8 +39,8 @@ class CashBack_PurchasesPage < IDmeBase
     find(".payment-option-radios span:nth-child(1)").click
   end
 
-  def click_update_payment_settings_modal_button
-    find("div.col.span-4").native.send_keys :return
+  def update_paypal_email
+    click_button("Update Payment Settings")
   end
 
   def enter_paypal_email
@@ -52,6 +52,6 @@ class CashBack_PurchasesPage < IDmeBase
   end
 
   def click_on_my_cash
-    click_link("My Cash")
+    first(:link, "My Cash").click
   end
 end

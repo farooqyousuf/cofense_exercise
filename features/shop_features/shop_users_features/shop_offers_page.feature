@@ -2,7 +2,7 @@
 Feature: Test Shop Offers Page
 
   Background:
-    * I create "ShopOffersPage, ShopLandingPage" page objects
+    * I create "ShopOffersPage, ShopLandingPage, ShopCashBackPage" page objects
     * I visit "ShopLandingPage"
     * I visit "ShopOffersPage"
 
@@ -13,7 +13,7 @@ Feature: Test Shop Offers Page
     * I check the store offer card links for "Logged Out" User
 
   Scenario: Check Offers Index Table - Logged in
-    * I click on SignIn link
+    * I click on the Shop "Sign In" navigation link
     * I login to Shop as a "Military" user
     * I expect the page url to be for Shop Offers Page
     * I check that the Offers Index is available
@@ -21,7 +21,7 @@ Feature: Test Shop Offers Page
 
   @smoke
   Scenario: Check Offers Side Bar - Promo Codes
-    * I click on SignIn link
+    * I click on the Shop "Sign In" navigation link
     * I login to Shop as a "Military" user
     * I click to see all promo code offers
     * I check that the table index are promo code offers
