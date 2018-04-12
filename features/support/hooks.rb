@@ -181,12 +181,6 @@ After("@mp_user_group_affiliations") do
   @admin_tool.logout_in_new_window
 end
 
-After("@shop_cash_back") do
-  visit_admin_users_in_new_window
-  @admin_users.delete_shop_test_user
-  @admin_tool.logout_in_new_window
-end
-
 def delete_user(email)
   # TODO: Extract to own class
   url   = FigNewton.admin.users_endpoint
