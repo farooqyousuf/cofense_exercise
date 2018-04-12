@@ -3,6 +3,9 @@
 ### Released
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
+# 2.4.76 (4/12/18)
+- AWE-457: Update ARCS Smoke tests
+
 # 2.4.75 (4/11/18)
 - AWE-443: Fix IDP Tests
 

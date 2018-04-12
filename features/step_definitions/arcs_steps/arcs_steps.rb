@@ -61,7 +61,7 @@ Given(/^I verify the user's "([^"]*)" military attributes is received$/) do |req
                           "service_end_date"   => nil,
                           "service_start_date" => "2016-01-01",
                           "verified"           => true,
-                          "affiliation"        => "Service Member",
+                          "affiliation"        => nil,
                           "external"           => true
                         }
                       when "invalid"
