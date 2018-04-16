@@ -10,7 +10,7 @@ Feature: Responder verification as a ProBoard Firefighter
     * I click on the Yes I am ProBoard certified link
     * I click on the Begin link
 
-  @smoke
+  @smoke @delete_current_user_email
   Scenario: Successful verification as a ProBoard Firefighter
     * I verify using a ProBoard Firefighter
     * I should be successfully verified as "Firefighter"
