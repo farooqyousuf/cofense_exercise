@@ -3,6 +3,9 @@
 ### Released
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
+# 2.4.77 (4/16/18)
+- AWE-501: Delete firefighter proboard user after test is complete
+
 # 2.4.76 (4/12/18)
 - AWE-457: Update ARCS Smoke tests
 - AWE-461: Fix Shop smoke jenkins test
