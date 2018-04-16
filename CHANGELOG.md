@@ -3,6 +3,9 @@
 ### Released
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
+# 2.4.77 (4/16/18)
+- IDME-3377: Fix Wallet User Tests
+
 # 2.4.76 (4/12/18)
 - AWE-457: Update ARCS Smoke tests
 - AWE-461: Fix Shop smoke jenkins test
