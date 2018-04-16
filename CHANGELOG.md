@@ -5,6 +5,7 @@ All notable changes to this project will be documented in this file. This projec
 
 # 2.4.77 (4/16/18)
 - AWE-501: Delete firefighter proboard user after test is complete
+- IDME-3377: Fix Wallet User Tests
 
 # 2.4.76 (4/12/18)
 - AWE-457: Update ARCS Smoke tests

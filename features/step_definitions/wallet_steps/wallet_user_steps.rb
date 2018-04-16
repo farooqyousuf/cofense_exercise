@@ -24,8 +24,7 @@ Given(/^I should be on the Wallet dashboard page$/) do
 end
 
 Given(/^I should see my sign up on the activity feed$/) do
-  expect(page).to have_css(".wallet-events li:nth-child(1)",:text =>"You signed in to your ID.me Wallet")
-  expect(page).to have_css(".wallet-events li:nth-child(2)",:text =>"You signed up for ID.me Wallet on")
+  expect(page).to have_css(".wallet-events li:nth-child(1)",:text =>"You signed up for ID.me Wallet on")
 end
 
 Given(/^I login to wallet as a "([^"]*)" user$/) do |affinity_group|
@@ -56,7 +55,7 @@ Given(/^I fail a attempt to login to wallet$/) do
 end
 
 Given(/^I click to verify a military group affiliation$/) do
-  2.times {find(:link , :href =>"https://wallet-staging.idmeinc.net/ids/new?scope=military").click}
+  find(:link , :href =>"https://wallet-staging.idmeinc.net/ids/new?scope=military").click
   close_current_browser
   use_last_browser_created
 end
@@ -126,7 +125,7 @@ Given(/^I signin with LinkedIn social federation$/) do
 end
 
 Given(/^I verify my Wallet Linkedin Social Federation signin$/) do
-  step 'I should be on the Wallet dashboard page'
+  expect(page).to have_current_path(FigNewton.wallet.homepage.social_federation_url)
   expect(page).to have_css(".wallet-events li:nth-child(1)",:text =>"You signed in to your ID.me Wallet")
   expect(page).to have_css(".wallet-events li:nth-child(2)",:text =>"You signed in with your Linkedin login on")
 end
