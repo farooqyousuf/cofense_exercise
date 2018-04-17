@@ -19,7 +19,7 @@ include PageManagement
           when "fail documentation"
             %w(Staging Mock Mock\ Fail Mock Production Production Production Mock Disable On Mock Mock)
           when "Staging"
-            %w(Staging Staging Staging Mock Production Production Production Production Disable On Mock Mock)
+            %w(Staging Staging Staging Mock Production Production Mock Production Disable On Mock Mock)
           end
 
     vendors.zip(env).each do |vendor, env|

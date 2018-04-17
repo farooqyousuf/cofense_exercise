@@ -4,6 +4,7 @@
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
 # 2.4.77 (4/16/18)
+- AWE-502: Fix IVA Military SCRA Test
 - AWE-501: Delete firefighter proboard user after test is complete
 - IDME-3377: Fix Wallet User Tests
 
