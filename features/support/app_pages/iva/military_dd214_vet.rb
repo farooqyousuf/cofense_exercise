@@ -106,7 +106,7 @@ class DD214 < IDmeBase
   end
 
   def family_user_properties_levels
-    [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+    [1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2]
   end
 
   def click_verify_by_dd214_link

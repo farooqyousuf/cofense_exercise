@@ -21,7 +21,7 @@ Feature: Military verification using SCRA credentials
   @delete_current_user_email
   Scenario: Successful verification as Veteran
     * I verify using SCRA for "Veteran"
-    * I should be successfully verified as "Veteran"
+    * I should be successfully verified as "Service Member"
     * I verify user level properties for "SCRA Veteran"
 
   @delete_current_user_email
@@ -39,7 +39,7 @@ Feature: Military verification using SCRA credentials
   @delete_current_user_email
   Scenario: Successful verification as Retiree
     * I verify using SCRA for "Retiree"
-    * I should be successfully verified as "Retiree"
+    * I should be successfully verified as "Service Member"
     * I verify user level properties for "SCRA Retiree"
 
   @delete_scra_multi_family_users @wip
