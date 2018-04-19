@@ -130,8 +130,8 @@ support_tool:
 
 idp:
   base_url: https://api-staging.idmeinc.net
-  new_session_url: https://api-staging.idmeinc.net/session/new
-  new_registration_url: https://api-staging.idmeinc.net/registration/new
+  new_session_url: https://api-staging.idmeinc.net/en/session/new
+  new_registration_url: https://api-staging.idmeinc.net/en/registration/new
 hlp:
   homepage: https://hosted-pages-staging.idmeinc.net/admin/partners/26/pages
   partner_number: 26
