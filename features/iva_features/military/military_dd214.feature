@@ -20,7 +20,7 @@ Feature: Military verification using DD214 request
   @delete_current_user_email
   Scenario: Successful DD214 verification as a Veteran via SCRA
     * I verify using DD214 information for "Veteran" via "SCRA"
-    * I should be successfully verified as "Veteran"
+    * I should be successfully verified as "Service Member"
     * I verify user level properties for "DD214 Vet via SCRA"
 
   @delete_current_user_email
