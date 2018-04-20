@@ -47,13 +47,6 @@ include DataMagic
     click_button("Upload")
   end
 
-  def confirm_io_callback(mocked_result: "Failure")
-
-    mocked_result = "Failure" if mocked_result.nil?
-
-    click_button("#{mocked_result} Callback")
-  end
-
   def populate_fields_computer(data:)
     populate_phone(data.fetch("mobile_phone"))
     populate_ssn(data: data)
@@ -66,7 +59,7 @@ include DataMagic
   def populate_ssn(data:)
     fill_in("social", :with => data.fetch("social"))
     fill_in("social_confirm", :with => data.fetch("social_confirm"))
-    click_button("Submit SSN")
+    click_button("Continue")
   end
 
   def populate_phone(mobile_phone)
@@ -85,11 +78,6 @@ include DataMagic
       sleep 1
       click_continue
     }
-  end
-
-  def close_confirm_window
-    blank_confirmio_window = page.driver.window_handles[1]
-    page.driver.close_window(blank_confirmio_window)
   end
 
   def check_fcra_box

@@ -37,7 +37,7 @@ class IDPSignUp < IDmeBase
   end
 
   def click_sign_up_button
-    click_button("Sign Up")
+    click_button("Sign up")
   end
 
   def fill_in_password_confirmation

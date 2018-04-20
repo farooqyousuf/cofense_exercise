@@ -9,15 +9,17 @@ include PageManagement
   end
 
   def set_vendor_env(settings: "none")
-    vendors = %w(experian_env confirmio_env au10tix_env plaid_env nsc_env npi_env scra_env usaa_env fraudnet_env dupe_checks payfone_env telesign_env)
+    vendors = %w(experian_env imagery_env au10tix_env plaid_env nsc_env npi_env scra_env usaa_env fraudnet_env dupe_checks payfone_env telesign_env)
 
     env = case settings
-          when "verify via Confirm.io", "verify via AU10TIX"
+          when "verify via Obliterate"
             %w(Mock Mock Mock Mock Production Production Production Mock Disable On Mock Mock)
+          when "verify via AU10TIX"
+            %w(Mock Disable Mock Mock Production Production Production Mock Disable On Mock Mock)
           when "fail experian"
             %w(Staging Mock Mock Mock Production Production Production Mock Disable On Mock Mock)
           when "fail documentation"
-            %w(Staging Mock Mock\ Fail Mock Production Production Production Mock Disable On Mock Mock)
+            %w(Staging Production Mock\ Fail Mock Production Production Production Mock Disable On Mock Mock)
           when "Staging"
             %w(Staging Staging Staging Mock Production Production Mock Production Disable On Mock Mock)
           end

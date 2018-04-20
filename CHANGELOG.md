@@ -3,6 +3,9 @@
 ### Released
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
+# 2.4.79 (4/20/18)
+- AWE-535: Fix IDV Tests
+
 # 2.4.78 (4/19/18)
 - AWE-525: Fix SCRA Tests
 - AWE-543: Update idp links to fix wallet sign in tests

@@ -27,7 +27,7 @@ include Capybara::DSL
   end
 
   def click_sign_in
-    click_button("Sign In")
+    click_button("Sign in")
   end
 
   def click_sign_up
