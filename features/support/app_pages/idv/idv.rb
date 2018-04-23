@@ -12,11 +12,10 @@ class IDV < IDmeBase
     data = data_for(:docs)
 
     case action
-    when "verify with Confirm.io"
+    when "verify with Imagery"
       populate = true
       front_id = data.fetch("png")
       back_id = data.fetch("idv")
-      mocked_result_confirmio = "Success"
     when "verify with AU10TIX"
       populate = true
       front_id = data.fetch("idv")
@@ -33,9 +32,7 @@ class IDV < IDmeBase
 
     close_current_browser
     use_original_tab
-
-    confirm_io_callback(mocked_result: mocked_result_confirmio)
-    close_confirm_window
+    sleep 3
 
     if populate == true
       idv_user = data_for(:experian_user3)
@@ -54,11 +51,10 @@ class IDV < IDmeBase
     fail_idv_user = data_for(:fail_experian)
 
     case action
-    when "verify via Confirm.io"
+    when "verify via Imagery"
       populate = true
       front_id = data.fetch("png")
       back_id = data.fetch("idv")
-      mocked_result_confirmio = "Success"
       user = idv_user
     when "verify via AU10TIX"
       populate = true
@@ -74,15 +70,13 @@ class IDV < IDmeBase
       populate = true
       front_id = data.fetch("idv")
       back_id = data.fetch("idv")
-      mocked_result_confirmio = "Success"
       user = fail_idv_user
     end
 
     upload_front_id(front_id: front_id)
     upload_back_id(back_id: back_id)
     click_button("Look Good?")
-    confirm_io_callback(mocked_result: mocked_result_confirmio)
-    close_confirm_window
+    sleep 3
 
     if populate == true
       populate_fields_computer(data: user)
