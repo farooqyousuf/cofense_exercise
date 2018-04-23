@@ -12,7 +12,7 @@ class IDV < IDmeBase
     data = data_for(:docs)
 
     case action
-    when "verify with Obliterate"
+    when "verify with Imagery"
       populate = true
       front_id = data.fetch("png")
       back_id = data.fetch("idv")
@@ -51,7 +51,7 @@ class IDV < IDmeBase
     fail_idv_user = data_for(:fail_experian)
 
     case action
-    when "verify via Obliterate"
+    when "verify via Imagery"
       populate = true
       front_id = data.fetch("png")
       back_id = data.fetch("idv")

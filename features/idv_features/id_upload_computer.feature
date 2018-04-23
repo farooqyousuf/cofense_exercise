@@ -10,10 +10,10 @@ Feature: Identity Verification by uploading an ID from the computer
     * I click on the Upload from my computer link
 
   @smoke @delete_current_user_email
-  Scenario: Successful verification with Obliterate
+  Scenario: Successful verification with Imagery
     * I generate a unique "png" doc
-    * I set the External Vendor Environment to "verify via Obliterate"
-    * I "verify via Obliterate" via computer using a mocked driver's license
+    * I set the External Vendor Environment to "verify via Imagery"
+    * I "verify via Imagery" via computer using a mocked driver's license
     * I authorize the attribute release
     * I should be successfully verified as "Identity"
     * I verify user level properties for "Identity"

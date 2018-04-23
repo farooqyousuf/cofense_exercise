@@ -10,10 +10,10 @@ Feature: Identity Verification by taking a picture of your ID from phone upload
     * I click on the Take a picture with my phone link
 
   @smoke @delete_current_user_email
-  Scenario: Successful verification with Obliterate via phone upload
+  Scenario: Successful verification with Imagery via phone upload
     * I generate a unique "png" doc
-    * I set the External Vendor Environment to "verify via Obliterate"
-    * I "verify with Obliterate" via phone using a mocked driver's license
+    * I set the External Vendor Environment to "verify via Imagery"
+    * I "verify with Imagery" via phone using a mocked driver's license
     * I should be successfully verified as "Identity"
     * I verify user level properties for "Identity"
 
