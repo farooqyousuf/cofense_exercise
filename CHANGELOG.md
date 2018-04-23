@@ -5,6 +5,7 @@ All notable changes to this project will be documented in this file. This projec
 
 # 2.4.79 (4/20/18)
 - AWE-535: Fix IDV Tests
+- AWE-584: Update "Staging" admin settings
 
 # 2.4.78 (4/19/18)
 - AWE-525: Fix SCRA Tests
