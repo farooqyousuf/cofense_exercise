@@ -5,6 +5,7 @@ All notable changes to this project will be documented in this file. This projec
 
 # 2.4.81 (5/1/18)
 - AWE-616: Remove DD214 Request Option for Military Family/Spouse
+- AWE-646: Fix ARCS tests
 
 # 2.4.80 (4/30/18)
 - AWE-630: Fix IDP smoke tests and IVA mil email test
