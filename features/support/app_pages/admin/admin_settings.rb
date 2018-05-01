@@ -16,7 +16,7 @@ include PageManagement
             %w(Mock Mock Mock Mock Production Production Production Mock Disable On Mock Mock)
           when "verify via AU10TIX"
             %w(Mock Disable Mock Mock Production Production Production Mock Disable On Mock Mock)
-          when "fail experian"
+          when "fail experian", "fail SCRA"
             %w(Staging Mock Mock Mock Production Production Production Mock Disable On Mock Mock)
           when "fail documentation"
             %w(Staging Production Mock\ Fail Mock Production Production Production Mock Disable On Mock Mock)

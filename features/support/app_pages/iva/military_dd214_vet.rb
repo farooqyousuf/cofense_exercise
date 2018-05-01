@@ -7,7 +7,6 @@ class DD214 < IDmeBase
   include ErrorMessages
 
   def verify(affiliation: "Veteran", populate: true, type: "none", method: "none")
-    populate_affiliation(affiliation)
 
     if method == "SCRA"
       data_set = :dd214_via_scra
@@ -16,7 +15,6 @@ class DD214 < IDmeBase
     end
 
     if populate
-
       case type
       when "unique", "denied", "dupe"
         populate_fields(data_for(data_set))
@@ -26,13 +24,6 @@ class DD214 < IDmeBase
         populate_checkboxes
         populate_signature
       else fail("User type not found")
-      end
-
-      #first and last name for user
-      if ["Next of kin deceased veteran", "Legal guardian"].include?(affiliation)
-        %w(verification_first_name verification_last_name verification_birth_date).each do |field|
-          2.times {fill_in field, :with => (data_for(:military_dd214).fetch(field))}
-        end
       end
     end
 
@@ -53,10 +44,6 @@ class DD214 < IDmeBase
 
   def container_attribute
     'dd214-request'
-  end
-
-  def populate_affiliation(value)
-    select_option("#s2id_verification_affiliation", value)
   end
 
   def populate_signature
@@ -103,10 +90,6 @@ class DD214 < IDmeBase
 
   def vet_doc_user_properties_levels
     [1, 1, 1, 1, 1, 1, 1, 1, 1]
-  end
-
-  def family_user_properties_levels
-    [1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2]
   end
 
   def click_verify_by_dd214_link
