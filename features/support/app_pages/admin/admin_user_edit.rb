@@ -39,11 +39,6 @@ include PageManagement
       indexes = [0, 3, 6, 9, 12, 15, 18, 21, 24]
       expected_levels = DD214.new.vet_scra_user_properties_levels
 
-    when "DD214 Next of Kin Deceased Vet", "DD214 Legal Guardian"
-      expand_verification_properties
-      indexes = [0, 3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33]
-      expected_levels = DD214.new.family_user_properties_levels
-
     when "Mil Doc Service Member", "Mil Doc Veteran", "Mil Doc Retiree"
       indexes = [0, 3, 6, 9, 12, 15, 18, 21, 24]
       expected_levels = MilitaryDoc.new.service_member_user_properties_levels

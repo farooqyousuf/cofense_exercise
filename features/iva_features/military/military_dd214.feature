@@ -2,7 +2,7 @@
 Feature: Military verification using DD214 request
 
   Background:
-    * I set the External Vendor Environment to "Staging"
+    * I set the External Vendor Environment to "fail SCRA"
     * I visit IDP through the "military" policy
     * I create a Military DD214 page object
     * I click on the Sign Up link
@@ -20,20 +20,8 @@ Feature: Military verification using DD214 request
   @delete_current_user_email
   Scenario: Successful DD214 verification as a Veteran via SCRA
     * I verify using DD214 information for "Veteran" via "SCRA"
-    * I should be successfully verified as "Service Member"
+    * I should be successfully verified as "Veteran"
     * I verify user level properties for "DD214 Vet via SCRA"
-
-  @delete_current_user_email
-  Scenario: Successful DD214 verification as a Next of Kin Deceased Veteran
-    * I verify using DD214 information for "Next of kin deceased veteran" via "document"
-    * I should be successfully verified as "Military Family"
-    * I verify user level properties for "DD214 Next of Kin Deceased Vet"
-
-  @delete_current_user_email
-  Scenario: Successful DD214 verification as a Legal Guardian
-    * I verify using DD214 information for "Legal guardian" via "document"
-    * I should be successfully verified as "Military Family"
-    * I verify user level properties for "DD214 Legal Guardian"
 
   @wip @delete_current_user_email
   Scenario: Denied attempt for DD214 verification
@@ -56,12 +44,3 @@ Feature: Military verification using DD214 request
   Scenario: Successfully prompt for all DD214 required fields for Veteran
     * I submit the empty DD214 form for "Veteran"
     * I should see error messages on required fields for "DD214 Vet"
-
-  @delete_current_user_email
-  Scenario: Successfully prompt for all DD214 required fields for Next of Kin Deceased Veteran
-    * I submit the empty DD214 form for "Next of kin deceased veteran"
-    * I should see error messages on required fields for "DD214 Non-Vet"
-
-Scenario: Successfully prompt for all DD214 required fields for Legal Guardian
-    * I submit the empty DD214 form for "Legal guardian"
-    * I should see error messages on required fields for "DD214 Non-Vet"
