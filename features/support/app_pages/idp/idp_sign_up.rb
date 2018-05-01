@@ -16,7 +16,7 @@ class IDPSignUp < IDmeBase
   end
 
   def unique_user_email
-    @user_email = "capybara+"+"#{rand(6 ** 8)}"+"@id.me"
+    @user_email = "capybara+"+"#{Time.now.strftime("%m%d%Y_%I%M%S")}"+"@id.me"
     fill_in(user_email_css, :with => @user_email)
   end
 

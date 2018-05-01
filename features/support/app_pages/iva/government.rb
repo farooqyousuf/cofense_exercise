@@ -11,7 +11,7 @@ class IVAGovernment < IDmeBase
       data = data_for(:government)
         case email_type
         when "unique"
-          populate_fields(data: data, email: "capybara+"+"#{rand(6 ** 8)}"+"@id.me")
+          populate_fields(data: data, email: "capybara+"+"#{Time.now.strftime("%m%d%y_%I%M%S")}"+"@id.me")
         when "dupe"
           populate_fields(data: data, email: data.fetch("dupe_email"))
         when "denied"
