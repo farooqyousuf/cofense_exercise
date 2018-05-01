@@ -66,30 +66,19 @@ end
 
 
 Given(/^I submit the verification code for "([^"]*)"$/) do |option|
-  @admin_tool = AdminTool.new
-  @admin_tool.login_in_new_window
+  step 'I create "AdminTool, AdminVerificationAttempts, IDmeBase" page objects'
+  @AdminTool.login_in_new_window
 
   step 'I visit "AdminVerificationAttempts"'
-  @admin_verif_attempts = AdminVerificationAttempts.new
+  @AdminVerificationAttempts.search_user_attempt(@user_email)
+  @AdminVerificationAttempts.open_newest
 
-  # open and view the latest record
-  sleep 2
-  find('#s2id_option').click
-  find("#select2-results-6").find("div", :text => "#{option}").click
-
-  #select("#{option}", :from => "option")
-  @admin_verif_attempts.open_newest
-
-  # get the verification code
   code = nil
-  code = @admin_verif_attempts.get_code
+  code = @AdminVerificationAttempts.get_code
 
-  # logout and close window
-  @admin_tool.logout_in_new_window
+  @AdminTool.logout_in_new_window
 
-  # fill in verification code
-  @admin_verif_attempts.use_last_browser_created
-  @IDmeBase = IDmeBase.new
+  @AdminVerificationAttempts.use_last_browser_created
   @IDmeBase.fill_in_verification_code(code)
   click_link("Continue")
   if page.has_text? "ID.me Staging would like to access some of your data"
