@@ -16,4 +16,7 @@ include PageManagement
     find("[data-key='code']").text
   end
 
+  def search_user_attempt(user)
+    find("input[type=search]").set(user).native.send_keys(:return)
+  end
 end
