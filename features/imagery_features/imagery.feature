@@ -1,7 +1,7 @@
-Feature:  Compare excel documents
+Feature: Compare AAMVA file to source document
 
-  Scenario: Exact match
-    * I compare a exact match csv file against the original csv document
+  Scenario: Successfully compare source document to self
+    * I compare an "exact_match" csv file against the source document
 
-  Scenario: Missing driver's licenses
-    * I compare a missing driver's licenses csv file against the original csv document
+  Scenario: Compare source document with missing driver's licenses data
+    * I compare an "missing_dl" csv file against the source document
