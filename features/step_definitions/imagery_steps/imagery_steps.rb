@@ -12,6 +12,8 @@ Given("I compare the master aamva file against a {string} file") do |file|
     diff = master - new_file
     puts "Master AAMVA file has #{lines_master} lines."
     puts "The new AAMVA file has #{lines_diff} lines."
-    puts "The #{file} is #{diff}"
+    diff.each_index do |x|
+      puts "The #{file} is " + diff[x]
+    end
   end
 end
