@@ -21,8 +21,8 @@ KBA ||= YAML.load_file('config/data/kba_questions_answers.yml')
 
 include AllureCucumber::DSL
 
-Capybara.default_max_wait_time = 30
-Capybara.wait_on_first_by_default = true
+# Capybara.default_max_wait_time = 30
+# Capybara.wait_on_first_by_default = true
 
 AllureCucumber.configure do |c|
   c.output_dir = "output/allure"
