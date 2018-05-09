@@ -20,3 +20,6 @@ Feature: Compare AAMVA file to source document
 
   Scenario: New driver's license
     * I compare the master aamva file against a "new_dl" file
+
+  Scenario: Dupe driver's license
+    * I compare the master aamva file against a "dupe_dl" file

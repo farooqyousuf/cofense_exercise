@@ -5,6 +5,12 @@ Given("I compare the master aamva file against a {string} file") do |file|
   master = File.readlines("test_documents/aamva_master.txt")
   new_file = File.readlines("test_documents/aamva_#{file}.txt")
 
+  #first check for dupes in the new file
+  dupes = new_file.select{ |e| new_file.count(e) > 1 }.uniq
+  dupes.each do |x|
+    puts "Dupe found in new file: " + dupes[x.to_i]
+  end
+
   if master == new_file
     puts "The #{file} file is an exact match to master."
   elsif lines_master > lines_diff #missing field, dl, or state
