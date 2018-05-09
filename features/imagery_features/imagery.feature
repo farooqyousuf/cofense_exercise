@@ -14,3 +14,6 @@ Feature: Compare AAMVA file to source document
 
   Scenario: New field
     * I compare the master aamva file against a "new_field" file
+
+  Scenario: New state
+    * I compare the master aamva file against a "new_state" file
