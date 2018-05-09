@@ -17,3 +17,6 @@ Feature: Compare AAMVA file to source document
 
   Scenario: New state
     * I compare the master aamva file against a "new_state" file
+
+  Scenario: New driver's license
+    * I compare the master aamva file against a "new_dl" file

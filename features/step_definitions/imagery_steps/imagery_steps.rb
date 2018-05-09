@@ -16,7 +16,7 @@ Given("I compare the master aamva file against a {string} file") do |file|
   puts "Master AAMVA file has #{lines_master} lines."
   puts "The new AAMVA file has #{lines_diff} lines."
 
-  binding.pry
+  # binding.pry
 
   if diff
     puts "There is one or more #{file} in the new file."
