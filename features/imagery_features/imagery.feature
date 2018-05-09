@@ -11,3 +11,6 @@ Feature: Compare AAMVA file to source document
 
   Scenario: Missing state
     * I compare the master aamva file against a "missing_state" file
+
+  Scenario: New field
+    * I compare the master aamva file against a "new_field" file
