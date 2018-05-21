@@ -6,3 +6,4 @@ Feature: Basic Smoke Tests for IDP and IVA
     * I pry
     * I click on the Shop Sign Up link
     * I sign up as a new user
+
