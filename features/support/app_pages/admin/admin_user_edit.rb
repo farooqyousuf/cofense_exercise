@@ -10,7 +10,7 @@ include PageManagement
   end
 
   def expand_verification_properties
-    page.find(".accordion-navigation").click
+    page.all(".accordion-navigation").last.click
     collect_user_properties
   end
 
