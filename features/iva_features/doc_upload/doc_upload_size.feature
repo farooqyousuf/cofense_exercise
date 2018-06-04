@@ -23,4 +23,4 @@ Feature: IVA verification using document upload of various sizes
     * I click on the Military Verify by uploading documentation link
     * I click on the Begin link
     * I verify using military "test_large_file_under_16MB.pdf" documentation for Service Member
-    * I verify that a "pdf" document was successfully uploaded
+    * I verify that a "test_large_file_under_16MB" document was successfully uploaded
