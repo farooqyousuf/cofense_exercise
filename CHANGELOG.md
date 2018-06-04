@@ -3,6 +3,9 @@
 ### Released
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
+# 2.4.82 (5/30/18)
+- AWE-932: Update level of assurance step
+
 # 2.4.81 (5/1/18)
 - AWE-616: Remove DD214 Request Option for Military Family/Spouse
 - AWE-646: Fix ARCS tests
