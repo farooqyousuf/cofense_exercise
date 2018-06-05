@@ -3,6 +3,9 @@
 ### Released
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
+# 2.4.83 (6/4/18)
+- AWE-995: Fix IVA Document upload tests
+
 # 2.4.82 (5/30/18)
 - AWE-932: Update level of assurance step
 

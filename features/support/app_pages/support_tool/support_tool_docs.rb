@@ -34,7 +34,7 @@ include JavascriptAlerts
 
   def view_searched_user_verification_attempt
     open_newest
-    click_link("Verification attempts (1)")
+    click_link("Verification attempts")
     sleep 1
     use_last_browser_created
     open_newest
@@ -43,13 +43,18 @@ include JavascriptAlerts
   def verify_doc_upload(username)
     open_newest
     page.assert_text username
-    find("div.col-md-6.sidebar > a:nth-child(2)").text.should === "Download .png"
+    find(".document-tabs").text.should === "test_png.png"
   end
 
   def verify_unique_doc_upload(username, document: "none")
     open_newest
     page.assert_text username
-    find("div.col-md-6.sidebar > a:nth-child(2)").text.should === "Download .#{document}"
+    expected_uploaded_doc = case document
+                            when "test_large_file_under_16MB" then "test_large_file_u..."
+                            else "test_#{document}.#{document}"
+                            end
+
+    find(".document-tabs").text.should === expected_uploaded_doc
   end
 
   def verify_doc_is_not_uploaded(username)
@@ -57,7 +62,8 @@ include JavascriptAlerts
     view_searched_user_verification_attempt
 
     page.assert_text username
-    doc_upload = "Download ."
+    doc_upload = "test_"
+    page.has_css?(".document-tabs").should == false
     page.has_text?(doc_upload).should == false
   end
 end
