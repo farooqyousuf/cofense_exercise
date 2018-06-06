@@ -3,6 +3,11 @@ Given(/^I should see the error message "(.*?)"$/) do |expected_text|
   p_tag_message.should eq(expected_text)
 end
 
+Given("I should see the multi-line error message:") do |expected_text|
+  sleep 2
+  p_tag_message.should eq(expected_text)
+end
+
 Given(/^I should see the red alert box error message "(.*?)"$/) do |expected_text|
   red_alert_box_message.should eq(expected_text)
 end
