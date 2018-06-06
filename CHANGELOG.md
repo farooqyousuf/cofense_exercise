@@ -3,6 +3,9 @@
 ### Released
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
+# 2.4.84 (6/5/18)
+- AWE-1001: Fix IVA Military Doc tests
+
 # 2.4.83 (6/4/18)
 - AWE-995: Fix IVA Document upload tests
 
