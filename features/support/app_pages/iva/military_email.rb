@@ -47,7 +47,7 @@ class MilitaryEmail < IDmeBase
   end
 
   def populate_affiliation(affiliation)
-    select_option("#s2id_verification_subgroup_id", affiliation)
+    select_option("#select2-chosen-1", affiliation)
   end
 
   def build_unique_info

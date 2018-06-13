@@ -159,3 +159,11 @@ Given("I verify a military user") do
   step 'I verify using military email information for "Service Member"'
   step 'I submit the verification code for "Military Email Code"'
 end
+
+Given("I verify a nationally certified EMT user") do
+  step 'I create a EMT National page object'
+  sleep 2
+  step 'I click on the Verify using EMT National link'
+  step 'I click on the Begin link'
+  step 'I verify using nationally certified EMT credentials'
+end
