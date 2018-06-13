@@ -4,7 +4,6 @@ module PageManagement
   # ****************************
 
   def create_new_window
-    binding.pry
     page.execute_script("window.open()")
   end
 

@@ -3,6 +3,9 @@
 ### Released
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
+# 2.4.85 (6/13/18)
+- AWE-891: Create iOS Mobile IDP Smoke Tests
+
 # 2.4.84 (6/5/18)
 - AWE-1001: Fix IVA Military Doc tests
 
