@@ -85,7 +85,7 @@ class DD214 < IDmeBase
   end
 
   def vet_scra_user_properties_levels
-    [2, 2, 2, 2, 2, 2, 2, 2, 2]
+    [1, 1, 1, 1, 1, 1, 1, 1, 1]
   end
 
   def vet_doc_user_properties_levels

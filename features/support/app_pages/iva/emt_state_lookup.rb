@@ -49,7 +49,7 @@ class StateLookupEMT < IDmeBase
   end
 
   def user_properties_levels
-    [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+    [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
   end
 
 end
