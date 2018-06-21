@@ -7,6 +7,16 @@ class Set < Thor
     end
   end
 
+  desc "emulator_pixel2", "Use Pixel 2 emulator within Chrome"
+  def emulator_pixel2
+    copy_environment("emulator_pixel2")
+  end
+
+  desc "emulator_iphoneX", "Use iPhone X emulator within Chrome"
+  def emulator_iphoneX
+    copy_environment("emulator_iphoneX")
+  end
+
   desc "android_native_mobile_local", "Use Android Native on Local"
   def android_native_mobile_local
     copy_environment("android_native_mobile_local")
@@ -80,11 +90,6 @@ class Set < Thor
   desc "chrome_osx", "Use Chrome on OSX locally on staging"
   def chrome_osx
     copy_environment("chrome_osx")
-  end
-
-  desc "iphonex_emulator", "Use iPhone X emulator within Chrome"
-  def iphonex_emulator
-    copy_environment("iphonex_emulator")
   end
 
   desc "safari_saucelabs", "Use Safari on SauceLabs on Staging"
