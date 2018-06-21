@@ -3,6 +3,9 @@
 ### Released
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
+# 2.4.88 (6/21/18)
+- AWE-1164: Mobile Emulation via Chrome Browser (iOS) Capability
+
 # 2.4.87 (6/20/18)
 - AWE-1173: Fix level property indexes
 
