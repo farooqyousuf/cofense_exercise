@@ -82,6 +82,11 @@ class Set < Thor
     copy_environment("chrome_osx")
   end
 
+  desc "iphonex_emulator", "Use iPhone X emulator within Chrome"
+  def iphonex_emulator
+    copy_environment("iphonex_emulator")
+  end
+
   desc "safari_saucelabs", "Use Safari on SauceLabs on Staging"
   def safari_saucelabs
     copy_environment("safari_saucelabs")
