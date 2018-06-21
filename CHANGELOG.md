@@ -3,6 +3,9 @@
 ### Released
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
+# 2.4.86 (6/14/18)
+- AWE-1106: Fix Student smoke tests
+
 # 2.4.85 (6/13/18)
 - AWE-891: Create iOS Mobile IDP Smoke Tests
 
