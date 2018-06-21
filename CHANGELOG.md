@@ -5,6 +5,7 @@ All notable changes to this project will be documented in this file. This projec
 
 # 2.4.88 (6/21/18)
 - AWE-1164: Mobile Emulation via Chrome Browser (iOS) Capability
+- AWE-1165: Mobile Emulation via Chrome Browser (Android) Capability
 
 # 2.4.87 (6/20/18)
 - AWE-1173: Fix level property indexes
