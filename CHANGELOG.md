@@ -3,6 +3,9 @@
 ### Released
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
+# 2.4.87 (6/20/18)
+- AWE-1173: Fix level property indexes
+
 # 2.4.86 (6/14/18)
 - AWE-1106: Fix Student smoke tests
 
