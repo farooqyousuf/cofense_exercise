@@ -53,7 +53,12 @@ Feature: Teacher verification using state lookup
     * I click on the Begin link
     * I submit the teacher lookup verification form as a "denied" record
     * I deny the document in the IDme support tool
-    * I should see the error message "We’re sorry, but we are unable to verify your teacher status using the information you provided. Please double-check your information for errors and try again. Also note that only licensed, classroom teachers are eligible. For additional help, please visit our Support page."
+    * I should see the multi-line error message:
+    """
+    We’re sorry, but we are unable to verify your teacher status using the information you provided. Please double-check your information for errors and try again.
+
+    Also note that only licensed, classroom teachers are eligible. For additional help, please visit our Support page.
+    """
     * I verify the attempt is marked as "DENIED"
 
   @delete_current_user_email
