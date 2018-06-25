@@ -30,4 +30,5 @@ end
 
 Given(/^I verify the category has been added to the store$/) do
   expect(page).to have_css("#store_categories_attributes_0_label[value='#{@category}']")
+  sleep 1
 end
