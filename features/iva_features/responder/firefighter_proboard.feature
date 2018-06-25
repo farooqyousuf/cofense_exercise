@@ -17,7 +17,7 @@ Feature: Responder verification as a ProBoard Firefighter
     * I verify user level properties for "Firefighter ProBoard"
 
   @delete_current_user_email
-  Scenario: Denied attempt for proboard firefighter verification (Error code 28)
+  Scenario: Denied attempt for proboard firefighter verification (Error code FRP0402)
     * I submit the proboard firefighter verification form as a "denied" record
     * I should see the error message "We're sorry, but we are unable to verify your firefighter status with the information you provided. Please ensure your name and SSN are entered correctly and try again. For additional information, please see our Support page."
     * I verify the attempt is marked as "DENIED"
