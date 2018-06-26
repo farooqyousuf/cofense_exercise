@@ -19,13 +19,18 @@ Feature: Responder verification as a police officer
     * I verify user level properties for "Police"
 
   @delete_current_user_email
-  Scenario: Denied attempt for police verification (Error code 29)
+  Scenario: Denied attempt for police verification (Error code FRP0650)
     * I submit the police verification form as a "denied" record
-    * I should see the error message "We're sorry, but we are unable to verify the information you provided. The information entered must match the information on official records. Note: If you've recently had a name change, try your maiden or prior name."
+    * I should see the multi-line error message:
+    """
+    We're sorry, but we are unable to verify the information you provided. The information entered must match the information on official records.
+
+    Note: If you've recently had a name change, try your maiden or prior name.
+    """
     * I verify the attempt is marked as "DENIED"
 
   @delete_experian_user1 @delete_current_user_email
-  Scenario: Dupe attempt test for police officer (Error code 81)
+  Scenario: Dupe attempt test for police officer (Error code FRP0600)
     * I verify using police officer documentation
     * I approve the document in the IDme support tool
     * I clear the session from Authority
@@ -36,8 +41,8 @@ Feature: Responder verification as a police officer
     * I should see the error message "We’re sorry, it appears you have already verified your police officer status on a different account. Please sign in using your existing credentials."
     * I verify the attempt is marked as "DUPLICATE"
 
- @delete_experian_user1 @delete_current_user_email
- Scenario: Prompt Error Code 82
+  @delete_experian_user1 @delete_current_user_email
+  Scenario: Prompt Error Code FRP0651
     * I verify using police officer documentation
     * I approve the document in the IDme support tool
     * I clear the session from Authority
