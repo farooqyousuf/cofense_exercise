@@ -5,6 +5,8 @@ All notable changes to this project will be documented in this file. This projec
 
 # 2.4.89 (6/25/18)
 - AWE-1195: Fix Shop Tests
+- AWE-1192: Fix IVA Teacher Lookup tests
+- AWE-1191: Add multi-line error messages within IVA tests
 
 # 2.4.88 (6/21/18)
 - AWE-1164: Mobile Emulation via Chrome Browser (iOS) Capability
