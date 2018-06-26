@@ -21,7 +21,12 @@ Background:
   @delete_current_user_email
   Scenario: Denied attempt for student doc upload verification (Error code 56)
     * I submit the student doc upload verification form as a "denied" record
-    * I should see the error message "We're sorry, but we are unable to verify the information you provided. The information entered must match the information on official records. Note: If you've recently had a name change, try your maiden or prior name."
+    * I should see the multi-line error message:
+    """
+    We're sorry, but we are unable to verify the information you provided. The information entered must match the information on official records.
+
+    Note: If you've recently had a name change, try your maiden or prior name.
+    """
     * I verify the attempt is marked as "DENIED"
 
   @delete_experian_user1 @delete_current_user_email

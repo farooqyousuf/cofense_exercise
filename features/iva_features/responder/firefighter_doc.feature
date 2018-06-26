@@ -19,13 +19,18 @@ Feature: Responder verification as a firefighter using document upload
     * I verify user level properties for "Firefighter Doc"
 
   @delete_current_user_email
-  Scenario: Denied attempt for firefighter doc upload verification (Error code 45)
+  Scenario: Denied attempt for firefighter doc upload verification (Error code FRP0550)
     * I submit the firefighter doc upload verification form as a "denied" record
-    * I should see the error message "We're sorry, but we are unable to verify the information you provided. The information entered must match the information on official records. Note: If you've recently had a name change, try your maiden or prior name."
+    * I should see the multi-line error message:
+    """
+    We're sorry, but we are unable to verify the information you provided. The information entered must match the information on official records.
+
+    Note: If you've recently had a name change, try your maiden or prior name.
+    """
     * I verify the attempt is marked as "DENIED"
 
   @delete_experian_user1 @delete_current_user_email
-  Scenario: Dupe attempt test for fireman doc upload (Error code 85)
+  Scenario: Dupe attempt test for fireman doc upload (Error code FRP0500)
     * I verify using firefighter documentation
     * I approve the document in the IDme support tool
     * I clear the session from Authority

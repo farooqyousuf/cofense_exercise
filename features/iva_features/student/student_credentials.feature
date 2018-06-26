@@ -20,13 +20,18 @@ Feature: Student verification using student credentials
     * I verify user level properties for "Student Credentials"
 
   @delete_current_user_email
-  Scenario: Denied attempt for student credentials verification (Error code 54)
+  Scenario: Denied attempt for student credentials verification (Error code STU0104)
     * I submit the student credentials verification form as a "denied" record
-    * I should see the error message "We're sorry, but we are unable to confirm your enrollment in the school you selected. If available, please try another verification option, or visit our Support page for more information."
+    * I should see the multi-line error message:
+    """
+    We're sorry, but our records indicate that you are no longer enrolled in this school. This sometimes occurs to students in a period of transition.
+
+    If available, please try another verification option, or visit our Support page for more information.
+    """
     * I verify the attempt is marked as "DENIED"
 
   @delete_current_user_email
-  Scenario: Duplicate attempt for student credentials verification (Error code 55)
+  Scenario: Duplicate attempt for student credentials verification (Error code STU0100)
     * I submit the student credentials verification form as a "duplicate" record
     * I should see the error message "We’re sorry, it appears you have already verified your student status on a different account. Please sign in using your existing credentials."
     * I verify the attempt is marked as "DUPLICATE"
