@@ -4,6 +4,7 @@
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
 # 2.4.89 (6/25/18)
+- AWE-1192: Fix IVA Teacher Lookup tests
 - AWE-1191: Add multi-line error messages within IVA tests
 
 # 2.4.88 (6/21/18)

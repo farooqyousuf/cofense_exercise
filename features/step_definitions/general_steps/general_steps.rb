@@ -145,6 +145,7 @@ Given(/^I deny the document in the IDme support tool$/) do
 
   @support_tool_docs.deny_doc
   @support_tool.logout_in_new_window
+  sleep 3
 end
 
 Given(/^I create "([^"]*)" page objects$/) do |page_objects|
