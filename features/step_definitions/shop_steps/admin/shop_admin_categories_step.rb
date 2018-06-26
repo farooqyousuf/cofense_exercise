@@ -21,7 +21,7 @@ Given(/^I submit a new category with blank label$/) do
 end
 
 Given(/^I verify a error is returned and no new category is created$/) do
-  expect(page).to have_css(".alert", :text =>"× An error has occured, please check the form below")
+  expect(page).to have_css(".alert", :text =>"An error has occured, please check the form below")
 end
 
 Given(/^I update the new category$/) do
@@ -32,7 +32,7 @@ Given(/^I update the new category$/) do
 end
 
 Given(/^I verify the category has been updated$/) do
-  expect(page).to have_css(".alert",:text =>"× Category successfully updated.")
+  expect(page).to have_css(".alert",:text =>"Category successfully updated.")
   @ShopAdminCategories.click_cancel_button
   @ShopAdminCategories.filter_datatable_for_category
   expect(page).to have_css("#DataTables_Table_0 tbody td:nth-child(3)",:text =>"Getting super swole")

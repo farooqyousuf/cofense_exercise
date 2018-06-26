@@ -80,7 +80,7 @@ end
 Given(/^I check the payment settings modal$/) do
   @CashBack_PurchasesPage.click_update_payment_settings_dashboard_button
   expect(page).to have_css(".modal-title",:text => "Update Your Payment Information")
-  expect(page).to have_css(".modal-body",:text => "Receive Payment Through PayPal To receive your cash back payments you will need a PayPal account. Please enter your PayPal email below: PayPal Email")
+  expect(page).to have_css(".modal-body",:text => "Receive Payment Through PayPal\nTo receive your cash back payments you will need a PayPal account.\nPlease enter your PayPal email below:\nPayPal Email")
   @CashBack_PurchasesPage.update_paypal_email
   expect(page).to have_css("#user_paypal_account-error",:text => "This field is required.")
   find(".close").click
@@ -99,6 +99,6 @@ end
 Given(/^I incorrectly update my paypal account information and see a error message$/) do
   @CashBack_PurchasesPage.click_update_payment_settings_dashboard_button
   fill_in("user_paypal_account", with: "test@")
-  expect(page).to have_content "Please enter a valid email"
   @CashBack_PurchasesPage.update_paypal_email
+  expect(page).to have_content "Please enter a valid email"
 end
