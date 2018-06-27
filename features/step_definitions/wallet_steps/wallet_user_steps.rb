@@ -2,8 +2,8 @@ Given(/^I click on the Wallet Sign Up link$/) do
   click_link "Sign Up"
 end
 
-Given(/^I click on the Wallet Sign in link$/) do
-  first(:link ,:text =>"Sign In").click
+Given("I click on the Wallet My Account link") do
+  @WalletHomepage.click_my_account_button
 end
 
 Given(/^I should be on the Shop landing page$/) do

@@ -202,7 +202,7 @@ wallet:
 
 idme:
   about_page: https://wallet-staging.idmeinc.net/about
-  business_page: https://business.id.me/
+  business_page: https://www.id.me/business/
 
 shop_admin:
   base: https://shop-staging.idmeinc.net/admin

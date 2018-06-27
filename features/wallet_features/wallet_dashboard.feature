@@ -4,21 +4,21 @@ Feature: Test Wallet Dashboard Page Feature
 Background:
   * I create "WalletHomepage, WalletDashboard, WalletMyids" page objects
   * I visit "WalletHomepage"
-  * I click on the Wallet Sign in link
+  * I click on the Wallet My Account link
   * I login to wallet as a "Military" user
 
-Scenario: Verify Wallet Shared Main Nav
+Scenario: Verify Wallet Main Navigation bar
   * I verify ID.me logo is present
-  * I verify that the main nav Shop link takes me to the correct page
-  * I verify that the main nav About link takes me to the correct page
-  * I verify that the main nav Wallet link takes me to the correct page
-  * I verify that the main nav Business link takes me to the correct page
+  * I verify that the Wallet nav "About" tab redirects to page
+  * I verify that the Wallet nav "Business" tab redirects to page
+  * I verify that the Wallet nav "Shop" tab redirects to page
+  * I verify that the Wallet nav "Wallet" tab redirects to page
 
 Scenario: Verify Wallet Sub-Nav bar
-  * I verify that the sub-nav Dashboard link directs me to the correct page
-  * I verify that the sub-nav IDs and Logins link directs me to the correct page
-  * I verify that the sub-nav Settings link directs me to the correct page
-  * I verify that the sub-nav Activity link directs me to the correct page
+  * I verify that the sub-nav "Dashboard" link redirects to page
+  * I verify that the sub-nav "IDs and Logins" link redirects to page
+  * I verify that the sub-nav "Settings" link redirects to page
+  * I verify that the sub-nav "Activity" link redirects to page
 
 Scenario: Verify Wallet Shared Side Nav
   * I click on the shared side navigation
