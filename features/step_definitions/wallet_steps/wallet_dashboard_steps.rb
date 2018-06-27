@@ -16,44 +16,32 @@ Given(/^I verify ID\.me logo is present$/) do
   expect(page).to have_css("img.shared-nav-logo")
  end
 
-Given(/^I verify that the main nav Shop link takes me to the correct page$/) do
-  @WalletDashboard.click_on_shop_shared_nav_tab
-  expect(page).to have_current_path(FigNewton.shop.shop_homepage, :url => true)
+Given("I verify that the Wallet nav {string} tab redirects to page") do |nav_tab|
+  visit FigNewton.wallet.homepage.url
+  @WalletDashboard.click_shared_nav_tab(nav_tab)
+  sleep 3
+  expected_url = case nav_tab
+                 when "About"    then FigNewton.idme.about_page
+                 when "Business" then FigNewton.idme.business_page
+                 when "Shop"     then FigNewton.shop.shop_homepage
+                 when "Wallet"   then FigNewton.wallet.homepage.url
+                 else fail ("#{expected_url} not found")
+                 end
+
+  expect(page).to have_current_path(expected_url, :url => true)
 end
 
-Given(/^I verify that the main nav About link takes me to the correct page$/) do
-  @WalletDashboard.click_on_about_shared_nav_tab
-  expect(page).to have_current_path(FigNewton.idme.about_page, :url => true)
-end
+Given("I verify that the sub-nav {string} link redirects to page") do |subnav_link|
+  @WalletDashboard.click_wallet_subnav(subnav_link)
+  expected_path = case subnav_link
+                  when "Dashboard"      then "/"
+                  when "IDs and Logins" then "/ids"
+                  when "Settings"       then "/settings"
+                  when "Activity"       then "/activities"
+                  else fail ("#{expected_path} not found")
+                  end
 
-Given(/^I verify that the main nav Wallet link takes me to the correct page$/) do
-  @WalletDashboard.click_on_wallet_shared_nav_tab_from_about_page
-  expect(page).to have_current_path(FigNewton.wallet.homepage.url, :url => true)
-end
-
-Given(/^I verify that the main nav Business link takes me to the correct page$/) do
-  @WalletDashboard.click_on_business_shared_nav_tab
-  expect(page).to have_current_path(FigNewton.idme.business_page, :url => true)
-end
-
-Given(/^I verify that the sub\-nav Dashboard link directs me to the correct page$/) do
-  @WalletDashboard.click_wallet_subnav_dashboard_tab
-  expect(page).to have_current_path("/")
-end
-
-Given(/^I verify that the sub\-nav IDs and Logins link directs me to the correct page$/) do
-  @WalletDashboard.click_wallet_subnav_ids_logins_tab
-  expect(page).to have_current_path("/ids")
-end
-
-Given(/^I verify that the sub\-nav Settings link directs me to the correct page$/) do
-  @WalletDashboard.click_wallet_subnav_settings_tab
-  expect(page).to have_current_path("/settings")
-end
-
-Given(/^I verify that the sub\-nav Activity link directs me to the correct page$/) do
-  @WalletDashboard.click_wallet_subnav_activity_tab
-  expect(page).to have_current_path("/activity")
+  expect(page).to have_current_path(expected_path)
 end
 
 Given(/^I verify user email is displayed$/) do
@@ -97,13 +85,13 @@ end
 Given("I verify that 'View All' links take me to the correct urls") do
   @WalletDashboard.click_ids_and_logins_view_all
   expect(page).to have_current_path("/ids")
-  @WalletDashboard.click_wallet_subnav_dashboard_tab
+  @WalletDashboard.click_wallet_subnav("Dashboard")
   @WalletDashboard.click_activity_feed_view_all
-  expect(page).to have_current_path("/activity")
+  expect(page).to have_current_path("/activities")
 end
 
 Given("I verify 'Add ID' button triggers affinity group modal") do
-  @WalletDashboard.click_wallet_subnav_dashboard_tab
+  @WalletDashboard.click_wallet_subnav("Dashboard")
   @WalletDashboard.click_add_id_button
   expect(@WalletDashboard.find_add_id_modal).to have_content "Adding an ID will give you access to benefits at ID.me partners that accept that ID."
   @WalletDashboard.close_id_modal

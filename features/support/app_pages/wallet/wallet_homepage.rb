@@ -25,6 +25,10 @@ class WalletHomepage < IDmeBase
     find(".shared-nav-login a",:text =>"Sign Up").click
   end
 
+  def click_my_account_button
+    find(".m_account").click
+  end
+
   def click_hero_sign_up_button
     find(".wallet-home-hero-cta a",:text =>"Sign Up For Free").click
   end
