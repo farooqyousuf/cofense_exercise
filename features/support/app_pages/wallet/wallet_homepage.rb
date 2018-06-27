@@ -17,23 +17,15 @@ class WalletHomepage < IDmeBase
     click_sign_in
   end
 
-  def click_shared_nav_sign_in_button
-    find(".shared-nav-login a",:text =>"Sign In").click
+  def click_shared_navlink_forbusiness
+    find(".js_dropdown1").click
   end
 
-  def click_shared_nav_sign_up_button
-    find(".shared-nav-login a",:text =>"Sign Up").click
+  def click_shared_navlink_forindividuals
+    find(".js_dropdown2").click
   end
 
-  def click_hero_sign_up_button
-    find(".wallet-home-hero-cta a",:text =>"Sign Up For Free").click
-  end
-
-  def click_portable_sign_up_button
-    find(".wallet-home-portable-content a",:text =>"Get Started Now").click
-  end
-
-  def click_home_cta_sign_up_button
-    find(".wallet-home-cta a",:text =>"Get Started Now").click
+  def click_my_account_button
+    find(".m_account").click
   end
 end

@@ -3,6 +3,9 @@
 ### Released
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
+# 2.4.90 (6/27/18)
+- AWE-1205: Update Wallet Homepage tests
+
 # 2.4.89 (6/25/18)
 - AWE-1195: Fix Shop Tests
 - AWE-1192: Fix IVA Teacher Lookup tests
