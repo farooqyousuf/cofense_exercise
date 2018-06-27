@@ -173,7 +173,27 @@ wallet:
   homepage:
     url: https://wallet-staging.idmeinc.net/
     social_federation_url: https://wallet-staging.idmeinc.net/#!
-    title: One Identity. One Wallet. | ID.me
+    title: ID.me | Simple, Secure Identity Verification
+  business_and_gov:
+    identity_verification: https://wallet-staging.idmeinc.net/business/digital-identity
+    document_verification: https://wallet-staging.idmeinc.net/business/document-verification
+    kyc_verification: https://wallet-staging.idmeinc.net/business/kyc
+    scra_monitoring: https://wallet-staging.idmeinc.net/business/scra
+    group_verification: https://wallet-staging.idmeinc.net/business/group-affiliation
+    military: https://wallet-staging.idmeinc.net/business/groups/military
+    students: https://wallet-staging.idmeinc.net/business/groups/students
+    teachers: https://wallet-staging.idmeinc.net/business/groups/teachers
+    first_responders: https://wallet-staging.idmeinc.net/business/groups/responders
+    government_employees: https://wallet-staging.idmeinc.net/business/groups/government
+    government: https://wallet-staging.idmeinc.net/business/government
+    healthcare: https://wallet-staging.idmeinc.net/business/healthcare
+    financial_services: https://wallet-staging.idmeinc.net/business/financial
+    ecommerce: https://wallet-staging.idmeinc.net/business/ecommerce
+    request_demo: https://wallet-staging.idmeinc.net/contact
+  individuals:
+    accessing_gov_services: https://wallet-staging.idmeinc.net/individuals/government
+    group_discounts: https://wallet-staging.idmeinc.net/individuals/ecommerce
+    shop_now: https://shop.id.me
   dashboard: https://wallet-staging.idmeinc.net/dashboard
   settings: https://wallet-staging.idmeinc.net/settings
   myids: https://wallet-staging.idmeinc.net/ids
