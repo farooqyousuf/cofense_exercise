@@ -3,6 +3,9 @@
 ### Released
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
+# 2.4.91 (6/28/18)
+- AWE-1208: Update Wallet Navigation tests
+
 # 2.4.90 (6/27/18)
 - AWE-1205: Update Wallet Homepage tests
 - AWE-1204: Update Wallet Dashboard tests
