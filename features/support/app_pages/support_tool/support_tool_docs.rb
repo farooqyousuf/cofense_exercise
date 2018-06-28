@@ -71,13 +71,13 @@ include JavascriptAlerts
   # Mobile Methods
     def approve_mobile_doc
       open_newest_mobile
-      click("Review")
+      click_link("Review")
       find("#verification_attempt_decision_accept").click
       click_button("Update")
     end
 
     def open_newest_mobile
       sleep 1
-      first("td.short.center").text
+      first("td.short.center").click
     end
 end

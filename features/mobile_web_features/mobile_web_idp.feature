@@ -3,6 +3,7 @@ Feature: User account creation
 
   @smoke @delete_current_user_email
   Scenario: Sign Up new user
+    * I open a new window
     * I visit IDP through the "responder" policy
     * I click on the Sign Up link
     * I sign up as a new user
