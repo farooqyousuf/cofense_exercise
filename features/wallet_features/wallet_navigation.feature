@@ -4,7 +4,8 @@ Feature: Test Wallet Navigation Features
 Background:
   * I create "WalletHomepage, WalletNavigation, WalletSettings" page objects
   * I visit "WalletHomepage"
-  * I sign in to Wallet
+  * I click on the Wallet My Account link
+  * I login to wallet as a "Military" user
 
 @smoke @test_smoke @wip
 Scenario: Verify Wallet Dashboard
