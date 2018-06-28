@@ -5,6 +5,7 @@ All notable changes to this project will be documented in this file. This projec
 
 # 2.4.91 (6/28/18)
 - AWE-1206: Update Wallet User tests
+- AWE-1208: Update Wallet Navigation tests
 
 # 2.4.90 (6/27/18)
 - AWE-1205: Update Wallet Homepage tests
