@@ -1,7 +1,3 @@
-Given(/^I click on the Wallet Sign Up link$/) do
-  click_link "Sign Up"
-end
-
 Given("I click on the Wallet My Account link") do
   @WalletHomepage.click_my_account_button
 end
@@ -55,7 +51,8 @@ Given(/^I fail a attempt to login to wallet$/) do
 end
 
 Given(/^I click to verify a military group affiliation$/) do
-  find(:link , :href =>"https://wallet-staging.idmeinc.net/ids/new?scope=military").click
+  click_link("Troop")
+  sleep 3
   close_current_browser
   use_last_browser_created
 end
@@ -87,7 +84,7 @@ end
 
 Given(/^I confirm that my Wallet session has been terminated$/) do
   page.driver.browser.navigate.refresh
-  step 'I should see the red alert box error message "You need to sign in or sign up before continuing."'
+  step 'I should see the red alert box error message "We\'re sorry, this account has been revoked. Please contact our customer support for assistance."'
 end
 
 Given(/^I verify my Wallet account has been deactived$/) do
@@ -111,6 +108,7 @@ Given(/^I signup with LinkedIn social federation$/) do
   @oauth_client = OAuthClient.new
   step 'I login with LinkedIn'
   step 'I complete the new Wallet account linking process'
+  @WalletHomepage.click_continue_button
 end
 
 Given(/^I verify my Wallet LinkedIn Social Federation login$/) do
