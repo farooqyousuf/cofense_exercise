@@ -3,6 +3,9 @@
 ### Released
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
+# 2.4.92 (7/2/18)
+- AWE-1235: Fix IDP Tests
+
 # 2.4.91 (6/28/18)
 - AWE-1206: Update Wallet User tests
 - AWE-1208: Update Wallet Navigation tests
