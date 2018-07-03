@@ -108,7 +108,6 @@ Given(/^I signup with LinkedIn social federation$/) do
   @oauth_client = OAuthClient.new
   step 'I login with LinkedIn'
   step 'I complete the new Wallet account linking process'
-  @WalletHomepage.click_continue_button
 end
 
 Given(/^I verify my Wallet LinkedIn Social Federation login$/) do
