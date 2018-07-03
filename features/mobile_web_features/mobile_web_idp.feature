@@ -3,7 +3,8 @@ Feature: User account creation
 
   @smoke @delete_current_user_email
   Scenario: Sign Up new user
-    * I visit IDP through the "responder" policy
+    * I open a new window
+    * I visit IDP through the "shop" policy
     * I click on the Sign Up link
     * I sign up as a new user
     * I verify a nationally certified EMT user

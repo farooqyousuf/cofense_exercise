@@ -4,7 +4,7 @@ Feature: Military verification using document upload
   Background:
     * I set the External Vendor Environment to "Staging"
     * I visit IDP through the "military" policy
-    * I create a Military Document page object
+    * I create "MilitaryDoc" page objects
     * I click on the Sign Up link
     * I sign up as a new user
     * I click on the Military Verify by uploading documentation link
