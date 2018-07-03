@@ -2,9 +2,8 @@
 Feature: IVA verification using document upload
 
   Background:
-    * I create "SupportTool, SupportToolDocs, AdminTool, AdminSettings" page objects
+    * I create "SupportTool, SupportToolDocs, AdminTool, AdminSettings, MilitaryDoc" page objects
     * I set the External Vendor Environment to "Staging"
-    * I create a Military Document page object
     * I visit IDP through the "military" policy
     * I click on the Sign Up link
     * I sign up as a new user

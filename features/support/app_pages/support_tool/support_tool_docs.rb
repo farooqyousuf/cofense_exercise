@@ -66,4 +66,18 @@ include JavascriptAlerts
     page.has_css?(".document-tabs").should == false
     page.has_text?(doc_upload).should == false
   end
+
+
+  # Mobile Methods
+    def approve_mobile_doc
+      open_newest_mobile
+      click_link("Review")
+      find("#verification_attempt_decision_accept").click
+      click_button("Update")
+    end
+
+    def open_newest_mobile
+      sleep 1
+      first("td.short.center").click
+    end
 end
