@@ -4,6 +4,7 @@
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
 # 2.4.93 (7/3/18)
+- AWE-1242: Fix Wallet Tests
 - AWE-1241: Fix IDV Tests
 
 # 2.4.92 (7/2/18)

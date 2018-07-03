@@ -58,13 +58,11 @@ Given(/^I complete the new Wallet account linking process$/) do
     @idp_new_wallet.click_continue_button
   end
 
-  if page.has_text? "Verify your military affiliation"
-    step 'I verify a military user'
-  end
-
-  if page.has_text? "Create your ID.me account"
+  if page.has_css?("#sr_page_title", text: "Create your ID.me account")
     @idp_new_wallet.click_continue_button
-    step 'I verify a military user'
+    if page.has_css?("#sr_page_title", text: "Verify your military affiliation")
+      step 'I verify a military user'
+    end
   end
 end
 
