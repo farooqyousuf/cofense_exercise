@@ -61,6 +61,11 @@ Given(/^I complete the new Wallet account linking process$/) do
   if page.has_text? "Verify your military affiliation"
     step 'I verify a military user'
   end
+
+  if page.has_text? "Create your ID.me account"
+    @idp_new_wallet.click_continue_button
+    step 'I verify a military user'
+  end
 end
 
 Given(/^I login with Facebook$/) do
