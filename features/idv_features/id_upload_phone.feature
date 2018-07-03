@@ -30,5 +30,5 @@ Feature: Identity Verification by taking a picture of your ID from phone upload
     * I generate a unique "png" doc
     * I set the External Vendor Environment to "fail documentation"
     * I "fail documentation" via phone using a mocked driver's license
-    * I should see the error message for identity verification "We're sorry, the driver's license you submitted could not be verified. Please try a different image or use another verification method."
+    * I should see the error message for identity verification "We're sorry, the driver's license you submitted could not be verified. Please try again. You'll now have the option to submit the back of your license, which should make the process easier."
     * I verify the attempt is marked as "PROCESSING"
