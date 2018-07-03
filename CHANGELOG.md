@@ -5,6 +5,7 @@ All notable changes to this project will be documented in this file. This projec
 
 # 2.4.93 (7/3/18)
 - AWE-1242: Fix Wallet Tests
+- AWE-1241: Fix IDV Tests
 
 # 2.4.92 (7/2/18)
 - AWE-1235: Fix IDP Tests
