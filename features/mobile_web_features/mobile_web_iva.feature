@@ -9,6 +9,7 @@ Feature: Identity Verification via mobile
   @smoke @delete_current_user_email
   Scenario: Successful verification as a Service Member
     * I visit IDP through the "military" policy
+    * I pry
     * I click on the Sign Up link
     * I sign up as a new user
     * I click on the Military Verify by uploading documentation link
