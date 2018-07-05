@@ -71,10 +71,15 @@ Given(/^I submit the verification code for "([^"]*)"$/) do |option|
 
   step 'I visit "AdminVerificationAttempts"'
   @AdminVerificationAttempts.search_user_attempt(@user_email)
+  sleep 1
   @AdminVerificationAttempts.open_newest
 
   code = nil
   code = @AdminVerificationAttempts.get_code
+
+  if page.has_css?(".menu-icon")
+    find(".menu-icon").click
+  end
 
   @AdminTool.logout_in_new_window
 

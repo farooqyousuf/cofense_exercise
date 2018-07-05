@@ -5,7 +5,7 @@ Feature: Military verification using SCRA credentials
   Background:
     * I set the External Vendor Environment to "Staging"
     * I visit IDP through the "military" policy
-    * I create a Military SCRA page object
+    * I create "MilitarySCRA" page objects
     * I click on the Sign Up link
     * I sign up as a new user
     * I click on the Verify using a government service record link

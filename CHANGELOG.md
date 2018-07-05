@@ -3,6 +3,9 @@
 ### Released
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
+# 2.4.94 (7/5/18)
+- AWE-930: Create Mobile Web IVA Military Smoke Tests
+
 # 2.4.93 (7/3/18)
 - AWE-1242: Fix Wallet Tests
 - AWE-1241: Fix IDV Tests

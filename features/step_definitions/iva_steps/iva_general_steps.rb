@@ -14,7 +14,6 @@ Given(/^I should be successfully verified(?: as "(.*)")?$/) do |group|
   #save oauth client token for idp and iva tests
   @oauth_client.save_token(current_url)
 
-  binding.pry
   if flag == true
     expect(@oauth_client.verify_loa_scope(group)).to eq(true)
   elsif group == "Identity"

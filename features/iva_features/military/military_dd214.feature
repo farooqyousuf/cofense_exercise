@@ -3,8 +3,8 @@ Feature: Military verification using DD214 request
 
   Background:
     * I set the External Vendor Environment to "fail SCRA"
+    * I create "DD214" page objects
     * I visit IDP through the "military" policy
-    * I create a Military DD214 page object
     * I click on the Sign Up link
     * I sign up as a new user
     * I click on the Verify by requesting DD214 link
