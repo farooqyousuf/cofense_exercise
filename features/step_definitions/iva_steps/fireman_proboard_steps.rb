@@ -1,7 +1,3 @@
-Given(/^I create a Fireman ProBoard page object$/) do
-  @PBFirefighter = PBFirefighter.new
-end
-
 Given(/^I click on the Yes I am ProBoard certified link$/) do
   @PBFirefighter.click_verify_firefighter_pb_link
 end

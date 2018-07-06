@@ -141,6 +141,7 @@ include PageManagement
     end
 
     #builds the actual_levels array according to whichever numbers array is selected in the case statement above
+    sleep 1
     indexes.each do |i|
       actual_levels << @elements[i].text.to_i
     end

@@ -3,7 +3,7 @@ Feature: Responder verification as a firefighter using document upload
 
   Background:
     * I set the External Vendor Environment to "Staging"
-    * I create a Fireman Doc page object
+    * I create "DocFirefighter" page objects
     * I visit IDP through the "responder" policy
     * I click on the Sign Up link
     * I sign up as a new user

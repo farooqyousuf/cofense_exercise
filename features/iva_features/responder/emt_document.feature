@@ -3,7 +3,7 @@ Feature: Responder verification as an EMT using document upload
 
   Background:
     * I set the External Vendor Environment to "Staging"
-    * I create a EMT Document page object
+    * I create "DocEMT" page objects
     * I visit IDP through the "responder" policy
     * I click on the Sign Up link
     * I sign up as a new user
@@ -11,7 +11,7 @@ Feature: Responder verification as an EMT using document upload
     * I click on the Begin link
 
   @delete_current_user_email @smoke
-  Scenario: Successful verificaton with doc upload
+  Scenario: Successful verification with doc upload
     * I verify using EMT doc upload
     * I approve the document in the IDme support tool
     * I should be successfully verified as "EMT"
