@@ -65,7 +65,8 @@ class TeacherDoc < IDmeBase
   end
 
   def user_properties_levels
-    [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+    #[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+    [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
   end
 
 end
