@@ -3,7 +3,7 @@ Feature: Responder verification as an EMT using state doc upload
 
   Background:
     * I set the External Vendor Environment to "Staging"
-    * I create a EMT State Doc page object
+    * I create "StateDocEMT" page objects
     * I visit IDP through the "responder" policy
     * I click on the Sign Up link
     * I sign up as a new user
