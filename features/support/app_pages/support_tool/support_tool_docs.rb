@@ -6,6 +6,7 @@ include PageManagement
 include JavascriptAlerts
 
   def initialize
+    #Goes to the Support Tool Waiting Attempts page
     super(FigNewton.support_tool.waiting_attempts)
   end
 
