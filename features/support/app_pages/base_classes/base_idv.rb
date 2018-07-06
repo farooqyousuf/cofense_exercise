@@ -11,6 +11,10 @@ include DataMagic
     click_button("Verify using my driver's license")
   end
 
+  def click_mobile_verify_drivers_license_link
+    all("li")[1].click
+  end
+
   def click_upload_from_computer
     click_button("Upload from my computer")
   end
