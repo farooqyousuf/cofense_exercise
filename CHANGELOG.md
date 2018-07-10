@@ -3,6 +3,9 @@
 ### Released
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
+# 2.4.96 (7/10/18)
+- AWE-1260: Create Mobile Web IVA Teacher Smoke Tests
+
 # 2.4.95 (7/6/18)
 - AWE-1260: Create Mobile Web IVA Responder Smoke Tests
 - AWE-1261: Student Mobile Web Smoke Tests
