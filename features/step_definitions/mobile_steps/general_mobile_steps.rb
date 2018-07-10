@@ -14,6 +14,11 @@ Given("I approve the document in the IDme support tool via mobile") do
 end
 
 Given("I open a new window") do
+  sleep 3
   self.create_new_window
   self.use_last_browser_created
+end
+
+Given("I click on the verify by uploading driver's license link via mobile") do
+  @IDV.click_mobile_verify_drivers_license_link
 end

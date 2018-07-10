@@ -33,11 +33,15 @@ class IDV < IDmeBase
     close_current_browser
     use_original_tab
     sleep 3
-
     if populate == true
       idv_user = data_for(:experian_user3)
-      populate_fields_phone(data: idv_user)
 
+      if page.has_css?("#sr_page_title", text: "Enter your Social Security Number") == false
+        close_current_browser
+        use_original_tab
+      end
+
+      populate_fields_phone(data: idv_user)
       check_fcra_box
       click_button("Verify my information")
       click_button("Allow")

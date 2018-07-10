@@ -9,6 +9,7 @@ All notable changes to this project will be documented in this file. This projec
 # 2.4.95 (7/6/18)
 - AWE-1260: Create Mobile Web IVA Responder Smoke Tests
 - AWE-1261: Student Mobile Web Smoke Tests
+- AWE-923: Create Mobile Web IDV Smoke Tests
 
 # 2.4.94 (7/5/18)
 - AWE-930: Create Mobile Web IVA Military Smoke Tests
