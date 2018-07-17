@@ -15,7 +15,7 @@ Feature: Test Wallet User Features
     * I should see my sign up on the activity feed
 
   @smoke @lightning
-  Scenario: Succesful User Wallet Sign In
+  Scenario: Successful User Wallet Sign In
     * I visit "WalletHomepage"
     * I click on the Wallet My Account link
     * I login to wallet as a "Military" user

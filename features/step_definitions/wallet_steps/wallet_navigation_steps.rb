@@ -1,4 +1,4 @@
-Given(/^I click on the Dashboard navigation link$/) do
+Given("I click on the Dashboard navigation link") do
   @WalletNavigation.click_dashboard_link
 end
 

@@ -1,9 +1,9 @@
-Given(/^I verify I am on the wallet homepage$/) do
+Given("I verify I am on the wallet homepage") do
   expect(page.current_url).to eql(FigNewton.wallet.homepage.url)
   expect(page.title).to eql(FigNewton.wallet.homepage.title)
 end
 
-Given(/^I verify that the wallet home hero is displayed$/) do
+Given("I verify that the wallet home hero is displayed") do
   expect(page).to have_css(".page-container",:text => "ID.me simplifies how individuals securely prove and share their identity online.\nFor Business & Government keyboard_arrow_right\nFor Individuals keyboard_arrow_right")
   expect(page).to have_css(".m_feature_image",:visible => true)
 end
@@ -63,8 +63,15 @@ Given("I verify the For Individuals navigation dropdown link {string}") do |drop
   step 'I visit "WalletHomepage"'
 end
 
-Given(/^I verify the wallet My Account links direct to idp$/) do
+Given("I verify the wallet My Account links direct to idp") do
   @WalletHomepage.click_my_account_button
+  expect(page).to have_current_path(FigNewton.idp.new_session_url,:url => true)
+  return_to_previous_page
+end
+
+# ------- Wallet mobile steps
+Given("I verify the wallet My Account mobile link redirects to idp") do
+  @WalletHomepage.click_mobile_my_account_button
   expect(page).to have_current_path(FigNewton.idp.new_session_url,:url => true)
   return_to_previous_page
 end
