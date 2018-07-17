@@ -221,6 +221,7 @@ DEPENDENCIES
   allure-ruby-adaptor-api
   appium_capybara
   appium_console
+  appium_lib
   capybara
   cucumber (= 3.1.0)
   cucumber_statistics

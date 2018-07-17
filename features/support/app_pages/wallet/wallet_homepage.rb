@@ -28,4 +28,9 @@ class WalletHomepage < IDmeBase
   def click_my_account_button
     find(".m_account").click
   end
+
+  def click_mobile_my_account_button
+    click_link("menu")
+    all("li")[2].click
+  end
 end

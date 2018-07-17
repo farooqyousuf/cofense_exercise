@@ -3,6 +3,9 @@
 ### Released
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
+# 2.4.97 (7/17/18)
+- AWE-924: Create Mobile Web Wallet Smoke Tests
+
 # 2.4.96 (7/10/18)
 - AWE-1260: Create Mobile Web IVA Teacher Smoke Tests
 

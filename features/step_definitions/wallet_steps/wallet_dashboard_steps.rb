@@ -1,18 +1,18 @@
-Given(/^I check the Wallet dashboard page is visible$/) do
+Given("I check the Wallet dashboard page is visible") do
  expect(page).to have_css(".wallet-content-main",:visible => true)
  expect(page).to have_css(".wallet-dashboard-module",:visible => true)
  expect(page).to have_text "Activity Feed"
  end
 
-Given(/^I click on the shared side navigation$/) do
+Given("I click on the shared side navigation") do
   @WalletDashboard.open_shared_side_navigation
 end
 
-Given(/^I click sign out on the shared side navigation$/) do
+Given("I click sign out on the shared side navigation") do
   @WalletDashboard.click_shared_side_navigation_sign_out
 end
 
-Given(/^I verify ID\.me logo is present$/) do
+Given("I verify ID\.me logo is present") do
   expect(page).to have_css("img.shared-nav-logo")
  end
 
@@ -44,18 +44,18 @@ Given("I verify that the sub-nav {string} link redirects to page") do |subnav_li
   expect(page).to have_current_path(expected_path)
 end
 
-Given(/^I verify user email is displayed$/) do
+Given("I verify user email is displayed") do
   account_email = @WalletDashboard.user_account_email
   test_email_used = FigNewton.shop_users.military
   expect(account_email).to eq(test_email_used)
 end
 
-Given(/^I verify membership date is displayed correctly$/) do
+Given("I verify membership date is displayed correctly") do
   membership_date = @WalletDashboard.account_membership_date
   @WalletDashboard.valid_date?(membership_date)
 end
 
-Given(/^I verify that View Full Profile link directs me to correct page$/) do
+Given("I verify that View Full Profile link directs me to correct page") do
   @WalletDashboard.click_view_profile
   expect(page).to have_current_path("/settings")
   expect(page).to have_css("div.wallet-settings-user")

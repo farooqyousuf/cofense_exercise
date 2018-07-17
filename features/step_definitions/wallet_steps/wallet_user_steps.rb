@@ -13,7 +13,7 @@ Given(/^I click on the Wallet shared nav link$/) do
   find(".shared-nav a",:text =>"Wallet").click
 end
 
-Given(/^I should be on the Wallet dashboard page$/) do
+Given("I should be on the Wallet dashboard page") do
   find(".wallet-dashboard-module") #holder allow page to load
   expect(page).to have_current_path(FigNewton.wallet.homepage.url)
   expect(page).to have_css(".wallet-content-main .heading",:text =>"Dashboard")
@@ -125,4 +125,16 @@ Given(/^I verify my Wallet Linkedin Social Federation signin$/) do
   expect(page).to have_current_path(FigNewton.wallet.homepage.social_federation_url)
   expect(page).to have_css(".wallet-events li:nth-child(1)",:text =>"You signed in to your ID.me Wallet")
   expect(page).to have_css(".wallet-events li:nth-child(2)",:text =>"You signed in with your Linkedin login on")
+end
+
+# ------- Wallet mobile steps
+Given("I click on the mobile Wallet My Account link") do
+  @WalletHomepage.click_mobile_my_account_button
+end
+
+Given("I should be on the mobile Wallet dashboard page") do
+  find(".shared-nav-sub-title", :text => "Dashboard")
+  expect(page).to have_current_path(FigNewton.wallet.homepage.url)
+  find(".hamburger").click
+  expect(page).to have_css(".shared-nav-sub-menu-item:nth-child(2)",:text =>"Dashboard")
 end
