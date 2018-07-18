@@ -24,4 +24,19 @@ class ShopOffersPage < IDmeBase
   def click_group(group)
     click_link(group)
   end
+
+  def click_mobile_hamburger_menu
+    find(".hamburger").click
+  end
+
+  def click_mobile_signin
+    click_mobile_hamburger_menu
+    click_on("Sign In")
+  end
+
+  def click_mobile_signup
+    click_mobile_hamburger_menu
+    click_on("Sign Up")
+  end
+
 end
