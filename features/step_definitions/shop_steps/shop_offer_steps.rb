@@ -2,6 +2,14 @@ Given(/^I create a Shop Offers index page object$/) do
   @shop_offers = ShopOffersPage.new
 end
 
+Given(/^I click on the mobile Shop Sign Up link$/) do
+  @ShopOffersPage.click_mobile_signup
+end
+
+Given(/^I click on the mobile Shop Sign In link$/) do
+  @ShopOffersPage.click_mobile_signin
+end
+
 Given(/^I expect the page url to be for Shop Offers Page$/) do
   expect(page.current_url).to eql(FigNewton.shop.offers_index_page)
 end
