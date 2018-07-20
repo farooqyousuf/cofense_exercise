@@ -4,7 +4,7 @@
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
 # 2.499 (7/20/18)
-- AWE-1325: Update mobile iva teacher tag
+- AWE-1325: Add iOS mobile web smoke tests job to Jenkins
 
 # 2.498 (7/18/18)
 - AWE-921: Test Shop via mobile
