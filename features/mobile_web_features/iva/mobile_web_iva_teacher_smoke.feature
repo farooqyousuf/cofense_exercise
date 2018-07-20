@@ -1,4 +1,4 @@
-@regression @iva @teacher @desktop @doc
+@regression @mobile_iva @teacher @desktop @doc
 Feature: Teacher verification via mobile
 
   Background:
