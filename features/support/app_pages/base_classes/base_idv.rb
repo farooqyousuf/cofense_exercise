@@ -60,6 +60,34 @@ include DataMagic
     populate_ssn(data: data)
   end
 
+  def populate_fields_kba(data:)
+    populate_fields_personal_info(data: data)
+    populate_fields_address(data: data)
+    populate_fields_computer(data: data)
+  end
+
+  def populate_fields_personal_info(data:)
+    %w(idme_verification_identity_first_name idme_verification_identity_last_name idme_verification_identity_birth_date).each do |field|
+      fill_in(field, :with => data.fetch(field))
+    end
+
+    click_on("Submit my information")
+  end
+
+  def populate_fields_address(data:)
+    %w(idme_verification_identity_street idme_verification_identity_city idme_verification_identity_zip).each do |field|
+      fill_in(field, :with => data.fetch(field))
+    end
+
+    populate_state(data.fetch("state"))
+    2.times {fill_in("idme_verification_identity_zip", :with => data.fetch("idme_verification_identity_zip"))}
+    click_on("Submit address")
+  end
+
+  def populate_state(state)
+    select_option("#select2-chosen-1", state)
+  end
+
   def populate_ssn(data:)
     fill_in("social", :with => data.fetch("social"))
     fill_in("social_confirm", :with => data.fetch("social_confirm"))

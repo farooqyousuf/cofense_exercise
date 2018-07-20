@@ -1,3 +1,7 @@
+Given("I click on {string}") do |button|
+  click_on(button)
+end
+
 Given(/^I create a new account after clearing my old "([^"]*)" session$/) do |group|
   case group
   when "military"

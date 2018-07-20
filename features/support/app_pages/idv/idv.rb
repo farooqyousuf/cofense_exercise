@@ -93,6 +93,22 @@ class IDV < IDmeBase
     end
   end
 
+  def verify_with_kba(action: "none", populate: "none")
+    idv_user = data_for(:experian_user3)
+
+    case action
+    when "successfully verify"
+      populate = true
+      user = idv_user
+    end
+
+    if populate == true
+      populate_fields_kba(data: user)
+      check_fcra_box
+      click_button("Verify my information")
+    end
+  end
+
   def user_properties_levels
     [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
   end

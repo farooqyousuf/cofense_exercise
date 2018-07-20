@@ -3,6 +3,9 @@
 ### Released
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
+# 2.499 (7/20/18)
+- CORE-8928: Successful KBA after failed doc test
+
 # 2.498 (7/18/18)
 - AWE-921: Test Shop via mobile
 
