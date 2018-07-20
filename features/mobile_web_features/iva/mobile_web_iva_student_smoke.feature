@@ -1,4 +1,4 @@
-@regression @ios @mobile_iva @smoke
+@regression @mobile_iva @mobile_student @smoke
 Feature: Student Identity Verification via mobile
 
   Background:
@@ -18,7 +18,7 @@ Feature: Student Identity Verification via mobile
     * I should be successfully verified
     * I verify user level properties for "Student Credentials"
 
-  @smoke @delete_current_user_email
+  @delete_current_user_email
   #unique dob/ssn and vetted by Experian/PreciseID, have to use their test data
   Scenario: Successful verification as a Student using Student Doc Upload
     * I click on the Verify by uploading documentation link

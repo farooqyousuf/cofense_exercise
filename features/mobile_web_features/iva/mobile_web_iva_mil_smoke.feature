@@ -1,4 +1,4 @@
-@regression @mobile_iva @smoke
+@regression @mobile_iva @mobile_military @smoke
 Feature: Military Identity Verification via mobile
 
   Background:

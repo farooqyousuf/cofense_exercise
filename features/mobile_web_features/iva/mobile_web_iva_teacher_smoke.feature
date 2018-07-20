@@ -1,4 +1,4 @@
-@regression @mobile_iva @teacher @desktop @doc
+@regression @mobile_iva @mobile_teacher @smoke
 Feature: Teacher verification via mobile
 
   Background:
@@ -9,7 +9,7 @@ Feature: Teacher verification via mobile
     * I click on the Sign Up link
     * I sign up as a new user
 
-  @smoke @delete_current_user_email
+  @delete_current_user_email
   #experian/precise id check
   Scenario: Successful verification as a Teacher using document upload
     * I click on the teacher verify using documentation link
@@ -20,7 +20,7 @@ Feature: Teacher verification via mobile
     * I should be successfully verified
     * I verify user level properties for "Teacher Doc Upload"
 
-  @smoke @delete_current_user_email
+  @delete_current_user_email
   #unique combo of ssn/dob
   Scenario: Successful verification with no license and no ssn
     * I click on the verify using teacher state lookup link
