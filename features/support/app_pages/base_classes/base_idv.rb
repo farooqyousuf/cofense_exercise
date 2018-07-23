@@ -15,10 +15,6 @@ include DataMagic
     all("li")[1].click
   end
 
-  def click_upload_from_computer
-    click_button("Upload from my computer")
-  end
-
   def click_take_pic_with_phone
     click_button("Take a picture with my phone")
   end
@@ -63,7 +59,6 @@ include DataMagic
   def populate_fields_kba(data:)
     populate_fields_personal_info(data: data)
     populate_fields_address(data: data)
-    populate_fields_computer(data: data)
   end
 
   def populate_fields_personal_info(data:)
