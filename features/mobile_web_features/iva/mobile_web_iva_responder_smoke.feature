@@ -1,4 +1,4 @@
-@regression @mobile_iva @desktop @smoke
+@regression @mobile_iva @mobile_responder @smoke
 Feature: Responder verification smoke tests
 
   Background:

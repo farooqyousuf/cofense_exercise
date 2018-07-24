@@ -171,7 +171,7 @@ Given("I verify a military user") do
 end
 
 Given("I verify a nationally certified EMT user") do
-  step 'I create a EMT National page object'
+  step 'I create "NationalEMT" page objects'
   sleep 2
   step 'I click on the Verify using EMT National link'
   step 'I click on the Begin link'
