@@ -2,7 +2,7 @@
 Feature: Identity Verification by uploading an ID via mobile
 
   Background:
-    * I create "AdminTool, AdminSettings, IDV" page objects
+    * I create "AdminTool, AdminSettings, IDVPhone, IDVComputer" page objects
     * I open a new window
     * I visit IDP through the "au10tix_light" policy
     * I click on the Sign Up link
@@ -31,7 +31,7 @@ Feature: Identity Verification by uploading an ID via mobile
   @delete_current_user_email
   Scenario: Successful verification with Imagery via computer upload
     * I click on the verify by uploading driver's license link via mobile
-    * I click on the Upload from my computer link
+    * I click on "Upload from my computer"
     * I generate a unique "png" doc
     * I set the External Vendor Environment to "verify via Imagery"
     * I "verify via Imagery" via computer using a mocked driver's license
@@ -42,7 +42,7 @@ Feature: Identity Verification by uploading an ID via mobile
   @delete_current_user_email
   Scenario: Successful verification with AU10TIX via computer upload
     * I click on the verify by uploading driver's license link via mobile
-    * I click on the Upload from my computer link
+    * I click on "Upload from my computer"
     * I generate a unique "png" doc
     * I set the External Vendor Environment to "verify via AU10TIX"
     * I "verify via AU10TIX" via computer using a mocked driver's license
