@@ -33,7 +33,6 @@ Feature: Identity Verification by taking a picture of your ID from phone upload
     * I should see the error message for identity verification "We're sorry, the driver's license you submitted could not be verified. Please try again. You'll now have the option to submit the back of your license, which should make the process easier."
     * I verify the attempt is marked as "PROCESSING"
 
-
   @delete_current_user_email
   Scenario: Successful KBA after failed documentation for Identity verification
     * I create "KBAQuestions" page objects
@@ -42,7 +41,6 @@ Feature: Identity Verification by taking a picture of your ID from phone upload
     * I trigger KBA after failed documentation for IDV via phone
     * I "successfully verify" KBA via phone
     * I answer the KBA questions
-    * I click on "Verify"
     * I authorize the attribute release
     * I should be successfully verified as "Identity"
     * I verify user level properties for "Identity"
