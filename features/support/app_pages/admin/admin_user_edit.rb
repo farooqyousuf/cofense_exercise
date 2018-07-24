@@ -22,7 +22,7 @@ include PageManagement
     when "Identity"
       expand_verification_properties
       indexes = [0, 4, 7, 10, 13, 16, 19, 22, 25, 28, 31, 34, 37, 40, 43]
-      expected_levels = IDV.new.user_properties_levels
+      expected_levels = IDVComputer.new.user_properties_levels
 
     when "Government"
       expand_verification_properties

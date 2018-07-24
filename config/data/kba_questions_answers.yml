@@ -175,3 +175,12 @@
 58:
   question: "According to your credit profile, you may have opened a mortgage loan in or around November 2011. Please select the lender to whom you currently make your mortgage payments. If you do not have a mortgage, select 'NONE OF THE ABOVE/DOES NOT APPLY'."
   answer: "NONE OF THE ABOVE/DOES NOT APPLY"
+59:
+  question: "Question 1."
+  answer: "one"
+60:
+  question: "Question 2."
+  answer: "one"
+61:
+  question: "Question 3."
+  answer: "one"

@@ -10,12 +10,8 @@ class KBAQuestions < IDmeBase
     page.all(:css, '.question')
   end
 
-  def answers
-    page.all('.answers')
-  end
-
   def submit_answers
-    click_button("Submit Answers")
+    click_on("Submit answers")
   end
 
   def answer_questions
@@ -39,7 +35,7 @@ class KBAQuestions < IDmeBase
       p "Valid answer: #{valid_answers}"
 
       #Set the radio buttons if they match one of the answers
-      answers[index].choose(valid_answers[0])        
+      all("label", :text => valid_answers[0])[index].click
     end
   end
 

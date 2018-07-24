@@ -1,3 +1,7 @@
+Given("I click on {string}") do |button|
+  click_on(button)
+end
+
 Given(/^I create a new account after clearing my old "([^"]*)" session$/) do |group|
   case group
   when "military"
@@ -172,4 +176,18 @@ Given("I verify a nationally certified EMT user") do
   step 'I click on the Verify using EMT National link'
   step 'I click on the Begin link'
   step 'I verify using nationally certified EMT credentials'
+end
+
+Given("I set the External Vendor Environment to {string}") do |settings|
+  AdminTool.new.login_in_new_window
+  step 'I visit "AdminSettings"'
+  AdminSettings.new.set_vendor_env(settings: settings)
+  sleep 1
+
+  close_current_browser
+  use_last_browser_created
+end
+
+Given("I set up multi-factor authentication") do
+  @IDVComputer.set_up_multifactor
 end

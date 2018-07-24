@@ -20,5 +20,5 @@ Given("I open a new window") do
 end
 
 Given("I click on the verify by uploading driver's license link via mobile") do
-  @IDV.click_mobile_verify_drivers_license_link
+  @IDVPhone.click_mobile_verify_drivers_license_link
 end

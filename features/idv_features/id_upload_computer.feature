@@ -2,12 +2,12 @@
 Feature: Identity Verification by uploading an ID from the computer
 
   Background:
-    * I create "AdminTool, AdminSettings, IDV" page objects
+    * I create "AdminTool, AdminSettings, IDVComputer" page objects
     * I visit IDP through the "au10tix_light" policy
     * I click on the Sign Up link
     * I sign up as a new user
-    * I click on the verify by uploading driver's license link
-    * I click on the Upload from my computer link
+    * I click on "Verify using my driver's license"
+    * I click on "Upload from my computer"
 
   @smoke @delete_current_user_email
   Scenario: Successful verification with Imagery
@@ -42,3 +42,16 @@ Feature: Identity Verification by uploading an ID from the computer
     * I "fail experian" via computer using a mocked driver's license
     * I should see the error message "We're sorry, but your information could not be verified. Please ensure that your information was entered correctly and try again."
     * I verify the attempt is marked as "PROCESSING"
+
+  @delete_current_user_email
+  Scenario: Successful KBA after failed documentation for Identity verification
+    * I create "KBAQuestions" page objects
+    * I generate a unique "png" doc
+    * I set the External Vendor Environment to "fail documentation/successful kba"
+    * I trigger KBA after failed documentation for IDV via computer
+    * I "successfully verify" via KBA
+    * I answer the KBA questions
+    * I click on "Verify"
+    * I authorize the attribute release
+    * I should be successfully verified as "Identity"
+    * I verify user level properties for "Identity"
