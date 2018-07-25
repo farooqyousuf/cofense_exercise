@@ -6,6 +6,7 @@ All notable changes to this project will be documented in this file. This projec
 # 2.5.1 (7/25/18)
 - AWE-1374: Fix Teacher Lookup test: "Successful verification with no license and no ssn"
 - AWE-1375: Fixing Android IDV Smoke Tests
+- AWE-1376: Fixing Android Teacher Smoke Tests
 
 # 2.5.0 (7/24/18)
 - AWE-1325: Add iOS mobile web smoke tests job to Jenkins

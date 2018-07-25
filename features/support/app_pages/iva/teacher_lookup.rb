@@ -36,7 +36,7 @@ class TeacherLookup < IDmeBase
   def build_unique_info
     @fname = Faker::Name.first_name
     @lname = Faker::Name.last_name
-    @dob = Faker::Date.birthday.strftime("%m%d%Y")
+    @dob = Faker::Date.birthday.strftime("%m/%d/%Y")
     @teacher_city = Faker::Address.city
     @district = Faker::Address.city
     @school = Faker::University.name
