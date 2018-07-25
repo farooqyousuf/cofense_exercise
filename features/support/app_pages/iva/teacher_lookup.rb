@@ -26,7 +26,7 @@ class TeacherLookup < IDmeBase
       end
 
     if page.has_css?(".state-number-available")
-      find("#state_number_available_false").click
+      find("#state_number_available_no").click
     end
 
     sleep 2
