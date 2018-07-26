@@ -178,6 +178,14 @@ Given("I verify a nationally certified EMT user") do
   step 'I verify using nationally certified EMT credentials'
 end
 
+Given("I verify a student user") do
+  step 'I create "StudentCreds" page objects'
+  sleep 2
+  step 'I click on "Verify using your student credentials"'
+  step 'I click on "Begin"'
+  step 'I submit the student credentials verification form as a "unique" record'
+end
+
 Given("I set the External Vendor Environment to {string}") do |settings|
   AdminTool.new.login_in_new_window
   step 'I visit "AdminSettings"'
