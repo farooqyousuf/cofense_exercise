@@ -56,7 +56,7 @@ class IDVComputer < IDmeBase
     idv_user = data_for(:experian_user3)
 
     case action
-    when "successfully verify"
+    when "verify"
       populate = true
       user = idv_user
     end

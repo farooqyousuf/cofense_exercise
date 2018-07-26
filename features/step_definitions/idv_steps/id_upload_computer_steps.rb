@@ -6,7 +6,7 @@ Given("I trigger KBA after failed documentation for IDV via computer") do
   step 'I "fail documentation" via computer using a mocked driver\'s license'
   sleep 30
   step 'I click on "Try another image"'
-  step 'I click on "Upload from my computer"'
+  step 'I click on "Upload from my device"'
 
   step 'I "fail documentation" via computer using a mocked driver\'s license'
   sleep 40
