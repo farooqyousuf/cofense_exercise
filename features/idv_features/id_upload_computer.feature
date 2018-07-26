@@ -7,7 +7,7 @@ Feature: Identity Verification by uploading an ID from the computer
     * I click on the Sign Up link
     * I sign up as a new user
     * I click on "Verify using my driver's license"
-    * I click on "Upload from my computer"
+    * I click on "Upload from my device"
 
   @smoke @delete_current_user_email
   Scenario: Successful verification with Imagery

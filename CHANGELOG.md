@@ -3,6 +3,9 @@
 ### Released
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
+# 2.5.2 (7/26/18)
+- AWE-1409: Fix IDV Smoke Tests
+
 # 2.5.1 (7/25/18)
 - AWE-1374: Fix Teacher Lookup test: "Successful verification with no license and no ssn"
 - AWE-1375: Fixing Android IDV Smoke Tests
