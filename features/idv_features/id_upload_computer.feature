@@ -36,14 +36,6 @@ Feature: Identity Verification by uploading an ID from the computer
     * I verify the attempt is marked as "PROCESSING"
 
   @delete_current_user_email
-  Scenario: Failed experian for Identity verification
-    * I generate a unique "png" doc
-    * I set the External Vendor Environment to "fail experian"
-    * I "fail experian" via computer using a mocked driver's license
-    * I should see the error message "We're sorry, but your information could not be verified. Please ensure that your information was entered correctly and try again."
-    * I verify the attempt is marked as "PROCESSING"
-
-  @delete_current_user_email
   Scenario: Successful KBA after failed documentation for Identity verification
     * I create "KBAQuestions" page objects
     * I generate a unique "png" doc
@@ -55,6 +47,14 @@ Feature: Identity Verification by uploading an ID from the computer
     * I authorize the attribute release
     * I should be successfully verified as "Identity"
     * I verify user level properties for "Identity"
+
+  @delete_current_user_email
+  Scenario: Failed experian for Identity verification
+    * I generate a unique "png" doc
+    * I set the External Vendor Environment to "fail experian"
+    * I "fail experian" via computer using a mocked driver's license
+    * I should see the error message "We're sorry, but your information could not be verified. Please ensure that your information was entered correctly and try again."
+    * I verify the attempt is marked as "PROCESSING"
 
   @delete_current_user_email
   Scenario: Fail KBA questions after failed documentation for Identity verification

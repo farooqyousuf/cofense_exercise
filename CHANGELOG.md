@@ -3,6 +3,9 @@
 ### Released
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
+# 2.5.3 (7/27/18)
+- AWE-592: Mobile Picture: Failed Experian
+
 # 2.5.2 (7/26/18)
 - AWE-1409: Fix IDV Smoke Tests
 - AWE-1415: Update verified user for IDP mobile smoke test

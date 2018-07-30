@@ -2,7 +2,7 @@
 Feature: Identity Verification by uploading an ID via mobile
 
   Background:
-    * I create "AdminTool, AdminSettings, IDVPhone, IDVComputer" page objects
+    * I create "AdminTool, AdminSettings, IDVPhone, IDVComputer, UserEdit" page objects
     * I open a new window
     * I visit IDP through the "au10tix_light" policy
     * I click on the Sign Up link
