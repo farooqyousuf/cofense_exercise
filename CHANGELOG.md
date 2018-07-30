@@ -3,7 +3,7 @@
 ### Released
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
-# 2.5.3 (7/27/18)
+# 2.5.3 (7/30/18)
 - AWE-592: Mobile Picture: Failed Experian
 
 # 2.5.2 (7/26/18)
