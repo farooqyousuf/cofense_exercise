@@ -1,5 +1,6 @@
 Given("I {string} via computer using a mocked driver's license") do |action|
   @IDVComputer.verify(action: action)
+  sleep 10
 end
 
 Given("I trigger KBA after failed documentation for IDV via computer") do

@@ -28,14 +28,6 @@ Feature: Identity Verification by uploading an ID from the computer
     * I verify user level properties for "Identity"
 
   @delete_current_user_email
-  Scenario: Failed documentation for Identity verification
-    * I generate a unique "png" doc
-    * I set the External Vendor Environment to "fail documentation"
-    * I "fail documentation" via computer using a mocked driver's license
-    * I should see the error message for identity verification "We're sorry, the driver's license you submitted could not be verified. Please try again. You'll now have the option to submit the back of your license, which should make the process easier."
-    * I verify the attempt is marked as "PROCESSING"
-
-  @delete_current_user_email
   Scenario: Successful KBA after failed documentation for Identity verification
     * I create "KBAQuestions" page objects
     * I generate a unique "png" doc
@@ -47,6 +39,14 @@ Feature: Identity Verification by uploading an ID from the computer
     * I authorize the attribute release
     * I should be successfully verified as "Identity"
     * I verify user level properties for "Identity"
+
+  @delete_current_user_email
+  Scenario: Failed documentation for Identity verification
+    * I generate a unique "png" doc
+    * I set the External Vendor Environment to "fail documentation"
+    * I "fail documentation" via computer using a mocked driver's license
+    * I should see the error message for identity verification "We're sorry, the driver's license you submitted could not be verified. Please try again. You'll now have the option to submit the back of your license, which should make the process easier."
+    * I verify the attempt is marked as "PROCESSING"
 
   @delete_current_user_email
   Scenario: Failed experian for Identity verification

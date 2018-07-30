@@ -1,5 +1,6 @@
 Given("I {string} via phone using a mocked driver's license") do |action|
   @IDVPhone.verify(action: action)
+  sleep 10
 end
 
 Given("I click on the Take a picture with my phone link") do

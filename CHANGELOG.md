@@ -5,6 +5,7 @@ All notable changes to this project will be documented in this file. This projec
 
 # 2.5.3 (7/30/18)
 - AWE-592: Mobile Picture: Failed Experian
+- CORE-8818: Mobile Picture: Failed Doc Test
 
 # 2.5.2 (7/26/18)
 - AWE-1409: Fix IDV Smoke Tests
