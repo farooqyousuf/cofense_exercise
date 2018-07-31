@@ -33,7 +33,7 @@ Feature: Identity Verification by uploading an ID from the computer
     * I generate a unique "png" doc
     * I set the External Vendor Environment to "fail documentation/successful kba"
     * I trigger KBA after failed documentation for IDV via computer
-    * I "successfully verify" via KBA
+    * I "verify" via KBA
     * I answer the KBA questions
     * I click on "Verify"
     * I authorize the attribute release

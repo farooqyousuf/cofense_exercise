@@ -24,7 +24,7 @@ class IDVPhone < IDmeBase
       front_id = data.fetch("idv")
       back_id = data.fetch("png")
       user = idv_user
-    when "fail documentation"
+    when "fail documentation", "upload front doc"
       populate = false
       front_id = data.fetch("png")
       back_id = data.fetch("png")
@@ -37,7 +37,8 @@ class IDVPhone < IDmeBase
     end
 
     upload_front_id(front_id: front_id)
-    upload_back_id(back_id: back_id)
+    upload_back_id(back_id: back_id) unless action == "upload front doc"
+
     click_button("Look Good?")
 
     close_current_browser
@@ -64,7 +65,7 @@ class IDVPhone < IDmeBase
     idv_user = data_for(:experian_user3)
 
     case action
-    when "successfully verify"
+    when "verify"
       populate = true
       user = idv_user
     end

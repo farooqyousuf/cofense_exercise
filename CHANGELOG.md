@@ -3,6 +3,9 @@
 ### Released
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
+# 2.5.4 (7/31/18)
+- CORE-8933: Mobile Picture: Failed KBA test
+
 # 2.5.3 (7/30/18)
 - AWE-592: Mobile Picture: Failed Experian
 - CORE-8818: Mobile Picture: Failed Doc Test

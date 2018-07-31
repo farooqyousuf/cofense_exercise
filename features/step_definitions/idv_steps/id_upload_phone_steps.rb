@@ -19,7 +19,7 @@ Given("I trigger KBA after failed documentation for IDV via phone") do
   step 'I click on "Try another image"'
   step 'I click on the Take a picture with my phone link'
 
-  step 'I "fail documentation" via phone using a mocked driver\'s license'
+  step 'I "upload front doc" via phone using a mocked driver\'s license'
   sleep 40
   step 'I click on "Try another method"'
 end

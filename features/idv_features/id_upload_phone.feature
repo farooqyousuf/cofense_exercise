@@ -31,7 +31,7 @@ Feature: Identity Verification by taking a picture of your ID from phone upload
     * I generate a unique "png" doc
     * I set the External Vendor Environment to "fail documentation/successful kba"
     * I trigger KBA after failed documentation for IDV via phone
-    * I "successfully verify" KBA via phone
+    * I "verify" KBA via phone
     * I answer the KBA questions
     * I authorize the attribute release
     * I should be successfully verified as "Identity"
@@ -50,5 +50,16 @@ Feature: Identity Verification by taking a picture of your ID from phone upload
     * I generate a unique "png" doc
     * I set the External Vendor Environment to "fail experian"
     * I "fail experian" via phone using a mocked driver's license
+    * I should see the error message "We're sorry, but your information could not be verified. Please ensure that your information was entered correctly and try again."
+    * I verify the attempt is marked as "PROCESSING"
+
+  @delete_current_user_email
+  Scenario: Fail KBA questions after failed documentation for Identity verification
+    * I create "KBAQuestions" page objects
+    * I generate a unique "png" doc
+    * I set the External Vendor Environment to "fail documentation"
+    * I trigger KBA after failed documentation for IDV via phone
+    * I "verify" KBA via phone
+    * I answer the KBA questions
     * I should see the error message "We're sorry, but your information could not be verified. Please ensure that your information was entered correctly and try again."
     * I verify the attempt is marked as "PROCESSING"
