@@ -74,13 +74,6 @@ Feature: Identity Verification by uploading an ID from the computer
     * I "verify via Imagery" via computer using a mocked driver's license
     * I authorize the attribute release
     * I should be successfully verified as "Identity"
-    * I clear the session from Authority
-    * I visit IDP through the "au10tix_light" policy
-    * I click on the Sign Up link
-    * I sign up as a new user
-    * I click on "Verify using my driver's license"
-    * I click on "Upload from my device"
-    * I generate a unique "png" doc
-    * I "submit dupe attempt" via computer using a mocked driver's license
+    * I submit dupe identity verification attempt via computer
     * I should see the error message "We’re sorry, it appears you have already verified your identity on a different account. Please sign in using your existing credentials."
     * I verify the attempt is marked as "DUPLICATE"

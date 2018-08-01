@@ -17,3 +17,14 @@ end
 Given("I {string} via KBA") do |action|
   @IDVComputer.verify_via_kba(action: action)
 end
+
+Given("I submit dupe identity verification attempt via computer") do
+  step 'I clear the session from Authority'
+  step 'I visit IDP through the "au10tix_light" policy'
+  step 'I click on the Sign Up link'
+  step 'I sign up as a new user'
+  step 'I click on "Verify using my driver\'s license"'
+  step 'I click on "Upload from my device"'
+  step 'I generate a unique "png" doc'
+  step 'I "submit dupe attempt" via computer using a mocked driver\'s license'
+end
