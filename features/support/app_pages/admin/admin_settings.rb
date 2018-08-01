@@ -12,7 +12,7 @@ include PageManagement
     vendors = %w(experian_env imagery_env au10tix_env plaid_env nsc_env npi_env scra_env usaa_env fraudnet_env dupe_checks payfone_env telesign_env)
 
     env = case settings
-    when "verify via Imagery"
+          when "verify via Imagery"
             %w(Mock Mock Mock Mock Production Production Production Mock Disable On Mock Mock)
           when "verify via AU10TIX"
             %w(Mock Disable Mock Mock Production Production Production Mock Disable On Mock Mock)

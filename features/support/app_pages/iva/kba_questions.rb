@@ -25,7 +25,7 @@ class KBAQuestions < IDmeBase
       question_data = KBA.find { |_, value| value["question"] == question_text }
 
       unless question_data
-        p "Question not found: #{question_text}"
+        p "Question (#{index.to_i + 1}) NOT found"
         page.save_screenshot('kba_questions.png')
         all("label", :text => "NONE OF THE ABOVE/DOES NOT APPLY")[index].click
         p "Default answer: NONE OF THE ABOVE/DOES NOT APPLY"

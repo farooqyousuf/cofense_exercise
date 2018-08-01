@@ -66,3 +66,21 @@ Feature: Identity Verification by uploading an ID from the computer
     * I answer the KBA questions
     * I should see the error message "We're sorry, but your information could not be verified. Please ensure that your information was entered correctly and try again."
     * I verify the attempt is marked as "PROCESSING"
+
+  @delete_idv_experian_user @delete_current_user_email
+  Scenario: Dupe experian attempt test for Imagery
+    * I generate a unique "png" doc
+    * I set the External Vendor Environment to "verify via Imagery"
+    * I "verify via Imagery" via computer using a mocked driver's license
+    * I authorize the attribute release
+    * I should be successfully verified as "Identity"
+    * I clear the session from Authority
+    * I visit IDP through the "au10tix_light" policy
+    * I click on the Sign Up link
+    * I sign up as a new user
+    * I click on "Verify using my driver's license"
+    * I click on "Upload from my device"
+    * I generate a unique "png" doc
+    * I "submit dupe attempt" via computer using a mocked driver's license
+    * I should see the error message "We’re sorry, it appears you have already verified your identity on a different account. Please sign in using your existing credentials."
+    * I verify the attempt is marked as "DUPLICATE"

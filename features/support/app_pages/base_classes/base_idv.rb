@@ -110,4 +110,10 @@ include DataMagic
   def check_fcra_box
     find(:css, "label[for='idme_verification_identity_accepts_fcra'] span").click
   end
+
+  def close_verify_window
+    sleep 2
+    phone_confirm_window = page.driver.window_handles.last
+    page.driver.close_window(phone_confirm_window)
+  end
 end

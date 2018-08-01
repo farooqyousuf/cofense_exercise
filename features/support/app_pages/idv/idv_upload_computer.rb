@@ -14,7 +14,7 @@ class IDVComputer < IDmeBase
     fail_idv_user = data_for(:fail_experian)
 
     case action
-    when "verify via Imagery"
+    when "verify via Imagery", "submit dupe attempt"
       populate = true
       front_id = data.fetch("png")
       back_id = data.fetch("idv")
@@ -24,7 +24,7 @@ class IDVComputer < IDmeBase
       front_id = data.fetch("idv")
       back_id = data.fetch("png")
       user = idv_user
-    when "fail documentation"
+    when "fail documentation", "upload front doc"
       populate = false
       front_id = data.fetch("png")
       back_id = data.fetch("png")
@@ -37,7 +37,7 @@ class IDVComputer < IDmeBase
     end
 
     upload_front_id(front_id: front_id)
-    upload_back_id(back_id: back_id)
+    upload_back_id(back_id: back_id) unless action == "upload front doc"
     click_button("Look Good?")
     sleep 3
 
@@ -46,8 +46,9 @@ class IDVComputer < IDmeBase
       check_fcra_box
       click_button("Verify my information")
 
-      unless action == "fail experian"
+      unless (action == "fail experian") || (action == "submit dupe attempt")
         click_link("Verify")
+        close_verify_window
       end
     end
   end

@@ -102,6 +102,10 @@ include JavascriptAlerts
     open_user_and_delete("CapybaraTester")
   end
 
+  def delete_idv_experian_user
+    open_user_and_delete("Veronica C Persinger")
+  end
+
   def delete_natl_emt
     open_user_and_delete("jorge paucar")
   end
