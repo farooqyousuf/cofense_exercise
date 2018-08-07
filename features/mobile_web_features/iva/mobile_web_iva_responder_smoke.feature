@@ -18,7 +18,8 @@ Feature: Responder verification smoke tests
     * I should be successfully verified as "EMT"
     * I verify user level properties for "EMT Doc"
 
-  @delete_current_user_email
+  # EMT national tests are temporarily disabled due to captcha on there website
+  @ignore @delete_current_user_email
   Scenario: Successful EMT national verification
     * I click on the Verify using EMT National link
     * I click on the Begin link
