@@ -67,7 +67,7 @@ class StudentDoc < IDmeBase
   end
 
   def click_verify_by_doc
-    click_link("Verify by uploading documentation")
+    click_link("Upload student documentation")
   end
 
   def required_fields
@@ -79,4 +79,3 @@ class StudentDoc < IDmeBase
   end
 
 end
-

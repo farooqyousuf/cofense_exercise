@@ -41,7 +41,7 @@ class StudentCreds < IDmeBase
   end
 
   def click_verify_by_creds
-    click_link("Verify using your student credentials")
+    click_link("Confirm your school enrollment")
   end
 
   def populate_school(school)

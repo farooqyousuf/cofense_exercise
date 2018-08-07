@@ -170,18 +170,10 @@ Given("I verify a military user") do
   step 'I submit the verification code for "Military Email Code"'
 end
 
-Given("I verify a nationally certified EMT user") do
-  step 'I create "NationalEMT" page objects'
-  sleep 2
-  step 'I click on the Verify using EMT National link'
-  step 'I click on the Begin link'
-  step 'I verify using nationally certified EMT credentials'
-end
-
 Given("I verify a student user") do
   step 'I create "StudentCreds" page objects'
   sleep 2
-  step 'I click on "Confirm your school enrollment"'
+  @StudentCreds.click_verify_by_creds
   step 'I click on "Begin"'
   step 'I submit the student credentials verification form as a "unique" record'
 end
