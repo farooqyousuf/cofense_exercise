@@ -3,7 +3,7 @@ Feature: Identity Verification by taking a picture of your ID from phone upload
 
   Background:
     * I create "AdminTool, AdminSettings, IDVPhone" page objects
-    * I visit IDP through the "au10tix_light" policy
+    * I visit IDP through the au10tix_light policy
     * I click on the Sign Up link
     * I sign up as a new user
     * I click on "Verify using my driver's license"

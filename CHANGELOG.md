@@ -3,6 +3,9 @@
 ### Released
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
+# 2.5.6 (8/7/18)
+- AWE-1524: Fix Mobile IDP Smoke Tests
+
 # 2.5.5 (8/1/18)
 - CORE-8540: Duplicate Experian Test
 

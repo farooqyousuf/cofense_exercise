@@ -181,7 +181,7 @@ end
 Given("I verify a student user") do
   step 'I create "StudentCreds" page objects'
   sleep 2
-  step 'I click on "Verify using your student credentials"'
+  step 'I click on "Confirm your school enrollment"'
   step 'I click on "Begin"'
   step 'I submit the student credentials verification form as a "unique" record'
 end

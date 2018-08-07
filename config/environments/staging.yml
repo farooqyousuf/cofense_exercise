@@ -9,6 +9,8 @@ authority:
 oauth:
   client_id     : 19bc32958f52e7dd8fd7b5f2eaa42718
   client_secret : 905cb39e22d413a8b4a74a2544ae8bf8
+  vets_gov_client_id     : 056fd659334c2fefd2e32b1e7195dad1
+  vets_gov_client_secret : d92ee0d5dcbf98dcd862bed91def6eae
   idp_endpoint  : https://api-staging.idmeinc.net
   redirect_uri  : https://test-drive-staging.idmeinc.net
   general_password: Changeme123
