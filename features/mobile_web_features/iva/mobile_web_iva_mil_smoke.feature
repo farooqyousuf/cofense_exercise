@@ -3,7 +3,7 @@ Feature: Military Identity Verification via mobile
 
   Background:
     * I set the External Vendor Environment to "Staging"
-    * I create "MilitaryDoc, SupportTool, SupportToolDocs, DD214, MilitaryEmail, MilitarySCRA" page objects
+    * I create "MilitaryDoc, SupportTool, SupportToolVerificationAttempts, DD214, MilitaryEmail, MilitarySCRA" page objects
     * I open a new window
     * I visit IDP through the "military" policy
     * I click on the Sign Up link
@@ -29,7 +29,7 @@ Feature: Military Identity Verification via mobile
   @delete_current_user_email
   Scenario: Succesful verification with a military email as Service Member
     * I verify using military email information for "Service Member"
-    * I submit the verification code for "Military Email Code"
+    * I submit the verification code for "Military Email Code via mobile"
     * I should be successfully verified as "Service Member"
     * I verify user level properties for "Mil Email Service Member"
 
