@@ -47,7 +47,7 @@ Feature: Military verification using .mil email
   Scenario: Prompt Error Code 14
     * I submit the military email verification form as a "unique" record
     * I submit an invalid verification code
-    * I should see the red error "The code you entered does not match." under the textfield
+    * I should see the error message "We could not find a valid email confirmation request. Please try again."
 
   @delete_current_user_email
   Scenario: Successfully prompt for all required fields for Service Member

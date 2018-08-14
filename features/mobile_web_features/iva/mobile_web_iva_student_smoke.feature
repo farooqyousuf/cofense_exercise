@@ -3,7 +3,7 @@ Feature: Student Identity Verification via mobile
 
   Background:
     * I set the External Vendor Environment to "Staging"
-    * I create "StudentDoc, StudentCreds, AdminUsers, AdminTool, AdminTeacherVerifs, SupportTool, SupportToolDocs" page objects
+    * I create "StudentDoc, StudentCreds, AdminUsers, AdminTool, AdminTeacherVerifs, SupportTool, SupportToolVerificationAttempts" page objects
     * I open a new window
     * I visit IDP through the "student" policy
     * I click on the Sign Up link

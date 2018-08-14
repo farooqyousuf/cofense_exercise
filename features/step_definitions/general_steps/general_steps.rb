@@ -64,8 +64,12 @@ Given(/^I authorize the attribute release$/) do
 end
 
 Given(/^I submit an invalid verification code$/) do
-  @IDmeBase = IDmeBase.new
-  @IDmeBase.fill_in_verification_code("000000")
+  step 'I create "SupportToolVerificationAttempts" page objects'
+
+  attempt_uuid = @SupportToolVerificationAttempts.get_uuid(current_url)
+
+  step 'I open a new window'
+  visit "https://verify-staging.idmeinc.net/email_confirmations/#{attempt_uuid}/complete?code=000000"
 end
 
 
