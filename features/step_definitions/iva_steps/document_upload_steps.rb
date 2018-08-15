@@ -1,18 +1,18 @@
 Given(/^I verify that a document was successfully uploaded$/) do
   @SupportTool.login_in_new_window
-  step 'I visit "SupportToolDocs"'
-  @SupportToolDocs.verify_doc_upload(@user_email)
+  step 'I visit "SupportToolVerificationAttempts"'
+  @SupportToolVerificationAttempts.verify_doc_upload(@user_email)
 end
 
 Given(/^I verify that a "([^"]*)" document was successfully uploaded$/) do |document|
   @SupportTool.login_in_new_window
-  step 'I visit "SupportToolDocs"'
-  @SupportToolDocs.verify_unique_doc_upload(@user_email, document: document)
+  step 'I visit "SupportToolVerificationAttempts"'
+  @SupportToolVerificationAttempts.verify_unique_doc_upload(@user_email, document: document)
 end
 
 Given(/^I verify that a document was not uploaded$/) do
   @SupportTool.login_in_new_window
-  @SupportToolDocs.verify_doc_is_not_uploaded(@user_email)
+  @SupportToolVerificationAttempts.verify_doc_is_not_uploaded(@user_email)
 end
 
 Given(/^I verify using military "([^"]*)" documentation for Service Member$/) do |document|

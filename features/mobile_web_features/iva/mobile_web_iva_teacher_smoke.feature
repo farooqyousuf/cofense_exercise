@@ -3,7 +3,7 @@ Feature: Teacher verification via mobile
 
   Background:
     * I set the External Vendor Environment to "Staging"
-    * I create "SupportTool, SupportToolDocs, TeacherDoc, UserEdit, TeacherLookup" page objects
+    * I create "SupportTool, SupportToolVerificationAttempts, TeacherDoc, UserEdit, TeacherLookup" page objects
     * I open a new window
     * I visit IDP through the "teacher" policy
     * I click on the Sign Up link

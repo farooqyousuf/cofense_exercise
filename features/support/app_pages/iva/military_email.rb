@@ -44,6 +44,11 @@ class MilitaryEmail < IDmeBase
     end
 
     click_continue
+
+    if page.has_css?("#verification_service_member_birth_date-error")
+      fill_in "verification_service_member_birth_date", :with => @formatted_dob
+      click_continue
+    end
   end
 
   def populate_affiliation(affiliation)
@@ -54,6 +59,7 @@ class MilitaryEmail < IDmeBase
     @unique_first_name = Faker::Name.first_name
     @unique_last_name = Faker::Name.last_name
     @dob = Faker::Date.birthday.strftime("%m%d%Y")
+    @formatted_dob = Faker::Date.birthday.strftime("%m/%d/%Y")
     @unique_email = @unique_last_name+"#{rand(6 ** 8)}"+"@id.me"
   end
 

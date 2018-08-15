@@ -1,6 +1,6 @@
 require_relative "../base_classes/js_alerts"
 
-class SupportToolDocs < IDmeBase
+class SupportToolVerificationAttempts < IDmeBase
 
 include PageManagement
 include JavascriptAlerts
@@ -68,11 +68,17 @@ include JavascriptAlerts
     page.has_text?(doc_upload).should == false
   end
 
+  def get_uuid(url)
+    URI.parse(url).path.split('/')[-2]
+  end
+
+  def get_code
+    find("[data-key='code']").text
+  end
 
   # Mobile Methods
     def approve_mobile_doc
       open_newest_mobile
-      click_link("Review")
       find("#verification_attempt_decision_accept").click
       click_button("Update")
     end
@@ -80,5 +86,6 @@ include JavascriptAlerts
     def open_newest_mobile
       sleep 1
       first("td.short.center").click
+      click_link("Review")
     end
 end

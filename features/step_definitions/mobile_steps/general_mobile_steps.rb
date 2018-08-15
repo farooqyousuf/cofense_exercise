@@ -1,8 +1,8 @@
 Given("I approve the document in the IDme support tool via mobile") do
   @SupportTool.login_in_new_window
 
-  step 'I visit "SupportToolDocs"'
-  @SupportToolDocs.approve_mobile_doc
+  step 'I visit "SupportToolVerificationAttempts"'
+  @SupportToolVerificationAttempts.approve_mobile_doc
   @SupportTool.logout_in_new_window
   if page.has_text? "Congratulations!"
     VerificationSuccess.new.click_continue

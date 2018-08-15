@@ -40,4 +40,4 @@ Feature: Government verification using .gov email
   Scenario: Prompt Error Code 24
     * I submit the government verification form as a "unique" record
     * I submit an invalid verification code
-    * I should see the red error "The code you entered does not match." under the textfield
+    * I should see the error message "We could not find a valid email confirmation request. Please try again."

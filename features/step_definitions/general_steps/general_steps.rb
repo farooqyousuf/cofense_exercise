@@ -64,31 +64,34 @@ Given(/^I authorize the attribute release$/) do
 end
 
 Given(/^I submit an invalid verification code$/) do
-  @IDmeBase = IDmeBase.new
-  @IDmeBase.fill_in_verification_code("000000")
+  step 'I create "SupportToolVerificationAttempts" page objects'
+
+  attempt_uuid = @SupportToolVerificationAttempts.get_uuid(current_url)
+
+  step 'I open a new window'
+  visit "https://verify-staging.idmeinc.net/email_confirmations/#{attempt_uuid}/complete?code=000000"
 end
 
 
 Given(/^I submit the verification code for "([^"]*)"$/) do |option|
-  step 'I create "AdminTool, AdminVerificationAttempts, IDmeBase" page objects'
-  @AdminTool.login_in_new_window
+  step 'I create "SupportTool, SupportToolVerificationAttempts, IDmeBase" page objects'
 
-  step 'I visit "AdminVerificationAttempts"'
-  @AdminVerificationAttempts.search_user_attempt(@user_email)
-  sleep 1
-  @AdminVerificationAttempts.open_newest
+  attempt_uuid = @SupportToolVerificationAttempts.get_uuid(current_url)
 
-  code = nil
-  code = @AdminVerificationAttempts.get_code
+  @SupportTool.login_in_new_window
+  step 'I visit "SupportToolVerificationAttempts"'
 
-  if page.has_css?(".menu-icon")
-    find(".menu-icon").click
+  if option == "Military Email Code via mobile"
+    @SupportToolVerificationAttempts.open_newest_mobile
+  else
+    @SupportToolVerificationAttempts.open_newest
   end
 
-  @AdminTool.logout_in_new_window
+  code = @SupportToolVerificationAttempts.get_code
 
-  @AdminVerificationAttempts.use_last_browser_created
-  @IDmeBase.fill_in_verification_code(code)
+  visit "https://verify-staging.idmeinc.net/email_confirmations/#{attempt_uuid}/complete?code=#{code}"
+  @SupportToolVerificationAttempts.close_current_browser
+  @SupportToolVerificationAttempts.use_last_browser_created
   click_link("Continue")
   if page.has_text? "ID.me Staging would like to access some of your data"
     step 'I authorize the attribute release'
@@ -131,10 +134,10 @@ Given(/^I approve the document in the IDme support tool$/) do
   @support_tool = SupportTool.new
   @support_tool.login_in_new_window
 
-  step 'I visit "SupportToolDocs"'
-  @support_tool_docs = SupportToolDocs.new
+  step 'I visit "SupportToolVerificationAttempts"'
+  @support_tool_verification_attempts = SupportToolVerificationAttempts.new
 
-  @support_tool_docs.approve_doc
+  @support_tool_verification_attempts.approve_doc
   @support_tool.logout_in_new_window
   if page.has_text? "Congratulations!"
     VerificationSuccess.new.click_continue
@@ -149,10 +152,10 @@ Given(/^I deny the document in the IDme support tool$/) do
   @support_tool = SupportTool.new
   @support_tool.login_in_new_window
 
-  step 'I visit "SupportToolDocs"'
-  @support_tool_docs = SupportToolDocs.new
+  step 'I visit "SupportToolVerificationAttempts"'
+  @support_tool_verification_attempts = SupportToolVerificationAttempts.new
 
-  @support_tool_docs.deny_doc
+  @support_tool_verification_attempts.deny_doc
   @support_tool.logout_in_new_window
   sleep 3
 end
