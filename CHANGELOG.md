@@ -3,8 +3,11 @@
 ### Released
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
-# 2.5.7 (8/14/18)
+# 2.5.8 (8/14/18)
 - AWE-1548: Update Email Tests
+
+# 2.5.7 (8/13/18)
+- AWE-1579: Update arcs expected response
 
 # 2.5.6 (8/7/18)
 - AWE-1524: Fix Mobile IDP Smoke Tests
