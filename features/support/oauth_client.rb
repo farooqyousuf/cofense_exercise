@@ -71,7 +71,7 @@ class OAuthClient
     click_link("LinkedIn")
     fill_in "session_key", :with => FigNewton.oauth.linkedin_user
     fill_in "session_password", :with => FigNewton.oauth.linkedin_pw
-    find(".allow").click
+    click_button("Sign In")
   end
 
   private

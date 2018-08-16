@@ -3,6 +3,9 @@
 ### Released
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
+# 2.5.9 (8/16/18)
+- AWE-1523: Fix IDP Tests
+
 # 2.5.8 (8/14/18)
 - AWE-1548: Update Email Tests
 
