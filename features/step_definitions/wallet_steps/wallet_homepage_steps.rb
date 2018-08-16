@@ -15,9 +15,9 @@ Given("I verify the For Business and Government navigation dropdown link {string
   expected_url, page_header = case dropdown_link
                               when "Identity Verification" then ["identity_verification", "DIGITAL IDENTITY VERIFICATION"]
                               when "Document Verification" then ["document_verification", "DOCUMENT VERIFICATION"]
-                              when "KYC Verification"      then ["kyc_verification", "KYC ACCOUNT OPENING"]
+                              when "KYC Verification"      then ["kyc_verification", "KYC VERIFICATION"]
                               when "SCRA Monitoring"       then ["scra_monitoring", "SCRA MONITORING"]
-                              when "Group Verification"    then ["group_verification", "GROUP AFFILIATION VERIFICATION"]
+                              when "Group Verification"    then ["group_verification", "GROUP VERIFICATION"]
                               when "Military"              then ["military", "MILITARY VERIFICATION"]
                               when "Students"              then ["students", "STUDENT VERIFICATION"]
                               when "Teachers"              then ["teachers", "TEACHER VERIFICATION"]
@@ -33,13 +33,7 @@ Given("I verify the For Business and Government navigation dropdown link {string
                               end
 
   expect(page).to have_current_path(FigNewton.wallet.business_and_gov.send("#{expected_url}"),:url => true)
-
-  if dropdown_link == "Government"
-    expect(page).to have_css(".page-container-header > div > div > .title",:text => page_header)
-  else
-    expect(page).to have_css(".page-container-header > div > .title",:text => page_header)
-  end
-
+  expect(page).to have_css(".page-container-header > div > .title",:text => page_header)
   step 'I visit "WalletHomepage"'
 end
 
