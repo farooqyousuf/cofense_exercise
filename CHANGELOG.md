@@ -7,6 +7,7 @@ All notable changes to this project will be documented in this file. This projec
 - AWE-1523: Fix IDP Tests
 - AWE-1612: Fix HLP Tests
 - AWE-1613: Update wallet homepage test
+- AWE-1614: Fix Wallet User Tests
 
 # 2.5.8 (8/14/18)
 - AWE-1548: Update Email Tests

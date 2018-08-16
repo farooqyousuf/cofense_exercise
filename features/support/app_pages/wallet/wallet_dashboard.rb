@@ -15,7 +15,8 @@ class WalletDashboard < IDmeBase
   end
 
   def click_shared_side_navigation_sign_out
-    click_link "Sign Out"
+    sleep 3
+    click_on("Sign Out")
   end
 
   def click_shared_nav_tab(tab)

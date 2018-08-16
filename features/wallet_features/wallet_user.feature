@@ -53,7 +53,8 @@ Feature: Test Wallet User Features
     * I confirm that my Wallet session has been terminated
     * I verify my Wallet account has been deactived
 
-  @delete_current_user_email
+  @ignore @delete_current_user_email
+  ## Currently unable to unlock account in tests without verification code
   Scenario: User Wallet account locked and unlocked via code
     * I visit "WalletHomepage"
     * I click on the Wallet My Account link
