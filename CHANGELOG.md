@@ -3,6 +3,9 @@
 ### Released
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
+# 2.5.10 (8/17/18)
+- AWE-1615: Fix Shop Admin Categories Test
+
 # 2.5.9 (8/16/18)
 - AWE-1523: Fix IDP Tests
 - AWE-1612: Fix HLP Tests

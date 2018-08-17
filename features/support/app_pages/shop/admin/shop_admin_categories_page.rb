@@ -17,10 +17,20 @@ class ShopAdminCategories < IDmeBase
 
   def create_category(category)
     click_button_for_new_category_page
-    fill_in("category_label", :with => category)
-    fill_in("category_description", :with => "Getting healthy everyday")
+    populate_required_fields
     click_button "Create"
     puts "#{@category}"
+  end
+
+  def populate_required_fields
+    fill_in("category_label", :with => category)
+    fill_in("category_description", :with => "Getting healthy everyday")
+    fill_in("category_title_tag", :with => category.gsub(" ", "_").downcase)
+    attach_logo_image
+  end
+
+  def attach_logo_image
+    page.driver.browser.find_element(:id, "category_logo").send_keys("#{Dir.pwd}/test_documents/test_category_logo.jpg")
   end
 
   def submit_duplicate_category
