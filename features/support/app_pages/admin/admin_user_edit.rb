@@ -108,6 +108,11 @@ include PageManagement
       indexes = [0, 4, 7, 10, 13, 16, 19, 22, 25, 28]
       expected_levels = StudentDoc.new.user_properties_levels
 
+    when "Canadian Student"
+      expand_verification_properties
+      indexes = [0, 4, 7, 10, 13, 16, 19, 22]
+      expected_levels = StudentCanada.new.user_properties_levels
+
     when "EMT Doc"
       indexes = [0, 4, 7, 10, 13, 16, 19, 22, 25]
       expected_levels = DocEMT.new.user_properties_levels
