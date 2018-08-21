@@ -5,6 +5,8 @@ Feature: Test Shop via mobile
     * I create "ShopOffersPage, ShopLandingPage, ShopCashBackPage, ShopStoreIndexPage, ShopAdminDashboard, ShopAdminStores, CashBack_PurchasesPage" page objects
     * I open a new window
 
+  @ignore
+  ## No longer needed
   Scenario: Check Offers Side Bar - Promo Codes
     * I visit "ShopLandingPage"
     * I visit "ShopOffersPage"
@@ -12,7 +14,7 @@ Feature: Test Shop via mobile
     * I login to Shop as a "Military" user
     * I click to see all promo code offers
     * I check that the table index are promo code offers
-    
+
   Scenario: Check Stores Table listing
     * I visit "ShopStoreIndexPage"
     * I expect to be at the Shop Stores Index Page

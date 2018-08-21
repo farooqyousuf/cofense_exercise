@@ -1,10 +1,10 @@
 Given("I click on the Shop {string} navigation link") do |shop_link|
   @ShopCashBackPage.close_out_modal_if_present
   sleep 1
-  find(".shared-nav-login").click_link shop_link
+  find(".header-nav-top_row").click_link shop_link
 end
 
-Given(/^I login to Shop as a "([^"]*)" user$/) do |user_type|
+Given("I login to Shop as a {string} user") do |user_type|
   user = case user_type
          when "Military"       then FigNewton.shop_users.military
          end
