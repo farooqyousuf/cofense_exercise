@@ -47,14 +47,6 @@ Given("I click on the mobile Shop Sign In link") do
   @ShopOffersPage.click_mobile_signin
 end
 
-#WIP - needs to be included in a separate user category feature tests
-Given("I check the {string} categories link") do |category|
-  find(:link,:href =>"/offers?categories=#{category.downcase}").click
-  expect(page.current_url).to eql("https://shop-staging.idmeinc.net/offers?categories=#{category.downcase}")
-  expect(page).to have_css(".listing__header .breadcrumbs",:text =>"Shop › Offers › #{category}")
-  @ShopOffersPage.click_categories_filter
-end
-
 Given("I filter offers for the {string} group") do |group|
   @ShopOffersPage.click_group(group)
 end
@@ -63,14 +55,23 @@ Given("I remove filter for the {string} group") do |group|
   @ShopOffersPage.click_group(group)
 end
 
-Given("I verify that {string} specific offers are shown") do |group|
-  @ShopOffersPage.verify_group_offer(group)
+
+Given("I click to see group {string} offers") do |group|
+  @ShopOffersPage.see_offers_for(group)
 end
 
-Given("I click to see Group {string} offers") do |group|
-  @ShopOffersPage.click_group(group)
+Given("I expect the url to be for the shop {string} group offers page") do |group|
+  expect(page.current_url).to eql("#{FigNewton.shop.shop_homepage}""#{group}")
 end
 
-Given("I check that the table index shows all {string} specific offers") do |group|
-  expect(page).to have_css(".popularDeals .idme-wallet-button", :text => group)
+Given("I verify that the group offer cards are {string} specific offers") do |group|
+  expect(page).to have_css(".idme-wallet-button", :text => group)
+end
+
+#WIP - include in a separate user category feature tests
+Given("I check the {string} categories link") do |category|
+  find(:link,:href =>"/offers?categories=#{category.downcase}").click
+  expect(page.current_url).to eql("https://shop-staging.idmeinc.net/offers?categories=#{category.downcase}")
+  expect(page).to have_css(".listing__header .breadcrumbs",:text =>"Shop › Offers › #{category}")
+  @ShopOffersPage.click_categories_filter
 end

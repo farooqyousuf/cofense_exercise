@@ -13,6 +13,11 @@ class ShopOffersPage < IDmeBase
     all("span", :text => "#{group}")[0].click
   end
 
+  def see_offers_for(group)
+    find(".affinity_title").hover
+    click_on(group)
+  end
+
   def click_mobile_hamburger_menu
     find(".hamburger").click
   end
@@ -29,13 +34,5 @@ class ShopOffersPage < IDmeBase
 
   def click_stores_link
     click_on("STORES")
-  end
-
-  def verify_group_offer(group)
-    # This method checks that all group offers shown matches group offer filtered
-    (0..11).each do |offer|     # (0..11) Represent the 12 offer cards shown
-      group_offer = all(".store_cards_array-card")[offer].text.split("\n")[0]
-      group_offer.should == group
-    end
   end
 end

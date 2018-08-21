@@ -3,6 +3,9 @@
 ### Released
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
+# 2.5.11 (8/21/18)
+- AWE-1616: Fix/Refactor Shop User Offers Test
+
 # 2.5.10 (8/17/18)
 - AWE-1615: Fix Shop Admin Categories Test
 
