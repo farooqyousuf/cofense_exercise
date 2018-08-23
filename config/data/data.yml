@@ -126,6 +126,9 @@ experian_user:
   verification_emt_zip: 66801
   verification_emt_number: FJDL2
   state: Kansas
+  province: Ontario
+  postal_code: 123456
+  canadian_school: York University
 
 experian_user2:
   school: George Mason University

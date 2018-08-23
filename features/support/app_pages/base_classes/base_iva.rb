@@ -31,12 +31,16 @@ include DataMagic
     pick_result(value)
   end
 
-  def search_option(container, element, value)
+  def set_search_value(value)
+    find(".select2-input").set(value)
+  end
+
+  def search_option(element, value)
     # click the dropdown
     find(element.to_s).click
 
     #set the search value
-    find(".select2-input").set(value)
+    set_search_value(value)
 
     #pick a result
     pick_result(value)

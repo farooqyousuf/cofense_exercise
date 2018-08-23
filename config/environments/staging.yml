@@ -53,6 +53,7 @@ oauth:
     student           : student
     teacher           : teacher
     wallet            : wallet
+    student_canada    : student_canada
     general_password  : Password123
 
 direct_api:
