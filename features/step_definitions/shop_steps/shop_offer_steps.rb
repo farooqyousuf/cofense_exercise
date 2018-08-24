@@ -13,7 +13,7 @@ Given("I verify that the offers are shown on the offers page") do
   expect(offers_amount_first_page > 10).to eql(true) # Verifies offer cards are shown
 end
 
-Given("I verify that the stores are shown on the offers page") do
+Given("I verify that the stores are shown on the stores page") do
   stores = find(".results__header__count").text
   stores_amount = stores.split(" ")[0].to_i
   stores_amount_first_page = all(".store_cards_array-card").count
@@ -24,15 +24,15 @@ Given("I verify that the stores are shown on the offers page") do
   expect(stores_amount_first_page > 10).to eql(true) # Verifies offer cards are shown
 end
 
-# WIP
-Given("I verify the card button texts for a {string} user") do |user_type|
-  if user_type == "signed out"
-    expect(page).not_to have_content("Unlock to Save")
-    expect(page).to have_css(".button", :text => "Shop Now")
-  elsif user_type == "signed in"
-    expect(page).not_to have_content("Sign Up & Save")
-    expect(page).to have_content("Unlock to Save")
-  end
+Given("I verify the card button texts for the {string} page") do |page_view|
+    case page_view
+    when "offer","store"
+      expect(page).not_to have_content("Unlock to Save", "Sign Up & Save")
+      expect(page).to have_content("Shop Now")
+    when "group affiliation"
+      expect(page).to have_content("Unlock to Save")
+    else print "Unable to find #{page_view} page_view"
+    end
 end
 
 Given("I click on the stores link") do

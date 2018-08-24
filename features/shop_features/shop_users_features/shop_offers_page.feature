@@ -8,8 +8,10 @@ Feature: Shop offers page user experience
   @smoke
   Scenario: Review offers main page as a signed out user
     * I verify that the offers are shown on the offers page
+    * I verify the card button texts for the "offer" page
     * I click on the stores link
-    * I verify that the stores are shown on the offers page
+    * I verify that the stores are shown on the stores page
+    * I verify the card button texts for the "store" page
 
   @smoke
   Scenario: Review offers main page as a signed in user
@@ -18,7 +20,7 @@ Feature: Shop offers page user experience
     * I expect the page url to be for the shop offers page
     * I verify that the offers are shown on the offers page
     * I click on the stores link
-    * I verify that the stores are shown on the offers page
+    * I verify that the stores are shown on the stores page
 
   Scenario: Filter offers by group affiliation
     * I filter offers for the "Military" group
@@ -40,26 +42,31 @@ Feature: Shop offers page user experience
     * I click to see group "Troop ID" offers
     * I expect the url to be for the shop "military" group offers page
     * I verify that the group offer cards are "Troop" specific offers
+    * I verify the card button texts for the "group affiliation" page
 
   Scenario: See offers for Student users
     * I click to see group "Student ID" offers
     * I expect the url to be for the shop "student" group offers page
     * I verify that the group offer cards are "Student" specific offers
+    * I verify the card button texts for the "group affiliation" page
 
   Scenario: See offers for First Responders users
     * I click to see group "Responder ID" offers
     * I expect the url to be for the shop "first-responder" group offers page
     * I verify that the group offer cards are "Responder" specific offers
+    * I verify the card button texts for the "group affiliation" page
 
   Scenario: See offers for Teacher users
     * I click to see group "Teacher ID" offers
     * I expect the url to be for the shop "teacher" group offers page
     * I verify that the group offer cards are "Teacher" specific offers
+    * I verify the card button texts for the "group affiliation" page
 
   Scenario: See offers for Government Employee users
     * I click to see group "Government ID" offers
     * I expect the url to be for the shop "government" group offers page
     * I verify that the group offer cards are "Government" specific offers
+    * I verify the card button texts for the "group affiliation" page
 
   Scenario: See offers for all users
     * I click to see group "Everyone" offers

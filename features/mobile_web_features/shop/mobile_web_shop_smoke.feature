@@ -5,15 +5,26 @@ Feature: Test Shop via mobile
     * I create "ShopOffersPage, ShopLandingPage, ShopCashBackPage, ShopStoreIndexPage, ShopAdminDashboard, ShopAdminStores, CashBack_PurchasesPage" page objects
     * I open a new window
 
-  @ignore
-  ## No longer needed
-  Scenario: Check Offers Side Bar - Promo Codes
-    * I visit "ShopLandingPage"
+  @wip
+  ## AWE-1530
+  Scenario: Review offers main page as a signed out user
     * I visit "ShopOffersPage"
-    * I click on the mobile Shop Sign In link
+    * I verify that the offers are shown on the offers page
+    * I verify the card button texts for the "offer" page
+    * I click on the stores link
+    * I verify that the stores are shown on the stores page
+    * I verify the card button texts for the "store" page
+
+  @wip
+  ## AWE-1530
+  Scenario: Review offers main page as a signed in user
+    * I visit "ShopOffersPage"
+    * I click on the Shop "Sign In" navigation link
     * I login to Shop as a "Military" user
-    * I click to see all promo code offers
-    * I check that the table index are promo code offers
+    * I expect the page url to be for the shop offers page
+    * I verify that the offers are shown on the offers page
+    * I click on the stores link
+    * I verify that the stores are shown on the offers page
 
   Scenario: Check Stores Table listing
     * I visit "ShopStoreIndexPage"
