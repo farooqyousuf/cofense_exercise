@@ -56,17 +56,6 @@ class TeacherDoc < IDmeBase
     click_link("I do not have my state license number, but I can verify using documentation.")
   end
 
-  def populate_teacher_first_state(value)
-    # click the dropdown
-    all(".select2-arrow")[0].click
-
-    #set the search value
-    set_search_value(value)
-
-    #pick a result
-    pick_result(value)
-  end
-
   def required_fields
     [0,1,2,3,4,5,6,7,8,9,10]
   end

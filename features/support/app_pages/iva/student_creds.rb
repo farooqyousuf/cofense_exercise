@@ -30,7 +30,7 @@ class StudentCreds < IDmeBase
   end
 
   def populate_fields(data:)
-    populate_school(data.fetch("school"))
+    select2_arrow(data.fetch("school"))
     %w(verification_first_name verification_last_name verification_social verification_social_confirm).each do |field|
       fill_in field, :with => data.fetch(field)
     end
@@ -42,17 +42,6 @@ class StudentCreds < IDmeBase
 
   def click_verify_by_creds
     click_link("Confirm your school enrollment")
-  end
-
-  def populate_school(value)
-    # click the dropdown
-    all(".select2-arrow")[0].click
-
-    #set the search value
-    set_search_value(value)
-
-    #pick a result
-    pick_result(value)
   end
 
   def required_fields
