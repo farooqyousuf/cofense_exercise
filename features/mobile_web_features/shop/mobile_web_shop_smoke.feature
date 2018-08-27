@@ -24,7 +24,7 @@ Feature: Test Shop via mobile
     * I expect the page url to be for the shop offers page
     * I verify that the offers are shown on the offers page
     * I click on the stores link
-    * I verify that the stores are shown on the offers page
+    * I verify that the stores are shown on the stores page
 
   Scenario: Check Stores Table listing
     * I visit "ShopStoreIndexPage"
