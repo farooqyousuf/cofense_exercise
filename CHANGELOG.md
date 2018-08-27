@@ -3,6 +3,9 @@
 ### Released
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
+# 2.5.13 (8/27/18)
+- AWE-1627: Fix revelator smoke tests
+
 # 2.5.12 (8/23/18)
 - AWE-1616: Fix/Refactor Shop User Offers Test
 

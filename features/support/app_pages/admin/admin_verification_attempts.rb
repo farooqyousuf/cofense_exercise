@@ -12,6 +12,12 @@ include PageManagement
     first('.odd > td > a').click
   end
 
+  def open_newest_mobile
+    sleep 1
+    first("td.short.center").click
+    click_link("Review")
+  end
+
   def get_code
     find("[data-key='code']").text
   end

@@ -34,7 +34,7 @@ class StudentDoc < IDmeBase
   end
 
   def populate_fields(data:)
-    populate_school(data.fetch("school"))
+    select2_arrow(data.fetch("school"))
 
     %w(verification_first_name verification_last_name verification_social verification_social_confirm verification_street verification_city).each do |field|
       fill_in field, :with => data.fetch(field)
@@ -51,11 +51,6 @@ class StudentDoc < IDmeBase
 
   def container_attribute
     'student-document'
-  end
-
-  #dupe method found in school creds, maybe add to a module
-  def populate_school(school)
-    search_option(container_attribute, ".schools", school)
   end
 
   def populate_state(state)

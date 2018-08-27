@@ -12,6 +12,7 @@ Feature: Test Wallet User Features
     * I sign up as a new user
     * I record the wallet user email
     * I click on the Wallet shared nav link
+    * I click on the Wallet My Account link
     * I should see my sign up on the activity feed
 
   @smoke @lightning
@@ -21,6 +22,7 @@ Feature: Test Wallet User Features
     * I login to wallet as a "Military" user
     * I record the wallet user email
     * I click on the Wallet shared nav link
+    * I click on the Wallet My Account link
     * I should see my sign in on the activity feed
 
   Scenario: Failed User Wallet Sign In

@@ -34,7 +34,7 @@ class StudentCanada < IDmeBase
   end
 
   def populate_fields(data:)
-    populate_school(data.fetch("canadian_school"))
+    select2_arrow(data.fetch("canadian_school"))
 
     %w(verification_first_name verification_last_name verification_street verification_city).each do |field|
       fill_in field, :with => data.fetch(field)
@@ -48,17 +48,6 @@ class StudentCanada < IDmeBase
 
     #postal code
     fill_in "verification_zip", :with => data.fetch("postal_code")
-  end
-
-  def populate_school(value)
-    # click the dropdown
-    all(".select2-arrow")[0].click
-
-    #set the search value
-    set_search_value(value)
-
-    #pick a result
-    pick_result(value)
   end
 
   def populate_province(province)

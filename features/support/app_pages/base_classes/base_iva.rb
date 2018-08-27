@@ -62,6 +62,17 @@ include DataMagic
     pick_result(value)
   end
 
+  def select2_arrow(value)
+    # click the dropdown
+    all(".select2-arrow")[0].click
+
+    #set the search value
+    set_search_value(value)
+
+    #pick a result
+    pick_result(value)
+  end
+
   def header_css
     ".heading-affinity"
   end
