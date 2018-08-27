@@ -11,6 +11,7 @@ class WalletDashboard < IDmeBase
   end
 
   def close_shared_side_navigation
+    sleep 1
   	find(".icon-wallet-close").click
   end
 

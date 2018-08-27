@@ -57,7 +57,14 @@ class TeacherDoc < IDmeBase
   end
 
   def populate_teacher_first_state(value)
-    search_option("teacher_state",  ".select2-arrow", value)
+    # click the dropdown
+    all(".select2-arrow")[0].click
+
+    #set the search value
+    set_search_value(value)
+
+    #pick a result
+    pick_result(value)
   end
 
   def required_fields
@@ -69,4 +76,3 @@ class TeacherDoc < IDmeBase
   end
 
 end
-

@@ -54,8 +54,15 @@ class StudentDoc < IDmeBase
   end
 
   #dupe method found in school creds, maybe add to a module
-  def populate_school(school)
-    search_option(container_attribute, ".schools", school)
+  def populate_school(value)
+    # click the dropdown
+    all(".select2-arrow")[0].click
+
+    #set the search value
+    set_search_value(value)
+
+    #pick a result
+    pick_result(value)
   end
 
   def populate_state(state)

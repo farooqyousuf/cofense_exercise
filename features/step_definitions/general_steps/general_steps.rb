@@ -74,24 +74,27 @@ end
 
 
 Given(/^I submit the verification code for "([^"]*)"$/) do |option|
-  step 'I create "SupportTool, SupportToolVerificationAttempts, IDmeBase" page objects'
+  step 'I create "AdminTool, AdminVerificationAttempts, SupportTool, SupportToolVerificationAttempts, IDmeBase" page objects'
 
   attempt_uuid = @SupportToolVerificationAttempts.get_uuid(current_url)
 
-  @SupportTool.login_in_new_window
-  step 'I visit "SupportToolVerificationAttempts"'
+  @AdminTool.login_in_new_window
+  step 'I visit "AdminVerificationAttempts"'
+
+  # @SupportTool.login_in_new_window
+  # step 'I visit "SupportToolVerificationAttempts"'
 
   if option == "Military Email Code via mobile"
-    @SupportToolVerificationAttempts.open_newest_mobile
+    @AdminVerificationAttempts.open_newest_mobile
   else
-    @SupportToolVerificationAttempts.open_newest
+    @AdminVerificationAttempts.open_newest
   end
 
-  code = @SupportToolVerificationAttempts.get_code
+  code = @AdminVerificationAttempts.get_code
 
   visit "https://verify-staging.idmeinc.net/email_confirmations/#{attempt_uuid}/complete?code=#{code}"
-  @SupportToolVerificationAttempts.close_current_browser
-  @SupportToolVerificationAttempts.use_last_browser_created
+  @AdminVerificationAttempts.close_current_browser
+  @AdminVerificationAttempts.use_last_browser_created
   click_link("Continue")
   if page.has_text? "ID.me Staging would like to access some of your data"
     step 'I authorize the attribute release'

@@ -44,8 +44,15 @@ class StudentCreds < IDmeBase
     click_link("Confirm your school enrollment")
   end
 
-  def populate_school(school)
-    search_option(container_attribute, ".schools", school)
+  def populate_school(value)
+    # click the dropdown
+    all(".select2-arrow")[0].click
+
+    #set the search value
+    set_search_value(value)
+
+    #pick a result
+    pick_result(value)
   end
 
   def required_fields
