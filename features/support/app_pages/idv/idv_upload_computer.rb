@@ -39,7 +39,7 @@ class IDVComputer < IDmeBase
     upload_front_id(front_id: front_id)
     upload_back_id(back_id: back_id) unless action == "upload front doc"
     click_button("Look Good?")
-    sleep 3
+    sleep 5
 
     if populate == true
       populate_fields_computer(data: user)

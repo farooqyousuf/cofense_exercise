@@ -1,4 +1,5 @@
 Given("I {string} via computer using a mocked driver's license") do |action|
+  sleep 10
   @IDVComputer.verify(action: action)
   sleep 10
 end
