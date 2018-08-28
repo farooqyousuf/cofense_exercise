@@ -14,7 +14,7 @@ Feature: Test Stores Index page
     * I verify the card button texts for the "offer" page
 
   @smoke
-  Scenario: Review offers main page as a signed in user
+  Scenario: Review stores main page as a signed in user
     * I click on the Shop "Sign In" navigation link
     * I login to Shop as a "Military" user
     * I expect the page url to be for the shop stores page
