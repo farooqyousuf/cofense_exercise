@@ -15,6 +15,5 @@ Feature: Canadian Student verification using student credentials
   Scenario: Successful verification
     * I submit the Canadian student verification form as a "unique" record
     * I approve the document in the IDme support tool
-    * I authorize the attribute release
     * I should be successfully verified
     * I verify user level properties for "Canadian Student"
