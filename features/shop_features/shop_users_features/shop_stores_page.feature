@@ -2,18 +2,33 @@
 Feature: Test Stores Index page
 
   Background:
-    * I create "ShopStoreIndexPage, ShopAdminDashboard, ShopAdminStores" page objects
-    * I visit "ShopStoreIndexPage"
+    * I create "ShopStoresPage, ShopOffersPage, ShopAdminDashboard, ShopAdminStores, ShopLandingPage, ShopCashBackPage" page objects
+    * I visit "ShopStoresPage"
 
   @smoke
-  Scenario: Check Stores Table listing
-    * I expect to be at the Shop Stores Index Page
-    * I check that the filter is visible
-    * I check that the Stores index is visible
-    * I verify the stores merchant card
+  Scenario: Review stores main page as a signed out user
+    * I verify that the stores are shown on the stores page
+    * I verify the card button texts for the "store" page
+    * I click on the offers link
+    * I verify that the offers are shown on the offers page
+    * I verify the card button texts for the "offer" page
 
-  Scenario: Check Store filter feature
-    * I check to sort stores by name
-    * I check to sort stores by newest
-    * I check to sort stores by highest cash back %
-    * I check to sort stores by highest cash back $
+  @smoke
+  Scenario: Review offers main page as a signed in user
+    * I click on the Shop "Sign In" navigation link
+    * I login to Shop as a "Military" user
+    * I expect the page url to be for the shop stores page
+    * I verify that the stores are shown on the stores page
+    * I click on the offers link
+    * I verify that the offers are shown on the offers page
+
+  Scenario: Filter stores by categories
+    * I verify sorting stores by newest
+    * I filter stores for the "Education" category
+    * I verify that the stores for the "Education" category are shown
+    * I remove filter for the "Education" category
+    * I filter stores for the "Holiday" category
+    * I verify that the stores for the "Holiday" category are shown
+    * I remove filter for the "Holiday" category
+    * I filter stores for the "Automotive" category
+    * I verify that the stores for the "Automotive" category are shown

@@ -23,7 +23,7 @@ Given("I verify that the Wallet nav {string} tab redirects to page") do |nav_tab
   expected_url = case nav_tab
                  when "About"    then FigNewton.idme.about_page
                  when "Business" then FigNewton.idme.business_page
-                 when "Shop"     then FigNewton.shop.shop_homepage
+                 when "Shop"     then FigNewton.shop.homepage
                  when "Wallet"   then FigNewton.wallet.homepage.url
                  else fail ("#{expected_url} not found")
                  end

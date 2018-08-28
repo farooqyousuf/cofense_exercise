@@ -1,5 +1,5 @@
 Given("I expect the page url to be for the shop offers page") do
-  expect(page.current_url).to eql(FigNewton.shop.offers_index_page)
+  expect(page.current_url).to eql(FigNewton.shop.offers_page)
 end
 
 Given("I verify that the offers are shown on the offers page") do
@@ -35,8 +35,8 @@ Given("I verify the card button texts for the {string} page") do |page_view|
     end
 end
 
-Given("I click on the stores link") do
-  @ShopOffersPage.click_stores_link
+Given("I click on the offers link") do
+  @ShopOffersPage.click_offers_link
 end
 
 Given("I click on the mobile Shop Sign Up link") do
@@ -61,7 +61,7 @@ Given("I click to see group {string} offers") do |group|
 end
 
 Given("I expect the url to be for the shop {string} group offers page") do |group|
-  expect(page.current_url).to eql("#{FigNewton.shop.shop_homepage}""#{group}")
+  expect(page.current_url).to eql("#{FigNewton.shop.homepage}""/#{group}")
 end
 
 Given("I verify that the group offer cards are {string} specific offers") do |group|

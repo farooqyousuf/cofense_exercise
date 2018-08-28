@@ -2,7 +2,7 @@
 Feature: Shop offers page user experience
 
   Background:
-    * I create "ShopOffersPage, ShopLandingPage, ShopCashBackPage" page objects
+    * I create "ShopOffersPage, ShopStoresPage, ShopLandingPage, ShopCashBackPage" page objects
     * I visit "ShopOffersPage"
 
   @smoke

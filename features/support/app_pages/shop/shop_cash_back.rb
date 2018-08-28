@@ -3,7 +3,7 @@ class ShopCashBackPage < IDmeBase
   include IDPBase
 
   def initialize
-    super(FigNewton.shop_users.shop_homepage)
+    super(FigNewton.shop.homepage)
   end
 
   def close_out_modal_if_present

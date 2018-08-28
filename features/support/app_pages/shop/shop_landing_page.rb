@@ -3,7 +3,7 @@ class ShopLandingPage < IDmeBase
   include RSpec::Matchers
 
   def initialize
-    super(FigNewton.shop.shop_homepage)
+    super(FigNewton.shop.homepage)
   end
 
   def sign_in(user,password)
