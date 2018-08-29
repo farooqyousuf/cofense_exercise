@@ -2,7 +2,7 @@ class ShopOffersPage < IDmeBase
   include IDPBase
 
   def initialize
-    super(FigNewton.shop.offers_index_page)
+    super(FigNewton.shop.offers_page)
   end
 
   def click_groups_teacher_sidebar_link
@@ -32,7 +32,7 @@ class ShopOffersPage < IDmeBase
     click_on("Sign Up")
   end
 
-  def click_stores_link
-    click_on("STORES")
+  def click_offers_link
+    click_on("OFFERS")
   end
 end

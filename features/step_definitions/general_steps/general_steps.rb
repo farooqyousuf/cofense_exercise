@@ -37,7 +37,7 @@ end
 
 Given(/^I should be on the Shop Homepage$/) do
   expect(find(".site-header__logo").visible?).to eql true
-  expect(page.current_url).to eql(FigNewton.shop.shop_homepage)
+  expect(page.current_url).to eql(FigNewton.shop.homepage)
 end
 
 Given(/^I scroll to the bottom of the page$/) do

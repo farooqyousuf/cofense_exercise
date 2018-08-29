@@ -27,7 +27,7 @@ Feature: Test Shop via mobile
     * I verify that the stores are shown on the stores page
 
   Scenario: Check Stores Table listing
-    * I visit "ShopStoreIndexPage"
+    * I visit "ShopStoresPage"
     * I expect to be at the Shop Stores Index Page
     * I check that the filter is visible
     * I check that the Stores index is visible

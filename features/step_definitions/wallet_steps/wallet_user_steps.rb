@@ -4,7 +4,7 @@ end
 
 Given(/^I should be on the Shop landing page$/) do
   find(".hero--store-grid") #holder allow page to load
-  expect(page.current_url).to eql(FigNewton.shop.shop_homepage)
+  expect(page.current_url).to eql(FigNewton.shop.homepage)
   expect(page).to have_css(".site-header__extra-links",:text =>"About Business Wallet")
   expect(page).to have_css(".hero--store-grid .heading",:text =>"Shop Exclusive Deals and Cash Back")
 end
