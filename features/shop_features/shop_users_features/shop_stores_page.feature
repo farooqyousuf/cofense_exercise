@@ -1,8 +1,8 @@
 @regression @shop @shop_stores @desktop
-Feature: Test Stores Index page
+Feature: Shop stores page user experience
 
   Background:
-    * I create "ShopStoresPage, ShopOffersPage, ShopAdminDashboard, ShopAdminStores, ShopLandingPage, ShopCashBackPage" page objects
+    * I create "ShopStoresPage, ShopOffersPage, ShopAdminDashboard, ShopAdminStores, ShopLandingPage" page objects
     * I visit "ShopStoresPage"
 
   @smoke

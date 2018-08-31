@@ -1,13 +1,13 @@
-class CashBack_PurchasesPage < IDmeBase
+class ShopCashBackPage < IDmeBase
   include IDPBase
 
   def initialize
     super(FigNewton.shop.cashback_purchases_homepage)
   end
 
-  def cash_back_activity_tab_selected
+  def selected_tab(tab)
     sleep 2
-    first(".selected").has_link?("Cash Back Activity")
+    first(".selected").has_link?(tab)
   end
 
   def cash_back_summary_section
@@ -53,5 +53,9 @@ class CashBack_PurchasesPage < IDmeBase
 
   def click_on_my_cash
     first(:link, "My Cash").click
+  end
+
+  def click_on_payment_history
+    click_on("Payment History")
   end
 end

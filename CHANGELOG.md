@@ -3,6 +3,9 @@
 ### Released
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
+# 2.5.15 (8/31/18)
+- AWE-1618: Fix/Refactor Shop User Cash Back Tests
+
 # 2.5.14 (8/28/18)
 - AWE-1617: Fix/Refactor Shop User Stores Tests
 

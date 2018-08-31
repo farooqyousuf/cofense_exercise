@@ -2,7 +2,7 @@
 Feature: Test Shop via mobile
 
   Background:
-    * I create "ShopOffersPage, ShopLandingPage, ShopCashBackPage, ShopStoreIndexPage, ShopAdminDashboard, ShopAdminStores, CashBack_PurchasesPage" page objects
+    * I create "ShopOffersPage, ShopLandingPage, ShopStoreIndexPage, ShopAdminDashboard, ShopAdminStores, ShopCashBackPage" page objects
     * I open a new window
 
   @wip
