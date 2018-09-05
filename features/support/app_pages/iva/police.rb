@@ -33,7 +33,7 @@ class Police < IDmeBase
   end
 
   def populate_fields(data:)
-    search_option(container_attribute, "#s2id_verification_police_state", data.fetch("state"))
+    search_option("#s2id_verification_police_state", data.fetch("state"))
 
     %w(verification_first_name verification_last_name verification_social verification_social_confirm verification_street verification_city verification_zip).each do |field|
       fill_in field, :with => data.fetch(field)
@@ -45,13 +45,8 @@ class Police < IDmeBase
 
     escape_google_address_autocomplete(%w(#verification_street #verification_city))
 
-    #populate_second_state(data.fetch("state"), index=0)
     all("#s2id_verification_state")[0].click
     pick_result("Kansas")
-  end
-
-  def container_attribute
-    "police"
   end
 
   def unique_id

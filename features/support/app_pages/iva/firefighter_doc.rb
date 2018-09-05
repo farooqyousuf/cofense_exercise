@@ -42,7 +42,6 @@ class DocFirefighter < IDmeBase
       2.times { fill_in field, with: data.fetch(field) }
     end
 
-    #Added the 2 lines above populate_second_state to deal with the random dropdown not working on occasion
     all("#s2id_verification_state")[0].click
     pick_result("Kansas")
   end
