@@ -3,6 +3,9 @@
 ### Released
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
+# 2.5.17 (9/6/18)
+- AWE-1724: Fix Mobile IDV Smoke Tests
+
 # 2.5.16 (9/5/18)
 - AWE-1738: Fix IVA Police Doc Test
 
