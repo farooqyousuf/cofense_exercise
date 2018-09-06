@@ -1,6 +1,7 @@
 Given(/^I click on the Sign Up link$/) do
   @idp_signin = IDPSignIn.new
   @idp_signin.click_sign_up_link
+  page.has_button? "Sign up" #tells the page to wait until this is true before proceeding to next step
 end
 
 Given(/^I sign up as a new user$/) do

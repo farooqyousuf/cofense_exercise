@@ -17,7 +17,6 @@ Given("I verify ID\.me logo is present") do
  end
 
 Given("I verify that the Wallet nav {string} tab redirects to page") do |nav_tab|
-  visit FigNewton.wallet.homepage.url
   @WalletDashboard.click_shared_nav_tab(nav_tab)
   sleep 3
   expected_url = case nav_tab
@@ -62,7 +61,7 @@ Given("I verify that View Full Profile link directs me to correct page") do
 end
 
 Given("I should be on the Wallet dashboard page url") do
-  expect(page).to have_current_path(FigNewton.wallet.homepage.url, :url => true)
+  expect(page).to have_current_path(FigNewton.wallet.dashboard, :url => true)
 end
 
 Given("I verify required main header sections are visible within home page") do
