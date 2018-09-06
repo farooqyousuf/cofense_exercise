@@ -5,6 +5,7 @@ All notable changes to this project will be documented in this file. This projec
 
 # 2.5.17 (9/6/18)
 - AWE-1724: Fix Mobile IDV Smoke Tests
+- AWE-1740: Fix Wallet Dashboard Tests
 
 # 2.5.16 (9/5/18)
 - AWE-1738: Fix IVA Police Doc Test
