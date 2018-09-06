@@ -87,5 +87,5 @@ Feature: Test Wallet User Features
     * I log out of Wallet user account
     * I visit "WalletHomepage"
     * I click on the Wallet My Account link
-    * I signin with LinkedIn social federation
+    * I signin with LinkedIn social federation again
     * I verify my Wallet Linkedin Social Federation signin

@@ -15,7 +15,7 @@ end
 
 Given("I should be on the Wallet dashboard page") do
   find(".wallet-dashboard-module") #holder allow page to load
-  expect(page).to have_current_path(FigNewton.wallet.homepage.url)
+  expect(page).to have_current_path(FigNewton.wallet.dashboard)
   expect(page).to have_css(".wallet-content-main .heading",:text =>"Dashboard")
 end
 
@@ -121,8 +121,12 @@ Given(/^I signin with LinkedIn social federation$/) do
   step 'I login with LinkedIn'
 end
 
+Given(/^I signin with LinkedIn social federation again$/) do
+  click_link("LinkedIn")
+end
+
 Given(/^I verify my Wallet Linkedin Social Federation signin$/) do
-  expect(page).to have_current_path(FigNewton.wallet.homepage.social_federation_url)
+  expect(page).to have_current_path(FigNewton.wallet.dashboard)
   expect(page).to have_css(".wallet-events li:nth-child(1)",:text =>"You signed in to your ID.me Wallet")
   expect(page).to have_css(".wallet-events li:nth-child(2)",:text =>"You signed in with your Linkedin login on")
 end
