@@ -3,6 +3,9 @@
 ### Released
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
+# 2.5.18 (9/7/18)
+- AWE-1725: Fix Mobile IVA Mil Smoke Tests
+
 # 2.5.17 (9/6/18)
 - AWE-1741: Fix Wallet User Tests
 - AWE-1724: Fix Mobile IDV Smoke Tests

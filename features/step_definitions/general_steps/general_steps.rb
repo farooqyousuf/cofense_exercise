@@ -80,15 +80,7 @@ Given(/^I submit the verification code for "([^"]*)"$/) do |option|
 
   @AdminTool.login_in_new_window
   step 'I visit "AdminVerificationAttempts"'
-
-  # @SupportTool.login_in_new_window
-  # step 'I visit "SupportToolVerificationAttempts"'
-
-  if option == "Military Email Code via mobile"
-    @AdminVerificationAttempts.open_newest_mobile
-  else
-    @AdminVerificationAttempts.open_newest
-  end
+  @AdminVerificationAttempts.open_newest
 
   code = @AdminVerificationAttempts.get_code
 
