@@ -5,6 +5,7 @@ All notable changes to this project will be documented in this file. This projec
 
 # 2.5.18 (9/7/18)
 - AWE-1725: Fix Mobile IVA Mil Smoke Tests
+- AWE-1530: Fix/Rework Mobile Shop Smoke Tests
 
 # 2.5.17 (9/6/18)
 - AWE-1741: Fix Wallet User Tests

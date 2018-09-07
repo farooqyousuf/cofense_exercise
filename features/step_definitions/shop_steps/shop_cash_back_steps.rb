@@ -104,3 +104,11 @@ Given("I check that the review is displayed on the merchant page") do
   find(".reviews").click
   expect(page).to have_css(".store-offers-list li:nth-child(1)",:text => FigNewton.shop.merchant_review_text)
 end
+
+
+## Mobile Shop Steps
+Given("I click on the Shop mobile {string} navigation link") do |shop_link|
+  @ShopLandingPage.close_out_modal_if_present
+  find(".header-nav-menu").click
+  click_link(shop_link)
+end
