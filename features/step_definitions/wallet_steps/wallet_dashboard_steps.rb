@@ -33,7 +33,7 @@ end
 Given("I verify that the sub-nav {string} link redirects to page") do |subnav_link|
   @WalletDashboard.click_wallet_subnav(subnav_link)
   expected_path = case subnav_link
-                  when "Dashboard"      then "/"
+                  when "Dashboard"      then "/dashboard"
                   when "IDs and Logins" then "/ids"
                   when "Settings"       then "/settings"
                   when "Activity"       then "/activities"
