@@ -24,4 +24,10 @@ class ShopLandingPage < IDmeBase
       click_link("✕ Not now, just browsing")
     end
   end
+
+## Mobile Method(s)
+  def scroll_to_bottom_of_sidenav_menu
+    last_link = all(".sidenav-nav_link").last
+    page.execute_script("arguments[0].scrollIntoView(true)", last_link)
+  end
 end

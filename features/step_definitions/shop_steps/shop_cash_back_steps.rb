@@ -110,5 +110,7 @@ end
 Given("I click on the Shop mobile {string} navigation link") do |shop_link|
   @ShopLandingPage.close_out_modal_if_present
   find(".header-nav-menu").click
+  page.has_css? ".sidenav-mini-departments" #waits until menu is shown until next method is run
+  @ShopLandingPage.scroll_to_bottom_of_sidenav_menu
   click_link(shop_link)
 end

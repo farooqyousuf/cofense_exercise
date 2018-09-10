@@ -6,10 +6,10 @@ Feature: User account creation
 
   @delete_current_user_email
   Scenario: Sign Up new user
-    * I visit IDP through the "student" policy
+    * I visit IDP through the "military" policy
     * I click on the Sign Up link
     * I sign up as a new user
-    * I verify a student user
+    * I verify a military user
     * I should be successfully verified
 
   Scenario: Successful login
