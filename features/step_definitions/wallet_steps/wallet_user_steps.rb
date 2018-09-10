@@ -138,7 +138,7 @@ end
 
 Given("I should be on the mobile Wallet dashboard page") do
   find(".shared-nav-sub-title", :text => "Dashboard")
-  expect(page).to have_current_path(FigNewton.wallet.homepage.url)
+  expect(page).to have_current_path(FigNewton.wallet.dashboard)
   find(".hamburger").click
   expect(page).to have_css(".shared-nav-sub-menu-item:nth-child(2)",:text =>"Dashboard")
 end
