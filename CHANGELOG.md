@@ -7,6 +7,7 @@ All notable changes to this project will be documented in this file. This projec
 - IDME-4263: Wallet: Update steps to use cucumber expressions
 - INT-2241: INT: Update steps to use cucumber expressions
 - CORE-8644: IVA: Update steps to use cucumber expressions
+- IDME-4506: HLP: Update steps to use cucumber expressions
 
 # 2.5.19 (9/10/18)
 - AWE-1526: Fix Mobile Smoke Tests
