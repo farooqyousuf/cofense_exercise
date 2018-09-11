@@ -2,7 +2,7 @@ Given("I click on {string}") do |button|
   click_on(button)
 end
 
-Given(/^I create a new account after clearing my old "([^"]*)" session$/) do |group|
+Given("I create a new account after clearing my old {string} session") do |group|
   case group
   when "military"
     step 'I visit IDP through the "military" policy'
@@ -19,12 +19,12 @@ Given(/^I create a new account after clearing my old "([^"]*)" session$/) do |gr
   step 'I sign up as a new user'
 end
 
-Given(/^I clear the session from Authority$/) do
+Given("I clear the session from Authority") do
   sleep 2
   sign_out_of_idme
 end
 
-Given(/^I verify the attempt is marked as "([^"]*)"$/) do |status|
+Given("I verify the attempt is marked as {string}") do |status|
   @admin_tool = AdminTool.new
   @admin_tool.login_in_new_window
 
@@ -35,35 +35,30 @@ Given(/^I verify the attempt is marked as "([^"]*)"$/) do |status|
   click_link("Logout")
 end
 
-Given(/^I should be on the Shop Homepage$/) do
+Given("I should be on the Shop Homepage") do
   expect(find(".site-header__logo").visible?).to eql true
   expect(page.current_url).to eql(FigNewton.shop.homepage)
 end
 
-Given(/^I scroll to the bottom of the page$/) do
+Given("I scroll to the bottom of the page") do
   sleep 2
   page.execute_script "window.scrollBy(0,10000)"
   sleep 2
 end
 
-Given(/^I visit "(.*?)"$/) do |page|
-  @page = Object.const_get(page).new # converts a string text into a class name
-  @page.visit
-end
-
-Given(/^I pry$/) do
+Given("I pry") do
   binding.pry
 end
 
-Given(/^I confirm my email address$/) do
+Given("I confirm my email address") do
   ConfirmEmail.new.confirm_email
 end
 
-Given(/^I authorize the attribute release$/) do
+Given("I authorize the attribute release") do
   Consent.new.allow
 end
 
-Given(/^I submit an invalid verification code$/) do
+Given("I submit an invalid verification code") do
   step 'I create "SupportToolVerificationAttempts" page objects'
 
   attempt_uuid = @SupportToolVerificationAttempts.get_uuid(current_url)
@@ -73,7 +68,7 @@ Given(/^I submit an invalid verification code$/) do
 end
 
 
-Given(/^I submit the verification code for "([^"]*)"$/) do |option|
+Given("I submit the verification code for {string}") do |option|
   step 'I create "AdminTool, AdminVerificationAttempts, SupportTool, SupportToolVerificationAttempts, IDmeBase" page objects'
 
   attempt_uuid = @SupportToolVerificationAttempts.get_uuid(current_url)
@@ -93,7 +88,7 @@ Given(/^I submit the verification code for "([^"]*)"$/) do |option|
   end
 end
 
-Given(/^I generate a unique "([^"]*)" doc$/) do |document|
+Given("I generate a unique {string} doc") do |document|
   create_new_window
   use_last_browser_created
   visit 'http://pasted.co/'
@@ -106,7 +101,7 @@ Given(/^I generate a unique "([^"]*)" doc$/) do |document|
   use_last_browser_created
 end
 
-Given(/^I approve the document in IDme admin$/) do
+Given("I approve the document in IDme admin") do
   @admin_tool = AdminTool.new
   @admin_tool.login_in_new_window
 
@@ -125,7 +120,7 @@ Given(/^I approve the document in IDme admin$/) do
   end
 end
 
-Given(/^I approve the document in the IDme support tool$/) do
+Given("I approve the document in the IDme support tool") do
   @support_tool = SupportTool.new
   @support_tool.login_in_new_window
 
@@ -143,7 +138,7 @@ Given(/^I approve the document in the IDme support tool$/) do
   end
 end
 
-Given(/^I deny the document in the IDme support tool$/) do
+Given("I deny the document in the IDme support tool") do
   @support_tool = SupportTool.new
   @support_tool.login_in_new_window
 
@@ -155,7 +150,7 @@ Given(/^I deny the document in the IDme support tool$/) do
   sleep 3
 end
 
-Given(/^I create "([^"]*)" page objects$/) do |page_objects|
+Given("I create {string} page objects") do |page_objects|
   page_objects_array = page_objects.split(", ")
   page_objects_array.each do |d|
     instance_variable_set("@#{d}", Object.const_get(d).new)
@@ -188,4 +183,9 @@ end
 
 Given("I set up multi-factor authentication") do
   @IDVComputer.set_up_multifactor
+end
+
+Given(/^I visit "(.*?)"$/) do |page|
+  @page = Object.const_get(page).new # converts a string text into a class name
+  @page.visit
 end

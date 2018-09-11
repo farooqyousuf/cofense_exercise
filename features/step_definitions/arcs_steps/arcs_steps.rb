@@ -1,4 +1,4 @@
-Given(/^I set valid "([^"]*)" client credentials$/) do |authentication|
+Given("I set valid {string} client credentials") do |authentication|
   @request_params = case authentication
                     when "storage enabled"
                       { "client_id"      => FigNewton.direct_api.storage_enabled.client_id,
@@ -10,7 +10,7 @@ Given(/^I set valid "([^"]*)" client credentials$/) do |authentication|
                     end
 end
 
-Given(/^I set valid "([^"]*)" authorization header$/) do |authentication|
+Given("I set valid {string} authorization header") do |authentication|
   @header = case authentication
             when "storage enabled"
               { Authorization: FigNewton.direct_api.storage_enabled.header_auth}
@@ -20,7 +20,7 @@ Given(/^I set valid "([^"]*)" authorization header$/) do |authentication|
             end
 end
 
-Given(/^I set "([^"]*)" user attributes$/) do |credentials|
+Given("I set {string} user attributes") do |credentials|
   credential_hash = case credentials
                     when "valid"   then FigNewton.direct_api.valid_attributes.to_hash
                     when "invalid" then FigNewton.direct_api.invalid_attributes.to_hash
@@ -42,13 +42,13 @@ Given(/^I set "([^"]*)" user attributes$/) do |credentials|
   end
 end
 
-Given(/^I send a POST request to ARCS$/) do
+Given("I send a POST request to ARCS") do
   @response = HTTParty.post("#{FigNewton.oauth.idp_endpoint}/api/direct/v2/verify",
                             :query   => @request_params,
                             :headers => @header)
 end
 
-Given(/^I verify the user's "([^"]*)" military attributes is received$/) do |request|
+Given("I verify the user's {string} military attributes is received") do |request|
   expected_response = case request
                       when "valid"
                         {
@@ -97,7 +97,7 @@ Given(/^I verify the user's "([^"]*)" military attributes is received$/) do |req
   expect(@response.to_hash).to eq(expected_response)
 end
 
-Given(/^I verify that I authenticated with "([^"]*)" attributes$/) do |method|
+Given("I verify that I authenticated with {string} attributes") do |method|
   case method
   when "valid"
     expect(@response.code).to eq(200)             # verifies HTTP status code
