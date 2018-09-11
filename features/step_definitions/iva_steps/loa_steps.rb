@@ -1,4 +1,4 @@
-Given(/^I submit information for "([^"]*)"$/) do |level|
+Given("I submit information for {string}") do |level|
   case level
   when "LOA2"
     LOAInfo.new.verify(level)
@@ -7,14 +7,14 @@ Given(/^I submit information for "([^"]*)"$/) do |level|
   end
 end
 
-Given(/^I answer the KBA questions$/) do
+Given("I answer the KBA questions") do
   kba_questions = KBAQuestions.new
   #binding.pry
   kba_questions.answer_questions
   kba_questions.submit_answers
 end
 
-Given(/^I confirm my phone$/) do
+Given("I confirm my phone") do
   ConfirmPhone.new.confirm_phone
 end
 
