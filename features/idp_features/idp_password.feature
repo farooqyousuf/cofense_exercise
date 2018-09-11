@@ -25,7 +25,7 @@ Feature: User password reset
 
   Scenario: Entering non-existent account email for password reset
     * I send the forgot password code to a "nonexistent" email account
-    * I should see the red alert box error message "We couldn't find an ID.me account with that email address. Please try again."
+    * I should see the red alert box error message "We could not find an account associated with that email. Please check the email address entered and try again."
 
 
   # TODO: add scenarios for password entropy when resetting password
