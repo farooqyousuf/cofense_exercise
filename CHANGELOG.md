@@ -5,6 +5,7 @@ All notable changes to this project will be documented in this file. This projec
 
 # 2.5.20 (9/11/18)
 - IDME-4263: Wallet: Update steps to use cucumber expressions
+- INT-2241: INT: Update steps to use cucumber expressions
 
 # 2.5.19 (9/10/18)
 - AWE-1526: Fix Mobile Smoke Tests

@@ -1,4 +1,4 @@
-Given(/^I visit IDP through the "([^"]*)" policy$/) do |handle|
+Given("I visit IDP through the {string} policy") do |handle|
   @oauth_client = OAuthClient.new(
                     :client_id     => FigNewton.oauth.client_id,
                     :client_secret => FigNewton.oauth.client_secret,
@@ -9,7 +9,7 @@ Given(/^I visit IDP through the "([^"]*)" policy$/) do |handle|
   visit @oauth_client.auth_url
 end
 
-Given(/^I visit IDP through the au10tix_light policy$/) do
+Given("I visit IDP through the au10tix_light policy") do
   @oauth_client = OAuthClient.new(
                     :client_id     => FigNewton.oauth.vets_gov_client_id,
                     :client_secret => FigNewton.oauth.vets_gov_client_secret,
@@ -20,6 +20,6 @@ Given(/^I visit IDP through the au10tix_light policy$/) do
   visit @oauth_client.auth_url
 end
 
-Given(/^I logout of the OAuth Client$/) do
+Given("I logout of the OAuth Client") do
   @oauth_client.logout
 end
