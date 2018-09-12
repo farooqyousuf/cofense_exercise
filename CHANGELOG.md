@@ -6,6 +6,7 @@ All notable changes to this project will be documented in this file. This projec
 # 2.5.21 (9/12/18)
 - CORE-8935: Mobile Picture: Duplicate Experian Test
 - CORE-8541: Prompt Errors for empty fields
+- AWE-1777: Happy Path Test for Employee Verification
 
 # 2.5.20 (9/11/18)
 - IDME-4263: Wallet: Update steps to use cucumber expressions
