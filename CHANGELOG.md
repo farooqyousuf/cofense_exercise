@@ -4,6 +4,7 @@
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
 # 2.5.21 (9/12/18)
+- CORE-8935: Mobile Picture: Duplicate Experian Test
 - CORE-8541: Prompt Errors for empty fields
 
 # 2.5.20 (9/11/18)
