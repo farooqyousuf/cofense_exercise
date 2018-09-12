@@ -1,12 +1,12 @@
-Given(/^I create a Teacher Doc page object$/) do
+Given("I create a Teacher Doc page object") do
   @TeacherDoc = TeacherDoc.new
 end
 
-Given(/^I click on the teacher verify using documentation link$/) do
+Given("I click on the teacher verify using documentation link") do
   @TeacherDoc.click_verify_by_doc
 end
 
-Given(/^I select the teacher state "([^"]*)"$/) do |state|
+Given("I select the teacher state {string}") do |state|
   @TeacherDoc.select2_arrow(state)
   sleep 3
   if (page.has_content?("Verify using your teacher credentials") || ("Verify by uploading documentation")) == false
@@ -14,16 +14,16 @@ Given(/^I select the teacher state "([^"]*)"$/) do |state|
   end
 end
 
-Given(/^I verify using teacher documentation$/) do
+Given("I verify using teacher documentation") do
   step 'I generate a unique "png" doc'
   @TeacherDoc.verify(type: "unique")
 end
 
-Given(/^I submit the teacher doc upload verification form as a "([^"]*)" record$/) do |type|
+Given("I submit the teacher doc upload verification form as a {string} record") do |type|
   @TeacherDoc.verify(type: type)
 end
 
-Given(/^I submit the empty Teacher form using "([^"]*)"$/) do |method|
+Given("I submit the empty Teacher form using {string}") do |method|
   case method
   when "Teacher Document"
     @TeacherDoc.verify(populate: false)

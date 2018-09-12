@@ -1,31 +1,10 @@
-Given(/^I click on the Begin link$/) do
+Given("I click on the Begin link") do
   if page.has_link? "Begin"
     click_link("Begin")
   end
 end
 
-Given(/^I should be successfully verified(?: as "(.*)")?$/) do |group|
-  flag = ["LOA1", "LOA2", "LOA3"].include?(group)
-  if page.has_link? "Continue"
-    click_continue_link
-  end
-  page.has_content?("ID.me TestDrive")
-
-  #save oauth client token for idp and iva tests
-  @oauth_client.save_token(current_url)
-
-  if flag == true
-    expect(@oauth_client.verify_loa_scope(group)).to eq(true)
-  elsif group == "Identity"
-    expect(@oauth_client.verified?).to eq(true)
-    expect(@oauth_client.affiliation_payload).to eq(nil)
-  else
-    expect(@oauth_client.verified?).to eq(true)
-    expect(@oauth_client.has_affiliation?(group)).to eq(true) if group
-  end
-end
-
-Given(/^I verify using a duplicate "([^"]*)" record$/) do |affiliation|
+Given("I verify using a duplicate {string} record") do |affiliation|
   case affiliation
   when "DD214"
     step 'I verify using DD214 information for "Veteran" via "document"'
@@ -112,5 +91,25 @@ Given(/^Multi\-family: I verify "([^"]*)" family via "([^"]*)"(?: is not allowed
       step 'I clear the session from Authority'
     end
   end
+end
 
+Given(/^I should be successfully verified(?: as "(.*)")?$/) do |group|
+  flag = ["LOA1", "LOA2", "LOA3"].include?(group)
+  if page.has_link? "Continue"
+    click_continue_link
+  end
+  page.has_content?("ID.me TestDrive")
+
+  #save oauth client token for idp and iva tests
+  @oauth_client.save_token(current_url)
+
+  if flag == true
+    expect(@oauth_client.verify_loa_scope(group)).to eq(true)
+  elsif group == "Identity"
+    expect(@oauth_client.verified?).to eq(true)
+    expect(@oauth_client.affiliation_payload).to eq(nil)
+  else
+    expect(@oauth_client.verified?).to eq(true)
+    expect(@oauth_client.has_affiliation?(group)).to eq(true) if group
+  end
 end
