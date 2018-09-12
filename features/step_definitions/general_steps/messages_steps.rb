@@ -49,6 +49,7 @@ Given(/^I should see error messages on required fields for "([^"]*)"$/) do |meth
         when "SCRA"                      then MilitarySCRA
         when "SCRA Family"               then MilitarySCRAFamily
         when "EMT state lookup"          then StateLookupEMT
+        when "Identity Verification"     then IDVComputer
         else fail("Verification option not found")
         end
 

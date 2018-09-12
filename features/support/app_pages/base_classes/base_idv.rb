@@ -90,9 +90,9 @@ include DataMagic
   end
 
   def populate_phone(mobile_phone)
-    2.times { find("label[for='phone_type_smart_phone']").click }
+    click_smartphone_with_browser_option
     enter_phone_number
-    click_button("Submit phone")
+    submit_phone_number
   end
 
   def set_up_multifactor
@@ -115,5 +115,17 @@ include DataMagic
     sleep 2
     phone_confirm_window = page.driver.window_handles.last
     page.driver.close_window(phone_confirm_window)
+  end
+
+  def click_smartphone_with_browser_option
+    2.times { find("label[for='phone_type_smart_phone']").click }
+  end
+
+  def click_homephone_option
+    2.times { find("label[for='phone_type_home_phone']").click }
+  end
+
+  def submit_phone_number
+    click_button("Submit phone")
   end
 end
