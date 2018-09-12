@@ -82,6 +82,9 @@ Given("I submit the verification code for {string}") do |option|
   visit "https://verify-staging.idmeinc.net/email_confirmations/#{attempt_uuid}/complete?code=#{code}"
   @AdminVerificationAttempts.close_current_browser
   @AdminVerificationAttempts.use_last_browser_created
+
+  sleep 3
+
   click_link("Continue")
   if page.has_text? "ID.me Staging would like to access some of your data"
     step 'I authorize the attribute release'

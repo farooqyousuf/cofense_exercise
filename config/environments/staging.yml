@@ -55,6 +55,7 @@ oauth:
     wallet            : wallet
     student_canada    : student_canada
     general_password  : Password123
+    employee          : idme_employee
 
 direct_api:
   storage_enabled:
