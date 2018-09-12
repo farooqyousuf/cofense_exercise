@@ -77,3 +77,17 @@ Feature: Identity Verification by uploading an ID from the computer
     * I submit dupe identity verification attempt via computer
     * I should see the error message "We’re sorry, it appears you have already verified your identity on a different account. Please sign in using your existing credentials."
     * I verify the attempt is marked as "DUPLICATE"
+
+  @delete_current_user_email
+  Scenario: Successfully prompt for all required fields for Identity Verification
+    * I set the External Vendor Environment to "verify via Imagery"
+    * I "submit empty documents" via computer using a mocked driver's license
+    * I verify the identity verification document submit button is disabled
+    * I "verify empty form errors" via computer using a mocked driver's license
+    * I submit empty identity verification form for smartphone
+    * I should see error messages on required fields for "Identity Verification"
+    * I submit empty identity verification form for homephone
+    * I should see error messages on required fields for "Identity Verification"
+    * I submit identity verification phone number form
+    * I submit empty identity verification form for ssn
+    * I should see error messages on required fields for "Identity Verification"

@@ -34,11 +34,20 @@ class IDVComputer < IDmeBase
       front_id = data.fetch("idv")
       back_id = data.fetch("idv")
       user = fail_idv_user
+    when "submit empty documents"
+      populate = false
+    when "verify empty form errors"
+      populate = false
+      front_id = data.fetch("idv")
+      back_id = data.fetch("idv")
     end
 
-    upload_front_id(front_id: front_id)
-    upload_back_id(back_id: back_id) unless action == "upload front doc"
-    click_button("Look Good?")
+    unless action == "submit empty documents"
+      upload_front_id(front_id: front_id)
+      upload_back_id(back_id: back_id) unless action == "upload front doc"
+    end
+
+    find("input[type='submit']").click
     sleep 5
 
     if populate == true
@@ -72,5 +81,24 @@ class IDVComputer < IDmeBase
 
   def user_properties_levels
     [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+  end
+
+  def submit_empty_smartphone_number_form
+    click_smartphone_with_browser_option
+    submit_phone_number
+  end
+
+  def submit_empty_homephone_number_form
+    click_homephone_option
+    submit_phone_number
+  end
+
+  def submit_empty_ssn_form
+    page.has_css?("#sr_page_title", :text => "Enter your Social Security Number")
+    click_button("Continue")
+  end
+
+  def required_fields
+    [0]
   end
 end
