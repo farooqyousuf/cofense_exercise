@@ -14,7 +14,7 @@ class IDVPhone < IDmeBase
     fail_idv_user = data_for(:fail_experian)
 
     case action
-    when "verify with Imagery"
+    when "verify with Imagery", "submit dupe attempt"
       populate = true
       front_id = data.fetch("png")
       back_id = data.fetch("idv")
@@ -55,7 +55,7 @@ class IDVPhone < IDmeBase
       check_fcra_box
       click_button("Verify my information")
 
-      unless action == "fail experian"
+      unless (action == "fail experian") || (action == "submit dupe attempt")
         click_button("Allow")
       end
     end

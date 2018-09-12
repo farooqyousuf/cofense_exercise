@@ -3,6 +3,9 @@
 ### Released
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
+# 2.5.21 (9/12/18)
+- CORE-8935: Mobile Picture: Duplicate Experian Test
+
 # 2.5.20 (9/11/18)
 - IDME-4263: Wallet: Update steps to use cucumber expressions
 - INT-2241: INT: Update steps to use cucumber expressions
