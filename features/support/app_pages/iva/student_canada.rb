@@ -58,6 +58,10 @@ class StudentCanada < IDmeBase
      select_filter(".select2-arrow", "Student ID")
   end
 
+  def required_fields
+    [0, 1, 2, 3, 4, 5, 6, 7]
+  end
+
   def user_properties_levels
     [1, 1, 1, 1, 1, 1, 1, 1]
   end

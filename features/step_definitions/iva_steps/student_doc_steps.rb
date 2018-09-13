@@ -19,3 +19,7 @@ Given("I submit the Canadian student verification form as a {string} record") do
   step 'I generate a unique "png" doc'
   @StudentCanada.verify(type: type)
 end
+
+Given("I submit the empty student canadian form") do
+  @StudentCanada.verify(populate: false)
+end

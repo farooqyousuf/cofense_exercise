@@ -36,6 +36,7 @@ Given(/^I should see error messages on required fields for "([^"]*)"$/) do |meth
         when "Military Document Family"  then MilitaryDocFamily
         when "Student Credentials"       then StudentCreds
         when "Student Document"          then StudentDoc
+        when "Canadian Student"          then StudentCanada
         when "Teacher Document"          then TeacherDoc
         when "Teacher Lookup Delaware"   then TeacherLookupDE
         when "Teacher Lookup New Mexico" then TeacherLookupNM
@@ -50,6 +51,7 @@ Given(/^I should see error messages on required fields for "([^"]*)"$/) do |meth
         when "SCRA Family"               then MilitarySCRAFamily
         when "EMT state lookup"          then StateLookupEMT
         when "Identity Verification"     then IDVComputer
+        when "Employee"                  then IVAEmployee
         else fail("Verification option not found")
         end
 
