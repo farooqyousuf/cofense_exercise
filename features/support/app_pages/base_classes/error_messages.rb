@@ -10,6 +10,7 @@ module ErrorMessages
      "field text right-half error",
      "field select error",
      "field text error",
-     "field select left-half error"].include?(value)
+     "field select left-half error",
+     "field_with_errors"].include?(value)
   end
 end

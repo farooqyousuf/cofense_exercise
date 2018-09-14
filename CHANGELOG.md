@@ -3,6 +3,9 @@
 ### Released
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
+# 2.5.22 (9/13/18)
+- AWE-1783: Required fields test for Student Canada and Employee
+
 # 2.5.21 (9/12/18)
 - CORE-8935: Mobile Picture: Duplicate Experian Test
 - CORE-8541: Prompt Errors for empty fields

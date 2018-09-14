@@ -17,3 +17,9 @@ Feature: Employee verification using employee email
     * I submit the verification code for "Employee Email"
     * I should be successfully verified as "Test Employer"
     * I verify user level properties for "Employee"
+
+  @delete_current_user_email @ignore
+  #this test will fail b/c there form fields need to be fixed
+  Scenario: Successfully prompt for all required fields
+    * I submit the empty employee form
+    * I should see error messages on required fields for "Employee"
