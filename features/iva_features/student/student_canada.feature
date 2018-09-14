@@ -17,3 +17,8 @@ Feature: Canadian Student verification using student credentials
     * I approve the document in the IDme support tool
     * I should be successfully verified
     * I verify user level properties for "Canadian Student"
+
+  @delete_current_user_email
+  Scenario: Successfully prompt for all required fields
+    * I submit the empty student canadian form
+    * I should see error messages on required fields for "Canadian Student"
