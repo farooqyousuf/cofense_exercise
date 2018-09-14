@@ -2,7 +2,7 @@
 Feature: Identity Verification by uploading an ID from the computer
 
   Background:
-    * I create "AdminTool, AdminSettings, IDVComputer" page objects
+    * I create "AdminTool, AdminSettings, IDVComputer, SupportTool, SupportToolVerificationAttempts" page objects
     * I visit IDP through the au10tix_light policy
     * I click on the Sign Up link
     * I sign up as a new user
@@ -83,7 +83,7 @@ Feature: Identity Verification by uploading an ID from the computer
     * I set the External Vendor Environment to "verify via Imagery"
     * I "submit empty documents" via computer using a mocked driver's license
     * I verify the identity verification document submit button is disabled
-    * I "verify empty form errors" via computer using a mocked driver's license
+    * I "submit documents" via computer using a mocked driver's license
     * I submit empty identity verification form for smartphone
     * I should see error messages on required fields for "Identity Verification"
     * I submit empty identity verification form for homephone
@@ -91,3 +91,25 @@ Feature: Identity Verification by uploading an ID from the computer
     * I submit identity verification phone number form
     * I submit empty identity verification form for ssn
     * I should see error messages on required fields for "Identity Verification"
+
+  @delete_current_user_email
+  Scenario: Edit information for Identity Verification
+    * I generate a unique "png" doc
+    * I set the External Vendor Environment to "verify via Imagery"
+    * I "submit documents" via computer using a mocked driver's license
+    * I submit identity verification phone number form
+    * I submit identity verification ssn form
+    * I edit "Personal Information" info via computer
+    * I verify that "Personal Information" info was updated
+    * I edit "Address" info via computer
+    * I verify that "Address" info was updated
+    * I edit "Phone" info via computer
+    * I verify that "Phone" info was updated
+    * I verify that "All" info was updated
+    * I submit the edited info form
+    * I answer the KBA questions
+    * I click on "Verify"
+    * I authorize the attribute release
+    * I should be successfully verified as "Identity"
+    * I verify updated identity verification info
+    * I verify user level properties for "Identity"

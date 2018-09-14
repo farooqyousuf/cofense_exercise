@@ -36,7 +36,7 @@ class IDVComputer < IDmeBase
       user = fail_idv_user
     when "submit empty documents"
       populate = false
-    when "verify empty form errors"
+    when "submit documents"
       populate = false
       front_id = data.fetch("idv")
       back_id = data.fetch("idv")
@@ -85,12 +85,12 @@ class IDVComputer < IDmeBase
 
   def submit_empty_smartphone_number_form
     click_smartphone_with_browser_option
-    submit_phone_number
+    submit_form
   end
 
   def submit_empty_homephone_number_form
     click_homephone_option
-    submit_phone_number
+    submit_form
   end
 
   def submit_empty_ssn_form
