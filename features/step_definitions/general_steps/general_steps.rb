@@ -188,6 +188,10 @@ Given("I set up multi-factor authentication") do
   @IDVComputer.set_up_multifactor
 end
 
+Given("I delete the current user") do
+  delete_user(@user_email)
+end
+
 Given(/^I visit "(.*?)"$/) do |page|
   @page = Object.const_get(page).new # converts a string text into a class name
   @page.visit

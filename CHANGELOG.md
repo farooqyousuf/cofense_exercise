@@ -3,6 +3,9 @@
 ### Released
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
+# 2.5.23 (9/17/18)
+- INT-2274: Support tool search for user that was removed while logged in test
+
 # 2.5.22 (9/13/18)
 - AWE-1783: Required fields test for Student Canada and Employee
 
