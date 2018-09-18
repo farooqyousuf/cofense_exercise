@@ -34,15 +34,21 @@ class IDVPhone < IDmeBase
       front_id = data.fetch("idv")
       back_id = data.fetch("idv")
       user = fail_idv_user
+    when "submit empty documents"
+      populate = false
+    when "submit documents"
+      populate = false
+      front_id = data.fetch("idv")
+      back_id = data.fetch("idv")
     end
 
-    upload_front_id(front_id: front_id)
-    upload_back_id(back_id: back_id) unless action == "upload front doc"
+    unless action == "submit empty documents"
+      upload_front_id(front_id: front_id)
+      upload_back_id(back_id: back_id) unless action == "upload front doc"
+    end
 
-    click_button("Look Good?")
+    find("input[type='submit']").click
 
-    close_current_browser
-    use_original_tab
     sleep 3
 
     if populate == true

@@ -82,7 +82,7 @@ Feature: Identity Verification by uploading an ID from the computer
   Scenario: Successfully prompt for all required fields for Identity Verification
     * I set the External Vendor Environment to "verify via Imagery"
     * I "submit empty documents" via computer using a mocked driver's license
-    * I verify the identity verification document submit button is disabled
+    * I verify the identity verification document submit button is disabled on upload from device screen
     * I "submit documents" via computer using a mocked driver's license
     * I submit empty identity verification form for smartphone
     * I should see error messages on required fields for "Identity Verification"

@@ -2,7 +2,7 @@
 Feature: Identity Verification by taking a picture of your ID from phone upload
 
   Background:
-    * I create "AdminTool, AdminSettings, IDVPhone" page objects
+    * I create "AdminTool, AdminSettings, IDVPhone, IDVComputer, IDmeBase" page objects
     * I visit IDP through the au10tix_light policy
     * I click on the Sign Up link
     * I sign up as a new user
@@ -73,3 +73,13 @@ Feature: Identity Verification by taking a picture of your ID from phone upload
     * I submit dupe identity verification attempt via phone
     * I should see the error message "We’re sorry, it appears you have already verified your identity on a different account. Please sign in using your existing credentials."
     * I verify the attempt is marked as "DUPLICATE"
+
+  @delete_current_user_email
+  Scenario: Successfully prompt for all required fields for Identity Verification
+    * I set the External Vendor Environment to "verify via Imagery"
+    * I "submit empty documents" via phone using a mocked driver's license
+    * I verify the identity verification document submit button is disabled on upload from phone screen
+    * I "submit documents" via phone using a mocked driver's license
+    * I close current tab
+    * I submit empty identity verification form for ssn
+    * I should see error messages on required fields for "Identity Verification"

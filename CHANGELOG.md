@@ -3,6 +3,9 @@
 ### Released
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
+# 2.5.24 (9/18/18)
+- CORE-8934: Mobile Picture: Prompt Errors for empty fields
+
 # 2.5.23 (9/17/18)
 - INT-2274: Support tool search for user that was removed while logged in test
 
