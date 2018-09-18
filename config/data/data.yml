@@ -109,7 +109,10 @@ fail_experian:
   mobile_phone: 1234567890
   social: 222222222
   social_confirm: 222222222
-
+  denied_email: fake@email.com
+  canadian_school: York University
+  province: Ontario
+  postal_code: 123456
 
 experian_user:
   school: George Mason University
