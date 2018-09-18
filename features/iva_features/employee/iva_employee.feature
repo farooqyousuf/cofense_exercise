@@ -23,3 +23,9 @@ Feature: Employee verification using employee email
   Scenario: Successfully prompt for all required fields
     * I submit the empty employee form
     * I should see error messages on required fields for "Employee"
+
+  @delete_current_user_email
+  Scenario: Denied attempt for Employee email verification
+    * I submit the employee verification form as a "denied" record
+    * I should see the error message "Please provide a valid employee email address."
+    * I verify the attempt is marked as "DENIED"

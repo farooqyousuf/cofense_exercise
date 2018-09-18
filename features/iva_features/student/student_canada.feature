@@ -22,3 +22,10 @@ Feature: Canadian Student verification using student credentials
   Scenario: Successfully prompt for all required fields
     * I submit the empty student canadian form
     * I should see error messages on required fields for "Canadian Student"
+
+  @delete_current_user_email
+  Scenario: Denied attempt for Canadian Student verification (CST0102)
+    * I submit the Canadian student verification form as a "denied" record
+    * I deny the document in the IDme support tool
+    * I should see the error message "We’re sorry, but we are unable to verify your student status using the document you provided. Please see our Support page for document specifications, or try another verification option."
+    * I verify the attempt is marked as "DENIED"

@@ -10,7 +10,7 @@ class StudentCanada < IDmeBase
       if populate
 
         unique_data = data_for(:experian_user) #info for unique and duplicate users
-        # denied_data = data_for(:fail_experian) #info for denied user
+        denied_data = data_for(:fail_experian) #info for denied user
         # second_unique_data = data_for(:experian_user2)
 
         case type
@@ -25,7 +25,7 @@ class StudentCanada < IDmeBase
       end
   click_continue
 
-    if (type == "unique") || (type == "second unique user")
+    if (type == "unique") || (type == "denied")
       sleep 3
       populate_doc
       attach_doc
