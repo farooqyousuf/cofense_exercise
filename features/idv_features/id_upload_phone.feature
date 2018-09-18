@@ -2,7 +2,7 @@
 Feature: Identity Verification by taking a picture of your ID from phone upload
 
   Background:
-    * I create "AdminTool, AdminSettings, IDVPhone, IDVComputer, IDmeBase" page objects
+    * I create "AdminTool, AdminSettings, IDVPhone, IDVComputer, IDmeBase, SupportTool, SupportToolVerificationAttempts" page objects
     * I visit IDP through the au10tix_light policy
     * I click on the Sign Up link
     * I sign up as a new user
@@ -83,3 +83,24 @@ Feature: Identity Verification by taking a picture of your ID from phone upload
     * I close current tab
     * I submit empty identity verification form for ssn
     * I should see error messages on required fields for "Identity Verification"
+
+  @delete_current_user_email
+  Scenario: Edit information for Identity Verification
+    * I generate a unique "png" doc
+    * I set the External Vendor Environment to "verify via Imagery"
+    * I "submit documents" via phone using a mocked driver's license
+    * I close current tab
+    * I submit identity verification ssn form
+    * I edit "Personal Information" info
+    * I verify that "Personal Information" info was updated
+    * I edit "Address" info
+    * I verify that "Address" info was updated
+    * I edit "Phone" info
+    * I verify that "Home Phone" info was updated
+    * I verify that "All + Home Phone" info was updated
+    * I submit the edited info form
+    * I answer the KBA questions
+    * I authorize the attribute release
+    * I should be successfully verified as "Identity"
+    * I verify updated identity verification info for "phone"
+    * I verify user level properties for "Identity"

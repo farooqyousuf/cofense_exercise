@@ -99,11 +99,11 @@ Feature: Identity Verification by uploading an ID from the computer
     * I "submit documents" via computer using a mocked driver's license
     * I submit identity verification phone number form
     * I submit identity verification ssn form
-    * I edit "Personal Information" info via computer
+    * I edit "Personal Information" info
     * I verify that "Personal Information" info was updated
-    * I edit "Address" info via computer
+    * I edit "Address" info
     * I verify that "Address" info was updated
-    * I edit "Phone" info via computer
+    * I edit "Phone" info
     * I verify that "Phone" info was updated
     * I verify that "All" info was updated
     * I submit the edited info form
@@ -111,5 +111,5 @@ Feature: Identity Verification by uploading an ID from the computer
     * I click on "Verify"
     * I authorize the attribute release
     * I should be successfully verified as "Identity"
-    * I verify updated identity verification info
+    * I verify updated identity verification info for "computer"
     * I verify user level properties for "Identity"

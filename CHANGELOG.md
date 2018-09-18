@@ -5,6 +5,7 @@ All notable changes to this project will be documented in this file. This projec
 
 # 2.5.24 (9/18/18)
 - CORE-8934: Mobile Picture: Prompt Errors for empty fields
+- CORE-8936: Mobile Picture: Edit review info
 - AWE-1810: Denied Attempts for Canadian Student and Employee
 
 # 2.5.23 (9/17/18)

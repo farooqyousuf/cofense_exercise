@@ -21,7 +21,7 @@ include DataMagic
 
   def enter_phone_number
     data = data_for(:experian_user3)
-    populate_phone(data: data)
+    populate_mobile_phone(data: data)
   end
 
   def enter_ssn
@@ -48,7 +48,7 @@ include DataMagic
 
   def populate_fields_computer(data:)
     click_smartphone_with_browser_option
-    populate_phone(data: data)
+    populate_mobile_phone(data: data)
     populate_ssn(data: data)
   end
 
@@ -89,8 +89,13 @@ include DataMagic
     click_button("Continue")
   end
 
-  def populate_phone(data:)
+  def populate_mobile_phone(data:)
     fill_in("mobile_phone", :with => data.fetch("mobile_phone"))
+    submit_form
+  end
+
+  def populate_home_phone(data:)
+    fill_in("home_phone", :with => data.fetch("mobile_phone"))
     submit_form
   end
 
@@ -136,7 +141,12 @@ include DataMagic
       populate_fields_address(data: data)
     when "Phone"
       click_smartphone_with_browser_option
-      populate_phone(data: data)
+
+      if page.has_css? ("input[name='mobile_phone'][disabled='disabled']")
+        populate_home_phone(data: data)
+      else
+        populate_mobile_phone(data: data)
+      end
     end
   end
 
@@ -151,9 +161,15 @@ include DataMagic
     when "Phone"
       first_field = 12
       last_field = 13
+    when "Home Phone"
+      first_field = 12
+      last_field = 14
     when "All"
       first_field = 1
       last_field = 13
+    when "All + Home Phone"
+      first_field = 1
+      last_field = 14
     end
 
     all(".review-row-right")[first_field...last_field].map { |a| a.text }
@@ -173,7 +189,9 @@ include DataMagic
     when "Personal Information" then ["JACQUELYN", "C", "RUTLAND", "Female", "08/28/1948"]
     when "Address"              then ["1016 TOWNSEND ST", "SPEARMAN", "TX", "79081-3564"]
     when "Phone"                then ["806-659-0081"]
+    when "Home Phone"           then ["651-458-1155", "806-659-0081"]
     when  "All"                 then ["JACQUELYN", "C", "RUTLAND", "Female", "08/28/1948", "", "1016 TOWNSEND ST", "SPEARMAN", "TX", "79081-3564", "", "806-659-0081"]
+    when  "All + Home Phone"    then ["JACQUELYN", "C", "RUTLAND", "Female", "08/28/1948", "", "1016 TOWNSEND ST", "SPEARMAN", "TX", "79081-3564", "", "651-458-1155", "806-659-0081"]
     end
   end
 
@@ -181,9 +199,12 @@ include DataMagic
     find("input[type=submit]").click
   end
 
-  def compare_expected_and_actual_user_property_values
-    actual_user_properties = collect_user_properties
-    actual_user_properties.should == expected_user_properties
+  def compare_expected_and_actual_user_property_values(type)
+    if type == "phone"
+      collect_user_properties.should == expected_user_properties_via_phone
+    else
+      collect_user_properties.should == expected_user_properties
+    end
   end
 
   def collect_user_properties
@@ -193,5 +214,9 @@ include DataMagic
 
   def expected_user_properties
     ["JACQUELYN", "C", "RUTLAND", "female", "18066590081", "1016 TOWNSEND ST", "SPEARMAN", "TX", "79081-3564"]
+  end
+
+  def expected_user_properties_via_phone
+    ["JACQUELYN", "C", "RUTLAND", "female", "16514581155", "1016 TOWNSEND ST", "SPEARMAN", "TX", "79081-3564"]
   end
 end
