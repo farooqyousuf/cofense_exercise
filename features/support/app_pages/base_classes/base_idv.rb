@@ -29,10 +29,6 @@ include DataMagic
     populate_ssn(data: data)
   end
 
-  def click_send_me_link
-    click_button("Send me the link")
-  end
-
   def click_upload_form_link
     click_link("Upload form")
   end
@@ -51,6 +47,7 @@ include DataMagic
   end
 
   def populate_fields_computer(data:)
+    click_smartphone_with_browser_option
     populate_phone(data: data)
     populate_ssn(data: data)
   end
@@ -93,7 +90,6 @@ include DataMagic
   end
 
   def populate_phone(data:)
-    click_smartphone_with_browser_option
     fill_in("mobile_phone", :with => data.fetch("mobile_phone"))
     submit_form
   end
@@ -139,6 +135,7 @@ include DataMagic
     when "Address"
       populate_fields_address(data: data)
     when "Phone"
+      click_smartphone_with_browser_option
       populate_phone(data: data)
     end
   end
