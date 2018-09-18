@@ -7,6 +7,7 @@ All notable changes to this project will be documented in this file. This projec
 - INT-2274: Support tool search for user that was removed while logged in test
 
 # 2.5.22 (9/13/18)
+- CORE-8535: Edit review info
 - AWE-1783: Required fields test for Student Canada and Employee
 
 # 2.5.21 (9/12/18)

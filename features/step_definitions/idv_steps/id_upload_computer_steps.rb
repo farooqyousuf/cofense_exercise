@@ -29,3 +29,7 @@ Given("I submit dupe identity verification attempt via computer") do
   step 'I generate a unique "png" doc'
   step 'I "submit dupe attempt" via computer using a mocked driver\'s license'
 end
+
+Given("I edit {string} info via computer") do |fields|
+  @IDVComputer.edit_info(fields)
+end

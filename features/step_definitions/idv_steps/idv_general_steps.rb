@@ -25,12 +25,31 @@ Given("I submit empty identity verification form for homephone") do
 end
 
 Given("I submit identity verification phone number form") do
-  @IDVComputer.click_smartphone_with_browser_option
   @IDVComputer.enter_phone_number
-  @IDVComputer.submit_phone_number
+end
+
+Given("I submit identity verification ssn form") do
+  @IDVComputer.enter_ssn
 end
 
 Given("I submit empty identity verification form for ssn") do
   @IDVComputer.submit_empty_ssn_form
   expect(page).to have_css(".error")
+end
+
+Given("I submit the edited info form") do
+  @IDVComputer.check_fcra_box
+  click_button("Verify my information")
+end
+
+Given("I verify that {string} info was updated") do |fields|
+  expect(@IDVComputer.current_info(fields)).not_to eql(@IDVComputer.mocked_info(fields))
+  expect(@IDVComputer.current_info(fields)).to eql(@IDVComputer.expected_info(fields))
+end
+
+Given("I verify updated identity verification info") do
+  @SupportTool.login_in_new_window
+  @SupportToolVerificationAttempts.search_user_by_email(email_address: @user_email)
+  @SupportToolVerificationAttempts.open_newest
+  @IDVComputer.compare_expected_and_actual_user_property_values
 end
