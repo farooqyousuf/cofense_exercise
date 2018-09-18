@@ -35,18 +35,22 @@ Given("I submit the edited info form") do
 end
 
 Given("I verify that {string} info was updated") do |fields|
-  expect(@IDVComputer.current_info(fields)).not_to eql(@IDVComputer.mocked_info(fields))
+  expect(@IDVComputer.current_info(fields)).not_to eql(@IDVComputer.mocked_info(fields)) unless "fields == Home Phone"
   expect(@IDVComputer.current_info(fields)).to eql(@IDVComputer.expected_info(fields))
 end
 
-Given("I verify updated identity verification info") do
+Given("I verify updated identity verification info for {string}") do |type|
   @SupportTool.login_in_new_window
   @SupportToolVerificationAttempts.search_user_by_email(email_address: @user_email)
   @SupportToolVerificationAttempts.open_newest
-  @IDVComputer.compare_expected_and_actual_user_property_values
+  @IDVComputer.compare_expected_and_actual_user_property_values(type)
 end
 
 Given("I close current tab") do
   @IDmeBase.close_current_browser
   @IDmeBase.use_original_tab
+end
+
+Given("I edit {string} info") do |fields|
+  @IDVComputer.edit_info(fields)
 end

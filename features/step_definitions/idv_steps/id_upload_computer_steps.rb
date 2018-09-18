@@ -30,10 +30,6 @@ Given("I submit dupe identity verification attempt via computer") do
   step 'I "submit dupe attempt" via computer using a mocked driver\'s license'
 end
 
-Given("I edit {string} info via computer") do |fields|
-  @IDVComputer.edit_info(fields)
-end
-
 Given("I verify the identity verification document submit button is disabled on upload from device screen") do
   expect(page).to have_css("input[data-disable-with='Look Good?'][type='submit']") #Should have Disabled Submit Button
   expect(page).not_to have_css("input[data-disable-with='Please wait ...'][type='submit']") #Should not have Enabled Submit Button
