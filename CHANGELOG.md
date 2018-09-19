@@ -3,6 +3,9 @@
 ### Released
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
+# 2.5.25 (9/19/18)
+- AWE-1815: KBA: Successful Verification
+
 # 2.5.24 (9/18/18)
 - CORE-8934: Mobile Picture: Prompt Errors for empty fields
 - CORE-8936: Mobile Picture: Edit review info
