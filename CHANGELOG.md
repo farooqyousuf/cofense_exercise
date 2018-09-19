@@ -5,6 +5,7 @@ All notable changes to this project will be documented in this file. This projec
 
 # 2.5.25 (9/19/18)
 - AWE-1815: KBA: Successful Verification
+- AWE-1795: Support tool edit verification attempts: Doc upload
 
 # 2.5.24 (9/18/18)
 - CORE-8934: Mobile Picture: Prompt Errors for empty fields
