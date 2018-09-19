@@ -29,3 +29,9 @@ Feature: Canadian Student verification using student credentials
     * I deny the document in the IDme support tool
     * I should see the error message "We’re sorry, but we are unable to verify your student status using the document you provided. Please see our Support page for document specifications, or try another verification option."
     * I verify the attempt is marked as "DENIED"
+
+  @delete_current_user_email
+  Scenario: Dupe check attempt for Canadian Student verification (Error code)
+    * I submit the Canadian student verification form as a "duplicate" record
+    * I should see the error message "We’re sorry, it appears you have already verified your student status on a different account. Please sign in using your existing credentials."
+    * I verify the attempt is marked as "DUPLICATE"
