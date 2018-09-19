@@ -1,9 +1,10 @@
 require_relative "../base_classes/js_alerts"
 
-class SupportToolEditAttemps < IDmeBase
+class SupportToolEditAttempts < IDmeBase
 
 include PageManagement
 include JavascriptAlerts
+include ErrorMessages
 
   def initialize
     super(FigNewton.support_tool.waiting_attempts)
@@ -17,6 +18,9 @@ include JavascriptAlerts
       update_subgroup("Retiree")
       update_service_member_name
       update_service_member_dob
+    when "remove military name"
+      remove_value("verification_attempt_service_member_first_name")
+      remove_value("verification_attempt_service_member_last_name")
     end
 
     accept_attempt
@@ -42,6 +46,11 @@ include JavascriptAlerts
     find("#verification_attempt_service_member_birth_date").set "01/01/1911"
   end
 
+  def remove_value(field)
+    original_value = page.find("##{field}").value
+    fill_in(field, :with => " ")
+  end
+
   def select_from_menu(element, value)
     find(element).click
     find("li", :text => value).click
@@ -52,16 +61,27 @@ include JavascriptAlerts
     click_button("Update")
   end
 
-  def check_updated_user_properties
-    # data = data_for(:experian_user2)
-    # check_subgroup
-    # check_first_name
-    # check_last_name
-    # check_birth_date
+  def compare_expected_and_actual_user_property_values(type: nil, last_name: "Gentz", first_name: "Sue")
+    case type
+    when "military"
+      updated_subgroup = "Retiree"
+      last_name_label = "service_member_last_name"
+      first_name_label = "service_member_first_name"
+    end
+
+    verify_updated_subgroup(updated_subgroup)
+    verify_updated_name(last_name_label, last_name)
+    verify_updated_name(first_name_label, first_name)
   end
 
-  def check_subgroup
-    # find("th", :text => "Subgroup")
-    # all("td.value")
+
+  def verify_updated_name(label, updated_name)
+    collected_field = find("label[for='#{label}']").find(:xpath, "../..").text
+    collected_field.should == "#{label.capitalize.gsub("_", " ")}\n#{updated_name}-Updated"
+  end
+
+  def verify_updated_subgroup(group)
+    collected_subgroup = find("td.key", :text => "Subgroup").find(:xpath, "..").text
+    collected_subgroup.should == "Subgroup #{group}"
   end
 end
