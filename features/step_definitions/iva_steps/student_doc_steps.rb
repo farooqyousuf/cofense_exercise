@@ -16,7 +16,7 @@ Given("I click on the Verify by uploading documentation link") do
 end
 
 Given("I submit the Canadian student verification form as a {string} record") do |type|
-  step 'I generate a unique "png" doc'
+  step 'I generate a unique "png" doc' unless type == "duplicate"
   @StudentCanada.verify(type: type)
 end
 

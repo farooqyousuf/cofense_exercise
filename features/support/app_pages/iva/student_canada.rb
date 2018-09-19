@@ -7,30 +7,33 @@ class StudentCanada < IDmeBase
   include ErrorMessages
 
   def verify(populate: true, type: "none")
-      if populate
+    if populate
 
-        unique_data = data_for(:experian_user) #info for unique and duplicate users
-        denied_data = data_for(:fail_experian) #info for denied user
-        # second_unique_data = data_for(:experian_user2)
+      data = data_for(:experian_user) #info for unique and duplicate users
+      denied_data = data_for(:fail_experian) #info for denied user
 
-        case type
-        when "unique", "duplicate"
-          populate_fields(data: unique_data)
-        when "denied"
-          populate_fields(data: denied_data)
-        when "second unique user"
-          populate_fields(data: second_unique_data)
-        end
-
+      case type
+      when "unique"
+        populate_fields(data: data)
+      when "duplicate"
+        populate_fields(data: data)
+      when "denied"
+        populate_fields(data: denied_data)
       end
-  click_continue
-
-    if (type == "unique") || (type == "denied")
-      sleep 3
-      populate_doc
-      attach_doc
-      click_continue
     end
+
+    click_continue
+    sleep 3
+    populate_doc
+
+    case type
+    when "unique", "denied"
+      attach_doc
+    when "duplicate"
+      attach_doc(number = 0, document: "dupe_doc.png")
+    end
+
+    click_continue
   end
 
   def populate_fields(data:)
