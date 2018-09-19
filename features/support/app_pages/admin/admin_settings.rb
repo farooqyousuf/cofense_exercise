@@ -20,7 +20,7 @@ include PageManagement
             %w(Staging Mock Mock Mock Production Production Production Mock Disable On Mock Mock)
           when "fail documentation"
             %w(Staging Production Mock\ Fail Mock Production Production Production Mock Disable On Mock Mock)
-          when "fail documentation/successful kba"
+          when "fail documentation/successful kba", "successful kba"
             %w(Mock Production Mock\ Fail Mock Production Production Production Mock Disable On Mock Mock)
           when "Staging"
             %w(Staging Mock Staging Mock Production Production Mock Production Disable On Mock Mock)
