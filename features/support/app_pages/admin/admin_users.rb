@@ -103,7 +103,7 @@ include JavascriptAlerts
   end
 
   def delete_idv_experian_user
-    open_user_and_delete("Veronica C Persinger")
+    open_user_and_delete("Veronica")
   end
 
   def delete_natl_emt

@@ -15,10 +15,6 @@ Given("I trigger KBA after failed documentation for IDV via computer") do
   step 'I click on "Try another method"'
 end
 
-Given("I {string} via KBA") do |action|
-  @IDVComputer.verify_via_kba(action: action)
-end
-
 Given("I submit dupe identity verification attempt via computer") do
   step 'I clear the session from Authority'
   step 'I visit IDP through the "au10tix_light" policy'

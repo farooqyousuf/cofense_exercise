@@ -2,7 +2,7 @@
 Feature: Identity Verification by uploading an ID from the computer
 
   Background:
-    * I create "AdminTool, AdminSettings, IDVComputer, SupportTool, SupportToolVerificationAttempts" page objects
+    * I create "AdminTool, AdminSettings, IDVComputer, IDVKba, SupportTool, SupportToolVerificationAttempts" page objects
     * I visit IDP through the au10tix_light policy
     * I click on the Sign Up link
     * I sign up as a new user
