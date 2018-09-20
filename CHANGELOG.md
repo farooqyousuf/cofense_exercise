@@ -3,6 +3,9 @@
 ### Released
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
+# 2.5.26 (9/20/18)
+- AWE-1824: Update vulnerable dependencies within idme-revelator
+
 # 2.5.25 (9/19/18)
 - AWE-1815: KBA: Successful Verification
 - AWE-1795: Support tool edit verification attempts: Doc upload
