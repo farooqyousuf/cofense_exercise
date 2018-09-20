@@ -18,7 +18,7 @@ include PageManagement
             %w(Mock Disable Mock Mock Production Production Production Mock Disable On Mock Mock)
           when "fail experian", "fail SCRA"
             %w(Staging Mock Mock Mock Production Production Production Mock Disable On Mock Mock)
-          when "fail documentation"
+          when "fail documentation", "fail kba"
             %w(Staging Production Mock\ Fail Mock Production Production Production Mock Disable On Mock Mock)
           when "fail documentation/successful kba", "successful kba"
             %w(Mock Production Mock\ Fail Mock Production Production Production Mock Disable On Mock Mock)
