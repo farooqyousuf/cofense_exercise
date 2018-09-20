@@ -29,3 +29,9 @@ Feature: Employee verification using employee email
     * I submit the employee verification form as a "denied" record
     * I should see the error message "Please provide a valid employee email address."
     * I verify the attempt is marked as "DENIED"
+
+  @delete_current_user_email
+  Scenario: Dupe check attempt for Employee verification
+    * I submit the employee verification form as a "duplicate" record
+    * I should see the error message "We’re sorry, it appears you have already verified your employee status on a different account. Please sign in using your existing credentials."
+    * I verify the attempt is marked as "DUPLICATE"
