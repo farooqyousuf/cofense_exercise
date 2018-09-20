@@ -24,3 +24,12 @@ Feature: Identity Verification by answering KBA questions
     * I "fail experian" via KBA
     * I should see the error message "We're sorry, but your information could not be verified. Please ensure that your information was entered correctly and try again."
     * I verify the attempt is marked as "PROCESSING"
+
+  @delete_current_user_email
+  Scenario: Fail KBA questions
+    * I create "KBAQuestions" page objects
+    * I set the External Vendor Environment to "fail kba"
+    * I "verify" via KBA
+    * I answer the KBA questions
+    * I should see the error message "We're sorry, but your information could not be verified. Please ensure that your information was entered correctly and try again."
+    * I verify the attempt is marked as "PROCESSING"

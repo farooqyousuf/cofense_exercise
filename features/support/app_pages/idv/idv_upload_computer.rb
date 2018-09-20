@@ -67,7 +67,7 @@ class IDVComputer < IDmeBase
     fail_idv_user = data_for(:experian_user4)
 
     case action
-    when "verify"
+    when "verify", "fail kba"
       populate = true
       user = idv_user
     when "fail experian"
