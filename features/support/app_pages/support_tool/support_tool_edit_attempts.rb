@@ -16,11 +16,25 @@ include ErrorMessages
     when "military"
       update_doc_type("NARA Request")
       update_subgroup("Retiree")
-      update_service_member_name
-      update_service_member_dob
+      update_dob("verification_attempt_service_member_birth_date")
+      %w(verification_attempt_service_member_first_name verification_attempt_service_member_last_name).each do |field|
+        update_property(field)
+      end
+    when "emt state lookup"
+      update_dob("verification_attempt_birth_date")
+      update_zip("#verification_attempt_emt_zip")
+      update_state("verification_attempt_emt_state", "CA")
+      %w(verification_attempt_first_name verification_attempt_last_name verification_attempt_emt_number verification_attempt_emt_city verification_attempt_emt_county).each do |field|
+        update_property(field)
+      end
     when "remove military name"
-      remove_value("verification_attempt_service_member_first_name")
-      remove_value("verification_attempt_service_member_last_name")
+      %w(verification_attempt_service_member_first_name verification_attempt_service_member_last_name).each do |field|
+        remove_value(field)
+      end
+    when "remove emt state lookup"
+      %w(verification_attempt_first_name verification_attempt_last_name verification_attempt_emt_number verification_attempt_emt_county verification_attempt_emt_zip).each do |value|
+        remove_value(value)
+      end
     end
 
     accept_attempt
@@ -34,16 +48,22 @@ include ErrorMessages
     select_from_menu("#select2-verification_attempt_subgroup_id-container", subgroup)
   end
 
-  def update_service_member_name
-    %w(verification_attempt_service_member_first_name verification_attempt_service_member_last_name).each do |field|
-      original_value = page.find("##{field}").value
-      fill_in(field, :with => "#{original_value}-Updated")
-    end
+  def update_state(state_id, state)
+    select(state, :from => state_id)
   end
 
-  def update_service_member_dob
-    page.execute_script("document.getElementById('verification_attempt_service_member_birth_date').removeAttribute('readonly')")
-    find("#verification_attempt_service_member_birth_date").set "01/01/1911"
+  def update_dob(dob_id)
+    page.execute_script("document.getElementById('#{dob_id}').removeAttribute('readonly')")
+    find("##{dob_id}").set "01/01/1911"
+  end
+
+  def update_zip(zip_id)
+    find(zip_id).set "12345-1111"
+  end
+
+  def update_property(field)
+    original_property = page.find("##{field}").value
+    fill_in(field, :with => "#{original_property}-Updated")
   end
 
   def remove_value(field)
@@ -61,23 +81,35 @@ include ErrorMessages
     click_button("Update")
   end
 
-  def compare_expected_and_actual_user_property_values(type: nil, last_name: "Gentz", first_name: "Sue")
+  def compare_expected_and_actual_user_property_values(type: nil, last_name: "Gentz", first_name: "Sue", city: "Emporia", county: "Loudoun")
     case type
     when "military"
       updated_subgroup = "Retiree"
       last_name_label = "service_member_last_name"
       first_name_label = "service_member_first_name"
+      verify_updated_subgroup(updated_subgroup)
+    when "emt state lookup"
+      first_name_label = "first_name"
+      last_name_label = "last_name"
+      verify_appended_updated_property("emt_city", city)
+      verify_appended_updated_property("emt_county", county)
+      verify_appended_updated_property("emt_number", "FJDL2")
+      verify_set_updated_property("emt_zip", "12345-1111")
+      verify_set_updated_property("emt_state", "CA")
     end
 
-    verify_updated_subgroup(updated_subgroup)
-    verify_updated_name(last_name_label, last_name)
-    verify_updated_name(first_name_label, first_name)
+    verify_appended_updated_property(last_name_label, last_name)
+    verify_appended_updated_property(first_name_label, first_name)
   end
 
-
-  def verify_updated_name(label, updated_name)
+  def verify_appended_updated_property(label, updated_property)
     collected_field = find("label[for='#{label}']").find(:xpath, "../..").text
-    collected_field.should == "#{label.capitalize.gsub("_", " ")}\n#{updated_name}-Updated"
+    collected_field.should == "#{label.capitalize.gsub("_", " ")}\n#{updated_property}-Updated"
+  end
+
+  def verify_set_updated_property(label, updated_property)
+    collected_field = find("label[for='#{label}']").find(:xpath, "../..").text
+    collected_field.should == "#{label.capitalize.gsub("_", " ")}\n#{updated_property}"
   end
 
   def verify_updated_subgroup(group)

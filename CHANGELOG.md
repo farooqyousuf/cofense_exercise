@@ -6,6 +6,7 @@ All notable changes to this project will be documented in this file. This projec
 # 2.5.26 (9/20/18)
 - AWE-1816: KBA: Failed Experian
 - AWE-1824: Update vulnerable dependencies within idme-revelator
+- AWE-1796: Support tool edit verification attempts: EMT State
 - AWE-1822: Employee dupe test
 - AWE-1817: KBA: Failed KBA
 
