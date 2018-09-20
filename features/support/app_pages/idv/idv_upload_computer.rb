@@ -64,11 +64,15 @@ class IDVComputer < IDmeBase
 
   def verify_via_kba(action: "none", populate: "none")
     idv_user = data_for(:experian_user3)
+    fail_idv_user = data_for(:experian_user4)
 
     case action
     when "verify"
       populate = true
       user = idv_user
+    when "fail experian"
+      populate = true
+      user = fail_idv_user
     end
 
     if populate == true
@@ -76,6 +80,7 @@ class IDVComputer < IDmeBase
       populate_fields_computer(data: user)
       check_fcra_box
       click_button("Verify my information")
+      sleep 3
     end
   end
 
