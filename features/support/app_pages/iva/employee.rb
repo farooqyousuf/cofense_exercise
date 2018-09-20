@@ -12,8 +12,8 @@ class IVAEmployee < IDmeBase
         case email_type
         when "unique"
           populate_fields(data: data, email: "capybara+"+"#{Time.now.strftime("%m%d%y_%I%M%S")}"+"@id.me")
-        when "dupe"
-          populate_fields(data: data, email: data.fetch("dupe_email"))
+        when "duplicate"
+          populate_fields(data: data, email: "farooq@id.me")
         when "denied"
           populate_fields(data: data, email: data.fetch("denied_email"))
         when "none"
