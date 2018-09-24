@@ -34,6 +34,11 @@ Given("I submit the edited info form") do
   click_button("Verify my information")
 end
 
+Given("I submit the info form") do
+  @IDVComputer.check_fcra_box
+  click_button("Verify my information")
+end
+
 Given("I verify that {string} info was updated") do |fields|
   expect(@IDVComputer.current_info(fields)).not_to eql(@IDVComputer.mocked_info(fields)) unless "fields == Home Phone"
   expect(@IDVComputer.current_info(fields)).to eql(@IDVComputer.expected_info(fields))

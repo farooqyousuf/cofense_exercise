@@ -5,6 +5,7 @@ All notable changes to this project will be documented in this file. This projec
 
 # 2.5.27 (9/24/18)
 - AWE-1820: KBA: Edit Review Info
+- AWE-1819: KBA: Prompt Errors for empty fields
 
 # 2.5.26 (9/20/18)
 - AWE-1816: KBA: Failed Experian

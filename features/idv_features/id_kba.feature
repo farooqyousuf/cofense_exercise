@@ -64,3 +64,22 @@ Feature: Identity Verification by answering KBA questions
     * I should be successfully verified as "Identity"
     * I verify updated identity verification info for "kba"
     * I verify user level properties for "Identity"
+
+  @delete_current_user_email
+  Scenario: Successfully prompt for all required fields for Identity Verification
+    * I set the External Vendor Environment to "successful kba"
+    * I submit empty kba "personal information" form
+    * I should see error messages on required fields for "Identity Verification"
+    * I submit personal information form via kba
+    * I submit empty kba "address information" form
+    * I should see error messages on required fields for "Identity Verification"
+    * I submit address information form via kba
+    * I submit empty identity verification form for smartphone
+    * I should see error messages on required fields for "Identity Verification"
+    * I submit identity verification phone number form
+    * I submit empty identity verification form for ssn
+    * I should see error messages on required fields for "Identity Verification"
+    * I submit identity verification ssn form
+    * I submit the info form
+    * I submit empty kba "questions" form
+    * I should see an error on kba questions
