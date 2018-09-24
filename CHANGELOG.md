@@ -3,6 +3,9 @@
 ### Released
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
+# 2.5.27 (9/24/18)
+- AWE-1820: KBA: Edit Review Info
+
 # 2.5.26 (9/20/18)
 - AWE-1816: KBA: Failed Experian
 - AWE-1824: Update vulnerable dependencies within idme-revelator

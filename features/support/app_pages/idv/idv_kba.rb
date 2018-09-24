@@ -11,7 +11,7 @@ class IDVKba < IDmeBase
     fail_idv_user = data_for(:experian_user4)
 
     case action
-    when "verify", "fail kba", "submit dupe attempt"
+    when "verify", "fail kba", "submit dupe attempt", "submit information"
       populate = true
       user = idv_user
     when "fail experian"
@@ -22,9 +22,11 @@ class IDVKba < IDmeBase
     if populate == true
       populate_fields_kba(data: user)
       populate_fields_computer(data: user)
-      check_fcra_box
-      click_button("Verify my information")
-      sleep 3
+      unless action == "submit information"
+        check_fcra_box
+        click_button("Verify my information")
+        sleep 3
+      end
     end
   end
 end
