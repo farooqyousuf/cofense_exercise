@@ -62,10 +62,11 @@ include DataMagic
   end
 
   def populate_fields_personal_info(data:)
-    %w(idme_verification_identity_first_name idme_verification_identity_last_name idme_verification_identity_birth_date).each do |field|
+    %w(idme_verification_identity_first_name idme_verification_identity_middle_name idme_verification_identity_last_name idme_verification_identity_birth_date).each do |field|
       fill_in(field, :with => data.fetch(field))
     end
 
+    populate_gender("female")
     submit_form
   end
 
@@ -97,6 +98,10 @@ include DataMagic
   def populate_home_phone(data:)
     fill_in("home_phone", :with => data.fetch("mobile_phone"))
     submit_form
+  end
+
+  def populate_gender(sex)
+    find("label[for='idme_verification_identity_gender_#{sex}']").click
   end
 
   def set_up_multifactor
@@ -186,12 +191,12 @@ include DataMagic
 
   def expected_info(fields)
     case fields
-    when "Personal Information" then ["JACQUELYN", "C", "RUTLAND", "Female", "08/28/1948"]
+    when "Personal Information" then ["JACQUELYN", "Q", "RUTLAND", "Female", "08/28/1948"]
     when "Address"              then ["1016 TOWNSEND ST", "SPEARMAN", "TX", "79081-3564"]
     when "Phone"                then ["806-659-0081"]
     when "Home Phone"           then ["651-458-1155", "806-659-0081"]
-    when  "All"                 then ["JACQUELYN", "C", "RUTLAND", "Female", "08/28/1948", "", "1016 TOWNSEND ST", "SPEARMAN", "TX", "79081-3564", "", "806-659-0081"]
-    when  "All + Home Phone"    then ["JACQUELYN", "C", "RUTLAND", "Female", "08/28/1948", "", "1016 TOWNSEND ST", "SPEARMAN", "TX", "79081-3564", "", "651-458-1155", "806-659-0081"]
+    when  "All"                 then ["JACQUELYN", "Q", "RUTLAND", "Female", "08/28/1948", "", "1016 TOWNSEND ST", "SPEARMAN", "TX", "79081-3564", "", "806-659-0081"]
+    when  "All + Home Phone"    then ["JACQUELYN", "Q", "RUTLAND", "Female", "08/28/1948", "", "1016 TOWNSEND ST", "SPEARMAN", "TX", "79081-3564", "", "651-458-1155", "806-659-0081"]
     end
   end
 
@@ -213,7 +218,7 @@ include DataMagic
   end
 
   def expected_user_properties
-    ["JACQUELYN", "C", "RUTLAND", "female", "18066590081", "1016 TOWNSEND ST", "SPEARMAN", "TX", "79081-3564"]
+    ["JACQUELYN", "Q", "RUTLAND", "female", "18066590081", "1016 TOWNSEND ST", "SPEARMAN", "TX", "79081-3564"]
   end
 
   def expected_user_properties_via_phone

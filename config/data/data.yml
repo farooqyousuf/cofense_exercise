@@ -153,6 +153,7 @@ experian_user2:
 experian_user3:
   idme_verification_identity_first_name: Veronica
   idme_verification_identity_last_name: Persinger
+  idme_verification_identity_middle_name: C
   idme_verification_identity_birth_date: 07/09/1942
   idme_verification_identity_street:  6647 WILDFLOWER DR S
   idme_verification_identity_city:  COTTAGE GROVE
@@ -165,6 +166,7 @@ experian_user3:
 experian_user4:
   idme_verification_identity_first_name: JACQUELYN
   idme_verification_identity_last_name: RUTLAND
+  idme_verification_identity_middle_name: Q
   idme_verification_identity_birth_date: 08/28/1948
   idme_verification_identity_street: 1016 TOWNSEND ST
   idme_verification_identity_city: SPEARMAN
