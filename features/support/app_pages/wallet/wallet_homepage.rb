@@ -5,6 +5,14 @@ class WalletHomepage < IDmeBase
     super(FigNewton.wallet.homepage.url)
   end
 
+  def click_wallet_sign_in
+    find_link("Sign In").click
+  end
+
+  def click_wallet_sign_up
+    find_link("Sign Up").click
+  end
+
   def sign_in(user_email)
     fill_in_email_by_id(user_email)
     fill_in_password(FigNewton.shop_users.general_password)
