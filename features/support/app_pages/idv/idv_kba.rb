@@ -29,4 +29,12 @@ class IDVKba < IDmeBase
       end
     end
   end
+
+  def submit_personal_info_form
+    populate_fields_personal_info(data: data_for(:experian_user3))
+  end
+
+  def submit_address_info_form
+    populate_fields_address(data: data_for(:experian_user3))
+  end
 end
