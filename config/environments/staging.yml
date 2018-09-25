@@ -52,6 +52,7 @@ oauth:
     responder         : responder
     student           : student
     teacher           : teacher
+    vfw               : vfw
     wallet            : wallet
     student_canada    : student_canada
     general_password  : Password123

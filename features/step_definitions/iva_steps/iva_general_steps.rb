@@ -108,6 +108,10 @@ Given(/^I should be successfully verified(?: as "(.*)")?$/) do |group|
   elsif group == "Identity"
     expect(@oauth_client.verified?).to eq(true)
     expect(@oauth_client.affiliation_payload).to eq(nil)
+  elsif group == "VFW"
+    expect(@oauth_client.verified?).to eq(true)
+    expect(@oauth_client.vfw_number_payload).not_to eq(nil)
+    expect(@oauth_client.has_affiliation?("Service Member")).to eq(true)
   else
     expect(@oauth_client.verified?).to eq(true)
     expect(@oauth_client.has_affiliation?(group)).to eq(true) if group
