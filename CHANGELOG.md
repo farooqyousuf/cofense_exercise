@@ -3,6 +3,9 @@
 ### Released
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
+# 2.5.28 (9/25/18)
+- AWE-1860: Fixed some Wallet tests to work with the new nav bar
+
 # 2.5.27 (9/24/18)
 - AWE-1820: KBA: Edit Review Info
 - AWE-1819: KBA: Prompt Errors for empty fields
