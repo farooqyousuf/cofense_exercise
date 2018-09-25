@@ -5,6 +5,7 @@ All notable changes to this project will be documented in this file. This projec
 
 # 2.5.28 (9/25/18)
 - AWE-1853: VFW: Happy path functional test
+- AWE-1860: Fix Wallet User Tests to work with the new Nav Bar
 
 # 2.5.27 (9/24/18)
 - AWE-1820: KBA: Edit Review Info

@@ -1,3 +1,11 @@
+Given("I click on the Wallet Sign Up Link") do
+  @WalletHomepage.click_wallet_sign_up
+end
+
+Given("I click on the Wallet Sign In Link") do
+  @WalletHomepage.click_wallet_sign_in
+end
+
 Given("I click on the Wallet My Account link") do
   @WalletHomepage.click_my_account_button
 end

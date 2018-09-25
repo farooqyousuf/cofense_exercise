@@ -4,9 +4,10 @@ Feature: Test Wallet Dashboard Page Feature
   Background:
     * I create "WalletHomepage, WalletDashboard, WalletMyids, ShopLandingPage" page objects
     * I visit "WalletHomepage"
-    * I click on the Wallet My Account link
+    * I click on the Wallet Sign In Link
     * I login to wallet as a "Military" user
 
+  @wip @ignore
   Scenario: Verify Wallet Main Navigation bar
     * I verify ID.me logo is present
     * I verify that the Wallet nav "About" tab redirects to page
