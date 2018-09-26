@@ -43,6 +43,10 @@ class OAuthClient
     payload["affiliation"]
   end
 
+  def vfw_number_payload
+    payload["vfw_number"]
+  end
+
   def payload
     @payload ||= JSON.parse(@token.get(api_endpoint).body)
   end
