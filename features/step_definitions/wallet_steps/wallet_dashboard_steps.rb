@@ -2,7 +2,7 @@ Given("I check the Wallet dashboard page is visible") do
  expect(page).to have_css(".wallet-content-main",:visible => true)
  expect(page).to have_css(".wallet-dashboard-module",:visible => true)
  expect(page).to have_text "Activity Feed"
- end
+end
 
 Given("I click on the shared side navigation") do
   @WalletDashboard.open_shared_side_navigation

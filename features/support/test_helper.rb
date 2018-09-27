@@ -2,7 +2,9 @@
 module HelperMethods
 
   def validate_error_message(expected_text, css)
-    (page.find("#{css}").text).should eq(expected_text)
+    sleep 1
+    actual_text = (page.find("#{css}").text).sub /^[^A-Z]+/, '' #removes all characters before the string that is not a Capital letter
+    actual_text.should eq(expected_text)
   end
 
   def click_continue_link

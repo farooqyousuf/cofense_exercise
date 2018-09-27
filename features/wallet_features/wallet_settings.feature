@@ -21,7 +21,7 @@ Feature: Test Wallet Settings Features
     * I click on the Settings navigation link
     * I click on the Security tab
     * I change the user password in Wallet
-    * I pry
+    * I should see this message "Your password was successfully updated." on this field ".messages"
 
   Scenario: Use Incorrect Password to Change Password
     * I visit "WalletHomepage"
@@ -30,4 +30,4 @@ Feature: Test Wallet Settings Features
     * I click on the Settings navigation link
     * I click on the Security tab
     * I attempt to change the password using an incorrect current password
-    * I should see this error message "Please enter the correct password" on this field "#user_password_validation-error"
+    * I should see this message "Please enter the correct password" on this field "#user_password_validation-error"
