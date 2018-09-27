@@ -5,6 +5,16 @@ class WalletSettings < IDmeBase
     super(FigNewton.wallet.settings)
   end
 
+  def change_pw
+    click_edit_link
+    # fill_in_pw_validation(FigNewton.oauth.general_password)
+    fill_in_pw_validation("Changeme123")
+    fill_in_pw("ChangeMe12345")
+    fill_in_pw_confirm("ChangeMe12345")
+    binding.pry
+    click_update
+  end
+
   def change_pw_with_incorrect_current_pw
     click_edit_link
     fill_in_pw_validation(FigNewton.oauth.weak_password)

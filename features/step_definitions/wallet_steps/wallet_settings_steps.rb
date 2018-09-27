@@ -6,3 +6,6 @@ Given("I attempt to change the password using an incorrect current password") do
   @WalletSettings.change_pw_with_incorrect_current_pw
 end
 
+Given("I change the user password in Wallet") do
+  @WalletSettings.change_pw
+end
