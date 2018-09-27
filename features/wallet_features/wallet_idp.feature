@@ -1,5 +1,5 @@
 @regression @wallet @desktop
-Feature: Test Wallet User Features
+Feature: Test Wallet IDP Features
 
   Background:
     * I create "WalletHomepage, WalletDashboard, WalletSettings" page objects
@@ -25,26 +25,6 @@ Feature: Test Wallet User Features
     * I should see a IDP failed attempt sign in error
     * I login to wallet as a "Military" user
     * I should see my failed sign in on the activity feed
-
-  @delete_current_user_email @ignore @wip
-  Scenario: User verifies a Military Group Affiliation
-    * I visit "WalletHomepage"
-    * I click on the Wallet Sign Up Link
-    * I sign up as a new user
-    * I click to verify a military group affiliation
-    * I verify a military user
-    * I verify my military group affiliation has been added
-    * I should see my military group addition on the activity feed
-
-  @delete_current_user_email
-  Scenario: User deactivates Wallet account and revokes access
-    * I visit "WalletHomepage"
-    * I click on the Wallet Sign Up Link
-    * I sign up as a new user
-    * I record the wallet user email
-    * I deactivate my Wallet account
-    * I confirm that my Wallet session has been terminated
-    * I verify my Wallet account has been deactived
 
   @ignore @delete_current_user_email
   ## Currently unable to unlock account in tests without verification code

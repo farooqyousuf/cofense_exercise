@@ -5,6 +5,34 @@ class WalletSettings < IDmeBase
     super(FigNewton.wallet.settings)
   end
 
+  def change_pw_with_incorrect_current_pw
+    click_edit_link
+    fill_in_pw_validation(FigNewton.oauth.weak_password)
+    fill_in_pw(FigNewton.oauth.general_password)
+    fill_in_pw_confirm(FigNewton.oauth.general_password)
+    click_update
+  end
+
+  def click_edit_link
+    click_link("Edit")
+  end
+
+  def fill_in_pw_validation(password)
+    fill_in("user_password_validation", :with => FigNewton.oauth.weak_password)
+  end
+
+  def fill_in_pw(password)
+    fill_in("user_password", :with => password)
+  end
+
+  def fill_in_pw_confirm(password)
+    fill_in("user_password_confirmation", :with => password)
+  end
+
+  def click_update
+    click_button("Update")
+  end
+
   def switch_to_security_tab
     find("li[data-option='js-toggle-security']").click
   end

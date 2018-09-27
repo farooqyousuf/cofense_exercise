@@ -1,6 +1,10 @@
 # general module helpers for step definitions
 module HelperMethods
 
+  def validate_error_message(expected_text, css)
+    (page.find("#{css}").text).should eq(expected_text)
+  end
+
   def click_continue_link
     click_link("Continue")
   end

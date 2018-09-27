@@ -3,6 +3,9 @@
 ### Released
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
+# 2.5.29 (9/26/18)
+- AWE-1848: Use Incorrect Password to Change Password
+
 # 2.5.28 (9/25/18)
 - AWE-1853: VFW: Happy path functional test
 - AWE-1860: Fix Wallet User Tests to work with the new Nav Bar
