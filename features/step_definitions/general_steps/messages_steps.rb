@@ -1,4 +1,4 @@
-Given("I should see this error message {string} on this field {string}") do |expected_text, css|
+Given("I should see this message {string} on this field {string}") do |expected_text, css|
   validate_error_message(expected_text, css)
 end
 

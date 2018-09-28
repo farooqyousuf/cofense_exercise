@@ -3,6 +3,9 @@
 ### Released
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
+# 2.5.30 (9/27/18)
+- AWE-1856: Happy Path Wallet Change Password
+
 # 2.5.29 (9/26/18)
 - AWE-1848: Use Incorrect Password to Change Password
 
