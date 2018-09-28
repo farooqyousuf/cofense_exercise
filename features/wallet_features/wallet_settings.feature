@@ -14,7 +14,7 @@ Feature: Test Wallet Settings Features
     * I confirm that my Wallet session has been terminated
     * I verify my Wallet account has been deactived
 
-  @smoke and @delete_current_user_email
+  @smoke @delete_current_user_email
   Scenario: Happy Path to Change Password
     * I visit "WalletHomepage"
     * I click on the Wallet Sign Up Link
@@ -24,6 +24,7 @@ Feature: Test Wallet Settings Features
     * I change the user password in Wallet
     * I should see this message "Your password was successfully updated." on this field ".messages"
 
+  @smoke @delete_current_user_email
   Scenario: Use Incorrect Password to Change Password
     * I visit "WalletHomepage"
     * I click on the Wallet Sign Up Link
