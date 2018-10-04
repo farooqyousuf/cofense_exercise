@@ -16,3 +16,9 @@ Feature: Military verification with VFW number
     * I click on "Continue"
     * I authorize the attribute release
     * I should be successfully verified as "VFW"
+
+  @delete_current_user_email
+  Scenario: Dupe valid vfw number added to military user
+    * I add a "duplicate" vfw number to user
+    * I should see the error message "We’re sorry, it appears you have already verified your VFW membership status on a different account. Please sign in using your existing credentials."
+    * I verify the attempt is marked as "DUPLICATE"

@@ -7,7 +7,7 @@ class Consent < IDmeBase
   include ErrorMessages
 
   def allow
-    click_button("Allow")
+    click_on("Allow")
   end
 
 end
