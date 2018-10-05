@@ -55,7 +55,7 @@ Given("I confirm my email address") do
 end
 
 Given("I authorize the attribute release") do
-  page.has_button? "Allow" #waits for allow button to show
+  page.has_button? "Allow" unless page.has_link? "Allow" #waits for allow button to show
   Consent.new.allow
 end
 

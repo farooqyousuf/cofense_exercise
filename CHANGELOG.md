@@ -3,6 +3,9 @@
 ### Released
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
+# 2.5.31 (10/4/18)
+- AWE-1889: VFW: Duplicate test
+
 # 2.5.30 (9/27/18)
 - AWE-1856: Happy Path Wallet Change Password
 
