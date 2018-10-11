@@ -37,7 +37,7 @@ class DocEMT < IDmeBase
   end
 
   def populate_fields(data:)
-    %w(verification_first_name verification_last_name verification_birth_date verification_social verification_social_confirm verification_street verification_city verification_zip).each do |field|
+    %w(verification_first_name verification_last_name verification_birth_date verification_social verification_street verification_city verification_zip).each do |field|
       2.times {fill_in field, :with => data.fetch(field)}
     end
     sleep 2

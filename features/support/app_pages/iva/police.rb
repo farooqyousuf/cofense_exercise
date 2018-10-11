@@ -35,7 +35,7 @@ class Police < IDmeBase
   def populate_fields(data:)
     search_option("#s2id_verification_police_state", data.fetch("state"))
 
-    %w(verification_first_name verification_last_name verification_social verification_social_confirm verification_street verification_city verification_zip).each do |field|
+    %w(verification_first_name verification_last_name verification_social verification_street verification_city verification_zip).each do |field|
       fill_in field, :with => data.fetch(field)
     end
 

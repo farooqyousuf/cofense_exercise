@@ -3,6 +3,9 @@
 ### Released
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
+# 2.5.32 (10/11/18)
+- AWE-2014: Fix Responder Tests to work w/new design
+
 # 2.5.31 (10/4/18)
 - AWE-1889: VFW: Duplicate test
 

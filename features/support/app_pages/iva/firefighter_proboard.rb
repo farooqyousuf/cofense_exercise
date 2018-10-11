@@ -24,7 +24,7 @@ class PBFirefighter < IDmeBase
   end
 
   def populate_fields(data:)
-    %w(verification_first_name verification_last_name verification_social verification_social_confirm).each do |field|
+    %w(verification_first_name verification_last_name verification_social).each do |field|
       fill_in field, :with => data.fetch(field)
     end
 
