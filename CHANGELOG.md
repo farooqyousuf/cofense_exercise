@@ -5,6 +5,7 @@ All notable changes to this project will be documented in this file. This projec
 
 # 2.5.32 (10/11/18)
 - AWE-2014: Fix Responder Tests to work w/new design
+- AWE-1972: Prod Smoke Tests: IDP
 
 # 2.5.31 (10/4/18)
 - AWE-1889: VFW: Duplicate test
