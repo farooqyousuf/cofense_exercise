@@ -1,5 +1,5 @@
 # EMT national tests are temporarily disabled due to captcha on there website
-@ignore @regression @iva @responder @desktop @emt
+@regression @iva @responder @desktop @emt
 Feature: Responder verification as an nationally certified EMT
 
   Background:
