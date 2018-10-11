@@ -2,108 +2,21 @@ sauce_labs:
   username: farooq
   access_key: a2280004-36fd-4a44-ae1a-209696270d5e
 
-partners:
-  user: rich.purnell.rocketman2@gmail.com
-  previous_user: tony.chung+test@id.me
-  password: Password123
-  fanatics:
-    product_page: http://www.fanatics.com/NFL_Atlanta_Falcons_Mens/Julio_Jones_Atlanta_Falcons_Nike_Alternate_Game_Jersey_%E2%80%93_Black
-    product_page2: http://www.fanatics.com/NFL_New_England_Patriots/Tom_Brady_New_England_Patriots_Nike_Game_Jersey_-_Navy_Blue_Silver
-    discount_copy: "A discount of 10% on items and a shipping discount on eligible methods was successfully applied to your order."
-    product_selection_1: "a[title ='Choose Size L']"
-    product_selection_2: "a[title ='Choose Size XL']"
-    mobile:
-      product_page: http://m.fanatics.com/NFL_Baltimore_Ravens_Mens/Justin_Tucker_Baltimore_Ravens_Nike_Game_Jersey_-_Purple
-      discount_copy: "A discount of 10% on items and a shipping discount on eligible methods was successfully applied to your order."
-  nfl_shop: https://www.nflshop.com/catalog/product/Mens_Washington_Redskins_Ryan_Kerrigan_Nike_Burgundy_Game_Jersey
-  nfl_mobile:
-    product_page: http://m.nflshop.com/Baltimore_Ravens_Jerseys/Mens_Baltimore_Ravens_Terrell_Suggs_Nike_Purple_Game_Jersey
-    product_selection_1: "#pdpSizeSelector button[value='2609011']"
-    product_selection_2: "#pdpSizeSelector button[value='2609014']"
-  fansedge: http://www.fansedge.com/New_England_Patriots_Merchandise/Nike_Tom_Brady_New_England_Patriots_Navy_Blue_Silver_Game_Jersey
-  fansedge_discount: "A discount of 10% on items and a shipping discount on eligible methods was successfully applied to your order."
-  fansedge_discount_amount: "-$10.00"
-  ny_giants: http://shop.giants.com/New_York_Giants_Jerseys/Mens_New_York_Giants_Eli_Manning_Nike_Royal_Blue_Game_Jersey
-  eagles: http://store.philadelphiaeagles.com/Philadelphia_Eagles_Mens_Jerseys/Mens_Philadelphia_Eagles_Brian_Dawkins_Nike_Midnight_Green_Game_Jersey
-  seahawks: http://proshop.seahawks.com/Seattle_Seahawks_Mens_Jerseys/Mens_Seattle_Seahawks_Russell_Wilson_Nike_College_Navy_Game_Jersey
-  nba_shop: http://store.nba.com/Boston_Celtics_Mens/Mens_Boston_Celtics_Larry_Bird_adidas_Kelly_Green_Hardwood_Classics_Swingman_Jersey
-  nhl_shop: http://shop.nhl.com/Boston_Bruins_Jerseys/Mens_Boston_Bruins_Reebok_Black_2016_Winter_Classic_Premier_Jersey
-  az_cardinals: http://shop.azcardinals.com/Arizona_Cardinals_Mens_Jerseys/Mens_Arizona_Cardinals_Tyrann_Mathieu_Nike_Cardinal_Game_Jersey
-  nascar: http://store.nascar.com/Mens_Jackets/Mens_Dale_Earnhardt_Jr._Black_Nationwide_Insurance_Uniform_Twill_Jacket
-  mlb_shop:
-    product_page: http://shop.mlb.com/Baltimore_Orioles_Gear
-    discount_copy: "A discount of 15% was successfully applied to your order."
-  caesars_hotels: https://www.caesars.com
-  underarmour:
-    product_page_1: https://www.underarmour.com/en-us/pid1289681-001
-    product_page_2: https://www.underarmour.com/en-us/mens-ua-lightweight-swacket/pid1289694-997
-    product_selection_1: "#sizeChipList_Item1"
-    product_selection_2: "#sizeChipList_Item2"
-  mlb_tv_subscription_page: http://mlb.mlb.com/mlb/subscriptions
-  mlb_tv_yearly_subscription: Buy Now - $49.99
-  carhartt_homepage: http://www.carhartt.com/products/carhartt-men-outerwear/Shoreline-Jacket-J162
-  ford_user: eddie.park.tester@gmail.com
-  ford_password: Password123
-  taylormadegolf: http://taylormadegolf.com/M1-Driver/N1184507.html
-  adidasgolf: http://adidasgolf.com/Puremotion-Short-Sleeve/DW-LBV48.html?dwvar_DW-LBV48_color=AE8964#start=1
-  ashworthgolf: http://ashworthgolf.com/PRIMATEC-Pique-Solid-Novelty-Rib-Collar-Shirt/DW-KFZ18.html?dwvar_DW-KFZ18_color=AE4826#start=1
-  adamsgolf: http://adamsgolf.com/Lightweight-Stand-Bag---ST1404/DW-JIV33.html?dwvar_DW-JIV33_color=M70608#start=1
-  seaworld:
-    orlando: http://seaworldparks.com/seaworld-orlando/waves-of-honor/veterans
-    san_antonio: https://seaworldparks.com/seaworld-sanantonio/waves-of-honor/active
-    busch_gardens_tampa: https://seaworldparks.com/buschgardens-tampa/waves-of-honor/active
-    busch_gardens_williamsburg: https://seaworldparks.com/buschgardens-williamsburg/waves-of-honor/active
-    san_diego_teacher: https://seaworldparks.com/en/seaworld-sandiego/educational-programs/teachers
-    orlando_teacher: https://seaworldparks.com/en/seaworld-orlando/educational-programs/teacher-programs/seaworld-florida-teacher-card
-    san_diego_military: https://seaworldparks.com/seaworld-sandiego/waves-of-honor/active
-    sesame_place: https://sesameplace.com/langhorne/waves-of-honor/active/
-    aquatica_san_diego: https://aquaticabyseaworld.com/sandiego/waves-of-honor/active
-    adventure_island_tampa: https://adventureisland.com/tampa/waves-of-honor/active
-    water_country_usa: https://watercountryusa.com/williamsburg/waves-of-honor/active
-    orlando_veteran: https://seaworldparks.com/en/seaworld-orlando/waves-of-honor/veterans
-    busch_gardens_tampa_veteran: https://seaworldparks.com/buschgardens-tampa/waves-of-honor/veterans
-    busch_gardens_williamsburg_veteran: https://seaworldparks.com/buschgardens-williamsburg/waves-of-honor/veterans
-    sesame_place_veteran: https://sesameplace.com/langhorne/waves-of-honor/veteran
-  bodybuilding_hlp: https://hosted-pages.id.me/bodybuilding-military-discount?offer_id=25202
-  bodybuilding: http://www.bodybuilding.com/store/opt/whey.html
-  moosejaw: http://www.moosejaw.com/moosejaw/shop/product_Arcteryx-Men-s-Captive-SS-Polo_10235054_10208_10000001_-1_
-  atlantis_hlp: https://hosted-pages.id.me/atlantis-military-discount
-  dell_hlp: https://hosted-pages.id.me/dell-saluting-service-members?offer_id=25186
-  columbia_sport:
-    hlp_page: https://hosted-pages.id.me/columbia-military?offer_id=25204
-    product_page: https://www.columbia.com/mens-outdry-ex-gold-interchange-jacket-1680752.html?dwvar_1680752_variationColor=452&dwvar_1680752_variationSize=S
-    shopping_cart_page: https://www.columbia.com/cart
-  ashley_stewart:
-    product_page1: http://www.ashleystewart.com/double-keyhole-bodycon-dress/402009802140.html#start=2&cgid=dresses_styles_webexclusives
-    product_page2: http://www.ashleystewart.com/cascade-sleeve-keyhole-blouse/035-68882M.html?dwvar_035-68882M_color=0001#start=1&cgid=tops_styles_shirts
-  camp_saver:
-    verify_idme_page: http://www.campsaver.com/verify-with-idme/?utm_source=idme&utm_medium=email&utm_campaign=may13
-    product_page: http://www.campsaver.com/moving-comfort-lsd-jacket-women-s
-  irobot:
-    hlp_page: https://hosted-pages.id.me/military-and-veteran-discount?offer_id=101377
-  jr_cigar_landing_page: https://www.jrcigars.com/military-discount?source=cj
-  merrell:
-    product_page: http://www.merrell.com/US/en/palm-rope-print-shirt/24572M.html?dwvar_24572M_color=JMS23097-406#cgid=men-clothing-shirts--tees&start=1
-    product_selection_1: "label[id='swatch-M']"
-    product_selection_2: "label[id='swatch-L']"
-  rhone: https://www.rhone.com/products/sequoia-2-0-1-4-zip
-  the_limited:
-    product_page: http://www.thelimited.com/product/printed-sleeveless-sheath-dress/3262748.html?cgid=dresses&prefn1=saleStatus&start=32&dwvar_3262748_colorCode=298&prefv1=regular&ppid=c32
-    checkout_cart: https://www.thelimited.com/cart
-  overstock:
-    military: https://www.overstock.com/clubomilitary
-    teacherstudents: https://www.overstock.com/cluboclassroom
-    firstresponders: https://www.overstock.com/clubofirstresponder
-  uber_hlp: https://hosted-pages.id.me/ubermilitary-driver-partner-verification
-  goruck:
-    product_page: http://www.goruck.com/gr1-rucksack-black-/p/GEAR-000574
-  yeti:
-    product_page: http://yeti.com/tundra-45-cooler
-
-
 oauth:
+  general_password: Changeme123
+  unverified: test_unverified_user@id.me
+  verified: rich.purnell.rocketman2@gmail.com
   facebook_user: qa@id.me
   facebook_pw: P@ssword123
+
+idp:
+  base_url: https://api.id.me
+  new_session_url: https://api.id.me/en/session/new
+  new_registration_url: https://api.id.me/en/registration/new
+
+wallet:
+  homepage:
+    url: https://wallet.id.me/
 
 test_user:
   password: Password123
@@ -116,3 +29,6 @@ test_user:
     user_email: test+student@id.me
   teacher:
     user_email: test+teacher@id.me
+
+partners:
+  vetsgov: https://www.vets.gov/
