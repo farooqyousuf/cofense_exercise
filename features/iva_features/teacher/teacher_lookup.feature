@@ -19,7 +19,6 @@ Feature: Teacher verification using state lookup
     * I approve the document in the IDme support tool
     * I should be successfully verified
     * I verify user level properties for "Teacher State Lookup - No License/No SSN"
-    * I pry
 
   @delete_current_user_email
   Scenario: Successful verification with no license and short ssn
