@@ -16,7 +16,11 @@ include DataMagic
   end
 
   def click_take_pic_with_phone
-    click_button("Take a picture with my phone")
+    click_on("Take a picture with my phone")
+  end
+
+  def click_look_good
+    click_on("Look good?")
   end
 
   def enter_phone_number
@@ -34,14 +38,13 @@ include DataMagic
   end
 
   def upload_front_id(front_id:)
-    all(".photos-container-image")[0].click
+    all(".photos-container")[0].click
     attach_doc(document: front_id)
     click_button("Upload")
-    sleep 2
   end
 
   def upload_back_id(back_id:)
-    all(".photos-container-image")[1].click
+    all(".photos-container")[1].click
     attach_doc(document: back_id)
     click_button("Upload")
   end
@@ -52,6 +55,8 @@ include DataMagic
   end
 
   def populate_fields_phone(data:)
+    click_smartphone_with_browser_option
+    populate_mobile_phone(data: data)
     populate_ssn(data: data)
   end
 
@@ -221,5 +226,9 @@ include DataMagic
 
   def expected_user_properties_via_phone
     ["JACQUELYN", "C", "RUTLAND", "female", "16514581155", "1016 TOWNSEND ST", "SPEARMAN", "TX", "79081-3564"]
+  end
+
+  def scroll_to_bottom_of_page
+    page.execute_script "window.scrollBy(0,10000)"
   end
 end

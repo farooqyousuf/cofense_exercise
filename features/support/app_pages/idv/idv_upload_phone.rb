@@ -44,10 +44,11 @@ class IDVPhone < IDmeBase
 
     unless action == "submit empty documents"
       upload_front_id(front_id: front_id)
+      scroll_to_bottom_of_page
       upload_back_id(back_id: back_id) unless action == "upload front doc"
     end
 
-    find("input[type='submit']").click
+    click_look_good
 
     sleep 3
 
@@ -58,11 +59,14 @@ class IDVPhone < IDmeBase
       end
 
       populate_fields_phone(data: user)
+      submit_form
+
       check_fcra_box
-      click_button("Verify my information")
+      submit_form
 
       unless (action == "fail experian") || (action == "submit dupe attempt")
-        click_button("Allow")
+        click_on("Verify phone (testing only)")
+        click_on("Allow")
       end
     end
   end
@@ -80,7 +84,7 @@ class IDVPhone < IDmeBase
       populate_fields_kba(data: user)
       populate_fields_phone(data: user)
       check_fcra_box
-      click_button("Verify my information")
+      submit_form
     end
   end
 
