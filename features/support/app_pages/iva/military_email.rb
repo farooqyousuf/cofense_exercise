@@ -7,7 +7,7 @@ class MilitaryEmail < IDmeBase
   include ErrorMessages
 
   def verify(affiliation:, populate: true, type: nil)
-    click_link("Verify using a .mil e-mail address")
+    #click_link("Verify using a .mil e-mail address")
     click_link("Begin")
     populate_affiliation(affiliation)
 

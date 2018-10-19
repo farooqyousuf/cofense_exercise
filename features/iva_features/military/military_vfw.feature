@@ -7,7 +7,6 @@ Feature: Military verification with VFW number
     * I create "MilitaryEmail, MilitaryVFW" page objects
     * I click on the Sign Up link
     * I sign up as a new user
-    * I verify a military user
     * I click on the Begin link
 
   @smoke @delete_current_user_email

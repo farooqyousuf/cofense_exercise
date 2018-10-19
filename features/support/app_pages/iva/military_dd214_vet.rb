@@ -33,7 +33,7 @@ class DD214 < IDmeBase
   def populate_fields(data)
     #information for service member
     %w(verification_service_member_first_name verification_service_member_last_name
-      verification_social verification_social_confirm verification_birth_place).each do |field|
+      verification_social verification_birth_place).each do |field|
       fill_in field, :with => data.fetch(field)
     end
 
