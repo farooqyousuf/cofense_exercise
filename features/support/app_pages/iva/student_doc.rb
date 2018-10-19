@@ -58,7 +58,7 @@ class StudentDoc < IDmeBase
   end
 
   def populate_doc
-     select_filter(".select2-arrow", "Student ID")
+    select_filter(".select2-arrow", "Student ID")
   end
 
   def click_verify_by_doc
