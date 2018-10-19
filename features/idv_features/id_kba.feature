@@ -6,7 +6,7 @@ Feature: Identity Verification by answering KBA questions
     * I visit IDP through the au10tix_light policy
     * I click on the Sign Up link
     * I sign up as a new user
-    * I click on "Verify by answering questions"
+    * I click on "Answer questions about your credit history"
 
   @smoke @delete_current_user_email
   Scenario: Successful verification with KBA

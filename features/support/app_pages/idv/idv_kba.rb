@@ -24,7 +24,7 @@ class IDVKba < IDmeBase
       populate_fields_computer(data: user)
       unless action == "submit information"
         check_fcra_box
-        click_button("Verify my information")
+        submit_form
         sleep 3
       end
     end

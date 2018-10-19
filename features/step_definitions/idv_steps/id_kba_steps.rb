@@ -28,3 +28,8 @@ Given("I should see an error on kba questions") do
     expect(q["class"]).to eql("field radio error")
   end
 end
+
+Given("I answer the KBA questions") do
+  @KBAQuestions.answer_questions
+  @IDVKba.submit_form
+end
