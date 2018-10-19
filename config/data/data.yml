@@ -151,28 +151,28 @@ experian_user2:
   credit_card: 4888603132346941
 
 experian_user3:
-  idme_verification_identity_first_name: Veronica
-  idme_verification_identity_last_name: Persinger
-  idme_verification_identity_middle_name: C
-  idme_verification_identity_birth_date: 07/09/1942
-  idme_verification_identity_street:  6647 WILDFLOWER DR S
-  idme_verification_identity_city:  COTTAGE GROVE
-  idme_verification_identity_zip: 55016-1727
+  idme_verification_identity_attempt_first_name: Veronica
+  idme_verification_identity_attempt_last_name: Persinger
+  idme_verification_identity_attempt_middle_name: C
+  idme_verification_identity_attempt_birth_date: 07/09/1942
+  idme_verification_identity_attempt_street:  6647 WILDFLOWER DR S
+  idme_verification_identity_attempt_city:  COTTAGE GROVE
+  idme_verification_identity_attempt_zip: 55016-1727
+  idme_verification_identity_attempt_mobile_phone: 6514581155
   state: Minnesota
-  mobile_phone: 6514581155
   social: 666325086
   social_confirm: 666325086
 
 experian_user4:
-  idme_verification_identity_first_name: JACQUELYN
-  idme_verification_identity_last_name: RUTLAND
-  idme_verification_identity_middle_name: Q
-  idme_verification_identity_birth_date: 08/28/1948
-  idme_verification_identity_street: 1016 TOWNSEND ST
-  idme_verification_identity_city: SPEARMAN
-  idme_verification_identity_zip: 790813564
+  idme_verification_identity_attempt_first_name: JACQUELYN
+  idme_verification_identity_attempt_last_name: RUTLAND
+  idme_verification_identity_attempt_middle_name: Q
+  idme_verification_identity_attempt_birth_date: 08/28/1948
+  idme_verification_identity_attempt_street: 1016 TOWNSEND ST
+  idme_verification_identity_attempt_city: SPEARMAN
+  idme_verification_identity_attempt_zip: 790813564
+  idme_verification_identity_attempt_mobile_phone: 8066590081
   state: Texas
-  mobile_phone: 8066590081
   social: 666397266
   social_confirm: 666397266
 

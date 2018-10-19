@@ -7,7 +7,7 @@ class KBAQuestions < IDmeBase
   include ErrorMessages
 
   def questions
-    page.all(:css, '.question')
+    page.all(:css, ".question-content")
   end
 
   def submit_answers
@@ -27,8 +27,8 @@ class KBAQuestions < IDmeBase
       unless question_data
         p "Question (#{index.to_i + 1}) NOT found"
         page.save_screenshot('kba_questions.png')
-        all("label", :text => "NONE OF THE ABOVE/DOES NOT APPLY")[index].click
-        p "Default answer: NONE OF THE ABOVE/DOES NOT APPLY"
+        all("label", :text => "None of the above")[index].click
+        p "Default answer: None of the above"
         next
       end
 

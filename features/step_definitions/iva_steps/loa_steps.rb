@@ -7,13 +7,6 @@ Given("I submit information for {string}") do |level|
   end
 end
 
-Given("I answer the KBA questions") do
-  kba_questions = KBAQuestions.new
-  #binding.pry
-  kba_questions.answer_questions
-  kba_questions.submit_answers
-end
-
 Given("I confirm my phone") do
   ConfirmPhone.new.confirm_phone
 end

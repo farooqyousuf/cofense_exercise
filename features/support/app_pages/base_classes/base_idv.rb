@@ -49,7 +49,6 @@ include DataMagic
   def populate_fields_computer(data:)
     click_smartphone_with_browser_option
     populate_mobile_phone(data: data)
-    populate_ssn(data: data)
   end
 
   def populate_fields_phone(data:)
@@ -62,21 +61,22 @@ include DataMagic
   end
 
   def populate_fields_personal_info(data:)
-    %w(idme_verification_identity_first_name idme_verification_identity_middle_name idme_verification_identity_last_name idme_verification_identity_birth_date).each do |field|
+    %w(idme_verification_identity_attempt_first_name idme_verification_identity_attempt_middle_name idme_verification_identity_attempt_last_name idme_verification_identity_attempt_birth_date).each do |field|
       fill_in(field, :with => data.fetch(field))
     end
 
+    populate_ssn(data: data)
     populate_gender("female")
     submit_form
   end
 
   def populate_fields_address(data:)
-    %w(idme_verification_identity_street idme_verification_identity_city idme_verification_identity_zip).each do |field|
+    %w(idme_verification_identity_attempt_street idme_verification_identity_attempt_city idme_verification_identity_attempt_zip).each do |field|
       fill_in(field, :with => data.fetch(field))
     end
 
     populate_state(data.fetch("state"))
-    2.times {fill_in("idme_verification_identity_zip", :with => data.fetch("idme_verification_identity_zip"))}
+    2.times {fill_in("idme_verification_identity_attempt_zip", :with => data.fetch("idme_verification_identity_attempt_zip"))}
     submit_form
   end
 
@@ -86,12 +86,10 @@ include DataMagic
 
   def populate_ssn(data:)
     fill_in("social", :with => data.fetch("social"))
-    fill_in("social_confirm", :with => data.fetch("social_confirm"))
-    click_button("Continue")
   end
 
   def populate_mobile_phone(data:)
-    fill_in("mobile_phone", :with => data.fetch("mobile_phone"))
+    fill_in("mobile_phone", :with => data.fetch("idme_verification_identity_attempt_mobile_phone"))
     submit_form
   end
 
@@ -101,7 +99,7 @@ include DataMagic
   end
 
   def populate_gender(sex)
-    find("label[for='idme_verification_identity_gender_#{sex}']").click
+    find("label[for='idme_verification_identity_attempt_gender_#{sex}']").click
   end
 
   def set_up_multifactor
@@ -117,7 +115,7 @@ include DataMagic
   end
 
   def check_fcra_box
-    find(:css, "label[for='idme_verification_identity_accepts_fcra'] span").click
+    find(:css, "label[for='idme_verification_identity_attempt_accepts_fcra'] span").click
   end
 
   def close_verify_window
@@ -127,11 +125,11 @@ include DataMagic
   end
 
   def click_smartphone_with_browser_option
-    2.times { find("label[for='phone_type_smart_phone']").click }
+    find("label[for='phone_type_smart_phone']").click
   end
 
   def click_homephone_option
-    2.times { find("label[for='phone_type_home_phone']").click }
+    find("label[for='phone_type_home_phone']").click
   end
 
   def edit_info(fields)
@@ -201,7 +199,7 @@ include DataMagic
   end
 
   def submit_form
-    find("input[type=submit]").click
+    find("button[type=submit]").click
   end
 
   def compare_expected_and_actual_user_property_values(type)
