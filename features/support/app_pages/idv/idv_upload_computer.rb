@@ -43,16 +43,20 @@ class IDVComputer < IDmeBase
 
     unless action == "submit empty documents"
       upload_front_id(front_id: front_id)
+      scroll_to_bottom_of_page
       upload_back_id(back_id: back_id) unless action == "upload front doc"
     end
 
-    find("input[type='submit']").click
+    click_look_good
     sleep 5
 
     if populate == true
       populate_fields_computer(data: user)
+      populate_ssn(data: user)
+      submit_form
+
       check_fcra_box
-      click_button("Verify my information")
+      submit_form
 
       unless (action == "fail experian") || (action == "submit dupe attempt")
         click_link("Verify")

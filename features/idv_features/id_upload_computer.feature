@@ -6,8 +6,8 @@ Feature: Identity Verification by uploading an ID from the computer
     * I visit IDP through the au10tix_light policy
     * I click on the Sign Up link
     * I sign up as a new user
-    * I click on "Verify using my driver's license"
-    * I click on "Upload from my device"
+    * I click on "Upload photos of your license or state ID"
+    * I click on "Upload a picture from my device"
 
   @smoke @delete_current_user_email
   Scenario: Successful verification with Imagery

@@ -6,7 +6,7 @@ Feature: Identity Verification by taking a picture of your ID from phone upload
     * I visit IDP through the au10tix_light policy
     * I click on the Sign Up link
     * I sign up as a new user
-    * I click on "Verify using my driver's license"
+    * I click on "Upload photos of your license or state ID"
     * I click on the Take a picture with my phone link
 
   @smoke @delete_current_user_email
