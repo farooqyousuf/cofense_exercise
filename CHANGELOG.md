@@ -3,6 +3,9 @@
 ### Released
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
+# 2.5.33 (10/19/18)
+- AWE-2063: Fix Jenkins Revelator Smoke Tests: IDP
+
 # 2.5.32 (10/11/18)
 - AWE-2014: Fix Responder Tests to work w/new design
 - AWE-1972: Prod Smoke Tests: IDP
