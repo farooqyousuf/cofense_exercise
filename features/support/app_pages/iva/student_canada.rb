@@ -50,7 +50,7 @@ class StudentCanada < IDmeBase
     populate_province(data.fetch("province"))
 
     #postal code
-    fill_in "verification_zip", :with => data.fetch("postal_code")
+    2.times {fill_in "verification_zip", :with => data.fetch("postal_code")}
   end
 
   def populate_province(province)
