@@ -34,7 +34,7 @@ class TeacherDoc < IDmeBase
   end
 
   def populate_fields(data:)
-    %w(verification_first_name verification_last_name verification_social verification_social_confirm verification_street verification_city).each do |field|
+    %w(verification_first_name verification_last_name verification_social verification_street verification_city).each do |field|
       fill_in field, :with => data.fetch(field)
     end
 
