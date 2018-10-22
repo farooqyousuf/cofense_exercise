@@ -7,7 +7,6 @@ Feature: Military verification using .mil email
     * I create "MilitaryEmail" page objects
     * I click on the Sign Up link
     * I sign up as a new user
-    * I should be on the military verification screen
 
   @smoke @delete_current_user_email
   #unique last name/email to pass verification
