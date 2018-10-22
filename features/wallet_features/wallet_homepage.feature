@@ -11,8 +11,8 @@ Feature: Test Wallet Landing Page Feature
     * I verify that the wallet home hero is displayed
 
   @smoke
-  Scenario: Wallet User My Account link successfully redirects to IDP
-    * I verify the wallet My Account links direct to idp
+  Scenario: Wallet User Sign in link successfully redirects to IDP
+    * I verify the wallet Sign in links direct to idp
 
   Scenario: Wallet "For Business and Government" Navigation dropdown links successfully redirects
     * I verify the For Business and Government navigation dropdown link "Identity Verification"

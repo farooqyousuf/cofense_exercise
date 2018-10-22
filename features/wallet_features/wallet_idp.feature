@@ -9,6 +9,7 @@ Feature: Test Wallet IDP Features
     * I visit "WalletHomepage"
     * I click on the Wallet Sign Up Link
     * I sign up as a new user
+    * I visit "WalletDashboard"
     * I should see my sign up on the activity feed
 
   @smoke @lightning
@@ -16,6 +17,7 @@ Feature: Test Wallet IDP Features
     * I visit "WalletHomepage"
     * I click on the Wallet Sign In Link
     * I login to wallet as a "Military" user
+    * I visit "WalletDashboard"
     * I should see my sign in on the activity feed
 
   Scenario: Failed User Wallet Sign In

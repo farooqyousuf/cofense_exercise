@@ -9,6 +9,7 @@ Feature: Test Wallet Settings Features
     * I visit "WalletHomepage"
     * I click on the Wallet Sign Up Link
     * I sign up as a new user
+    * I visit "WalletDashboard"
     * I record the wallet user email
     * I deactivate my Wallet account
     * I confirm that my Wallet session has been terminated
@@ -19,6 +20,7 @@ Feature: Test Wallet Settings Features
     * I visit "WalletHomepage"
     * I click on the Wallet Sign Up Link
     * I sign up as a new user
+    * I visit "WalletDashboard"
     * I click on the Settings navigation link
     * I click on the Security tab
     * I change the user password in Wallet
@@ -29,6 +31,7 @@ Feature: Test Wallet Settings Features
     * I visit "WalletHomepage"
     * I click on the Wallet Sign Up Link
     * I sign up as a new user
+    * I visit "WalletDashboard"
     * I click on the Settings navigation link
     * I click on the Security tab
     * I attempt to change the password using an incorrect current password
