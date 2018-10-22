@@ -57,8 +57,8 @@ Given("I verify the For Individuals navigation dropdown link {string}") do |drop
   step 'I visit "WalletHomepage"'
 end
 
-Given("I verify the wallet My Account links direct to idp") do
-  @WalletHomepage.click_my_account_button
+Given("I verify the wallet Sign in links direct to idp") do
+  @WalletHomepage.click_wallet_sign_in
   expect(page).to have_current_path(FigNewton.idp.new_session_url,:url => true)
   return_to_previous_page
 end

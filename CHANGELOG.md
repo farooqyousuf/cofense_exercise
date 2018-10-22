@@ -7,6 +7,7 @@ All notable changes to this project will be documented in this file. This projec
 - AWE-2070: Fix Jenkins Revelator Smoke Tests: Military Email
 - AWE-2064: Fix Jenkins Revelator Smoke Tests: IDV
 - AWE-2072: Fix Jenkins Revelator Smoke Tests: Teacher
+- AWE-2073: Fix Jenkins Revelator Smoke Tests: Wallet
 
 # 2.5.33 (10/19/18)
 - AWE-2063: Fix Jenkins Revelator Smoke Tests: IDP
