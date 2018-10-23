@@ -56,6 +56,10 @@ class IDVPhone < IDmeBase
       if page.has_css?("#sr_page_title", text: "Enter your Social Security Number") == false
         close_current_browser
         use_original_tab
+        unless page.has_content? "phone"
+          close_current_browser
+          use_original_tab
+        end
       end
 
       populate_fields_phone(data: user)

@@ -3,6 +3,9 @@
 ### Released
 All notable changes to this project will be documented in this file. This project does adhere to [Semantic Versioning](http://semver.org/)
 
+# 2.5.35 (10/23/18)
+- AWE-2080: Fix Mobile Tests: IDV
+
 # 2.5.34 (10/22/18)
 - AWE-2070: Fix Jenkins Revelator Smoke Tests: Military Email
 - AWE-2064: Fix Jenkins Revelator Smoke Tests: IDV
