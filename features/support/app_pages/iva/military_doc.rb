@@ -57,7 +57,7 @@ class MilitaryDoc < IDmeBase
 
   def populate_fields(data:)
     #fill reqd fields
-    %w(verification_service_member_first_name verification_service_member_last_name verification_social verification_social_confirm verification_street verification_city).each do |field|
+    %w(verification_service_member_first_name verification_service_member_last_name verification_social verification_street verification_city).each do |field|
       fill_in field, :with => data.fetch(field)
     end
 

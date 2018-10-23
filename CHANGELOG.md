@@ -5,6 +5,7 @@ All notable changes to this project will be documented in this file. This projec
 
 # 2.5.35 (10/23/18)
 - AWE-2080: Fix Mobile Tests: IDV
+- AWE-2081: Fix Mobile Tests: IVA Military
 
 # 2.5.34 (10/22/18)
 - AWE-2070: Fix Jenkins Revelator Smoke Tests: Military Email
