@@ -28,7 +28,7 @@ Feature: Identity Verification by uploading an ID via mobile
 
   @delete_current_user_email
   Scenario: Successful verification with Imagery via computer upload
-    * I click on "Upload from my device"
+    * I click on "Upload a picture from my device"
     * I set the External Vendor Environment to "verify via Imagery"
     * I "verify via Imagery" via computer using a mocked driver's license
     * I authorize the attribute release
@@ -37,7 +37,7 @@ Feature: Identity Verification by uploading an ID via mobile
 
   @delete_current_user_email
   Scenario: Successful verification with AU10TIX via computer upload
-    * I click on "Upload from my device"
+    * I click on "Upload a picture from my device"
     * I set the External Vendor Environment to "verify via AU10TIX"
     * I "verify via AU10TIX" via computer using a mocked driver's license
     * I authorize the attribute release
