@@ -1,134 +1,114 @@
-# ID.me Revelator
+# Cofense SDET Exercise
 
-Revelator is a repository that contains ID.me's automated tests.  It is used to verify that the newly built and/or updated features do not break the primary features within there respective applications.
+## For more information on setting up or executing this repository, please contact Farooq Yousuf (farooqyousuf1@gmail.com).
 
-## Setup Instructions
+Note: All commands should be executed in a Terminal or Command Line Interface (CLI) on your system.
 
-1. Clone the repositiory `git clone git@github.com:IDme/idme-revelator.git`
-2. Install GeckoDriver
-3. Install Chromedriver
-4. `bundle install`
-5. Update Browsers to the latest version
+## Setup Cofense SDET Exercise Instructions
 
-### Installing GeckoDriver
+### 1. Install Ruby 2.6.3 (Project requirement)
 
-Check to see if GeckoDriver is currently installed
-```bash
-$ geckodriver --version
-=> geckodriver 0.19.1
+* MacOS/Linux:
+On MacOS Ruby should be pre-installed. Check version: "ruby -v"
+To install 2.6.3, execute "ruby-install ruby 2.6.3"
 
-The source code of this program is available from
-testing/geckodriver in https://hg.mozilla.org/mozilla-central.
+* Windows:
+Follow install instructions here: https://rubyinstaller.org/
 
-This program is subject to the terms of the Mozilla Public License 2.0.
-You can obtain a copy of the license at https://mozilla.org/MPL/2.0/.
-```
-There are multiple ways to install GeckoDriver
+* Managine multiple Ruby versions on your system? 
+Install and use Ruby via RVM or Rbenv 
+RVM: https://rvm.io/
+Rbenv: https://github.com/rbenv/rbenv
 
-One way is to install GeckoDriver using [brew](https://brewinstall.org/Install-geckodriver-on-Mac-with-Brew/)
-```bash
-brew install geckodriver
-```
+For more information regarding installing Ruby see: https://www.ruby-lang.org/en/documentation/installation/
 
-Another way is to manually install [GeckoDriver](https://github.com/mozilla/geckodriver) with the latest [GeckoDriver Release](https://github.com/mozilla/geckodriver/releases)
 
-### Installing Chromedriver
+### 2. Installing Chromedriver
 
 Check to see if Chromedriver is currently installed
-```bash
-$ chromedriver --version
-=> ChromeDriver 2.35.528157 (4429ca2590d6988c0745c24c8858745aaaec01ef)
-```
+execute "chromedriver --version"
+=> ChromeDriver 83.0.4103.39 (ccbf011cb2d2b19b506d844400483861342c20cd-refs/branch-heads/4103@{#416})
 
-Install using [brew](https://brewinstall.org/Install-geckodriver-on-Mac-with-Brew/)
-```bash
-brew install chromedriver
-```
-## Running Revelator
+Install using [brew] -- Homebrew Information: https://brew.sh/
+If you need to install Homebrew see here: https://docs.brew.sh/Installation
 
-### 1) Set up the environment
-Set the env.rb file depending on the environment. IDme uses the
-[Thor Ruby Gem](http://whatisthor.com/) to manage this.
+execute "brew install chromedriver"
 
 
-Review the list of environments
-```bash
-thor list
-```
+### 3. Bundle Install all the gems
 
-It will print
-```bash
-thor set:android_saucelabs         # Use Android on Sauce Labs on Staging
-thor set:chrome_osx                # Use Chrome on OSX locally on staging
-thor set:chrome_windows            # Use Chrome on Windows on Sauce Labs on P...
-thor set:firefox_osx_accept_certs  # Use Firefox on OSX and accept all certs
-thor set:firefox_osx_local         # Use Firefox on OSX on Local
-thor set:firefox_osx_sandbox       # Use Firefox on OSX on Sandbox (currently only supports ARCS direct api tests)
-thor set:firefox_osx_production    # Use Firefox on OSX on Production
-thor set:firefox_osx_saucelabs     # Use Firefox on OSX on Sauce Labs
-thor set:firefox_osx_staging       # Use Firefox on OSX on Staging
-thor set:firefox_windows           # Use Firefox on Windows on Sauce Labs on ...
-thor set:ie_windows                # Use Internet Explorer on Windows on Sauc...
-thor set:ios_local                 # Use iOS locally on Staging
-thor set:ios_saucelabs             # Use iOS on Sauce Labs on Staging
-thor set:safari_local              # User Safari locally on Staging
-thor set:safari_saucelabs          # Use Safari on SauceLabs on Staging
-```
+Navigate to the project root directory via CLI and execute `bundle install`
+Example: 
+cd /Users/farooqyousuf/Documents/cofense_exercise
+bundle install
 
-### Run the appropriate thor command to set the environment
-For **INT** tests with Firefox Browser
-```bash
-thor set:firefox_osx_staging
-```
 
-For **CORE** tests with Chrome Browser
-```bash
-thor set:chrome_osx
-```
+## Executing Cofense SDET Exercise
 
-It will print something like this
-```bash
-run  cp features/support/environments/env.rb.firefox_osx_staging features/support/env.rb from "."
-```
 ### 2) Run tests using cucumber
 
-Review the feature file to be tested
-
-`features/feature_directory/test_file.feature`
-```ruby
-1 @test @desktop
-2 Feature: Testing a Test
-3
-4   Background:
-5     * I visit the test
-6     * I click on the test
-7
-8   @smoke @delete_user
-9   #unique test
-10  Scenario: Successful verification as Scenario 1
-11    * I verify using test
-12    * I approve the test
-13    * I should be successfully verified as "Scenario 1"
-14
-15  @delete_user
-16  Scenario: Successful verification as Scenario 2
-17    * I verify using test
-18    * I approve the test
-19    * I should be successfully verified as "Scenario 2"
-```
 To test a feature, enter [cucumber](https://github.com/cucumber/cucumber/wiki/Running-Features) in the CLI and append the feature file you would like to run afterwards.  See the following example.
-```
-cucumber features/feature_directory/test_file.feature
-```
+
+cucumber features/cofense_api_tests/cofense_api_tests.feature
 
 To test a specific scenario within a feature, add a colon and the line number of that scenario.  The example below runs **Scenario 2**.
-```
-cucumber features/feature_directory/test_file.feature:16
-```
 
-[Tags](https://github.com/cucumber/cucumber/wiki/Tags) tests all files and scenarios where the tag is listed.  To test all files and/or scenarios with the @test tag, add `--tags` plus the `@test` tag afterwards.
-```
+cucumber features/cofense_api_tests/cofense_api_tests.feature:8
+
+[Tags](https://github.com/cucumber/cucumber/wiki/Tags) tests all files and scenarios where the tag is listed.  
+
+To test all files and/or scenarios with the @test tag, add `--tags` plus the `@test` tag afterwards.
 cucumber --tags @test
-```
 
-## For more information on revelator, please review the [QA Docs](https://github.com/IDme/docs/blob/master/04_Quality_Assurance/01_QA_Resource_Guide/revelator.md)
+The same can be done with other tags such as @api or @ui
+
+## General Comments about Project structure and technologies/gems used
+
+### General Structure
+A genereal Cucumber (https://cucumber.io/) scaffolding structure was used for this project. The tests have been divided up as follows:
+Cucumber Feature files -> Step Definitions
+
+In a more complex project I would definitely used the Page Object Model to encapsulate all the various pages in their own classes and that level would be under the Step Definitions layer. In this case I didn't want to over-engineer and add unnecessary complexity and also wanted to finish and submit the exercise in a reasonable time.
+
+### Data folder
+There is a data folder that contains a data.yml file that would contain test data if need be in a more complex project. In this case it is part of the structure but not being used for the tests. Just a dummy holder directory and file.
+
+#### Environments folder
+This contains 3 yml files for testing in various environments (local, testing, production). The 'testing.yml' is being used by the env.rb to specify the urls being accessed in the tests. In real complex project the other yml files would be used accordingly as well.
+
+### Features folder
+This contains all the Cucumber feature files divided by API and UI Features
+
+### Support folder
+This contains an env.rb, this file is being used and contains the various requirements needed. It also declares the Chrome driver as a global variable that is used throughout the tests and also loads the "testing.yml" file to load the test URLs.
+
+### Output folder
+This contains the various output files that are generated after the tests have executed
+
+### Misc Files
+.ruby-gemset - Gemset name
+.ruby-version - Ruby version
+README.md - Documentation
+Gemfile - All the required gems needed
+
+### Gems
+
+rspec - https://github.com/rspec/rspec
+Used for assertions/expectations/etc
+
+selenium-webdriver - https://rubygems.org/gems/selenium-webdriver/versions/2.53.4
+Used for launching and driving the web browser
+
+fig_newton - https://github.com/cheezy/fig_newton
+Used for data management. The urls in the tests are stored in the environments directory under the yml files. Whichever yml file is called in the env.rb is the yml used. This gem allows us to call the URLs needed in the Step Definitions and only need to make the changes in the respective yml file.
+
+pry - https://github.com/pry/pry
+Used for debugging.
+
+cucumber - https://rubygems.org/gems/cucumber/versions/2.4.0
+Used for the Cucumber scaffolding/structure.
+
+httparty - https://github.com/jnunemaker/httparty
+Used for testing the REST API.
+
+## For more information on setting up or executing this repository, please contact Farooq Yousuf (farooqyousuf1@gmail.com).

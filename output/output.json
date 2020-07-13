@@ -1,0 +1,290 @@
+[
+  {
+    "uri": "features/_cofense_api_tests/cofense_api_tests.feature",
+    "id": "automating-three-api-calls-to-a-dummy-api-site-and-returning-specific-values",
+    "keyword": "Feature",
+    "name": "Automating three API calls to a dummy API site and returning specific values",
+    "description": "",
+    "line": 2,
+    "tags": [
+      {
+        "name": "@api",
+        "line": 1
+      }
+    ],
+    "elements": [
+      {
+        "id": "automating-three-api-calls-to-a-dummy-api-site-and-returning-specific-values;verify-a-get-users-request-returns-a-200-response-code-(print-response-code-to-console)",
+        "keyword": "Scenario",
+        "name": "Verify a GET users request returns a 200 response code (print response code to console)",
+        "description": "",
+        "line": 4,
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@api",
+            "line": 1
+          }
+        ],
+        "before": [
+          {
+            "match": {
+              "location": "capybara-3.7.2/lib/capybara/cucumber.rb:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 31000
+            }
+          },
+          {
+            "match": {
+              "location": "capybara-3.7.2/lib/capybara/cucumber.rb:22"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 19000
+            }
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "* ",
+            "name": "I send a GET single user request to a dummy API site",
+            "line": 5,
+            "output": [
+              "This is the API URL endpoint that is being tested: https://jsonplaceholder.typicode.com/users/1",
+              "The GET request was successful!",
+              "This is the response message: OK"
+            ],
+            "match": {
+              "location": "features/step_definitions/_cofense_api_steps/cofense_api_tests_steps.rb:1"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 90533000
+            }
+          },
+          {
+            "keyword": "* ",
+            "name": "I verify a GET request returns a successful response code",
+            "line": 6,
+            "output": [
+              "This is the response code: 200"
+            ],
+            "match": {
+              "location": "features/step_definitions/_cofense_api_steps/cofense_api_tests_steps.rb:24"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 983000
+            }
+          }
+        ],
+        "after": [
+          {
+            "match": {
+              "location": "capybara-3.7.2/lib/capybara/cucumber.rb:10"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 27000
+            }
+          }
+        ]
+      },
+      {
+        "id": "automating-three-api-calls-to-a-dummy-api-site-and-returning-specific-values;verify-each-user-in-a-get-users-request-has-an-id-(print-validation-to-console)",
+        "keyword": "Scenario",
+        "name": "Verify each user in a GET users request has an id (print validation to console)",
+        "description": "",
+        "line": 8,
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@api",
+            "line": 1
+          }
+        ],
+        "before": [
+          {
+            "match": {
+              "location": "capybara-3.7.2/lib/capybara/cucumber.rb:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 13000
+            }
+          },
+          {
+            "match": {
+              "location": "capybara-3.7.2/lib/capybara/cucumber.rb:22"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 13000
+            }
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "* ",
+            "name": "I send a GET all users request to a dummy API site",
+            "line": 9,
+            "output": [
+              "This is the API URL endpoint that is being tested: https://jsonplaceholder.typicode.com/users/"
+            ],
+            "match": {
+              "location": "features/step_definitions/_cofense_api_steps/cofense_api_tests_steps.rb:16"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 78652000
+            }
+          },
+          {
+            "keyword": "* ",
+            "name": "I verify all the users in a GET users request has an id",
+            "line": 10,
+            "output": [
+              "User 1's ID: 1",
+              "User 1's Name: Leanne Graham",
+              "User 1's Email: Sincere@april.biz",
+              "",
+              "User 2's ID: 2",
+              "User 2's Name: Ervin Howell",
+              "User 2's Email: Shanna@melissa.tv",
+              "",
+              "User 3's ID: 3",
+              "User 3's Name: Clementine Bauch",
+              "User 3's Email: Nathan@yesenia.net",
+              "",
+              "User 4's ID: 4",
+              "User 4's Name: Patricia Lebsack",
+              "User 4's Email: Julianne.OConner@kory.org",
+              "",
+              "User 5's ID: 5",
+              "User 5's Name: Chelsey Dietrich",
+              "User 5's Email: Lucio_Hettinger@annie.ca",
+              "",
+              "User 6's ID: 6",
+              "User 6's Name: Mrs. Dennis Schulist",
+              "User 6's Email: Karley_Dach@jasper.info",
+              "",
+              "User 7's ID: 7",
+              "User 7's Name: Kurtis Weissnat",
+              "User 7's Email: Telly.Hoeger@billy.biz",
+              "",
+              "User 8's ID: 8",
+              "User 8's Name: Nicholas Runolfsdottir V",
+              "User 8's Email: Sherwood@rosamond.me",
+              "",
+              "User 9's ID: 9",
+              "User 9's Name: Glenna Reichert",
+              "User 9's Email: Chaim_McDermott@dana.io",
+              "",
+              "User 10's ID: 10",
+              "User 10's Name: Clementina DuBuque",
+              "User 10's Email: Rey.Padberg@karina.biz",
+              ""
+            ],
+            "match": {
+              "location": "features/step_definitions/_cofense_api_steps/cofense_api_tests_steps.rb:30"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 634000
+            }
+          }
+        ],
+        "after": [
+          {
+            "match": {
+              "location": "capybara-3.7.2/lib/capybara/cucumber.rb:10"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 20000
+            }
+          }
+        ]
+      },
+      {
+        "id": "automating-three-api-calls-to-a-dummy-api-site-and-returning-specific-values;verify-a-delete-request-on-any-of-the-main-endpoints-returns-a-404-response-code-(print-response-code-to-console)",
+        "keyword": "Scenario",
+        "name": "Verify a DELETE request on any of the main endpoints returns a 404 response code (print response code to console)",
+        "description": "",
+        "line": 12,
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@api",
+            "line": 1
+          }
+        ],
+        "before": [
+          {
+            "match": {
+              "location": "capybara-3.7.2/lib/capybara/cucumber.rb:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 17000
+            }
+          },
+          {
+            "match": {
+              "location": "capybara-3.7.2/lib/capybara/cucumber.rb:22"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 19000
+            }
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "* ",
+            "name": "I send a DELETE request to the users endpoint",
+            "line": 13,
+            "output": [
+              "This is the API URL endpoint that is being tested: https://jsonplaceholder.typicode.com/users/"
+            ],
+            "match": {
+              "location": "features/step_definitions/_cofense_api_steps/cofense_api_tests_steps.rb:47"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 77195000
+            }
+          },
+          {
+            "keyword": "* ",
+            "name": "I verify the DELETE request returns a unsuccessful response code",
+            "line": 14,
+            "output": [
+              "This is the response code: 404"
+            ],
+            "match": {
+              "location": "features/step_definitions/_cofense_api_steps/cofense_api_tests_steps.rb:52"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 74000
+            }
+          }
+        ],
+        "after": [
+          {
+            "match": {
+              "location": "capybara-3.7.2/lib/capybara/cucumber.rb:10"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 21000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

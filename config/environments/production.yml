@@ -1,34 +1,7 @@
-sauce_labs:
-  username: farooq
-  access_key: a2280004-36fd-4a44-ae1a-209696270d5e
+api_dummy_site:
+ main_url: https://jsonplaceholder.typicode.com
+ users_url: https://jsonplaceholder.typicode.com/users/
+ users_one_url: https://jsonplaceholder.typicode.com/users/1
 
-oauth:
-  general_password: Changeme123
-  unverified: test_unverified_user@id.me
-  verified: rich.purnell.rocketman2@gmail.com
-  facebook_user: qa@id.me
-  facebook_pw: P@ssword123
-
-idp:
-  base_url: https://api.id.me
-  new_session_url: https://api.id.me/en/session/new
-  new_registration_url: https://api.id.me/en/registration/new
-
-wallet:
-  homepage:
-    url: https://wallet.id.me/
-
-test_user:
-  password: Password123
-  military:
-    veteran:
-      user_email: rich.purnell.rocketman@gmail.com #TODO replace with veteran+test@id.me
-  first_responder:
-    user_email: test+responder@id.me
-  student:
-    user_email: test+student@id.me
-  teacher:
-    user_email: test+teacher@id.me
-
-partners:
-  vetsgov: https://www.vets.gov/
+ultimate_qa_site:
+  url: https://ultimateqa.com/simple-html-elements-for-automation/
